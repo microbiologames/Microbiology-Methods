@@ -191,28 +191,65 @@ def parse_organism_page(html: str, source_page_url: str) -> list:
     return records
 
 
+def fetch_live_pages(delay_seconds: float = 2.0):
+    """Crawl the live organism pages directly, one request per known slug
+    (see ORGANISM_SLUG_MAP) rather than discovering URLs from the index page
+    -- the slug list is small, hand-curated, and matches the vocabulary
+    already used by nf_validation_list_parser.py, so this avoids depending
+    on the index page's own markup staying stable.
+
+    NOT exercised end-to-end from this codebase's development environment
+    (outbound HTTPS to nf-validation.afnor.org is proxy-blocked there) --
+    this needs its first real run from a normal-egress environment (the
+    GitHub Actions workflow) to confirm the site's HTML still matches what
+    parse_organism_page() expects.
+    """
+    import time
+    import requests
+
+    for slug in ORGANISM_SLUG_MAP:
+        url = f"https://nf-validation.afnor.org/domaine-agroalimentaire/{slug}/"
+        try:
+            resp = requests.get(url, timeout=30, headers={"User-Agent": "microbiology-methods-bot/1.0"})
+            resp.raise_for_status()
+        except requests.RequestException as exc:
+            print(f"FETCH ERROR [{url}]: {exc}", file=sys.stderr)
+            continue
+        yield url, resp.text
+        time.sleep(delay_seconds)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--html-dir", required=True,
-                     help="Directory of saved organism-page HTML files (offline mode).")
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument("--html-dir",
+                         help="Directory of saved organism-page HTML files (offline mode).")
+    source.add_argument("--fetch-live", action="store_true",
+                         help="Crawl the live nf-validation.afnor.org organism pages instead of reading local files.")
     ap.add_argument("--out-dir", default="data/nf_validation_organism_pages")
     args = ap.parse_args()
 
-    html_dir = Path(args.html_dir)
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     all_records = []
-    files = sorted(html_dir.glob("*.htm*"))
-    for fpath in files:
-        if "domaine_agroalimentaire" in fpath.name.lower() or "domaine agroalimentaire" in fpath.name.lower():
-            continue  # index page, not an organism page
-        html = fpath.read_text(encoding="utf-8", errors="ignore")
-        slug = slug_from_filename_or_url(str(fpath))
-        canonical_url = f"https://nf-validation.afnor.org/domaine-agroalimentaire/{slug}/"
-        records = parse_organism_page(html, canonical_url)
-        all_records.extend(records)
-        print(f"{fpath.name}: {len(records)} methods", file=sys.stderr)
+    if args.fetch_live:
+        for canonical_url, html in fetch_live_pages():
+            records = parse_organism_page(html, canonical_url)
+            all_records.extend(records)
+            print(f"{canonical_url}: {len(records)} methods", file=sys.stderr)
+    else:
+        html_dir = Path(args.html_dir)
+        files = sorted(html_dir.glob("*.htm*"))
+        for fpath in files:
+            if "domaine_agroalimentaire" in fpath.name.lower() or "domaine agroalimentaire" in fpath.name.lower():
+                continue  # index page, not an organism page
+            html = fpath.read_text(encoding="utf-8", errors="ignore")
+            slug = slug_from_filename_or_url(str(fpath))
+            canonical_url = f"https://nf-validation.afnor.org/domaine-agroalimentaire/{slug}/"
+            records = parse_organism_page(html, canonical_url)
+            all_records.extend(records)
+            print(f"{fpath.name}: {len(records)} methods", file=sys.stderr)
 
     for i, rec in enumerate(all_records):
         org_slug = re.sub(r'[^a-z0-9]+', '-', (rec["target_organism"]["normalized"] or "unknown").lower()).strip('-')

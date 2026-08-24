@@ -1,0 +1,61 @@
+name: Scrape and normalize NF-Validation data
+
+# Runs from GitHub's own runners, which have normal outbound internet access
+# -- unlike this repo's day-to-day development environment, where
+# nf-validation.afnor.org is proxy-blocked. That means the --fetch-live and
+# fetch_and_mine_summary_reports.py code paths exercised here have NOT been
+# validated end-to-end before this workflow's first real run; watch the
+# first few runs closely and expect to need small fixes if the live site's
+# HTML has drifted from what the offline-developed parsers expect.
+#
+# Deliberately NOT re-scraping the NF-Validation certificate-list PDF here:
+# per the project's data-provenance policy, that PDF is a one-time bootstrap
+# seed of unknown refresh cadence, not a recurring source. Only the live
+# organism pages (which state their own last-updated date) and the summary
+# report PDFs they link to are re-fetched.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # weekly, Monday 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-and-normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf beautifulsoup4 jsonschema requests
+
+      - name: Re-fetch live NF-Validation organism pages
+        run: python3 scrapers/nf_validation_organism_pages.py --fetch-live --out-dir data/nf_validation_organism_pages
+
+      - name: Re-run NF-Validation merge/normalization
+        run: python3 pipeline/normalize_nf_validation.py
+
+      - name: Fetch and mine summary validation reports
+        run: python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
+
+      - name: Open a pull request with any changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Scheduled NF-Validation scrape and normalization"
+          title: "Scheduled data update: NF-Validation"
+          body: |
+            Automated run of the NF-Validation live-page scraper, the
+            certificate/organism-page merge pipeline, and the summary-report
+            performance-data miner. Review the diff before merging --
+            especially on this workflow's early runs, since the live-fetch
+            and summary-report-mining code paths were developed offline and
+            had not been exercised against the real site before deployment.
+          branch: automated/nf-validation-scrape
+          delete-branch: true
