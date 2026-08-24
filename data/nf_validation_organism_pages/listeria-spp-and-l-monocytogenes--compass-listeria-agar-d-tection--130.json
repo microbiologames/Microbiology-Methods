@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPASS® Listeria Agar (Détection)",
+  "manufacturer": {
+    "name": "SOLABIA S.A.S.",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp. and L. monocytogenes",
+    "raw": "Listeria spp. et Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria monocytogenes et Listeria spp."
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/e131f658-Listeria_spp._et_Listeria_monocytogenes__NF_Validation.htm",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BKR-23-02-11-02_-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/03/COMPASS-Listeria-Agar-Detection-SUMMARY-REPORT-Version-1.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "21 juillet 2026"
+}

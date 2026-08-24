@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "foodproof® Salmonella plus Cronobacter Detection LyoKit for Salmonella spp. detection",
+  "manufacturer": {
+    "name": "Hygiena LLC",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/4db34166-Salmonella_spp.__NF_Validation.htm",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-12-12-24-fr-1.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/FOODPR1.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "6 août 2026"
+}
