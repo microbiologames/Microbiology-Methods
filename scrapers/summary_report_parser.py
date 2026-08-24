@@ -16,15 +16,22 @@ Scope of this first pass -- built and tested against exactly ONE real report
     output and plausibly recurs in this shape across other reports.
   - accuracy_profile.acceptability_limit_log: extracted from the stated
     "Acceptability Limit fixed at +/- X log" sentence.
+  - accuracy_profile.by_matrix (SD repeatability per matrix): matrices are
+    named by ISO 16140-2 food CATEGORY rather than the specific product
+    tested, after rendering a page to an image with pymupdf and discovering
+    the more specific product name (from chart captions) can come out
+    reordered relative to the SD-repeatability table sequence even on the
+    same page -- category order was checked the same way and does hold, so
+    that's the anchor used. samples_out_of_beta_eti is left empty for every
+    matrix rather than guess which category a named outlier product belongs
+    to.
   - inclusivity/exclusivity: extracted from this report's specific narrative
     wording ("Same results were observed by both methods for N strains...");
     other reports may phrase this differently and will need the pattern
     broadened.
-  - NOT mined: accuracy_profile.by_matrix (SD repeatability per matrix +
-    beta-ETI outliers) and loq_log -- both are laid out as multi-column
-    tables spanning side-by-side matrix panels that pypdf's plain-text
-    extraction jumbles into an unreliable column order; fabricating numbers
-    from a misread table would be worse than leaving the field null.
+  - NOT mined: loq_log -- its source table's cells extracted as literal
+    zeros for every matrix, a clear sign the table's structure defeats
+    plain-text extraction; recording that would be worse than leaving it null.
 
 Usage (offline, from a saved summary-report PDF):
     python3 summary_report_parser.py --pdf path/to/report.pdf --methods-dir data/methods
@@ -106,6 +113,51 @@ def extract_acceptability_limit(full_text: str):
     return to_float(m.group(1)) if m else None
 
 
+def extract_accuracy_profile_by_matrix(full_text: str, category_names: dict):
+    """Pairs each category (in its established 1..N order -- the same
+    category_names used for relative_trueness_by_category, read off Table 4)
+    with its 'SD Repeatability <ref> <alt> +/- <AL>' line, matched by
+    sequence position: one such line is emitted per category, and this
+    report's category-summary tables (Table 4, the per-category relative
+    trueness rows) all preserve category order in their text stream.
+
+    This function deliberately does NOT use the accuracy-profile chart
+    captions ("...Reference Median / <matrix name> / Bias / β-ETI...") to
+    name matrices at the specific product level (e.g. "Ground beef" instead
+    of "Meat and meat products") -- checking TEMPO EB's actual rendered page
+    against its extracted text (see scratch notes in this repo's dev
+    history) showed the chart-caption sequence can be reordered relative to
+    the table sequence even on the very same page, presumably because the
+    two are separate drawn objects in the PDF's content stream. Category
+    names are the one signal confirmed to stay in order, so that's what's
+    used, at the cost of losing some naming granularity.
+
+    samples_out_of_beta_eti is deliberately left empty: attributing an
+    individual outlier sample (from the "outside the Acceptability Limit"
+    narrative, which names specific products, not categories) back to the
+    correct category would need the same product<->category mapping this
+    function just established isn't safely extractable -- recording a
+    guessed attribution would risk mislabeling which matrix a real
+    discrepancy belongs to, which is worse than omitting it.
+    """
+    ordered_categories = [category_names[k] for k in sorted(category_names, key=int)]
+    sd_matches = re.findall(
+        r'SD Repeatability\s+([\d,\.]+)\s+([\d,\.]+)\s+\+/-\s*([\d,\.]+)', full_text,
+    )
+    if not ordered_categories or len(ordered_categories) != len(sd_matches):
+        return []  # counts disagree -- don't guess at a pairing we can't verify
+
+    return [
+        {
+            "matrix": category,
+            "sd_repeatability_reference": to_float(ref_sd),
+            "sd_repeatability_alternative": to_float(alt_sd),
+            "samples_out_of_beta_eti": [],
+        }
+        for category, (ref_sd, alt_sd, _al) in zip(ordered_categories, sd_matches)
+    ]
+
+
 def extract_inclusivity_exclusivity(full_text: str):
     """First-pass, single-report-tested narrative parsing (see module
     docstring). Returns (inclusivity, exclusivity) strain_panel_result dicts,
@@ -174,6 +226,7 @@ def mine_performance(pdf_path: Path) -> dict:
     category_names = extract_category_names(full_text)
     relative_trueness = extract_relative_trueness_by_category(full_text, category_names)
     acceptability_limit = extract_acceptability_limit(full_text)
+    by_matrix = extract_accuracy_profile_by_matrix(full_text, category_names)
     inclusivity, exclusivity = extract_inclusivity_exclusivity(full_text)
 
     performance = None
@@ -184,7 +237,7 @@ def mine_performance(pdf_path: Path) -> dict:
                 "relative_trueness_by_category": relative_trueness,
                 "accuracy_profile": {
                     "acceptability_limit_log": acceptability_limit,
-                    "by_matrix": [],
+                    "by_matrix": by_matrix,
                 },
                 "loq_log": None,
                 "inclusivity": inclusivity,
@@ -208,9 +261,22 @@ def mine_performance(pdf_path: Path) -> dict:
         "mining_notes": (
             "Mined from the summary validation report PDF. relative_trueness_by_category "
             "(quantitative) is reliably extracted from a standard ISO 16140-2 summary table. "
-            "accuracy_profile.by_matrix and loq_log are NOT mined -- their source tables span "
-            "side-by-side matrix panels that plain-text PDF extraction cannot reliably reorder "
-            "into columns; left null rather than risk fabricated figures. "
+            "accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY "
+            "(e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an "
+            "earlier version tried the more specific product name from the accuracy-profile "
+            "chart captions, but checking a rendered page image against the extracted text "
+            "showed that caption sequence can be reordered relative to the SD-repeatability "
+            "table sequence even on the same page (a chart is a separate drawn object from "
+            "its table), which silently mispaired two matrices. Category order was checked "
+            "the same way and does hold, so that's the safe anchor used instead; the extractor "
+            "refuses to pair values at all (returns []) if the category count and "
+            "SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for "
+            "every matrix: the outside-the-limit narrative names specific products, and "
+            "mapping those back to the right category isn't safely extractable, so leaving it "
+            "empty beats a guessed attribution -- see the report itself for that detail. "
+            "loq_log is NOT mined -- its source table's cell values did not extract as real "
+            "numbers at all (came back as literal zeros), a clear sign the table structure "
+            "defeats plain-text extraction; left null rather than record that placeholder. "
             "Inclusivity/exclusivity narrative parsing has only been tested against one report "
             "(TEMPO EB) and its exact wording -- other reports may need pattern adjustments."
         ),
