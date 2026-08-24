@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/a91fe259-Campylobacter_spp.__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/campylobacter-spp/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/BIO-12-30-05-10-fr.docx-1.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/CampyFood-Agar-CFA-SUMMARY-REPORT-Version-0.pdf",
     "extraction_confidence": "high"

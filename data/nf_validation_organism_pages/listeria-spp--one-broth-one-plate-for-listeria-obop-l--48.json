@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/643357fc-Listeria_spp.__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-05-07-16-fr.docx_-1.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/OBOP_L_SPP_SR_06_2024_v0-protected.pdf",
     "extraction_confidence": "high"

@@ -1,0 +1,61 @@
+{
+  "id": "nf-validation--neo-35-02-05-13",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "NEO 35/02-05/13",
+  "commercial_name": "ANSR® Salmonella",
+  "manufacturer": {
+    "name": "NEOGEN Europe Ltd",
+    "address_raw": ": Company holder of the certification : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA Représentée en Europe par : Represented in Europe by Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2013-05-23",
+    "renewal_dates": [
+      "2017-03-23",
+      "2021-04-08",
+      "2025-05-16",
+      "2029-05-23"
+    ],
+    "extension_dates": [
+      "2017-07-04"
+    ],
+    "current_expiry": "2029-05-23",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/NEO-35-02-05-13-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/ANSR_Salmonella-2025_06-SR-v0-protected.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

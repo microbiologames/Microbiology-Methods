@@ -1,0 +1,67 @@
+{
+  "id": "nf-validation--3m-01-06-09-97",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/06-09/97",
+  "commercial_name": "Neogen® Petrifilm® Enterobacteriaceae Count Plate",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Health Care PO BOX 227 SOUTH DAKOTA 57006 BROOKINGS, USA Ou Or 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Enterobacteriaceae",
+    "raw": "Enterobacteriaceae"
+  },
+  "reference_method": {
+    "standard": "NF ISO 21528-2",
+    "raw": "Type de méthode : Dénombrement des entérobactéries"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "1997-09-10",
+    "renewal_dates": [
+      "2001-12-13",
+      "2005-06-14",
+      "2009-07-03",
+      "2013-07-04",
+      "2017-10-02",
+      "2021-06-29",
+      "2025-07-01"
+    ],
+    "extension_dates": [
+      "2010-04-01",
+      "2015-02-06",
+      "2025-08-05",
+      "2029-09-10"
+    ],
+    "current_expiry": "2029-09-10",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-06-09-97-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_EB_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "6 janvier 2026"
+  }
+}

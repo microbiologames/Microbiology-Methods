@@ -1,0 +1,66 @@
+{
+  "id": "nf-validation--brd-07-15-06-08",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/15-06/08",
+  "commercial_name": "iQ-Check® E. coli O157:H7",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Laboratories 925 & 2000 Alfred Nobel Drive California 94547 Hercules USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "E. coli O157",
+    "raw": "E. coli O157"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 16654",
+    "raw": "Type de méthode : Détection des E. coli O157"
+  },
+  "validation_scope": {
+    "raw": "VIANDES CRUES (A L’EXCLUSION DES VOLAILLES) (PRISES D’ESSAI DE 25G ET 375G) RAW MEATS (EXCLUDING POULTRY MEATS) (WITH 25G AND 375G SAMPLES SIZES)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2008-06-30",
+    "renewal_dates": [
+      "2012-05-10",
+      "2016-03-17",
+      "2020-11-16",
+      "2024-06-13",
+      "2028-06-30"
+    ],
+    "extension_dates": [
+      "2008-09-25",
+      "2010-02-04",
+      "2012-03-22",
+      "2013-10-03",
+      "2022-12-08"
+    ],
+    "current_expiry": "2028-06-30",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BRD-07-15-06-08_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/iQ-Check-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

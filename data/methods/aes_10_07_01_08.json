@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--aes-10-07-01-08",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "AES 10/07-01/08",
+  "commercial_name": "REBECCA™ + EB",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Enterobacteriaceae",
+    "raw": "Enterobacteriaceae"
+  },
+  "reference_method": {
+    "standard": "NF ISO 21528-2",
+    "raw": "Type de méthode : Dénombrement des entérobactéries"
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION ANIMALE ALL HUMAN FOOD PRODUCTS AND FEED PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2008-01-17",
+    "renewal_dates": [
+      "2011-12-01",
+      "2015-10-14",
+      "2019-11-28",
+      "2023-12-06"
+    ],
+    "extension_dates": [
+      "2025-10-02",
+      "2028-01-17"
+    ],
+    "current_expiry": "2028-01-17",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/AES-10-07-01-08_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/2025-10_REBECCAEB_ENT_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "6 janvier 2026"
+  }
+}

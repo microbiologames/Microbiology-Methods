@@ -1,0 +1,60 @@
+{
+  "id": "nf-validation--3m-01-15-09-16",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/15-09/16",
+  "commercial_name": "Kit Neogen® de Détection Moléculaire 2 – Listeria monocytogenes",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : NEOGEN Food Safety Corporation 5954 Enterprise Dr, LANSING 48911, MISSOURI, USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Détection des Listeria monocytogenes"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2016-09-30",
+    "renewal_dates": [
+      "2020-07-02",
+      "2024-09-27",
+      "2028-09-30"
+    ],
+    "extension_dates": [
+      "2024-12-09"
+    ],
+    "current_expiry": "2028-09-30",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/3M-01-15-09-16_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/11/Listeria_MDA2_L_mono_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

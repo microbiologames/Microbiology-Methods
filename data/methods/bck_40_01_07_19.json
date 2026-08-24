@@ -1,0 +1,57 @@
+{
+  "id": "nf-validation--bck-40-01-07-19",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BCK 40/01-07/19",
+  "commercial_name": "vetproof® Salmonella Species qPCR kit",
+  "manufacturer": {
+    "name": "BioChek B.V.",
+    "address_raw": ": Company holder of the certification : BIOCHEK B.V Fokkerstraat 14, 2811 ER Reeuwijk, The Netherlands Site de production: Manufacturing site: Hygiena Diagnostics GmbH Hermannsweder 17, 14473 Potsdam, Germany",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES INGREDIENTS ET ALIMENTS SPECIFIQUES, LES PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE, LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE *IN READY-TO-EAT AND READY TO REHEAT PRODUCTS, MEATS PRODUCTS, INGREDIENTS AND SPECIFIC FOOD, HUMAN AND ANIMAL DEED PRODUCTS, INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES AND PRIMARY PRODUCTION SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2019-07-03",
+    "renewal_dates": [
+      "2023-03-07",
+      "2027-07-03"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-07-03",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/02/BCK-40-01-07-19-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2020/02/Synth-BCK-40-01-07-19_en.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

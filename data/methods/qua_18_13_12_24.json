@@ -1,0 +1,54 @@
+{
+  "id": "nf-validation--qua-18-13-12-24",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "QUA 18/13-12/24",
+  "commercial_name": "foodproof® Salmonella plus Cronobacter Detection LyoKit for Cronobacter spp. detection",
+  "manufacturer": {
+    "name": "Hygiena LLC",
+    "address_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Détection des Cronobacter spp."
+  },
+  "validation_scope": {
+    "raw": "LES PRODUITS D’ALIMENTATION INFANTILE AVEC OU SANS PROBIOTIQUES ET LEURS INGREDIENTS, AINSI QUE LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE. * INFANT FORMULA WITH OR WITHOUT PROBIOTICS AND INGREDIENTS, AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2024-12-18",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2028-12-18",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-13-12-24-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/FOODPR1-1.pdf",
+    "organism_page_last_updated_raw": "16 juillet 2026"
+  }
+}

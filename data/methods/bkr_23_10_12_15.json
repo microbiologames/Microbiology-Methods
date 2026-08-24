@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--bkr-23-10-12-15",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BKR 23/10-12/15",
+  "commercial_name": "EASY STAPH®",
+  "manufacturer": {
+    "name": "SOLABIA",
+    "address_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex Hyg FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coagulase-positive staphylococci",
+    "raw": "Staphylocoques à coagulase positive"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6888-1; NF EN ISO 6888-2",
+    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-2"
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D’ALIMENTS) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2015-12-03",
+    "renewal_dates": [
+      "2019-10-03",
+      "2023-11-06",
+      "2027-12-03"
+    ],
+    "extension_dates": [
+      "2016-01-29",
+      "2025-03-03",
+      "2026-06-25"
+    ],
+    "current_expiry": "2027-12-03",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/BKR-23-10-12-15_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/EASY-STAPH-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "29 juin 2026"
+  }
+}

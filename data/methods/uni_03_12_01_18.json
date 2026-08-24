@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--uni-03-12-01-18",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/12-01/18",
+  "commercial_name": "Thermo Scientific™ SureTect™ Salmonella species, Typhimurium et Enteritidis Multiplex PCR Assay",
+  "manufacturer": {
+    "name": "OXOID Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp., Salmonella Typhimurium et Salmonella Enteritidis"
+  },
+  "validation_scope": {
+    "raw": "VIANDES CRUES DE PORC ET DE VOLAILLE\", \"PRODUITS A BASE DE VIANDES DE PORC OU DE VOLAILLE PRETS-A-RECHAUFFER, PRETS- A-CONSOMMER\" ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET DE PRODUCTION PRIMAIRE “RAW PORK AND POULTRY MEATS”, “READY- TO-EAT AND READY TO-REHEAT PORK AND POULTRY MEATS” AND INDUSTRIAL AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2018-01-25",
+    "renewal_dates": [
+      "2022-02-21",
+      "2025-12-15",
+      "2030-01-25"
+    ],
+    "extension_dates": [
+      "2018-05-17",
+      "2018-12-03",
+      "2020-07-02"
+    ],
+    "current_expiry": "2030-01-25",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/UNI-03-12-01-18_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/SureTect-Salmonella-multiplex-PCR-SUMMARY-REPORT-Version-1.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

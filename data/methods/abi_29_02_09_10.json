@@ -1,0 +1,63 @@
+{
+  "id": "nf-validation--abi-29-02-09-10",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "ABI 29/02-09/10",
+  "commercial_name": "MicroSEQ® Salmonella spp.",
+  "manufacturer": {
+    "name": "Life Technologies Corporation, Part of Thermo Fisher Scientific",
+    "address_raw": ": Company holder of the certification : Life Technologies Corporation Thermo Fisher Scientific 5791 Van Allen Way Carlsbad, CA 92008-7321, USA Représentée en Europe par : Represented in Europe by : Life Technologies SAS Thermo Fisher Scientific Route de l’Orme des Merisiers Parc Technologique - Immeuble Discovery 91190 Saint-Aubin, FRANCE Site de production : Site of production : Life Technologies Ltd Thermo Fisher Scientific 7 Kingsland Grange Warrington Cheshire WA1 45R, UK",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp. (excepté Salmonella Bongori)"
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. TOUS LES PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS ALIMENTAIRES POUR ANIMAUX (INCLUANT LES ANIMAUX DE COMPAGNIE) ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE ALL HUMAN FOOD, FEED PRODUCTS (INCLUDING PET FOOD) AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2010-09-24",
+    "renewal_dates": [
+      "2014-07-03",
+      "2018-12-03",
+      "2022-06-15",
+      "2026-06-24",
+      "2030-09-24"
+    ],
+    "extension_dates": [
+      "2012-05-11",
+      "2013-07-04"
+    ],
+    "current_expiry": "2030-09-24",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/ABI-29-02-09-10-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/MicroSEQ-Salmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

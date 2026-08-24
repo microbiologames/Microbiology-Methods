@@ -4,7 +4,7 @@
   "title": "Validated microbiology method",
   "description": "Canonical, normalized record for one validated microbiology analysis method, merged from a certification source (NF-Validation, MicroVal, AOAC-RI). This is the target shape after normalization -- raw per-source scrape output lives under data/<source>/ and does not need to match this shape exactly.",
   "type": "object",
-  "required": ["id", "source", "source_certificate_number", "commercial_name", "target_organism", "action", "validation_scope", "certification", "traceability"],
+  "required": ["id", "source", "source_certificate_number", "commercial_name", "target_organism", "method_type", "validation_scope", "certification", "traceability"],
   "properties": {
     "id": {
       "type": "string",
@@ -25,8 +25,8 @@
     "manufacturer": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
-        "address_raw": { "type": "string" },
+        "name": { "type": ["string", "null"] },
+        "address_raw": { "type": ["string", "null"] },
         "represented_in_europe": { "type": ["string", "null"] },
         "site_of_production": { "type": ["string", "null"] }
       }
@@ -35,12 +35,12 @@
       "type": "object",
       "properties": {
         "action": {
-          "type": "string",
-          "enum": ["detection", "enumeration", "confirmation", "identification", "screening"]
+          "type": ["string", "null"],
+          "enum": ["detection", "enumeration", "confirmation", "identification", "screening", null]
         },
         "category": {
-          "type": "string",
-          "enum": ["culture_media", "molecular_pcr", "immunological_elisa", "flow_cytometry", "chromogenic_agar", "biochemical", "other"]
+          "type": ["string", "null"],
+          "enum": ["culture_media", "molecular_pcr", "immunological_elisa", "flow_cytometry", "chromogenic_agar", "biochemical", "other", null]
         }
       }
     },
@@ -49,20 +49,20 @@
       "required": ["normalized"],
       "properties": {
         "normalized": {
-          "type": "string",
-          "description": "Normalized organism/analyte name, e.g. 'Salmonella spp.', 'Listeria monocytogenes', 'STEC', 'Antibiotic residues'."
+          "type": ["string", "null"],
+          "description": "Normalized organism/analyte name, e.g. 'Salmonella spp.', 'Listeria monocytogenes', 'STEC', 'Antibiotic residues'. Null means not yet resolved (e.g. an ambiguous cross-source match), not that the method has no target."
         },
-        "raw": { "type": "string" }
+        "raw": { "type": ["string", "null"] }
       }
     },
     "reference_method": {
       "type": "object",
       "properties": {
         "standard": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "e.g. 'NF EN ISO 6579-1', 'ISO 21528-2:2017', 'FDA BAM Ch. 10 (2017)', 'USDA FSIS MLG 5.09'."
         },
-        "raw": { "type": "string" }
+        "raw": { "type": ["string", "null"] }
       }
     },
     "validation_scope": {

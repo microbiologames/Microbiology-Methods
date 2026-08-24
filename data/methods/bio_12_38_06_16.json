@@ -1,0 +1,75 @@
+{
+  "id": "nf-validation--bio-12-38-06-16",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/38-06/16",
+  "commercial_name": "GENE-UP® Salmonella",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Zone Polytec 5 rue des Berges 38000 Grenoble FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE (37°C ET 41,5°C), LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE (37°C), LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (37°C ET 41,5°C), ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION PRIMAIRE (37°C) (A L’EXCEPTION DES EAUX D’ABREUVOIR) ALL HUMAN FOOD PRODUCTS (37°C AND 41,5°C), PET FOOD PRODUCTS (37°C), INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (37°C AND 41.5°C), AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES (37°C) (EXCLUDING DRINKING WATER)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2016-06-30",
+    "renewal_dates": [
+      "2020-05-14",
+      "2024-06-12",
+      "2028-06-30"
+    ],
+    "extension_dates": [
+      "2016-09-29",
+      "2017-03-24",
+      "2017-07-03",
+      "2017-11-23",
+      "2018-01-26",
+      "2018-10-04",
+      "2018-12-03",
+      "2019-11-29",
+      "2020-12-10",
+      "2023-11-08",
+      "2023-11-08",
+      "2023-12-06",
+      "2024-02-08",
+      "2024-04-04",
+      "2024-10-09",
+      "2025-07-08"
+    ],
+    "current_expiry": "2028-06-30",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-38-06-16_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/GENE-UP-Salmonella-SUMMARY-REPORT-Version-0-37%C2%B0C.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

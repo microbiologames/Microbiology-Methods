@@ -1,0 +1,54 @@
+{
+  "id": "nf-validation--brd-07-14-09-07",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/14-09/07",
+  "commercial_name": "RAPID’E. coli O157:H7",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "E. coli O157",
+    "raw": "E. coli O157"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 16654",
+    "raw": "Type de méthode : Détection des E. coli O157"
+  },
+  "validation_scope": {
+    "raw": "LES PRODUITS CARNES, PRODUITS LAITIERS, FRUITS ET LEGUMES, ALIMENTS COMPOSITES MEATS PRODUCTS, DAIRY PRODUCTS, FRUITS AND VEGETABLES, COMPOSITE FOODS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2007-09-27",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2027-10-27",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/BRD-07-14-09-07-fr-.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B005_RAPID-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

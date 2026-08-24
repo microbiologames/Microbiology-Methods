@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--tra-02-08-03-01",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "TRA 02/08-03/01",
+  "commercial_name": "TRANSIA® Plate Salmonella Gold",
+  "manufacturer": {
+    "name": "MilliporeSigma (part of Merck group)",
+    "address_raw": "et site de production : Company holder of the certification and site of production : MilliporeSigma 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (HORS ECHANTILLONS DE PRODUCTION PRIMAIRE) *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (EXCEPT PRIMARY PRODUCTION ENVIRONMENT)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2001-03-23",
+    "renewal_dates": [
+      "2005-02-03",
+      "2009-07-02",
+      "2012-11-29",
+      "2017-01-25",
+      "2020-12-18",
+      "2024-12-11"
+    ],
+    "extension_dates": [
+      "2011-05-12",
+      "2016-03-18",
+      "2029-02-03"
+    ],
+    "current_expiry": "2029-02-03",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/TRA-02-08-03-01-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/TRANSIA-Plate-Salmo-Gold-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

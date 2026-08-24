@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--bio-12-25-05-09",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/25-05/09",
+  "commercial_name": "VIDAS® Up E. coli O157 including H7 (ECPT)",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "E. coli O157",
+    "raw": "E. coli O157"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 16654",
+    "raw": "Type de méthode : Détection des E. coli O157"
+  },
+  "validation_scope": {
+    "raw": "RAW MEAT PRODUCTS, RAW MILK AND RAW DAIRY PRODUCTS, RAW VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2009-05-18",
+    "renewal_dates": [
+      "2013-03-29",
+      "2017-11-23",
+      "2021-04-08",
+      "2025-04-23"
+    ],
+    "extension_dates": [
+      "2009-12-03",
+      "2011-06-30",
+      "2014-05-15",
+      "2022-06-16",
+      "2029-05-18"
+    ],
+    "current_expiry": "2029-05-18",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-25-05-09fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/VIDAS_ECPT_SUMMARY_REPORT_V0_04_2025.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

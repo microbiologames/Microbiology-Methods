@@ -1,0 +1,54 @@
+{
+  "id": "nf-validation--sdc-42-04-12-24",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "SDC 42/04-12/24",
+  "commercial_name": "CompactDry™ X-SA",
+  "manufacturer": {
+    "name": "Shimadzu Diagnostics Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coagulase-positive staphylococci",
+    "raw": "Staphylocoques à coagulase positive"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6888-1; NF EN ISO 6888-2",
+    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-2"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION RÉALISÉS SUR UNE VASTE GAMME D'ALIMENTS) ET LES ÉCHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2024-12-19",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2028-12-19",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/SDC-42-04-12-24-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/Compact-Dry-X-SA-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "29 juin 2026"
+  }
+}

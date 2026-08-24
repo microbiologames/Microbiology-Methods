@@ -1,0 +1,63 @@
+{
+  "id": "nf-validation--bkr-23-05-12-07",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BKR 23/05-12/07",
+  "commercial_name": "COMPASS® Listeria Agar (Dénombrement)",
+  "manufacturer": {
+    "name": "SOLABIA S.A.S.",
+    "address_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Dénombrement des Listeria monocytogenes"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D'ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2007-12-04",
+    "renewal_dates": [
+      "2012-05-10",
+      "2015-07-06",
+      "2020-01-30",
+      "2023-10-17",
+      "2027-12-04"
+    ],
+    "extension_dates": [
+      "2013-10-04",
+      "2025-06-06"
+    ],
+    "current_expiry": "2027-12-04",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BKR-23-05-12-07_-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/COMPASS-Listeria-Enumeration-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

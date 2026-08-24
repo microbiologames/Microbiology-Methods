@@ -208,7 +208,9 @@ def main():
         if "domaine_agroalimentaire" in fpath.name.lower() or "domaine agroalimentaire" in fpath.name.lower():
             continue  # index page, not an organism page
         html = fpath.read_text(encoding="utf-8", errors="ignore")
-        records = parse_organism_page(html, str(fpath))
+        slug = slug_from_filename_or_url(str(fpath))
+        canonical_url = f"https://nf-validation.afnor.org/domaine-agroalimentaire/{slug}/"
+        records = parse_organism_page(html, canonical_url)
         all_records.extend(records)
         print(f"{fpath.name}: {len(records)} methods", file=sys.stderr)
 

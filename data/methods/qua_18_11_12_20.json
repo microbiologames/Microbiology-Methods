@@ -1,0 +1,57 @@
+{
+  "id": "nf-validation--qua-18-11-12-20",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "QUA 18/11-12/20",
+  "commercial_name": "BAX® System Real-Time PCR Assays for STEC Suite and BAX® System Real-Time PCR Assays for E. coli O157:H7",
+  "manufacturer": {
+    "name": "Hygiena LLC",
+    "address_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena LLC 930 Flynn Road Camarillo, CA 93012 USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "STEC (Shiga Toxine Escherichia coli )",
+    "raw": "STEC (Shiga Toxine Escherichia coli )"
+  },
+  "reference_method": {
+    "standard": "XP CEN ISO/TS 13136",
+    "raw": "Détection des Escherichia coli productrices de shigatoxines"
+  },
+  "validation_scope": {
+    "raw": "*LES VIANDES DE BŒUF CRUES, LES PRODUITS LAITIERS ET LES VEGETAUX *RAW BEEF MEATS, RAW DAIRY PRODUCTS, AND VEGETABLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2021-01-11",
+    "renewal_dates": [
+      "2024-10-02",
+      "2029-01-11"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2029-01-11",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/stec-shiga-toxine-escherichia-coli/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/QUA-18-11-12-20-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2021/11/Synt-QUA-18-11-12-20.pdf",
+    "organism_page_last_updated_raw": "30 juin 2026"
+  }
+}

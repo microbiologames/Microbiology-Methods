@@ -1,0 +1,66 @@
+{
+  "id": "nf-validation--tra-02-12-01-09",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "TRA 02/12-01/09",
+  "commercial_name": "Assurance® GDS Salmonella Tq",
+  "manufacturer": {
+    "name": "Millipore Sigma",
+    "address_raw": "et site de production : Company holder of the certification and site of production : Millipore S.A.S part of Merck Group 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE (EXCEPTE LES GERMES), LES POUDRES DE LAIT, LES PREPARATIONS POUR NOURRISSONS ET CEREALES POUR NOURRISSONS (ECHANTILLON DE 375G), LES ALIMENTS POUR ANIMAUX DE COMPAGNIE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (EXCEPT SPROUTS), MILK POWDERS, INFANT FORMULA AND INFANT CEREALS (375G SAMPLE SIZE), PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2009-01-26",
+    "renewal_dates": [
+      "2012-11-29",
+      "2018-01-25",
+      "2020-10-01",
+      "2024-12-11"
+    ],
+    "extension_dates": [
+      "2018-07-02",
+      "2021-05-03",
+      "2024-12-11",
+      "2029-01-26",
+      "2022-04-08",
+      "2025-05-05"
+    ],
+    "current_expiry": "2030-04-08",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/TRA-02-12-01-09-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/2025_05_ASSURANCE_GDS_Salmonella_SR_v1-final-protected.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

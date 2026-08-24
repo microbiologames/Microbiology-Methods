@@ -1,0 +1,58 @@
+{
+  "id": "nf-validation--rbp-31-02-04-11",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "RBP 31/02-04/11",
+  "commercial_name": "PREMI®TEST",
+  "manufacturer": {
+    "name": "R-BIOPHARM AG Landwehrstrasse 54 64293 Darmstadt GERMANY Site",
+    "address_raw": ": Company holder of the certification : R-BIOPHARM AG Landwehrstrasse 54 64293 Darmstadt GERMANY Site de production : Site of production : DSM Food Specialties Test Center Turbineweg 10 2627 BP Delft THE NETHERLANDS",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Antibiotic residues",
+    "raw": "DÉTECTION DES ANTIBIOTIQUES DETECTION OF ANTIBIOTICS"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": null
+  },
+  "validation_scope": {
+    "raw": "VIANDES PORCINE, BOVINE ET VOLAILLE (HORS VIANDE HACHEE) BEEF, PORK AND POULTRY MEAT (EXCLUDING GROUND MEAT)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2011-11-24",
+    "renewal_dates": [
+      "2014-07-03",
+      "2019-03-21",
+      "2022-08-05",
+      "2026-07-02",
+      "2030-08-30",
+      "2005-01-31"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2005-01-31",
+    "status": "expired"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "certificate_list_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "No matching live organism-page record found; fields limited to what the bootstrap PDF-list import captured."
+  }
+}

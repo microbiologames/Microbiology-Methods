@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--brd-07-01-07-93",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/01-07/93",
+  "commercial_name": "RAPID’E. coli 2/Gélose",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Escherichia coli",
+    "raw": "Escherichia coli"
+  },
+  "reference_method": {
+    "standard": "NF ISO 16649-2",
+    "raw": "Type de méthode : Dénombrement des E. coli à 44°C"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE *ALL HUMAN FOOD PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "1997-11-19",
+    "renewal_dates": [
+      "2002-03-07",
+      "2004-12-02",
+      "2008-11-28",
+      "2012-11-29",
+      "2017-11-22",
+      "2020-11-16",
+      "2024-10-03"
+    ],
+    "extension_dates": [
+      "2025-10-15",
+      "2028-12-02"
+    ],
+    "current_expiry": "2028-12-02",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-01-07-93_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_44_E-coli_SR_2025_10_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 décembre 2025"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--brd-07-08-12-04",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/08-12/04",
+  "commercial_name": "RAPID’E. coli 2/Gélose",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coliforms",
+    "raw": "Coliformes"
+  },
+  "reference_method": {
+    "standard": "NF ISO 4832",
+    "raw": "Type de méthode : Dénombrement des coliformes totaux (selon NF ISO 4832)"
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE * ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2004-12-02",
+    "renewal_dates": [
+      "2008-11-28",
+      "2012-11-29",
+      "2017-11-22",
+      "2020-11-16",
+      "2024-10-03"
+    ],
+    "extension_dates": [
+      "2028-12-02"
+    ],
+    "current_expiry": "2028-12-02",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-08-12-04_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_coliform_SR_2025_10_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 mai 2026"
+  }
+}

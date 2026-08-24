@@ -1,0 +1,64 @@
+{
+  "id": "nf-validation--3m-01-08-06-01",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/08-06/01",
+  "commercial_name": "Neogen® Petrifilm® Select’ E. coli Count (SEC) plate",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Escherichia coli",
+    "raw": "Escherichia coli"
+  },
+  "reference_method": {
+    "standard": "NF ISO 16649-2",
+    "raw": "Type de méthode : Dénombrement des E. coli"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, ALIMENTS POUR ANIMAUX DE COMPAGNIE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2001-06-14",
+    "renewal_dates": [
+      "2005-04-07",
+      "2009-05-18",
+      "2013-05-23",
+      "2016-07-01",
+      "2021-10-06",
+      "2025-05-23",
+      "2015-02-06",
+      "2025-08-05",
+      "2029-06-14"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2029-06-14",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-08-06-01-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_SEC_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 décembre 2025"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "nf-validation--bio-12-43-02-04",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/43-02/04",
+  "commercial_name": "TEMPO® CAM",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Campylobacter spp.",
+    "raw": "Campylobacter spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 10272-2/A1",
+    "raw": "Type de méthode : Dénombrement des Campylobacter spp. (selon NF EN ISO 10272-2/A1)"
+  },
+  "validation_scope": {
+    "raw": "LES CRUES ET PRODUITS A BASE DE VOLAILLE PRETS-A-CUIRE RAW POULTRY AND READY-TO-COOK POULTRY PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2020-04-02",
+    "renewal_dates": [
+      "2024-02-08",
+      "2028-04-02"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2028-04-02",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/campylobacter-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/02/BIO-12-43-04-20-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/03/TEMPO-CAM-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

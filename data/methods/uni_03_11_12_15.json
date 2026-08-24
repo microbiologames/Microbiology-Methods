@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--uni-03-11-12-15",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/11-12/15",
+  "commercial_name": "Thermo Scientific™ SureTect™ Cronobacter species PCR Assay",
+  "manufacturer": {
+    "name": "Oxoid Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Type de méthode : Détection des Cronobacter spp."
+  },
+  "validation_scope": {
+    "raw": "LES PRODUITS D’ALIMENTATION INFANTILE, LES CEREALES INFANTILES INCLUANT LEURS INGREDIENTS (PRISES D’ESSAI DE 10, 300 ET 375G), ET LES ECHANTILLONS D’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE. INFANT FORMULA, INFANT CEREALS, RELATED INGREDIENTS (10, 300 AND 375G TEST PORTION) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2015-12-03",
+    "renewal_dates": [
+      "2018-03-22",
+      "2023-10-05",
+      "2027-12-03"
+    ],
+    "extension_dates": [
+      "2016-06-30",
+      "2018-12-03",
+      "2020-07-02",
+      "2021-11-09",
+      "2024-02-16",
+      "2026-07-15"
+    ],
+    "current_expiry": "2027-12-03",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-11-12-15-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B020_SureTect_Crono-2023_10-SR-v0-protected.pdf",
+    "organism_page_last_updated_raw": "16 juillet 2026"
+  }
+}

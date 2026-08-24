@@ -1,0 +1,63 @@
+{
+  "id": "nf-validation--bio-12-05-01-99",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/05-01/99",
+  "commercial_name": "Gélose ChromID Coli® (Coli ID-F)",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile, FRANCE Site de production : Site of production : BioMérieux SA 2, rue du Moulin Madame 35270 Combourg, FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Escherichia coli",
+    "raw": "Escherichia coli"
+  },
+  "reference_method": {
+    "standard": "NF ISO 16649-2",
+    "raw": "Type de méthode : Dénombrement à 44°C des E. coli ß-Glucuronidase positive"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ALL HUMAN FOOD PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "1999-01-19",
+    "renewal_dates": [
+      "2003-02-05",
+      "2006-12-14",
+      "2010-12-02",
+      "2014-11-27",
+      "2018-12-04",
+      "2022-10-06",
+      "2025-10-02",
+      "2027-01-19"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-01-19",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BIO-12-05-01-99_fr_.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/CHROMID-COLI-SUMMARY-REPORT-Ecoli-44-Version-0.pdf",
+    "organism_page_last_updated_raw": "19 décembre 2025"
+  }
+}

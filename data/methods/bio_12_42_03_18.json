@@ -1,0 +1,58 @@
+{
+  "id": "nf-validation--bio-12-42-03-18",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/42-03/18",
+  "commercial_name": "GENE-UP® Cronobacter spp.",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux Zone Polytec 5 rue des Berges 38000 Grenoble FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Type de méthode : Détection des Cronobacter spp."
+  },
+  "validation_scope": {
+    "raw": "LES INFANTILES ET POUDRES DE LAIT INFANTILE AVEC OU SANS PROBIOTIQUES, POUDRES DE LAIT, INGREDIENTS ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE INFANT CEREALS AND POWDERED INFANT FORMULA WITH OR WITHOUT PROBIOTICS, MILK POWDERS, INGREDIENTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2018-03-23",
+    "renewal_dates": [
+      "2022-02-02",
+      "2026-01-30",
+      "2030-03-23"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2030-03-23",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/BIO-12-42-03-18_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/GENE-UP-Cronobacter-SUMMARY-REPORT-VERSION-0.pdf",
+    "organism_page_last_updated_raw": "16 juillet 2026"
+  }
+}

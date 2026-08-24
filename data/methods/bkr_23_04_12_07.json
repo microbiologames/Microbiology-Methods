@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--bkr-23-04-12-07",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BKR 23/04-12/07",
+  "commercial_name": "SESAME Salmonella Test®",
+  "manufacturer": {
+    "name": "SOLABIA S.A.S.",
+    "address_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella mobiles"
+  },
+  "validation_scope": {
+    "raw": "LES MOBILES DETECTION OF MOTILE SALMONELLA TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2007-12-04",
+    "renewal_dates": [
+      "2011-10-07",
+      "2015-07-06",
+      "2020-04-02",
+      "2023-10-05",
+      "2027-12-04"
+    ],
+    "extension_dates": [
+      "2009-07-03"
+    ],
+    "current_expiry": "2027-12-04",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-04-12-07_fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B025_SESAME-Salmonella-TEST-RAPPORT-DE-SYNTHESE-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

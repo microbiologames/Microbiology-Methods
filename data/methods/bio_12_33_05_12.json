@@ -1,0 +1,61 @@
+{
+  "id": "nf-validation--bio-12-33-05-12",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/33-05/12",
+  "commercial_name": "VIDAS® UP Listeria (LPT)",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2012-05-10",
+    "renewal_dates": [
+      "2016-03-18",
+      "2020-04-02",
+      "2024-04-04"
+    ],
+    "extension_dates": [
+      "2022-06-16",
+      "2028-05-10"
+    ],
+    "current_expiry": "2028-05-10",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/BIO-12-33-05-12-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/04/VIDAS_LPT_04_24_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

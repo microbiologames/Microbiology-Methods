@@ -1,0 +1,70 @@
+{
+  "id": "nf-validation--uni-03-07-11-13",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/07-11/13",
+  "commercial_name": "Thermo Scientific™ SureTect™ Salmonella species PCR Assay",
+  "manufacturer": {
+    "name": "OXOID Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW - ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE *ALL HUMAN FOOD PRODUCTS, INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2013-11-04",
+    "renewal_dates": [
+      "2018-03-22",
+      "2021-10-06",
+      "2025-10-02",
+      "2029-11-04"
+    ],
+    "extension_dates": [
+      "2014-01-30",
+      "2014-03-21",
+      "2016-06-30",
+      "2017-03-24",
+      "2018-12-03",
+      "2019-05-16",
+      "2020-07-02",
+      "2020-10-01",
+      "2023-09-04",
+      "2024-04-06"
+    ],
+    "current_expiry": "2029-11-04",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/UNI-03-07-11-13-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/SureTect-Salmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

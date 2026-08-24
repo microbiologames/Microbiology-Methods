@@ -1,0 +1,68 @@
+{
+  "id": "nf-validation--uni-03-09-11-13",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/09-11/13",
+  "commercial_name": "Thermo Scientific™ SureTect™ Listeria species PCR Assay",
+  "manufacturer": {
+    "name": "OXOID Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D'ALIMENTS), LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (INSTRUMENTS 7500 FAST ET QS5 – PRISE D’ESSAI 25G) ; LES PRODUITS LAITIERS ET LES ALIMENTS A COMPOSANTS MULTIPLES (INSTRUMENTS 7500 FAST ET QS5 – PRISE D’ESSAI 125G) * ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS), INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (QS5 AND 7500 FAST PCR INSTRUMENTS – 25G TEST PORTION) ; DAIRY PRODUCTS AND MULTI-COMPONENT FOOD (QS5 AND 7500 FAST PCR INSTRUMENTS – 125G TEST PORTION).",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2013-11-28",
+    "renewal_dates": [
+      "2018-05-17",
+      "2021-10-06",
+      "2025-10-02",
+      "2029-11-28"
+    ],
+    "extension_dates": [
+      "2014-03-21",
+      "2014-07-03",
+      "2016-06-30",
+      "2018-10-05",
+      "2019-01-31",
+      "2020-07-02",
+      "2025-05-16",
+      "2026-07-09"
+    ],
+    "current_expiry": "2029-11-28",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-09-11-13-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_SureTect_Listeria_spp_SR_v0.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

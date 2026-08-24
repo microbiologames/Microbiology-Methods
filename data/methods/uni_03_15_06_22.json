@@ -1,0 +1,51 @@
+{
+  "id": "nf-validation--uni-03-15-06-22",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/15-06/22",
+  "commercial_name": "THERMO SCIENTIFIC ™ LISTERIA PRECIS™ (",
+  "manufacturer": {
+    "name": null,
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "DENOMBREMENT LISTERIA SPECIES) DENOMBREMENT DES LISTERIA SPECIES ENUMERATION OF LISTERIA SPECIES"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": null
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2023-05-17",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2027-05-17",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "certificate_list_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "No matching live organism-page record found; fields limited to what the bootstrap PDF-list import captured."
+  }
+}

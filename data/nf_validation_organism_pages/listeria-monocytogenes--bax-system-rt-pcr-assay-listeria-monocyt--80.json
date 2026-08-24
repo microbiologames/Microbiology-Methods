@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/7187ccf1-Listeria_monocytogenes__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-10-01-19_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2019/06/Synt-QUA-18-10-01-19_en.pdf",
     "extraction_confidence": "high"

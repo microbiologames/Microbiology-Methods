@@ -1,0 +1,60 @@
+{
+  "id": "nf-validation--bio-12-28-04-10",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/28-04/10",
+  "commercial_name": "TEMPO® STA",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coagulase-positive staphylococci",
+    "raw": "Staphylocoques à coagulase positive"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6888-1; NF EN ISO 6888-2",
+    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-2"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE *ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2010-04-01",
+    "renewal_dates": [
+      "2014-01-30",
+      "2018-03-23",
+      "2022-02-02",
+      "2026-02-27",
+      "2030-04-01"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2030-04-01",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/BIO-12-28-04-10_fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BIO-12-28-04-10_en.pdf",
+    "organism_page_last_updated_raw": "29 juin 2026"
+  }
+}

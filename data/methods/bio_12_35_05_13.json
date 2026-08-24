@@ -1,0 +1,59 @@
+{
+  "id": "nf-validation--bio-12-35-05-13",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/35-05/13",
+  "commercial_name": "TEMPO® AC",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Aerobic mesophilic flora / total viable count",
+    "raw": "Flore Totale"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 4833-1",
+    "raw": "Type de méthode : Dénombrement de la flore aérobie revivifiable"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ALIMENTS POUR ANIMAUX DE COMPAGNIE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2013-05-23",
+    "renewal_dates": [
+      "2017-10-02",
+      "2021-04-08",
+      "2025-04-23",
+      "2029-05-23"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2029-05-23",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/flore-totale/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/BIO-12-35-05-13_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/TEMPO-AC-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 janvier 2026"
+  }
+}

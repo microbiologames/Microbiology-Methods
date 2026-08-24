@@ -1,0 +1,69 @@
+{
+  "id": "nf-validation--aes-10-03-09-00",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "AES 10/03-09/00",
+  "commercial_name": "ALOA® ONE DAY",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp. and L. monocytogenes",
+    "raw": "Listeria spp. et Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria monocytogenes et Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2000-09-27",
+    "renewal_dates": [
+      "2005-04-07",
+      "2008-06-30",
+      "2012-07-06",
+      "2016-07-01",
+      "2019-11-29"
+    ],
+    "extension_dates": [
+      "2006-03-10",
+      "2006-09-15",
+      "2010-04-01",
+      "2011-10-06",
+      "2013-03-28",
+      "2023-04-14",
+      "2024-06-12",
+      "2028-09-27"
+    ],
+    "current_expiry": "2028-09-27",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/AES-10-03-09-00_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/Aloa_One_day_mono_Summary_Report_V0_06_2024.pdf",
+    "organism_page_last_updated_raw": "21 juillet 2026"
+  }
+}

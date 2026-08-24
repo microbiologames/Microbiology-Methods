@@ -1,0 +1,66 @@
+{
+  "id": "nf-validation--brd-07-05-09-01",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/05-09/01",
+  "commercial_name": "RAPID’L. mono (Dénombrement)",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Dénombrement des Listeria monocytogenes"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2001-09-28",
+    "renewal_dates": [
+      "2005-12-08",
+      "2009-07-02",
+      "2013-10-03",
+      "2018-05-17",
+      "2021-08-11",
+      "2025-07-02"
+    ],
+    "extension_dates": [
+      "2006-09-28",
+      "2008-09-25",
+      "2025-12-19",
+      "2029-09-28"
+    ],
+    "current_expiry": "2029-09-28",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/BRD-07-05-09-01-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/RAPID-Lmono-Enumeration-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "nf-validation--brd-07-27-07-25",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/27-07/25",
+  "commercial_name": "EZ-Check Salmonella spp.",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Laboratories 925 & 2000 Alfred Nobel Drive California 94547 Hercules USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D'ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D’ALIMENTS, JUSQU’A 25 ET 375G), LES PREPARATIONS ET CEREALES POUR NOURRISSONS AVEC ET SANS PROBIOTIQUES AVEC LEURS INGREDIENTS (JUSQU’A 375G), LES PRODUITS CARNES ET A BASE DE VOLAILLE (JUSQU’A 375G), LES ŒUFS ET LES OVOPRODUITS (JUSQU’A 375G), LE CACAO ET LES PRODUITS AU CHOCOLAT (JUSQU’A 375G), LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ET LES PRODUITS D’ALIMENTATION ANIMALE (JUSQU’A 25G), ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (JUSQU’A 25G) ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS, UP TO 25 AND 375G), INFANT FORMULA AND INFANT CEREALS WITH AND WITHOUT PROBIOTICS INCLUDING INGREDIENTS (UP TO 375G), MEAT AND POULTRY PRODUCTS (UP TO 375G), EGGS AND EGG PRODUCTS (UP TO 375G), COCOA AND CHOCOLATE PRODUCTS (UP TO 375G), PET FOOD PRODUCTS AND FEED PRODUCTS (UP TO 25G), AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2025-07-18",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2029-07-18",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-27-07-25-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/EZ-Check-Salmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

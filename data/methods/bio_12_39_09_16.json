@@ -1,0 +1,64 @@
+{
+  "id": "nf-validation--bio-12-39-09-16",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/39-09/16",
+  "commercial_name": "GENE-UP® Listeria spp.",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Zone Polytec 5 rue des Berges 38000 Grenoble FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2016-09-29",
+    "renewal_dates": [
+      "2020-07-02",
+      "2024-06-12",
+      "2028-09-29"
+    ],
+    "extension_dates": [
+      "2016-11-24",
+      "2017-07-03",
+      "2018-12-04",
+      "2021-11-10",
+      "2025-02-26"
+    ],
+    "current_expiry": "2028-09-29",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/BIO-12-39-09-16_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/GENE_UP_LIS_Summary_Report_V0_03_2025.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "nf-validation--bio-12-16-09-05",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BIO 12/16-09/05",
+  "commercial_name": "VIDAS® Easy Salmonella",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D'ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2005-09-20",
+    "renewal_dates": [
+      "2009-07-02",
+      "2013-07-04",
+      "2017-11-23",
+      "2021-06-16",
+      "2025-07-01"
+    ],
+    "extension_dates": [
+      "2011-06-30",
+      "2014-01-30",
+      "2015-10-14",
+      "2020-04-02",
+      "2022-06-16",
+      "2029-09-20"
+    ],
+    "current_expiry": "2029-09-20",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/BIO-12-16-09-05-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/VIDAS-Easy-Salmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

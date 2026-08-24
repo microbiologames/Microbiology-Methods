@@ -1,0 +1,61 @@
+{
+  "id": "nf-validation--brd-07-11-12-05",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/11-12/05",
+  "commercial_name": "RAPID’Salmonella/Gélose",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D’ALIMENTS) (JUSQU’A 25G), LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ET LES PRODUITS D’ALIMENTATION ANIMALE (JUSQU’A 25 AND 375G), LES PREPARATIONS, LES CEREALES ET LES POUDRES DE LAIT POUR NOURRISSONS (AVEC ET SANS PROBIOTIQUES), ET LEURS INGREDIENTS (JUSQU’A 375G), LE CACAO ET LES PRODUITS CHOCOLATES (JUSQU’A 375G), ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (JUSQU’A 25G) *ALL HUMAN FOOD PRODUCTS (BY CONDUCTING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) (UP TO 25G), PET FOOD AND ANIMAL FEED PRODUCTS (UP TO 25G AND 375G), MILK POWDERS INCLUDING INFANT FORMULA, INFANT CEREALS (WITH AND WITHOUT PROBIOTICS), AND RELATED INGREDIENTS (UP TO 375G), COCOA AND CHOCOLATE PRODUCTS (UP TO 375G), AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (UP TO 25G)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2005-12-09",
+    "renewal_dates": [
+      "2009-09-24",
+      "2013-11-29",
+      "2018-03-22",
+      "2021-10-07",
+      "2025-01-03",
+      "2029-12-09"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2029-12-09",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-11-12-05-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/RAPIDSalmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

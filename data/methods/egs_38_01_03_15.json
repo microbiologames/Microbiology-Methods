@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--egs-38-01-03-15",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "EGS 38/01-03/15",
+  "commercial_name": "BACGene Salmonella spp.",
+  "manufacturer": {
+    "name": "Gold Standard Diagnostics",
+    "address_raw": ": Company holder of the certification : Gold Standard Diagnostics Engesserstrasβe 4 D-79108 Freiburg im Breisgau GERMANY Site de production : Site of production : Gold Standard Diagnostics Fóti ùt 56. Building A HU-1047 Budapest HUNGARY",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE (25G ET 375G) ET PRODUITS D’ALIMENTATION ANIMALE (25G), ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE, POUDRE DE LAIT, PRODUITS D’ALIMENTATION INFANTILE AVEC ET SANS PROBIOTIQUES (375G), LAIT ET PRODUITS LAITIERS TRAITES THERMIQUEMENT (375G) ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS), FEED PRODUCTS PET FOOD (25G ET 375G) AND ANIMAL FEED (25G), INDUSTRIAL ENVIRONMENTAL SAMPLES, MILK POWDERS, INFANT FORMULA WITH AND WITHOUT PROBIOTICS (375G), HEAT-PROCESSED MILK AND DAIRY PRODUCTS (375G)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2015-03-26",
+    "renewal_dates": [
+      "2019-03-21",
+      "2023-03-24",
+      "2027-03-26"
+    ],
+    "extension_dates": [
+      "2015-05-22",
+      "2015-07-06",
+      "2019-03-21",
+      "2019-11-28",
+      "2023-10-04",
+      "2024-02-08"
+    ],
+    "current_expiry": "2027-03-26",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/EGS-38-01-03-15-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/04/BACGene-Salmonella-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

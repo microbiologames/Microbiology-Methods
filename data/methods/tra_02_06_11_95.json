@@ -1,0 +1,63 @@
+{
+  "id": "nf-validation--tra-02-06-11-95",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "TRA 02/06-11/95",
+  "commercial_name": "Transia Plate Listeria",
+  "manufacturer": {
+    "name": "MilliporeSigma (part of Merck group)",
+    "address_raw": "et site de production : Company holder of the certification and site of production : MilliporeSigma 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "1995-11-21",
+    "renewal_dates": [
+      "2000-02-11",
+      "2003-12-11",
+      "2007-12-04",
+      "2011-10-06",
+      "2015-07-06",
+      "2020-01-30",
+      "2023-10-20",
+      "2027-11-21"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-11-21",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B013_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/e131f658-Listeria_spp._et_Listeria_monocytogenes__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/AES-10-03-09-00_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/Aloa_One_day_mono_Summary_Report_V0_06_2024.pdf",
     "extraction_confidence": "high"

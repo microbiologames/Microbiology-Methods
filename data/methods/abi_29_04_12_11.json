@@ -1,0 +1,59 @@
+{
+  "id": "nf-validation--abi-29-04-12-11",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "ABI 29/04-12/11",
+  "commercial_name": "MicroSEQ® Listeria spp.",
+  "manufacturer": {
+    "name": "Life Technologies Corporation, Part of Termo Fisher Scientific",
+    "address_raw": ": Company holder of the certification : Life Technologies Corporation Thermo Fisher Scientific 5791 Van Allen Way Carlsbad, CA 92008-7321, USA Représentée en Europe par : Represented in Europe by : Life Technologies SAS Thermo Fisher Scientific Route de l’Orme des Merisiers Parc Technologique - Immeuble Discovery 91190 Saint-Aubin, FRANCE Site de production : Site of production : Life Technologies Ltd Thermo Fisher Scientific 7 Kingsland Grange Warrington Cheshire WA1 45R, UK",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria spp."
+  },
+  "validation_scope": {
+    "raw": "LES PRODUITS CARNES (A L’EXCLUSION DE LA VIANDE DE VOLAILLE CRUE POUR LE PROTOCOLE RAPID SPIN), LES PRODUITS LAITIERS, LES PRODUITS DE LA PECHE, LES LEGUMES ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE MEAT PRODUCTS (EXCLUDING RAW POULTRY MEAT FOR THE RAPID SPIN PROTOCOL), DAIRY PRODUCTS, FISHERY PRODUCTS, VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2011-12-01",
+    "renewal_dates": [
+      "2015-07-06",
+      "2020-01-30",
+      "2023-10-31",
+      "2027-12-01"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-12-01",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/ABI-29-04-12-11-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B022_MicroSEQ-Listeria-spp-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "19 août 2026"
+  }
+}

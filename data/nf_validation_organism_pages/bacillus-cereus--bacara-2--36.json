@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/53b4fb8c-Bacillus_cereus__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacillus-cereus/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-10-07-10-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/2025_06-SR-BACARA-v0-protected.pdf",
     "extraction_confidence": "high"

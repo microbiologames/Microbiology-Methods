@@ -1,0 +1,58 @@
+{
+  "id": "nf-validation--3m-01-20-03-18",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/20-03/18",
+  "commercial_name": "Kit Neogen® de Détection Moléculaire 2 – Cronobacter",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : NEOGEN Food Safety Corporation 5954 Enterprise Dr, LANSING 48911, MISSOURI, USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Type de méthode : Détection des Cronobacter spp."
+  },
+  "validation_scope": {
+    "raw": "LES ET CEREALES INFANTILES SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (PRISE D’ESSAI DE 10G ET 300G), POUDRES DE LAIT INFANTILES ET CEREALES INFANTILES AVEC PROBIOTIQUES (PRISE D’ESSAI 10G ET 300G) ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE POWDERED INFANT FORMULA AND INFANT CEREALS WITHOUT PROBIOTICS INCLUDING THEIR INGREDIENTS (10G AND 300G TEST PORTIONS), POWDERED INFANT FORMULA AND INFANT CEREALS WITH PROBIOTICS (10G AND 300G TEST PORTIONS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2018-03-22",
+    "renewal_dates": [
+      "2022-02-03",
+      "2026-03-02",
+      "2030-03-22"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2030-03-22",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/3M-01-20-03-18-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/MDA2_Cronobacter_2026_02_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "16 juillet 2026"
+  }
+}

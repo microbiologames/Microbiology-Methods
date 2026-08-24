@@ -1,0 +1,60 @@
+{
+  "id": "nf-validation--3m-01-09-04-03-b",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/09-04/03 B",
+  "commercial_name": "Neogen® Petrifilm® Staph Express Count System (B)",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coagulase-positive staphylococci",
+    "raw": "Staphylocoques à coagulase positive"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6888-1; NF EN ISO 6888-2",
+    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-2"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2007-09-27",
+    "renewal_dates": [
+      "2011-02-03",
+      "2015-02-06",
+      "2019-03-22",
+      "2023-04-02",
+      "2027-04-02"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-04-02",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-09-04-03-B_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_StaphExpress_vs_BPRPFB-SR_2025_v0-protected.pdf",
+    "organism_page_last_updated_raw": "29 juin 2026"
+  }
+}

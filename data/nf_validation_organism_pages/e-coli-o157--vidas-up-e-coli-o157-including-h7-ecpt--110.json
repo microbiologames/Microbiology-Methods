@@ -21,7 +21,7 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "/tmp/claude-0/-home-user-sf-pixel-fight/d0b2d333-e209-516a-8474-39d441baf81d/scratchpad/nf_validation_fixtures/c21abf29-E._coli_O157__NF_Validation.htm",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-25-05-09fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/VIDAS_ECPT_SUMMARY_REPORT_V0_04_2025.pdf",
     "extraction_confidence": "high"

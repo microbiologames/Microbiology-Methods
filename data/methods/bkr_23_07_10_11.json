@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--bkr-23-07-10-11",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BKR 23/07-10/11",
+  "commercial_name": "IRIS Salmonella®",
+  "manufacturer": {
+    "name": "SOLABIA S.A.S.",
+    "address_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (0 A 25G), PRODUITS SECS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (50 A 125G) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS), PET FOOD AND ANIMAL FEED (0 À 25G), DRY PET FOOD AND ANIMAL FEED (50 À 125G), INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2011-10-07",
+    "renewal_dates": [
+      "2015-07-06",
+      "2019-10-03",
+      "2023-09-22",
+      "2027-10-07"
+    ],
+    "extension_dates": [
+      "2014-01-30",
+      "2020-12-10"
+    ],
+    "current_expiry": "2027-10-07",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-07-10-11_fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BKR-23-07-10-11_fr.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}

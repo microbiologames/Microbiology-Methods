@@ -1,0 +1,62 @@
+{
+  "id": "nf-validation--brd-07-23-01-13",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "BRD 07/23-01/13",
+  "commercial_name": "iQ-Check® Cronobacter spp.",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Laboratories 925 & 2000 Alfred Nobel Drive California 94547 Hercules USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Type de méthode : Détection des Cronobacter spp."
+  },
+  "validation_scope": {
+    "raw": "LES AVEC OU SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (30G ET 375G) ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE POWDERED INFANT FORMULA AND CEREALS WITH OR WITHOUT PROBIOTICS INCLUDING INGREDIENTS (30G AND 375G) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2013-01-31",
+    "renewal_dates": [
+      "2017-01-27",
+      "2020-04-02",
+      "2024-12-16",
+      "2029-01-31"
+    ],
+    "extension_dates": [
+      "2013-10-03",
+      "2022-12-08"
+    ],
+    "current_expiry": "2029-01-31",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BRD-07-23-01-13_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2025/09/iQ-Check-Cronobacter-SUMMARY-REPORT-Version-0.pdf",
+    "organism_page_last_updated_raw": "16 juillet 2026"
+  }
+}

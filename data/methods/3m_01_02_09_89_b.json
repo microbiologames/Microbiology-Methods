@@ -1,0 +1,65 @@
+{
+  "id": "nf-validation--3m-01-02-09-89-b",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "3M 01/02-09/89 B",
+  "commercial_name": "Neogen® Petrifilm® Coliformes (B)",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coliforms",
+    "raw": "Coliformes"
+  },
+  "reference_method": {
+    "standard": "NF ISO 4831",
+    "raw": "Type de méthode : Dénombrement des coliformes gazogènes (selon NF ISO 4831)"
+  },
+  "validation_scope": {
+    "raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE SAUF COQUILLAGES CRUS *ALL HUMAN FOOD PRODUCTS EXCEPT RAW SHELL-FISH",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "1989-09-29",
+    "renewal_dates": [
+      "1993-09-06",
+      "1998-06-09",
+      "2002-05-16",
+      "2005-12-08",
+      "2010-04-01",
+      "2014-03-21",
+      "2018-05-17",
+      "2022-06-08",
+      "2026-05-05",
+      "2030-06-09"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2030-06-09",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/3M-01-02-09-89-B_fr.docx-11.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_Petrifilm_Coliform_B_SR_v0-protected.pdf",
+    "organism_page_last_updated_raw": "19 mai 2026"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "nf-validation--uni-03-06-12-07",
+  "source": "NF-VALIDATION",
+  "source_certificate_number": "UNI 03/06-12/07",
+  "commercial_name": "Thermo Scientific™ Salmonella Precis™ Method",
+  "manufacturer": {
+    "name": "OXOID Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": "et site de production : Company holder of the certification and site of production : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "validation_scope": {
+    "raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION *ALL HUMAN AND ANIMAL FOOD PRODUCTS AND PRODUCTION ENVIRONMENTAL SAMPLES",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2007-12-04",
+    "renewal_dates": [
+      "2011-10-06",
+      "2015-07-06",
+      "2020-01-30",
+      "2023-10-31",
+      "2027-12-04"
+    ],
+    "extension_dates": [],
+    "current_expiry": "2027-12-04",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
+    "organism_page_last_updated_raw": "6 août 2026"
+  }
+}
