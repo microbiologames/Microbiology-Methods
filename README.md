@@ -117,17 +117,24 @@ scrapers/                              one parser/scraper module per source
       reachable (a live AOAC-RI crawler hasn't been built — members.aoac.org
       needs a normal-egress environment, like the GitHub Actions workflow).
 - [x] `scrapers/summary_report_parser.py` — mines performance data
-      (relative-trueness-by-category, accuracy-profile acceptability limit,
-      inclusivity/exclusivity with per-strain discrepancies) from an
-      NF-Validation summary validation report PDF, auto-detecting the
-      certificate number and method nature from the report's fixed cover
-      page. Built and proven against the one real report available offline
-      (TEMPO® EB / BIO 12/21-12/06). `accuracy_profile.by_matrix` (SD
-      repeatability per matrix, β-ETI outliers) and `loq_log` are
-      deliberately left unmined — their source tables span side-by-side
-      matrix panels that plain-text PDF extraction jumbles, and a wrong
-      number is worse than a missing one. The inclusivity/exclusivity
-      narrative regexes match this report's specific wording and will need
+      (relative-trueness-by-category, accuracy-profile acceptability limit
+      and per-matrix SD repeatability, inclusivity/exclusivity with
+      per-strain discrepancies) from an NF-Validation summary validation
+      report PDF, auto-detecting the certificate number and method nature
+      from the report's fixed cover page. Built and proven against the one
+      real report available offline (TEMPO® EB / BIO 12/21-12/06) —
+      including catching and fixing a real bug where naming
+      `accuracy_profile.by_matrix` entries from the accuracy-profile chart
+      captions silently swapped two matrices, found by rendering the actual
+      PDF page to an image (via pymupdf) and checking the extracted text
+      against it; matrices are now named by ISO 16140-2 food category
+      instead, which held up under the same check.
+      `accuracy_profile.by_matrix[].samples_out_of_beta_eti` and `loq_log`
+      are deliberately left unmined — the former would need a
+      product-to-category mapping that isn't safely extractable, and the
+      latter's source table extracted as literal zeros — a wrong number is
+      worse than a missing one. The inclusivity/exclusivity narrative
+      regexes match this report's specific wording and will need
       broadening once run against reports phrased differently.
 - [x] `.github/workflows/scrape_and_normalize.yml` — weekly (+ manual
       dispatch) job wiring the live-fetch scraper, the merge pipeline, and
