@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BKR 23/05-12/07",
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPASS LISTERIA AGAR",
+  "aim_of_method_raw": "DENOMBREMENT DÉNOMBREMENT DES LISTERIA MONOCYTOGENES ENUMERATION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D'ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2007-12-04",
+  "end_of_validity": "2027-12-04",
+  "all_dates_found": [
+    "2007-12-04",
+    "2013-10-04",
+    "2025-06-06",
+    "2012-05-10",
+    "2015-07-06",
+    "2020-01-30",
+    "2023-10-17",
+    "2027-12-04"
+  ],
+  "raw_block": "BKR 23/05-12/07 COMPASS LISTERIA AGAR DENOMBREMENT DÉNOMBREMENT DES LISTERIA MONOCYTOGENES ENUMERATION OF LISTERIA MONOCYTOGENES *TOUS PRODUITS D'ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 04.12.2007 EXTENSION: 04.10.2013 06.06.2025 RECONDUCTION/RENEWAL: 10.05.2012 06.07.2015 30.01.2020 17.10.2023 04.12.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Application scope validated by performing validation tests on a broad range of foods",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+  "source_page": 57
+}

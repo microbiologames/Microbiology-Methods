@@ -1,0 +1,31 @@
+{
+  "certificate_number": "BIO 12/25-05/09",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS UP E. COLI O157 INCLUDING H7 (ECPT) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS",
+  "aim_of_method_raw": "DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157 PRODUITS CARNES CRUS, VEGETAUX CRUS, LAIT CRU & PRODUITS LAITIERS A BASE DE LAIT CRU ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE",
+  "target_organism": "E. coli O157",
+  "action": "detection",
+  "validation_scope_raw": "RAW MEAT PRODUCTS, RAW MILK AND RAW DAIRY PRODUCTS, RAW VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2009-05-18",
+  "end_of_validity": "2029-05-18",
+  "all_dates_found": [
+    "2009-05-18",
+    "2013-03-29",
+    "2017-11-23",
+    "2021-04-08",
+    "2025-04-23",
+    "2009-12-03",
+    "2011-06-30",
+    "2014-05-15",
+    "2022-06-16",
+    "2029-05-18"
+  ],
+  "raw_block": "BIO 12/25-05/09 VIDAS UP E. COLI O157 INCLUDING H7 (ECPT) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157 PRODUITS CARNES CRUS, VEGETAUX CRUS, LAIT CRU & PRODUITS LAITIERS A BASE DE LAIT CRU ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE RAW MEAT PRODUCTS, RAW MILK AND RAW DAIRY PRODUCTS, RAW VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 18.05.2009 RECONDUCTION/RENEWAL: 29.03.2013 23.11.2017 08.04.2021 23.04.2025 EXTENSION: 03.12.2009 30.06.2011 15.05.2014 16.06.2022 18.05.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 47
+}

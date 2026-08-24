@@ -1,0 +1,36 @@
+{
+  "certificate_number": "UNI 03/07-11/13",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO™ SCIENTIFIC SURETECT™ SALMONELLA SPECIES PCR ASSAY",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE *ALL HUMAN FOOD PRODUCTS, INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2013-11-04",
+  "end_of_validity": "2029-11-04",
+  "all_dates_found": [
+    "2013-11-04",
+    "2014-01-30",
+    "2014-03-21",
+    "2016-06-30",
+    "2017-03-24",
+    "2018-12-03",
+    "2019-05-16",
+    "2020-07-02",
+    "2020-10-01",
+    "2023-09-04",
+    "2024-04-06",
+    "2018-03-22",
+    "2021-10-06",
+    "2025-10-02",
+    "2029-11-04"
+  ],
+  "raw_block": "UNI 03/07-11/13 THERMO™ SCIENTIFIC SURETECT™ SALMONELLA SPECIES PCR ASSAY DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE *ALL HUMAN FOOD PRODUCTS, INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES 04.11.2013 EXTENSION: 30.01.2014 21.03.2014 30.06.2016 24.03.2017 03.12.2018 16.05.2019 02.07/2020 01.10.2020 04.09.2023 06.04.2024 RECONDUCTION/RENEWAL: 22.03.2018 06.10.2021 02.10.2025 04.11.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW - ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+  "source_page": 15
+}

@@ -1,0 +1,25 @@
+{
+  "certificate_number": "BKR 23/09-05/15 B",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RHAPSODY AGAR SURFACE INOCULATION PROTOCOL BY DIRECT STREAKING OR SPIRAL PLATING",
+  "aim_of_method_raw": "DENOMBREMENT DES PSEUDOMONAS SPP. ENUMERATION OF PSEUDOMONAS SPP. PRODUITS LAITIERS (PRODUITS LAITIERS TRAITES THERMIQUEMENT, PRODUITS LAITIERS CRUS ET DESSERTS LACTES) DAIRY PRODUCTS (HEAT-PROCESSED DAIRY PRODUCTS,",
+  "target_organism": "Pseudomonas spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "RAW DAIRY PRODUCTS AND MILK-BASED DESSERTS)",
+  "certification_date": "2015-06-05",
+  "end_of_validity": "2027-06-05",
+  "all_dates_found": [
+    "2015-06-05",
+    "2019-05-16",
+    "2023-04-05",
+    "2027-06-05"
+  ],
+  "raw_block": "BKR 23/09-05/15 B RHAPSODY AGAR SURFACE INOCULATION PROTOCOL BY DIRECT STREAKING OR SPIRAL PLATING DENOMBREMENT DES PSEUDOMONAS SPP. ENUMERATION OF PSEUDOMONAS SPP. PRODUITS LAITIERS (PRODUITS LAITIERS TRAITES THERMIQUEMENT, PRODUITS LAITIERS CRUS ET DESSERTS LACTES) DAIRY PRODUCTS (HEAT-PROCESSED DAIRY PRODUCTS, RAW DAIRY PRODUCTS AND MILK-BASED DESSERTS) 05.06.2015 RECONDUCTION/RENEWAL: 16.05.2019 05.04.2023 05.06.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Application scope validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 59
+}

@@ -1,0 +1,28 @@
+{
+  "certificate_number": "UNI 03/12-01/18",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC™ SURETECH™ SALMONELLA SPECIES, TYPHIMURIUM AND ENTERITIDIS MULTIPLEX PCR KIT",
+  "aim_of_method_raw": "DETECTION DES SALMONELLA SPP., S. TYPHIMURIUM ET S. ENTERITIDIS DETECTION OF SALMONELLA SPP., S. TYPHIMURIUM AND S. ENTERITIDIS \"",
+  "target_organism": "Salmonella spp.",
+  "action": "detection",
+  "validation_scope_raw": "VIANDES CRUES DE PORC ET DE VOLAILLE\", \"PRODUITS A BASE DE VIANDES DE PORC OU DE VOLAILLE PRETS-A-RECHAUFFER, PRETS- A-CONSOMMER\" ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET DE PRODUCTION PRIMAIRE “RAW PORK AND POULTRY MEATS”, “READY- TO-EAT AND READY TO-REHEAT PORK AND POULTRY MEATS” AND INDUSTRIAL AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2018-01-25",
+  "end_of_validity": "2030-01-25",
+  "all_dates_found": [
+    "2018-01-25",
+    "2018-05-17",
+    "2018-12-03",
+    "2020-07-02",
+    "2022-02-21",
+    "2025-12-15",
+    "2030-01-25"
+  ],
+  "raw_block": "UNI 03/12-01/18 THERMO SCIENTIFIC™ SURETECH™ SALMONELLA SPECIES, TYPHIMURIUM AND ENTERITIDIS MULTIPLEX PCR KIT DETECTION DES SALMONELLA SPP., S. TYPHIMURIUM ET S. ENTERITIDIS DETECTION OF SALMONELLA SPP., S. TYPHIMURIUM AND S. ENTERITIDIS \"VIANDES CRUES DE PORC ET DE VOLAILLE\", \"PRODUITS A BASE DE VIANDES DE PORC OU DE VOLAILLE PRETS-A-RECHAUFFER, PRETS- A-CONSOMMER\" ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET DE PRODUCTION PRIMAIRE “RAW PORK AND POULTRY MEATS”, “READY- TO-EAT AND READY TO-REHEAT PORK AND POULTRY MEATS” AND INDUSTRIAL AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES 25.01.2018 EXTENSION: 17.05.2018 03.12.2018 02.07.2020 RECONDUCTION/RENEWAL: 21.02.2022 15.12.2025 25.01.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+  "source_page": 19
+}

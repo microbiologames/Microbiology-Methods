@@ -1,0 +1,27 @@
+{
+  "certificate_number": "BIO 12/33-05/12",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS UP LISTERIA (LPT) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2012-05-10",
+  "end_of_validity": "2028-05-10",
+  "all_dates_found": [
+    "2012-05-10",
+    "2016-03-18",
+    "2020-04-02",
+    "2024-04-04",
+    "2022-06-16",
+    "2028-05-10"
+  ],
+  "raw_block": "BIO 12/33-05/12 VIDAS UP LISTERIA (LPT) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 10.05.2012 RECONDUCTION/RENEWAL: 18.03.2016 02.04.2020 04.04.2024 EXTENSION: 16.06.2022 10.05.2028 Validation study performed in accordance with ISO/FDIS 16140-2: 2015 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 48
+}

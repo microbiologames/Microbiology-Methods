@@ -1,0 +1,25 @@
+{
+  "certificate_number": "NEO 35/04-03/16",
+  "source": "NF-VALIDATION",
+  "commercial_name": "ANSR® FOR LISTERIA MONOCYTOGENES",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2016-03-17",
+  "end_of_validity": "2028-03-17",
+  "all_dates_found": [
+    "2016-03-17",
+    "2019-11-28",
+    "2023-12-06",
+    "2028-03-17"
+  ],
+  "raw_block": "NEO 35/04-03/16 ANSR® FOR LISTERIA MONOCYTOGENES DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 17.03.2016 RECONDUCTION/RENEWAL: 28.11.2019 06.12.2023 17.03.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA Représentée en Europe par : Represented in Europe by Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA",
+  "source_page": 66
+}

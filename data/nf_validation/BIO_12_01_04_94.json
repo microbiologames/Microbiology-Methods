@@ -1,0 +1,33 @@
+{
+  "certificate_number": "BIO 12/01-04/94",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS SALMONELLA (PROTOCOLE DOUBLE VOIE) (DUAL SELECTIVE ENRICHMENT PROTOCOL) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ALL HUMAN FOOD AND PET FOOD PRODUCTS",
+  "certification_date": "1994-04-06",
+  "end_of_validity": "2030-06-09",
+  "all_dates_found": [
+    "1994-04-06",
+    "1998-06-09",
+    "2002-09-18",
+    "2006-09-15",
+    "2010-05-20",
+    "2014-05-15",
+    "2018-05-17",
+    "2022-04-08",
+    "2026-04-01",
+    "2011-06-30",
+    "2022-06-16",
+    "2030-06-09"
+  ],
+  "raw_block": "BIO 12/01-04/94 VIDAS SALMONELLA (PROTOCOLE DOUBLE VOIE) (DUAL SELECTIVE ENRICHMENT PROTOCOL) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ALL HUMAN FOOD AND PET FOOD PRODUCTS 06.04.1994 RECONDUCTION/RENEWAL: 09.06.1998 18.09.2002 15.09.2006 20.05.2010 15.05.2014 17.05.2018 08.04.2022 01.04.2026 EXTENSION: 30.06.2011 16.06.2022 09.06.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 41
+}

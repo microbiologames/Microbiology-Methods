@@ -1,0 +1,33 @@
+{
+  "certificate_number": "BIO 12/16-09/05",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS EASY SALMONELLA USE OF THE FOLLOWING SOFTWARES: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS 30, VIDAS KUBE VERSION 1.3 AND PREVIOUS, VITEK® MS VERSION 3.4 AND PREVIOUS, VITEK® MS PRIME.",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D'ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2005-09-20",
+  "end_of_validity": "2029-09-20",
+  "all_dates_found": [
+    "2005-09-20",
+    "2009-07-02",
+    "2013-07-04",
+    "2017-11-23",
+    "2021-06-16",
+    "2025-07-01",
+    "2011-06-30",
+    "2014-01-30",
+    "2015-10-14",
+    "2020-04-02",
+    "2022-06-16",
+    "2029-09-20"
+  ],
+  "raw_block": "BIO 12/16-09/05 VIDAS EASY SALMONELLA USE OF THE FOLLOWING SOFTWARES: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS 30, VIDAS KUBE VERSION 1.3 AND PREVIOUS, VITEK® MS VERSION 3.4 AND PREVIOUS, VITEK® MS PRIME. DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D'ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 20.09.2005 RECONDUCTION/RENEWAL: 02.07.2009 04.07.2013 23.11.2017 16.06.2021 01.07.2025 EXTENSION: 30.06.2011 30.01.2014 14.10.2015 02.04.2020 16.06.2022 20.09.2029 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 42
+}

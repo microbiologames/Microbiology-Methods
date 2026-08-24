@@ -1,0 +1,23 @@
+{
+  "certificate_number": "SDC 42/05-03/25",
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPACTDRY™ YMR",
+  "aim_of_method_raw": "DÉNOMBREMENT DES LEVURES ET MOISISSURES ENUMERATION OF YEASTS AND MOULDS",
+  "target_organism": null,
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION RÉALISÉS SUR UNE VASTE GAMME D'ALIMENTS) AYANT UNE ACTIVITE D’EAU SUPERIEURE A 0,95 *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) WITH A WATER ACTIVITY HIGHER THAN 0,95",
+  "certification_date": "2025-03-17",
+  "end_of_validity": "2029-03-17",
+  "all_dates_found": [
+    "2025-03-17",
+    "2029-03-17"
+  ],
+  "raw_block": "SDC 42/05-03/25 COMPACTDRY™ YMR DÉNOMBREMENT DES LEVURES ET MOISISSURES ENUMERATION OF YEASTS AND MOULDS *TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION RÉALISÉS SUR UNE VASTE GAMME D'ALIMENTS) AYANT UNE ACTIVITE D’EAU SUPERIEURE A 0,95 *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) WITH A WATER ACTIVITY HIGHER THAN 0,95 17.03.2025 17.03.2029 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 77
+}

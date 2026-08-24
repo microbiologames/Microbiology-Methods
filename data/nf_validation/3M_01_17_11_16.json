@@ -1,0 +1,26 @@
+{
+  "certificate_number": "3M 01/17-11/16",
+  "source": "NF-VALIDATION",
+  "commercial_name": "NEOGEN® PETRIFILM® RAPIDE FLORE TOTALE NEOGEN® PETRIFILM® RAPID AEROBIC COUNT PLATE",
+  "aim_of_method_raw": "DENOMBREMENT DE LA FLORE AEROBIE MESOPHILE ENUMERATION OF MESOPHILIC AEROBIC FLORA",
+  "target_organism": "Aerobic mesophilic flora / total viable count",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D'ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D'ALIMENTS) ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS)",
+  "certification_date": "2016-11-25",
+  "end_of_validity": "2028-11-25",
+  "all_dates_found": [
+    "2016-11-25",
+    "2025-04-07",
+    "2020-11-12",
+    "2024-11-21",
+    "2028-11-25"
+  ],
+  "raw_block": "3M 01/17-11/16 NEOGEN® PETRIFILM® RAPIDE FLORE TOTALE NEOGEN® PETRIFILM® RAPID AEROBIC COUNT PLATE DENOMBREMENT DE LA FLORE AEROBIE MESOPHILE ENUMERATION OF MESOPHILIC AEROBIC FLORA TOUS PRODUITS D'ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D'ALIMENTS) ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) 25.11.2016 EXTENSION: 07.04.2025 RECONDUCTION/RENEWAL: 12.11.2020 21.11.2024 25.11.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Health Care PO BOX 227 SOUTH DAKOTA 57006 BROOKINGS, USA",
+  "source_page": 8
+}

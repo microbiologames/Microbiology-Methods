@@ -1,0 +1,29 @@
+{
+  "certificate_number": "QUA 18/04-03/08",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BAX SYSTEM PCR ASSAY E. COLI O157:H7 MP FOR USE WITH BAX Q7 OR X5 INSTRUMENT",
+  "aim_of_method_raw": "DETECTION DES E. COLI O157 : H7 DETECTION OF E. COLI O157: H7",
+  "target_organism": "E. coli O157",
+  "action": "detection",
+  "validation_scope_raw": "VIANDES CRUES DE BŒUF, LAIT CRU, FRUITS ET VEGETAUX, PRODUITS PRETS-A- CONSOMMER ET PRETS-A-RECHAUFFER, VIANDES CRUES DE PORC, D'OVIN ET DE POULET RAW BEEF MEATS, RAW MILK, FRUITS AND VEGETABLES, READY-TO-EAT AND READY- TO-REHEAT DISHES, RAW PORK, OVINE AND CHICKEN MEATS",
+  "certification_date": "2008-03-28",
+  "end_of_validity": "2028-03-28",
+  "all_dates_found": [
+    "2008-03-28",
+    "2016-01-28",
+    "2018-01-26",
+    "2012-02-03",
+    "2016-03-18",
+    "2019-11-28",
+    "2023-12-07",
+    "2028-03-28"
+  ],
+  "raw_block": "QUA 18/04-03/08 BAX SYSTEM PCR ASSAY E. COLI O157:H7 MP FOR USE WITH BAX Q7 OR X5 INSTRUMENT DETECTION DES E. COLI O157 : H7 DETECTION OF E. COLI O157: H7 VIANDES CRUES DE BŒUF, LAIT CRU, FRUITS ET VEGETAUX, PRODUITS PRETS-A- CONSOMMER ET PRETS-A-RECHAUFFER, VIANDES CRUES DE PORC, D'OVIN ET DE POULET RAW BEEF MEATS, RAW MILK, FRUITS AND VEGETABLES, READY-TO-EAT AND READY- TO-REHEAT DISHES, RAW PORK, OVINE AND CHICKEN MEATS 28.03.2008 EXTENSION: 28.01.2016 26.01.2018 RECONDUCTION/RENEWAL: 03.02.2012 18.03.2016 28.11.2019 07.12.2023 28.03.2028 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena LLC 930 Flynn Road Camarillo, CA 93012 USA",
+  "source_page": 20
+}

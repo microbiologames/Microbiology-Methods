@@ -1,0 +1,26 @@
+{
+  "certificate_number": "BIO 12/37-11/14",
+  "source": "NF-VALIDATION",
+  "commercial_name": "ESIA ONE DAY",
+  "aim_of_method_raw": "DÉTECTION DE CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. LAITS EN POUDRE, POUDRES DE LAIT INFANTILE ET CEREA",
+  "target_organism": "Cronobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES INFANTILES AVEC OU SANS PROBIOTIQUES, INCLUANT LES INGREDIENTS, ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION MILK POWDERS, INFANT FORMULA AND INFANT CEREALS WITH OR WITHOUT PROBIOTICS, INCLUDING INGREDIENTS, AND PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2014-11-27",
+  "end_of_validity": "2026-11-27",
+  "all_dates_found": [
+    "2014-11-27",
+    "2022-11-25",
+    "2016-01-28",
+    "2022-06-16",
+    "2026-11-27"
+  ],
+  "raw_block": "BIO 12/37-11/14 ESIA ONE DAY DÉTECTION DE CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. LAITS EN POUDRE, POUDRES DE LAIT INFANTILE ET CEREALES INFANTILES AVEC OU SANS PROBIOTIQUES, INCLUANT LES INGREDIENTS, ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION MILK POWDERS, INFANT FORMULA AND INFANT CEREALS WITH OR WITHOUT PROBIOTICS, INCLUDING INGREDIENTS, AND PRODUCTION ENVIRONMENTAL SAMPLES 27.11.2014 RECONDUCTION/RENEWAL: 04.10.18 25.11.2022 EXTENSION: 28.01.2016 16.06.2022 27.11.2026",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+  "source_page": 39
+}

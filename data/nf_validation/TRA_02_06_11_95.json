@@ -1,0 +1,30 @@
+{
+  "certificate_number": "TRA 02/06-11/95",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TRANSIA® PLATE LISTERIA",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA SPP DETECTION OF LISTERIA SPP",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "1995-11-21",
+  "end_of_validity": "2027-11-21",
+  "all_dates_found": [
+    "1995-11-21",
+    "2000-02-11",
+    "2003-12-11",
+    "2007-12-04",
+    "2011-10-06",
+    "2015-07-06",
+    "2020-01-30",
+    "2023-10-20",
+    "2027-11-21"
+  ],
+  "raw_block": "TRA 02/06-11/95 TRANSIA® PLATE LISTERIA DÉTECTION DES LISTERIA SPP DETECTION OF LISTERIA SPP TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 21.11.1995 RECONDUCTION/RENEWAL: 11.02.2000 11.12.2003 04.12.2007 06.10.2011 06.07.2015 30.01.2020 20.10.2023 21.11.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production : Company holder of the certification and site of production : MilliporeSigma 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
+  "source_page": 11
+}

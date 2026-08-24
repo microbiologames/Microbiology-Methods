@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BRD 07/17-01/09",
+  "source": "NF-VALIDATION",
+  "commercial_name": "AL/GELOSE",
+  "aim_of_method_raw": "DENOMBREMENT AL/AGAR ENUMERATION DÉNOMBREMENT DES LISTERIA MONOCYTOGENES ENUMERATION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2009-01-26",
+  "end_of_validity": "2029-01-26",
+  "all_dates_found": [
+    "2009-01-26",
+    "2025-12-10",
+    "2012-11-29",
+    "2017-11-23",
+    "2019-10-04",
+    "2020-12-18",
+    "2024-12-10",
+    "2029-01-26"
+  ],
+  "raw_block": "BRD 07/17-01/09 AL/GELOSE DENOMBREMENT AL/AGAR ENUMERATION DÉNOMBREMENT DES LISTERIA MONOCYTOGENES ENUMERATION OF LISTERIA MONOCYTOGENES TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 26.01.2009 EXTENSION: 10.12.2025 RECONDUCTION/RENEWAL: 29.11.2012 23.11.2017 04.10.2019 18.12.2020 10.12.2024 26.01.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 30
+}

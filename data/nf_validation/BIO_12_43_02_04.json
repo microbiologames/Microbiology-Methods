@@ -1,0 +1,24 @@
+{
+  "certificate_number": "BIO 12/43-02/04",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TEMPO® CAM",
+  "aim_of_method_raw": "DENOMBREMENT DES CAMPYLOBACTER SPP. ENUMERATION OF CAMPYLOBACTER SPP. VOLAIL",
+  "target_organism": "Campylobacter spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "LES CRUES ET PRODUITS A BASE DE VOLAILLE PRETS-A-CUIRE RAW POULTRY AND READY-TO-COOK POULTRY PRODUCTS",
+  "certification_date": "2020-04-02",
+  "end_of_validity": "2028-04-02",
+  "all_dates_found": [
+    "2020-04-02",
+    "2024-02-08",
+    "2028-04-02"
+  ],
+  "raw_block": "BIO 12/43-02/04 TEMPO® CAM DENOMBREMENT DES CAMPYLOBACTER SPP. ENUMERATION OF CAMPYLOBACTER SPP. VOLAILLES CRUES ET PRODUITS A BASE DE VOLAILLE PRETS-A-CUIRE RAW POULTRY AND READY-TO-COOK POULTRY PRODUCTS 02.04.2020 RECONDUCTION/RENEWAL: 08.02.2024 02.04.2028 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+  "source_page": 52
+}

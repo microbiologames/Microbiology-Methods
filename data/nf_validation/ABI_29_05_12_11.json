@@ -1,0 +1,26 @@
+{
+  "certificate_number": "ABI 29/05-12/11",
+  "source": "NF-VALIDATION",
+  "commercial_name": "MICROSEQ® LISTERIA MONOCYTOGENES",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES PRODUITS CARNES, LES PRODUITS LAITIERS, LES PRODUITS DE LA PECHE, LES VEGETAUX ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE MEAT PRODUCTS, DAIRY PRODUCTS, FISHERY PRODUCTS, VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2011-12-01",
+  "end_of_validity": "2027-12-01",
+  "all_dates_found": [
+    "2011-12-01",
+    "2015-07-06",
+    "2020-01-30",
+    "2023-10-31",
+    "2027-12-01"
+  ],
+  "raw_block": "ABI 29/05-12/11 MICROSEQ® LISTERIA MONOCYTOGENES DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES LES PRODUITS CARNES, LES PRODUITS LAITIERS, LES PRODUITS DE LA PECHE, LES VEGETAUX ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE MEAT PRODUCTS, DAIRY PRODUCTS, FISHERY PRODUCTS, VEGETABLES AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 01.12.2011 RECONDUCTION/RENEWAL: 06.07.2015 30.01.2020 31.10.2023 01.12.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Life Technologies Corporation Thermo Fisher Scientific 5791 Van Allen Way Carlsbad, CA 92008-7321, USA Représentée en Europe par : Represented in Europe by : Life Technologies SAS Thermo Fisher Scientific Route de l’Orme des Merisiers Parc Technologique - Immeuble Discovery 91190 Saint-Aubin, FRANCE Site de production : Site of production : Life Technologies Ltd Thermo Fisher Scientific 7 Kingsland Grange Warrington Cheshire WA1 45R, UK",
+  "source_page": 64
+}

@@ -1,0 +1,27 @@
+{
+  "certificate_number": "DSM 28/02-02/12",
+  "source": "NF-VALIDATION",
+  "commercial_name": "DELVOTEST®T",
+  "aim_of_method_raw": "DÉTECTION DES ANTIBIOTIQUES DETECTION OF ANTIBIOTICS LAIT DE VACHE (INDIVIDUEL ET MELANGE) (AVEC OU SANS AZIDIOL) COW MILK (INDIVIDUAL AND COMMINGLED) (WITH OR WITHOUT AZIDIOL) 03.02.2012 RECONDUCTION/RENEWAL: 29.06.2021 15.12.2023 EXTENSION: 04.08.2022 03.02.2028 Validation study done in accordance with the NF VALIDATION specific validation protocol for antibiotic residue detection methods (Rev. 0 dated 31.01.2005)",
+  "target_organism": "Antibiotic residues",
+  "action": "detection",
+  "validation_scope_raw": null,
+  "certification_date": "2012-02-03",
+  "end_of_validity": "2005-01-31",
+  "all_dates_found": [
+    "2012-02-03",
+    "2021-06-29",
+    "2023-12-15",
+    "2022-08-04",
+    "2028-02-03",
+    "2005-01-31"
+  ],
+  "raw_block": "DSM 28/02-02/12 DELVOTEST®T DÉTECTION DES ANTIBIOTIQUES DETECTION OF ANTIBIOTICS LAIT DE VACHE (INDIVIDUEL ET MELANGE) (AVEC OU SANS AZIDIOL) COW MILK (INDIVIDUAL AND COMMINGLED) (WITH OR WITHOUT AZIDIOL) 03.02.2012 RECONDUCTION/RENEWAL: 29.06.2021 15.12.2023 EXTENSION: 04.08.2022 03.02.2028 Validation study done in accordance with the NF VALIDATION specific validation protocol for antibiotic residue detection methods (Rev. 0 dated 31.01.2005)",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : DSM Food Specialities Alexander Fleminglaan 1 2613 AX Delft THE NETHERLANDS Site de production : Site of production : DSM Food Specialities Test Center Turbineweg 10 2627 BP Delft THE NETHERLANDS",
+  "source_page": 62
+}

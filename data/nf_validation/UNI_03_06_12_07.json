@@ -1,0 +1,27 @@
+{
+  "certificate_number": "UNI 03/06-12/07",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC™ SALMONELLA PRECIS™ METHOD",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION *ALL HUMAN AND ANIMAL FOOD PRODUCTS AND PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2007-12-04",
+  "end_of_validity": "2027-12-04",
+  "all_dates_found": [
+    "2007-12-04",
+    "2011-10-06",
+    "2015-07-06",
+    "2020-01-30",
+    "2023-10-31",
+    "2027-12-04"
+  ],
+  "raw_block": "UNI 03/06-12/07 THERMO SCIENTIFIC™ SALMONELLA PRECIS™ METHOD DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION *ALL HUMAN AND ANIMAL FOOD PRODUCTS AND PRODUCTION ENVIRONMENTAL SAMPLES 04.12.2007 RECONDUCTION/RENEWAL: 06.10.2011 06.07.2015 30.01.2020 31.10.2023 04.12.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production : Company holder of the certification and site of production : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland",
+  "source_page": 13
+}

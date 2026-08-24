@@ -1,0 +1,26 @@
+{
+  "certificate_number": "BIO 12/35-05/13",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TEMPO® AC USE A VERSION OF SOFTWARE TEMPO : R5 AND ALL PREVIOUS VERSIONS",
+  "aim_of_method_raw": "DENOMBREMENT DE LA FLORE MESOPHILE AEROBIE REVIVIFIABLE ENUMERATION OF AEROBIC MESOPHILIC FLORA",
+  "target_organism": "Aerobic mesophilic flora / total viable count",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ALIMENTS POUR ANIMAUX DE COMPAGNIE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2013-05-23",
+  "end_of_validity": "2029-05-23",
+  "all_dates_found": [
+    "2013-05-23",
+    "2017-10-02",
+    "2021-04-08",
+    "2025-04-23",
+    "2029-05-23"
+  ],
+  "raw_block": "BIO 12/35-05/13 TEMPO® AC USE A VERSION OF SOFTWARE TEMPO : R5 AND ALL PREVIOUS VERSIONS DENOMBREMENT DE LA FLORE MESOPHILE AEROBIE REVIVIFIABLE ENUMERATION OF AEROBIC MESOPHILIC FLORA *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES ALIMENTS POUR ANIMAUX DE COMPAGNIE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 23.05.2013 RECONDUCTION/RENEWAL: 02.10.2017 08.04.2021 23.04.2025 23.05.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+  "source_page": 52
+}

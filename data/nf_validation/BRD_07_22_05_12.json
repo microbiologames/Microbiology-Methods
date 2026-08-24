@@ -1,0 +1,26 @@
+{
+  "certificate_number": "BRD 07/22-05/12",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’SAKAZAKII",
+  "aim_of_method_raw": "DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SP POUDRES DE LAIT INFANTILE ET CEREA",
+  "target_organism": "Cronobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES INFANTILES AVEC OU SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS INFANT FORMULA AND INFANT CEREAL WITH OR WITHOUT PROBIOTICS INCLUDING INGREDIENTS",
+  "certification_date": "2012-05-10",
+  "end_of_validity": "2028-05-10",
+  "all_dates_found": [
+    "2012-05-10",
+    "2016-03-17",
+    "2020-04-02",
+    "2024-04-10",
+    "2028-05-10"
+  ],
+  "raw_block": "BRD 07/22-05/12 RAPID’SAKAZAKII DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SP POUDRES DE LAIT INFANTILE ET CEREALES INFANTILES AVEC OU SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS INFANT FORMULA AND INFANT CEREAL WITH OR WITHOUT PROBIOTICS INCLUDING INGREDIENTS 10.05.2012 RECONDUCTION/RENEWAL: 17.03.2016 02.04.2020 10.04.2024 10.05.2028 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 30
+}

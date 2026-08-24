@@ -1,0 +1,23 @@
+{
+  "certificate_number": "IDX 33/10-12/22",
+  "source": "NF-VALIDATION",
+  "commercial_name": "REAL PCR SALMONELLA SPP. DNA TEST",
+  "aim_of_method_raw": "DÉTECTION DE SALMONELLA SPP. DETECTION OF SALMONELLA SPP.",
+  "target_organism": "Salmonella spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES VIANDES DE VOLAILLE CRUES, LES ÉCHANTILLONS D’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE DE VOLAILLE ET LES ÉCHANTILLONS D’ENVIRONNEMENT DE PRODUCTION PRIMAIRE DE LA VOLAILLE RAW POULTRY MEATS, INDUSTRIAL POULTRY PRODUCTION ENVIRONMENTAL SAMPLES AND POULTRY ENVIRONMENTAL PRIMARY SAMPLES",
+  "certification_date": "2022-12-16",
+  "end_of_validity": "2026-12-16",
+  "all_dates_found": [
+    "2022-12-16",
+    "2026-12-16"
+  ],
+  "raw_block": "IDX 33/10-12/22 REAL PCR SALMONELLA SPP. DNA TEST DÉTECTION DE SALMONELLA SPP. DETECTION OF SALMONELLA SPP. LES VIANDES DE VOLAILLE CRUES, LES ÉCHANTILLONS D’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE DE VOLAILLE ET LES ÉCHANTILLONS D’ENVIRONNEMENT DE PRODUCTION PRIMAIRE DE LA VOLAILLE RAW POULTRY MEATS, INDUSTRIAL POULTRY PRODUCTION ENVIRONMENTAL SAMPLES AND POULTRY ENVIRONMENTAL PRIMARY SAMPLES 16.12.2022 16.12.2026 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : IDEXX Laboratories, Inc. 326, Rue de la Galera 34090 Montpellier France Site de production : Site of production : IDEXX Montpellier SAS 326, Rue de la Galera 34090 Montpellier France",
+  "source_page": 75
+}

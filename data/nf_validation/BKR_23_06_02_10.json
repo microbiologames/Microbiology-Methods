@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BKR 23/06-02/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPASS BACILLUS CEREUS AGAR",
+  "aim_of_method_raw": "DENOMBREMENT DES BACILLUS CEREUS PRESOMPTIFS ENUMERATION OF PRESUMPTIVE BACILLUS CEREUS",
+  "target_organism": "Bacillus cereus",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D'ALIMENTATION HUMAINE ET ANIMALE ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS",
+  "certification_date": "2010-02-05",
+  "end_of_validity": "2029-02-05",
+  "all_dates_found": [
+    "2010-02-05",
+    "2020-01-30",
+    "2025-06-03",
+    "2013-11-28",
+    "2018-05-17",
+    "2021-12-09",
+    "2024-12-18",
+    "2029-02-05"
+  ],
+  "raw_block": "BKR 23/06-02/10 COMPASS BACILLUS CEREUS AGAR DENOMBREMENT DES BACILLUS CEREUS PRESOMPTIFS ENUMERATION OF PRESUMPTIVE BACILLUS CEREUS TOUS PRODUITS D'ALIMENTATION HUMAINE ET ANIMALE ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS 05.02.2010 EXTENSION: 30.01.2020 03.06.2025 RECONDUCTION/RENEWAL: 28.11.2013 17.05.2018 09.12.2021 18.12.2024 05.02.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+  "source_page": 58
+}

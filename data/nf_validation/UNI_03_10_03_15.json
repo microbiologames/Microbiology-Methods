@@ -1,0 +1,28 @@
+{
+  "certificate_number": "UNI 03/10-03/15",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO™ SCIENTIFIC SURETECT™ ESCHERICHIA COLI O157:H7 PCR ASSAY",
+  "aim_of_method_raw": "DÉTECTION DES ESCHERICHIA COLI O157: H7 DETECTION OF ESCHERICHIA COLI O157: H7",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "VIANDES CRUES DE BŒUF (PRISE D’ESSAI DE 25G), LEGUMES ET FRUITS (PRISE D’ESSAI DE 25G) RAW BEEF MEATS (25G TEST PORTION), VEGETABLE AND FRUITS (25G TEST PORTION)",
+  "certification_date": "2015-03-26",
+  "end_of_validity": "2027-03-26",
+  "all_dates_found": [
+    "2015-03-26",
+    "2015-07-06",
+    "2016-01-28",
+    "2020-07-02",
+    "2019-11-28",
+    "2023-02-24",
+    "2027-03-26"
+  ],
+  "raw_block": "UNI 03/10-03/15 THERMO™ SCIENTIFIC SURETECT™ ESCHERICHIA COLI O157:H7 PCR ASSAY DÉTECTION DES ESCHERICHIA COLI O157: H7 DETECTION OF ESCHERICHIA COLI O157: H7 VIANDES CRUES DE BŒUF (PRISE D’ESSAI DE 25G), LEGUMES ET FRUITS (PRISE D’ESSAI DE 25G) RAW BEEF MEATS (25G TEST PORTION), VEGETABLE AND FRUITS (25G TEST PORTION) 26.03.2015 EXTENSION: 06.07.2015 28.01.2016 02.07.2020 RECONDUCTION/RENEWAL: 28.11.2019 24.02.2023 26.03.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+  "source_page": 17
+}

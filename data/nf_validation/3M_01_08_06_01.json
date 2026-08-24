@@ -1,0 +1,31 @@
+{
+  "certificate_number": "3M 01/08-06/01",
+  "source": "NF-VALIDATION",
+  "commercial_name": "NEOGEN® PETRIFILM® SELECT'E. COLI NEOGEN® PETRIFILM® SELECT E. COLI COUNT PLATE",
+  "aim_of_method_raw": "DENOMBREMENT DES E. COLI ENUMERATION OF E. COLI",
+  "target_organism": "E. coli",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, ALIMENTS POUR ANIMAUX DE COMPAGNIE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2001-06-14",
+  "end_of_validity": "2029-06-14",
+  "all_dates_found": [
+    "2001-06-14",
+    "2005-04-07",
+    "2009-05-18",
+    "2013-05-23",
+    "2016-07-01",
+    "2021-10-06",
+    "2025-05-23",
+    "2015-02-06",
+    "2025-08-05",
+    "2029-06-14"
+  ],
+  "raw_block": "3M 01/08-06/01 NEOGEN® PETRIFILM® SELECT'E. COLI NEOGEN® PETRIFILM® SELECT E. COLI COUNT PLATE DENOMBREMENT DES E. COLI ENUMERATION OF E. COLI *TOUS PRODUITS D’ALIMENTATION HUMAINE, ALIMENTS POUR ANIMAUX DE COMPAGNIE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 14.06.2001 RECONDUCTION/RENEWAL: 07.04.2005 18.05.2009 23.05.2013 01.07.2016 06.10.2021 23.05.2025 EXTENSION : 06.02.2015 05.08.2025 14.06.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+  "source_page": 7
+}

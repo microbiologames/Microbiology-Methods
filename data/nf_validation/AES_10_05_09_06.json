@@ -1,0 +1,31 @@
+{
+  "certificate_number": "AES 10/05-09/06",
+  "source": "NF-VALIDATION",
+  "commercial_name": "ALOA® COUNT",
+  "aim_of_method_raw": "DENOMBREMENT DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. ENUMERATION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2006-09-15",
+  "end_of_validity": "2030-09-15",
+  "all_dates_found": [
+    "2006-09-15",
+    "2010-07-02",
+    "2014-07-03",
+    "2018-10-04",
+    "2022-06-15",
+    "2026-06-24",
+    "2012-10-04",
+    "2013-03-28",
+    "2025-05-26",
+    "2030-09-15"
+  ],
+  "raw_block": "AES 10/05-09/06 ALOA® COUNT DENOMBREMENT DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. ENUMERATION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 15.09.2006 RECONDUCTION/RENEWAL: 02.07.2010 03.07.2014 04.10.2018 15.06.2022 24.06.2026 EXTENSION: 04.10.2012 28.03.2013 26.05.2025 15.09.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+  "source_page": 38
+}

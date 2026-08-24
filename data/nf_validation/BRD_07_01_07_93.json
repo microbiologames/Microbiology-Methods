@@ -1,0 +1,31 @@
+{
+  "certificate_number": "BRD 07/01-07/93",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’E. COLI 2",
+  "aim_of_method_raw": "DENOMBREMENT A 44°C DES E. COLI Β-GLUCURONIDASE POSITIVE ENUMERATION AT 44°C OF Β-GLUCURONIDASE POSITIVE E. COLI",
+  "target_organism": "E. coli",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE *ALL HUMAN FOOD PRODUCTS",
+  "certification_date": "1997-11-19",
+  "end_of_validity": "2028-12-02",
+  "all_dates_found": [
+    "1997-11-19",
+    "2002-03-07",
+    "2004-12-02",
+    "2008-11-28",
+    "2012-11-29",
+    "2017-11-22",
+    "2020-11-16",
+    "2024-10-03",
+    "2025-10-15",
+    "2028-12-02"
+  ],
+  "raw_block": "BRD 07/01-07/93 RAPID’E. COLI 2 DENOMBREMENT A 44°C DES E. COLI Β-GLUCURONIDASE POSITIVE ENUMERATION AT 44°C OF Β-GLUCURONIDASE POSITIVE E. COLI *TOUS PRODUITS D’ALIMENTATION HUMAINE *ALL HUMAN FOOD PRODUCTS 19.11.1997 RECONDUCTION/RENEWAL: 07.03.2002 02.12.2004 28.11.2008 29.11.2012 22.11.2017 16.11.2020 03.10.2024 EXTENSION: 15.10.2025 02.12.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 28
+}

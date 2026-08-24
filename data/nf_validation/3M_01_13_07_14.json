@@ -1,0 +1,28 @@
+{
+  "certificate_number": "3M 01/13-07/14",
+  "source": "NF-VALIDATION",
+  "commercial_name": "NEOGEN® PETRIFILM® RAPIDE LEVURES ET MOISISSURES NEOGEN® PETRIFILM® RAPID YEAST AND MOLD PLATE",
+  "aim_of_method_raw": "DENOMBREMENT DES LEVURES ET MOISISSURES ENUMERATION OF YEAST AND MOLD",
+  "target_organism": null,
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D'ALIMENTATION ANIMALE (ANIMAUX DE COMPAGNIE ET ANIMAUX D’ELEVAGE) ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2014-07-03",
+  "end_of_validity": "2030-07-03",
+  "all_dates_found": [
+    "2014-07-03",
+    "2025-05-06",
+    "2025-08-05",
+    "2018-07-02",
+    "2022-05-25",
+    "2026-07-02",
+    "2030-07-03"
+  ],
+  "raw_block": "3M 01/13-07/14 NEOGEN® PETRIFILM® RAPIDE LEVURES ET MOISISSURES NEOGEN® PETRIFILM® RAPID YEAST AND MOLD PLATE DENOMBREMENT DES LEVURES ET MOISISSURES ENUMERATION OF YEAST AND MOLD *TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D'ALIMENTATION ANIMALE (ANIMAUX DE COMPAGNIE ET ANIMAUX D’ELEVAGE) ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 03.07.2014 EXTENSION: 06.05.2025 05.08.2025 RECONDUCTION/RENEWAL: 02.07.2018 25.05.2022 02.07.2026 03.07.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Health Care PO BOX 227 SOUTH DAKOTA 57006 BROOKINGS, USA",
+  "source_page": 8
+}

@@ -1,0 +1,27 @@
+{
+  "certificate_number": "BIO 12/28-04/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TEMPO® STA USE A VERSION OF SOFTWARE TEMPO : R5 AND ALL PREVIOUS VERSIONS",
+  "aim_of_method_raw": "DENOMBREMENT DES STAPHYLOCOQUES A COAGULASE POSITIVE ENUMERATION OF COAGULASE POSITIVE STAPHYLOCOCCI",
+  "target_organism": "Coagulase-positive staphylococci",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE *ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS",
+  "certification_date": "2010-04-01",
+  "end_of_validity": "2030-04-01",
+  "all_dates_found": [
+    "2010-04-01",
+    "2014-01-30",
+    "2018-03-23",
+    "2022-02-02",
+    "2026-02-27",
+    "2030-04-01"
+  ],
+  "raw_block": "BIO 12/28-04/10 TEMPO® STA USE A VERSION OF SOFTWARE TEMPO : R5 AND ALL PREVIOUS VERSIONS DENOMBREMENT DES STAPHYLOCOQUES A COAGULASE POSITIVE ENUMERATION OF COAGULASE POSITIVE STAPHYLOCOCCI *TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE *ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS 01.04.2010 RECONDUCTION/RENEWAL: 30.01.2014 23.03.2018 02.02.2022 27.02.2026 01.04.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 LA-BALME-LES-GROTTES FRANCE",
+  "source_page": 52
+}

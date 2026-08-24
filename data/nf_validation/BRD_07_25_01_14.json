@@ -1,0 +1,27 @@
+{
+  "certificate_number": "BRD 07/25-01/14",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’CAMPYLOBACTER",
+  "aim_of_method_raw": "DENOMBREMENT DES ESPECES DE CAMPYLOBACTER THERMOTOLERANTES C. JEJUNI, C. COLI ET C. LARI ENUMERATION OF THERMOTOLERANT CAMPYLOBACTER SPECIES C. JEJUNI, C. COLI AND C. LARI",
+  "target_organism": "Campylobacter spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "VIANDES ET PRODUITS CARNES, VOLAILLES ET PRODUITS A BASE DE VOLAILLE, ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (ETAPE DE CONFIRMATION OPTIONNELLE) MEAT ANT MEAT PRODUCTS, POULTRY AND POULTRY MEATS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (CONFIRMATION STAGE IS OPTIONAL)",
+  "certification_date": "2014-01-31",
+  "end_of_validity": "2029-01-31",
+  "all_dates_found": [
+    "2014-01-31",
+    "2024-06-25",
+    "2018-07-03",
+    "2021-12-09",
+    "2024-12-10",
+    "2029-01-31"
+  ],
+  "raw_block": "BRD 07/25-01/14 RAPID’CAMPYLOBACTER DENOMBREMENT DES ESPECES DE CAMPYLOBACTER THERMOTOLERANTES C. JEJUNI, C. COLI ET C. LARI ENUMERATION OF THERMOTOLERANT CAMPYLOBACTER SPECIES C. JEJUNI, C. COLI AND C. LARI VIANDES ET PRODUITS CARNES, VOLAILLES ET PRODUITS A BASE DE VOLAILLE, ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (ETAPE DE CONFIRMATION OPTIONNELLE) MEAT ANT MEAT PRODUCTS, POULTRY AND POULTRY MEATS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (CONFIRMATION STAGE IS OPTIONAL) 31.01.2014 EXTENSION: 25.06.2024 RECONDUCTION/RENEWAL: 03.07.2018 09.12.2021 10.12.2024 31.01.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 31
+}

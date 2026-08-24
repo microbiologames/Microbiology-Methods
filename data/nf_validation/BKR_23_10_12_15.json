@@ -1,0 +1,28 @@
+{
+  "certificate_number": "BKR 23/10-12/15",
+  "source": "NF-VALIDATION",
+  "commercial_name": "EASY STAPH®",
+  "aim_of_method_raw": "DENOMBREMENT DE STAPHYLOCOQUES A COAGULASE POSITIVE ENUMERATION OF COAGULASE- POSITIVE STAPHYLOCOCCI",
+  "target_organism": "Coagulase-positive staphylococci",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D’ALIMENTS) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2015-12-03",
+  "end_of_validity": "2027-12-03",
+  "all_dates_found": [
+    "2015-12-03",
+    "2016-01-29",
+    "2025-03-03",
+    "2026-06-25",
+    "2019-10-03",
+    "2023-11-06",
+    "2027-12-03"
+  ],
+  "raw_block": "BKR 23/10-12/15 EASY STAPH® DENOMBREMENT DE STAPHYLOCOQUES A COAGULASE POSITIVE ENUMERATION OF COAGULASE- POSITIVE STAPHYLOCOCCI TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION REALISES SUR UNE VASTE GAMME D’ALIMENTS) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 03.12.2015 EXTENSION: 29.01.2016 03.03.2025 25.06.2026 RECONDUCTION/RENEWAL: 03.10.2019 06.11.2023 03.12.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex Hyg FRANCE",
+  "source_page": 60
+}

@@ -1,0 +1,30 @@
+{
+  "certificate_number": "BIO 12/18-03/06",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS LISTERIA DUO (LDUO) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS",
+  "aim_of_method_raw": "DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2006-03-09",
+  "end_of_validity": "2030-03-09",
+  "all_dates_found": [
+    "2006-03-09",
+    "2009-12-03",
+    "2014-01-30",
+    "2018-03-23",
+    "2022-02-03",
+    "2026-01-30",
+    "2011-06-30",
+    "2022-06-16",
+    "2030-03-09"
+  ],
+  "raw_block": "BIO 12/18-03/06 VIDAS LISTERIA DUO (LDUO) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 09.03.2006 RECONDUCTION/RENEWAL: 03.12.2009 30.01.2014 23.03.2018 03.02.2022 30.01.2026 EXTENSION: 30.06.2011 16.06.2022 09.03.2030 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 45
+}

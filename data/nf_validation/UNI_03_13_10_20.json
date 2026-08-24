@@ -1,0 +1,25 @@
+{
+  "certificate_number": "UNI 03/13-10/20",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC™ SURETECT™ STEC SCREENING PCR ASSAY AND THERMO SCIENTIFIC™ SURETECT™ STEC IDENTIFICATION PCR ASSAY",
+  "aim_of_method_raw": "DETECTION DES ESCHERICHIA COLI PRODUISANT DE LA SHIGA- TOXINE (STEC) DETECTION OF SHIGA-TOXIN- PRODUCING ESCHERICHIA COLI (STEC)",
+  "target_organism": "Shiga toxin-producing E. coli (STEC)",
+  "action": "detection",
+  "validation_scope_raw": "VIANDES CRUES (A L’EXCLUSION DES VOLAILLES) (PRISES D’ESSAIS A 25G ET 375G), LES PRODUITS LAITIERS (PRISE D’ESSAI A 25G) ET LES VEGETAUX INCLUANT LES FRUITS (PRISES D’ESSAIS 25G ET 375G A L’EXCLUSION DES GRAINES GERMEES UNIQUEMENT POUR LES PRISES D’ESSAIS A 375G) RAW MEATS (EXCLUDING POULTRY) (25G AND 375G TEST PORTION), DAIRY PRODUCTS (25G TEST PORTION) AND VEGETABLES INCLUDING FRUIT (25G AND 375G TET PORTIONS EXCLUDING SPROUTED SEEDS FOR 375G TEST PORTIONS ONLY))",
+  "certification_date": "2020-11-09",
+  "end_of_validity": "2028-11-09",
+  "all_dates_found": [
+    "2020-11-09",
+    "2024-10-31",
+    "2022-02-25",
+    "2028-11-09"
+  ],
+  "raw_block": "UNI 03/13-10/20 THERMO SCIENTIFIC™ SURETECT™ STEC SCREENING PCR ASSAY AND THERMO SCIENTIFIC™ SURETECT™ STEC IDENTIFICATION PCR ASSAY DETECTION DES ESCHERICHIA COLI PRODUISANT DE LA SHIGA- TOXINE (STEC) DETECTION OF SHIGA-TOXIN- PRODUCING ESCHERICHIA COLI (STEC) VIANDES CRUES (A L’EXCLUSION DES VOLAILLES) (PRISES D’ESSAIS A 25G ET 375G), LES PRODUITS LAITIERS (PRISE D’ESSAI A 25G) ET LES VEGETAUX INCLUANT LES FRUITS (PRISES D’ESSAIS 25G ET 375G A L’EXCLUSION DES GRAINES GERMEES UNIQUEMENT POUR LES PRISES D’ESSAIS A 375G) RAW MEATS (EXCLUDING POULTRY) (25G AND 375G TEST PORTION), DAIRY PRODUCTS (25G TEST PORTION) AND VEGETABLES INCLUDING FRUIT (25G AND 375G TET PORTIONS EXCLUDING SPROUTED SEEDS FOR 375G TEST PORTIONS ONLY)) 09.11.2020 RECONDUCTION/RENEWAL: 31.10.2024 EXTENSION: 25.02.2022 09.11.2028 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "Company holder of the certification : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland Site de production: Site of production : Thermo Fisher Scientific Oy (Microbiology Vantaa) Ratastie 2, PO BOX 100, VANTAA FI-01621, FINLAND",
+  "source_page": 19
+}

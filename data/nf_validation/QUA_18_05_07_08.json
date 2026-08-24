@@ -1,0 +1,30 @@
+{
+  "certificate_number": "QUA 18/05-07/08",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BAX SYSTEM PCR ASSAY LISTERIA MONOCYTOGENES 24E (AUTOMATISÉ / AUTOMATISED) FOR USE WITH BAX Q7 OR X5 INSTRUMENT",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2008-07-01",
+  "end_of_validity": "2028-07-01",
+  "all_dates_found": [
+    "2008-07-01",
+    "2009-01-26",
+    "2011-05-12",
+    "2017-10-03",
+    "2012-07-06",
+    "2016-03-18",
+    "2020-04-30",
+    "2024-06-25",
+    "2028-07-01"
+  ],
+  "raw_block": "QUA 18/05-07/08 BAX SYSTEM PCR ASSAY LISTERIA MONOCYTOGENES 24E (AUTOMATISÉ / AUTOMATISED) FOR USE WITH BAX Q7 OR X5 INSTRUMENT DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 01.07.2008 EXTENSION: 26.01.2009 12.05.2011 03.10.2017 RECONDUCTION/RENEWAL: 06.07.2012 18.03.2016 30.04.2020 25.06.2024 01.07.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena LLC 930 Flynn Road Camarillo, CA 93012 USA",
+  "source_page": 21
+}

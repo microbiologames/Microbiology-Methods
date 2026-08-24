@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BIO 12/13-02/05",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TEMPO® EC",
+  "aim_of_method_raw": "DENOMBREMENT DES E. COLI ENUMERATION OF E. COLI",
+  "target_organism": "E. coli",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ALIMENTS POUR ANIMAUX DE COMPAGNIE (UTILISATION DE LA METHODE NON RECOMMANDEE POUR L’ANALYSE DES PRODUITS A FORTE ACTIVITE ENZYMATIQUE, RESTRICTION LEVEE LORS DE L’APPLICATION D’UNE DILUTION ≥1/40) ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS (USE OF THE METHOD NOT RECOMMENDED TO ANALYSE PRODUCTS WITH A HIGH ENZYMATIC ACTIVITY, RETRICTION IS LIFTED WHEN APPLYING A DILUTION ≥ 1/40)",
+  "certification_date": "2005-02-04",
+  "end_of_validity": "2029-02-04",
+  "all_dates_found": [
+    "2005-02-04",
+    "2009-01-26",
+    "2012-11-30",
+    "2017-01-27",
+    "2020-12-04",
+    "2025-02-03",
+    "2023-05-03",
+    "2029-02-04"
+  ],
+  "raw_block": "BIO 12/13-02/05 TEMPO® EC DENOMBREMENT DES E. COLI ENUMERATION OF E. COLI TOUS PRODUITS D’ALIMENTATION HUMAINE ET ALIMENTS POUR ANIMAUX DE COMPAGNIE (UTILISATION DE LA METHODE NON RECOMMANDEE POUR L’ANALYSE DES PRODUITS A FORTE ACTIVITE ENZYMATIQUE, RESTRICTION LEVEE LORS DE L’APPLICATION D’UNE DILUTION ≥1/40) ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS (USE OF THE METHOD NOT RECOMMENDED TO ANALYSE PRODUCTS WITH A HIGH ENZYMATIC ACTIVITY, RETRICTION IS LIFTED WHEN APPLYING A DILUTION ≥ 1/40) 04.02.2005 RECONDUCTION/RENEWAL: 26.01.2009 30.11.2012 27.01.2017 04.12.2020 03.02.2025 EXTENSION: 03.05.2023 04.02.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux 3, route du Port Michaud 38390 La-Balme-Les-Grottes FRANCE",
+  "source_page": 51
+}

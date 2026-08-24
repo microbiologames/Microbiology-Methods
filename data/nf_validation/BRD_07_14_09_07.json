@@ -1,0 +1,27 @@
+{
+  "certificate_number": "BRD 07/14-09/07",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’E. COLI O157:H7",
+  "aim_of_method_raw": "DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157",
+  "target_organism": "E. coli O157",
+  "action": "detection",
+  "validation_scope_raw": "LES PRODUITS CARNES, PRODUITS LAITIERS, FRUITS ET LEGUMES, ALIMENTS COMPOSITES MEATS PRODUCTS, DAIRY PRODUCTS, FRUITS AND VEGETABLES, COMPOSITE FOODS",
+  "certification_date": "2007-09-27",
+  "end_of_validity": "2027-10-27",
+  "all_dates_found": [
+    "2007-09-27",
+    "2011-10-06",
+    "2015-10-14",
+    "2020-01-30",
+    "2023-10-04",
+    "2027-10-27"
+  ],
+  "raw_block": "BRD 07/14-09/07 RAPID’E. COLI O157:H7 DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157 LES PRODUITS CARNES, PRODUITS LAITIERS, FRUITS ET LEGUMES, ALIMENTS COMPOSITES MEATS PRODUCTS, DAIRY PRODUCTS, FRUITS AND VEGETABLES, COMPOSITE FOODS 27.09.2007 RECONDUCTION/RENEWAL 06.10.2011 14.10.2015 30.01.2020 04.10.2023 27.10.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 29
+}

@@ -1,0 +1,27 @@
+{
+  "certificate_number": "3M 01/09-04/03 B",
+  "source": "NF-VALIDATION",
+  "commercial_name": "NEOGEN® PETRIFILM® STAPH EXPRESS NEOGEN® PETRIFILM® STAPH EXPRESS COUNT SYSTEM",
+  "aim_of_method_raw": "DENOMBREMENT DES STAPHYLOCOCCI A COAGULASE POSITIVE ENUMERATION OF COAGULASE POSITIVE STAPHYLOCOCCI",
+  "target_organism": "Coagulase-positive staphylococci",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS",
+  "certification_date": "2007-09-27",
+  "end_of_validity": "2027-04-02",
+  "all_dates_found": [
+    "2007-09-27",
+    "2011-02-03",
+    "2015-02-06",
+    "2019-03-22",
+    "2023-04-02",
+    "2027-04-02"
+  ],
+  "raw_block": "3M 01/09-04/03 B NEOGEN® PETRIFILM® STAPH EXPRESS NEOGEN® PETRIFILM® STAPH EXPRESS COUNT SYSTEM DENOMBREMENT DES STAPHYLOCOCCI A COAGULASE POSITIVE ENUMERATION OF COAGULASE POSITIVE STAPHYLOCOCCI *TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE ALL HUMAN FOOD PRODUCTS AND PET FOOD PRODUCTS 27.09.2007 RECONDUCTION/RENEWAL: 03.02.2011 06.02.2015 22.03.2019 02.04.2023 02.04.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+  "source_page": 7
+}

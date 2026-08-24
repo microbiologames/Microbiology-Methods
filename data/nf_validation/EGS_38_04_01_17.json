@@ -1,0 +1,25 @@
+{
+  "certificate_number": "EGS 38/04-01/17",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BACSPEC LISTERIA",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2017-01-26",
+  "end_of_validity": "2029-01-26",
+  "all_dates_found": [
+    "2017-01-26",
+    "2020-12-03",
+    "2024-12-18",
+    "2029-01-26"
+  ],
+  "raw_block": "EGS 38/04-01/17 BACSPEC LISTERIA DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 26.01.2017 03.12.2020 RECONDUCTION/RENEWAL: 18.12.2024 26.01.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Gold Standard Diagnostics Engesserstrasβe 4 D-79108 Freiburg im Breisgau GERMANY Site de production : Site of production : Gold Standard Diagnostics Fóti ùt 56. Building A HU-1047 Budapest HUNGARY Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "source_page": 72
+}

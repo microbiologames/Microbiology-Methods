@@ -1,0 +1,25 @@
+{
+  "certificate_number": "UNI 03/14-06/22",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC™ LISTERIA PRECIS™ (",
+  "aim_of_method_raw": "DETECTION LISTERIA SPECIES) DETECTION DES LISTERIA SPECIES DETECTION OF LISTERIA SPECIES",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2022-06-16",
+  "end_of_validity": "2026-06-16",
+  "all_dates_found": [
+    "2022-06-16",
+    "2022-10-06",
+    "2025-05-14",
+    "2026-06-16"
+  ],
+  "raw_block": "UNI 03/14-06/22 THERMO SCIENTIFIC™ LISTERIA PRECIS™ (DETECTION LISTERIA SPECIES) DETECTION DES LISTERIA SPECIES DETECTION OF LISTERIA SPECIES *TOUS PRODUITS D’ALIMENTATION ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 16.06.2022 EXTENSION: 06.10.2022 14.05.2025 16.06.2026",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 14
+}

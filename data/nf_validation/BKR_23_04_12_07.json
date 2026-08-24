@@ -1,0 +1,28 @@
+{
+  "certificate_number": "BKR 23/04-12/07",
+  "source": "NF-VALIDATION",
+  "commercial_name": "SESAME SALMONELLA TEST",
+  "aim_of_method_raw": "DETECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES MOBILES DETECTION OF MOTILE SALMONELLA TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2007-12-04",
+  "end_of_validity": "2027-12-04",
+  "all_dates_found": [
+    "2007-12-04",
+    "2009-07-03",
+    "2011-10-07",
+    "2015-07-06",
+    "2020-04-02",
+    "2023-10-05",
+    "2027-12-04"
+  ],
+  "raw_block": "BKR 23/04-12/07 SESAME SALMONELLA TEST DETECTION DES SALMONELLES MOBILES DETECTION OF MOTILE SALMONELLA TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 04.12.2007 EXTENSION: 03.07.2009 RECONDUCTION/RENEWAL: 07.10.2011 06.07.2015 02.04.2020 05.10.2023 04.12.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Application scope validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+  "source_page": 56
+}

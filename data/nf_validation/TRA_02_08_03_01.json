@@ -1,0 +1,31 @@
+{
+  "certificate_number": "TRA 02/08-03/01",
+  "source": "NF-VALIDATION",
+  "commercial_name": "TRANSIA® PLATE SALMONELLA GOLD",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (HORS ECHANTILLONS DE PRODUCTION PRIMAIRE) *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (EXCEPT PRIMARY PRODUCTION ENVIRONMENT)",
+  "certification_date": "2001-03-23",
+  "end_of_validity": "2029-02-03",
+  "all_dates_found": [
+    "2001-03-23",
+    "2005-02-03",
+    "2009-07-02",
+    "2012-11-29",
+    "2017-01-25",
+    "2020-12-18",
+    "2024-12-11",
+    "2011-05-12",
+    "2016-03-18",
+    "2029-02-03"
+  ],
+  "raw_block": "TRA 02/08-03/01 TRANSIA® PLATE SALMONELLA GOLD DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE (HORS ECHANTILLONS DE PRODUCTION PRIMAIRE) *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES (EXCEPT PRIMARY PRODUCTION ENVIRONMENT) 23.03.2001 RECONDUCTION/RENEWAL: 03.02.2005 02.07.2009 29.11.2012 25.01.2017 18.12.2020 11/12/2024 EXTENSION: 12.05.2011 18.03.2016 03.02.2029 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production : Company holder of the certification and site of production : MilliporeSigma 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
+  "source_page": 11
+}

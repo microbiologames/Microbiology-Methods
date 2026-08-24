@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BIO 12/42-03/18",
+  "source": "NF-VALIDATION",
+  "commercial_name": "GENE-UP CRONOBACTER SPP. USE OF THE GENE-UP® THERMOCYCLER WITH THE GENE-UP® ROUTINE SOFTWARE VERSIONS 3.0, 3.1 AND 3.2",
+  "aim_of_method_raw": "DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. CEREA",
+  "target_organism": "Cronobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES INFANTILES ET POUDRES DE LAIT INFANTILE AVEC OU SANS PROBIOTIQUES, POUDRES DE LAIT, INGREDIENTS ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE INFANT CEREALS AND POWDERED INFANT FORMULA WITH OR WITHOUT PROBIOTICS, MILK POWDERS, INGREDIENTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2018-03-23",
+  "end_of_validity": "2030-03-23",
+  "all_dates_found": [
+    "2018-03-23",
+    "2018-07-03",
+    "2018-10-04",
+    "2019-11-29",
+    "2023-10-04",
+    "2022-02-02",
+    "2026-01-30",
+    "2030-03-23"
+  ],
+  "raw_block": "BIO 12/42-03/18 GENE-UP CRONOBACTER SPP. USE OF THE GENE-UP® THERMOCYCLER WITH THE GENE-UP® ROUTINE SOFTWARE VERSIONS 3.0, 3.1 AND 3.2 DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. CEREALES INFANTILES ET POUDRES DE LAIT INFANTILE AVEC OU SANS PROBIOTIQUES, POUDRES DE LAIT, INGREDIENTS ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE INFANT CEREALS AND POWDERED INFANT FORMULA WITH OR WITHOUT PROBIOTICS, MILK POWDERS, INGREDIENTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 23.03.2018 EXTENSION : 03.07.2018 04.10.2018 29.11.2019 04.10.2023 RECONDUCTION/RENEWAL: 02.02.2022 30.01.2026 23.03.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux Zone Polytec 5 rue des Berges 38000 Grenoble FRANCE",
+  "source_page": 54
+}

@@ -1,0 +1,29 @@
+{
+  "certificate_number": "ABI 29/02-09/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "MICROSEQ® SALMONELLA",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS LES PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS ALIMENTAIRES POUR ANIMAUX (INCLUANT LES ANIMAUX DE COMPAGNIE) ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE ALL HUMAN FOOD, FEED PRODUCTS (INCLUDING PET FOOD) AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2010-09-24",
+  "end_of_validity": "2030-09-24",
+  "all_dates_found": [
+    "2010-09-24",
+    "2012-05-11",
+    "2013-07-04",
+    "2014-07-03",
+    "2018-12-03",
+    "2022-06-15",
+    "2026-06-24",
+    "2030-09-24"
+  ],
+  "raw_block": "ABI 29/02-09/10 MICROSEQ® SALMONELLA DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS LES PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS ALIMENTAIRES POUR ANIMAUX (INCLUANT LES ANIMAUX DE COMPAGNIE) ET LES ECHANTILLONS DE PRODUCTION PRIMAIRE ALL HUMAN FOOD, FEED PRODUCTS (INCLUDING PET FOOD) AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES 24.09.2010 EXTENSION: 11.05.2012 04.07.2013 RECONDUCTION/RENEWAL: 03.07.2014 03.12.2018 15.06.2022 24.06.2026 24.09.2030 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Life Technologies Corporation Thermo Fisher Scientific 5791 Van Allen Way Carlsbad, CA 92008-7321, USA Représentée en Europe par : Represented in Europe by : Life Technologies SAS Thermo Fisher Scientific Route de l’Orme des Merisiers Parc Technologique - Immeuble Discovery 91190 Saint-Aubin, FRANCE Site de production : Site of production : Life Technologies Ltd Thermo Fisher Scientific 7 Kingsland Grange Warrington Cheshire WA1 45R, UK",
+  "source_page": 63
+}

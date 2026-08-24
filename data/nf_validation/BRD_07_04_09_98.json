@@ -1,0 +1,30 @@
+{
+  "certificate_number": "BRD 07/04-09/98",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’L.MONO",
+  "aim_of_method_raw": "DETECTION DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "1998-09-07",
+  "end_of_validity": "2027-09-15",
+  "all_dates_found": [
+    "1998-09-07",
+    "2002-11-28",
+    "2006-09-28",
+    "2010-07-01",
+    "2014-07-03",
+    "2019-07-03",
+    "2023-06-30",
+    "2008-09-25",
+    "2027-09-15"
+  ],
+  "raw_block": "BRD 07/04-09/98 RAPID’L.MONO DETECTION DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 07.09.1998 RECONDUCTION/RENEWAL: 28.11.2002 28.09.2006 01.07.2010 03.07.2014 03.07.2019 30.06.2023 EXTENSION: 25.09.2008 15.09.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE FRANCE",
+  "source_page": 25
+}

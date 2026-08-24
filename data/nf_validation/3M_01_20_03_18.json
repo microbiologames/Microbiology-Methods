@@ -1,0 +1,25 @@
+{
+  "certificate_number": "3M 01/20-03/18",
+  "source": "NF-VALIDATION",
+  "commercial_name": "KIT NEOGEN® DE",
+  "aim_of_method_raw": "DETECTION MOLECULAIRE VERSION 2 - CRONOBACTER NEOGEN® MOLECULAR DETECTION ASSAY 2 - CRONOBACTER DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. POUDRES DE LAITS INFANTI",
+  "target_organism": "Cronobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES ET CEREALES INFANTILES SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (PRISE D’ESSAI DE 10G ET 300G), POUDRES DE LAIT INFANTILES ET CEREALES INFANTILES AVEC PROBIOTIQUES (PRISE D’ESSAI 10G ET 300G) ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE POWDERED INFANT FORMULA AND INFANT CEREALS WITHOUT PROBIOTICS INCLUDING THEIR INGREDIENTS (10G AND 300G TEST PORTIONS), POWDERED INFANT FORMULA AND INFANT CEREALS WITH PROBIOTICS (10G AND 300G TEST PORTIONS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+  "certification_date": "2018-03-22",
+  "end_of_validity": "2030-03-22",
+  "all_dates_found": [
+    "2018-03-22",
+    "2022-02-03",
+    "2026-03-02",
+    "2030-03-22"
+  ],
+  "raw_block": "3M 01/20-03/18 KIT NEOGEN® DE DETECTION MOLECULAIRE VERSION 2 - CRONOBACTER NEOGEN® MOLECULAR DETECTION ASSAY 2 - CRONOBACTER DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. POUDRES DE LAITS INFANTILES ET CEREALES INFANTILES SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (PRISE D’ESSAI DE 10G ET 300G), POUDRES DE LAIT INFANTILES ET CEREALES INFANTILES AVEC PROBIOTIQUES (PRISE D’ESSAI 10G ET 300G) ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE POWDERED INFANT FORMULA AND INFANT CEREALS WITHOUT PROBIOTICS INCLUDING THEIR INGREDIENTS (10G AND 300G TEST PORTIONS), POWDERED INFANT FORMULA AND INFANT CEREALS WITH PROBIOTICS (10G AND 300G TEST PORTIONS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES. 22.03.2018 RECONDUCTION/RENEWAL: 03.02.2022 02.03.2026 22.03.2030 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : NEOGEN Food Safety Corporation 5954 Enterprise Dr, LANSING 48911, MISSOURI, USA",
+  "source_page": 10
+}

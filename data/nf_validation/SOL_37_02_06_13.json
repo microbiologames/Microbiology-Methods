@@ -1,0 +1,26 @@
+{
+  "certificate_number": "SOL 37/02-06/13",
+  "source": "NF-VALIDATION",
+  "commercial_name": "SOLUS LISTERIA ELISA",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2013-06-18",
+  "end_of_validity": "2029-06-18",
+  "all_dates_found": [
+    "2013-06-18",
+    "2017-07-03",
+    "2021-04-13",
+    "2025-05-16",
+    "2029-06-18"
+  ],
+  "raw_block": "SOL 37/02-06/13 SOLUS LISTERIA ELISA DÉTECTION DES LISTERIA SPP. DETECTION OF LISTERIA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 18.06.2013 RECONDUCTION/RENEWAL: 03.07.2017 13.04.2021 16.05.2025 18.06.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production : Company holder of the certification and manufacturing site : : Solus Scientific Ltd (part of PerkinElmer Inc.) Unit 9 Mansfield Networkcentre Millenium Business Park Concorde Way Mansfield - NG197JZ Nottinghamshire, UK Représentée en Europe par : Represented in Europe by : PerkinElmer Health Sciences B.V. 3 Kelvinlaan, 9207 JB Drachten Netherlands",
+  "source_page": 68
+}

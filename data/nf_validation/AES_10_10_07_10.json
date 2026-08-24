@@ -1,0 +1,29 @@
+{
+  "certificate_number": "AES 10/10-07/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BACARA®2",
+  "aim_of_method_raw": "DENOMBREMENT DES BACILLUS CEREUS PRESOMPTIFS ENUMERATION OF PRESUMPTIVE BACILLUS CEREUS",
+  "target_organism": "Bacillus cereus",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D'ALIMENTATION ANIMALE *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS",
+  "certification_date": "2010-07-02",
+  "end_of_validity": "2030-07-02",
+  "all_dates_found": [
+    "2010-07-02",
+    "2014-05-15",
+    "2018-07-02",
+    "2022-06-15",
+    "2026-06-24",
+    "2021-08-10",
+    "2025-06-03",
+    "2030-07-02"
+  ],
+  "raw_block": "AES 10/10-07/10 BACARA®2 DENOMBREMENT DES BACILLUS CEREUS PRESOMPTIFS ENUMERATION OF PRESUMPTIVE BACILLUS CEREUS *TOUS PRODUITS D’ALIMENTATION HUMAINE ET PRODUITS D'ALIMENTATION ANIMALE *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS 02.07.2010 RECONDUCTION/RENEWAL: 15.05.2014 02.07.2018 15.06.2022 24.06.2026 EXTENSION: 10.08.2021 03.06.2025 02.07.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+  "source_page": 39
+}

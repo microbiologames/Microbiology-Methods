@@ -1,0 +1,30 @@
+{
+  "certificate_number": "BIO 12/39-09/16",
+  "source": "NF-VALIDATION",
+  "commercial_name": "GENE-UP LISTERIA SPP.",
+  "aim_of_method_raw": "DETECTION DES LISTERIA SPP. (A L’EXCLUSION DES LISTERIA GRAYI) DETECTION OF LISTERIA SPP. (EXCEPT LISTERIA GRAYI)",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2016-09-29",
+  "end_of_validity": "2028-09-29",
+  "all_dates_found": [
+    "2016-09-29",
+    "2016-11-24",
+    "2017-07-03",
+    "2018-12-04",
+    "2021-11-10",
+    "2025-02-26",
+    "2020-07-02",
+    "2024-06-12",
+    "2028-09-29"
+  ],
+  "raw_block": "BIO 12/39-09/16 GENE-UP LISTERIA SPP. DETECTION DES LISTERIA SPP. (A L’EXCLUSION DES LISTERIA GRAYI) DETECTION OF LISTERIA SPP. (EXCEPT LISTERIA GRAYI) TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 29.09.2016 EXTENSION: 24.11.2016 03.07.2017 04.12.2018 10.11.2021 26.02.2025 RECONDUCTION/RENEWAL: 02.07.2020 12.06.2024 29.09.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Zone Polytec 5 rue des Berges 38000 Grenoble FRANCE",
+  "source_page": 53
+}

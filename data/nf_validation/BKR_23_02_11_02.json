@@ -1,0 +1,32 @@
+{
+  "certificate_number": "BKR 23/02-11/02",
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPASS LISTERIA AGAR",
+  "aim_of_method_raw": "DETECTION DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP.",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "TOUS PRODUITS D'ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2002-11-28",
+  "end_of_validity": "2027-11-28",
+  "all_dates_found": [
+    "2002-11-28",
+    "2007-05-25",
+    "2010-09-24",
+    "2014-11-27",
+    "2019-07-04",
+    "2023-10-17",
+    "2007-09-27",
+    "2011-05-12",
+    "2013-03-29",
+    "2019-10-03",
+    "2027-11-28"
+  ],
+  "raw_block": "BKR 23/02-11/02 COMPASS LISTERIA AGAR DETECTION DETECTION DES LISTERIA MONOCYTOGENES ET DES LISTERIA SPP. DETECTION OF LISTERIA MONOCYTOGENES AND LISTERIA SPP. TOUS PRODUITS D'ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 28.11.2002 RECONDUCTION/RENEWAL: 25.05.2007 24.09.2010 27.11.2014 04.07.2019 17.10.2023 EXTENSION: 27.09.2007 12.05.2011 29.03.2013 03.10.2019 28.11.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+  "source_page": 56
+}

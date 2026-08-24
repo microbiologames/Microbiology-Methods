@@ -1,0 +1,24 @@
+{
+  "certificate_number": "BKR 23/12-12/20",
+  "source": "NF-VALIDATION",
+  "commercial_name": "METHODE CSD",
+  "aim_of_method_raw": "DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP.",
+  "target_organism": "Cronobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES POUDRES DE LAIT ET CEREALES INFANTILES AVEC ET SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (AVEC PRISES D’ESSAIS DE 0 A 50G ET 50G A 375G) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION",
+  "certification_date": "2020-12-10",
+  "end_of_validity": "2028-12-10",
+  "all_dates_found": [
+    "2020-12-10",
+    "2024-10-03",
+    "2028-12-10"
+  ],
+  "raw_block": "BKR 23/12-12/20 METHODE CSD DÉTECTION DES CRONOBACTER SPP. DETECTION OF CRONOBACTER SPP. LES POUDRES DE LAIT ET CEREALES INFANTILES AVEC ET SANS PROBIOTIQUES INCLUANT LEURS INGREDIENTS (AVEC PRISES D’ESSAIS DE 0 A 50G ET 50G A 375G) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION 10.12.2020 RECONDUCTION/RENEWAL: 03.10.2024 10.12.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex Hyg FRANCE",
+  "source_page": 60
+}

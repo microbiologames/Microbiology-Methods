@@ -1,0 +1,28 @@
+{
+  "certificate_number": "BIO 12/19-12/06",
+  "source": "NF-VALIDATION",
+  "commercial_name": "GÉLOSE CHROMID COLI – ID CHROMID COLI ID AGAR",
+  "aim_of_method_raw": "DENOMBREMENT A 37°C DES E. COLI  GLUCURONIDASE POSITIVE β-GLUCURONIDASE POSITIVE E. COLI ENUMERATION AT 37°C",
+  "target_organism": null,
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ALL HUMAN FOOD PRODUCTS",
+  "certification_date": "2006-12-14",
+  "end_of_validity": "2026-12-14",
+  "all_dates_found": [
+    "2006-12-14",
+    "2010-12-02",
+    "2014-11-27",
+    "2018-12-04",
+    "2022-10-06",
+    "2025-10-02",
+    "2026-12-14"
+  ],
+  "raw_block": "BIO 12/19-12/06 GÉLOSE CHROMID COLI – ID CHROMID COLI ID AGAR DENOMBREMENT A 37°C DES E. COLI  GLUCURONIDASE POSITIVE β-GLUCURONIDASE POSITIVE E. COLI ENUMERATION AT 37°C *TOUS PRODUITS D’ALIMENTATION HUMAINE ALL HUMAN FOOD PRODUCTS 14.12.2006 RECONDUCTION/RENEWAL: 02.12.2010 27.11.2014 04.12.2018 06.10.2022 EXTENSION : 02.10.2025 14.12.2026",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile, FRANCE Site de production : Site of production : BioMérieux SA 2, rue du Moulin Madame 35270 Combourg, FRANCE",
+  "source_page": 49
+}

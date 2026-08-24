@@ -1,0 +1,27 @@
+{
+  "certificate_number": "NEO 35/02-05/13",
+  "source": "NF-VALIDATION",
+  "commercial_name": "ANSR® SALMONELLA",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS",
+  "certification_date": "2013-05-23",
+  "end_of_validity": "2029-05-23",
+  "all_dates_found": [
+    "2013-05-23",
+    "2017-07-04",
+    "2017-03-23",
+    "2021-04-08",
+    "2025-05-16",
+    "2029-05-23"
+  ],
+  "raw_block": "NEO 35/02-05/13 ANSR® SALMONELLA DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE *ALL HUMAN FOOD PRODUCTS AND ANIMAL FEED PRODUCTS 23.05.2013 EXTENSION: 04.07.2017 RECONDUCTION/RENEWAL: 23.03.2017 08.04.2021 16.05.2025 23.05.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA Représentée en Europe par : Represented in Europe by Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : Neogen Corporation 620 Lesher Place Lansing, Michigan 48912 USA",
+  "source_page": 66
+}

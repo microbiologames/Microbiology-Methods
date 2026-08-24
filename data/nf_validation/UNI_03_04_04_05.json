@@ -1,0 +1,32 @@
+{
+  "certificate_number": "UNI 03/04-04/05",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC™ LISTERIA PRECIS™ (",
+  "aim_of_method_raw": "DETECTION LISTERIA MONOCYTOGENES) DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2005-04-08",
+  "end_of_validity": "2029-04-08",
+  "all_dates_found": [
+    "2005-04-08",
+    "2009-09-24",
+    "2013-01-31",
+    "2017-03-24",
+    "2021-04-08",
+    "2025-04-01",
+    "2006-09-15",
+    "2007-03-29",
+    "2022-10-06",
+    "2025-05-14",
+    "2029-04-08"
+  ],
+  "raw_block": "UNI 03/04-04/05 THERMO SCIENTIFIC™ LISTERIA PRECIS™ (DETECTION LISTERIA MONOCYTOGENES) DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES *TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 08.04.2005 RECONDUCTION/RENEWAL: 24.09.2009 31.01.2013 24.03.2017 08.04.2021 01.04.2025 EXTENSION: 15.09.2006 29.03.2007 06.10.2022 14.05.2025 08.04.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production : Company holder of the certification and site of production : OXOID Ltd Thermo Fisher Scientific Wade Road Basingstoke Hampshire RG24 8PW ENGLAND Représentée en Europe par : Represented in Europe by : Thermo Fisher Scientific Ratastie 2, 01620, Vantaa, Finland",
+  "source_page": 13
+}

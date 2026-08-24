@@ -1,0 +1,24 @@
+{
+  "certificate_number": "QUA 18/09-01/19",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BAX SYSTEM RT PCR ASSAY GENUS LISTERIA FOR USE WITH BAX Q7",
+  "aim_of_method_raw": "DETECTION DES LISTERIA DETECTION OF LISTERIA",
+  "target_organism": "Listeria spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2019-02-01",
+  "end_of_validity": "2027-02-01",
+  "all_dates_found": [
+    "2019-02-01",
+    "2022-10-07",
+    "2027-02-01"
+  ],
+  "raw_block": "QUA 18/09-01/19 BAX SYSTEM RT PCR ASSAY GENUS LISTERIA FOR USE WITH BAX Q7 DETECTION DES LISTERIA DETECTION OF LISTERIA *TOUS PRODUITS D’ALIMENTATION HUMAINE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 01.02.2019 RECONDUCTION/RENEWAL: 07.10.2022 01.02.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena LLC 930 Flynn Road Camarillo, CA 93012 USA",
+  "source_page": 23
+}

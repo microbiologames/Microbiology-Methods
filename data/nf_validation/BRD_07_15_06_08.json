@@ -1,0 +1,32 @@
+{
+  "certificate_number": "BRD 07/15-06/08",
+  "source": "NF-VALIDATION",
+  "commercial_name": "IQ-CHECK E.COLI O157:H7 USE OF REAL-TIME PCR CFX96 TOUCH, CFX96 TOUCH DEEP WELL AND CFX OPUS DEEPWELL WITH CFX MANAGER IDE V3.1 SOFTWARE",
+  "aim_of_method_raw": "DETECTION DES E. COLI O157 :H7 DETECTION OF E. COLI O157:H7",
+  "target_organism": "E. coli",
+  "action": "detection",
+  "validation_scope_raw": "VIANDES CRUES (A L’EXCLUSION DES VOLAILLES) (PRISES D’ESSAI DE 25G ET 375G) RAW MEATS (EXCLUDING POULTRY MEATS) (WITH 25G AND 375G SAMPLES SIZES)",
+  "certification_date": "2008-06-30",
+  "end_of_validity": "2028-06-30",
+  "all_dates_found": [
+    "2008-06-30",
+    "2008-09-25",
+    "2010-02-04",
+    "2012-03-22",
+    "2013-10-03",
+    "2022-12-08",
+    "2012-05-10",
+    "2016-03-17",
+    "2020-11-16",
+    "2024-06-13",
+    "2028-06-30"
+  ],
+  "raw_block": "BRD 07/15-06/08 IQ-CHECK E.COLI O157:H7 USE OF REAL-TIME PCR CFX96 TOUCH, CFX96 TOUCH DEEP WELL AND CFX OPUS DEEPWELL WITH CFX MANAGER IDE V3.1 SOFTWARE DETECTION DES E. COLI O157 :H7 DETECTION OF E. COLI O157:H7 VIANDES CRUES (A L’EXCLUSION DES VOLAILLES) (PRISES D’ESSAI DE 25G ET 375G) RAW MEATS (EXCLUDING POULTRY MEATS) (WITH 25G AND 375G SAMPLES SIZES) 30.06.2008 EXTENSION: 25.09.2008 04.02.2010 22.03.2012 03.10.2013 08.12.2022 RECONDUCTION/RENEWAL: 10.05.2012 17.03.2016 16.11.2020 13.06.2024 30.06.2028 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Laboratories 925 & 2000 Alfred Nobel Drive California 94547 Hercules USA",
+  "source_page": 34
+}

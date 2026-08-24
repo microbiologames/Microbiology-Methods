@@ -1,0 +1,28 @@
+{
+  "certificate_number": "BKR 23/07-10/11",
+  "source": "NF-VALIDATION",
+  "commercial_name": "IRIS SALMONELLA",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (0 A 25G), PRODUITS SECS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (50 A 125G) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS), PET FOOD AND ANIMAL FEED (0 À 25G), DRY PET FOOD AND ANIMAL FEED (50 À 125G), INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+  "certification_date": "2011-10-07",
+  "end_of_validity": "2027-10-07",
+  "all_dates_found": [
+    "2011-10-07",
+    "2014-01-30",
+    "2020-12-10",
+    "2015-07-06",
+    "2019-10-03",
+    "2023-09-22",
+    "2027-10-07"
+  ],
+  "raw_block": "BKR 23/07-10/11 IRIS SALMONELLA DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (0 A 25G), PRODUITS SECS D’ALIMENTATION ANIMALE ET ANIMAUX DE COMPAGNIE (50 A 125G) ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS), PET FOOD AND ANIMAL FEED (0 À 25G), DRY PET FOOD AND ANIMAL FEED (50 À 125G), INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES. 07.10.2011 EXTENSION: 30.01.2014 10.12.2020 RECONDUCTION/RENEWAL: 06.07.2015 03.10.2019 22.09.2023 07.10.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : SOLABIA SAS Liberty Tower 17, place des reflets 92097 PARIS La Défense Cedex FRANCE Sites de production : Sites of production : SOLABIA SAS ZI n°2 Le Ther 2 rue de l’industrie BP 50686 60006 Beauvais Cedex FRANCE SOLABIA SAS pour la marque BIOKAR DIAGNOSTICS Rue des Quarante Mines - ZAC de THER Allonne BP 10245 60002 Beauvais Cedex FRANCE",
+  "source_page": 58
+}

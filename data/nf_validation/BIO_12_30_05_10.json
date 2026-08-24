@@ -1,0 +1,30 @@
+{
+  "certificate_number": "BIO 12/30-05/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "GÉLOSE CAMPYFOOD (CFA) CAMPYFOOD AGAR (CFA)",
+  "aim_of_method_raw": "DÉTECTION DES CAMPYLOBACTER SPP. DETECTION OF CAMPYLOBACTER SPP.",
+  "target_organism": "Campylobacter spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES VIANDES CRUES, LES PRODUITS A BASE DE VIANDE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE IN RAW MEAT PRODUCTS, IN MEAT-BASED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2010-05-21",
+  "end_of_validity": "2030-05-21",
+  "all_dates_found": [
+    "2010-05-21",
+    "2014-01-30",
+    "2016-03-18",
+    "2022-06-16",
+    "2014-03-20",
+    "2018-05-17",
+    "2022-02-02",
+    "2026-05-04",
+    "2030-05-21"
+  ],
+  "raw_block": "BIO 12/30-05/10 GÉLOSE CAMPYFOOD (CFA) CAMPYFOOD AGAR (CFA) DÉTECTION DES CAMPYLOBACTER SPP. DETECTION OF CAMPYLOBACTER SPP. LES VIANDES CRUES, LES PRODUITS A BASE DE VIANDE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE IN RAW MEAT PRODUCTS, IN MEAT-BASED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 21.05.2010 EXTENSION: 30.01.2014 18.03.2016 16.06.2022 RECONDUCTION/RENEWAL: 20.03.2014 17.05.2018 02.02.2022 04.05.2026 21.05.2030 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux Zone d’activités des Lilas - BP 10 5, rue des aqueducs 69290 Craponne, FRANCE",
+  "source_page": 50
+}

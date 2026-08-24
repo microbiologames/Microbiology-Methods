@@ -1,0 +1,23 @@
+{
+  "certificate_number": "SDC 42/03-12/24",
+  "source": "NF-VALIDATION",
+  "commercial_name": "COMPACTDRY™ TC",
+  "aim_of_method_raw": "DÉNOMBREMENT DE LA FLORE TOTALE ENUMERATION OF TOTAL VIABLE ORGANISMS",
+  "target_organism": null,
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION RÉALISÉS SUR UNE VASTE GAMME D'ALIMENTS) ET LES ÉCHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2024-12-19",
+  "end_of_validity": "2028-12-19",
+  "all_dates_found": [
+    "2024-12-19",
+    "2028-12-19"
+  ],
+  "raw_block": "SDC 42/03-12/24 COMPACTDRY™ TC DÉNOMBREMENT DE LA FLORE TOTALE ENUMERATION OF TOTAL VIABLE ORGANISMS *TOUS PRODUITS D’ALIMENTATION HUMAINE (PAR DES ESSAIS DE VALIDATION RÉALISÉS SUR UNE VASTE GAMME D'ALIMENTS) ET LES ÉCHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 19.12.2024 19.12.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 77
+}

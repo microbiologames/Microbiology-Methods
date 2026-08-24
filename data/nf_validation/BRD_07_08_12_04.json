@@ -1,0 +1,28 @@
+{
+  "certificate_number": "BRD 07/08-12/04",
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’E. COLI 2",
+  "aim_of_method_raw": "DENOMBREMENT A 37°C DES COLIFORMES ENUMERATION AT 37°C OF COLIFORMS *",
+  "target_organism": "Coliforms",
+  "action": "enumeration",
+  "validation_scope_raw": "TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE * ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2004-12-02",
+  "end_of_validity": "2028-12-02",
+  "all_dates_found": [
+    "2004-12-02",
+    "2008-11-28",
+    "2012-11-29",
+    "2017-11-22",
+    "2020-11-16",
+    "2024-10-03",
+    "2028-12-02"
+  ],
+  "raw_block": "BRD 07/08-12/04 RAPID’E. COLI 2 DENOMBREMENT A 37°C DES COLIFORMES ENUMERATION AT 37°C OF COLIFORMS * TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE * ALL HUMAN FOOD PRODUCTS, ANIMAL FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 02.12.2004 RECONDUCTION/RENEWAL: 28.11.2008 29.11.2012 22.11.2017 16.11.2020 03.10.2024 EXTENSION: 02.12.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : BIO-RAD 3 Bd Raymond Poincaré 92430 Marnes La Coquette FRANCE Site de production : Site of production : BIO-RAD Route de Cassel 59114 STEENVOORDE France",
+  "source_page": 28
+}

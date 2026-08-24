@@ -1,0 +1,35 @@
+{
+  "certificate_number": "BIO 12/32-10/11",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS UP SALMONELLA (SPT) USE OF THE FOLLOWING SOFTWARES: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS, VITEK® MS VERSION 3.4 AND PREVIOUS, VITEK® MS PRIME",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET PRIMAIRE ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND ANIMAL FEED PRODUCTS, INDUSTRIAL AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2011-10-06",
+  "end_of_validity": "2027-10-06",
+  "all_dates_found": [
+    "2011-10-06",
+    "2012-02-02",
+    "2012-07-06",
+    "2013-01-31",
+    "2014-01-30",
+    "2014-05-15",
+    "2015-10-14",
+    "2021-02-03",
+    "2022-06-16",
+    "2015-10-14",
+    "2019-11-28",
+    "2020-04-02",
+    "2023-06-15",
+    "2027-10-06"
+  ],
+  "raw_block": "BIO 12/32-10/11 VIDAS UP SALMONELLA (SPT) USE OF THE FOLLOWING SOFTWARES: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS, VITEK® MS VERSION 3.4 AND PREVIOUS, VITEK® MS PRIME DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, LES PRODUITS D’ALIMENTATION ANIMALE ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE ET PRIMAIRE ALL HUMAN FOOD PRODUCTS, PET FOOD PRODUCTS AND ANIMAL FEED PRODUCTS, INDUSTRIAL AND PRIMARY PRODUCTION ENVIRONMENTAL SAMPLES 06.10.2011 EXTENSION: 02.02.2012 06.07.2012 31.01.2013 30.01.2014 15.05.2014 14.10.2015 03.02.2021 16.06.2022 RECONDUCTION/RENEWAL: 14.10.2015 28.11.2019 02.04.2020 15.06.2023 06.10.2027",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 48
+}

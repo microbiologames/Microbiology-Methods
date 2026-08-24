@@ -1,0 +1,25 @@
+{
+  "certificate_number": "3M 01/18-05/17",
+  "source": "NF-VALIDATION",
+  "commercial_name": "KIT NEOGEN® DE",
+  "aim_of_method_raw": "DETECTION MOLECULAIRE 2 - E. COLI O157 (INCLUANT H7) NEOGEN® MOLECULAR DETECTION ASSAY 2 - E. COLI O157 (INCLUDING H7) DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157",
+  "target_organism": "E. coli O157",
+  "action": "detection",
+  "validation_scope_raw": "VIANDES DE BŒUF CRUES, PRODUITS LAITIERS CRUS, FRUITS ET VEGETAUX CRUS RAW BEEF MEAT, RAW DAIRY PRODUCTS, RAW FRUITS AND VEGETABLES",
+  "certification_date": "2017-05-18",
+  "end_of_validity": "2029-05-18",
+  "all_dates_found": [
+    "2017-05-18",
+    "2021-04-07",
+    "2025-05-16",
+    "2029-05-18"
+  ],
+  "raw_block": "3M 01/18-05/17 KIT NEOGEN® DE DETECTION MOLECULAIRE 2 - E. COLI O157 (INCLUANT H7) NEOGEN® MOLECULAR DETECTION ASSAY 2 - E. COLI O157 (INCLUDING H7) DÉTECTION DES E. COLI O157 DETECTION OF E. COLI O157 VIANDES DE BŒUF CRUES, PRODUITS LAITIERS CRUS, FRUITS ET VEGETAUX CRUS RAW BEEF MEAT, RAW DAIRY PRODUCTS, RAW FRUITS AND VEGETABLES 18.05.2017 RECONDUCTION/RENEWAL: 07.04.2021 16.05.2025 18.05.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : NEOGEN Food Safety Corporation 5954 Enterprise Dr, LANSING 48911, MISSOURI, USA",
+  "source_page": 10
+}

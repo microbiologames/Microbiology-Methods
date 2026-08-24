@@ -1,0 +1,29 @@
+{
+  "certificate_number": "3M 01/07-03/99",
+  "source": "NF-VALIDATION",
+  "commercial_name": "NEOGEN® PETRIFILM® HAUTE SENSIBILITE COLIFORMES NEOGEN® PETRIFILM® HIGH- SENSITIVITY COLIFORM COUNT PLATE",
+  "aim_of_method_raw": "DENOMBREMENT DES COLIFORMES TOTAUX (LECTURE DES COLONIES GAZOGENES) ENUMERATION OF GAS PRODUCING COLIFORMS (READING AFTER 24 HOURS)",
+  "target_organism": "Coliforms",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ALL HUMAN FOOD PRODUCTS",
+  "certification_date": "1999-03-23",
+  "end_of_validity": "2027-03-23",
+  "all_dates_found": [
+    "1999-03-23",
+    "2003-04-02",
+    "2007-05-24",
+    "2011-02-03",
+    "2014-11-27",
+    "2019-01-31",
+    "2023-03-23",
+    "2027-03-23"
+  ],
+  "raw_block": "3M 01/07-03/99 NEOGEN® PETRIFILM® HAUTE SENSIBILITE COLIFORMES NEOGEN® PETRIFILM® HIGH- SENSITIVITY COLIFORM COUNT PLATE DENOMBREMENT DES COLIFORMES TOTAUX (LECTURE DES COLONIES GAZOGENES) ENUMERATION OF GAS PRODUCING COLIFORMS (READING AFTER 24 HOURS) *TOUS PRODUITS D’ALIMENTATION HUMAINE ALL HUMAN FOOD PRODUCTS 23.03.1999 RECONDUCTION/RENEWAL: 02.04.2003 24.05.2007 03.02.2011 27.11.2014 31.01.2019 23.03.2023 23.03.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : NEOGEN Food Safety Corporation 620 Lesher Place, Lansing Michigan 48912, USA Représentée en Europe par : Represented in Europe by : Neogen Ireland Ltd. Bray Business Park, Southern Cross Rd, Bray, Co. Wicklow, A98 YV29, Ireland Site de production : Site of production : 3M Health Care PO BOX 227 SOUTH DAKOTA 57006 BROOKINGS, USA Ou Or 3M Wroclaw ul. Kowalska 143 51-424 Wrocław POLAND",
+  "source_page": 6
+}

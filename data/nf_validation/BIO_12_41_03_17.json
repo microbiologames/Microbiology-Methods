@@ -1,0 +1,27 @@
+{
+  "certificate_number": "BIO 12/41-03/17",
+  "source": "NF-VALIDATION",
+  "commercial_name": "SALMA ONE DAY",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, LES ECHANTILLONS DE L’ENVIRONNEMENT PRIMAIRE ET INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND FEED PRODUCTS, PET FOOD PRODUCTS, PRIMARY AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2017-03-23",
+  "end_of_validity": "2029-03-23",
+  "all_dates_found": [
+    "2017-03-23",
+    "2017-05-18",
+    "2020-04-02",
+    "2021-02-03",
+    "2025-01-09",
+    "2029-03-23"
+  ],
+  "raw_block": "BIO 12/41-03/17 SALMA ONE DAY DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. TOUS PRODUITS D’ALIMENTATION HUMAINE ET ANIMALE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, LES ECHANTILLONS DE L’ENVIRONNEMENT PRIMAIRE ET INDUSTRIELLE ALL HUMAN FOOD PRODUCTS AND FEED PRODUCTS, PET FOOD PRODUCTS, PRIMARY AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 23.03.2017 EXTENSION: 18.05.2017 02.04.2020 RECONDUCTION/RENEWAL: 03.02.2021 09.01.2025 23.03.2029 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE Site de production : Site of production : bioMérieux SA Route de Dol - BP 54 35270 Combourg FRANCE",
+  "source_page": 39
+}

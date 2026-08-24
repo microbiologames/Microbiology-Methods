@@ -1,0 +1,29 @@
+{
+  "certificate_number": "BIO 12/27-02/10",
+  "source": "NF-VALIDATION",
+  "commercial_name": "VIDAS LISTERIA MONOCYTOGENES XPRESS (LMX) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS",
+  "aim_of_method_raw": "DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES",
+  "target_organism": "Listeria monocytogenes",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2010-02-04",
+  "end_of_validity": "2030-02-04",
+  "all_dates_found": [
+    "2010-02-04",
+    "2011-06-30",
+    "2022-06-16",
+    "2013-11-28",
+    "2018-01-26",
+    "2022-02-02",
+    "2025-12-10",
+    "2030-02-04"
+  ],
+  "raw_block": "BIO 12/27-02/10 VIDAS LISTERIA MONOCYTOGENES XPRESS (LMX) USE OF THE FOLLOWING SOFTWARE: VIDAS VERSION 4.10 AND PREVIOUS, MINIVIDAS VERSION 5.6, VIDAS KUBE VERSION 1.3 AND PREVIOUS DÉTECTION DES LISTERIA MONOCYTOGENES DETECTION OF LISTERIA MONOCYTOGENES *TOUS PRODUITS D’ALIMENTATION HUMAINE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 04.02.2010 EXTENSION: 30.06.2011 16.06.2022 RECONDUCTION/RENEWAL: 28.11.2013 26.01.2018 02.02.2022 10.12.2025 04.02.2030",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": "et site de production: Company holder of the certification and site of production: bioMérieux SA Chemin de l’Orme 69280 Marcy l’Etoile FRANCE",
+  "source_page": 43
+}

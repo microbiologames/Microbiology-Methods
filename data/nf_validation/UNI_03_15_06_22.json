@@ -1,0 +1,23 @@
+{
+  "certificate_number": "UNI 03/15-06/22",
+  "source": "NF-VALIDATION",
+  "commercial_name": "THERMO SCIENTIFIC ™ LISTERIA PRECIS™ (",
+  "aim_of_method_raw": "DENOMBREMENT LISTERIA SPECIES) DENOMBREMENT DES LISTERIA SPECIES ENUMERATION OF LISTERIA SPECIES",
+  "target_organism": "Listeria spp.",
+  "action": "enumeration",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2023-05-17",
+  "end_of_validity": "2027-05-17",
+  "all_dates_found": [
+    "2023-05-17",
+    "2027-05-17"
+  ],
+  "raw_block": "UNI 03/15-06/22 THERMO SCIENTIFIC ™ LISTERIA PRECIS™ (DENOMBREMENT LISTERIA SPECIES) DENOMBREMENT DES LISTERIA SPECIES ENUMERATION OF LISTERIA SPECIES *TOUS PRODUITS D’ALIMENTATION ET LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS (BY PERFORMING VALIDATION ASSAYS ON A BROAD RANGE OF FOODS) AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 17.05.2023 17.05.2027 Validation study performed in accordance with EN ISO 16140-2: 2016 standard protocol *Validé par des essais de validation réalisés sur une vaste gamme d'aliments / Validated by performing validation tests on a broad range of foods.",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": null,
+  "source_page": 14
+}

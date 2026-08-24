@@ -1,0 +1,35 @@
+{
+  "certificate_number": "QUA 18/03-11/02",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BAX SYSTEM PCR ASSAY SALMONELLA SPP. (AUTOMATISÉ / AUTOMATISED) FOR USE WITH BAX Q7 OR X5 INSTRUMENT",
+  "aim_of_method_raw": "DÉTECTION DES SALMONEL",
+  "target_organism": null,
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2002-11-28",
+  "end_of_validity": "2026-11-28",
+  "all_dates_found": [
+    "2002-11-28",
+    "2008-06-30",
+    "2008-11-27",
+    "2009-05-18",
+    "2011-03-24",
+    "2012-03-22",
+    "2016-01-28",
+    "2018-01-26",
+    "2006-10-23",
+    "2010-09-24",
+    "2014-11-27",
+    "2018-10-05",
+    "2022-10-07",
+    "2026-11-28"
+  ],
+  "raw_block": "QUA 18/03-11/02 BAX SYSTEM PCR ASSAY SALMONELLA SPP. (AUTOMATISÉ / AUTOMATISED) FOR USE WITH BAX Q7 OR X5 INSTRUMENT DÉTECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, LES PRODUITS D’ALIMENTATION POUR ANIMAUX DE COMPAGNIE, ET ECHANTILLONS DE L'ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 28.11.2002 EXTENSION: 30.06.2008 27.11.2008 18.05.2009 24.03.2011 22.03.2012 28.01.2016 26.01.2018 RECONDUCTION/RENEWAL: 23.10.2006 24.09.2010 27.11.2014 05.10.2018 07.10.2022 28.11.2026",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena LLC 930 Flynn Road Camarillo, CA 93012 USA",
+  "source_page": 20
+}

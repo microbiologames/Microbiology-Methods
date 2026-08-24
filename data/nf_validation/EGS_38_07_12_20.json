@@ -1,0 +1,24 @@
+{
+  "certificate_number": "EGS 38/07-12/20",
+  "source": "NF-VALIDATION",
+  "commercial_name": "BACSPEC SALMONELLA 2",
+  "aim_of_method_raw": "DETECTION DES SALMONELLA SPP. DETECTION OF SALMONELLA SPP.",
+  "target_organism": "Salmonella spp.",
+  "action": "detection",
+  "validation_scope_raw": "*TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES",
+  "certification_date": "2021-01-07",
+  "end_of_validity": "2029-01-07",
+  "all_dates_found": [
+    "2021-01-07",
+    "2024-12-18",
+    "2029-01-07"
+  ],
+  "raw_block": "EGS 38/07-12/20 BACSPEC SALMONELLA 2 DETECTION DES SALMONELLA SPP. DETECTION OF SALMONELLA SPP. *TOUS PRODUITS D’ALIMENTATION HUMAINE, PRODUITS D’ALIMENTATION ANIMALE ET ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE *ALL HUMAN FOOD PRODUCTS, FEED PRODUCTS AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES 07.01.2021 RECONDUCTION/RENEWAL: 18.12.2024 07.01.2029",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Gold Standard Diagnostics Engesserstrasβe 4 D-79108 Freiburg im Breisgau GERMANY Site de production : Site of production : Gold Standard Diagnostics Fóti ùt 56. Building A HU-1047 Budapest HUNGARY",
+  "source_page": 73
+}

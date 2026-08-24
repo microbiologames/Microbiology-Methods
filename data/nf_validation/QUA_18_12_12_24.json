@@ -1,0 +1,23 @@
+{
+  "certificate_number": "QUA 18/12-12/24",
+  "source": "NF-VALIDATION",
+  "commercial_name": "FOODPROOF® SALMONELLA PLUS CRONOBACTER",
+  "aim_of_method_raw": "DETECTION LYOKIT FOR SALMONELLA SPP. DETECTION DETECTION DES SALMONEL",
+  "target_organism": "Salmonella spp.",
+  "action": "detection",
+  "validation_scope_raw": "LES DETECTION OF SALMONELLA SPP. * LES PRODUITS D’ALIMENTATION INFANTILE AVEC OU SANS PROBIOTIQUES ET LEURS INGREDIENTS, AINSI QUE LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE. * INFANT FORMULA WITH OR WITHOUT PROBIOTICS AND INGREDIENTS, AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES.",
+  "certification_date": "2024-12-18",
+  "end_of_validity": "2028-12-18",
+  "all_dates_found": [
+    "2024-12-18",
+    "2028-12-18"
+  ],
+  "raw_block": "QUA 18/12-12/24 FOODPROOF® SALMONELLA PLUS CRONOBACTER DETECTION LYOKIT FOR SALMONELLA SPP. DETECTION DETECTION DES SALMONELLES DETECTION OF SALMONELLA SPP. * LES PRODUITS D’ALIMENTATION INFANTILE AVEC OU SANS PROBIOTIQUES ET LEURS INGREDIENTS, AINSI QUE LES ECHANTILLONS DE L’ENVIRONNEMENT DE PRODUCTION INDUSTRIELLE. * INFANT FORMULA WITH OR WITHOUT PROBIOTICS AND INGREDIENTS, AND INDUSTRIAL PRODUCTION ENVIRONMENTAL SAMPLES. 18.12.2024 18.12.2028",
+  "provenance": {
+    "source_type": "bootstrap_pdf_import",
+    "note": "Imported from a manually-supplied AFNOR NF-Validation list PDF. This PDF's own refresh cadence is unknown and is NOT guaranteed to match the live nf-validation.afnor.org site. Treat as a one-time seed, not a recurring source -- the production scraper must read the live site directly and this record should be superseded/reconciled once that scraper runs.",
+    "pdf_list_valid_on": "2026-07-22"
+  },
+  "company_holder_raw": ": Company holder of the certification : Hygiena LLC 941 Avenida Acaso Camarillo, CA 93012 USA Représentée en Europe par : Represented in Europe by : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY Site de production: Site of production : Hygiena Diagnostics GmbH Hermannswerder 17 14473 Postdam GERMANY",
+  "source_page": 24
+}
