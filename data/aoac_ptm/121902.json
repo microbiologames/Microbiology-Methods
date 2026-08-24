@@ -1,0 +1,64 @@
+{
+  "source": "AOAC-RI",
+  "certificate_number": "121902",
+  "method_name": "InSite Listeria",
+  "manufacturer_raw": "Hygiena LLC 941 Avenida Acaso Camarillo, CA USA",
+  "manufacturer_name": "Hygiena LLC",
+  "manufacturer_address_raw": "941 Avenida Acaso, Camarillo, CA USA",
+  "issue_date": "2025-12-26",
+  "expiration_date": "2026-12-31",
+  "authors_raw": "Delia Calderon, Nicole Familiari, Paul Meighan",
+  "submitting_company_raw": "Hygiena LLC 941 Avenida Acaso Camarillo, CA USA",
+  "independent_laboratory_raw": "Q Laboratories, Inc. 1400 Harrison Avenue Cincinnati, OH 45214 USA",
+  "catalog_numbers_raw": "ILC050, ILC100",
+  "target_organism_raw": "Listeria species (L. monocytogenes, innocua, fleischmanni, welshimeri, weihenstephanensis, ivanovii, and seeligeri)",
+  "target_organism": "Listeria spp.",
+  "category_guess": "chromogenic_agar",
+  "matrices_raw": "(4x4 in swab) – Stainless steel, ceramic, plastic",
+  "matrices": [
+    "(4x4 in swab) – Stainless steel",
+    "ceramic",
+    "plastic"
+  ],
+  "reference_method_raw": "U.S. Food and Drug Administration (2017) FDA Bacteriological Analytical Manual, Chapter 10, Detection of Listeria monocytogenes in Foods and Environmental Samples, and Enumeration of Listeria monocytogenes in Foods (2)",
+  "original_certification_date": "2019-12-01",
+  "certification_renewal_record_raw": "Renewed through December 2026.",
+  "inclusivity": {
+    "n_tested": 97,
+    "n_correctly_detected": 94,
+    "discrepancies": [
+      {
+        "strain": "Listeria grayi ATCC 25401 Standing corn stalks and leaves",
+        "note": "Not detected (result: -)"
+      },
+      {
+        "strain": "Listeria grayi ATCC 19120 Animal feces, Denmark",
+        "note": "Not detected (result: -)"
+      },
+      {
+        "strain": "Listeria grayi ATCC 25403 Corn stalks and leaves, USA",
+        "note": "Not detected (result: -)"
+      }
+    ]
+  },
+  "exclusivity": {
+    "n_tested": 45,
+    "n_correctly_detected": 43,
+    "discrepancies": [
+      {
+        "strain": "Enterococcus durans ATCCb 11576 Dairy products",
+        "note": "Cross-reactivity: detected (result: +)"
+      },
+      {
+        "strain": "Enterococcus faecalis ATCC 51299 Peritoneal fluid",
+        "note": "Cross-reactivity: detected (result: +)"
+      }
+    ]
+  },
+  "inclusivity_exclusivity_source_text": "Counted from per-strain inclusivity/exclusivity table rows.",
+  "source_pdf_filename": "121902C_HygienaLisInSiteListeria.pdf",
+  "provenance": {
+    "source_type": "manually_supplied_certificate_pdf",
+    "note": "Parsed from a user-supplied AOAC Performance Tested Methods certificate PDF. members.aoac.org (the live index) was unreachable from this environment (egress-blocked); this parser has only been developed/tested against 4 example certificates and field coverage will need broadening once more certificates are available."
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "aoac-ri--121902",
+  "source": "AOAC-RI",
+  "source_certificate_number": "121902",
+  "commercial_name": "InSite Listeria",
+  "manufacturer": {
+    "name": "Hygiena LLC",
+    "address_raw": "941 Avenida Acaso, Camarillo, CA USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "chromogenic_agar"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria species (L. monocytogenes, innocua, fleischmanni, welshimeri, weihenstephanensis, ivanovii, and seeligeri)"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": "U.S. Food and Drug Administration (2017) FDA Bacteriological Analytical Manual, Chapter 10, Detection of Listeria monocytogenes in Foods and Environmental Samples, and Enumeration of Listeria monocytogenes in Foods (2)"
+  },
+  "validation_scope": {
+    "raw": "(4x4 in swab) – Stainless steel, ceramic, plastic",
+    "matrices": [
+      "(4x4 in swab) – Stainless steel",
+      "ceramic",
+      "plastic"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
+    "study_type": "multi-lab",
+    "number_of_labs": 2,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2019-12-01",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2026-12-31",
+    "status": "active"
+  },
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [],
+      "inclusivity": {
+        "n_tested": 97,
+        "n_correctly_detected": 94,
+        "discrepancies": [
+          {
+            "strain": "Listeria grayi ATCC 25401 Standing corn stalks and leaves",
+            "note": "Not detected (result: -)"
+          },
+          {
+            "strain": "Listeria grayi ATCC 19120 Animal feces, Denmark",
+            "note": "Not detected (result: -)"
+          },
+          {
+            "strain": "Listeria grayi ATCC 25403 Corn stalks and leaves, USA",
+            "note": "Not detected (result: -)"
+          }
+        ]
+      },
+      "exclusivity": {
+        "n_tested": 45,
+        "n_correctly_detected": 43,
+        "discrepancies": [
+          {
+            "strain": "Enterococcus durans ATCCb 11576 Dairy products",
+            "note": "Cross-reactivity: detected (result: +)"
+          },
+          {
+            "strain": "Enterococcus faecalis ATCC 51299 Peritoneal fluid",
+            "note": "Cross-reactivity: detected (result: +)"
+          }
+        ]
+      }
+    }
+  },
+  "traceability": {
+    "source_document_type": "certificate_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
+  }
+}

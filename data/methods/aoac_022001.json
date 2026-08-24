@@ -1,0 +1,71 @@
+{
+  "id": "aoac-ri--022001",
+  "source": "AOAC-RI",
+  "source_certificate_number": "022001",
+  "commercial_name": "Simultaneous Multiplex Real Time PCR (SIMUL-qPCR) Top7 STEC Assay Collection",
+  "manufacturer": {
+    "name": "Applied Food Diagnostics, Inc.",
+    "address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Shiga toxin-producing E. coli (STEC)",
+    "raw": "Shiga toxin (stx) genes, Intimin genes (eae), E. coli Serotypes O157, O26, O45, O1O3, O111, O121 and O145"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": "U.S. Department of Agriculture-Food Safety and Inspection Service (2015) Microbiology Laboratory Guidebook, 5.09, Detection, Isolation and Identification of Escherichia coli O157:H7 from Meat Products and Carcass and Environmental Sponges (2) Off U. S. Department of Agriculture-Food Safety and Inspection Service (2014) Microbiology Laboratory Guidebook, 5B.05, Detection and Isolation of non- O157 Shiga Toxin-Producing Escherichia coli (STEC) from Meat Products and Carcass and Environmental Sponges (3) U.S. Food and Drug Administration Bacteriological Analytical Manual (Chapter 4A: Diarrheagenic Escherichia coli) [accessed January 17, 2022] (5) SMPR 2020.012 Detection of Shiga toxin-producing Escherichia coli in Cannabis and Cannabis Products (6)"
+  },
+  "validation_scope": {
+    "raw": "Fresh raw ground beef (~75% lean), fresh raw beef trim (~75%), and beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g), hemp flower (10 g; ≤ 0.3% delta 9-THC)",
+    "matrices": [
+      "Fresh raw ground beef (~75% lean)",
+      "fresh raw beef trim (~75%)",
+      "beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g)",
+      "hemp flower (10 g; ≤ 0.3% delta 9-THC)"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
+    "study_type": "multi-lab",
+    "number_of_labs": 2,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2020-02-05",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2026-12-31",
+    "status": "active"
+  },
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [],
+      "inclusivity": {
+        "n_tested": 50,
+        "n_correctly_detected": 50,
+        "discrepancies": []
+      },
+      "exclusivity": {
+        "n_tested": 30,
+        "n_correctly_detected": 30,
+        "discrepancies": []
+      }
+    }
+  },
+  "traceability": {
+    "source_document_type": "certificate_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
+  }
+}

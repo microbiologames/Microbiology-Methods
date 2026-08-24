@@ -1,0 +1,72 @@
+{
+  "id": "aoac-ri--052003",
+  "source": "AOAC-RI",
+  "source_certificate_number": "052003",
+  "commercial_name": "Molecular Environmental Monitoring Program (MEMP) Listeria Assay",
+  "manufacturer": {
+    "name": "Applied Food Diagnostics, Inc.",
+    "address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp.",
+    "raw": "Listeria species"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": "Food and Drug Administration Bacteriological Analytical Manual, Detection and Enumeration of Listeria monocytogenes in Foods, Chapter 10 (2017) (2)"
+  },
+  "validation_scope": {
+    "raw": "Stainless steel (1”x 1”), plastic (1”x 1”), rubber (1”x 1”), ceramic tile (1”x 1”) and sealed concrete (1”x 1”)",
+    "matrices": [
+      "Stainless steel (1”x 1”)",
+      "plastic (1”x 1”)",
+      "rubber (1”x 1”)",
+      "ceramic tile (1”x 1”)",
+      "sealed concrete (1”x 1”)"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
+    "study_type": "multi-lab",
+    "number_of_labs": 2,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2020-05-15",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2026-12-31",
+    "status": "active"
+  },
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [],
+      "inclusivity": {
+        "n_tested": 75,
+        "n_correctly_detected": 75,
+        "discrepancies": []
+      },
+      "exclusivity": {
+        "n_tested": 30,
+        "n_correctly_detected": 30,
+        "discrepancies": []
+      }
+    }
+  },
+  "traceability": {
+    "source_document_type": "certificate_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
+  }
+}

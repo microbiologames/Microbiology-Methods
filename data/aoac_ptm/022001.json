@@ -1,0 +1,43 @@
+{
+  "source": "AOAC-RI",
+  "certificate_number": "022001",
+  "method_name": "Simultaneous Multiplex Real Time PCR (SIMUL-qPCR) Top7 STEC Assay Collection",
+  "manufacturer_raw": "Applied Food Diagnostics, Inc. 25 Naus Way Bloomsburg, PA 17815 USA",
+  "manufacturer_name": "Applied Food Diagnostics, Inc.",
+  "manufacturer_address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
+  "issue_date": "2025-10-08",
+  "expiration_date": "2026-12-31",
+  "authors_raw": "ORIGINAL VALIDATION: Thomas Lonczynski and Laura Cowin MODIFICATION JUNE 2022: Thomas Lonczynski, Laura Cowin, David Antolick, Joshua Cassar, Nicholas LeValley, Conner McDaniel",
+  "submitting_company_raw": "Applied Food Diagnostics, Inc. 387 Hazle Street Nuremberg, PA 18241",
+  "independent_laboratory_raw": "WBA Analytical Laboratories 3609 Johnson Road Springdale, AR 72762",
+  "catalog_numbers_raw": "SMRT-T7-032, SMRT-T7-096",
+  "target_organism_raw": "Shiga toxin (stx) genes, Intimin genes (eae), E. coli Serotypes O157, O26, O45, O1O3, O111, O121 and O145",
+  "target_organism": "Shiga toxin-producing E. coli (STEC)",
+  "category_guess": "molecular_pcr",
+  "matrices_raw": "Fresh raw ground beef (~75% lean), fresh raw beef trim (~75%), and beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g), hemp flower (10 g; ≤ 0.3% delta 9-THC)",
+  "matrices": [
+    "Fresh raw ground beef (~75% lean)",
+    "fresh raw beef trim (~75%)",
+    "beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g)",
+    "hemp flower (10 g; ≤ 0.3% delta 9-THC)"
+  ],
+  "reference_method_raw": "U.S. Department of Agriculture-Food Safety and Inspection Service (2015) Microbiology Laboratory Guidebook, 5.09, Detection, Isolation and Identification of Escherichia coli O157:H7 from Meat Products and Carcass and Environmental Sponges (2) Off U. S. Department of Agriculture-Food Safety and Inspection Service (2014) Microbiology Laboratory Guidebook, 5B.05, Detection and Isolation of non- O157 Shiga Toxin-Producing Escherichia coli (STEC) from Meat Products and Carcass and Environmental Sponges (3) U.S. Food and Drug Administration Bacteriological Analytical Manual (Chapter 4A: Diarrheagenic Escherichia coli) [accessed January 17, 2022] (5) SMPR 2020.012 Detection of Shiga toxin-producing Escherichia coli in Cannabis and Cannabis Products (6)",
+  "original_certification_date": "2020-02-05",
+  "certification_renewal_record_raw": "Renewed annually through December 2026.",
+  "inclusivity": {
+    "n_tested": 50,
+    "n_correctly_detected": 50,
+    "discrepancies": []
+  },
+  "exclusivity": {
+    "n_tested": 30,
+    "n_correctly_detected": 30,
+    "discrepancies": []
+  },
+  "inclusivity_exclusivity_source_text": "(1) Inclusivity and Exclusivity Of the 50 inclusivity strains analyzed by the SIMUL-qPCR Top 7 STEC Assay, all 50 inclusivity strains were correctly detected by the appropriate PCR target within the Top 7 STEC assay kit collection. Additionally, all 50 strains were correctly identified to contain either the intimin gene, the shiga toxin-producing gene, or both. Of the 30 exclusivity strains, none were detected by the SIMUL-qPCR method. Initially three of the exclusivity isolates gave a positive PCR call (Bacillus pumilis, Ewingella americana, and Providencia staurtii), but the blank well also ",
+  "source_pdf_filename": "022001C_AppliedFoodTop7STEC.pdf",
+  "provenance": {
+    "source_type": "manually_supplied_certificate_pdf",
+    "note": "Parsed from a user-supplied AOAC Performance Tested Methods certificate PDF. members.aoac.org (the live index) was unreachable from this environment (egress-blocked); this parser has only been developed/tested against 4 example certificates and field coverage will need broadening once more certificates are available."
+  }
+}

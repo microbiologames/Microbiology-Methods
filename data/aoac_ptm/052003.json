@@ -1,0 +1,44 @@
+{
+  "source": "AOAC-RI",
+  "certificate_number": "052003",
+  "method_name": "Molecular Environmental Monitoring Program (MEMP) Listeria Assay",
+  "manufacturer_raw": "Applied Food Diagnostics, Inc. 25 Naus Way Bloomsburg, PA 17815 USA",
+  "manufacturer_name": "Applied Food Diagnostics, Inc.",
+  "manufacturer_address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
+  "issue_date": "2025-10-09",
+  "expiration_date": "2026-12-31",
+  "authors_raw": "Thomas Lonczynski and Laura Cowin",
+  "submitting_company_raw": "Applied Food Diagnostics, Inc. 387 Hazle Street Nuremberg, PA USA",
+  "independent_laboratory_raw": "Q Laboratories 1930 Radcliff Drive Cincinnati, OH 45204 USA",
+  "catalog_numbers_raw": "MEMP-LIS-032- MEMP Listeria Assay Kit MEMP-SWB-032 – AFD MEMP Swab Kit",
+  "target_organism_raw": "Listeria species",
+  "target_organism": "Listeria spp.",
+  "category_guess": "molecular_pcr",
+  "matrices_raw": "Stainless steel (1”x 1”), plastic (1”x 1”), rubber (1”x 1”), ceramic tile (1”x 1”) and sealed concrete (1”x 1”)",
+  "matrices": [
+    "Stainless steel (1”x 1”)",
+    "plastic (1”x 1”)",
+    "rubber (1”x 1”)",
+    "ceramic tile (1”x 1”)",
+    "sealed concrete (1”x 1”)"
+  ],
+  "reference_method_raw": "Food and Drug Administration Bacteriological Analytical Manual, Detection and Enumeration of Listeria monocytogenes in Foods, Chapter 10 (2017) (2)",
+  "original_certification_date": "2020-05-15",
+  "certification_renewal_record_raw": "Renewed annually through December 2026.",
+  "inclusivity": {
+    "n_tested": 75,
+    "n_correctly_detected": 75,
+    "discrepancies": []
+  },
+  "exclusivity": {
+    "n_tested": 30,
+    "n_correctly_detected": 30,
+    "discrepancies": []
+  },
+  "inclusivity_exclusivity_source_text": "(1) Inclusivity and Exclusivity Of the 75 inclusivity strains analyzed by the MEMP Listeria Assay, all 75 inclusivity strains were correctly detected by the Listeria assay kit. Of the 30 exclusivity strains, none were detected by the Listeria MEMP method. See Tables 1 and 2. Matrix Study Results from both the method developer and independent studies of the MEMP Listeria Assay for the environmental samples are outlined in Tables 3 and 4. Throughout the study, the method developer had difficulty achieving fractional results, and repeat attempts had to be made to spike at the correct inoculation ",
+  "source_pdf_filename": "052003C_AppliedFoodEnviroLis.pdf",
+  "provenance": {
+    "source_type": "manually_supplied_certificate_pdf",
+    "note": "Parsed from a user-supplied AOAC Performance Tested Methods certificate PDF. members.aoac.org (the live index) was unreachable from this environment (egress-blocked); this parser has only been developed/tested against 4 example certificates and field coverage will need broadening once more certificates are available."
+  }
+}

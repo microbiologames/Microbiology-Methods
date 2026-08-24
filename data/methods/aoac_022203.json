@@ -1,0 +1,71 @@
+{
+  "id": "aoac-ri--022203",
+  "source": "AOAC-RI",
+  "source_certificate_number": "022203",
+  "commercial_name": "GENE-UP® Pathogenic E. coli (PEC)",
+  "manufacturer": {
+    "name": "bioMérieux, SA",
+    "address_raw": "376 Chemin de l’Orme, 69280 Marcy-l’Etoile France",
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Shiga toxin-producing E. coli (STEC)",
+    "raw": null
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": null
+  },
+  "validation_scope": {
+    "raw": "(not stated in a single free-text scope field on this certificate)",
+    "matrices": [
+      "Raw beef trim 375 g pw BPW",
+      "Raw ground beef (80% lean) 375 g pw BPW",
+      "Romaine lettuce 375 g pw BPW",
+      "Sampling cloth from beef trim 1 cloth BPW"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2022-02-23",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2026-12-31",
+    "status": "active"
+  },
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [],
+      "inclusivity": {
+        "n_tested": 50,
+        "n_correctly_detected": 50,
+        "discrepancies": []
+      },
+      "exclusivity": {
+        "n_tested": 30,
+        "n_correctly_detected": 30,
+        "discrepancies": []
+      }
+    }
+  },
+  "traceability": {
+    "source_document_type": "certificate_pdf",
+    "source_document_url": null,
+    "extraction_date": null,
+    "extraction_confidence": "medium",
+    "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
+  }
+}
