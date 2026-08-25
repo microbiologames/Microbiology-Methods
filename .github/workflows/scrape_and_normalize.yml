@@ -1,12 +1,22 @@
-name: Scrape and normalize NF-Validation data
+name: Scrape and normalize validation data
 
 # Runs from GitHub's own runners, which have normal outbound internet access
 # -- unlike this repo's day-to-day development environment, where
-# nf-validation.afnor.org is proxy-blocked. That means the --fetch-live and
-# fetch_and_mine_summary_reports.py code paths exercised here have NOT been
-# validated end-to-end before this workflow's first real run; watch the
-# first few runs closely and expect to need small fixes if the live site's
-# HTML has drifted from what the offline-developed parsers expect.
+# nf-validation.afnor.org, members.aoac.org and nen.bettywebblocks.com are
+# all proxy-blocked. That means every live-fetch code path exercised here
+# (NF-Validation organism pages, summary-report downloads, the AOAC-RI
+# listing scraper, and the MicroVal reconnaissance fetch) has NOT been
+# validated end-to-end before this workflow's first real run against each
+# site. Watch the first few runs closely: the "Upload debug dumps" step
+# always runs (even on failure) so a raw-HTML/screenshot/JSON capture is
+# available to diagnose from without needing another manual file handoff.
+#
+# MicroVal in particular is reconnaissance only -- no sample of its real
+# rendered content was ever available to develop against (only the outer
+# shell page), so microval_live_fetch.py deliberately does NOT map its
+# output to the canonical schema yet. Its output under data/microval/ is
+# raw, unmapped rows; writing pipeline/normalize_microval.py comes after a
+# human has looked at a real run's debug dump.
 #
 # Deliberately NOT re-scraping the NF-Validation certificate-list PDF here:
 # per the project's data-provenance policy, that PDF is a one-time bootstrap
@@ -34,28 +44,64 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pypdf beautifulsoup4 jsonschema requests
+        run: pip install pypdf beautifulsoup4 jsonschema requests playwright
+
+      - name: Install Playwright Chromium (for MicroVal)
+        run: playwright install --with-deps chromium
 
       - name: Re-fetch live NF-Validation organism pages
+        continue-on-error: true
         run: python3 scrapers/nf_validation_organism_pages.py --fetch-live --out-dir data/nf_validation_organism_pages
 
       - name: Re-run NF-Validation merge/normalization
         run: python3 pipeline/normalize_nf_validation.py
 
       - name: Fetch and mine summary validation reports
+        continue-on-error: true
         run: python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
+
+      - name: Fetch AOAC-RI live certificates
+        continue-on-error: true
+        run: python3 scrapers/aoac_ptm_live_fetch.py --out-dir data/aoac_ptm --debug-dir debug/aoac
+
+      - name: Re-run AOAC-RI normalization
+        run: python3 pipeline/normalize_aoac.py
+
+      - name: MicroVal reconnaissance fetch
+        continue-on-error: true
+        run: python3 scrapers/microval_live_fetch.py --out-dir data/microval --debug-dir debug/microval
+
+      - name: Upload debug dumps (HTML / screenshots / captured JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-debug-dumps
+          path: debug/
+          retention-days: 14
+          if-no-files-found: ignore
 
       - name: Open a pull request with any changes
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Scheduled NF-Validation scrape and normalization"
-          title: "Scheduled data update: NF-Validation"
+          commit-message: "Scheduled validation-data scrape and normalization"
+          title: "Scheduled data update: NF-Validation / AOAC-RI / MicroVal"
           body: |
             Automated run of the NF-Validation live-page scraper, the
-            certificate/organism-page merge pipeline, and the summary-report
-            performance-data miner. Review the diff before merging --
-            especially on this workflow's early runs, since the live-fetch
-            and summary-report-mining code paths were developed offline and
-            had not been exercised against the real site before deployment.
-          branch: automated/nf-validation-scrape
+            certificate/organism-page merge pipeline, the summary-report
+            performance-data miner, the AOAC-RI live listing scraper, and
+            the MicroVal reconnaissance fetch.
+
+            Review the diff before merging -- especially on this workflow's
+            early runs, since every live-fetch code path was developed
+            offline and had not been exercised against the real sites
+            before deployment. If a source came back empty or looks wrong,
+            check the "scrape-debug-dumps" workflow artifact (raw HTML,
+            screenshots, and any captured JSON API responses) before
+            assuming the site has no new data.
+
+            data/microval/ is reconnaissance-only for now: raw, unmapped
+            rows, not yet merged into data/methods/. Writing the real
+            MicroVal parser needs a human to look at what this run actually
+            captured first.
+          branch: automated/validation-data-scrape
           delete-branch: true

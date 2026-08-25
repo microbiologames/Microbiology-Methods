@@ -27,21 +27,30 @@ exclusivity, etc.) extracted from the underlying validation reports.
     performance data (relative trueness, accuracy-profile acceptability
     limit, inclusivity/exclusivity) out of those summary reports.
   - MicroVal's public page is a shell that loads its real certificate table
-    from an iframe (`nen.bettywebblocks.com/view-microval`) — not yet scraped.
-  - AOAC-RI certificates are parsed by `scrapers/aoac_ptm_parser.py` from
-    manually-supplied certificate PDFs (a live crawl of members.aoac.org
-    hasn't been built yet).
+    from an iframe (`nen.bettywebblocks.com/view-microval`).
+    `scrapers/microval_live_fetch.py` drives headless Chromium to render it
+    and captures raw HTML/screenshots/JSON for a human to inspect — it's
+    reconnaissance, not a finished collector, since no sample of the real
+    content has ever been available to develop a real parser against.
+  - AOAC-RI certificates are parsed by `scrapers/aoac_ptm_parser.py`
+    (manually-supplied PDFs) or `scrapers/aoac_ptm_live_fetch.py` (crawls
+    members.aoac.org's listing page, downloads each certificate PDF, and
+    reuses the same parser).
 - **Normalization** — `pipeline/normalize_nf_validation.py` reconciles the
   NF-Validation collectors into `data/methods/`; `pipeline/normalize_aoac.py`
   does the equivalent (straight transform, no reconciliation needed yet) for
-  AOAC-RI.
+  AOAC-RI. MicroVal has no normalization step yet (see status below).
 - **Orchestration** — `.github/workflows/scrape_and_normalize.yml` runs
   weekly (and on manual dispatch) from a normal-egress GitHub runner: re-fetch
-  the live NF-Validation organism pages, re-run the merge pipeline, fetch and
-  mine summary reports, and open a PR with any changes. Its live-fetch code
-  paths were developed and only tested offline (this repo's own dev
-  environment can't reach nf-validation.afnor.org) — expect to need small
-  fixes on its first real runs.
+  the live NF-Validation organism pages, re-run the merge pipeline, mine
+  summary reports, fetch AOAC-RI certificates live, run the MicroVal
+  reconnaissance fetch, and open a PR with any changes — uploading a debug
+  artifact (raw HTML/screenshots/JSON) on every run so failures are
+  diagnosable. Every live-fetch code path was developed and only tested
+  offline or against a local synthetic page (this repo's own dev environment
+  can't reach any of the three real sites) — expect to need fixes on its
+  first real runs, and check the debug artifact before assuming a source
+  genuinely has no new data.
 - **Frontend** (planned) — a static site (GitHub Pages) reading an aggregated
   `data.json` built from `data/methods/`: a micro-organism × matrix heatmap of
   available methods, drilling into per-method detail pages.
@@ -71,6 +80,7 @@ pipeline/fetch_and_mine_summary_reports.py  downloads + mines summary-report PDF
 data/nf_validation/                    raw: bootstrap PDF-list import (138 certs)
 data/nf_validation_organism_pages/     raw: live organism-page scrape (140 methods)
 data/aoac_ptm/                         raw: AOAC-RI certificate parse (4 certs)
+data/microval/                         raw: reconnaissance-only, unmapped (see status below)
 data/methods/                          canonical: merged, schema-valid (146 methods)
 scrapers/                              one parser/scraper module per source
 .github/workflows/                     scheduled scrape + normalize + PR
@@ -114,8 +124,7 @@ scrapers/                              one parser/scraper module per source
       (presumptive vs. confirmed, candidate vs. reference) are not mined —
       pypdf's plain-text extraction can't reliably recover their column
       layout. Coverage should be broadened once more certificates are
-      reachable (a live AOAC-RI crawler hasn't been built — members.aoac.org
-      needs a normal-egress environment, like the GitHub Actions workflow).
+      reachable — see `scrapers/aoac_ptm_live_fetch.py` below.
 - [x] `scrapers/summary_report_parser.py` — mines performance data
       (relative-trueness-by-category, accuracy-profile acceptability limit
       and per-matrix SD repeatability, inclusivity/exclusivity with
@@ -136,29 +145,68 @@ scrapers/                              one parser/scraper module per source
       worse than a missing one. The inclusivity/exclusivity narrative
       regexes match this report's specific wording and will need
       broadening once run against reports phrased differently.
+- [x] `scrapers/aoac_ptm_live_fetch.py` — fetches the AOAC-RI validated-methods
+      listing page, discovers certificate PDF links, and feeds each through
+      `aoac_ptm_parser.parse_certificate()`. Detects (and logs, rather than
+      silently returning nothing for) two likely failure modes: a login wall
+      and a JS-rendered listing that a plain HTTP GET can't see. Pagination
+      is only followed via a `rel="next"` link if present — an ASP.NET
+      postback-based pager, if that's what the real site uses, isn't
+      handled. Never run against the real site (members.aoac.org is
+      egress-blocked from this repo's dev environment) — its very first
+      real run, in CI, is also its first real test.
+- [x] `scrapers/microval_live_fetch.py` — reconnaissance-grade live fetch for
+      MicroVal using headless Chromium (Playwright), since the real content
+      loads into an iframe (`nen.bettywebblocks.com/view-microval` and
+      `/view-microval-confirmation`) that's almost certainly client-rendered
+      the same way `microval.org` itself turned out to be. Captures the
+      rendered HTML, a full-page screenshot, and the body of any JSON
+      network responses seen while loading (in case the page fetches its
+      data from a discoverable API, which would be far easier to parse than
+      scraped HTML) — then makes one best-effort, explicitly-unmapped
+      attempt to pull out repeated table/list rows as raw text. Verified
+      end-to-end against a local synthetic test page (a JS app fetching a
+      JSON API, rendering a table) — confirmed it captures the API response,
+      the screenshot, and the rendered rows correctly — but this proves the
+      *mechanism* works, not that MicroVal's real structure matches; no
+      sample of MicroVal's actual rendered content has ever been available
+      to develop against, only the outer shell page. Its output under
+      `data/microval/` is intentionally left unmapped to the canonical
+      schema — writing `pipeline/normalize_microval.py` needs a human to
+      look at a real run's debug dump first.
 - [x] `.github/workflows/scrape_and_normalize.yml` — weekly (+ manual
-      dispatch) job wiring the live-fetch scraper, the merge pipeline, and
-      `pipeline/fetch_and_mine_summary_reports.py` together, opening a PR
-      with any changes. Not yet validated against the real site (written
-      from an environment that can't reach it) — watch its first runs.
-- [ ] MicroVal scraper — needs the actual iframe content
-      (`nen.bettywebblocks.com/view-microval`), not `microval.org` itself.
+      dispatch) job wiring together the NF-Validation live-fetch scraper,
+      the merge pipeline, the summary-report miner, the AOAC-RI live fetch,
+      and the MicroVal reconnaissance fetch, opening a PR with any changes.
+      Every live-fetch step uses `continue-on-error: true` so one source
+      failing doesn't block the others, and a debug-dump artifact (raw
+      HTML/screenshots/JSON) uploads on every run — including failed ones —
+      so a failure is diagnosable from the Actions UI without another
+      manual file handoff. None of this has been validated against the real
+      sites yet (written from an environment that can't reach any of them)
+      — watch its first few runs closely.
+- [ ] `pipeline/normalize_microval.py` — blocked on seeing a real run's
+      output; the field layout (which column is the certificate number,
+      product name, manufacturer…) is unknown until then.
 - [ ] Cross-source product grouping (NF-Validation × MicroVal × AOAC-RI by
       exact/near-exact commercial name) — no-op today since NF-Validation and
       AOAC-RI haven't produced any name collisions yet, and MicroVal isn't
-      populated.
+      normalized into `data/methods/` yet.
 - [ ] Frontend: micro-organism × matrix heatmap + drill-down detail pages.
 
 ## Running the pipeline
 
 ```bash
-pip install pypdf beautifulsoup4 jsonschema requests
+pip install pypdf beautifulsoup4 jsonschema requests playwright
+playwright install --with-deps chromium   # only needed for microval_live_fetch.py
 
 # 1. Raw collectors
 python3 scrapers/nf_validation_list_parser.py path/to/list.pdf --out-dir data/nf_validation           # one-time bootstrap seed only
 python3 scrapers/nf_validation_organism_pages.py --html-dir path/to/saved/pages --out-dir data/nf_validation_organism_pages  # offline
 python3 scrapers/nf_validation_organism_pages.py --fetch-live --out-dir data/nf_validation_organism_pages                    # live (normal-egress env)
-python3 scrapers/aoac_ptm_parser.py --pdf-dir path/to/aoac/certs --out-dir data/aoac_ptm
+python3 scrapers/aoac_ptm_parser.py --pdf-dir path/to/aoac/certs --out-dir data/aoac_ptm            # offline, from supplied PDFs
+python3 scrapers/aoac_ptm_live_fetch.py --out-dir data/aoac_ptm --debug-dir /tmp/aoac_debug          # live (normal-egress env)
+python3 scrapers/microval_live_fetch.py --out-dir data/microval --debug-dir /tmp/microval_debug      # reconnaissance only, see status above
 
 # 2. Merge into the canonical layer
 python3 pipeline/normalize_nf_validation.py
