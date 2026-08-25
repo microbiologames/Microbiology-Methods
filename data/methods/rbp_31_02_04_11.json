@@ -2,24 +2,24 @@
   "id": "nf-validation--rbp-31-02-04-11",
   "source": "NF-VALIDATION",
   "source_certificate_number": "RBP 31/02-04/11",
-  "commercial_name": "PREMI®TEST",
+  "commercial_name": "Premi®Test",
   "manufacturer": {
-    "name": "R-BIOPHARM AG Landwehrstrasse 54 64293 Darmstadt GERMANY Site",
+    "name": "R-BIOPHARM AG",
     "address_raw": ": Company holder of the certification : R-BIOPHARM AG Landwehrstrasse 54 64293 Darmstadt GERMANY Site de production : Site of production : DSM Food Specialties Test Center Turbineweg 10 2627 BP Delft THE NETHERLANDS",
     "represented_in_europe": null,
     "site_of_production": null
   },
   "method_type": {
     "action": "detection",
-    "category": null
+    "category": "other"
   },
   "target_organism": {
     "normalized": "Antibiotic residues",
-    "raw": "DÉTECTION DES ANTIBIOTIQUES DETECTION OF ANTIBIOTICS"
+    "raw": "Antibiotiques"
   },
   "reference_method": {
     "standard": null,
-    "raw": null
+    "raw": "Détection des résidus d’antibiotiques (dans les viandes porcine, bovine et de volaille, hors viande hachée)"
   },
   "validation_scope": {
     "raw": "VIANDES PORCINE, BOVINE ET VOLAILLE (HORS VIANDE HACHEE) BEEF, PORK AND POULTRY MEAT (EXCLUDING GROUND MEAT)",
@@ -49,10 +49,13 @@
   },
   "performance": null,
   "traceability": {
-    "source_document_type": "certificate_list_pdf",
-    "source_document_url": null,
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/antibiotiques/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
-    "notes": "No matching live organism-page record found; fields limited to what the bootstrap PDF-list import captured."
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/RBP-31-02-04-11_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/Dossier-reconduction-PREMI-TEST-2026-v2.pdf",
+    "organism_page_last_updated_raw": "21 juillet 2026"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Solus Salmonella ELISA",
+  "manufacturer": {
+    "name": "Solus Scientific (part of Perkin Elmer)",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "immunological_elisa"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
+    "raw": "Détection des Salmonella spp."
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/SOL-37-01-06-13-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/Solus-Salmonella-ELISA-SUMMARY-REPORT-Version-0.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "6 août 2026"
+}

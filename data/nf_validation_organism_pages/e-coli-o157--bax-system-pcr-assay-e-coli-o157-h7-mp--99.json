@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "BAX® System PCR Assay E. coli O157:H7 MP",
+  "manufacturer": {
+    "name": "Hygiena LLC",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "E. coli O157",
+    "raw": "E. coli O157"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 16654",
+    "raw": "Type de méthode : Détection des E. coli O157"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-04-03-08-fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°15_BAX-PCR-Ecoli-O157-H7-MP-SUMMARY-REPORT-Version-0.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "6 août 2026"
+}
