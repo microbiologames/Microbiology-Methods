@@ -44,7 +44,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pypdf beautifulsoup4 jsonschema requests playwright
+        run: pip install pypdf beautifulsoup4 jsonschema requests playwright cryptography
 
       - name: Install Playwright Chromium (for MicroVal)
         run: playwright install --with-deps chromium
@@ -71,6 +71,35 @@ jobs:
         continue-on-error: true
         run: python3 scrapers/microval_live_fetch.py --out-dir data/microval --debug-dir debug/microval
 
+      - name: Print debug summaries to the log
+        # Belt-and-braces alongside the artifact upload below: artifact ZIPs
+        # are only fetchable from a normal-egress network, which this
+        # project's own review environment does not have either (same proxy
+        # block as the sites themselves) -- so the first-run diagnosis
+        # actually happened by reading this step's output via the GitHub API
+        # instead. Keeping it means every future run stays diagnosable the
+        # same way, without needing the artifact at all.
+        if: always()
+        run: |
+          shopt -s nullglob
+          echo "===================== AOAC debug ====================="
+          for f in debug/aoac/*.html; do
+            echo "--- $f ($(wc -l < "$f") lines) ---"
+            head -n 80 "$f"
+            echo
+          done
+          echo "===================== MicroVal debug ====================="
+          for f in debug/microval/*_json_responses.json; do
+            echo "--- $f ---"
+            cat "$f"
+            echo
+          done
+          for f in debug/microval/*.html; do
+            echo "--- $f ($(wc -l < "$f") lines) ---"
+            head -n 80 "$f"
+            echo
+          done
+
       - name: Upload debug dumps (HTML / screenshots / captured JSON)
         if: always()
         uses: actions/upload-artifact@v4
@@ -81,6 +110,8 @@ jobs:
           if-no-files-found: ignore
 
       - name: Open a pull request with any changes
+        id: create_pr
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Scheduled validation-data scrape and normalization"
@@ -105,3 +136,12 @@ jobs:
             captured first.
           branch: automated/validation-data-scrape
           delete-branch: true
+
+      - name: Note if automatic PR creation was blocked
+        if: steps.create_pr.outcome == 'failure'
+        run: |
+          echo "::warning::Automatic PR creation failed. This is almost always the repo setting"
+          echo "Settings -> Actions -> General -> Workflow permissions -> 'Allow GitHub Actions"
+          echo "to create and approve pull requests' being off -- enable it so future runs can"
+          echo "open the PR themselves. The commit itself was still pushed to the"
+          echo "'automated/validation-data-scrape' branch; open a PR from it manually for now."

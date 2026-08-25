@@ -47,12 +47,12 @@ HEADERS = {"User-Agent": "microbiology-methods-bot/1.0 (+https://github.com/micr
 
 
 def looks_like_login_wall(html: str) -> bool:
-    lowered = html.lower()
-    return (
-        'type="password"' in lowered
-        or "sign in" in lowered and "sign out" not in lowered
-        or "please log in" in lowered
-    )
+    # A bare "sign in" / "please log in" text match is too broad: most
+    # association sites (AOAC included, as the first real run confirmed)
+    # carry a persistent "Sign In" nav link for members regardless of
+    # whether the actual page content is public. Only an actual password
+    # field is a reliable signal that this specific page is a login form.
+    return 'type="password"' in html.lower()
 
 
 def looks_js_rendered(html: str) -> bool:
@@ -122,6 +122,11 @@ def main():
 
         if debug_dir:
             (debug_dir / f"listing_page_{page_num}.html").write_text(resp.text, encoding="utf-8", errors="ignore")
+
+        title_m = re.search(r'<title[^>]*>(.*?)</title>', resp.text, re.I | re.S)
+        print(f"Page {page_num} ({url}): HTTP {resp.status_code}, "
+              f"{len(resp.text)} chars, title={title_m.group(1).strip() if title_m else '(none)'!r}",
+              file=sys.stderr)
 
         if looks_like_login_wall(resp.text):
             print(f"WARNING: page {page_num} looks like a login wall -- aborting. "

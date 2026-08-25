@@ -61,7 +61,13 @@ def main():
             pdf_path = tmp_path / f"{record_path.stem}.pdf"
             pdf_path.write_bytes(resp.content)
 
-            mined = mine_performance(pdf_path)
+            try:
+                mined = mine_performance(pdf_path)
+            except Exception as exc:  # noqa: BLE001 -- one unreadable/encrypted PDF must not abort the whole batch
+                print(f"PARSE ERROR [{url}]: {exc}", file=sys.stderr)
+                failed += 1
+                continue
+
             if merge_into_method_record(mined, methods_dir, schema_path):
                 merged += 1
             else:

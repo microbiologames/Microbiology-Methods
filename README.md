@@ -182,9 +182,29 @@ scrapers/                              one parser/scraper module per source
       failing doesn't block the others, and a debug-dump artifact (raw
       HTML/screenshots/JSON) uploads on every run — including failed ones —
       so a failure is diagnosable from the Actions UI without another
-      manual file handoff. None of this has been validated against the real
-      sites yet (written from an environment that can't reach any of them)
-      — watch its first few runs closely.
+      manual file handoff.
+
+      **First real run (2026-08-25):** NF-Validation live-fetch worked
+      correctly out of the box — 142 methods across all 17 organism pages,
+      merge succeeded with 0 schema errors. Three real bugs surfaced and
+      were fixed from that run's logs: (1) the summary-report miner crashed
+      its whole batch on the first AES-encrypted PDF it hit (`cryptography`
+      wasn't installed) — now installed, and each PDF is wrapped in its own
+      try/except so one bad report can't stop the rest; (2) the AOAC-RI
+      login-wall check false-positived on a normal persistent "Sign In" nav
+      link and aborted before finding any certificates — narrowed to require
+      an actual password field; (3) PR creation failed outright
+      (`GitHub Actions is not permitted to create or approve pull requests`)
+      — this is the repo's own Settings → Actions → General → Workflow
+      permissions → "Allow GitHub Actions to create and approve pull
+      requests" toggle, off by default; the workflow still pushes its commit
+      to the `automated/validation-data-scrape` branch either way, but
+      enable that setting for it to open the PR itself. On the encouraging
+      side, the MicroVal reconnaissance fetch captured a real JSON API
+      response from both `view-microval` and `view-microval-confirmation`
+      on its very first try — the best-case outcome, meaning
+      `pipeline/normalize_microval.py` can likely be written against a real
+      API response rather than scraped HTML once that capture is reviewed.
 - [ ] `pipeline/normalize_microval.py` — blocked on seeing a real run's
       output; the field layout (which column is the certificate number,
       product name, manufacturer…) is unknown until then.
@@ -197,7 +217,7 @@ scrapers/                              one parser/scraper module per source
 ## Running the pipeline
 
 ```bash
-pip install pypdf beautifulsoup4 jsonschema requests playwright
+pip install pypdf beautifulsoup4 jsonschema requests playwright cryptography
 playwright install --with-deps chromium   # only needed for microval_live_fetch.py
 
 # 1. Raw collectors
