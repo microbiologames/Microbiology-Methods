@@ -221,7 +221,18 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             discipline_select = page.locator("select.chosen-select").filter(
                 has=page.locator("option", has_text="Microbiological")
             ).first
-            discipline_select.select_option(label="Microbiological")
+            # The "chosen" jQuery plugin (confirmed present: a sibling
+            # ".chosen-container" div was seen alongside this <select> in an
+            # earlier run's structural dump) replaces the real <select>'s
+            # visual presentation and hides the original element -- so a
+            # plain select_option() call times out waiting for it to become
+            # "visible" by Playwright's actionability rules, even though the
+            # element is what the form actually submits. force=True skips
+            # that visibility check; the underlying <select>'s value (and
+            # its change event, which select_option still dispatches even
+            # forced) is what the page's own validation and postback read,
+            # not the Chosen widget's decorative overlay.
+            discipline_select.select_option(label="Microbiological", force=True)
             print("[playwright] selected 'Microbiological' in the Discipline filter "
                   "(this project's own scope, and a real selection to satisfy whatever "
                   "'enter some criteria' validation blocked the previous blank attempt).",
