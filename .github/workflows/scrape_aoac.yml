@@ -120,7 +120,7 @@ jobs:
           PYEOF
             echo
           done
-          for f in debug/aoac/rendered_listing_rows.json debug/aoac/rendered_listing_json_responses.json; do
+          for f in debug/aoac/rendered_listing_rows.json debug/aoac/rendered_listing_network_log.json; do
             [ -f "$f" ] || continue
             echo "--- $f ---"
             cat "$f"

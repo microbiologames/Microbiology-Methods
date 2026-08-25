@@ -134,19 +134,36 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
     from playwright.sync_api import sync_playwright
 
     json_responses = []
+    network_log = []
+    phase = {"value": "initial"}  # mutable so the response handler below sees updates
+
+    def on_response(response):
+        request = response.request
+        entry = {
+            "phase": phase["value"],
+            "method": request.method,
+            "url": response.url,
+            "status": response.status,
+            "resource_type": request.resource_type,
+        }
+        content_type = response.headers.get("content-type", "")
+        # Capturing every response body in full would balloon the debug dump
+        # with unrelated boilerplate (the cookie-consent banner's JSON alone
+        # is 60+ KB) -- but a non-GET request to the AOAC site itself is
+        # exactly the "did a postback actually fire?" signal this exists to
+        # find, and its body is the direct answer, whatever its content type.
+        if "aoac.org" in response.url and (request.method != "GET" or "json" in content_type.lower()):
+            try:
+                entry["body"] = response.text()[:5000]
+            except Exception:  # noqa: BLE001 -- best-effort capture, never fatal
+                entry["body"] = None
+            if "json" in content_type.lower():
+                json_responses.append({"url": response.url, "status": response.status, "body": entry.get("body")})
+        network_log.append(entry)
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(user_agent=HEADERS["User-Agent"])
-
-        def on_response(response):
-            content_type = response.headers.get("content-type", "")
-            if "json" in content_type.lower():
-                try:
-                    body = response.text()
-                except Exception:  # noqa: BLE001 -- best-effort capture, never fatal
-                    body = None
-                json_responses.append({"url": response.url, "status": response.status, "body": body})
-
         page.on("response", on_response)
 
         print(f"[playwright] navigating to {url}", file=sys.stderr)
@@ -161,10 +178,12 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             (debug_dir / "rendered_listing.html").write_text(html, encoding="utf-8")
             page.screenshot(path=str(debug_dir / "rendered_listing.png"), full_page=True)
 
+        requests_before_click = len(network_log)
         clicked_find = False
         try:
             find_button = page.get_by_role("button", name="Find", exact=True)
             find_button.wait_for(state="visible", timeout=5000)
+            phase["value"] = "post-click"
             find_button.click()
             clicked_find = True
             print("[playwright] clicked the 'Find' search button with no filter criteria "
@@ -184,9 +203,14 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
                 (debug_dir / "rendered_listing_after_find.html").write_text(post_click_html, encoding="utf-8")
                 page.screenshot(path=str(debug_dir / "rendered_listing_after_find.png"), full_page=True)
 
-        if debug_dir and json_responses:
-            (debug_dir / "rendered_listing_json_responses.json").write_text(
-                json.dumps(json_responses, ensure_ascii=False, indent=2), encoding="utf-8",
+            requests_after_click = len(network_log) - requests_before_click
+            print(f"[playwright] {requests_after_click} network request(s) observed after the click "
+                  f"(0 here means the click never triggered a postback/AJAX call at all -- a widget, "
+                  f"framework, or interactivity problem, not a data-shape one).", file=sys.stderr)
+
+        if debug_dir and network_log:
+            (debug_dir / "rendered_listing_network_log.json").write_text(
+                json.dumps(network_log, ensure_ascii=False, indent=2), encoding="utf-8",
             )
         browser.close()
 
