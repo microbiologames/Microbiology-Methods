@@ -1,0 +1,43 @@
+name: Deploy frontend to GitHub Pages
+
+# Publishes web/ (the static heatmap frontend + its data.json, built by
+# pipeline/build_frontend_data.py) to GitHub Pages. Triggers on every push
+# to main that touches web/ -- which in practice means every merged
+# scrape_*.yml PR that changed data, since those all end with a "Rebuild
+# frontend data" step -- plus workflow_dispatch for a manual redeploy (e.g.
+# right after enabling Pages for the first time, before any data-changing
+# push has happened yet).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

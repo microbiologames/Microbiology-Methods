@@ -60,9 +60,14 @@ exclusivity, etc.) extracted from the underlying validation reports.
   tested-food-category, drilling into per-method detail pages. Currently
   174 methods (142 NF-Validation + 32 MicroVal) — `build_frontend_data.py`
   excludes AOAC-RI records (`EXCLUDED_SOURCES`), matching the project's
-  current ISO 16140-2-only scope. Not yet deployed to GitHub Pages. See the
-  status section below for why "matrix" needed a different data source than
-  originally planned.
+  current ISO 16140-2-only scope. Deployed to GitHub Pages at
+  **https://microbiologames.github.io/Microbiology-Methods/** —
+  `.github/workflows/deploy_pages.yml` republishes `web/` automatically on
+  every push to `main` that changes it, which in practice means every
+  merged scrape PR (each ends with a "Rebuild frontend data" step), so the
+  live page tracks whatever's actually on `main` with no manual publish
+  step. See the status section below for why "matrix" needed a different
+  data source than originally planned.
 
 ## Data provenance policy
 
