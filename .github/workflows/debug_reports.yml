@@ -1,10 +1,16 @@
-name: Debug -- dump summary report text
+name: Debug -- dump summary report tables
 
-# Temporary, manual-only diagnostic tool: fetches a fixed set of real
-# summary-report PDFs and prints their raw extracted text to the job log, so
-# scrapers/summary_report_parser.py's category-extraction regexes can be
-# widened against real report wording instead of guessed at. Not part of the
-# regular data pipeline -- delete once that widening work is done.
+# Temporary, manual-only diagnostic tool. The linear-text regex approach in
+# scrapers/summary_report_parser.py was confirmed (by an earlier version of
+# this same workflow, see git history) to fail on most real reports: each
+# expert laboratory phrases its category-breakdown table header differently,
+# and at least one uses a garbled Unicode symbol for "D-bar (bias)" that
+# defeats simple text matching entirely. Rebuilding this on pdfplumber's
+# structural table extraction (real cell grid, from visual layout, not
+# wording) instead -- this workflow dumps that structure for two real
+# reports (one qualitative, one quantitative) so the next iteration can be
+# built against real cell boundaries. Not part of the regular data pipeline
+# -- delete once that rewrite is done.
 
 on:
   workflow_dispatch: {}
@@ -23,34 +29,19 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pypdf requests cryptography
+        run: pip install pdfplumber requests cryptography
 
-      - name: Dump qualitative report (VIDAS Salmonella) -- skip front matter/TOC
-        # The first run's 12000-char cap only reached page ~8 of 97 -- the
-        # actual "3.1.1 Sensitivity study" / "3.1.4 Inclusivity/exclusivity"
-        # sections (per its own table of contents) start around page 10.
+      - name: Dump qualitative report tables (VIDAS Salmonella, pages 13-17)
+        # Table 3 / Table 4 (the method-comparison-by-category tables) were
+        # found around printed pages 13-16 in the linear-text dump.
         run: |
-          python3 scrapers/debug_dump_report_text.py --out-dir debug/reports --skip-chars 10000 --max-chars 50000 \
+          python3 scrapers/debug_dump_tables.py --first-page 13 --last-page 17 \
             "https://nf-validation.afnor.org/wp-content/uploads/2026/08/VIDAS-Salmonella-Dual-SUMMARY-REPORT-Version-0.pdf"
-          mv debug/reports/report_0.txt debug/reports/qualitative_vidas_salmonella.txt
 
-      - name: Print qualitative dump
+      - name: Dump quantitative report tables (Petrifilm RCC, pages 20-23)
+        # Table 6 (the relative-trueness-by-category table, 3 sub-tables for
+        # the report's 3 related certificates) was found around printed
+        # page 21 in the linear-text dump.
         run: |
-          f=debug/reports/qualitative_vidas_salmonella.txt
-          echo "=================== $f ($(wc -c < "$f") bytes) ==================="
-          cat "$f"
-
-      - name: Dump quantitative report (Petrifilm RCC) -- skip front matter/TOC
-        # Same reasoning: its own TOC puts "3.1.1.3 Results" / "3.1.1.4
-        # Statistical interpretation" (where the Category/SD/Bias table this
-        # project's regex looks for should be) around pages 10-15 of 99.
-        run: |
-          python3 scrapers/debug_dump_report_text.py --out-dir debug/reports --skip-chars 8000 --max-chars 50000 \
+          python3 scrapers/debug_dump_tables.py --first-page 20 --last-page 23 \
             "https://nf-validation.afnor.org/wp-content/uploads/2026/05/Petrifilm_RCC_SR_05_25_v0-protected.pdf"
-          mv debug/reports/report_0.txt debug/reports/quantitative_petrifilm_rcc.txt
-
-      - name: Print quantitative dump
-        run: |
-          f=debug/reports/quantitative_petrifilm_rcc.txt
-          echo "=================== $f ($(wc -c < "$f") bytes) ==================="
-          cat "$f"
