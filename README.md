@@ -1,8 +1,14 @@
 # Microbiology Methods
 
 A database and dynamic infographic of validated microbiology analysis methods
-(microorganism × matrix), sourced from the three main validation bodies:
-**AFNOR NF-Validation**, **MicroVal**, and **AOAC Performance Tested Methods℠ (AOAC-RI)**.
+(microorganism × matrix). Current scope: **ISO 16140-2 validated methods**,
+i.e. **AFNOR NF-Validation** and **MicroVal**. **AOAC Performance Tested
+Methods℠ (AOAC-RI)** is deliberately excluded from the frontend for now — its
+scraper is confirmed broken on AOAC's own side (see the AOAC-RI section
+below), and building out the tool for the two working, ISO 16140-2-aligned
+sources first is a large enough scope on its own. The data pipeline and code
+for AOAC-RI stay in the repo; revisit its exclusion once that scraper is
+picked back up.
 
 Goal: browse which validated methods exist for a given micro-organism/matrix
 combination, then drill into performance data (LOD50, discordance, inclusivity/
@@ -51,9 +57,12 @@ exclusivity, etc.) extracted from the underlying validation reports.
 - **Frontend** (`web/`) — a dependency-free static page reading `web/data.json`
   (built from `data/methods/` by `pipeline/build_frontend_data.py`): an
   organism × category heatmap, toggling between method category and mined
-  tested-food-category, drilling into per-method detail pages. Not yet
-  deployed to GitHub Pages. See the status section below for why "matrix"
-  needed a different data source than originally planned.
+  tested-food-category, drilling into per-method detail pages. Currently
+  174 methods (142 NF-Validation + 32 MicroVal) — `build_frontend_data.py`
+  excludes AOAC-RI records (`EXCLUDED_SOURCES`), matching the project's
+  current ISO 16140-2-only scope. Not yet deployed to GitHub Pages. See the
+  status section below for why "matrix" needed a different data source than
+  originally planned.
 
 ## Data provenance policy
 
@@ -173,10 +182,17 @@ web/                                   static frontend (heatmap + drill-down), r
       markup (DataTables always progressively-enhances a real `<table>`),
       with a consistent 6-column layout confirmed identical on both pages:
       Analyte, Certificate number, Test kit name, Supplier - manufacturer,
-      Expiry date, Status. 34 real certificates captured across both pages.
+      Expiry date, Status. 32 real certificates merged into `data/methods/`.
       Cell values are read per-`<td>` rather than joined into one string and
       split back apart, since the test-kit-name and supplier fields are both
-      free multi-word text with no fixed boundary between them.
+      free multi-word text with no fixed boundary between them. One real bug
+      found from the merged data itself: `get_text(strip=True)` (no
+      separator) silently drops the space when a cell wraps across a `<br>`
+      or nested span, producing near-duplicate organisms in the frontend
+      heatmap ("Bacillus cereus group" vs "Bacillus cereusgroup",
+      "Cronobacter spp." vs "Cronobacterspp.", etc.) — fixed with an explicit
+      `get_text(" ", strip=True)` + whitespace-collapse helper, re-scraped,
+      re-merged.
 - [x] `.github/workflows/scrape_afnor.yml` / `scrape_microval.yml` /
       `scrape_aoac.yml` — one workflow per source, daily + manual dispatch,
       each opening its own PR. Originally one combined workflow; split once
@@ -204,7 +220,19 @@ web/                                   static frontend (heatmap + drill-down), r
       creation itself failed on the first run
       (`GitHub Actions is not permitted to create or approve pull requests`,
       the repo's Settings → Actions → General → Workflow permissions
-      toggle, off by default) but has worked since that was enabled.
+      toggle, off by default) but has worked since that was enabled. The
+      first real MicroVal collector run actually hit a *different* PR-push
+      failure specific to that run (a GitHub App token lacking the
+      `workflows` permission scope needed because that particular diff
+      touched a workflow file mid-refactor — unrelated to the toggle above)
+      and its data was lost with it; that stale PR was closed and the
+      workflow re-run cleanly once the split was complete, landing the real
+      32 certificates on `main`. Repo hygiene: per-run debug dumps (raw
+      HTML/screenshots/JSON) were briefly getting committed to git history
+      alongside the real data changes — fixed by `.gitignore`-ing `debug/`
+      and restricting `peter-evans/create-pull-request`'s `add-paths` to
+      `data/` and `web/`, since the debug dump is already uploaded as its
+      own workflow artifact.
       AOAC-RI is now **confirmed broken on AOAC's own side**, not a scraper
       gap — a Playwright-driven rewrite was built (selecting a real filter,
       Discipline=Microbiological, and clicking the page's own "Find"
@@ -226,28 +254,35 @@ web/                                   static frontend (heatmap + drill-down), r
       attempts the full flow every run and captures console/page errors,
       so this will self-correct automatically the day AOAC fixes their
       page; no further scraper iteration is expected to help until then.
-- [ ] Cross-source product grouping (NF-Validation × MicroVal × AOAC-RI by
+- [ ] Cross-source product grouping (NF-Validation × MicroVal by
       exact/near-exact commercial name) — no-op today since no name
-      collisions exist yet across the three now-populated sources.
+      collisions exist yet across the two now-populated, in-scope sources.
 - [x] Frontend (`web/`) — a dependency-free static page reading
       `web/data.json` (built by `pipeline/build_frontend_data.py` from
-      `data/methods/`): an organism × category heatmap with a toggle
-      between two distinct axes, since they come from different fields
-      entirely — **method category** (detection technology: culture media /
-      PCR / immunological / …, well-populated everywhere) and **tested food
-      category** (the categories actually exercised in the validation
-      study, from mined `performance.*.{method_comparison_by_category,
+      `data/methods/`, excluding AOAC-RI records per the project's current
+      ISO 16140-2-only scope — see the top of this README): an organism ×
+      category heatmap with a toggle between two distinct axes, since they
+      come from different fields entirely — **method category** (detection
+      technology: culture media / PCR / immunological / …, well-populated
+      everywhere) and **tested food category** (the categories actually
+      exercised in the validation study, from mined
+      `performance.*.{method_comparison_by_category,
       relative_trueness_by_category}`, falling back to a certificate's own
       `validation_scope.matrices` when nothing's been mined yet — see the
       note below on why the certificate's own scope isn't usable directly).
       Clicking a cell lists matching methods; clicking a method opens a
       detail view with the full record, including mined performance tables
       when present. Status filter (valid-only by default) and a
-      name/organism search. Verified end-to-end in a real browser
-      (Playwright) — this caught and fixed two real bugs (a missing
-      parenthesis crashing the whole page, and a hidden overlay that still
-      intercepted clicks because its CSS unconditionally set `display:
-      flex` without an `[hidden]` override).
+      name/organism search. Currently 174 methods (142 NF-Validation + 32
+      MicroVal). Verified end-to-end in a real browser (Playwright) —
+      this caught and fixed two real bugs during initial development (a
+      missing parenthesis crashing the whole page, and a hidden overlay
+      that still intercepted clicks because its CSS unconditionally set
+      `display: flex` without an `[hidden]` override), and again after
+      merging the real MicroVal data (confirmed no duplicate-organism rows
+      after the cell-text-extraction fix above, and the full cell-click →
+      result-list → detail-overlay flow with real records from both
+      sources).
 
       **Why "tested food category" isn't just `validation_scope.matrices`:**
       per the project owner, ISO 16140-2 validations (NF-Validation,
