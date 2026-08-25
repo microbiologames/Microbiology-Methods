@@ -64,15 +64,54 @@ jobs:
         # project's own review environment does not have either (same proxy
         # block as the site itself) -- so diagnosis so far has happened by
         # reading this step's output via the GitHub API instead.
+        #
+        # A run confirmed the plain-GET-vs-Playwright-rendered HTML are
+        # identical (0 real result rows either way, just the download
+        # postback plumbing) -- a raw grep for pdf/download/href only ever
+        # showed that same plumbing and nothing about *why* the results area
+        # is empty. This step now uses BeautifulSoup to print the actual
+        # structure around any element whose id/class hints at being the
+        # results container (Content/List/Grid/Result/Search/Method), since
+        # that's the part a keyword grep can't see when the container has no
+        # matching text yet.
         if: always()
         run: |
           shopt -s nullglob
           for f in debug/aoac/*.html; do
-            echo "--- $f ($(wc -l < "$f") lines) ---"
-            echo "-- head --"
-            head -n 40 "$f"
-            echo "-- lines mentioning pdf/download/href (context 2), first 150 --"
-            grep -inE 'pdf|download|href=' "$f" -A2 -B2 | head -n 150
+            echo "--- $f ($(wc -l < "$f") lines, $(wc -c < "$f") bytes) ---"
+            python3 - "$f" <<'PYEOF'
+          import sys
+          from bs4 import BeautifulSoup
+
+          path = sys.argv[1]
+          html = open(path, encoding="utf-8", errors="ignore").read()
+          soup = BeautifulSoup(html, "html.parser")
+
+          print("-- title --")
+          print(soup.title.get_text(strip=True) if soup.title else "(none)")
+
+          print("-- body visible text (collapsed whitespace, first 2000 chars) --")
+          text = " ".join(soup.get_text(" ", strip=True).split())
+          print(text[:2000])
+
+          print("-- elements whose id/class hints at being the results area --")
+          import re
+          pattern = re.compile(r'content|list|grid|result|search|method|rlv|rad', re.I)
+          seen = set()
+          for el in soup.find_all(id=pattern):
+              if el.get("id") in seen:
+                  continue
+              seen.add(el.get("id"))
+              children = len(el.find_all())
+              own_text = " ".join(el.get_text(" ", strip=True).split())[:200]
+              print(f"  id={el.get('id')!r} tag={el.name} class={el.get('class')} "
+                    f"descendant_count={children} text={own_text!r}")
+
+          print("-- all <form>/<select>/<input> elements (name, type, value) --")
+          for el in soup.find_all(["form", "select", "input", "button"]):
+              attrs = {k: el.get(k) for k in ("id", "name", "type", "value") if el.get(k)}
+              print(f"  <{el.name}> {attrs}")
+          PYEOF
             echo
           done
           for f in debug/aoac/rendered_listing_rows.json debug/aoac/rendered_listing_json_responses.json; do
