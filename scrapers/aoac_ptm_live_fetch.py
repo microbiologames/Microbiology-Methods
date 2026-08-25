@@ -41,7 +41,7 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -137,6 +137,17 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
     network_log = []
     phase = {"value": "initial"}  # mutable so the response handler below sees updates
 
+    def is_aoac_host(response_url: str) -> bool:
+        # A naive substring check on the full URL is wrong here and produced
+        # a false "5 real postback requests" reading on an earlier run: a
+        # Google Analytics collection request's own query string embeds the
+        # (percent-encoded, but letters/dots survive unescaped) referring
+        # page URL as tracking data, e.g. "...&dl=https%3A%2F%2Fmembers.
+        # aoac.org%2F...", so "aoac.org" appears verbatim inside an
+        # analytics.google.com request that never touched AOAC's server at
+        # all. Only the actual request host is a reliable signal.
+        return urlsplit(response_url).netloc.endswith("aoac.org")
+
     def on_response(response):
         request = response.request
         entry = {
@@ -152,7 +163,7 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
         # is 60+ KB) -- but a non-GET request to the AOAC site itself is
         # exactly the "did a postback actually fire?" signal this exists to
         # find, and its body is the direct answer, whatever its content type.
-        if "aoac.org" in response.url and (request.method != "GET" or "json" in content_type.lower()):
+        if is_aoac_host(response.url) and (request.method != "GET" or "json" in content_type.lower()):
             try:
                 entry["body"] = response.text()[:5000]
             except Exception:  # noqa: BLE001 -- best-effort capture, never fatal
@@ -194,6 +205,30 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             (debug_dir / "rendered_listing.html").write_text(html, encoding="utf-8")
             page.screenshot(path=str(debug_dir / "rendered_listing.png"), full_page=True)
 
+        # The previous run's captured onclick handler explained the earlier
+        # no-op: it calls Page_ClientValidate(...) before __doPostBack(...)
+        # and returns early if that fails -- and a corrected (host-based,
+        # not substring) count of post-click requests to members.aoac.org
+        # showed there were actually zero, meaning validation was in fact
+        # failing silently (ASP.NET validators typically show an inline
+        # message rather than a JS alert/confirm, so this produced no
+        # dialog either). That points at a plain "at least one filter is
+        # required" rule, not a broken widget. Selecting "Microbiological"
+        # from the Discipline listbox both should satisfy that (a real
+        # selection, not blank) and happens to be exactly this project's
+        # actual scope -- AOAC-RI covers far more than microbiology.
+        try:
+            discipline_select = page.locator("select.chosen-select").filter(
+                has=page.locator("option", has_text="Microbiological")
+            ).first
+            discipline_select.select_option(label="Microbiological")
+            print("[playwright] selected 'Microbiological' in the Discipline filter "
+                  "(this project's own scope, and a real selection to satisfy whatever "
+                  "'enter some criteria' validation blocked the previous blank attempt).",
+                  file=sys.stderr)
+        except Exception as exc:  # noqa: BLE001 -- still try Find even if this didn't work
+            print(f"[playwright] could not select 'Microbiological' in Discipline: {exc}", file=sys.stderr)
+
         requests_before_click = len(network_log)
         clicked_find = False
         try:
@@ -204,8 +239,7 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             phase["value"] = "post-click"
             find_button.click()
             clicked_find = True
-            print("[playwright] clicked the 'Find' search button with no filter criteria "
-                  "(the widget's own instructions say this browses the full listing).", file=sys.stderr)
+            print("[playwright] clicked the 'Find' search button.", file=sys.stderr)
         except Exception as exc:  # noqa: BLE001 -- still want to capture whatever state we're in
             print(f"[playwright] could not click 'Find' button: {exc}", file=sys.stderr)
 
@@ -222,13 +256,15 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
                 page.screenshot(path=str(debug_dir / "rendered_listing_after_find.png"), full_page=True)
 
             requests_after_click = network_log[requests_before_click:]
-            aoac_requests_after_click = [e for e in requests_after_click if "aoac.org" in e["url"]]
+            aoac_requests_after_click = [e for e in requests_after_click if is_aoac_host(e["url"])]
             print(f"[playwright] {len(requests_after_click)} network request(s) observed after the "
-                  f"click, {len(aoac_requests_after_click)} of them to aoac.org itself (analytics/ads "
-                  f"pixels to other domains don't count as evidence of a real postback). 0 aoac.org "
-                  f"requests means the click never reached the server at all -- a widget/JS problem "
-                  f"(e.g. an auto-dismissed confirm() dialog, now handled above) rather than a "
-                  f"data-shape one.", file=sys.stderr)
+                  f"click, {len(aoac_requests_after_click)} of them actually to a *.aoac.org host "
+                  f"(an earlier run's naive substring check falsely counted Google Analytics pixels "
+                  f"whose own tracking query string embeds 'aoac.org' as the referring-page URL --"
+                  f"fixed to check the request's real host instead). 0 real aoac.org requests means "
+                  f"the click never reached the server at all -- a widget/JS problem (an auto-"
+                  f"dismissed dialog, or client-side validation silently blocking __doPostBack) "
+                  f"rather than a data-shape one.", file=sys.stderr)
             if dialogs_seen:
                 print(f"[playwright] {len(dialogs_seen)} JS dialog(s) intercepted: {dialogs_seen}", file=sys.stderr)
 
