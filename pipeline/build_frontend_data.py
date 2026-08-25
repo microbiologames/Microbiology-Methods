@@ -1,5 +1,15 @@
 """Aggregate data/methods/*.json into web/data.json for the static frontend.
 
+Scope: ISO 16140-2 validated methods only (NF-Validation, MicroVal) for now.
+AOAC-RI records are excluded -- not because they're bad data, but because
+AOAC-RI's own live listing is confirmed broken on AOAC's side (see
+scrapers/aoac_ptm_live_fetch.py's module docstring), so the only AOAC-RI
+records that exist are 4 leftover from the project's initial manual
+bootstrap, not a real, refreshable slice of that source. Presenting 4
+static AOAC-RI records next to the two live-refreshed ISO 16140 sources
+would misrepresent the tool's actual coverage. Revisit this exclusion once
+AOAC-RI scraping is picked back up.
+
 Two axes are computed for the heatmap, and they come from deliberately
 different fields -- conflating them would misrepresent what a certification
 actually means:
@@ -79,6 +89,9 @@ def build_entry(record: dict) -> dict:
     }
 
 
+EXCLUDED_SOURCES = {"AOAC-RI"}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--methods-dir", default="data/methods")
@@ -86,9 +99,15 @@ def main():
     args = ap.parse_args()
 
     entries = []
+    skipped = 0
     for f in sorted(Path(args.methods_dir).glob("*.json")):
         record = json.loads(f.read_text(encoding="utf-8"))
+        if record.get("source") in EXCLUDED_SOURCES:
+            skipped += 1
+            continue
         entries.append(build_entry(record))
+    if skipped:
+        print(f"Skipped {skipped} record(s) from excluded source(s) {sorted(EXCLUDED_SOURCES)}")
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
