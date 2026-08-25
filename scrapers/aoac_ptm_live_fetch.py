@@ -204,7 +204,18 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             console_messages.append({"type": msg.type, "text": msg.text})
 
     def on_pageerror(exc):
-        console_messages.append({"type": "pageerror", "text": str(exc)})
+        # __doPostBack never becoming defined, confirmed on a real run to
+        # persist even after an explicit 10s wait (not a load-order race),
+        # is consistent with an earlier uncaught exception (the "Cannot
+        # read properties of null" pageerror also seen) permanently
+        # aborting a shared inline <script> block partway through, before
+        # __doPostBack's own definition runs -- but that's still inferred
+        # from two isolated error messages, not shown directly. `stack`
+        # (when the browser provides one) names the actual offending
+        # script and line, which is a much more direct answer than
+        # guessing from the exception text alone.
+        stack = getattr(exc, "stack", None)
+        console_messages.append({"type": "pageerror", "text": str(exc), "stack": stack})
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
