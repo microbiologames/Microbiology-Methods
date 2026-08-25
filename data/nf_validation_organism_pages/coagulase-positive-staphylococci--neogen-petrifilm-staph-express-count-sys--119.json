@@ -1,6 +1,6 @@
 {
   "source": "NF-VALIDATION",
-  "commercial_name": "Neogen® Petrifilm® Staph Express Count System (A)",
+  "commercial_name": "Neogen® Petrifilm® Staph Express Count System (B)",
   "manufacturer": {
     "name": "Neogen Food Safety Corporation",
     "address_raw": null,
@@ -17,13 +17,13 @@
   },
   "reference_method": {
     "standard": "NF EN ISO 6888-1; NF EN ISO 6888-2",
-    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-1"
+    "raw": "Type de méthode : Dénombrement des staphylocoques à coagulase positive selon NF EN ISO 6888-2"
   },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
-    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-09-04-03-A_fr.docx_-1.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_StaphExpress_vs_BPA-SR_v0-protected.pdf",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-09-04-03-B_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_StaphExpress_vs_BPRPFB-SR_2025_v0-protected.pdf",
     "extraction_confidence": "high"
   },
   "organism_page_last_updated_raw": "29 juin 2026"

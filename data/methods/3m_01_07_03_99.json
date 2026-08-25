@@ -48,102 +48,13 @@
     "current_expiry": "2027-03-23",
     "status": "active"
   },
-  "performance": {
-    "method_nature": "quantitative",
-    "quantitative": {
-      "relative_trueness_by_category": [
-        {
-          "category": "Meat products",
-          "bias_log": 0.35,
-          "sd_log": 0.59,
-          "n_samples": 31,
-          "n_interpretable": 31,
-          "lower_limit_95": -0.87,
-          "upper_limit_95": 1.58
-        },
-        {
-          "category": "Dairy products",
-          "bias_log": 0.19,
-          "sd_log": 0.42,
-          "n_samples": 16,
-          "n_interpretable": 16,
-          "lower_limit_95": -0.73,
-          "upper_limit_95": 1.12
-        },
-        {
-          "category": "Seafood products",
-          "bias_log": -0.04,
-          "sd_log": 0.55,
-          "n_samples": 15,
-          "n_interpretable": 15,
-          "lower_limit_95": -1.25,
-          "upper_limit_95": 1.17
-        },
-        {
-          "category": "Egg products and pastries",
-          "bias_log": 0.22,
-          "sd_log": 0.58,
-          "n_samples": 27,
-          "n_interpretable": 27,
-          "lower_limit_95": -1.0,
-          "upper_limit_95": 1.43
-        },
-        {
-          "category": "Vegetables",
-          "bias_log": 0.22,
-          "sd_log": 0.47,
-          "n_samples": 20,
-          "n_interpretable": 20,
-          "lower_limit_95": -0.78,
-          "upper_limit_95": 1.22
-        }
-      ],
-      "accuracy_profile": {
-        "acceptability_limit_log": 0.5,
-        "by_matrix": [
-          {
-            "matrix": "Meat products",
-            "sd_repeatability_reference": 0.207,
-            "sd_repeatability_alternative": 0.068,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Dairy products",
-            "sd_repeatability_reference": 0.303,
-            "sd_repeatability_alternative": 0.063,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Seafood products",
-            "sd_repeatability_reference": 0.266,
-            "sd_repeatability_alternative": 0.081,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Egg products and pastries",
-            "sd_repeatability_reference": 0.233,
-            "sd_repeatability_alternative": 0.068,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Vegetables",
-            "sd_repeatability_reference": 0.303,
-            "sd_repeatability_alternative": 0.08,
-            "samples_out_of_beta_eti": []
-          }
-        ]
-      },
-      "loq_log": null,
-      "inclusivity": {},
-      "exclusivity": {}
-    }
-  },
+  "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) is reliably extracted from a standard ISO 16140-2 summary table. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "notes": null,
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/3M-01-07-03-99_-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/05/Synt-3M-01-07-03-99_en.pdf",
     "organism_page_last_updated_raw": "19 mai 2026"
