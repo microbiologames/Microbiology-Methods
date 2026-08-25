@@ -1,0 +1,110 @@
+name: Scrape and normalize AOAC-RI data
+
+# Split out from a single combined workflow (see git history) specifically
+# so this source could be iterated on cheaply: AOAC-RI is currently the
+# broken one, and re-running the whole combined job (dominated by AFNOR's
+# ~40-minute summary-report mining step) for every debugging attempt here
+# wasted most of that time. Runs from GitHub's own runners, which have
+# normal outbound internet access -- unlike this repo's day-to-day
+# development environment, where members.aoac.org is proxy-blocked.
+#
+# Status as of the runs so far: STILL BROKEN. The listing page
+# (https://members.aoac.org/AOAC/AOAC/RI/PTM_Validated_Methods.aspx, an
+# ASP.NET/Sitefinity site) responds fine -- no login wall, not JS-rendered,
+# real title -- but exposes 0 static PDF links every time. Its certificate
+# downloads go through a hidden-field + postback JS mechanism
+# (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument: a hidden
+# "HiddenDownloadPathField" input plus a submit button), which
+# scrapers/aoac_ptm_live_fetch.py's plain GET-and-regex approach cannot
+# trigger. This needs a Playwright-driven rewrite that actually interacts
+# with the page (the way scrapers/microval_live_fetch.py does for MicroVal)
+# -- not yet built. A debug-dump artifact (raw HTML with pdf/download/href
+# occurrences grepped out) uploads on every run to help diagnose this
+# without needing another manual file handoff.
+
+on:
+  schedule:
+    - cron: "30 6 * * *"  # daily, 06:30 UTC (staggered from the other two workflows)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-aoac:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf beautifulsoup4 jsonschema requests
+
+      - name: Fetch AOAC-RI live certificates
+        continue-on-error: true
+        run: python3 scrapers/aoac_ptm_live_fetch.py --out-dir data/aoac_ptm --debug-dir debug/aoac
+
+      - name: Re-run AOAC-RI normalization
+        run: python3 pipeline/normalize_aoac.py
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
+
+      - name: Print debug summary to the log
+        # Belt-and-braces alongside the artifact upload below: artifact ZIPs
+        # are only fetchable from a normal-egress network, which this
+        # project's own review environment does not have either (same proxy
+        # block as the site itself) -- so diagnosis so far has happened by
+        # reading this step's output via the GitHub API instead.
+        if: always()
+        run: |
+          shopt -s nullglob
+          for f in debug/aoac/*.html; do
+            echo "--- $f ($(wc -l < "$f") lines) ---"
+            echo "-- head --"
+            head -n 40 "$f"
+            echo "-- lines mentioning pdf/download/href (context 2), first 150 --"
+            grep -inE 'pdf|download|href=' "$f" -A2 -B2 | head -n 150
+            echo
+          done
+
+      - name: Upload debug dumps (raw listing-page HTML)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aoac-debug-dumps
+          path: debug/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Open a pull request with any changes
+        id: create_pr
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Scheduled AOAC-RI scrape and normalization"
+          title: "Scheduled data update: AOAC-RI"
+          body: |
+            Automated run of the AOAC-RI live listing scraper and
+            normalization.
+
+            This source is known to still be broken (see the workflow
+            file's header comment) -- expect 0 new certificates until
+            aoac_ptm_live_fetch.py is rewritten to drive the page's real
+            postback-based download mechanism. Check the "aoac-debug-dumps"
+            workflow artifact / this run's log before assuming otherwise.
+          branch: automated/aoac-scrape
+          delete-branch: true
+
+      - name: Note if automatic PR creation was blocked
+        if: steps.create_pr.outcome == 'failure'
+        run: |
+          echo "::warning::Automatic PR creation failed. This is almost always the repo setting"
+          echo "Settings -> Actions -> General -> Workflow permissions -> 'Allow GitHub Actions"
+          echo "to create and approve pull requests' being off -- enable it so future runs can"
+          echo "open the PR themselves. The commit itself was still pushed to the"
+          echo "'automated/aoac-scrape' branch; open a PR from it manually for now."

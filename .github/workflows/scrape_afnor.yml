@@ -1,0 +1,86 @@
+name: Scrape and normalize AFNOR NF-Validation data
+
+# Split out from a single combined workflow (see git history) once it became
+# clear that bundling all three sources in one job made iterating on any one
+# of them expensive: this step alone (mining ~140 summary-report PDFs) takes
+# ~40 minutes, so every AOAC-RI or MicroVal debugging cycle was paying that
+# cost for no reason. Runs from GitHub's own runners, which have normal
+# outbound internet access -- unlike this repo's day-to-day development
+# environment, where nf-validation.afnor.org is proxy-blocked.
+#
+# Status as of the runs that got this to green: live-fetch + merge has
+# worked correctly from the first run (142 methods, 0 schema errors).
+# Summary-report mining is improving across runs as real failures get
+# diagnosed from the logs (see README's status section for the current
+# mined/total count) -- not every report matches yet.
+#
+# Deliberately NOT re-scraping the NF-Validation certificate-list PDF here:
+# per the project's data-provenance policy, that PDF is a one-time bootstrap
+# seed of unknown refresh cadence, not a recurring source. Only the live
+# organism pages (which state their own last-updated date) and the summary
+# report PDFs they link to are re-fetched.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # daily, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-afnor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf beautifulsoup4 jsonschema requests cryptography
+
+      - name: Re-fetch live NF-Validation organism pages
+        continue-on-error: true
+        run: python3 scrapers/nf_validation_organism_pages.py --fetch-live --out-dir data/nf_validation_organism_pages
+
+      - name: Re-run NF-Validation merge/normalization
+        run: python3 pipeline/normalize_nf_validation.py
+
+      - name: Fetch and mine summary validation reports
+        continue-on-error: true
+        run: python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
+
+      - name: Open a pull request with any changes
+        id: create_pr
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Scheduled AFNOR NF-Validation scrape and normalization"
+          title: "Scheduled data update: AFNOR NF-Validation"
+          body: |
+            Automated run of the NF-Validation live-page scraper, the
+            certificate/organism-page merge pipeline, and the summary-report
+            performance-data miner.
+
+            Review the diff before merging. If the summary-report mining
+            step's log shows a lot of "No certificate number found"
+            failures, that's a known, still-being-improved gap in
+            scrapers/summary_report_parser.py's cover-page matching, not a
+            sign the source data changed.
+          branch: automated/afnor-scrape
+          delete-branch: true
+
+      - name: Note if automatic PR creation was blocked
+        if: steps.create_pr.outcome == 'failure'
+        run: |
+          echo "::warning::Automatic PR creation failed. This is almost always the repo setting"
+          echo "Settings -> Actions -> General -> Workflow permissions -> 'Allow GitHub Actions"
+          echo "to create and approve pull requests' being off -- enable it so future runs can"
+          echo "open the PR themselves. The commit itself was still pushed to the"
+          echo "'automated/afnor-scrape' branch; open a PR from it manually for now."

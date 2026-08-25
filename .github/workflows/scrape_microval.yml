@@ -1,0 +1,111 @@
+name: Scrape and normalize MicroVal data
+
+# Split out from a single combined workflow (see git history) so that
+# iterating on this source doesn't pay the ~40-minute cost of the AFNOR
+# summary-report mining step every time. Runs from GitHub's own runners,
+# which have normal outbound internet access -- unlike this repo's
+# day-to-day development environment, where nen.bettywebblocks.com is
+# proxy-blocked.
+#
+# Status as of the runs that got this to green: MicroVal's public page is a
+# shell that loads its real certificate table from an iframe
+# (nen.bettywebblocks.com/view-microval and /view-microval-confirmation),
+# client-rendered the same way microval.org itself turned out to be --
+# scrapers/microval_live_fetch.py drives headless Chromium to render it.
+# The real table is genuine server-rendered markup from jQuery DataTables,
+# with a consistent 6-column layout confirmed on both pages: Analyte,
+# Certificate number, Test kit name, Supplier - manufacturer, Expiry date,
+# Status. pipeline/normalize_microval.py maps it into the canonical schema.
+# A debug-dump artifact (raw HTML/screenshot/any JSON network responses)
+# uploads on every run, including failed ones, in case the page layout
+# drifts in the future.
+
+on:
+  schedule:
+    - cron: "15 6 * * *"  # daily, 06:15 UTC (staggered from the AFNOR workflow)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-microval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 jsonschema playwright
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: MicroVal live fetch
+        continue-on-error: true
+        run: python3 scrapers/microval_live_fetch.py --out-dir data/microval --debug-dir debug/microval
+
+      - name: Re-run MicroVal normalization
+        run: python3 pipeline/normalize_microval.py
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
+
+      - name: Print debug summary to the log
+        # Belt-and-braces alongside the artifact upload below: artifact ZIPs
+        # are only fetchable from a normal-egress network, which this
+        # project's own review environment does not have either (same proxy
+        # block as the site itself) -- so diagnosis so far has happened by
+        # reading this step's output via the GitHub API instead.
+        if: always()
+        run: |
+          shopt -s nullglob
+          for f in debug/microval/*_json_responses.json; do
+            echo "--- $f ---"
+            cat "$f"
+            echo
+          done
+          for f in debug/microval/*.html; do
+            echo "--- $f ($(wc -l < "$f") lines) ---"
+            head -n 80 "$f"
+            echo
+          done
+
+      - name: Upload debug dumps (HTML / screenshot / captured JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microval-debug-dumps
+          path: debug/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Open a pull request with any changes
+        id: create_pr
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Scheduled MicroVal scrape and normalization"
+          title: "Scheduled data update: MicroVal"
+          body: |
+            Automated run of the MicroVal live fetch and normalization.
+
+            Review the diff before merging. If the certificate count looks
+            off, check the "microval-debug-dumps" workflow artifact (raw
+            HTML, screenshot, and any captured JSON network responses)
+            before assuming the site has no new data.
+          branch: automated/microval-scrape
+          delete-branch: true
+
+      - name: Note if automatic PR creation was blocked
+        if: steps.create_pr.outcome == 'failure'
+        run: |
+          echo "::warning::Automatic PR creation failed. This is almost always the repo setting"
+          echo "Settings -> Actions -> General -> Workflow permissions -> 'Allow GitHub Actions"
+          echo "to create and approve pull requests' being off -- enable it so future runs can"
+          echo "open the PR themselves. The commit itself was still pushed to the"
+          echo "'automated/microval-scrape' branch; open a PR from it manually for now."

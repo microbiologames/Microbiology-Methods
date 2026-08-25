@@ -39,17 +39,15 @@ exclusivity, etc.) extracted from the underlying validation reports.
   NF-Validation collectors into `data/methods/`; `pipeline/normalize_aoac.py`
   and `pipeline/normalize_microval.py` do the equivalent (straight
   transform, no reconciliation needed yet) for AOAC-RI and MicroVal.
-- **Orchestration** — `.github/workflows/scrape_and_normalize.yml` runs
-  weekly (and on manual dispatch) from a normal-egress GitHub runner: re-fetch
-  the live NF-Validation organism pages, re-run the merge pipeline, mine
-  summary reports, fetch AOAC-RI certificates live, run the MicroVal
-  reconnaissance fetch, and open a PR with any changes — uploading a debug
-  artifact (raw HTML/screenshots/JSON) on every run so failures are
-  diagnosable. Every live-fetch code path was developed and only tested
-  offline or against a local synthetic page (this repo's own dev environment
-  can't reach any of the three real sites) — expect to need fixes on its
-  first real runs, and check the debug artifact before assuming a source
-  genuinely has no new data.
+- **Orchestration** — one GitHub Actions workflow per source
+  (`.github/workflows/scrape_afnor.yml`, `scrape_microval.yml`,
+  `scrape_aoac.yml`), daily + manual dispatch, from normal-egress runners.
+  Split by source deliberately, not bundled into one job: AFNOR's
+  summary-report mining step alone takes ~40 minutes, so bundling meant
+  every debugging cycle on the (currently broken) AOAC-RI scraper paid that
+  cost for nothing. Each opens its own PR (`automated/<source>-scrape`) and
+  uploads a debug artifact (raw HTML/screenshots/JSON) so failures are
+  diagnosable without another manual file handoff.
 - **Frontend** (`web/`) — a dependency-free static page reading `web/data.json`
   (built from `data/methods/` by `pipeline/build_frontend_data.py`): an
   organism × category heatmap, toggling between method category and mined
@@ -176,15 +174,17 @@ web/                                   static frontend (heatmap + drill-down), r
       Cell values are read per-`<td>` rather than joined into one string and
       split back apart, since the test-kit-name and supplier fields are both
       free multi-word text with no fixed boundary between them.
-- [x] `.github/workflows/scrape_and_normalize.yml` — weekly (+ manual
-      dispatch) job wiring together the NF-Validation live-fetch scraper,
-      the merge pipeline, the summary-report miner, the AOAC-RI live fetch,
-      and the MicroVal fetch + normalization, opening a PR with any changes.
-      Every live-fetch step uses `continue-on-error: true` so one source
-      failing doesn't block the others, and a debug-dump artifact (raw
-      HTML/screenshots/JSON) uploads on every run — including failed ones —
-      so a failure is diagnosable from the Actions UI without another
-      manual file handoff.
+- [x] `.github/workflows/scrape_afnor.yml` / `scrape_microval.yml` /
+      `scrape_aoac.yml` — one workflow per source, daily + manual dispatch,
+      each opening its own PR. Originally one combined workflow; split once
+      it became clear that bundling made iterating on any single source
+      expensive — AFNOR's summary-report mining step alone takes ~40
+      minutes, so every AOAC-RI debugging cycle was paying that cost for
+      nothing. Live-fetch steps use `continue-on-error: true` so a failure
+      doesn't block normalization/frontend-rebuild steps downstream, and a
+      debug-dump artifact (raw HTML/screenshots/JSON) uploads on every run —
+      including failed ones — so a failure is diagnosable from the Actions
+      UI without another manual file handoff.
 
       **Real runs so far (2026-08-25):** NF-Validation live-fetch has worked
       correctly from the first run — 142 methods across all 17 organism
