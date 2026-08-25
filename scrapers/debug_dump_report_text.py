@@ -23,6 +23,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("urls", nargs="+")
     ap.add_argument("--out-dir", default="debug/reports")
+    ap.add_argument("--max-chars", type=int, default=12000)
     args = ap.parse_args()
 
     out_dir = Path(args.out_dir)
@@ -51,9 +52,15 @@ def main():
                 print(f"[{i}] PARSE ERROR: {exc}", file=sys.stderr)
                 continue
 
+            # Some reports carry a huge raw-sample-data appendix (thousands
+            # of individual result rows) that swamped the job log on the
+            # first run of this script without showing anything useful --
+            # the actual summary tables this exists to inspect are earlier
+            # in the document, so cap what gets written/printed.
+            capped = full_text[:args.max_chars]
             out_path = out_dir / f"report_{i}.txt"
-            out_path.write_text(full_text, encoding="utf-8")
-            print(f"[{i}] wrote {len(full_text)} chars -> {out_path}", file=sys.stderr)
+            out_path.write_text(capped, encoding="utf-8")
+            print(f"[{i}] wrote {len(capped)} of {len(full_text)} total chars -> {out_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":
