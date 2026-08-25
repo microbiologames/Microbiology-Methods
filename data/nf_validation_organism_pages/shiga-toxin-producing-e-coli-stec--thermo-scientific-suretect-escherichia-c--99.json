@@ -12,7 +12,7 @@
     "category": "molecular_pcr"
   },
   "target_organism": {
-    "normalized": "STEC (Shiga Toxine Escherichia coli )",
+    "normalized": "Shiga toxin-producing E. coli (STEC)",
     "raw": "STEC (Shiga Toxine Escherichia coli )"
   },
   "reference_method": {

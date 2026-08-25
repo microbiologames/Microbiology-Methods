@@ -155,7 +155,19 @@ def parse_organism_page(html: str, source_page_url: str) -> list:
     organism_raw = re.sub(r'\s+', ' ', h1.get_text(" ", strip=True)) if h1 else None
 
     slug = slug_from_filename_or_url(source_page_url)
-    organism_normalized = ORGANISM_SLUG_MAP.get(slug, organism_raw)
+    organism_normalized = ORGANISM_SLUG_MAP.get(slug)
+    if organism_normalized is None:
+        # Offline fixture filenames can slugify to something longer/more
+        # descriptive than the map's key (e.g. a saved file named
+        # "...-STEC_Shiga_Toxine_Escherichia_coli__NF_Validation.htm"
+        # slugifies to "stec-shiga-toxine-escherichia-coli", not the map's
+        # "stec") -- --fetch-live never hits this, since it builds the slug
+        # from a URL it constructed directly from a map key, but offline
+        # mode needs a fallback. Match by containment, preferring the
+        # longest (most specific) key so e.g. a slug containing "e-coli-o157"
+        # doesn't get claimed by the shorter "e-coli" key instead.
+        candidates = [k for k in ORGANISM_SLUG_MAP if k in slug]
+        organism_normalized = ORGANISM_SLUG_MAP[max(candidates, key=len)] if candidates else organism_raw
 
     # Reference method standards listed near the top of the page (before the
     # first h2), e.g. links to NF ISO 4831 / NF ISO 4832 / NF V08-060.

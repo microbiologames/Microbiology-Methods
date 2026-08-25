@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microbio Methods Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Validated Microbiology Methods</h1>
+    <p class="subtitle">AFNOR NF&#8209;Validation &middot; MicroVal &middot; AOAC Performance Tested Methods&#8480;</p>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Filters">
+      <div class="control-group" role="group" aria-label="Heatmap axis">
+        <span class="control-label">Columns</span>
+        <div class="segmented" id="axis-toggle">
+          <button type="button" data-axis="method_category" class="active">Method category</button>
+          <button type="button" data-axis="tested_categories">Tested food category (study)</button>
+        </div>
+      </div>
+
+      <div class="control-group" role="group" aria-label="Certification status">
+        <span class="control-label">Status</span>
+        <div class="segmented" id="status-toggle">
+          <button type="button" data-status="active" class="active">Valid only</button>
+          <button type="button" data-status="all">All (incl. expired)</button>
+        </div>
+      </div>
+
+      <div class="control-group search-group">
+        <span class="control-label">Search</span>
+        <input type="search" id="search-box" placeholder="Organism or product name&hellip;" autocomplete="off">
+      </div>
+    </section>
+
+    <p class="axis-note" id="axis-note" hidden></p>
+
+    <section class="heatmap-wrap" aria-label="Organism by category heatmap">
+      <div id="heatmap" class="heatmap"></div>
+    </section>
+
+    <section class="results" aria-label="Matching methods">
+      <h2 id="results-title">Click a cell to see matching methods</h2>
+      <div id="results-list" class="results-list"></div>
+    </section>
+  </main>
+
+  <div id="detail-overlay" class="overlay" hidden>
+    <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <button type="button" class="detail-close" id="detail-close" aria-label="Close">&times;</button>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Built from <code>data/methods/</code> &mdash; regenerate with <code>python3 pipeline/build_frontend_data.py</code>. Source: <a href="https://github.com/microbiologames/Microbiology-Methods">microbiologames/Microbiology-Methods</a>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

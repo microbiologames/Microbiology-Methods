@@ -51,9 +51,12 @@ exclusivity, etc.) extracted from the underlying validation reports.
   can't reach any of the three real sites) — expect to need fixes on its
   first real runs, and check the debug artifact before assuming a source
   genuinely has no new data.
-- **Frontend** (planned) — a static site (GitHub Pages) reading an aggregated
-  `data.json` built from `data/methods/`: a micro-organism × matrix heatmap of
-  available methods, drilling into per-method detail pages.
+- **Frontend** (`web/`) — a dependency-free static page reading `web/data.json`
+  (built from `data/methods/` by `pipeline/build_frontend_data.py`): an
+  organism × category heatmap, toggling between method category and mined
+  tested-food-category, drilling into per-method detail pages. Not yet
+  deployed to GitHub Pages. See the status section below for why "matrix"
+  needed a different data source than originally planned.
 
 ## Data provenance policy
 
@@ -83,6 +86,8 @@ data/aoac_ptm/                         raw: AOAC-RI certificate parse (4 certs)
 data/microval/                         raw: reconnaissance-only, unmapped (see status below)
 data/methods/                          canonical: merged, schema-valid (146 methods)
 scrapers/                              one parser/scraper module per source
+pipeline/build_frontend_data.py        aggregates data/methods/ -> web/data.json
+web/                                   static frontend (heatmap + drill-down), reads web/data.json
 .github/workflows/                     scheduled scrape + normalize + PR
 ```
 
@@ -212,7 +217,52 @@ scrapers/                              one parser/scraper module per source
       exact/near-exact commercial name) — no-op today since NF-Validation and
       AOAC-RI haven't produced any name collisions yet, and MicroVal isn't
       normalized into `data/methods/` yet.
-- [ ] Frontend: micro-organism × matrix heatmap + drill-down detail pages.
+- [x] Frontend (`web/`) — a dependency-free static page reading
+      `web/data.json` (built by `pipeline/build_frontend_data.py` from
+      `data/methods/`): an organism × category heatmap with a toggle
+      between two distinct axes, since they come from different fields
+      entirely — **method category** (detection technology: culture media /
+      PCR / immunological / …, well-populated everywhere) and **tested food
+      category** (the categories actually exercised in the validation
+      study, from mined `performance.*.{method_comparison_by_category,
+      relative_trueness_by_category}`, falling back to a certificate's own
+      `validation_scope.matrices` when nothing's been mined yet — see the
+      note below on why the certificate's own scope isn't usable directly).
+      Clicking a cell lists matching methods; clicking a method opens a
+      detail view with the full record, including mined performance tables
+      when present. Status filter (valid-only by default) and a
+      name/organism search. Verified end-to-end in a real browser
+      (Playwright) — this caught and fixed two real bugs (a missing
+      parenthesis crashing the whole page, and a hidden overlay that still
+      intercepted clicks because its CSS unconditionally set `display:
+      flex` without an `[hidden]` override).
+
+      **Why "tested food category" isn't just `validation_scope.matrices`:**
+      per the project owner, ISO 16140-2 validations (NF-Validation,
+      MicroVal) use a "Broad Range of Food" (BRF) rule — once a method is
+      validated across 5+ food categories, its official scope becomes BRF
+      regardless of which ones, which is exactly why `validation_scope.raw`
+      collapses to some "all human food products" variant for 137/142
+      NF-Validation certificates. AOAC-RI has no BRF concept, so its
+      `validation_scope.matrices` genuinely lists the (narrower) tested
+      matrices directly — that's why it's used as the fallback but not the
+      primary source. The real "which categories were actually tested"
+      answer lives in the mined validation-study data, which today only
+      exists for the one hand-mined TEMPO EB report — the heatmap shows
+      this honestly (a "Not yet mined" bucket) rather than pretending the
+      certificate's BRF scope is a matrix breakdown.
+
+      Also worth recording: building this surfaced a real pre-existing data
+      bug (unrelated to tonight's live-fetch work) — 3 STEC certificates
+      had `target_organism.normalized` set to raw French H1 text instead of
+      the intended English label, splitting one organism into two heatmap
+      rows. Root cause: `slug_from_filename_or_url`'s offline-fixture
+      branch can slugify a descriptive local filename (e.g.
+      `..._STEC_Shiga_Toxine_Escherichia_coli__NF_Validation.htm`) to
+      something longer than `ORGANISM_SLUG_MAP`'s key (`stec`), missing an
+      exact-match lookup that `--fetch-live` never has trouble with (it
+      builds URLs directly from map keys). Fixed with a containment-based
+      fallback that prefers the longest (most specific) matching key.
 
 ## Running the pipeline
 
@@ -236,6 +286,10 @@ python3 pipeline/normalize_aoac.py
 python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
 # or mine a single already-downloaded report:
 python3 scrapers/summary_report_parser.py --pdf path/to/report.pdf --methods-dir data/methods
+
+# 4. Build and view the frontend
+python3 pipeline/build_frontend_data.py
+cd web && python3 -m http.server 8000   # fetch() needs http(s), not file://
 ```
 
 ## Notes on environment constraints
