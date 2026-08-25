@@ -14,7 +14,7 @@
     "category": "culture_media"
   },
   "target_organism": {
-    "normalized": "Levures et Moisissures",
+    "normalized": "Yeasts and molds",
     "raw": "Levures et Moisissures"
   },
   "reference_method": {
@@ -49,7 +49,7 @@
   "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-et-moisissures/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": null,

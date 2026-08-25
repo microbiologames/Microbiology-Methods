@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’L. mono (Détection)",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria spp. and L. monocytogenes",
+    "raw": "Listeria spp. et Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Type de méthode : Détection des Listeria monocytogenes et Listeria spp."
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/BRD-07-04-09-98-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/05/Synt-BRD-07-04-09-98_en.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "21 juillet 2026"
+}
