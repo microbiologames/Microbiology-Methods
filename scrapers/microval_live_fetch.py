@@ -1,4 +1,4 @@
-"""Reconnaissance + best-effort live fetch for MicroVal certificates.
+"""Live fetch + parse for MicroVal certificates.
 
 microval.org/en/issued-certificates/ is only a static shell: the real
 certificate list loads inside an <iframe> whose src is set by JavaScript to
@@ -6,31 +6,29 @@ one of two Betty Blocks-hosted pages (confirmed by inspecting the one saved
 copy of that shell page available to this project):
     https://nen.bettywebblocks.com/view-microval
     https://nen.bettywebblocks.com/view-microval-confirmation
-Betty Blocks is a low-code platform whose pages are typically client-rendered
-(the list is fetched by JS after the initial HTML loads), so a plain
-`requests.get` -- as tried for microval.org itself -- most likely returns an
-empty shell too. This script instead drives headless Chromium (Playwright) to
-actually render the page.
+Betty Blocks is a low-code platform whose pages are client-rendered, so a
+plain `requests.get` -- as tried for microval.org itself -- returns an empty
+shell. This script instead drives headless Chromium (Playwright) to actually
+render the page.
 
-This has NEVER been run against the real site: this codebase's development
-environment can't reach nen.bettywebblocks.com (egress-blocked), and no
-sample of the real rendered content (only the outer shell page) has been
-available to develop against. There is, by construction, no way to know the
-real field layout (which column is the certificate number, product name,
-manufacturer, etc.) without seeing it -- so this script deliberately does NOT
-try to guess a mapping into the canonical schema. Instead it:
-  1. Captures every angle that might help a human (or a follow-up parser)
-     understand the real structure on the first run: full rendered HTML,
-     a full-page screenshot, and the body of every JSON network response
-     seen while the page loaded (Betty Blocks may well fetch its data from
-     a discoverable API, which would be far easier to parse than scraped
-     HTML -- worth capturing on the chance it's there).
-  2. Makes one best-effort, clearly-flagged attempt at generic extraction:
-     look for the largest repeated DOM structure (table rows, or sibling
-     elements sharing a class) and dump their text content as raw,
-     unmapped records -- useful as a starting point for writing the real
-     parser once someone has looked at the debug output, not a finished
-     collector.
+This started as pure reconnaissance (this codebase's dev environment can't
+reach nen.bettywebblocks.com, and no sample of the real rendered content was
+ever available to develop against), capturing rendered HTML, a screenshot,
+and any JSON network responses on the chance the data came from a
+discoverable API. The first real run (from the project's GitHub Actions
+workflow) settled the question: no useful API call -- the one JSON response
+seen on both pages is just the jQuery DataTables plugin's i18n string file
+(`cdn.datatables.net/.../English.json`, pagination labels), not certificate
+data. The real data is a genuine server-rendered <table> (DataTables always
+progressively-enhances real markup, never a div-based fake table), with a
+consistent 6-column header confirmed identical across both pages: Analyte /
+Certificate number / Test kit name / Supplier - manufacturer / Expiry date /
+Status. extract_table_rows() reads that structure directly, per-<td>, rather
+than joining a row's text into one string and hoping to split it back apart
+later -- which would be genuinely ambiguous, since both the test-kit-name and
+supplier fields are free multi-word text with no fixed boundary between them.
+A row whose cell count doesn't match the header is kept as a single
+joined-text fallback rather than guessing a split.
 
 Usage:
     pip install playwright && playwright install --with-deps chromium
@@ -84,38 +82,52 @@ def capture_page(playwright, url: str, label: str, debug_dir: Path, timeout_ms: 
         (debug_dir / f"{label}_json_responses.json").write_text(
             json.dumps(json_responses, ensure_ascii=False, indent=2), encoding="utf-8",
         )
-        print(f"[{label}] captured {len(json_responses)} JSON network response(s) -- "
-              f"check {label}_json_responses.json first, it may be far easier to "
-              f"parse than the rendered HTML.", file=sys.stderr)
+        print(f"[{label}] captured {len(json_responses)} JSON network response(s) in "
+              f"{label}_json_responses.json -- on the two real runs so far this was just "
+              f"DataTables' i18n strings file, not certificate data, but kept for the record "
+              f"in case a real data API shows up on a future run.", file=sys.stderr)
 
     body_text = page.evaluate("document.body ? document.body.innerText : ''")
     browser.close()
     return html, body_text, json_responses
 
 
-def best_effort_extract_rows(html: str) -> list:
-    """Finds whichever tag ('tr' or a generic container) repeats the most
-    with near-identical structure, and returns each instance's visible text
-    split on whitespace runs -- a generic, unmapped starting point, not a
-    real parser. Returns [] if nothing looks like a repeated list/table."""
+EXPECTED_HEADER = ["Analyte", "Certificate number", "Test kit name", "Supplier - manufacturer", "Expiry date", "Status"]
+
+
+def extract_table_rows(html: str):
+    """MicroVal's real tables (confirmed against actual captured pages,
+    see scrapers/microval_live_fetch.py's module docstring) are rendered by
+    jQuery DataTables -- which always progressively-enhances a genuine
+    <table><tr><td> structure, never a div-based fake table -- with a
+    consistent 6-column header: Analyte / Certificate number / Test kit
+    name / Supplier - manufacturer / Expiry date / Status.
+
+    Returns (header_cells, data_rows) where data_rows is a list of lists of
+    per-<td> cell text (structure preserved, not joined into one string).
+    A row whose cell count doesn't match the header's is kept as a single
+    joined-text fallback item instead of silently mis-splitting it.
+    """
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "html.parser")
 
     rows = soup.find_all("tr")
-    if len(rows) >= 3:
-        return [re.sub(r'\s+', ' ', r.get_text(" ", strip=True)) for r in rows if r.get_text(strip=True)]
+    if not rows:
+        return [], []
 
-    # Fall back to the most-repeated class among direct children of any container.
-    from collections import Counter
-    class_counts = Counter()
-    for el in soup.find_all(True, class_=True):
-        class_counts[tuple(el.get("class"))] += 1
-    if class_counts:
-        top_class, count = class_counts.most_common(1)[0]
-        if count >= 3:
-            matches = soup.find_all(True, class_=list(top_class))
-            return [re.sub(r'\s+', ' ', m.get_text(" ", strip=True)) for m in matches if m.get_text(strip=True)]
-    return []
+    header_cells = [c.get_text(strip=True) for c in rows[0].find_all(["th", "td"])]
+    data_rows = []
+    for r in rows[1:]:
+        cells = [c.get_text(strip=True) for c in r.find_all(["th", "td"])]
+        if not any(cells):
+            continue
+        if len(cells) != len(header_cells):
+            # Structure didn't match what we expected -- keep the row as a
+            # single string rather than guess a misaligned split.
+            data_rows.append([re.sub(r'\s+', ' ', r.get_text(" ", strip=True))])
+        else:
+            data_rows.append(cells)
+    return header_cells, data_rows
 
 
 def main():
@@ -130,35 +142,42 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    total_certs = 0
     with sync_playwright() as p:
         for label, url in TARGET_URLS.items():
             html, body_text, json_responses = capture_page(p, url, label, debug_dir, args.timeout_ms)
 
-            rows = best_effort_extract_rows(html)
-            print(f"[{label}] best-effort extraction found {len(rows)} repeated row-like elements; "
+            header, rows = extract_table_rows(html)
+            print(f"[{label}] table extraction: header={header!r}, {len(rows)} data row(s); "
                   f"body text length {len(body_text)} chars.", file=sys.stderr)
 
-            record = {
-                "source": "MICROVAL",
-                "label": label,
-                "url": url,
-                "raw_rows_unmapped": rows,
-                "had_json_api_responses": bool(json_responses),
-                "provenance": {
-                    "source_type": "reconnaissance_live_fetch",
-                    "note": (
-                        "Generic, unmapped extraction from a first real render of this page -- "
-                        "no confirmed field layout exists yet. Check the debug HTML/screenshot/"
-                        "JSON-response dump alongside this file before trusting raw_rows_unmapped "
-                        "for anything; the real parser (mapping rows to certificate_number, "
-                        "commercial_name, manufacturer, etc.) still needs to be written once a "
-                        "human has looked at what this actually captured."
-                    ),
-                },
-            }
-            (out_dir / f"{label}.json").write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            if header != EXPECTED_HEADER:
+                print(f"[{label}] WARNING: header doesn't match the expected MicroVal columns "
+                      f"({EXPECTED_HEADER!r}) -- site layout may have changed; falling back to "
+                      f"whatever columns were actually found.", file=sys.stderr)
 
-    print(f"Done. Inspect {debug_dir} for raw HTML/screenshots/JSON before trusting {out_dir}.", file=sys.stderr)
+            records = []
+            for cells in rows:
+                if len(cells) == len(header) == 6:
+                    rec = dict(zip(
+                        ["analyte_raw", "certificate_number", "commercial_name", "manufacturer_raw", "expiry_date_raw", "status_raw"],
+                        cells,
+                    ))
+                else:
+                    rec = {"unparsed_row": cells[0] if cells else ""}
+                rec["source"] = "MICROVAL"
+                rec["label"] = label
+                rec["source_page_url"] = url
+                records.append(rec)
+                fname_key = re.sub(r'[^A-Za-z0-9]+', '_', rec.get("certificate_number") or f"row{len(records)}").strip('_')
+                (out_dir / f"{label}--{fname_key}.json").write_text(
+                    json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8",
+                )
+            total_certs += len(records)
+            print(f"[{label}] wrote {len(records)} certificate record(s) -> {out_dir}", file=sys.stderr)
+
+    print(f"Done: {total_certs} MicroVal certificate(s) total -> {out_dir}. "
+          f"Debug HTML/screenshots/JSON still in {debug_dir} for verification.", file=sys.stderr)
 
 
 if __name__ == "__main__":

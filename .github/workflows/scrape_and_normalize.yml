@@ -5,18 +5,27 @@ name: Scrape and normalize validation data
 # nf-validation.afnor.org, members.aoac.org and nen.bettywebblocks.com are
 # all proxy-blocked. That means every live-fetch code path exercised here
 # (NF-Validation organism pages, summary-report downloads, the AOAC-RI
-# listing scraper, and the MicroVal reconnaissance fetch) has NOT been
-# validated end-to-end before this workflow's first real run against each
-# site. Watch the first few runs closely: the "Upload debug dumps" step
-# always runs (even on failure) so a raw-HTML/screenshot/JSON capture is
-# available to diagnose from without needing another manual file handoff.
+# listing scraper, and the MicroVal fetch) had never run before this
+# workflow's own first attempts against each site. Watch new runs for
+# regressions: the "Upload debug dumps" step always runs (even on failure)
+# so a raw-HTML/screenshot/JSON capture is available to diagnose from
+# without needing another manual file handoff.
 #
-# MicroVal in particular is reconnaissance only -- no sample of its real
-# rendered content was ever available to develop against (only the outer
-# shell page), so microval_live_fetch.py deliberately does NOT map its
-# output to the canonical schema yet. Its output under data/microval/ is
-# raw, unmapped rows; writing pipeline/normalize_microval.py comes after a
-# human has looked at a real run's debug dump.
+# Status per source as of the runs that got this workflow to green:
+#   - NF-Validation: live-fetch + merge worked correctly from the first run.
+#   - MicroVal: started as pure reconnaissance (no real sample had ever been
+#     available to develop against) but its first two real runs revealed a
+#     genuine server-rendered DataTables <table> with a consistent 6-column
+#     layout on both target pages -- normalize_microval.py now maps it into
+#     the canonical schema for real, no longer just dumping unmapped rows.
+#   - AOAC-RI: still unresolved. The listing page (an ASP.NET/Sitefinity
+#     site) renders fine but exposes 0 static PDF links -- certificate
+#     downloads go through a hidden-field + postback JS mechanism
+#     (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument), not plain
+#     <a href="*.pdf">, so aoac_ptm_live_fetch.py's simple GET-and-regex
+#     approach cannot see them. Needs a Playwright-driven rewrite (interact
+#     with the search/grid like microval_live_fetch.py does) to actually
+#     trigger downloads -- not yet built.
 #
 # Deliberately NOT re-scraping the NF-Validation certificate-list PDF here:
 # per the project's data-provenance policy, that PDF is a one-time bootstrap
@@ -67,9 +76,15 @@ jobs:
       - name: Re-run AOAC-RI normalization
         run: python3 pipeline/normalize_aoac.py
 
-      - name: MicroVal reconnaissance fetch
+      - name: MicroVal live fetch
         continue-on-error: true
         run: python3 scrapers/microval_live_fetch.py --out-dir data/microval --debug-dir debug/microval
+
+      - name: Re-run MicroVal normalization
+        run: python3 pipeline/normalize_microval.py
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
 
       - name: Print debug summaries to the log
         # Belt-and-braces alongside the artifact upload below: artifact ZIPs
@@ -123,20 +138,15 @@ jobs:
             Automated run of the NF-Validation live-page scraper, the
             certificate/organism-page merge pipeline, the summary-report
             performance-data miner, the AOAC-RI live listing scraper, and
-            the MicroVal reconnaissance fetch.
+            the MicroVal live fetch + normalization.
 
-            Review the diff before merging -- especially on this workflow's
-            early runs, since every live-fetch code path was developed
-            offline and had not been exercised against the real sites
-            before deployment. If a source came back empty or looks wrong,
-            check the "scrape-debug-dumps" workflow artifact (raw HTML,
-            screenshots, and any captured JSON API responses) before
-            assuming the site has no new data.
-
-            data/microval/ is reconnaissance-only for now: raw, unmapped
-            rows, not yet merged into data/methods/. Writing the real
-            MicroVal parser needs a human to look at what this run actually
-            captured first.
+            Review the diff before merging. If a source came back empty or
+            looks wrong, check the "scrape-debug-dumps" workflow artifact
+            (raw HTML, screenshots, and any captured JSON API responses)
+            before assuming the site has no new data -- AOAC-RI in
+            particular is known to still return 0 certificates (its
+            downloads go through a JS postback mechanism a plain GET can't
+            trigger; see the workflow file's header comment).
           branch: automated/validation-data-scrape
           delete-branch: true
 
