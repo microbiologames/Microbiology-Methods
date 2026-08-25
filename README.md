@@ -148,15 +148,18 @@ web/                                   static frontend (heatmap + drill-down), r
       regexes match this report's specific wording and will need
       broadening once run against reports phrased differently.
 - [x] `scrapers/aoac_ptm_live_fetch.py` — fetches the AOAC-RI validated-methods
-      listing page, discovers certificate PDF links, and feeds each through
-      `aoac_ptm_parser.parse_certificate()`. Detects (and logs, rather than
-      silently returning nothing for) two likely failure modes: a login wall
-      and a JS-rendered listing that a plain HTTP GET can't see. Pagination
-      is only followed via a `rel="next"` link if present — an ASP.NET
-      postback-based pager, if that's what the real site uses, isn't
-      handled. Never run against the real site (members.aoac.org is
-      egress-blocked from this repo's dev environment) — its very first
-      real run, in CI, is also its first real test.
+      listing page and feeds any discovered certificate PDFs through
+      `aoac_ptm_parser.parse_certificate()`. A plain HTTP GET always finds 0
+      PDF links (real mechanism: a hidden-field + postback download button,
+      not `<a href="*.pdf">` links), so it falls back to headless Chromium —
+      selecting "Microbiological" in the page's own Discipline filter (a
+      real, DOM-verified selection, and this project's actual scope) and
+      clicking its "Find" button, mirroring `microval_live_fetch.py`'s
+      approach. Across several real CI runs this narrowed all the way down
+      to a definitive root cause on AOAC's own side — see the "Real runs so
+      far" note above for the full story — captured via console-error/
+      pageerror hooks and a direct `Page_Validators`/`__doPostBack`
+      inspection, not guessed.
 - [x] `scrapers/microval_live_fetch.py` + `pipeline/normalize_microval.py` —
       live fetch (headless Chromium, since the real content loads into an
       iframe — `nen.bettywebblocks.com/view-microval` and
@@ -202,14 +205,27 @@ web/                                   static frontend (heatmap + drill-down), r
       (`GitHub Actions is not permitted to create or approve pull requests`,
       the repo's Settings → Actions → General → Workflow permissions
       toggle, off by default) but has worked since that was enabled.
-      AOAC-RI remains unresolved: the listing page (an ASP.NET/Sitefinity
-      site under `members.aoac.org`) responds fine (no login wall, not
-      JS-rendered) but returns 0 static PDF links every time — its
-      certificate downloads go through a hidden-field + postback JS
-      mechanism (`Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument`),
-      which a plain GET-and-regex approach fundamentally cannot trigger.
-      Needs a Playwright-driven rewrite (interacting with the page's
-      search/grid, the way `microval_live_fetch.py` does) — not yet built.
+      AOAC-RI is now **confirmed broken on AOAC's own side**, not a scraper
+      gap — a Playwright-driven rewrite was built (selecting a real filter,
+      Discipline=Microbiological, and clicking the page's own "Find"
+      button), but the search never reaches the server on any attempt.
+      The listing page (an ASP.NET/iMIS site under `members.aoac.org`) is a
+      genuine, working-looking search widget — not login-gated, not
+      empty-by-design — but its `__doPostBack` function is provably
+      undefined at click time (confirmed with an explicit 10-second wait,
+      ruling out a load-order race) because the page's own
+      `Telerik.Web.UI.RadAjaxManager._applyUpdatePanelsRenderMode` throws
+      `Cannot read properties of null (reading 'length')` during
+      `Sys.Application._doInitialize()`, aborting the AJAX framework's
+      client-side init before it finishes wiring up postback support. That
+      stack trace was captured directly, not inferred, and points at a
+      server-side RadAjaxManager misconfiguration (likely referencing an
+      UpdatePanel/container that doesn't exist in this page's current
+      markup) that would break the "Find" button for any real browser —
+      not something browser automation can route around. The scraper still
+      attempts the full flow every run and captures console/page errors,
+      so this will self-correct automatically the day AOAC fixes their
+      page; no further scraper iteration is expected to help until then.
 - [ ] Cross-source product grouping (NF-Validation × MicroVal × AOAC-RI by
       exact/near-exact commercial name) — no-op today since no name
       collisions exist yet across the three now-populated sources.

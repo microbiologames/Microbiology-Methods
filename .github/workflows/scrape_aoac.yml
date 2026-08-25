@@ -8,26 +8,29 @@ name: Scrape and normalize AOAC-RI data
 # normal outbound internet access -- unlike this repo's day-to-day
 # development environment, where members.aoac.org is proxy-blocked.
 #
-# Status as of the runs so far: STILL BROKEN, but the mechanism is now
-# understood. The listing page
+# Status: CONFIRMED BROKEN ON AOAC'S OWN SIDE, not a scraper problem --
+# further automated iteration here won't fix it. The listing page
 # (https://members.aoac.org/AOAC/AOAC/RI/PTM_Validated_Methods.aspx, an
-# ASP.NET page built on the iMIS association-management system) responds
-# fine -- no login wall, not JS-rendered, real title -- but exposes 0
-# static PDF links and 0 result rows every time to a plain GET. Two things
-# were confirmed from the actual rendered page, not guessed: (1)
-# certificate downloads go through a hidden-field + postback JS mechanism
-# (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument: a hidden
-# "HiddenDownloadPathField" input plus a submit button); (2) the results
-# area is a genuine iMIS "IQA" search widget that only shows "Please enter
-# your search criteria to view results" until its own "Find" button is
-# clicked -- it is not broken, empty, or login-gated, it has just never
-# been searched. scrapers/aoac_ptm_live_fetch.py's headless-Chromium
-# fallback (the same approach that worked for MicroVal) now clicks that
-# "Find" button with no filter criteria (per the widget's own on-page
-# instructions, to request every record) and captures the page again --
-# the resulting grid's real row/cell markup still needs a human to look at
-# before a real extractor gets written. A debug-dump artifact uploads on
-# every run to help with that without needing a manual file handoff.
+# ASP.NET/iMIS page) responds fine and its results area is a genuine
+# search widget (not login-gated or empty-by-design): selecting a real
+# filter (Discipline=Microbiological, confirmed to register in the DOM)
+# and clicking "Find" still never reaches the server. The captured
+# pageerror stack trace shows why: Telerik.Web.UI.RadAjaxManager.
+# _applyUpdatePanelsRenderMode throws "Cannot read properties of null
+# (reading 'length')" during the page's own Sys.Application.
+# _doInitialize(), which crashes before __doPostBack ever gets defined
+# (confirmed to still be undefined after an explicit 10-second wait --
+# not a load-order race). That's consistent with RadAjaxManager being
+# configured to reference an UpdatePanel/container that doesn't exist in
+# this page's current markup -- a server-side misconfiguration on AOAC's
+# end that would break the "Find" button for any real browser, not
+# something browser-automation can click around. scrapers/
+# aoac_ptm_live_fetch.py's headless-Chromium fallback still performs the
+# full attempt (select Microbiological, click Find, capture before/after
+# HTML/screenshots/console errors) each run, so this will self-correct
+# the moment AOAC fixes their page -- no code change needed here for
+# that, just watch the debug dump's console-error capture for the day it
+# comes back empty.
 
 on:
   schedule:
@@ -147,13 +150,15 @@ jobs:
             Automated run of the AOAC-RI live listing scraper and
             normalization.
 
-            This source is known to still be broken (see the workflow
-            file's header comment) -- expect 0 new certificates until the
-            page's real postback-based download mechanism is handled.
-            Check the "aoac-debug-dumps" workflow artifact / this run's log
-            (including rendered_listing.html/png and any generic table rows
-            found) before assuming otherwise -- that's the reconnaissance
-            this run exists to gather.
+            This source is confirmed broken on AOAC's own side (see the
+            workflow file's header comment for the full stack trace) --
+            their search widget's "Find" button never reaches the server
+            because their page's own Telerik RadAjaxManager crashes
+            during initialization, before __doPostBack gets defined.
+            Expect 0 new certificates until AOAC fixes this; check the
+            "aoac-debug-dumps" workflow artifact / this run's log
+            (console error/pageerror capture) for a run where that crash
+            no longer appears before assuming otherwise.
           branch: automated/aoac-scrape
           delete-branch: true
 

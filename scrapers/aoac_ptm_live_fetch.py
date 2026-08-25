@@ -20,16 +20,29 @@ were confirmed by inspecting the actual rendered page, not guessed:
    methods," and shows "Please enter your search criteria to view
    results" until a search actually runs.
 
-When the plain GET finds nothing, playwright_reconnaissance() drives
-headless Chromium instead (the same approach that worked for MicroVal):
-render the page, click the widget's "Find" button with no filter criteria
-(to request every record, per the widget's own instructions), capture
-before/after HTML + screenshots + JSON responses, and make one best-effort
-generic-row extraction attempt on the post-click page -- reconnaissance to
-inform the next iteration, not a finished parser guessed at blind. Still
-open as of the last run: what the populated grid's actual row/cell markup
-looks like -- check the debug dump's rendered_listing_after_find.html/png
-before writing a real extractor for it.
+CONCLUSION (confirmed against the real site, with a full stack trace, not
+guessed): this listing is currently broken on AOAC's own end, for any
+browser, not just automation. Clicking "Find" -- with a real filter
+selected (Discipline=Microbiological, confirmed to actually register:
+selectedOptions=['MICRO'], not disabled) -- never reaches the server.
+Page_ClientValidate isn't even defined on this page (so that's not the
+blocker), and __doPostBack itself is genuinely undefined at click time
+(confirmed to still be undefined after an explicit 10-second wait, so
+not a load-order race either). The captured pageerror stack trace shows
+why: Telerik.Web.UI.RadAjaxManager._applyUpdatePanelsRenderMode throws
+"Cannot read properties of null (reading 'length')" during the page's
+own Sys.Application._doInitialize() -- i.e. the ASP.NET AJAX framework's
+client-side init crashes on this specific page before it finishes wiring
+up __doPostBack, most likely because RadAjaxManager is configured to
+reference an UpdatePanel or container that doesn't exist in this page's
+current markup (a server-side misconfiguration on AOAC's side, plausibly
+left over from a template change). playwright_reconnaissance() below
+still performs the full click-through (selecting Microbiological,
+clicking Find, capturing before/after HTML/screenshots and all console/
+page errors) so a future run can immediately show if AOAC fixes this,
+but there is currently no client-side workaround: the page's own script
+never reaches the code path that would submit the search, regardless of
+how the click is driven.
 
 Usage:
     python3 aoac_ptm_live_fetch.py --out-dir data/aoac_ptm --debug-dir /tmp/aoac_debug
