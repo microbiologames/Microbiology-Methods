@@ -56,8 +56,29 @@ def to_float(s: str):
         return None
 
 
+
+# Same certificate-number shape nf_validation_list_parser.py's CERT_START_RE
+# validated against 138 real certificates (prefix + NN/NN-NN/NN + optional
+# letter suffix) -- reused here rather than re-deriving it, since the format
+# itself is already proven; only the surrounding label text varies.
+CERT_NUMBER_FORMAT_RE = r'[A-Z0-9]{2,4}\s*\d{2}\s*/\s*\d{2}\s*-\s*\d{2}\s*/\s*\d{2}(?:\s*[A-Z])?'
+
+
 def extract_cover_metadata(full_text: str) -> dict:
-    cert_m = re.search(r'Certificate number:\s*([A-Z0-9]{2,4}\s*\d{2}\s*/\s*\d{2}\s*-\s*\d{2}\s*/\s*\d{2}(?:\s*[A-Z])?)', full_text)
+    # First run (against 140 real reports, only 1 developed against
+    # offline): the exact "Certificate number:" English label alone missed
+    # ~76/140. Widened to accept French phrasing too and, failing any
+    # labeled match, fall back to the number format alone appearing
+    # anywhere on the cover page -- still unverified against those specific
+    # 76 failures (this environment can't fetch them to check), so treat
+    # this as a improved-but-unproven second attempt, not a confirmed fix.
+    cert_m = re.search(
+        r'(?:Certificate\s+n(?:umber|o|°)|Num[ée]ro\s+de\s+certificat|N[o°]\s+de\s+certificat)\s*:?\s*\(?\s*'
+        r'(' + CERT_NUMBER_FORMAT_RE + r')',
+        full_text, re.I,
+    )
+    if not cert_m:
+        cert_m = re.search(f'({CERT_NUMBER_FORMAT_RE})', full_text[:3000])
     certificate_number = re.sub(r'\s+', ' ', cert_m.group(1)).strip() if cert_m else None
     certificate_number = re.sub(r'\s*/\s*', '/', certificate_number) if certificate_number else None
     certificate_number = re.sub(r'\s*-\s*', '-', certificate_number) if certificate_number else None

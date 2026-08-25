@@ -85,7 +85,10 @@ jobs:
           echo "===================== AOAC debug ====================="
           for f in debug/aoac/*.html; do
             echo "--- $f ($(wc -l < "$f") lines) ---"
-            head -n 80 "$f"
+            echo "-- head --"
+            head -n 40 "$f"
+            echo "-- lines mentioning pdf/download/href (context 2), first 150 --"
+            grep -inE 'pdf|download|href=' "$f" -A2 -B2 | head -n 150
             echo
           done
           echo "===================== MicroVal debug ====================="
