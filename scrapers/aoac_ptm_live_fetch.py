@@ -4,22 +4,32 @@ aoac_ptm_parser.parse_certificate().
 
 Confirmed against the real site across several CI runs, not guessed:
 members.aoac.org/AOAC/AOAC/RI/PTM_Validated_Methods.aspx is a real,
-reachable ASP.NET/Sitefinity page (real title "RI Validated Methods", no
-login wall -- the earlier login-wall false positive on a generic "Sign In"
-nav link has been fixed) that consistently returns 0 static PDF links to a
-plain GET. Grepping the raw HTML found the actual mechanism: certificate
-downloads go through a hidden-field + postback JS call
-(Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument -- a hidden
-"HiddenDownloadPathField" input plus a submit button), not
-`<a href="*.pdf">` links a regex can see. When the plain GET finds nothing,
-playwright_reconnaissance() drives headless Chromium instead (the same
-approach that worked for MicroVal): render the page, capture HTML/
-screenshot/JSON responses, and make one best-effort generic-row extraction
-attempt -- reconnaissance to inform the next iteration, not a finished
-parser guessed at blind. Still open as of the last run: whether the results
-grid populates by default or needs an interaction (e.g. clicking a "Search"
-button) to load -- check the debug dump's rendered_listing.html/png before
-assuming which.
+reachable ASP.NET page built on the iMIS association-management system
+(real title "RI Validated Methods", no login wall -- the earlier
+login-wall false positive on a generic "Sign In" nav link has been fixed)
+that consistently returns 0 static PDF links to a plain GET. Two things
+were confirmed by inspecting the actual rendered page, not guessed:
+
+1. Certificate downloads go through a hidden-field + postback JS call
+   (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument -- a hidden
+   "HiddenDownloadPathField" input plus a submit button), not
+   `<a href="*.pdf">` links a regex can see.
+2. The results grid is a genuine iMIS "IQA" search widget, not a
+   pre-populated listing or a login-gated one: its own on-page copy says
+   "Enter criteria and/or click 'Find' to browse the listing of validated
+   methods," and shows "Please enter your search criteria to view
+   results" until a search actually runs.
+
+When the plain GET finds nothing, playwright_reconnaissance() drives
+headless Chromium instead (the same approach that worked for MicroVal):
+render the page, click the widget's "Find" button with no filter criteria
+(to request every record, per the widget's own instructions), capture
+before/after HTML + screenshots + JSON responses, and make one best-effort
+generic-row extraction attempt on the post-click page -- reconnaissance to
+inform the next iteration, not a finished parser guessed at blind. Still
+open as of the last run: what the populated grid's actual row/cell markup
+looks like -- check the debug dump's rendered_listing_after_find.html/png
+before writing a real extractor for it.
 
 Usage:
     python3 aoac_ptm_live_fetch.py --out-dir data/aoac_ptm --debug-dir /tmp/aoac_debug
@@ -101,14 +111,25 @@ def extract_generic_rows(html: str) -> list:
 def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
     """Fallback for when the plain GET-and-regex approach finds nothing: the
     listing page turned out (confirmed against the real site, not assumed)
-    to be an ASP.NET/Sitefinity site whose certificate downloads go through
-    a hidden-field + postback JS mechanism
+    to be an ASP.NET/iMIS site (AOAC uses the iMIS association-management
+    system, not raw Sitefinity as first guessed) whose certificate downloads
+    go through a hidden-field + postback JS mechanism
     (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument), not plain
     <a href="*.pdf"> links -- so this drives headless Chromium instead,
-    mirroring the approach that worked for MicroVal: capture everything
-    (rendered HTML, screenshot, JSON network responses) and make one
-    best-effort generic-row extraction attempt, rather than a finished
-    parser guessed at blind.
+    mirroring the approach that worked for MicroVal.
+
+    A second real run explained *why* the page always renders zero rows:
+    it's a genuine iMIS "IQA" search widget (id ...ciPTMValidatedMethods_
+    ResultsGrid...), not a pre-populated grid or a login-gated one. Its own
+    on-page copy says "Enter criteria and/or click 'Find' to browse the
+    listing of validated methods," and the results panel shows literally
+    "Please enter your search criteria to view results" until a search is
+    run. So after the initial page load, this now also clicks the widget's
+    "Find" submit button (with no filter criteria entered, to request every
+    record) and captures the page again -- that's the actual next
+    reconnaissance step, not a finished parser guessed at blind: the exact
+    shape of the resulting grid still needs a human to look at before
+    writing a real extractor.
     """
     from playwright.sync_api import sync_playwright
 
@@ -139,15 +160,41 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
         if debug_dir:
             (debug_dir / "rendered_listing.html").write_text(html, encoding="utf-8")
             page.screenshot(path=str(debug_dir / "rendered_listing.png"), full_page=True)
-            if json_responses:
-                (debug_dir / "rendered_listing_json_responses.json").write_text(
-                    json.dumps(json_responses, ensure_ascii=False, indent=2), encoding="utf-8",
-                )
+
+        clicked_find = False
+        try:
+            find_button = page.get_by_role("button", name="Find", exact=True)
+            find_button.wait_for(state="visible", timeout=5000)
+            find_button.click()
+            clicked_find = True
+            print("[playwright] clicked the 'Find' search button with no filter criteria "
+                  "(the widget's own instructions say this browses the full listing).", file=sys.stderr)
+        except Exception as exc:  # noqa: BLE001 -- still want to capture whatever state we're in
+            print(f"[playwright] could not click 'Find' button: {exc}", file=sys.stderr)
+
+        post_click_html = None
+        if clicked_find:
+            try:
+                page.wait_for_load_state("networkidle", timeout=timeout_ms)
+            except Exception as exc:  # noqa: BLE001 -- best-effort; still capture below
+                print(f"[playwright] post-click networkidle warning: {exc}", file=sys.stderr)
+            page.wait_for_timeout(4000)  # let the AJAX-updated grid finish rendering
+            post_click_html = page.content()
+            if debug_dir:
+                (debug_dir / "rendered_listing_after_find.html").write_text(post_click_html, encoding="utf-8")
+                page.screenshot(path=str(debug_dir / "rendered_listing_after_find.png"), full_page=True)
+
+        if debug_dir and json_responses:
+            (debug_dir / "rendered_listing_json_responses.json").write_text(
+                json.dumps(json_responses, ensure_ascii=False, indent=2), encoding="utf-8",
+            )
         browser.close()
 
-    pdf_links = find_pdf_links(html, url)
-    rows = extract_generic_rows(html)
-    print(f"[playwright] rendered page: {len(pdf_links)} pdf link(s), {len(rows)} generic table row(s), "
+    effective_html = post_click_html if post_click_html is not None else html
+    pdf_links = find_pdf_links(effective_html, url)
+    rows = extract_generic_rows(effective_html)
+    print(f"[playwright] {'post-Find-click' if post_click_html is not None else 'initial'} page: "
+          f"{len(pdf_links)} pdf link(s), {len(rows)} generic table row(s), "
           f"{len(json_responses)} JSON network response(s) captured.", file=sys.stderr)
     return pdf_links, rows, json_responses
 
