@@ -233,9 +233,20 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             # forced) is what the page's own validation and postback read,
             # not the Chosen widget's decorative overlay.
             discipline_select.select_option(label="Microbiological", force=True)
-            print("[playwright] selected 'Microbiological' in the Discipline filter "
-                  "(this project's own scope, and a real selection to satisfy whatever "
-                  "'enter some criteria' validation blocked the previous blank attempt).",
+            # force=True proves Playwright *acted* on the element, not that
+            # the selection actually stuck the way the page's own
+            # validation reads it (e.g. a disabled underlying <select> that
+            # Chosen manages separately would silently ignore this) -- so
+            # read the DOM's own selectedOptions back out directly rather
+            # than assuming.
+            selected_values = discipline_select.evaluate(
+                "el => Array.from(el.selectedOptions).map(o => o.value)"
+            )
+            is_disabled = discipline_select.evaluate("el => el.disabled")
+            print(f"[playwright] selected 'Microbiological' in the Discipline filter "
+                  f"(this project's own scope, and a real selection to satisfy whatever "
+                  f"'enter some criteria' validation blocked the previous blank attempt). "
+                  f"Verified DOM state: selectedOptions={selected_values!r}, disabled={is_disabled!r}.",
                   file=sys.stderr)
         except Exception as exc:  # noqa: BLE001 -- still try Find even if this didn't work
             print(f"[playwright] could not select 'Microbiological' in Discipline: {exc}", file=sys.stderr)
@@ -253,6 +264,26 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             print("[playwright] clicked the 'Find' search button.", file=sys.stderr)
         except Exception as exc:  # noqa: BLE001 -- still want to capture whatever state we're in
             print(f"[playwright] could not click 'Find' button: {exc}", file=sys.stderr)
+
+        if clicked_find:
+            # If Page_ClientValidate(...) is what's silently blocking
+            # __doPostBack (still unconfirmed -- the requests-to-aoac.org
+            # count so far says the postback isn't reaching the server, but
+            # not why), ASP.NET's standard client-side validators write
+            # their failure directly into the DOM as a <span id="...
+            # Validator...">message</span> whose visibility gets flipped
+            # synchronously, before any network activity -- checking for
+            # that beats waiting on network events that may never come.
+            try:
+                validator_state = page.evaluate(
+                    "() => Array.from(document.querySelectorAll('[id*=Validator]'))"
+                    ".map(el => ({id: el.id, visible: el.style.visibility !== 'hidden' && "
+                    "el.style.display !== 'none', text: el.textContent.trim()}))"
+                )
+                print(f"[playwright] validator elements on the page right after the click: "
+                      f"{validator_state}", file=sys.stderr)
+            except Exception as exc:  # noqa: BLE001 -- diagnostic only
+                print(f"[playwright] could not inspect validator elements: {exc}", file=sys.stderr)
 
         post_click_html = None
         if clicked_find:
