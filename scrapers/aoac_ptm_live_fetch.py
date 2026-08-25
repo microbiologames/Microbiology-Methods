@@ -266,24 +266,34 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             print(f"[playwright] could not click 'Find' button: {exc}", file=sys.stderr)
 
         if clicked_find:
-            # If Page_ClientValidate(...) is what's silently blocking
-            # __doPostBack (still unconfirmed -- the requests-to-aoac.org
-            # count so far says the postback isn't reaching the server, but
-            # not why), ASP.NET's standard client-side validators write
-            # their failure directly into the DOM as a <span id="...
-            # Validator...">message</span> whose visibility gets flipped
-            # synchronously, before any network activity -- checking for
-            # that beats waiting on network events that may never come.
+            # A DOM scan for elements with "Validator" in their id came back
+            # empty even though the selection was confirmed to stick
+            # (selectedOptions=['MICRO'], not disabled) and the postback
+            # still never reached the server -- so whatever
+            # Page_ClientValidate(...) checks isn't a standard ASP.NET
+            # validator control rendered as a labeled span. Querying its
+            # actual machinery directly is more reliable than guessing at
+            # more DOM patterns: ASP.NET WebForms' client-side validation
+            # framework keeps every registered validator in a global
+            # Page_Validators array, each with a live .isvalid flag and
+            # .errormessage that Page_ClientValidate() sets when it runs --
+            # that's the framework's own ground truth for which check (if
+            # any) is failing and why, independent of how it's displayed.
             try:
                 validator_state = page.evaluate(
-                    "() => Array.from(document.querySelectorAll('[id*=Validator]'))"
-                    ".map(el => ({id: el.id, visible: el.style.visibility !== 'hidden' && "
-                    "el.style.display !== 'none', text: el.textContent.trim()}))"
+                    "() => ({"
+                    "hasPageClientValidate: typeof Page_ClientValidate === 'function',"
+                    "pageIsValid: typeof Page_IsValid !== 'undefined' ? Page_IsValid : 'undefined',"
+                    "validators: typeof Page_Validators !== 'undefined' "
+                    "? Page_Validators.map(v => ({id: v.id, isvalid: v.isvalid, "
+                    "errormessage: v.errormessage, validationGroup: v.validationGroup})) "
+                    ": 'Page_Validators is undefined'"
+                    "})"
                 )
-                print(f"[playwright] validator elements on the page right after the click: "
+                print(f"[playwright] ASP.NET client validation state right after the click: "
                       f"{validator_state}", file=sys.stderr)
             except Exception as exc:  # noqa: BLE001 -- diagnostic only
-                print(f"[playwright] could not inspect validator elements: {exc}", file=sys.stderr)
+                print(f"[playwright] could not inspect Page_Validators: {exc}", file=sys.stderr)
 
         post_click_html = None
         if clicked_find:
