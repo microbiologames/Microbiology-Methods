@@ -226,6 +226,26 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
             (debug_dir / "rendered_listing.html").write_text(html, encoding="utf-8")
             page.screenshot(path=str(debug_dir / "rendered_listing.png"), full_page=True)
 
+        # The last run's captured pageerror was the direct cause of every
+        # previous no-op: "__doPostBack is not defined". ASP.NET normally
+        # emits __doPostBack's definition inline near the top of the form
+        # as part of the page's own script setup, and it should already
+        # exist well before "networkidle" -- but the page also threw an
+        # unrelated "Cannot read properties of null" pageerror during
+        # initial load (plus a Mixed Content block on an unrelated ad-
+        # network script), and either could plausibly have aborted a
+        # shared inline <script> block partway through, before
+        # __doPostBack's own definition ran. Waiting for it explicitly
+        # (rather than assuming networkidle + a fixed delay was enough)
+        # tests that directly instead of guessing at a longer fixed wait.
+        try:
+            page.wait_for_function("typeof __doPostBack === 'function'", timeout=10000)
+            print("[playwright] __doPostBack is defined and ready.", file=sys.stderr)
+        except Exception as exc:  # noqa: BLE001 -- still proceed; the click will just no-op again
+            print(f"[playwright] __doPostBack never became defined within 10s: {exc} "
+                  f"-- this is very likely why every previous click silently did nothing.",
+                  file=sys.stderr)
+
         # The previous run's captured onclick handler explained the earlier
         # no-op: it calls Page_ClientValidate(...) before __doPostBack(...)
         # and returns early if that fails -- and a corrected (host-based,
