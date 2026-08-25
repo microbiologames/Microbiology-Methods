@@ -50,7 +50,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pypdf beautifulsoup4 jsonschema requests cryptography
+        run: pip install pypdf pdfplumber beautifulsoup4 jsonschema requests cryptography
 
       - name: Re-fetch live NF-Validation organism pages
         continue-on-error: true
