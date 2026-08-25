@@ -2,7 +2,7 @@
   "id": "microval--2017lr75",
   "source": "MICROVAL",
   "source_certificate_number": "2017LR75",
-  "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofListeriaspp. andListeriamonocytogenes",
+  "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Listeria spp. and Listeria monocytogenes",
   "manufacturer": {
     "name": "Bruker Daltonics GmbH & Co. KG",
     "address_raw": null,
@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Listeriaspp.;Listeria monocytogenes",
-    "raw": "Listeriaspp.;Listeria monocytogenes"
+    "normalized": "Listeria spp. and L. monocytogenes",
+    "raw": "Listeria spp.; Listeria monocytogenes"
   },
   "reference_method": {
     "standard": null,

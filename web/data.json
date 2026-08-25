@@ -1,6 +1,6 @@
 {
   "generated_from": "data/methods",
-  "count": 178,
+  "count": 174,
   "methods": [
     {
       "id": "nf-validation--3m-01-01-09-89",
@@ -1973,388 +1973,6 @@
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-10-07-10-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/2025_06-SR-BACARA-v0-protected.pdf",
           "organism_page_last_updated_raw": "26 juin 2026"
-        }
-      }
-    },
-    {
-      "id": "aoac-ri--022001",
-      "source": "AOAC-RI",
-      "source_certificate_number": "022001",
-      "commercial_name": "Simultaneous Multiplex Real Time PCR (SIMUL-qPCR) Top7 STEC Assay Collection",
-      "manufacturer_name": "Applied Food Diagnostics, Inc.",
-      "organism": "Shiga toxin-producing E. coli (STEC)",
-      "method_category": "molecular_pcr",
-      "action": "detection",
-      "status": "active",
-      "current_expiry": "2026-12-31",
-      "tested_categories": [
-        "Fresh raw ground beef (~75% lean)",
-        "fresh raw beef trim (~75%)",
-        "beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g)",
-        "hemp flower (10 g; ≤ 0.3% delta 9-THC)"
-      ],
-      "has_performance_data": true,
-      "record": {
-        "id": "aoac-ri--022001",
-        "source": "AOAC-RI",
-        "source_certificate_number": "022001",
-        "commercial_name": "Simultaneous Multiplex Real Time PCR (SIMUL-qPCR) Top7 STEC Assay Collection",
-        "manufacturer": {
-          "name": "Applied Food Diagnostics, Inc.",
-          "address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
-          "represented_in_europe": null,
-          "site_of_production": null
-        },
-        "method_type": {
-          "action": "detection",
-          "category": "molecular_pcr"
-        },
-        "target_organism": {
-          "normalized": "Shiga toxin-producing E. coli (STEC)",
-          "raw": "Shiga toxin (stx) genes, Intimin genes (eae), E. coli Serotypes O157, O26, O45, O1O3, O111, O121 and O145"
-        },
-        "reference_method": {
-          "standard": null,
-          "raw": "U.S. Department of Agriculture-Food Safety and Inspection Service (2015) Microbiology Laboratory Guidebook, 5.09, Detection, Isolation and Identification of Escherichia coli O157:H7 from Meat Products and Carcass and Environmental Sponges (2) Off U. S. Department of Agriculture-Food Safety and Inspection Service (2014) Microbiology Laboratory Guidebook, 5B.05, Detection and Isolation of non- O157 Shiga Toxin-Producing Escherichia coli (STEC) from Meat Products and Carcass and Environmental Sponges (3) U.S. Food and Drug Administration Bacteriological Analytical Manual (Chapter 4A: Diarrheagenic Escherichia coli) [accessed January 17, 2022] (5) SMPR 2020.012 Detection of Shiga toxin-producing Escherichia coli in Cannabis and Cannabis Products (6)"
-        },
-        "validation_scope": {
-          "raw": "Fresh raw ground beef (~75% lean), fresh raw beef trim (~75%), and beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g), hemp flower (10 g; ≤ 0.3% delta 9-THC)",
-          "matrices": [
-            "Fresh raw ground beef (~75% lean)",
-            "fresh raw beef trim (~75%)",
-            "beef carcass sampling sheets (spunbonded polyolefin sampling sheet) MODIFICATION JUNE 2022: leafy greens (200 g)",
-            "hemp flower (10 g; ≤ 0.3% delta 9-THC)"
-          ],
-          "excluded_matrices": [],
-          "max_test_portion_g": null
-        },
-        "study_design": {
-          "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
-          "study_type": "multi-lab",
-          "number_of_labs": 2,
-          "number_of_samples": null
-        },
-        "certification": {
-          "original_date": "2020-02-05",
-          "renewal_dates": [],
-          "extension_dates": [],
-          "current_expiry": "2026-12-31",
-          "status": "active"
-        },
-        "performance": {
-          "method_nature": "qualitative",
-          "qualitative": {
-            "method_comparison_by_category": [],
-            "inclusivity": {
-              "n_tested": 50,
-              "n_correctly_detected": 50,
-              "discrepancies": []
-            },
-            "exclusivity": {
-              "n_tested": 30,
-              "n_correctly_detected": 30,
-              "discrepancies": []
-            }
-          }
-        },
-        "traceability": {
-          "source_document_type": "certificate_pdf",
-          "source_document_url": null,
-          "extraction_date": null,
-          "extraction_confidence": "medium",
-          "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
-        }
-      }
-    },
-    {
-      "id": "aoac-ri--022203",
-      "source": "AOAC-RI",
-      "source_certificate_number": "022203",
-      "commercial_name": "GENE-UP® Pathogenic E. coli (PEC)",
-      "manufacturer_name": "bioMérieux, SA",
-      "organism": "Shiga toxin-producing E. coli (STEC)",
-      "method_category": "molecular_pcr",
-      "action": "detection",
-      "status": "active",
-      "current_expiry": "2026-12-31",
-      "tested_categories": [
-        "Raw beef trim 375 g pw BPW",
-        "Raw ground beef (80% lean) 375 g pw BPW",
-        "Romaine lettuce 375 g pw BPW",
-        "Sampling cloth from beef trim 1 cloth BPW"
-      ],
-      "has_performance_data": true,
-      "record": {
-        "id": "aoac-ri--022203",
-        "source": "AOAC-RI",
-        "source_certificate_number": "022203",
-        "commercial_name": "GENE-UP® Pathogenic E. coli (PEC)",
-        "manufacturer": {
-          "name": "bioMérieux, SA",
-          "address_raw": "376 Chemin de l’Orme, 69280 Marcy-l’Etoile France",
-          "represented_in_europe": null,
-          "site_of_production": null
-        },
-        "method_type": {
-          "action": "detection",
-          "category": "molecular_pcr"
-        },
-        "target_organism": {
-          "normalized": "Shiga toxin-producing E. coli (STEC)",
-          "raw": null
-        },
-        "reference_method": {
-          "standard": null,
-          "raw": null
-        },
-        "validation_scope": {
-          "raw": "(not stated in a single free-text scope field on this certificate)",
-          "matrices": [
-            "Raw beef trim 375 g pw BPW",
-            "Raw ground beef (80% lean) 375 g pw BPW",
-            "Romaine lettuce 375 g pw BPW",
-            "Sampling cloth from beef trim 1 cloth BPW"
-          ],
-          "excluded_matrices": [],
-          "max_test_portion_g": null
-        },
-        "study_design": {
-          "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
-          "study_type": "unknown",
-          "number_of_labs": null,
-          "number_of_samples": null
-        },
-        "certification": {
-          "original_date": "2022-02-23",
-          "renewal_dates": [],
-          "extension_dates": [],
-          "current_expiry": "2026-12-31",
-          "status": "active"
-        },
-        "performance": {
-          "method_nature": "qualitative",
-          "qualitative": {
-            "method_comparison_by_category": [],
-            "inclusivity": {
-              "n_tested": 50,
-              "n_correctly_detected": 50,
-              "discrepancies": []
-            },
-            "exclusivity": {
-              "n_tested": 30,
-              "n_correctly_detected": 30,
-              "discrepancies": []
-            }
-          }
-        },
-        "traceability": {
-          "source_document_type": "certificate_pdf",
-          "source_document_url": null,
-          "extraction_date": null,
-          "extraction_confidence": "medium",
-          "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
-        }
-      }
-    },
-    {
-      "id": "aoac-ri--052003",
-      "source": "AOAC-RI",
-      "source_certificate_number": "052003",
-      "commercial_name": "Molecular Environmental Monitoring Program (MEMP) Listeria Assay",
-      "manufacturer_name": "Applied Food Diagnostics, Inc.",
-      "organism": "Listeria spp.",
-      "method_category": "molecular_pcr",
-      "action": "detection",
-      "status": "active",
-      "current_expiry": "2026-12-31",
-      "tested_categories": [
-        "Stainless steel (1”x 1”)",
-        "plastic (1”x 1”)",
-        "rubber (1”x 1”)",
-        "ceramic tile (1”x 1”)",
-        "sealed concrete (1”x 1”)"
-      ],
-      "has_performance_data": true,
-      "record": {
-        "id": "aoac-ri--052003",
-        "source": "AOAC-RI",
-        "source_certificate_number": "052003",
-        "commercial_name": "Molecular Environmental Monitoring Program (MEMP) Listeria Assay",
-        "manufacturer": {
-          "name": "Applied Food Diagnostics, Inc.",
-          "address_raw": "25 Naus Way, Bloomsburg, PA 17815 USA",
-          "represented_in_europe": null,
-          "site_of_production": null
-        },
-        "method_type": {
-          "action": "detection",
-          "category": "molecular_pcr"
-        },
-        "target_organism": {
-          "normalized": "Listeria spp.",
-          "raw": "Listeria species"
-        },
-        "reference_method": {
-          "standard": null,
-          "raw": "Food and Drug Administration Bacteriological Analytical Manual, Detection and Enumeration of Listeria monocytogenes in Foods, Chapter 10 (2017) (2)"
-        },
-        "validation_scope": {
-          "raw": "Stainless steel (1”x 1”), plastic (1”x 1”), rubber (1”x 1”), ceramic tile (1”x 1”) and sealed concrete (1”x 1”)",
-          "matrices": [
-            "Stainless steel (1”x 1”)",
-            "plastic (1”x 1”)",
-            "rubber (1”x 1”)",
-            "ceramic tile (1”x 1”)",
-            "sealed concrete (1”x 1”)"
-          ],
-          "excluded_matrices": [],
-          "max_test_portion_g": null
-        },
-        "study_design": {
-          "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
-          "study_type": "multi-lab",
-          "number_of_labs": 2,
-          "number_of_samples": null
-        },
-        "certification": {
-          "original_date": "2020-05-15",
-          "renewal_dates": [],
-          "extension_dates": [],
-          "current_expiry": "2026-12-31",
-          "status": "active"
-        },
-        "performance": {
-          "method_nature": "qualitative",
-          "qualitative": {
-            "method_comparison_by_category": [],
-            "inclusivity": {
-              "n_tested": 75,
-              "n_correctly_detected": 75,
-              "discrepancies": []
-            },
-            "exclusivity": {
-              "n_tested": 30,
-              "n_correctly_detected": 30,
-              "discrepancies": []
-            }
-          }
-        },
-        "traceability": {
-          "source_document_type": "certificate_pdf",
-          "source_document_url": null,
-          "extraction_date": null,
-          "extraction_confidence": "medium",
-          "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
-        }
-      }
-    },
-    {
-      "id": "aoac-ri--121902",
-      "source": "AOAC-RI",
-      "source_certificate_number": "121902",
-      "commercial_name": "InSite Listeria",
-      "manufacturer_name": "Hygiena LLC",
-      "organism": "Listeria spp.",
-      "method_category": "chromogenic_agar",
-      "action": "detection",
-      "status": "active",
-      "current_expiry": "2026-12-31",
-      "tested_categories": [
-        "(4x4 in swab) – Stainless steel",
-        "ceramic",
-        "plastic"
-      ],
-      "has_performance_data": true,
-      "record": {
-        "id": "aoac-ri--121902",
-        "source": "AOAC-RI",
-        "source_certificate_number": "121902",
-        "commercial_name": "InSite Listeria",
-        "manufacturer": {
-          "name": "Hygiena LLC",
-          "address_raw": "941 Avenida Acaso, Camarillo, CA USA",
-          "represented_in_europe": null,
-          "site_of_production": null
-        },
-        "method_type": {
-          "action": "detection",
-          "category": "chromogenic_agar"
-        },
-        "target_organism": {
-          "normalized": "Listeria spp.",
-          "raw": "Listeria species (L. monocytogenes, innocua, fleischmanni, welshimeri, weihenstephanensis, ivanovii, and seeligeri)"
-        },
-        "reference_method": {
-          "standard": null,
-          "raw": "U.S. Food and Drug Administration (2017) FDA Bacteriological Analytical Manual, Chapter 10, Detection of Listeria monocytogenes in Foods and Environmental Samples, and Enumeration of Listeria monocytogenes in Foods (2)"
-        },
-        "validation_scope": {
-          "raw": "(4x4 in swab) – Stainless steel, ceramic, plastic",
-          "matrices": [
-            "(4x4 in swab) – Stainless steel",
-            "ceramic",
-            "plastic"
-          ],
-          "excluded_matrices": [],
-          "max_test_portion_g": null
-        },
-        "study_design": {
-          "protocol_standard": "AOAC Performance Tested Methods (PTM) Program",
-          "study_type": "multi-lab",
-          "number_of_labs": 2,
-          "number_of_samples": null
-        },
-        "certification": {
-          "original_date": "2019-12-01",
-          "renewal_dates": [],
-          "extension_dates": [],
-          "current_expiry": "2026-12-31",
-          "status": "active"
-        },
-        "performance": {
-          "method_nature": "qualitative",
-          "qualitative": {
-            "method_comparison_by_category": [],
-            "inclusivity": {
-              "n_tested": 97,
-              "n_correctly_detected": 94,
-              "discrepancies": [
-                {
-                  "strain": "Listeria grayi ATCC 25401 Standing corn stalks and leaves",
-                  "note": "Not detected (result: -)"
-                },
-                {
-                  "strain": "Listeria grayi ATCC 19120 Animal feces, Denmark",
-                  "note": "Not detected (result: -)"
-                },
-                {
-                  "strain": "Listeria grayi ATCC 25403 Corn stalks and leaves, USA",
-                  "note": "Not detected (result: -)"
-                }
-              ]
-            },
-            "exclusivity": {
-              "n_tested": 45,
-              "n_correctly_detected": 43,
-              "discrepancies": [
-                {
-                  "strain": "Enterococcus durans ATCCb 11576 Dairy products",
-                  "note": "Cross-reactivity: detected (result: +)"
-                },
-                {
-                  "strain": "Enterococcus faecalis ATCC 51299 Peritoneal fluid",
-                  "note": "Cross-reactivity: detected (result: +)"
-                }
-              ]
-            }
-          }
-        },
-        "traceability": {
-          "source_document_type": "certificate_pdf",
-          "source_document_url": null,
-          "extraction_date": null,
-          "extraction_confidence": "medium",
-          "notes": "AOAC-RI certificate PDFs bundle certification metadata AND validation-study performance data in one document (unlike NF-Validation's separate cert + summary-report). Inclusivity/exclusivity extraction is best-effort text mining (narrative counts where stated, else counted from per-strain table rows -- table rows wrapped across two PDF text lines can be undercounted). The presumptive-vs-confirmed / vs-reference-method POD comparison tables are not yet mined (table layout is not reliably recoverable from PDF text extraction). This parser has only been developed against 4 example certificates; broaden coverage once more are available."
         }
       }
     },
@@ -8019,7 +7637,7 @@
       "source_certificate_number": "2008LR11",
       "commercial_name": "Brilliance™ Staph 24 Agar",
       "manufacturer_name": "Thermo Fisher Scientific",
-      "organism": "Coagulase-positivestaphylococci",
+      "organism": "Coagulase-positive staphylococci",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8042,8 +7660,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Coagulase-positivestaphylococci",
-          "raw": "Coagulase-positivestaphylococci"
+          "normalized": "Coagulase-positive staphylococci",
+          "raw": "Coagulase-positive staphylococci"
         },
         "reference_method": {
           "standard": null,
@@ -8084,7 +7702,7 @@
       "source_certificate_number": "2008LR12",
       "commercial_name": "Brilliance™ CampyCount Agar",
       "manufacturer_name": "Thermo Fisher Scientific",
-      "organism": "Campylobacterspp.",
+      "organism": "Campylobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8107,8 +7725,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Campylobacterspp.",
-          "raw": "Campylobacterspp."
+          "normalized": "Campylobacter spp.",
+          "raw": "Campylobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -8149,7 +7767,7 @@
       "source_certificate_number": "2008LR14",
       "commercial_name": "Compact Dry X-SA",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
-      "organism": "Coagulase-positivestaphylococci",
+      "organism": "Coagulase-positive staphylococci",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8172,8 +7790,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Coagulase-positivestaphylococci",
-          "raw": "Coagulase-positivestaphylococci"
+          "normalized": "Coagulase-positive staphylococci",
+          "raw": "Coagulase-positive staphylococci"
         },
         "reference_method": {
           "standard": null,
@@ -8214,7 +7832,7 @@
       "source_certificate_number": "2009LR28",
       "commercial_name": "CampyFood® agar method",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
-      "organism": "Campylobacterspp.",
+      "organism": "Campylobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8237,8 +7855,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Campylobacterspp.",
-          "raw": "Campylobacterspp."
+          "normalized": "Campylobacter spp.",
+          "raw": "Campylobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -8279,7 +7897,7 @@
       "source_certificate_number": "2010LR38",
       "commercial_name": "CASA™",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
-      "organism": "Campylobacterspp.",
+      "organism": "Campylobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "expired",
@@ -8302,8 +7920,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Campylobacterspp.",
-          "raw": "Campylobacterspp."
+          "normalized": "Campylobacter spp.",
+          "raw": "Campylobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -8344,7 +7962,7 @@
       "source_certificate_number": "2011LR41",
       "commercial_name": "Compact Dry XBC for Bacillus cereus",
       "manufacturer_name": "HyServe GmbH & Co. KG",
-      "organism": "Bacillus cereusgroup",
+      "organism": "Bacillus cereus",
       "method_category": "other",
       "action": null,
       "status": "expired",
@@ -8367,8 +7985,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Bacillus cereusgroup",
-          "raw": "Bacillus cereusgroup"
+          "normalized": "Bacillus cereus",
+          "raw": "Bacillus cereus group"
         },
         "reference_method": {
           "standard": null,
@@ -8409,7 +8027,7 @@
       "source_certificate_number": "2014LR47",
       "commercial_name": "TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
-      "organism": "Bacillus cereusgroup",
+      "organism": "Bacillus cereus",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8432,8 +8050,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Bacillus cereusgroup",
-          "raw": "Bacillus cereusgroup"
+          "normalized": "Bacillus cereus",
+          "raw": "Bacillus cereus group"
         },
         "reference_method": {
           "standard": null,
@@ -8474,7 +8092,7 @@
       "source_certificate_number": "2015LR56",
       "commercial_name": "MC-Media Pad™ SA",
       "manufacturer_name": "JNC Corporation",
-      "organism": "Coagulase-positivestaphylococci",
+      "organism": "Coagulase-positive staphylococci",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8497,8 +8115,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Coagulase-positivestaphylococci",
-          "raw": "Coagulase-positivestaphylococci"
+          "normalized": "Coagulase-positive staphylococci",
+          "raw": "Coagulase-positive staphylococci"
         },
         "reference_method": {
           "standard": null,
@@ -8537,7 +8155,7 @@
       "id": "microval--2017lr69",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR69",
-      "commercial_name": "PeelPlate® EB (Enterobacteriaceae)",
+      "commercial_name": "PeelPlate® EB ( Enterobacteriaceae )",
       "manufacturer_name": "Charm Sciences, Inc.",
       "organism": "Enterobacteriaceae",
       "method_category": "other",
@@ -8550,7 +8168,7 @@
         "id": "microval--2017lr69",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR69",
-        "commercial_name": "PeelPlate® EB (Enterobacteriaceae)",
+        "commercial_name": "PeelPlate® EB ( Enterobacteriaceae )",
         "manufacturer": {
           "name": "Charm Sciences, Inc.",
           "address_raw": null,
@@ -8667,9 +8285,9 @@
       "id": "microval--2017lr72",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR72",
-      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCronobacterspp.",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Cronobacter spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
-      "organism": "Cronobacterspp.",
+      "organism": "Cronobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8680,7 +8298,7 @@
         "id": "microval--2017lr72",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR72",
-        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCronobacterspp.",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Cronobacter spp.",
         "manufacturer": {
           "name": "Bruker Daltonics GmbH & Co. KG",
           "address_raw": null,
@@ -8692,8 +8310,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Cronobacterspp.",
-          "raw": "Cronobacterspp."
+          "normalized": "Cronobacter spp.",
+          "raw": "Cronobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -8732,9 +8350,9 @@
       "id": "microval--2017lr73",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR73",
-      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofSalmonellaspp.",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Salmonella spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
-      "organism": "Salmonellaspp.",
+      "organism": "Salmonella spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8745,7 +8363,7 @@
         "id": "microval--2017lr73",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR73",
-        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofSalmonellaspp.",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Salmonella spp.",
         "manufacturer": {
           "name": "Bruker Daltonics GmbH & Co. KG",
           "address_raw": null,
@@ -8757,8 +8375,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Salmonellaspp.",
-          "raw": "Salmonellaspp."
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
         },
         "reference_method": {
           "standard": null,
@@ -8797,9 +8415,9 @@
       "id": "microval--2017lr74",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR74",
-      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCampylobacterspp.",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Campylobacter spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
-      "organism": "Campylobacterspp.",
+      "organism": "Campylobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8810,7 +8428,7 @@
         "id": "microval--2017lr74",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR74",
-        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCampylobacterspp.",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Campylobacter spp.",
         "manufacturer": {
           "name": "Bruker Daltonics GmbH & Co. KG",
           "address_raw": null,
@@ -8822,8 +8440,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Campylobacterspp.",
-          "raw": "Campylobacterspp."
+          "normalized": "Campylobacter spp.",
+          "raw": "Campylobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -8862,9 +8480,9 @@
       "id": "microval--2017lr75",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR75",
-      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofListeriaspp. andListeriamonocytogenes",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Listeria spp. and Listeria monocytogenes",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
-      "organism": "Listeriaspp.;Listeria monocytogenes",
+      "organism": "Listeria spp. and L. monocytogenes",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8875,7 +8493,7 @@
         "id": "microval--2017lr75",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR75",
-        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofListeriaspp. andListeriamonocytogenes",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Listeria spp. and Listeria monocytogenes",
         "manufacturer": {
           "name": "Bruker Daltonics GmbH & Co. KG",
           "address_raw": null,
@@ -8887,8 +8505,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Listeriaspp.;Listeria monocytogenes",
-          "raw": "Listeriaspp.;Listeria monocytogenes"
+          "normalized": "Listeria spp. and L. monocytogenes",
+          "raw": "Listeria spp.; Listeria monocytogenes"
         },
         "reference_method": {
           "standard": null,
@@ -8927,9 +8545,9 @@
       "id": "microval--2017lr77",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR77",
-      "commercial_name": "Assurance GDSCronobacterTq II",
+      "commercial_name": "Assurance GDS Cronobacter Tq II",
       "manufacturer_name": "Merck MilliporeSigma",
-      "organism": "Cronobacterspp.",
+      "organism": "Cronobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -8940,7 +8558,7 @@
         "id": "microval--2017lr77",
         "source": "MICROVAL",
         "source_certificate_number": "2017LR77",
-        "commercial_name": "Assurance GDSCronobacterTq II",
+        "commercial_name": "Assurance GDS Cronobacter Tq II",
         "manufacturer": {
           "name": "Merck MilliporeSigma",
           "address_raw": null,
@@ -8952,8 +8570,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Cronobacterspp.",
-          "raw": "Cronobacterspp."
+          "normalized": "Cronobacter spp.",
+          "raw": "Cronobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -9057,7 +8675,7 @@
       "id": "microval--2018lr83",
       "source": "MICROVAL",
       "source_certificate_number": "2018LR83",
-      "commercial_name": "SolerisEnterobacteriaceae(S2-EBAC9 vial)",
+      "commercial_name": "Soleris Enterobacteriaceae (S2-EBAC9 vial)",
       "manufacturer_name": "Neogen Corporation",
       "organism": "Enterobacteriaceae",
       "method_category": "other",
@@ -9070,7 +8688,7 @@
         "id": "microval--2018lr83",
         "source": "MICROVAL",
         "source_certificate_number": "2018LR83",
-        "commercial_name": "SolerisEnterobacteriaceae(S2-EBAC9 vial)",
+        "commercial_name": "Soleris Enterobacteriaceae (S2-EBAC9 vial)",
         "manufacturer": {
           "name": "Neogen Corporation",
           "address_raw": null,
@@ -9124,7 +8742,7 @@
       "source_certificate_number": "2019LR87",
       "commercial_name": "Compact Dry BC",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
-      "organism": "Bacillus cereusgroup",
+      "organism": "Bacillus cereus",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9147,8 +8765,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Bacillus cereusgroup",
-          "raw": "Bacillus cereusgroup"
+          "normalized": "Bacillus cereus",
+          "raw": "Bacillus cereus group"
         },
         "reference_method": {
           "standard": null,
@@ -9189,7 +8807,7 @@
       "source_certificate_number": "2020LR93",
       "commercial_name": "Oxoid Cronobacter Precis Method",
       "manufacturer_name": "Thermo Fisher Scientific",
-      "organism": "Cronobacterspp.",
+      "organism": "Cronobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9212,8 +8830,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Cronobacterspp.",
-          "raw": "Cronobacterspp."
+          "normalized": "Cronobacter spp.",
+          "raw": "Cronobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -9384,7 +9002,7 @@
       "source_certificate_number": "2021LR105",
       "commercial_name": "Easy Plate SA",
       "manufacturer_name": "Kikkoman Biochemifa Company",
-      "organism": "Coagulase-positivestaphylococci",
+      "organism": "Coagulase-positive staphylococci",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9407,8 +9025,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Coagulase-positivestaphylococci",
-          "raw": "Coagulase-positivestaphylococci"
+          "normalized": "Coagulase-positive staphylococci",
+          "raw": "Coagulase-positive staphylococci"
         },
         "reference_method": {
           "standard": null,
@@ -9449,7 +9067,7 @@
       "source_certificate_number": "2021LR107",
       "commercial_name": "Check & Trace Salmonella 2.0",
       "manufacturer_name": "Check-Points B.V.",
-      "organism": "Salmonellaspp.; Typing of 106 serovars",
+      "organism": "Salmonella spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9472,8 +9090,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Salmonellaspp.; Typing of 106 serovars",
-          "raw": "Salmonellaspp.; Typing of 106 serovars"
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp.; Typing of 106 serovars"
         },
         "reference_method": {
           "standard": null,
@@ -9579,7 +9197,7 @@
       "source_certificate_number": "2023LR116",
       "commercial_name": "Autof ms 1000 salmonella spp..",
       "manufacturer_name": "Autobio Diagnostics Co., ltd",
-      "organism": "Salmonellaspp.",
+      "organism": "Salmonella spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9602,8 +9220,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Salmonellaspp.",
-          "raw": "Salmonellaspp."
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
         },
         "reference_method": {
           "standard": null,
@@ -9644,7 +9262,7 @@
       "source_certificate_number": "2023LR117",
       "commercial_name": "Autof ms 1000 Cronobacter spp.",
       "manufacturer_name": "Autobio Diagnostics Co., ltd",
-      "organism": "Cronobacterspp.",
+      "organism": "Cronobacter spp.",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9667,8 +9285,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Cronobacterspp.",
-          "raw": "Cronobacterspp."
+          "normalized": "Cronobacter spp.",
+          "raw": "Cronobacter spp."
         },
         "reference_method": {
           "standard": null,
@@ -9839,7 +9457,7 @@
       "source_certificate_number": "2024LR132",
       "commercial_name": "Petrifilm® Bacillus cereus (BC) Count Plate Method",
       "manufacturer_name": "Neogen Corporation",
-      "organism": "Bacillus cereusgroup",
+      "organism": "Bacillus cereus",
       "method_category": "other",
       "action": null,
       "status": "active",
@@ -9862,8 +9480,8 @@
           "category": null
         },
         "target_organism": {
-          "normalized": "Bacillus cereusgroup",
-          "raw": "Bacillus cereusgroup"
+          "normalized": "Bacillus cereus",
+          "raw": "Bacillus cereus group"
         },
         "reference_method": {
           "standard": null,
