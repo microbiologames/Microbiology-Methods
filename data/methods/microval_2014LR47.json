@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Bacillus cereusgroup",
-    "raw": "Bacillus cereusgroup"
+    "normalized": "Bacillus cereus",
+    "raw": "Bacillus cereus group"
   },
   "reference_method": {
     "standard": null,

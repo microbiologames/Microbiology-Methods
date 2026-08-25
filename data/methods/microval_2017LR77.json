@@ -2,7 +2,7 @@
   "id": "microval--2017lr77",
   "source": "MICROVAL",
   "source_certificate_number": "2017LR77",
-  "commercial_name": "Assurance GDSCronobacterTq II",
+  "commercial_name": "Assurance GDS Cronobacter Tq II",
   "manufacturer": {
     "name": "Merck MilliporeSigma",
     "address_raw": null,
@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Cronobacterspp.",
-    "raw": "Cronobacterspp."
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp."
   },
   "reference_method": {
     "standard": null,

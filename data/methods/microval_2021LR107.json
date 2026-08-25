@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Salmonellaspp.; Typing of 106 serovars",
-    "raw": "Salmonellaspp.; Typing of 106 serovars"
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp.; Typing of 106 serovars"
   },
   "reference_method": {
     "standard": null,

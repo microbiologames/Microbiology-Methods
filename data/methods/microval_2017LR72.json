@@ -2,7 +2,7 @@
   "id": "microval--2017lr72",
   "source": "MICROVAL",
   "source_certificate_number": "2017LR72",
-  "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCronobacterspp.",
+  "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Cronobacter spp.",
   "manufacturer": {
     "name": "Bruker Daltonics GmbH & Co. KG",
     "address_raw": null,
@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Cronobacterspp.",
-    "raw": "Cronobacterspp."
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp."
   },
   "reference_method": {
     "standard": null,

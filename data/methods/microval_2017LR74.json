@@ -2,7 +2,7 @@
   "id": "microval--2017lr74",
   "source": "MICROVAL",
   "source_certificate_number": "2017LR74",
-  "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCampylobacterspp.",
+  "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Campylobacter spp.",
   "manufacturer": {
     "name": "Bruker Daltonics GmbH & Co. KG",
     "address_raw": null,
@@ -14,8 +14,8 @@
     "category": null
   },
   "target_organism": {
-    "normalized": "Campylobacterspp.",
-    "raw": "Campylobacterspp."
+    "normalized": "Campylobacter spp.",
+    "raw": "Campylobacter spp."
   },
   "reference_method": {
     "standard": null,
