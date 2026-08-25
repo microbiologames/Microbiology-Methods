@@ -111,20 +111,32 @@ def extract_table_rows(html: str):
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "html.parser")
 
+    def cell_text(cell) -> str:
+        # get_text(strip=True) (no separator) concatenates a cell's text
+        # nodes with nothing between them -- harmless for a single text
+        # node, but confirmed against real captured data to silently
+        # glue words together when a cell wraps across a <br> or nested
+        # span (e.g. "Bacillus cereus<br>group" -> "Bacillus cereusgroup",
+        # producing a second, near-duplicate organism downstream that
+        # only differs by a missing space). Joining with an explicit
+        # space and collapsing repeats keeps single-text-node cells
+        # identical while fixing the multi-node case.
+        return re.sub(r'\s+', ' ', cell.get_text(" ", strip=True)).strip()
+
     rows = soup.find_all("tr")
     if not rows:
         return [], []
 
-    header_cells = [c.get_text(strip=True) for c in rows[0].find_all(["th", "td"])]
+    header_cells = [cell_text(c) for c in rows[0].find_all(["th", "td"])]
     data_rows = []
     for r in rows[1:]:
-        cells = [c.get_text(strip=True) for c in r.find_all(["th", "td"])]
+        cells = [cell_text(c) for c in r.find_all(["th", "td"])]
         if not any(cells):
             continue
         if len(cells) != len(header_cells):
             # Structure didn't match what we expected -- keep the row as a
             # single string rather than guess a misaligned split.
-            data_rows.append([re.sub(r'\s+', ' ', r.get_text(" ", strip=True))])
+            data_rows.append([cell_text(r)])
         else:
             data_rows.append(cells)
     return header_cells, data_rows
