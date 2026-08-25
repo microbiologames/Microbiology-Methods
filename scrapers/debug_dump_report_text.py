@@ -24,6 +24,8 @@ def main():
     ap.add_argument("urls", nargs="+")
     ap.add_argument("--out-dir", default="debug/reports")
     ap.add_argument("--max-chars", type=int, default=12000)
+    ap.add_argument("--skip-chars", type=int, default=0,
+                     help="Skip this many leading characters (e.g. to jump past a report's boilerplate front matter/TOC).")
     args = ap.parse_args()
 
     out_dir = Path(args.out_dir)
@@ -56,11 +58,15 @@ def main():
             # of individual result rows) that swamped the job log on the
             # first run of this script without showing anything useful --
             # the actual summary tables this exists to inspect are earlier
-            # in the document, so cap what gets written/printed.
-            capped = full_text[:args.max_chars]
+            # in the document, so cap what gets written/printed. --skip-chars
+            # additionally jumps past a report's own boilerplate front
+            # matter/table-of-contents when that's known to run long (the
+            # real tables of interest start well into the document).
+            windowed = full_text[args.skip_chars:args.skip_chars + args.max_chars]
             out_path = out_dir / f"report_{i}.txt"
-            out_path.write_text(capped, encoding="utf-8")
-            print(f"[{i}] wrote {len(capped)} of {len(full_text)} total chars -> {out_path}", file=sys.stderr)
+            out_path.write_text(windowed, encoding="utf-8")
+            print(f"[{i}] wrote chars [{args.skip_chars}:{args.skip_chars + len(windowed)}] "
+                  f"of {len(full_text)} total -> {out_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":
