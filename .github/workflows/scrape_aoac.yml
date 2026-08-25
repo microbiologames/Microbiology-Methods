@@ -8,19 +8,20 @@ name: Scrape and normalize AOAC-RI data
 # normal outbound internet access -- unlike this repo's day-to-day
 # development environment, where members.aoac.org is proxy-blocked.
 #
-# Status as of the runs so far: STILL BROKEN. The listing page
+# Status as of the runs so far: STILL BROKEN, but the mechanism is now
+# understood. The listing page
 # (https://members.aoac.org/AOAC/AOAC/RI/PTM_Validated_Methods.aspx, an
 # ASP.NET/Sitefinity site) responds fine -- no login wall, not JS-rendered,
-# real title -- but exposes 0 static PDF links every time. Its certificate
+# real title -- but exposes 0 static PDF links every time: certificate
 # downloads go through a hidden-field + postback JS mechanism
 # (Asi_WebRoot_AsiCommon_ContentManagement_DownloadDocument: a hidden
-# "HiddenDownloadPathField" input plus a submit button), which
-# scrapers/aoac_ptm_live_fetch.py's plain GET-and-regex approach cannot
-# trigger. This needs a Playwright-driven rewrite that actually interacts
-# with the page (the way scrapers/microval_live_fetch.py does for MicroVal)
-# -- not yet built. A debug-dump artifact (raw HTML with pdf/download/href
-# occurrences grepped out) uploads on every run to help diagnose this
-# without needing another manual file handoff.
+# "HiddenDownloadPathField" input plus a submit button), which a plain
+# GET-and-regex approach cannot trigger. scrapers/aoac_ptm_live_fetch.py now
+# falls back to a headless-Chromium reconnaissance pass (the same approach
+# that worked for MicroVal) when the plain GET finds nothing -- rendering
+# the page and capturing HTML/screenshot/JSON responses for review, not yet
+# a finished parser. A debug-dump artifact uploads on every run to help
+# diagnose this without needing another manual file handoff.
 
 on:
   schedule:
@@ -42,7 +43,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pypdf beautifulsoup4 jsonschema requests
+        run: pip install pypdf beautifulsoup4 jsonschema requests playwright
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
 
       - name: Fetch AOAC-RI live certificates
         continue-on-error: true
@@ -71,8 +75,14 @@ jobs:
             grep -inE 'pdf|download|href=' "$f" -A2 -B2 | head -n 150
             echo
           done
+          for f in debug/aoac/rendered_listing_rows.json debug/aoac/rendered_listing_json_responses.json; do
+            [ -f "$f" ] || continue
+            echo "--- $f ---"
+            cat "$f"
+            echo
+          done
 
-      - name: Upload debug dumps (raw listing-page HTML)
+      - name: Upload debug dumps (HTML / screenshot / captured JSON)
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -93,10 +103,12 @@ jobs:
             normalization.
 
             This source is known to still be broken (see the workflow
-            file's header comment) -- expect 0 new certificates until
-            aoac_ptm_live_fetch.py is rewritten to drive the page's real
-            postback-based download mechanism. Check the "aoac-debug-dumps"
-            workflow artifact / this run's log before assuming otherwise.
+            file's header comment) -- expect 0 new certificates until the
+            page's real postback-based download mechanism is handled.
+            Check the "aoac-debug-dumps" workflow artifact / this run's log
+            (including rendered_listing.html/png and any generic table rows
+            found) before assuming otherwise -- that's the reconnaissance
+            this run exists to gather.
           branch: automated/aoac-scrape
           delete-branch: true
 
