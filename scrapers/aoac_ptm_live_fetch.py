@@ -161,10 +161,26 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
                 json_responses.append({"url": response.url, "status": response.status, "body": entry.get("body")})
         network_log.append(entry)
 
+    dialogs_seen = []
+
+    def on_dialog(dialog):
+        # The single most likely explanation for a click that "succeeds"
+        # (no exception) yet triggers no postback at all: a JS confirm()
+        # (e.g. "No filters entered -- this may return many results,
+        # continue?") that Playwright auto-*dismisses* by default when
+        # nothing handles the 'dialog' event, silently cancelling whatever
+        # the click was about to do. Accepting it here tests that directly
+        # instead of leaving it as an unconfirmed guess.
+        dialogs_seen.append({"type": dialog.type, "message": dialog.message})
+        print(f"[playwright] JS dialog appeared ({dialog.type}): {dialog.message!r} -- accepting it.",
+              file=sys.stderr)
+        dialog.accept()
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(user_agent=HEADERS["User-Agent"])
         page.on("response", on_response)
+        page.on("dialog", on_dialog)
 
         print(f"[playwright] navigating to {url}", file=sys.stderr)
         try:
@@ -183,6 +199,8 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
         try:
             find_button = page.get_by_role("button", name="Find", exact=True)
             find_button.wait_for(state="visible", timeout=5000)
+            button_outer_html = find_button.evaluate("el => el.outerHTML")
+            print(f"[playwright] Find button markup: {button_outer_html}", file=sys.stderr)
             phase["value"] = "post-click"
             find_button.click()
             clicked_find = True
@@ -203,10 +221,16 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
                 (debug_dir / "rendered_listing_after_find.html").write_text(post_click_html, encoding="utf-8")
                 page.screenshot(path=str(debug_dir / "rendered_listing_after_find.png"), full_page=True)
 
-            requests_after_click = len(network_log) - requests_before_click
-            print(f"[playwright] {requests_after_click} network request(s) observed after the click "
-                  f"(0 here means the click never triggered a postback/AJAX call at all -- a widget, "
-                  f"framework, or interactivity problem, not a data-shape one).", file=sys.stderr)
+            requests_after_click = network_log[requests_before_click:]
+            aoac_requests_after_click = [e for e in requests_after_click if "aoac.org" in e["url"]]
+            print(f"[playwright] {len(requests_after_click)} network request(s) observed after the "
+                  f"click, {len(aoac_requests_after_click)} of them to aoac.org itself (analytics/ads "
+                  f"pixels to other domains don't count as evidence of a real postback). 0 aoac.org "
+                  f"requests means the click never reached the server at all -- a widget/JS problem "
+                  f"(e.g. an auto-dismissed confirm() dialog, now handled above) rather than a "
+                  f"data-shape one.", file=sys.stderr)
+            if dialogs_seen:
+                print(f"[playwright] {len(dialogs_seen)} JS dialog(s) intercepted: {dialogs_seen}", file=sys.stderr)
 
         if debug_dir and network_log:
             (debug_dir / "rendered_listing_network_log.json").write_text(
