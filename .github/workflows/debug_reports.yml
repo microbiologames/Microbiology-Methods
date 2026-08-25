@@ -1,0 +1,40 @@
+name: Debug -- dump summary report text
+
+# Temporary, manual-only diagnostic tool: fetches a fixed set of real
+# summary-report PDFs and prints their raw extracted text to the job log, so
+# scrapers/summary_report_parser.py's category-extraction regexes can be
+# widened against real report wording instead of guessed at. Not part of the
+# regular data pipeline -- delete once that widening work is done.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf requests cryptography
+
+      - name: Dump report text
+        run: |
+          python3 scrapers/debug_dump_report_text.py --out-dir debug/reports \
+            "https://nf-validation.afnor.org/wp-content/uploads/2026/08/VIDAS-Salmonella-Dual-SUMMARY-REPORT-Version-0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2026/05/Petrifilm_RCC_SR_05_25_v0-protected.pdf"
+
+      - name: Print dumped text
+        run: |
+          for f in debug/reports/*.txt; do
+            echo "=================== $f ($(wc -c < "$f") bytes) ==================="
+            cat "$f"
+            echo
+          done
