@@ -187,11 +187,32 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
               file=sys.stderr)
         dialog.accept()
 
+    console_messages = []
+
+    def on_console(msg):
+        # The last run ruled out client-side validation as the blocker
+        # (hasPageClientValidate was False, so that whole if-guard is
+        # skipped and the onclick goes straight to __doPostBack(...)) --
+        # yet the postback still never reached the server. A JS exception
+        # thrown inside that handler (e.g. if __doPostBack itself, or
+        # something it depends on, isn't actually available) would abort
+        # execution silently from Playwright's point of view: click()
+        # doesn't raise just because the page's own onclick threw. Console
+        # errors and uncaught exceptions are the only place that would
+        # surface, so both get captured from here on.
+        if msg.type in ("error", "warning"):
+            console_messages.append({"type": msg.type, "text": msg.text})
+
+    def on_pageerror(exc):
+        console_messages.append({"type": "pageerror", "text": str(exc)})
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(user_agent=HEADERS["User-Agent"])
         page.on("response", on_response)
         page.on("dialog", on_dialog)
+        page.on("console", on_console)
+        page.on("pageerror", on_pageerror)
 
         print(f"[playwright] navigating to {url}", file=sys.stderr)
         try:
@@ -319,6 +340,12 @@ def playwright_reconnaissance(url: str, debug_dir, timeout_ms: int = 45000):
                   f"rather than a data-shape one.", file=sys.stderr)
             if dialogs_seen:
                 print(f"[playwright] {len(dialogs_seen)} JS dialog(s) intercepted: {dialogs_seen}", file=sys.stderr)
+            if console_messages:
+                print(f"[playwright] console error(s)/pageerror(s) captured during this whole run: "
+                      f"{console_messages}", file=sys.stderr)
+            else:
+                print("[playwright] no console errors or uncaught page errors captured at any point "
+                      "(so the onclick handler ran to completion without throwing).", file=sys.stderr)
 
         if debug_dir and network_log:
             (debug_dir / "rendered_listing_network_log.json").write_text(
