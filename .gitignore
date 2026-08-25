@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
+
+# Per-run scraper debug dumps (raw HTML, screenshots, captured JSON) --
+# uploaded as a workflow artifact instead, not meant to be committed. See
+# add-paths in scrape_microval.yml / scrape_aoac.yml, which restricts what
+# peter-evans/create-pull-request actually commits to data/ and web/.
+debug/

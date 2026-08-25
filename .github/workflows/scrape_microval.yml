@@ -91,6 +91,13 @@ jobs:
         with:
           commit-message: "Scheduled MicroVal scrape and normalization"
           title: "Scheduled data update: MicroVal"
+          # debug/ (raw HTML, screenshots, captured JSON) is uploaded as its
+          # own workflow artifact below -- it doesn't belong in git history,
+          # which is why it's also .gitignore'd now. Restricting here too in
+          # case a future run's working tree still has it un-ignored.
+          add-paths: |
+            data/
+            web/
           body: |
             Automated run of the MicroVal live fetch and normalization.
 
