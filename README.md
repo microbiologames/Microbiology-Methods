@@ -208,14 +208,36 @@ web/                                   static frontend (heatmap + drill-down), r
       **Real runs so far (2026-08-25):** NF-Validation live-fetch has worked
       correctly from the first run — 142 methods across all 17 organism
       pages, merge succeeded with 0 schema errors every time. Summary-report
-      mining went 1 → 64 → 93 (of 140) mined across three runs as real
+      mining went 1 → 64 → 93 (of 140) reports merged across runs as real
       failures got fixed: a missing `cryptography` dependency crashed the
       whole batch on the first AES-encrypted PDF (now installed, and each
       PDF is wrapped in its own try/except so one bad report can't stop the
       rest), and the certificate-number regex only recognized the one
       English label TEMPO EB happened to use (widened to accept French
       variants plus a format-only fallback — 47 reports still don't match
-      and haven't been individually diagnosed yet). MicroVal went from
+      and haven't been individually diagnosed yet).
+
+      **"Merged" isn't the same as "has a real category breakdown"**,
+      and checking that distinction (prompted by a direct question about why
+      the frontend still looked sparse) found a much bigger gap than the
+      merge count implies: of the 91 NF-Validation records with a populated
+      `performance` field, only **9** actually have a non-empty
+      category-level breakdown. The other 82 split into two causes, not one:
+      (1) **qualitative reports (58 records — VIDAS, MicroSEQ, molecular
+      kits) get zero, unconditionally** —
+      `summary_report_parser.py`'s `mine_performance()` hardcodes
+      `qualitative.method_comparison_by_category` to `[]` with no extraction
+      attempt at all, a gap that existed from the start, not a regression;
+      (2) **quantitative reports only succeed 9/33** —
+      `extract_relative_trueness_by_category()`'s header regex was built
+      and tested against exactly one report (TEMPO EB) and most others
+      evidently phrase that table differently. A temporary
+      `debug_reports.yml` workflow + `scrapers/debug_dump_report_text.py`
+      (fetch real report PDFs, dump pypdf's raw extracted text to the job
+      log — delete once no longer needed) exists to see real report wording
+      for both cases before writing a qualitative extractor and widening the
+      quantitative regex, rather than guessing at either blind.
+      MicroVal went from
       reconnaissance to a real working collector, as described above. PR
       creation itself failed on the first run
       (`GitHub Actions is not permitted to create or approve pull requests`,
