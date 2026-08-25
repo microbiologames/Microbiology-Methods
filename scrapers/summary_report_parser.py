@@ -8,12 +8,33 @@ These reports all follow the same fixed cover-page template ("NF VALIDATION
 the certificate number and method nature be read directly off the PDF rather
 than supplied by hand.
 
-Scope of this first pass -- built and tested against exactly ONE real report
-(TEMPO EB / BIO 12/21-12/06, a quantitative/enumeration method):
-  - relative_trueness_by_category: reliably extracted from the clean
-    per-category summary table ("Category n T(...)= SD ... Bias Lower limit
-    (95%) Upper limit (95%)"), which is a standard ISO 16140-2 calculation
-    output and plausibly recurs in this shape across other reports.
+Category-breakdown extraction (relative_trueness_by_category for quantitative
+reports, method_comparison_by_category for qualitative ones) is built on
+pdfplumber's structural table extraction (the real cell grid, from the PDF's
+visual layout) rather than a text regex -- this replaced an earlier
+regex-based version that was built and tested against exactly one real
+report (TEMPO EB) and confirmed, once checked against the real merged data
+from a full mining run, to fail on the large majority of other reports: each
+expert laboratory phrases its table header differently for what is
+conceptually the same table, and at least one renders its "D-bar (bias)"
+symbol as garbled Unicode glyphs no text regex would match, while the actual
+cell structure (which column holds "SD", which holds "95% lower limit")
+stayed reliably extractable. See find_tables_by_header()'s docstring for the
+detection approach, and _walk_category_rows() for the two real per-category
+row shapes (flat, and hierarchical-with-a-Total-row) it's confirmed to
+handle. method_comparison_by_category was previously not implemented at all
+(hardcoded to []) since no real qualitative report had been inspected; now
+extracted from a third row shape confirmed against a real qualitative
+report, where a category's id/name and its first sub-item's data share one
+row -- this doesn't line up column-for-column with the header the way the
+quantitative shapes do, so its SE alt / SE ref values are read by position
+counted back from the end of the row (see _offset_from_end) rather than by
+zipping against the header from the front. rlod is left null in every case
+-- it comes from a separate section/table (Relative Level of Detection)
+neither function looks at.
+
+Also mined, unchanged from the original version and still text-based (this
+part held up fine, wasn't reason for the rewrite above):
   - accuracy_profile.acceptability_limit_log: extracted from the stated
     "Acceptability Limit fixed at +/- X log" sentence.
   - accuracy_profile.by_matrix (SD repeatability per matrix): matrices are
@@ -25,10 +46,11 @@ Scope of this first pass -- built and tested against exactly ONE real report
     that's the anchor used. samples_out_of_beta_eti is left empty for every
     matrix rather than guess which category a named outlier product belongs
     to.
-  - inclusivity/exclusivity: extracted from this report's specific narrative
+  - inclusivity/exclusivity: extracted from one report's specific narrative
     wording ("Same results were observed by both methods for N strains...");
     other reports may phrase this differently and will need the pattern
-    broadened.
+    broadened -- not yet checked against the real merged data the way the
+    category-breakdown extraction above was.
   - NOT mined: loq_log -- its source table's cells extracted as literal
     zeros for every matrix, a clear sign the table's structure defeats
     plain-text extraction; recording that would be worse than leaving it null.
@@ -43,6 +65,7 @@ import sys
 from pathlib import Path
 
 import jsonschema
+import pdfplumber
 import pypdf
 
 
@@ -92,41 +115,272 @@ def extract_cover_metadata(full_text: str) -> dict:
     return {"certificate_number": certificate_number, "method_nature": nature}
 
 
-def extract_category_names(full_text: str) -> dict:
-    """'(Food) Category 1 Meat and meat products        ' -> {'1': 'Meat and meat products'}"""
-    return dict(re.findall(r'\(Food\) Category (\d+)\s+([A-Za-z][A-Za-z ,]*?)\s{2,}', full_text))
+def _clean(text) -> str:
+    return re.sub(r'\s+', ' ', str(text)).strip()
 
 
-def extract_relative_trueness_by_category(full_text: str, category_names: dict) -> list:
-    """Parses the standard summary line:
-    '<Category> <n> <T-stat> <SD> <half-width> <Bias> <Lower95> <Upper95>'
-    e.g. '1 22 2,08 0,45 0,95 -0,02 -0,97 0,94'
-    which appears right after a 'Category n T(...)= SD ... Bias Lower limit
-    (95%) Upper limit (95%)' header row.
+def _compact(row) -> list:
+    """Drop the None/blank cells pdfplumber leaves for a merged cell's
+    spanned columns, keeping only the cells that actually carry text."""
+    return [_clean(c) for c in row if c and _clean(c)]
+
+
+def _is_data_row(row) -> bool:
+    """A row starts real per-category data once its first populated cell is
+    a bare category id ('1', '2', ...) or an aggregate-row marker ('All
+    categories' / 'All products') -- everything before that, across however
+    many physical rows a wrapped header spans, is header."""
+    first = next((c for c in row if c and _clean(c)), None)
+    if first is None:
+        return False
+    first = _clean(first)
+    return bool(re.match(r'^\d+$', first)) or bool(re.match(r'^all\s+(categor|product)', first, re.I))
+
+
+def _merge_header_rows(rows) -> list:
+    """Column-wise concatenation of however many physical rows a table's
+    header wraps across (confirmed necessary against a real report: one
+    table's header reads 'Category | n | (bias) | SD | 95% lower limit |
+    95% upper limit' split across 4 separate physical rows, wrapped
+    mid-label). Same-column text from later rows is appended, not
+    overwritten, so a label like '95% lower' + 'limit' becomes one string."""
+    width = max(len(r) for r in rows)
+    merged = [None] * width
+    for row in rows:
+        for i in range(min(len(row), width)):
+            cell = row[i]
+            if cell and _clean(cell):
+                text = _clean(cell)
+                merged[i] = f"{merged[i]} {text}" if merged[i] else text
+    return merged
+
+
+def find_tables_by_header(pdf_path, required_keywords):
+    """Yield (header_labels, data_rows) for every table anywhere in the PDF
+    whose reconstructed header text contains every keyword in
+    required_keywords (case-insensitive substring match against the whole
+    joined header).
+
+    Uses pdfplumber's structural table extraction (the real cell grid, from
+    the PDF's visual layout) rather than matching header wording with a
+    regex -- confirmed necessary, not a style preference: two real reports'
+    conceptually-identical category-breakdown tables turned out to phrase
+    their headers completely differently, and one renders its "D-bar
+    (bias)" symbol as garbled Unicode glyphs that no reasonable text regex
+    would match, while the surrounding cell structure (which column holds
+    "SD", which holds "95% lower limit") stayed perfectly extractable.
     """
-    header_m = re.search(r'Category\s+n\s+T\([\d,]+;[\d,]+\)=?\s*SD.*?Upper limit \(95%\)', full_text, re.S)
-    if not header_m:
-        return []
-    tail = full_text[header_m.end(): header_m.end() + 2000]
-    row_re = re.compile(
-        r'^\s*(\d+|All categories)\s+(\d+)\s+([\d,\.]+)\s+([\d,\.]+)\s+([\d,\.]+)\s+(-?[\d,\.]+)\s+(-?[\d,\.]+)\s+(-?[\d,\.]+)\s*$',
-        re.M,
-    )
-    rows = []
-    for cat_id, n, _t_stat, sd, _half_width, bias, lower, upper in row_re.findall(tail):
-        if cat_id.lower() == "all categories":
-            continue  # the aggregate row duplicates the per-category rows; keep only the per-category breakdown
-        category_label = category_names.get(cat_id, f"Category {cat_id}")
-        rows.append({
-            "category": category_label,
-            "bias_log": to_float(bias),
-            "sd_log": to_float(sd),
-            "n_samples": int(n),
-            "n_interpretable": int(n),
-            "lower_limit_95": to_float(lower),
-            "upper_limit_95": to_float(upper),
-        })
-    return rows
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            for table in page.extract_tables():
+                if not table:
+                    continue
+                header_rows = []
+                data_start = None
+                for i, row in enumerate(table):
+                    if _is_data_row(row):
+                        data_start = i
+                        break
+                    header_rows.append(row)
+                if data_start is None or not header_rows:
+                    continue
+                labels = _compact(_merge_header_rows(header_rows))
+                haystack = " ".join(labels).lower()
+                if not all(kw in haystack for kw in required_keywords):
+                    continue
+                yield labels, table[data_start:]
+
+
+def _last_number(text):
+    """Pull the trailing signed decimal number out of a cell that may carry
+    leading junk -- confirmed necessary against a real report, where one
+    category's bias value literally reads '𝑫𝑫 𝑫 -0,32' (a garbled Unicode
+    rendering of the D-bar/bias symbol prefixed onto the real number)."""
+    if not text:
+        return None
+    matches = re.findall(r'-?\d+[.,]?\d*', text)
+    return matches[-1] if matches else None
+
+
+def _find_metric(metrics: dict, *keyword_groups):
+    """metrics: {header_label: value}. Each entry in keyword_groups is a
+    tuple of keywords that must ALL appear (case-insensitive substring) in
+    a label for it to match; groups are tried in order. Returns the first
+    matching value."""
+    for label, value in metrics.items():
+        low = label.lower()
+        for keywords in keyword_groups:
+            if all(kw in low for kw in keywords):
+                return value
+    return None
+
+
+def _walk_category_rows(header_labels, data_rows):
+    """Yield (category_name, {header_label: value}) for each real
+    per-category result row, handling the two table shapes confirmed
+    against real reports:
+
+    - flat: one row per category, e.g. ['1', 'Meat products', '47', bias,
+      SD, lower, upper] -- category name inline with its data.
+    - hierarchical: a category-label-only row (e.g. ['7', 'Powdered infant
+      formula...']) followed by per-item sub-rows (a/b/c breakdowns, which
+      this project isn't after) and then a 'Total' row carrying the
+      category's real aggregate values -- category name and data are on
+      different rows here.
+
+    Distinguishing the two is done by comparing each row's compacted
+    length to the header's: one extra compacted cell means an inline
+    id+name pair (flat shape); one fewer means the category name was
+    already consumed by an earlier label-only row (hierarchical shape).
+    An aggregate "All categories"/"All products" row (which duplicates the
+    per-category rows, not a category of its own) is always skipped.
+    """
+    current_category = None
+    for row in data_rows:
+        values = _compact(row)
+        if not values:
+            continue
+        if re.match(r'^all\s+(categor|product)', values[0], re.I):
+            continue
+        if len(values) == len(header_labels) + 1:
+            yield values[1], dict(zip(header_labels[1:], values[2:]))
+        elif len(values) == len(header_labels) - 1 and values[0].lower() == "total":
+            if current_category:
+                yield current_category, dict(zip(header_labels[1:], values))
+            current_category = None
+        elif len(values) <= 2 and re.match(r'^\d+$', values[0]):
+            current_category = values[-1]
+        # else: an a/b/c sub-item row, or a shape this project hasn't seen
+        # yet -- skipped rather than guessed at.
+
+
+def extract_relative_trueness_by_category(pdf_path) -> list:
+    for header_labels, data_rows in find_tables_by_header(pdf_path, ["category", "sd"]):
+        rows = []
+        for category, metrics in _walk_category_rows(header_labels, data_rows):
+            sd = _find_metric(metrics, ("sd",))
+            lower = _find_metric(metrics, ("lower",))
+            upper = _find_metric(metrics, ("upper",))
+            if sd is None or lower is None or upper is None:
+                continue  # doesn't look like the table this is meant to find after all
+            bias = _find_metric(metrics, ("bias",))
+            n = _find_metric(metrics, ("n",))
+            rows.append({
+                "category": category,
+                "bias_log": to_float(_last_number(bias)),
+                "sd_log": to_float(_last_number(sd)),
+                "n_samples": int(n) if n and re.match(r'^\d+$', n) else None,
+                "n_interpretable": int(n) if n and re.match(r'^\d+$', n) else None,
+                "lower_limit_95": to_float(_last_number(lower)),
+                "upper_limit_95": to_float(_last_number(upper)),
+            })
+        if rows:
+            # First matching table wins -- a report covering several related
+            # certificates in one PDF (confirmed real: one report combines
+            # three Petrifilm incubation-time variants) has one such table
+            # per certificate; picking the first is a known simplification,
+            # not a guarantee of picking the right one for every certificate
+            # in that PDF.
+            return rows
+    return []
+
+
+def _offset_from_end(header_labels, keywords):
+    """Index, counted back from the end of header_labels, of the first label
+    matching every keyword (case-insensitive substring). Anchored from the
+    end rather than the front: confirmed necessary against a real report
+    whose qualitative table packs the category id, name, sub-item letter
+    and sub-item name into leading cells of a data row all in one go (a
+    third row shape _walk_category_rows doesn't recognize), so the leading
+    column count drifts row to row while the trailing metric columns
+    (SE alt, SE ref, RT%, FPR, FNR -- standardised by ISO 16140-2 itself)
+    stay one-to-one with the header.
+
+    Drops bare '%' cells before ranking: confirmed against the same report
+    that a units-only header row (wrapping "SE alt" etc.'s '%' onto its own
+    physical line) lands, after column-wise merge, as a standalone '%'
+    label at a raw column offset from its actual metric -- diluting the
+    real metrics' rank from the end. It carries no identifying information
+    a value row could match anyway, so it's dropped rather than merged."""
+    real_labels = [l for l in header_labels if l.strip() != '%']
+    for i, label in enumerate(real_labels):
+        if all(kw in label.lower() for kw in keywords):
+            return len(real_labels) - i - 1
+    return None
+
+
+def _value_at_offset_from_end(values, offset):
+    if offset is None:
+        return None
+    idx = -(offset + 1)
+    if -idx > len(values):
+        return None
+    return values[idx]
+
+
+def extract_method_comparison_by_category(pdf_path) -> list:
+    """Qualitative-method equivalent of extract_relative_trueness_by_category
+    -- previously not implemented at all (hardcoded to []) since no real
+    report had been inspected. Confirmed against a real report's Table 4
+    ('Calculation of relative trueness (RT), sensitivity (SE)... for the
+    alternative method').
+
+    Doesn't reuse _walk_category_rows: that helper's flat/hierarchical
+    shapes assume a category's data lines up column-for-column with the
+    header, which breaks here -- a category's first sub-item (a/b/c...) is
+    packed onto the same row as the category id and name, at a different
+    compacted width than the header. Reads the category id/name off
+    whichever row starts with a bare number, then prefers a later 'Total'
+    row (the real per-category aggregate across sub-items) as the data
+    source when one follows, falling back to the id/name row itself
+    otherwise, and pulls SE alt/SE ref from either by column position
+    counted from the end of the row (see _offset_from_end)."""
+    for header_labels, data_rows in find_tables_by_header(pdf_path, ["category", "se"]):
+        se_alt_offset = _offset_from_end(header_labels, ("se", "alt"))
+        se_ref_offset = _offset_from_end(header_labels, ("se", "ref"))
+        if se_alt_offset is None or se_ref_offset is None:
+            continue
+
+        rows = []
+        current_category = None
+        current_row = None
+
+        def flush():
+            if current_category is None or current_row is None:
+                return
+            se_alt = _value_at_offset_from_end(current_row, se_alt_offset)
+            se_ref = _value_at_offset_from_end(current_row, se_ref_offset)
+            if se_alt is None or se_ref is None:
+                return
+            rows.append({
+                "category": current_category,
+                "sensitivity_alternative_pct": to_float(_last_number(se_alt)),
+                "sensitivity_reference_pct": to_float(_last_number(se_ref)),
+                # RLOD comes from a separate section/table (Relative Level of
+                # Detection) this function doesn't look at -- not guessed.
+                "rlod": None,
+            })
+
+        for row in data_rows:
+            values = _compact(row)
+            if not values:
+                continue
+            first = values[0]
+            if re.match(r'^all\s+(categor|product)', first, re.I):
+                continue
+            if re.match(r'^\d+$', first):
+                flush()
+                current_category = values[1] if len(values) > 1 else None
+                current_row = values
+            elif first.lower() == "total":
+                current_row = values
+            # else: an a/b/c sub-item row, or a continuation fragment --
+            # skipped, the Total row (or the id/name row as fallback)
+            # already carries what's needed.
+        flush()
+        if rows:
+            return rows
+    return []
 
 
 def extract_acceptability_limit(full_text: str):
@@ -134,13 +388,12 @@ def extract_acceptability_limit(full_text: str):
     return to_float(m.group(1)) if m else None
 
 
-def extract_accuracy_profile_by_matrix(full_text: str, category_names: dict):
-    """Pairs each category (in its established 1..N order -- the same
-    category_names used for relative_trueness_by_category, read off Table 4)
-    with its 'SD Repeatability <ref> <alt> +/- <AL>' line, matched by
-    sequence position: one such line is emitted per category, and this
-    report's category-summary tables (Table 4, the per-category relative
-    trueness rows) all preserve category order in their text stream.
+def extract_accuracy_profile_by_matrix(full_text: str, ordered_categories: list):
+    """Pairs each category (in the order extract_relative_trueness_by_category
+    already returned them in) with its 'SD Repeatability <ref> <alt> +/- <AL>'
+    line, matched by sequence position: one such line is emitted per
+    category, and this report's category-summary table preserves category
+    order in the surrounding text stream.
 
     This function deliberately does NOT use the accuracy-profile chart
     captions ("...Reference Median / <matrix name> / Bias / β-ETI...") to
@@ -161,7 +414,6 @@ def extract_accuracy_profile_by_matrix(full_text: str, category_names: dict):
     guessed attribution would risk mislabeling which matrix a real
     discrepancy belongs to, which is worse than omitting it.
     """
-    ordered_categories = [category_names[k] for k in sorted(category_names, key=int)]
     sd_matches = re.findall(
         r'SD Repeatability\s+([\d,\.]+)\s+([\d,\.]+)\s+\+/-\s*([\d,\.]+)', full_text,
     )
@@ -244,14 +496,15 @@ def mine_performance(pdf_path: Path) -> dict:
     full_text = "\n".join(p.extract_text() or "" for p in reader.pages)
 
     cover = extract_cover_metadata(full_text)
-    category_names = extract_category_names(full_text)
-    relative_trueness = extract_relative_trueness_by_category(full_text, category_names)
     acceptability_limit = extract_acceptability_limit(full_text)
-    by_matrix = extract_accuracy_profile_by_matrix(full_text, category_names)
     inclusivity, exclusivity = extract_inclusivity_exclusivity(full_text)
 
     performance = None
     if cover["method_nature"] == "quantitative":
+        relative_trueness = extract_relative_trueness_by_category(pdf_path)
+        by_matrix = extract_accuracy_profile_by_matrix(
+            full_text, [r["category"] for r in relative_trueness],
+        )
         performance = {
             "method_nature": "quantitative",
             "quantitative": {
@@ -269,7 +522,7 @@ def mine_performance(pdf_path: Path) -> dict:
         performance = {
             "method_nature": "qualitative",
             "qualitative": {
-                "method_comparison_by_category": [],
+                "method_comparison_by_category": extract_method_comparison_by_category(pdf_path),
                 "inclusivity": inclusivity,
                 "exclusivity": exclusivity,
             },
@@ -281,7 +534,10 @@ def mine_performance(pdf_path: Path) -> dict:
         "performance": performance,
         "mining_notes": (
             "Mined from the summary validation report PDF. relative_trueness_by_category "
-            "(quantitative) is reliably extracted from a standard ISO 16140-2 summary table. "
+            "(quantitative) and method_comparison_by_category (qualitative) are extracted from "
+            "the report's per-category results table via its structural cell grid (pdfplumber), "
+            "not by matching the table header's exact wording -- confirmed necessary since real "
+            "reports from different expert laboratories phrase that header differently. "
             "accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY "
             "(e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an "
             "earlier version tried the more specific product name from the accuracy-profile "

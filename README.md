@@ -231,12 +231,37 @@ web/                                   static frontend (heatmap + drill-down), r
       (2) **quantitative reports only succeed 9/33** —
       `extract_relative_trueness_by_category()`'s header regex was built
       and tested against exactly one report (TEMPO EB) and most others
-      evidently phrase that table differently. A temporary
-      `debug_reports.yml` workflow + `scrapers/debug_dump_report_text.py`
-      (fetch real report PDFs, dump pypdf's raw extracted text to the job
-      log — delete once no longer needed) exists to see real report wording
-      for both cases before writing a qualitative extractor and widening the
-      quantitative regex, rather than guessing at either blind.
+      evidently phrase that table differently.
+
+      **Fix: rewrote category-breakdown extraction on pdfplumber's
+      structural table extraction instead of text regexes.** A temporary
+      `debug_reports.yml` workflow (deleted once this was done) dumped
+      pdfplumber's real cell grid for two real reports (one qualitative,
+      one quantitative), which showed why the regex approach couldn't work:
+      each expert laboratory phrases the same conceptual table header
+      differently, and one report renders its "D-bar (bias)" symbol as
+      garbled Unicode glyphs no text regex would ever match — while the
+      actual cell structure (which column holds "SD", which holds "95%
+      lower limit") stayed reliably extractable regardless.
+      `find_tables_by_header()` now locates the right table by its cell
+      contents' keywords rather than exact wording, and
+      `summary_report_parser.py` handles three real per-category row shapes
+      confirmed against actual reports: flat (one row per category),
+      hierarchical-with-a-Total-row (a label-only category row followed by
+      a/b/c sub-items and an aggregate "Total" row), and — found only in
+      the qualitative table — a category row whose first sub-item's data
+      shares the same row as the category id/name, which doesn't line up
+      column-for-column with the header the way the other two shapes do
+      and is instead read by column position counted back from the end of
+      the row. `method_comparison_by_category` (qualitative) is
+      implemented for the first time as part of this rewrite. Verified
+      locally against both real captured table structures via a
+      monkey-patched `pdfplumber.open`; a full re-mine of all 142 records
+      (`workflow_dispatch` with `force_remine: true`, since the default
+      `--skip-already-mined` would otherwise skip every record that
+      already has a — possibly empty — `performance` field) is the next
+      step to confirm the real improvement in category-breakdown coverage
+      against the 9/91 baseline above.
       MicroVal went from
       reconnaissance to a real working collector, as described above. PR
       creation itself failed on the first run

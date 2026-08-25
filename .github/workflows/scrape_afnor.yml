@@ -23,7 +23,17 @@ name: Scrape and normalize AFNOR NF-Validation data
 on:
   schedule:
     - cron: "0 6 * * *"  # daily, 06:00 UTC
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force_remine:
+        description: >-
+          Re-mine every record's summary report from scratch, ignoring
+          already-populated performance data. Use after a
+          summary_report_parser.py extraction change, since the default
+          --skip-already-mined would otherwise skip every record that
+          already has a (possibly stale/incomplete) performance field.
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -51,7 +61,12 @@ jobs:
 
       - name: Fetch and mine summary validation reports
         continue-on-error: true
-        run: python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
+        run: |
+          if [ "${{ inputs.force_remine }}" = "true" ]; then
+            python3 pipeline/fetch_and_mine_summary_reports.py
+          else
+            python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
+          fi
 
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py
