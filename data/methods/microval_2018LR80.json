@@ -1,0 +1,51 @@
+{
+  "id": "microval--2018lr80",
+  "source": "MICROVAL",
+  "source_certificate_number": "2018LR80",
+  "commercial_name": "iQ-Check EB for the detection of Enterobacteriaceae",
+  "manufacturer": {
+    "name": "Bio-Rad Laboratories",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Enterobacteriaceae",
+    "raw": "Enterobacteriaceae"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": null
+  },
+  "validation_scope": {
+    "raw": "(not published on MicroVal's public certificate listing)",
+    "matrices": [],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": null,
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2029-09-17",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '17-09-2029'."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "generated_from": "data/methods",
-  "count": 146,
+  "count": 178,
   "methods": [
     {
       "id": "nf-validation--3m-01-01-09-89",
@@ -7815,6 +7815,2086 @@
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/IDX-33-10-12-22-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/03/Synt-IDX-33-10-12-22.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr02",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR02",
+      "commercial_name": "Compact Dry ETB",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-06-29",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr02",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR02",
+        "commercial_name": "Compact Dry ETB",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-06-29",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-06-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr03",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR03",
+      "commercial_name": "Compact Dry CF",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Coliforms",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-07-08",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr03",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR03",
+        "commercial_name": "Compact Dry CF",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coliforms",
+          "raw": "Coliforms"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-07-08",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '08-07-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr04",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR04",
+      "commercial_name": "Compact Dry EC",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Coliforms",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-09-29",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr04",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR04",
+        "commercial_name": "Compact Dry EC",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coliforms",
+          "raw": "Coliforms"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-09-29",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-09-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr11",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR11",
+      "commercial_name": "Brilliance™ Staph 24 Agar",
+      "manufacturer_name": "Thermo Fisher Scientific",
+      "organism": "Coagulase-positivestaphylococci",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-02-09",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr11",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR11",
+        "commercial_name": "Brilliance™ Staph 24 Agar",
+        "manufacturer": {
+          "name": "Thermo Fisher Scientific",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coagulase-positivestaphylococci",
+          "raw": "Coagulase-positivestaphylococci"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-02-09",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-02-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr12",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR12",
+      "commercial_name": "Brilliance™ CampyCount Agar",
+      "manufacturer_name": "Thermo Fisher Scientific",
+      "organism": "Campylobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-09-21",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr12",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR12",
+        "commercial_name": "Brilliance™ CampyCount Agar",
+        "manufacturer": {
+          "name": "Thermo Fisher Scientific",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Campylobacterspp.",
+          "raw": "Campylobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-09-21",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-09-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2008lr14",
+      "source": "MICROVAL",
+      "source_certificate_number": "2008LR14",
+      "commercial_name": "Compact Dry X-SA",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Coagulase-positivestaphylococci",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-05-24",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2008lr14",
+        "source": "MICROVAL",
+        "source_certificate_number": "2008LR14",
+        "commercial_name": "Compact Dry X-SA",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coagulase-positivestaphylococci",
+          "raw": "Coagulase-positivestaphylococci"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-05-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'."
+        }
+      }
+    },
+    {
+      "id": "microval--2009lr28",
+      "source": "MICROVAL",
+      "source_certificate_number": "2009LR28",
+      "commercial_name": "CampyFood® agar method",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Campylobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-30",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2009lr28",
+        "source": "MICROVAL",
+        "source_certificate_number": "2009LR28",
+        "commercial_name": "CampyFood® agar method",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Campylobacterspp.",
+          "raw": "Campylobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-30",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '30-03-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2010lr38",
+      "source": "MICROVAL",
+      "source_certificate_number": "2010LR38",
+      "commercial_name": "CASA™",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Campylobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2019-10-30",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2010lr38",
+        "source": "MICROVAL",
+        "source_certificate_number": "2010LR38",
+        "commercial_name": "CASA™",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Campylobacterspp.",
+          "raw": "Campylobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2019-10-30",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '30-10-2019'."
+        }
+      }
+    },
+    {
+      "id": "microval--2011lr41",
+      "source": "MICROVAL",
+      "source_certificate_number": "2011LR41",
+      "commercial_name": "Compact Dry XBC for Bacillus cereus",
+      "manufacturer_name": "HyServe GmbH & Co. KG",
+      "organism": "Bacillus cereusgroup",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2018-12-31",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2011lr41",
+        "source": "MICROVAL",
+        "source_certificate_number": "2011LR41",
+        "commercial_name": "Compact Dry XBC for Bacillus cereus",
+        "manufacturer": {
+          "name": "HyServe GmbH & Co. KG",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Bacillus cereusgroup",
+          "raw": "Bacillus cereusgroup"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2018-12-31",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '31-12-2018'."
+        }
+      }
+    },
+    {
+      "id": "microval--2014lr47",
+      "source": "MICROVAL",
+      "source_certificate_number": "2014LR47",
+      "commercial_name": "TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Bacillus cereusgroup",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-12-30",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2014lr47",
+        "source": "MICROVAL",
+        "source_certificate_number": "2014LR47",
+        "commercial_name": "TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Bacillus cereusgroup",
+          "raw": "Bacillus cereusgroup"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-12-30",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '30-12-2027'."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr56",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR56",
+      "commercial_name": "MC-Media Pad™ SA",
+      "manufacturer_name": "JNC Corporation",
+      "organism": "Coagulase-positivestaphylococci",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-09-14",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr56",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR56",
+        "commercial_name": "MC-Media Pad™ SA",
+        "manufacturer": {
+          "name": "JNC Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coagulase-positivestaphylococci",
+          "raw": "Coagulase-positivestaphylococci"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-09-14",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '14-09-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr69",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR69",
+      "commercial_name": "PeelPlate® EB (Enterobacteriaceae)",
+      "manufacturer_name": "Charm Sciences, Inc.",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr69",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR69",
+        "commercial_name": "PeelPlate® EB (Enterobacteriaceae)",
+        "manufacturer": {
+          "name": "Charm Sciences, Inc.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr70",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR70",
+      "commercial_name": "MC-Media Pad® CC",
+      "manufacturer_name": "JNC Corporation",
+      "organism": "Coliforms",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr70",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR70",
+        "commercial_name": "MC-Media Pad® CC",
+        "manufacturer": {
+          "name": "JNC Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coliforms",
+          "raw": "Coliforms"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr72",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR72",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCronobacterspp.",
+      "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
+      "organism": "Cronobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-02-28",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr72",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR72",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCronobacterspp.",
+        "manufacturer": {
+          "name": "Bruker Daltonics GmbH & Co. KG",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Cronobacterspp.",
+          "raw": "Cronobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-02-28",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '28-02-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr73",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR73",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofSalmonellaspp.",
+      "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
+      "organism": "Salmonellaspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-02-11",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr73",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR73",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofSalmonellaspp.",
+        "manufacturer": {
+          "name": "Bruker Daltonics GmbH & Co. KG",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonellaspp.",
+          "raw": "Salmonellaspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-02-11",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '11-02-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr74",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR74",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCampylobacterspp.",
+      "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
+      "organism": "Campylobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-06-17",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr74",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR74",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofCampylobacterspp.",
+        "manufacturer": {
+          "name": "Bruker Daltonics GmbH & Co. KG",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Campylobacterspp.",
+          "raw": "Campylobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-06-17",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '17-06-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr75",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR75",
+      "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofListeriaspp. andListeriamonocytogenes",
+      "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
+      "organism": "Listeriaspp.;Listeria monocytogenes",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-04-25",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr75",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR75",
+        "commercial_name": "MALDI Biotyper® complete solution for the confirmation ofListeriaspp. andListeriamonocytogenes",
+        "manufacturer": {
+          "name": "Bruker Daltonics GmbH & Co. KG",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeriaspp.;Listeria monocytogenes",
+          "raw": "Listeriaspp.;Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-04-25",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '25-04-2030'."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr77",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR77",
+      "commercial_name": "Assurance GDSCronobacterTq II",
+      "manufacturer_name": "Merck MilliporeSigma",
+      "organism": "Cronobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr77",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR77",
+        "commercial_name": "Assurance GDSCronobacterTq II",
+        "manufacturer": {
+          "name": "Merck MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Cronobacterspp.",
+          "raw": "Cronobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2018lr80",
+      "source": "MICROVAL",
+      "source_certificate_number": "2018LR80",
+      "commercial_name": "iQ-Check EB for the detection of Enterobacteriaceae",
+      "manufacturer_name": "Bio-Rad Laboratories",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-09-17",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2018lr80",
+        "source": "MICROVAL",
+        "source_certificate_number": "2018LR80",
+        "commercial_name": "iQ-Check EB for the detection of Enterobacteriaceae",
+        "manufacturer": {
+          "name": "Bio-Rad Laboratories",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-09-17",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '17-09-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2018lr83",
+      "source": "MICROVAL",
+      "source_certificate_number": "2018LR83",
+      "commercial_name": "SolerisEnterobacteriaceae(S2-EBAC9 vial)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-09-23",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2018lr83",
+        "source": "MICROVAL",
+        "source_certificate_number": "2018LR83",
+        "commercial_name": "SolerisEnterobacteriaceae(S2-EBAC9 vial)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-09-23",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '23-09-2027'."
+        }
+      }
+    },
+    {
+      "id": "microval--2019lr87",
+      "source": "MICROVAL",
+      "source_certificate_number": "2019LR87",
+      "commercial_name": "Compact Dry BC",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Bacillus cereusgroup",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-03-05",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2019lr87",
+        "source": "MICROVAL",
+        "source_certificate_number": "2019LR87",
+        "commercial_name": "Compact Dry BC",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Bacillus cereusgroup",
+          "raw": "Bacillus cereusgroup"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-03-05",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-03-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2020lr93",
+      "source": "MICROVAL",
+      "source_certificate_number": "2020LR93",
+      "commercial_name": "Oxoid Cronobacter Precis Method",
+      "manufacturer_name": "Thermo Fisher Scientific",
+      "organism": "Cronobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-06-24",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2020lr93",
+        "source": "MICROVAL",
+        "source_certificate_number": "2020LR93",
+        "commercial_name": "Oxoid Cronobacter Precis Method",
+        "manufacturer": {
+          "name": "Thermo Fisher Scientific",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Cronobacterspp.",
+          "raw": "Cronobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-06-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-06-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr100",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR100",
+      "commercial_name": "Soleris commercial sterility testing vials (NF 105)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Commercial sterility",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-08-31",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr100",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR100",
+        "commercial_name": "Soleris commercial sterility testing vials (NF 105)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Commercial sterility",
+          "raw": "Commercial sterility"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-08-31",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '31-08-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr104",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR104",
+      "commercial_name": "Easy Plate CC",
+      "manufacturer_name": "Kikkoman Biochemifa Company",
+      "organism": "Coliforms",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-05-24",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr104",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR104",
+        "commercial_name": "Easy Plate CC",
+        "manufacturer": {
+          "name": "Kikkoman Biochemifa Company",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coliforms",
+          "raw": "Coliforms"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-05-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr105",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR105",
+      "commercial_name": "Easy Plate SA",
+      "manufacturer_name": "Kikkoman Biochemifa Company",
+      "organism": "Coagulase-positivestaphylococci",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-06-22",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr105",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR105",
+        "commercial_name": "Easy Plate SA",
+        "manufacturer": {
+          "name": "Kikkoman Biochemifa Company",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coagulase-positivestaphylococci",
+          "raw": "Coagulase-positivestaphylococci"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-06-22",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '22-06-2027'."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr107",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR107",
+      "commercial_name": "Check & Trace Salmonella 2.0",
+      "manufacturer_name": "Check-Points B.V.",
+      "organism": "Salmonellaspp.; Typing of 106 serovars",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-01",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr107",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR107",
+        "commercial_name": "Check & Trace Salmonella 2.0",
+        "manufacturer": {
+          "name": "Check-Points B.V.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonellaspp.; Typing of 106 serovars",
+          "raw": "Salmonellaspp.; Typing of 106 serovars"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-01",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '01-12-2026'."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr108",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR108",
+      "commercial_name": "One Plate Enterobocteriacqe (OP-EBAC)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-05-29",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr108",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR108",
+        "commercial_name": "One Plate Enterobocteriacqe (OP-EBAC)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-05-29",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-05-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr116",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR116",
+      "commercial_name": "Autof ms 1000 salmonella spp..",
+      "manufacturer_name": "Autobio Diagnostics Co., ltd",
+      "organism": "Salmonellaspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-04-29",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr116",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR116",
+        "commercial_name": "Autof ms 1000 salmonella spp..",
+        "manufacturer": {
+          "name": "Autobio Diagnostics Co., ltd",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonellaspp.",
+          "raw": "Salmonellaspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-04-29",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '29-04-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr117",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR117",
+      "commercial_name": "Autof ms 1000 Cronobacter spp.",
+      "manufacturer_name": "Autobio Diagnostics Co., ltd",
+      "organism": "Cronobacterspp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-09-18",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr117",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR117",
+        "commercial_name": "Autof ms 1000 Cronobacter spp.",
+        "manufacturer": {
+          "name": "Autobio Diagnostics Co., ltd",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Cronobacterspp.",
+          "raw": "Cronobacterspp."
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-09-18",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '18-09-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr123",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR123",
+      "commercial_name": "Compact Dry CFR",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Coliforms",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-05-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr123",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR123",
+        "commercial_name": "Compact Dry CFR",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Coliforms",
+          "raw": "Coliforms"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-05-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-05-2028'."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr126",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR126",
+      "commercial_name": "D‐COUNT® Commercial Sterility Testing",
+      "manufacturer_name": "bioMérieux SA_",
+      "organism": "Commercial sterility",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-02-19",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr126",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR126",
+        "commercial_name": "D‐COUNT® Commercial Sterility Testing",
+        "manufacturer": {
+          "name": "bioMérieux SA_",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Commercial sterility",
+          "raw": "Commercial sterility"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-02-19",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '19-02-2029'."
+        }
+      }
+    },
+    {
+      "id": "microval--2024lr132",
+      "source": "MICROVAL",
+      "source_certificate_number": "2024LR132",
+      "commercial_name": "Petrifilm® Bacillus cereus (BC) Count Plate Method",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Bacillus cereusgroup",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-04-21",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2024lr132",
+        "source": "MICROVAL",
+        "source_certificate_number": "2024LR132",
+        "commercial_name": "Petrifilm® Bacillus cereus (BC) Count Plate Method",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Bacillus cereusgroup",
+          "raw": "Bacillus cereusgroup"
+        },
+        "reference_method": {
+          "standard": null,
+          "raw": null
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-04-21",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-04-2029'."
         }
       }
     },
