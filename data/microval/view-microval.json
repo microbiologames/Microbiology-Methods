@@ -1,0 +1,38 @@
+{
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "url": "https://nen.bettywebblocks.com/view-microval",
+  "raw_rows_unmapped": [
+    "Analyte Certificate number Test kit name Supplier - manufacturer Expiry date Status",
+    "Bacillus cereus group 2011LR41 Compact Dry XBC for Bacillus cereus HyServe GmbH & Co. KG 31-12-2018 Not renewed",
+    "Bacillus cereus group 2014LR47 TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples BioMérieux S.A. - Marcy L'Etoile 30-12-2027 Valid",
+    "Bacillus cereus group 2019LR87 Compact Dry BC Shimadzu Diagnostics Corporation 05-03-2028 Valid",
+    "Bacillus cereus group 2024LR132 Petrifilm® Bacillus cereus (BC) Count Plate Method Neogen Corporation 21-04-2029 Valid",
+    "Campylobacter spp. 2010LR38 CASA™ BioMérieux S.A. - Marcy L'Etoile 30-10-2019 Not renewed",
+    "Campylobacter spp. 2008LR12 Brilliance™ CampyCount Agar Thermo Fisher Scientific 21-09-2026 Valid",
+    "Campylobacter spp. 2009LR28 CampyFood® agar method BioMérieux S.A. - Marcy L'Etoile 30-03-2030 Valid",
+    "Coagulase-positive staphylococci 2008LR11 Brilliance™ Staph 24 Agar Thermo Fisher Scientific 09-02-2030 Valid",
+    "Coagulase-positive staphylococci 2008LR14 Compact Dry X-SA Shimadzu Diagnostics Corporation 24-05-2027 Valid",
+    "Coagulase-positive staphylococci 2015LR56 MC-Media Pad™ SA JNC Corporation 14-09-2029 Valid",
+    "Coagulase-positive staphylococci 2021LR105 Easy Plate SA Kikkoman Biochemifa Company 22-06-2027 Valid",
+    "Coliforms 2008LR03 Compact Dry CF Shimadzu Diagnostics Corporation 08-07-2028 Valid",
+    "Coliforms 2008LR04 Compact Dry EC Shimadzu Diagnostics Corporation 29-09-2028 Valid",
+    "Coliforms 2017LR70 MC-Media Pad® CC JNC Corporation 12-12-2026 Valid",
+    "Coliforms 2021LR104 Easy Plate CC Kikkoman Biochemifa Company 24-05-2027 Valid",
+    "Coliforms 2023LR123 Compact Dry CFR Shimadzu Diagnostics Corporation 12-05-2028 Valid",
+    "Commercial sterility 2021LR100 Soleris commercial sterility testing vials (NF 105) Neogen Corporation 31-08-2026 Valid",
+    "Commercial sterility 2023LR126 D‐COUNT® Commercial Sterility Testing bioMérieux SA_ 19-02-2029 Valid",
+    "Cronobacter spp. 2017LR77 Assurance GDS Cronobacter Tq II Merck MilliporeSigma 12-12-2026 Valid",
+    "Cronobacter spp. 2020LR93 Oxoid Cronobacter Precis Method Thermo Fisher Scientific 24-06-2029 Valid",
+    "Enterobacteriaceae 2008LR02 Compact Dry ETB Shimadzu Diagnostics Corporation 29-06-2028 Valid",
+    "Enterobacteriaceae 2017LR69 PeelPlate® EB ( Enterobacteriaceae ) Charm Sciences, Inc. 12-12-2026 Valid",
+    "Enterobacteriaceae 2018LR83 Soleris Enterobacteriaceae (S2-EBAC9 vial) Neogen Corporation 23-09-2027 Valid",
+    "Enterobacteriaceae 2022LR108 One Plate Enterobocteriacqe (OP-EBAC) Neogen Corporation 29-05-2028 Valid",
+    "Enterobacteriaceae 2018LR80 iQ-Check EB for the detection of Enterobacteriaceae Bio-Rad Laboratories 17-09-2029 Valid"
+  ],
+  "had_json_api_responses": true,
+  "provenance": {
+    "source_type": "reconnaissance_live_fetch",
+    "note": "Generic, unmapped extraction from a first real render of this page -- no confirmed field layout exists yet. Check the debug HTML/screenshot/JSON-response dump alongside this file before trusting raw_rows_unmapped for anything; the real parser (mapping rows to certificate_number, commercial_name, manufacturer, etc.) still needs to be written once a human has looked at what this actually captured."
+  }
+}

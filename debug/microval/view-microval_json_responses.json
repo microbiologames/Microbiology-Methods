@@ -1,0 +1,7 @@
+[
+  {
+    "url": "https://cdn.datatables.net/plug-ins/1.10.6/i18n/English.json",
+    "status": 200,
+    "body": "\n\n{\n\t\"sEmptyTable\":     \"No data available in table\",\n\t\"sInfo\":           \"Showing _START_ to _END_ of _TOTAL_ entries\",\n\t\"sInfoEmpty\":      \"Showing 0 to 0 of 0 entries\",\n\t\"sInfoFiltered\":   \"(filtered from _MAX_ total entries)\",\n\t\"sInfoPostFix\":    \"\",\n\t\"sInfoThousands\":  \",\",\n\t\"sLengthMenu\":     \"Show _MENU_ entries\",\n\t\"sLoadingRecords\": \"Loading...\",\n\t\"sProcessing\":     \"Processing...\",\n\t\"sSearch\":         \"Search:\",\n\t\"sZeroRecords\":    \"No matching records found\",\n\t\"oPaginate\": {\n\t\t\"sFirst\":    \"First\",\n\t\t\"sLast\":     \"Last\",\n\t\t\"sNext\":     \"Next\",\n\t\t\"sPrevious\": \"Previous\"\n\t},\n\t\"oAria\": {\n\t\t\"sSortAscending\":  \": activate to sort column ascending\",\n\t\t\"sSortDescending\": \": activate to sort column descending\"\n\t}\n}"
+  }
+]

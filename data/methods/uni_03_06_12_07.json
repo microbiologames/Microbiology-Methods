@@ -49,12 +49,12 @@
   "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": null,
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°21_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
     "organism_page_last_updated_raw": "6 août 2026"
   }
 }

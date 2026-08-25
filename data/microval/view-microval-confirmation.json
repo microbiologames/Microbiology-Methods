@@ -1,0 +1,20 @@
+{
+  "source": "MICROVAL",
+  "label": "view-microval-confirmation",
+  "url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+  "raw_rows_unmapped": [
+    "Analyte Certificate number Test kit name Supplier - manufacturer Expiry date Status",
+    "Campylobacter spp. 2017LR74 MALDI Biotyper® complete solution for the confirmation of Campylobacter spp. Bruker Daltonics GmbH & Co. KG 17-06-2030 Valid",
+    "Cronobacter spp. 2017LR72 MALDI Biotyper® complete solution for the confirmation of Cronobacter spp. Bruker Daltonics GmbH & Co. KG 28-02-2030 Valid",
+    "Cronobacter spp. 2023LR117 Autof ms 1000 Cronobacter spp. Autobio Diagnostics Co., ltd 18-09-2029 Valid",
+    "Listeria spp.; Listeria monocytogenes 2017LR75 MALDI Biotyper® complete solution for the confirmation of Listeria spp. and Listeria monocytogenes Bruker Daltonics GmbH & Co. KG 25-04-2030 Valid",
+    "Salmonella spp. 2017LR73 MALDI Biotyper® complete solution for the confirmation of Salmonella spp. Bruker Daltonics GmbH & Co. KG 11-02-2030 Valid",
+    "Salmonella spp. 2023LR116 Autof ms 1000 salmonella spp.. Autobio Diagnostics Co., ltd 29-04-2029 Valid",
+    "Salmonella spp.; Typing of 106 serovars 2021LR107 Check & Trace Salmonella 2.0 Check-Points B.V. 01-12-2026 Valid"
+  ],
+  "had_json_api_responses": true,
+  "provenance": {
+    "source_type": "reconnaissance_live_fetch",
+    "note": "Generic, unmapped extraction from a first real render of this page -- no confirmed field layout exists yet. Check the debug HTML/screenshot/JSON-response dump alongside this file before trusting raw_rows_unmapped for anything; the real parser (mapping rows to certificate_number, commercial_name, manufacturer, etc.) still needs to be written once a human has looked at what this actually captured."
+  }
+}

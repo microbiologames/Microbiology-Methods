@@ -2,27 +2,27 @@
   "id": "nf-validation--dsm-28-02-02-12",
   "source": "NF-VALIDATION",
   "source_certificate_number": "DSM 28/02-02/12",
-  "commercial_name": "DELVOTEST®T",
+  "commercial_name": "Delvotest® T",
   "manufacturer": {
-    "name": "DSM Food Specialities Alexander Fleminglaan 1 2613 AX Delft T",
+    "name": "DSM Food Specialities",
     "address_raw": ": Company holder of the certification : DSM Food Specialities Alexander Fleminglaan 1 2613 AX Delft THE NETHERLANDS Site de production : Site of production : DSM Food Specialities Test Center Turbineweg 10 2627 BP Delft THE NETHERLANDS",
     "represented_in_europe": null,
     "site_of_production": null
   },
   "method_type": {
     "action": "detection",
-    "category": null
+    "category": "other"
   },
   "target_organism": {
     "normalized": "Antibiotic residues",
-    "raw": "DÉTECTION DES ANTIBIOTIQUES DETECTION OF ANTIBIOTICS LAIT DE VACHE (INDIVIDUEL ET MELANGE) (AVEC OU SANS AZIDIOL) COW MILK (INDIVIDUAL AND COMMINGLED) (WITH OR WITHOUT AZIDIOL) 03.02.2012 RECONDUCTION/RENEWAL: 29.06.2021 15.12.2023 EXTENSION: 04.08.2022 03.02.2028 Validation study done in accordance with the NF VALIDATION specific validation protocol for antibiotic residue detection methods (Rev. 0 dated 31.01.2005)"
+    "raw": "Antibiotiques"
   },
   "reference_method": {
     "standard": null,
-    "raw": null
+    "raw": "Détection des résidus d’antibiotiques dans le lait de vache mélangé et individuel"
   },
   "validation_scope": {
-    "raw": "",
+    "raw": "(not published on the organism listing page; see certificate PDF)",
     "matrices": [],
     "excluded_matrices": [],
     "max_test_portion_g": null
@@ -49,10 +49,13 @@
   },
   "performance": null,
   "traceability": {
-    "source_document_type": "certificate_list_pdf",
-    "source_document_url": null,
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/antibiotiques/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
-    "notes": "No matching live organism-page record found; fields limited to what the bootstrap PDF-list import captured."
+    "extraction_confidence": "high",
+    "notes": null,
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/DSM-28-02-02-12-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°16_2023-12_Summary-report_DSM_DelvotestT.pdf",
+    "organism_page_last_updated_raw": "21 juillet 2026"
   }
 }

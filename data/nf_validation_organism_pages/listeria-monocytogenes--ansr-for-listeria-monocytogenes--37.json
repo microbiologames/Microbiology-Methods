@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "ANSR® for Listeria monocytogenes",
+  "manufacturer": {
+    "name": "NEOGEN Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Détection des Listeria monocytogenes"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-04-03-16-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°04_ANSR_Lmono_2023_12_SR_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "19 août 2026"
+}
