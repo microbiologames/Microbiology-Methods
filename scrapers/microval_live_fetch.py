@@ -39,7 +39,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin
 
 from playwright.sync_api import sync_playwright
 
@@ -168,11 +168,12 @@ def extract_detail_fields(html: str) -> dict:
     }
 
 
-def fetch_certificate_detail(browser, cert_nr: str, debug_dir: Path, timeout_ms: int) -> dict:
-    # Takes an already-launched browser (one launch reused across all 32
-    # real certificates, rather than relaunching Chromium per certificate)
-    # and opens a fresh page/tab per call.
-    url = DETAIL_URL_TEMPLATE.format(cert_nr=cert_nr)
+def fetch_certificate_detail(browser, cert_nr: str, url: str, debug_dir: Path, timeout_ms: int) -> dict:
+    # Takes an already-launched browser (one launch reused across all real
+    # certificates, rather than relaunching Chromium per certificate) and
+    # opens a fresh page/tab per call. `url` is the row's own captured
+    # detail-page link when there was one (see extract_table_rows), since
+    # that link's URL scheme isn't the same for every MicroVal list page.
     page = browser.new_page(user_agent="microbiology-methods-bot/1.0")
     try:
         page.goto(url, timeout=timeout_ms, wait_until="networkidle")
@@ -193,8 +194,19 @@ def extract_table_rows(html: str):
     consistent 6-column header: Analyte / Certificate number / Test kit
     name / Supplier - manufacturer / Expiry date / Status.
 
-    Returns (header_cells, data_rows) where data_rows is a list of lists of
-    per-<td> cell text (structure preserved, not joined into one string).
+    Returns (header_cells, data_rows, row_links) where data_rows is a list
+    of lists of per-<td> cell text (structure preserved, not joined into
+    one string) and row_links is a same-length list of each row's
+    Certificate-number-cell href (or None). Capturing that href matters
+    because it turned out NOT to be uniform: confirmed against a real
+    captured view-microval-confirmation.html, that page's Certificate
+    number cell links straight to
+    "/view-microval-confirmation-details/<id>" -- a different, numeric-ID
+    URL scheme, not the "view-microval-details?cert_nr=..." pattern the
+    main view-microval list (and the project owner's own manual browsing)
+    uses. Reading the real href per row, rather than always constructing
+    one from the certificate number, is what makes the certificate-detail
+    fetch below work for both list types instead of only the first.
     A row whose cell count doesn't match the header's is kept as a single
     joined-text fallback item instead of silently mis-splitting it.
     """
@@ -215,21 +227,31 @@ def extract_table_rows(html: str):
 
     rows = soup.find_all("tr")
     if not rows:
-        return [], []
+        return [], [], []
 
     header_cells = [cell_text(c) for c in rows[0].find_all(["th", "td"])]
+    cert_col = header_cells.index("Certificate number") if "Certificate number" in header_cells else None
     data_rows = []
+    row_links = []
     for r in rows[1:]:
-        cells = [cell_text(c) for c in r.find_all(["th", "td"])]
+        raw_cells = r.find_all(["th", "td"])
+        cells = [cell_text(c) for c in raw_cells]
         if not any(cells):
             continue
         if len(cells) != len(header_cells):
             # Structure didn't match what we expected -- keep the row as a
             # single string rather than guess a misaligned split.
             data_rows.append([cell_text(r)])
+            row_links.append(None)
         else:
             data_rows.append(cells)
-    return header_cells, data_rows
+            link = None
+            if cert_col is not None:
+                a = raw_cells[cert_col].find("a", href=True)
+                if a:
+                    link = a["href"]
+            row_links.append(link)
+    return header_cells, data_rows, row_links
 
 
 def main():
@@ -250,7 +272,7 @@ def main():
         for label, url in TARGET_URLS.items():
             html, body_text, json_responses = capture_page(p, url, label, debug_dir, args.timeout_ms)
 
-            header, rows = extract_table_rows(html)
+            header, rows, row_links = extract_table_rows(html)
             print(f"[{label}] table extraction: header={header!r}, {len(rows)} data row(s); "
                   f"body text length {len(body_text)} chars.", file=sys.stderr)
 
@@ -260,7 +282,7 @@ def main():
                       f"whatever columns were actually found.", file=sys.stderr)
 
             records = []
-            for cells in rows:
+            for cells, row_link in zip(rows, row_links):
                 if len(cells) == len(header) == 6:
                     rec = dict(zip(
                         ["analyte_raw", "certificate_number", "commercial_name", "manufacturer_raw", "expiry_date_raw", "status_raw"],
@@ -271,6 +293,11 @@ def main():
                 rec["source"] = "MICROVAL"
                 rec["label"] = label
                 rec["source_page_url"] = url
+                # The row's own Certificate-number-cell link, if it had
+                # one, resolved against this page's own origin -- see
+                # extract_table_rows for why this can't just be built from
+                # the certificate number for every list page.
+                rec["detail_page_url"] = urljoin(url, row_link) if row_link else None
                 records.append(rec)
                 fname_key = re.sub(r'[^A-Za-z0-9]+', '_', rec.get("certificate_number") or f"row{len(records)}").strip('_')
                 out_path = out_dir / f"{label}--{fname_key}.json"
@@ -291,8 +318,16 @@ def main():
         detail_ok = detail_failed = 0
         for out_path, rec in detail_targets:
             cert_nr = rec["certificate_number"]
+            # Prefer the row's own captured detail link (real evidence: on
+            # a first real run, every certificate from the "view-microval-
+            # confirmation" list page came back with no detail fields at
+            # all, because that page's rows link to a completely different
+            # URL scheme -- /view-microval-confirmation-details/<id> -- not
+            # the cert_nr-based one below, which is only what the main
+            # view-microval list actually uses).
+            url = rec.get("detail_page_url") or DETAIL_URL_TEMPLATE.format(cert_nr=cert_nr)
             try:
-                detail = fetch_certificate_detail(browser, cert_nr, debug_dir, args.timeout_ms)
+                detail = fetch_certificate_detail(browser, cert_nr, url, debug_dir, args.timeout_ms)
             except Exception as exc:  # noqa: BLE001 -- one bad detail page must not abort the whole batch
                 print(f"[{cert_nr}] detail fetch error: {exc}", file=sys.stderr)
                 detail_failed += 1
