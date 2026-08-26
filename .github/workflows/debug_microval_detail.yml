@@ -1,0 +1,48 @@
+name: Debug -- dump MicroVal certificate detail pages
+
+# Temporary, manual-only diagnostic tool. The project owner found (by
+# navigating the live site manually) that MicroVal exposes a per-
+# certificate detail view -- https://nen.bettywebblocks.com/
+# view-microval-details?cert_nr=X&r_name=MicroVal -- with real fields
+# (Matrices, Reference method, dates) and sometimes a direct link to the
+# actual study/summary report PDF, none of which microval_live_fetch.py
+# currently captures (it only reads the list-page table). This workflow
+# dumps the real rendered HTML/screenshot/links for a sample of real
+# certificates -- one confirmed to have no report (2011LR41, per the
+# owner's own screenshot), one confirmed to have one (2010LR38), plus a
+# couple more for structural diversity -- so the real extractor is built
+# against actual DOM structure. Not part of the regular data pipeline --
+# delete once that extractor is done.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Dump certificate detail pages
+        run: |
+          python3 scrapers/debug_dump_microval_detail.py --debug-dir /tmp/microval_detail_debug \
+            2011LR41 2010LR38 2008LR02 2008LR11
+
+      - name: Upload debug artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microval-detail-debug
+          path: /tmp/microval_detail_debug
