@@ -370,7 +370,12 @@ def extract_method_comparison_by_category(pdf_path) -> list:
                 continue
             if re.match(r'^\d+$', first):
                 flush()
-                current_category = values[1] if len(values) > 1 else None
+                name = values[1] if len(values) > 1 else None
+                # Confirmed against a real report: a digit-prefixed row can
+                # itself read like "1 Total ..." (some other row's aggregate
+                # bleeding into what looks like a category id here), which
+                # would otherwise surface "Total" as a fake category name.
+                current_category = None if name and name.strip().lower() == "total" else name
                 current_row = values
             elif first.lower() == "total":
                 current_row = values
