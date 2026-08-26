@@ -346,10 +346,35 @@ web/                                   static frontend (heatmap + drill-down), r
       `validation_scope.matrices` genuinely lists the (narrower) tested
       matrices directly — that's why it's used as the fallback but not the
       primary source. The real "which categories were actually tested"
-      answer lives in the mined validation-study data, which today only
-      exists for the one hand-mined TEMPO EB report — the heatmap shows
-      this honestly (a "Not yet mined" bucket) rather than pretending the
-      certificate's BRF scope is a matrix breakdown.
+      answer lives in the mined validation-study data, shown honestly (a
+      "Not yet mined" bucket) for the records that aren't there yet.
+
+      **The tested-food-category axis is normalized onto ISO 16140-2:2016
+      Annex A's own fixed 18-category taxonomy** (`pipeline/
+      food_categories.py`), not left as raw mined text — prompted directly
+      by the project owner reviewing the heatmap and finding it "pas
+      propre du tout": real reports turned out to use ~108 distinct
+      free-text category strings for what's really at most 18 categories
+      ("Dairy products" / "Milk & Dairy products" / "Raw dairy products" /
+      "Raw milk and dairy products" / ... all the same category), making
+      the axis reshuffle unpredictably as more reports got mined. The 18
+      categories and their exact English/French names come from the
+      project owner's own copy of Annex A's Table A.1 (both language
+      editions, transcribed into `pipeline/food_categories.py`, not
+      reconstructed from memory), and `normalize_food_category()` keyword-
+      matches each raw label onto one of them: 232/244 real category
+      mentions (95%) resolved automatically against the current mined
+      data, and the remaining 12 (bare labels naming no recognizable food
+      family, e.g. "Miscellaneous", or a truncated extraction artifact
+      like a lone "Production") are left out and logged rather than
+      guessed. Where a raw label doesn't state ISO 16140-2's raw/
+      ready-to-eat split explicitly (most don't — reports often just say
+      "Meat products"), it defaults to that family's raw/unprocessed Annex
+      A category, a documented assumption, not a certainty. The heatmap's
+      tested-food-category axis now always shows all 18 Annex A columns
+      (plus "Not yet mined"), even ones with zero methods yet — a stable,
+      comparable column set instead of one that only shows whatever
+      happens to have data today.
 
       Also worth recording: building this surfaced a real pre-existing data
       bug (unrelated to tonight's live-fetch work) — 3 STEC certificates

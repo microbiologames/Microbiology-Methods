@@ -6,6 +6,7 @@ const state = {
   search: "",
   selected: null, // { organism, category }
   methods: [],
+  foodCategories: [], // ISO 16140-2 Annex A's fixed category list, in Annex A order
 };
 
 function labelize(s) {
@@ -23,6 +24,7 @@ async function init() {
   const resp = await fetch("data.json");
   const data = await resp.json();
   state.methods = data.methods;
+  state.foodCategories = data.food_categories || [];
 
   document.getElementById("axis-toggle").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-axis]");
@@ -99,11 +101,19 @@ function render() {
   }
 
   const organisms = [...orgCounts.keys()].sort((a, b) => orgCounts.get(b) - orgCounts.get(a));
-  let categories = [...catSet].sort((a, b) => {
-    if (a === NOT_MINED_LABEL) return 1;
-    if (b === NOT_MINED_LABEL) return -1;
-    return a.localeCompare(b);
-  });
+  let categories;
+  if (state.axis === "tested_categories") {
+    // Fixed column set (ISO 16140-2 Annex A's own 18 categories, in Annex
+    // A's order) rather than whatever subset happens to have data today --
+    // the whole point of normalizing onto Annex A server-side is a stable,
+    // comparable set of columns instead of one that reshuffles as more
+    // reports get mined. Categories with zero methods still show, empty --
+    // that's a real signal (which Annex A categories are under-tested),
+    // not clutter to hide.
+    categories = [...state.foodCategories, NOT_MINED_LABEL];
+  } else {
+    categories = [...catSet].sort((a, b) => a.localeCompare(b));
+  }
 
   renderAxisNote(methods);
   renderHeatmap(organisms, categories, grid);

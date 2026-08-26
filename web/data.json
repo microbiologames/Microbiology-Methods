@@ -1,6 +1,26 @@
 {
   "generated_from": "data/methods",
   "count": 174,
+  "food_categories": [
+    "Raw milk and dairy products",
+    "Heat-processed milk and dairy products",
+    "Raw meat and ready-to-cook meat products (except poultry)",
+    "Ready-to-eat, ready-to-reheat meat products",
+    "Raw poultry and ready-to-cook poultry products",
+    "Ready-to-eat, ready-to-reheat meat poultry products",
+    "Eggs and egg products (derivates)",
+    "Raw and ready-to-cook fish and seafoods (unprocessed)",
+    "Ready-to-eat, ready-to-reheat fishery products",
+    "Fresh produce and fruits",
+    "Processed fruits and vegetables",
+    "Dried cereals, fruits, nuts, seeds and vegetables",
+    "Infant formula and infant cereals",
+    "Chocolate, bakery products and confectionary",
+    "Multi-component foods or meal components",
+    "Pet food and animal feed",
+    "Environmental samples (food or feed production)",
+    "Primary production samples (PPS)"
+  ],
   "methods": [
     {
       "id": "nf-validation--3m-01-01-09-89",
@@ -97,11 +117,11 @@
       "status": "active",
       "current_expiry": "2030-06-09",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood products",
-        "Vegetable",
-        "Pet food"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Pet food and animal feed"
       ],
       "has_performance_data": true,
       "record": {
@@ -242,11 +262,11 @@
       "status": "active",
       "current_expiry": "2030-06-09",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Egg products and egg-based products and pastries",
-        "Seafood products",
-        "Vegetable"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -385,11 +405,11 @@
       "status": "active",
       "current_expiry": "2030-06-09",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Egg products and egg-based products and pastries",
-        "Seafood products",
-        "Vegetable"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -528,11 +548,11 @@
       "status": "unknown",
       "current_expiry": null,
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood",
-        "Vegetables",
-        "Egg products and composite"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components"
       ],
       "has_performance_data": true,
       "record": {
@@ -660,13 +680,13 @@
       "status": "active",
       "current_expiry": "2029-09-10",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood products",
-        "Vegetables",
-        "Miscellaneous and Egg- based products",
-        "Feed stuff",
-        "Production environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -913,13 +933,13 @@
       "status": "active",
       "current_expiry": "2029-06-14",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood",
-        "Vegetables",
-        "Egg products and composite food",
-        "Pet food",
-        "Environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -1458,11 +1478,9 @@
       "status": "active",
       "current_expiry": "2028-11-25",
       "tested_categories": [
-        "Ready-To-Eat & Ready-To-Reheat Foods",
-        "Meat products",
-        "Milks & dairy products",
-        "Seafood and vegetables (Protocol 1 for type a Protocol 2 for types b & c)",
-        "Specific ingredients and foods"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)"
       ],
       "has_performance_data": true,
       "record": {
@@ -1662,8 +1680,8 @@
       "status": "active",
       "current_expiry": "2029-05-18",
       "tested_categories": [
-        "Raw dairy products",
-        "Raw fruits and vegetables"
+        "Raw milk and dairy products",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -1997,11 +2015,11 @@
       "status": "active",
       "current_expiry": "2027-12-01",
       "tested_categories": [
-        "Meat products (except raw poultry)",
-        "Dairy products",
-        "Fishery products",
-        "Vegetable products",
-        "Production environmental samples"
+        "Raw milk and dairy products",
+        "Raw poultry and ready-to-cook poultry products",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -2114,11 +2132,11 @@
       "status": "active",
       "current_expiry": "2027-12-01",
       "tested_categories": [
-        "Meat products (except raw poultry meat)",
-        "Dairy products",
-        "Fishery products",
-        "Vegetables products",
-        "Production environmental samples"
+        "Raw milk and dairy products",
+        "Raw poultry and ready-to-cook poultry products",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -2729,12 +2747,11 @@
       "status": "active",
       "current_expiry": "2030-06-09",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood and vegetables",
-        "Miscellaneous",
-        "Pet food",
-        "Cocoa and chocolate (up to 375g)"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Chocolate, bakery products and confectionary",
+        "Pet food and animal feed"
       ],
       "has_performance_data": true,
       "record": {
@@ -3127,12 +3144,11 @@
       "status": "active",
       "current_expiry": "2030-09-18",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood and vegetables",
-        "Miscellaneous",
-        "Pet food",
-        "Powdered infant formula with and without probiotics including milk powders (up to 375 g)"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Infant formula and infant cereals",
+        "Pet food and animal feed"
       ],
       "has_performance_data": true,
       "record": {
@@ -3434,13 +3450,12 @@
       "status": "active",
       "current_expiry": "2029-09-20",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood and vegetables",
-        "Miscellaneous",
-        "Feed products",
-        "Environmental samples",
-        "Cocoa and chocolate (375g)"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Chocolate, bakery products and confectionary",
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -3914,12 +3929,12 @@
       "status": "active",
       "current_expiry": "2026-12-14",
       "tested_categories": [
-        "Meat and meat products",
-        "Dairy products",
-        "Vegetables",
-        "Fish and seafood",
-        "Egg products",
-        "Pet food"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Pet food and animal feed"
       ],
       "has_performance_data": true,
       "record": {
@@ -4380,9 +4395,9 @@
       "status": "active",
       "current_expiry": "2030-05-21",
       "tested_categories": [
-        "Raw and processed poultry products",
-        "Raw meat and meat- based products",
-        "Production environmental samples"
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw poultry and ready-to-cook poultry products",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -4489,9 +4504,8 @@
       "status": "active",
       "current_expiry": "2030-05-21",
       "tested_categories": [
-        "Raw meat products",
-        "Meat based products",
-        "Production environmental samples"
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -4847,10 +4861,8 @@
       "status": "active",
       "current_expiry": "2026-11-27",
       "tested_categories": [
-        "Milk powders and ingredients, infant formula and infant cereals without probiotics",
-        "Infant formula and infant cereals with probiotics",
-        "Milk powders, ingredients, infant formula and infant cereals with or without probiotics 375g",
-        "Production environmental samples"
+        "Infant formula and infant cereals",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -4958,15 +4970,13 @@
       "status": "active",
       "current_expiry": "2028-06-30",
       "tested_categories": [
-        "Ready to eat and ready to reheat up to 25 g",
-        "Meat products up to 25 g",
-        "Dairy products up to 25 g",
-        "Vegetables and seafood samples up to 25 g",
-        "Ingredients and specific products up to 25 g",
-        "Pet food up to 25 g",
-        "Environmental samples up to 25 g or mL or surface",
-        "Cocoa and chocolates up to 375 g",
-        "Milk powders, infant formula with or without probiotics up to 375 g"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Infant formula and infant cereals",
+        "Chocolate, bakery products and confectionary",
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -5371,10 +5381,7 @@
       "status": "active",
       "current_expiry": "2030-03-23",
       "tested_categories": [
-        "Milk powders and ingredients, infant formula and infant cereals without probiotics (up to 25 g)",
-        "Infant formula and infant cereals with probiotics (up to 25 g)",
-        "Milk powders, ingredients, infant formula and infant cereals with or without probiotics (up to 375 g)",
-        "Production"
+        "Infant formula and infant cereals"
       ],
       "has_performance_data": true,
       "record": {
@@ -5626,12 +5633,12 @@
       "status": "active",
       "current_expiry": "2027-11-28",
       "tested_categories": [
-        "Composite foods",
-        "Meat products",
-        "Dairy products",
-        "Fishery products",
-        "Vegetables",
-        "Environmental production samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -6011,8 +6018,8 @@
       "status": "active",
       "current_expiry": "2027-10-07",
       "tested_categories": [
-        "Meat products",
-        "Dairy products"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)"
       ],
       "has_performance_data": true,
       "record": {
@@ -6578,12 +6585,12 @@
       "status": "active",
       "current_expiry": "2027-09-15",
       "tested_categories": [
-        "Composite foods",
-        "Meat products",
-        "Dairy products",
-        "Fishery products",
-        "Vegetables",
-        "Environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -6707,12 +6714,12 @@
       "status": "active",
       "current_expiry": "2029-09-28",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood products",
-        "Vegetable products",
-        "Composite foods",
-        "Environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -7141,11 +7148,10 @@
       "status": "active",
       "current_expiry": "2029-04-07",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Seafood products",
-        "Vegetal products",
-        "RTE-RTRH"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -7345,12 +7351,12 @@
       "status": "active",
       "current_expiry": "2027-12-15",
       "tested_categories": [
-        "Composite foods",
-        "Meat products",
-        "Dairy products",
-        "Fishery products",
-        "Vegetables",
-        "Production environmental Samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -7472,11 +7478,11 @@
       "status": "active",
       "current_expiry": "2027-05-24",
       "tested_categories": [
-        "Composite foods",
-        "Meat products",
-        "Dairy products",
-        "Fishery products",
-        "Vegetables"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components"
       ],
       "has_performance_data": true,
       "record": {
@@ -7599,10 +7605,10 @@
       "status": "active",
       "current_expiry": "2027-10-27",
       "tested_categories": [
-        "Meat products",
-        "Dairy products",
-        "Fruits and vegetables",
-        "Composite foods"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components"
       ],
       "has_performance_data": true,
       "record": {
@@ -7704,7 +7710,7 @@
       "status": "active",
       "current_expiry": "2028-06-30",
       "tested_categories": [
-        "Raw meat 25 g"
+        "Raw meat and ready-to-cook meat products (except poultry)"
       ],
       "has_performance_data": true,
       "record": {
@@ -7800,12 +7806,12 @@
       "status": "active",
       "current_expiry": "2029-01-26",
       "tested_categories": [
-        "Composite",
-        "Meat",
-        "Dairy",
-        "Vegetables",
-        "Seafood",
-        "Production environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -8779,12 +8785,12 @@
       "status": "active",
       "current_expiry": "2029-01-26",
       "tested_categories": [
-        "Composite foods / Ready-to-eat and ready-to-reheat",
-        "Meat Products",
-        "Milk & Dairy products",
-        "Vegetables",
-        "Seafood and fishery products",
-        "Production environmental Samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -8901,12 +8907,12 @@
       "status": "active",
       "current_expiry": "2029-03-14",
       "tested_categories": [
-        "Composite foods / Ready- to-eat and ready-to-reheat",
-        "Meat Products",
-        "Milk & Dairy products",
-        "Vegetables",
-        "Seafood and fishery products",
-        "Production environmental Samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -9023,9 +9029,9 @@
       "status": "active",
       "current_expiry": "2027-11-28",
       "tested_categories": [
-        "Raw meat, ready-to-eat and ready-to-reheat meat (except poultry) 10 h",
-        "Raw milk and raw milk- based products 10 h",
-        "Fresh produces and fruits 16 h"
+        "Raw milk and dairy products",
+        "Ready-to-eat, ready-to-reheat meat poultry products",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -9124,11 +9130,9 @@
       "status": "active",
       "current_expiry": "2029-01-07",
       "tested_categories": [
-        "Ready-to-eat and ready-to-reheat",
-        "Meat products",
-        "Milk and dairy products",
-        "Vegetables. fruits and seafood",
-        "Ingredients and specific products",
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
         "Pet food and animal feed"
       ],
       "has_performance_data": true,
@@ -9314,9 +9318,9 @@
       "status": "active",
       "current_expiry": "2026-12-16",
       "tested_categories": [
-        "Raw poultry meats (25 g)",
-        "Poultry environmental production samples",
-        "Poultry primary production samples (PPS)"
+        "Raw poultry and ready-to-cook poultry products",
+        "Environmental samples (food or feed production)",
+        "Primary production samples (PPS)"
       ],
       "has_performance_data": true,
       "record": {
@@ -11946,12 +11950,12 @@
       "status": "active",
       "current_expiry": "2026-11-28",
       "tested_categories": [
-        "Composite",
-        "Meat products",
-        "Dairy products",
-        "Vegetables and seafood",
-        "Egg products and ingredients",
-        "Feed products"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Multi-component foods or meal components",
+        "Pet food and animal feed"
       ],
       "has_performance_data": true,
       "record": {
@@ -12080,9 +12084,9 @@
       "status": "active",
       "current_expiry": "2028-03-28",
       "tested_categories": [
-        "Raw beef meat",
-        "Raw milk",
-        "Fruits and vegetables"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -12343,8 +12347,8 @@
       "status": "active",
       "current_expiry": "2030-07-02",
       "tested_categories": [
-        "Raw beef meat",
-        "Vegetable products"
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -12661,9 +12665,9 @@
       "status": "active",
       "current_expiry": "2029-01-11",
       "tested_categories": [
-        "Raw beef meat",
-        "Raw dairy products",
-        "Vegetables"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -12987,12 +12991,12 @@
       "status": "active",
       "current_expiry": "2028-12-19",
       "tested_categories": [
-        "Raw and heat processed milk and dairy products",
-        "Meat and poultry",
-        "Raw and processed fishery products",
-        "Fresh and processed fruits and vegetables",
-        "Multicomponent foods or meal components",
-        "Production environmental samples"
+        "Heat-processed milk and dairy products",
+        "Raw poultry and ready-to-cook poultry products",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Processed fruits and vegetables",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -13326,12 +13330,12 @@
       "status": "active",
       "current_expiry": "2028-12-19",
       "tested_categories": [
-        "Raw and heat processed milk and dairy products",
-        "Meat and poultry",
-        "Raw and processed fishery products",
-        "Fresh and processed fruits and vegetables",
-        "Multicomponent foods or meal components",
-        "Production environmental samples"
+        "Heat-processed milk and dairy products",
+        "Raw poultry and ready-to-cook poultry products",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Processed fruits and vegetables",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -13468,11 +13472,10 @@
       "status": "active",
       "current_expiry": "2029-03-17",
       "tested_categories": [
-        "Dairy products",
-        "Multicomponent foods",
-        "Fruits and vegetables",
-        "Bakery products",
-        "Ready-to-eat, ready-to-reheat foods"
+        "Raw milk and dairy products",
+        "Fresh produce and fruits",
+        "Chocolate, bakery products and confectionary",
+        "Multi-component foods or meal components"
       ],
       "has_performance_data": true,
       "record": {
@@ -13682,12 +13685,12 @@
       "status": "active",
       "current_expiry": "2029-06-18",
       "tested_categories": [
-        "Composite foods",
-        "Meat products",
-        "Dairy products",
-        "Seafood",
-        "Vegetables",
-        "Production environmental samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -13806,12 +13809,12 @@
       "status": "active",
       "current_expiry": "2027-10-14",
       "tested_categories": [
-        "Raw beef and pork meat (seasoned or not)",
         "Raw milk and dairy products",
-        "Vegetables",
-        "Environmental Samples",
-        "Composite foods and cooked deli meats",
-        "Pasteurised milk and dairy products"
+        "Heat-processed milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -14010,12 +14013,12 @@
       "status": "active",
       "current_expiry": "2030-10-07",
       "tested_categories": [
-        "Composite foods / Ready- to-eat and ready-to-reheat",
-        "Meat products",
-        "Milk & dairy products",
-        "Vegetables",
-        "Seafood and fishery products",
-        "Environmental Samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -14132,12 +14135,12 @@
       "status": "active",
       "current_expiry": "2027-10-23",
       "tested_categories": [
-        "Composite foods / Ready-to-eat and ready-to-reheat",
-        "Meat products",
-        "Milk & dairy products",
-        "Vegetables",
-        "Seafood and fish products",
-        "Environmental Samples"
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -14328,13 +14331,13 @@
       "status": "active",
       "current_expiry": "2029-02-03",
       "tested_categories": [
-        "Meat products",
-        "Poultry meat",
-        "Dairy products",
-        "Vegetables and seafood products",
-        "Egg products",
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw poultry and ready-to-cook poultry products",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
         "Pet food and animal feed",
-        "Production environmental samples"
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -14546,8 +14549,8 @@
       "current_expiry": null,
       "tested_categories": [
         "Raw milk and dairy products",
-        "Raw, RTC, RTRH and RTE poultry",
-        "Production environmental samples"
+        "Ready-to-eat, ready-to-reheat meat poultry products",
+        "Environmental samples (food or feed production)"
       ],
       "has_performance_data": true,
       "record": {
@@ -15130,8 +15133,8 @@
       "status": "active",
       "current_expiry": "2027-03-26",
       "tested_categories": [
-        "Raw beef meat (8 h)",
-        "Vegetables and fruits (20h)"
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits"
       ],
       "has_performance_data": true,
       "record": {
@@ -15308,10 +15311,10 @@
       "status": "active",
       "current_expiry": "2030-01-25",
       "tested_categories": [
-        "Raw meat pork and poultry",
-        "RTE meat pork and poultry",
-        "Environmental samples",
-        "Primary production samples"
+        "Raw poultry and ready-to-cook poultry products",
+        "Ready-to-eat, ready-to-reheat meat poultry products",
+        "Environmental samples (food or feed production)",
+        "Primary production samples (PPS)"
       ],
       "has_performance_data": true,
       "record": {
@@ -15421,8 +15424,8 @@
       "status": "active",
       "current_expiry": "2028-11-09",
       "tested_categories": [
-        "Raw meat products (excluding poultry)",
-        "Dairy products"
+        "Raw milk and dairy products",
+        "Raw poultry and ready-to-cook poultry products"
       ],
       "has_performance_data": true,
       "record": {
