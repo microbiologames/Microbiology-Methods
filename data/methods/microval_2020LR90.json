@@ -1,0 +1,56 @@
+{
+  "id": "microval--2020lr90",
+  "source": "MICROVAL",
+  "source_certificate_number": "2020LR90",
+  "commercial_name": "foodproof Enterobacteriaceae plus Salmonella Detection Lyokit - 5'Nuclease",
+  "manufacturer": {
+    "name": "Hygiena Diagnostics GmbH",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.; Enterobacteriaceae",
+    "raw": "Salmonella spp.; Enterobacteriaceae"
+  },
+  "reference_method": {
+    "standard": "ISO 21528-1: 2017, ISO 6579-1: 2017 & ISO 6579-1: 2017/A1:2020",
+    "raw": "ISO 21528-1: 2017, ISO 6579-1: 2017 & ISO 6579-1: 2017/A1:2020"
+  },
+  "validation_scope": {
+    "raw": "Infant cereals, Infant formula with or without probiotics and ingredients , Production environmental samples",
+    "matrices": [
+      "Infant cereals",
+      "Infant formula with or without probiotics and ingredients",
+      "Production environmental samples"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2022-03-10",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2030-03-09",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35014/N_379__TC__2020LR90_-_Foodproof_EB_plus_Salmonella_-_Summary_report_V2.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-03-2030'. Study report available for further mining."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Somatic cell count",
+  "certificate_number": "2015LR57",
+  "commercial_name": "SomaScope LFC and Smart",
+  "manufacturer_raw": "Delta Instruments B.V.",
+  "expiry_date_raw": "09-04-2021",
+  "status_raw": "Not renewed",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2015LR57&r_name=MicroVal",
+  "matrices_raw": "Raw cow´s milk",
+  "reference_method_raw": "ISO 13366-1:2008 [IDF 148-1:2008]",
+  "first_approval_date_raw": "10-04-2017",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/18004/2015LR57_-_SomaScope_LFC_and_Smart_-_Certificate__2017-2021_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/18004/2015LR57_-_SomaScope_-_Summary_report.pdf"
+}

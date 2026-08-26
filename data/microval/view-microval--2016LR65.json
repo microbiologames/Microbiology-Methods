@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Total viable count",
+  "certificate_number": "2016LR65",
+  "commercial_name": "BacSomatic™ for enumeration of total bacterial count in raw cow’s milk",
+  "manufacturer_raw": "Foss Analytical A/S",
+  "expiry_date_raw": "18-03-2030",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2016LR65&r_name=MicroVal",
+  "matrices_raw": "Raw cow´s milk",
+  "reference_method_raw": "EN-ISO 4833-1:2013",
+  "first_approval_date_raw": "19-03-2018",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/20425/certificate_2016LR65_renewal_2026.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/20425/2016LR65_-_BacSomatic_TBC_-_Summary_Report.pdf"
+}

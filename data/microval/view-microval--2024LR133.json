@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Total Bacterial Count",
+  "certificate_number": "2024LR133",
+  "commercial_name": "BactoScanTM 5",
+  "manufacturer_raw": "Foss Analytical A/S",
+  "expiry_date_raw": "09-01-2029",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2024LR133&r_name=MicroVal",
+  "matrices_raw": "Raw cow milk, raw sheep milk, raw goat milk",
+  "reference_method_raw": "ISO 4833‐1:2013",
+  "first_approval_date_raw": "10-01-2025",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/48459/2024LR133_-_BactoScan_5_-_Cetificate_-_2025rev_1.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/48459/N_186__TC__Foss_Bactoscan_5_-_2024LR133_-_MCS_report_Cow_s_Milk_V2.pdf"
+}

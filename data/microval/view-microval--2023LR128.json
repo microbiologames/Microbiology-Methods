@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Enterobacteriaceae",
+  "certificate_number": "2023LR128",
+  "commercial_name": "GENE-UP® Enterobacterales (EB)",
+  "manufacturer_raw": "BioMérieux S.A. - Marcy L'Etoile",
+  "expiry_date_raw": "17-03-2030",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2023LR128&r_name=MicroVal",
+  "matrices_raw": "Environmental samples",
+  "reference_method_raw": "ISO 21528-1:2017",
+  "first_approval_date_raw": "18-03-2026",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/51822/Certificate_-_2023LR128_-_GENE-up_EB_-__2026_-_2030_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/51822/N_479_TC__2023LR128_-_Gene-Up_EB_-_Summary_report_V1.pdf"
+}

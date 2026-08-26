@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Total viable count",
+  "certificate_number": "2021LR98",
+  "commercial_name": "BactoCount IBCm 3.0",
+  "manufacturer_raw": "Bentley Instruments, Inc",
+  "expiry_date_raw": "01-12-2026",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2021LR98&r_name=MicroVal",
+  "matrices_raw": "Raw cow milk, raw sheep milk, raw goat milk",
+  "reference_method_raw": "ISO 4833-1:2013, ISO 13366-1:2008",
+  "first_approval_date_raw": "02-12-2022",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/39163/2021LR98_-_BactoCount_IBCm_3.0_-_extended_certificate__2022-2026_.pdf",
+  "summary_report_pdf_url": null
+}

@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Somatic cell count",
+  "certificate_number": "2015LR55",
+  "commercial_name": "Fossomatic TM FC",
+  "manufacturer_raw": "Foss Analytical A/S",
+  "expiry_date_raw": "20-10-2028",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2015LR55&r_name=MicroVal",
+  "matrices_raw": "Raw cow´s milk",
+  "reference_method_raw": "ISO 13366-2:2008",
+  "first_approval_date_raw": "21-10-2016",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/17425/2015LR55_-_Fossomatic_FC_-_Certificate__2016-2028_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17425/2015_LR55_Summary_of_the_MicroVal_validation_Fossomatic_cow_milk.pdf"
+}

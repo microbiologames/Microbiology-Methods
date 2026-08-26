@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Total viable count",
+  "certificate_number": "2015LR60",
+  "commercial_name": "AMP-6000 TMAC",
+  "manufacturer_raw": "SY-LAB Geräte GmbH.",
+  "expiry_date_raw": "09-12-2022",
+  "status_raw": "Not renewed",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2015LR60&r_name=MicroVal",
+  "matrices_raw": "Raw meats, Fruit and vegetables, Multi-component foods",
+  "reference_method_raw": "ISO 4833-1:2013",
+  "first_approval_date_raw": "10-12-2018",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/22337/2015LR60_-_Sylab_AMP_6000_TMAC-_Certificate__2018-2022_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22337/2015LR60_Sylab_TMAC_MCS_ILS_summary_report.pdf"
+}

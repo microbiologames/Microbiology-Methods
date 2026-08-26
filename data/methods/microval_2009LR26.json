@@ -1,0 +1,54 @@
+{
+  "id": "microval--2009lr26",
+  "source": "MICROVAL",
+  "source_certificate_number": "2009LR26",
+  "commercial_name": "SimPlate Total Plate Count Color Indicator method (TPC-CI)",
+  "manufacturer": {
+    "name": "MilliporeSigma",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Total viable count",
+    "raw": "Total viable count"
+  },
+  "reference_method": {
+    "standard": "EN-ISO 4833:2003, EN-ISO 4833-1:2013",
+    "raw": "EN-ISO 4833:2003, EN-ISO 4833-1:2013"
+  },
+  "validation_scope": {
+    "raw": "All food categories",
+    "matrices": [
+      "All food categories"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2010-03-31",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2022-03-30",
+    "status": "expired"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17075/2009LR26_-_SimPlate_TPC-CI_-_SUMMARY_REPORT__MicroVal_-_Version_1_.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '30-03-2022'. Study report available for further mining."
+  }
+}

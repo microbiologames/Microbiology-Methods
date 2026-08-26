@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Escherichia coli O157",
+  "certificate_number": "2015LR59",
+  "commercial_name": "GENE-UP® E. coli O157:H7",
+  "manufacturer_raw": "BioMérieux S.A. - Marcy L'Etoile",
+  "expiry_date_raw": "05-04-2029",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2015LR59&r_name=MicroVal",
+  "matrices_raw": "Fresh and frozen raw meats, cured and fermented meats, vegetables and environmental samples using a general protocol, raw dairy products using a specific protocol and raw meats (except poultry) using a short protocol (25 g and 375 g sample size)",
+  "reference_method_raw": "ISO 16654:2001",
+  "first_approval_date_raw": "06-04-2017",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/17980/certificate_2015LR59_renewal_2025.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17980/2015LR59-GENE_UP_Ecoli_O157H7_SUMMARY_REPORT__Version_3_.pdf"
+}

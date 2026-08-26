@@ -1,0 +1,55 @@
+{
+  "id": "microval--2022lr111",
+  "source": "MICROVAL",
+  "source_certificate_number": "2022LR111",
+  "commercial_name": "SureTect Salmonella spp. PCR Assay",
+  "manufacturer": {
+    "name": "Thermo Fisher Scientific",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "ISO 6579-1: 2017",
+    "raw": "ISO 6579-1: 2017"
+  },
+  "validation_scope": {
+    "raw": "Environmental samples, A broad range of foods",
+    "matrices": [
+      "Environmental samples",
+      "A broad range of foods"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2023-03-24",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2027-03-23",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40723/Thermo_SureTect_Salmonella_Summary_Report_MicroVal_V2__Nov_2023_.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '23-03-2027'. Study report available for further mining."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "microval--2015lr51",
+  "source": "MICROVAL",
+  "source_certificate_number": "2015LR51",
+  "commercial_name": "MC-Media Pad™ YM",
+  "manufacturer": {
+    "name": "JNC Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Yeasts and Moulds",
+    "raw": "Yeasts and Moulds"
+  },
+  "reference_method": {
+    "standard": "ISO 21527-1:2008",
+    "raw": "ISO 21527-1:2008"
+  },
+  "validation_scope": {
+    "raw": "All food categories with water activity greater than 0,95",
+    "matrices": [
+      "All food categories with water activity greater than 0",
+      "95"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2017-10-17",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2029-10-16",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/19016/2021-147__TC__MC_Media_Pad_YM_-_2015LR51_-_revised_MCS___Ils_report_with_inclusivity-exclusivity_study.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '16-10-2029'. Study report available for further mining."
+  }
+}

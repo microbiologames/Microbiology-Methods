@@ -1,0 +1,56 @@
+{
+  "id": "microval--2024lr133",
+  "source": "MICROVAL",
+  "source_certificate_number": "2024LR133",
+  "commercial_name": "BactoScanTM 5",
+  "manufacturer": {
+    "name": "Foss Analytical A/S",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Total Bacterial Count",
+    "raw": "Total Bacterial Count"
+  },
+  "reference_method": {
+    "standard": "ISO 4833‐1:2013",
+    "raw": "ISO 4833‐1:2013"
+  },
+  "validation_scope": {
+    "raw": "Raw cow milk, raw sheep milk, raw goat milk",
+    "matrices": [
+      "Raw cow milk",
+      "raw sheep milk",
+      "raw goat milk"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2025-01-10",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2029-01-09",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/48459/N_186__TC__Foss_Bactoscan_5_-_2024LR133_-_MCS_report_Cow_s_Milk_V2.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-01-2029'. Study report available for further mining."
+  }
+}
