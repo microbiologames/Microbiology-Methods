@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2008LR14&r_name=MicroVal",
+  "matrices_raw": "Environmental samples, A broad range of foods, Animal feed, Pet food",
+  "reference_method_raw": "EN-ISO 6888-1:2021",
+  "first_approval_date_raw": "25-05-2011",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/17051/2008LR14_-_Compact_Dry_X-SA_-_Renewed_extension_certificate__2023-2027_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17051/2008LR14_-_Compact_Dry_X-SA_-_summary_report__2024_.pdf"
 }

@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval-confirmation",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval-confirmation"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-confirmation-details/21476",
+  "matrices_raw": null,
+  "reference_method_raw": "ISO 22964: 2017",
+  "first_approval_date_raw": "01-03-2018",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/21476/Certificate_2017LR72_renewal_2026.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/21476/2017LR72_-_SUMMARY_REPORT_Final_03052020.pdf"
 }
