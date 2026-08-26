@@ -94,6 +94,96 @@ def capture_page(playwright, url: str, label: str, debug_dir: Path, timeout_ms: 
 
 EXPECTED_HEADER = ["Analyte", "Certificate number", "Test kit name", "Supplier - manufacturer", "Expiry date", "Status"]
 
+# Confirmed by the project owner navigating the live site by hand, then
+# verified directly (real dumped page text + link hrefs, see git history
+# for the diagnostic script this replaced): each certificate has its own
+# detail view at this URL, reachable by clicking a row in the list page
+# (loaded inside microval.org's iframe, per the module docstring) but just
+# as reachable by navigating Playwright straight to it -- the same
+# shortcut already taken for the list page itself.
+DETAIL_URL_TEMPLATE = "https://nen.bettywebblocks.com/view-microval-details?cert_nr={cert_nr}&r_name=MicroVal"
+
+# Real fields confirmed present on every detail page dumped so far. "Study
+# report" is the one that's conditional -- present only when MicroVal has
+# actually published one (confirmed absent on a certificate the project
+# owner had already checked by hand shows no report), which is exactly
+# the signal extract_detail_fields() uses to tell "not published" apart
+# from "we failed to find it".
+_DETAIL_LABELS = [
+    "Test kit name", "Supplier - manufacturer", "Analyte", "Matrices",
+    "Reference method", "Certificate number", "First approval date",
+    "Expiry date", "Status", "Certificate issued by",
+]
+
+
+def extract_detail_fields(html: str) -> dict:
+    """Parse a MicroVal certificate detail page into a flat dict of its
+    real fields plus certificate_pdf_url / summary_report_pdf_url.
+
+    Confirmed structure (from real dumped pages, see git history for the
+    diagnostic dump this was built against): a 2-column key/value table --
+    <tr> rows each holding exactly one label cell and one value cell,
+    the same DataTables-style real-<table> rendering already confirmed for
+    the list page in extract_table_rows() above, not a div-based layout.
+    The "Certificate" row's value is always a "Download" link (the
+    certificate document itself, not validation data); "Study report" is
+    the same shape but only appears as its own row when MicroVal has
+    actually published one -- its absence is read as
+    summary_report_pdf_url=None, not as an extraction failure.
+    """
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+
+    def cell_text(cell) -> str:
+        return re.sub(r'\s+', ' ', cell.get_text(" ", strip=True)).strip()
+
+    fields = {}
+    certificate_pdf_url = None
+    summary_report_pdf_url = None
+    for row in soup.find_all("tr"):
+        cells = row.find_all(["th", "td"])
+        if len(cells) != 2:
+            continue
+        label = cell_text(cells[0])
+        link = cells[1].find("a", href=True)
+        if label == "Certificate" and link:
+            certificate_pdf_url = link["href"]
+        elif label == "Study report" and link:
+            summary_report_pdf_url = link["href"]
+        elif label in _DETAIL_LABELS:
+            fields[label] = cell_text(cells[1])
+
+    missing = [lbl for lbl in _DETAIL_LABELS if lbl not in fields]
+    if missing:
+        print(f"WARNING: detail page missing expected field(s) {missing} -- "
+              f"page structure may have changed.", file=sys.stderr)
+
+    return {
+        "matrices_raw": fields.get("Matrices"),
+        "reference_method_raw": fields.get("Reference method"),
+        "first_approval_date_raw": fields.get("First approval date"),
+        "certificate_issued_by": fields.get("Certificate issued by"),
+        "certificate_pdf_url": certificate_pdf_url,
+        "summary_report_pdf_url": summary_report_pdf_url,
+    }
+
+
+def fetch_certificate_detail(browser, cert_nr: str, debug_dir: Path, timeout_ms: int) -> dict:
+    # Takes an already-launched browser (one launch reused across all 32
+    # real certificates, rather than relaunching Chromium per certificate)
+    # and opens a fresh page/tab per call.
+    url = DETAIL_URL_TEMPLATE.format(cert_nr=cert_nr)
+    page = browser.new_page(user_agent="microbiology-methods-bot/1.0")
+    try:
+        page.goto(url, timeout=timeout_ms, wait_until="networkidle")
+    except Exception as exc:  # noqa: BLE001 -- still want to capture whatever loaded
+        print(f"[{cert_nr}] detail page navigation warning: {exc}", file=sys.stderr)
+    page.wait_for_timeout(1000)
+    html = page.content()
+    (debug_dir / f"detail--{cert_nr}.html").write_text(html, encoding="utf-8")
+    page.close()
+    return extract_detail_fields(html)
+
 
 def extract_table_rows(html: str):
     """MicroVal's real tables (confirmed against actual captured pages,
@@ -155,6 +245,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     total_certs = 0
+    written_paths = []  # (path, record) -- revisited below to merge in detail-page fields
     with sync_playwright() as p:
         for label, url in TARGET_URLS.items():
             html, body_text, json_responses = capture_page(p, url, label, debug_dir, args.timeout_ms)
@@ -182,11 +273,35 @@ def main():
                 rec["source_page_url"] = url
                 records.append(rec)
                 fname_key = re.sub(r'[^A-Za-z0-9]+', '_', rec.get("certificate_number") or f"row{len(records)}").strip('_')
-                (out_dir / f"{label}--{fname_key}.json").write_text(
-                    json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8",
-                )
+                out_path = out_dir / f"{label}--{fname_key}.json"
+                out_path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+                written_paths.append((out_path, rec))
             total_certs += len(records)
             print(f"[{label}] wrote {len(records)} certificate record(s) -> {out_dir}", file=sys.stderr)
+
+        # Second pass: the list page only ever gave 6 columns (no matrices,
+        # no report link -- see module docstring). Each certificate has its
+        # own detail page with those real fields (confirmed by the project
+        # owner navigating the live site by hand, then verified directly);
+        # fetch it for every real certificate found above and merge the
+        # result into that same record file.
+        detail_targets = [(path, rec) for path, rec in written_paths if rec.get("certificate_number")]
+        print(f"Fetching detail pages for {len(detail_targets)} certificate(s)...", file=sys.stderr)
+        browser = p.chromium.launch()
+        detail_ok = detail_failed = 0
+        for out_path, rec in detail_targets:
+            cert_nr = rec["certificate_number"]
+            try:
+                detail = fetch_certificate_detail(browser, cert_nr, debug_dir, args.timeout_ms)
+            except Exception as exc:  # noqa: BLE001 -- one bad detail page must not abort the whole batch
+                print(f"[{cert_nr}] detail fetch error: {exc}", file=sys.stderr)
+                detail_failed += 1
+                continue
+            rec.update(detail)
+            out_path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+            detail_ok += 1
+        browser.close()
+        print(f"Detail pages: {detail_ok} fetched, {detail_failed} failed.", file=sys.stderr)
 
     print(f"Done: {total_certs} MicroVal certificate(s) total -> {out_dir}. "
           f"Debug HTML/screenshots/JSON still in {debug_dir} for verification.", file=sys.stderr)

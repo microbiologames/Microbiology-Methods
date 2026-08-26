@@ -36,7 +36,17 @@ exclusivity, etc.) extracted from the underlying validation reports.
     from an iframe (`nen.bettywebblocks.com/view-microval`).
     `scrapers/microval_live_fetch.py` drives headless Chromium to render it
     and reads the real DataTables-rendered table directly (confirmed
-    real, not scraped-and-guessed, against two actual runs).
+    real, not scraped-and-guessed, against two actual runs). The list page
+    alone only gives 6 columns (no matrices, reference method, or report
+    link); a second pass fetches each certificate's own detail page
+    (`nen.bettywebblocks.com/view-microval-details?cert_nr=...`, found by
+    the project owner navigating the live site by hand) and merges in
+    `matrices_raw`, `reference_method_raw`, `first_approval_date_raw`,
+    `certificate_issued_by`, `certificate_pdf_url`, and
+    `summary_report_pdf_url` — the last is `null` when MicroVal genuinely
+    hasn't published a study report for that certificate (confirmed against
+    a real certificate with no report), recorded explicitly in
+    `traceability.notes` rather than left ambiguous.
   - AOAC-RI certificates are parsed by `scrapers/aoac_ptm_parser.py`
     (manually-supplied PDFs) or `scrapers/aoac_ptm_live_fetch.py` (crawls
     members.aoac.org's listing page, downloads each certificate PDF, and
@@ -198,6 +208,38 @@ web/                                   static frontend (heatmap + drill-down), r
       "Cronobacter spp." vs "Cronobacterspp.", etc.) — fixed with an explicit
       `get_text(" ", strip=True)` + whitespace-collapse helper, re-scraped,
       re-merged.
+- [x] MicroVal certificate detail-page mining — the list page above only
+      ever gives 6 columns; the project owner found (navigating the live
+      site by hand) that each certificate also has its own detail view at
+      `nen.bettywebblocks.com/view-microval-details?cert_nr=...&r_name=
+      MicroVal`, with real fields (Matrices, Reference method, First
+      approval date, Certificate issued by) and, conditionally, a direct
+      link to the actual study/summary report PDF — confirmed absent for a
+      certificate the owner had already checked by hand shows no report,
+      and present with a real downloadable PDF for another. A temporary
+      diagnostic (`debug_dump_microval_detail.py` run from CI, since
+      `nen.bettywebblocks.com` is proxy-blocked from this repo's dev
+      environment, same as the list page) dumped the real rendered HTML for
+      4 sample certificates, confirming a simple, consistent 2-column
+      key/value `<table>` — `microval_live_fetch.py`'s
+      `extract_detail_fields()` was built against that real structure (not
+      guessed), then verified locally against synthetic fixtures built from
+      the two real samples before being trusted in CI; the diagnostic
+      script and workflow were deleted once it was confirmed working.
+      `normalize_microval.py` now populates `reference_method`,
+      `validation_scope.matrices`, `certification.original_date`, and
+      `traceability.summary_report_pdf_url` from the merged fields, and
+      records "Study report not published on MicroVal's certificate detail
+      page" in `traceability.notes` when the field is genuinely absent —
+      distinct from a record whose detail page hasn't been fetched yet,
+      which carries no such note either way. Also fixed MicroVal's
+      `method_type.category`, previously left "other" for almost
+      everything: `infer_method_category()` recognizes real product-family/
+      technology keywords (Petrifilm, Compact Dry, Easy Plate and other
+      dehydrated-media plate formats as `culture_media`, chromogenic agar
+      lines, PCR/qPCR kit naming, ELISA/lateral-flow, MALDI-TOF, etc.),
+      correctly classifying 29/32 real certificates instead of guessing at
+      the rest.
 - [x] `.github/workflows/scrape_afnor.yml` / `scrape_microval.yml` /
       `scrape_aoac.yml` — one workflow per source, daily + manual dispatch,
       each opening its own PR. Originally one combined workflow; split once

@@ -127,7 +127,10 @@ def infer_method_category(commercial_name: str):
     return None
 
 
-def parse_expiry_date(raw: str):
+def parse_ddmmyyyy_date(raw: str):
+    """Both expiry_date_raw and first_approval_date_raw (from the detail
+    page) share this real DD-MM-YYYY format, confirmed on actual captured
+    pages -- see scrapers/microval_live_fetch.py."""
     m = re.match(r'(\d{2})-(\d{2})-(\d{4})', raw or "")
     if not m:
         return None
@@ -152,7 +155,26 @@ def compute_status(status_raw: str, current_expiry: str, today: date) -> str:
 
 def build_canonical(raw: dict, today: date) -> dict:
     cert_number = raw["certificate_number"]
-    current_expiry = parse_expiry_date(raw.get("expiry_date_raw"))
+    current_expiry = parse_ddmmyyyy_date(raw.get("expiry_date_raw"))
+    original_date = parse_ddmmyyyy_date(raw.get("first_approval_date_raw"))
+
+    matrices_raw = raw.get("matrices_raw")
+    matrices = [m.strip() for m in matrices_raw.split(",")] if matrices_raw else []
+
+    summary_report_pdf_url = raw.get("summary_report_pdf_url")
+    traceability_notes = (
+        f"MicroVal listing page label: {raw.get('label')!r}. Raw status text: "
+        f"{raw.get('status_raw')!r}, raw expiry text: {raw.get('expiry_date_raw')!r}."
+    )
+    if raw.get("certificate_pdf_url") is not None:
+        # Only certificates whose detail page was actually fetched (see
+        # microval_live_fetch.py's second pass) carry this field, so its
+        # presence is what tells "study report confirmed not published" apart
+        # from "detail page was never fetched for this record".
+        if summary_report_pdf_url is None:
+            traceability_notes += " Study report not published on MicroVal's certificate detail page."
+        else:
+            traceability_notes += " Study report available for further mining."
 
     return {
         "id": f"microval--{re.sub(r'[^a-z0-9]+', '-', cert_number.lower()).strip('-')}",
@@ -170,10 +192,13 @@ def build_canonical(raw: dict, today: date) -> dict:
             "normalized": normalize_analyte(raw.get("analyte_raw")),
             "raw": raw.get("analyte_raw"),
         },
-        "reference_method": {"standard": None, "raw": None},
+        "reference_method": {
+            "standard": raw.get("reference_method_raw"),
+            "raw": raw.get("reference_method_raw"),
+        },
         "validation_scope": {
-            "raw": "(not published on MicroVal's public certificate listing)",
-            "matrices": [],
+            "raw": matrices_raw or "(not published on MicroVal's public certificate listing)",
+            "matrices": matrices,
             "excluded_matrices": [],
             "max_test_portion_g": None,
         },
@@ -184,7 +209,7 @@ def build_canonical(raw: dict, today: date) -> dict:
             "number_of_samples": None,
         },
         "certification": {
-            "original_date": None,
+            "original_date": original_date,
             "renewal_dates": [],
             "extension_dates": [],
             "current_expiry": current_expiry,
@@ -194,12 +219,10 @@ def build_canonical(raw: dict, today: date) -> dict:
         "traceability": {
             "source_document_type": "live_web_page",
             "source_document_url": raw.get("source_page_url"),
+            "summary_report_pdf_url": summary_report_pdf_url,
             "extraction_date": None,
             "extraction_confidence": "high",
-            "notes": (
-                f"MicroVal listing page label: {raw.get('label')!r}. Raw status text: "
-                f"{raw.get('status_raw')!r}, raw expiry text: {raw.get('expiry_date_raw')!r}."
-            ),
+            "notes": traceability_notes,
         },
     }
 
