@@ -30,10 +30,29 @@
         </div>
       </div>
 
+      <div class="control-group" role="group" aria-label="Source">
+        <span class="control-label">Source</span>
+        <div class="segmented" id="source-toggle">
+          <button type="button" data-source="all" class="active">All</button>
+          <button type="button" data-source="NF-VALIDATION">NF-Validation</button>
+          <button type="button" data-source="MICROVAL">MicroVal</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">Manufacturer</span>
+        <select id="manufacturer-select"><option value="all">All manufacturers</option></select>
+      </div>
+
       <div class="control-group search-group">
         <span class="control-label">Search</span>
         <input type="search" id="search-box" placeholder="Organism or product name&hellip;" autocomplete="off">
       </div>
+    </section>
+
+    <section class="mining-progress" aria-label="Performance-data mining progress">
+      <div class="mining-progress-track"><div class="mining-progress-fill" id="mining-progress-fill"></div></div>
+      <span class="mining-progress-label" id="mining-progress-label"></span>
     </section>
 
     <p class="axis-note" id="axis-note" hidden></p>

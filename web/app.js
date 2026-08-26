@@ -3,6 +3,8 @@ const NOT_MINED_LABEL = "Not yet mined";
 const state = {
   axis: "method_category",
   status: "active",
+  source: "all",
+  manufacturer: "all",
   search: "",
   selected: null, // { organism, category }
   methods: [],
@@ -25,6 +27,7 @@ async function init() {
   const data = await resp.json();
   state.methods = data.methods;
   state.foodCategories = data.food_categories || [];
+  populateManufacturerSelect();
 
   document.getElementById("axis-toggle").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-axis]");
@@ -41,6 +44,21 @@ async function init() {
     state.status = btn.dataset.status;
     state.selected = null;
     updateToggleUI("status-toggle", "status", state.status);
+    render();
+  });
+
+  document.getElementById("source-toggle").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-source]");
+    if (!btn) return;
+    state.source = btn.dataset.source;
+    state.selected = null;
+    updateToggleUI("source-toggle", "source", state.source);
+    render();
+  });
+
+  document.getElementById("manufacturer-select").addEventListener("change", (e) => {
+    state.manufacturer = e.target.value;
+    state.selected = null;
     render();
   });
 
@@ -65,9 +83,24 @@ function updateToggleUI(groupId, dataAttr, value) {
   });
 }
 
+function populateManufacturerSelect() {
+  const select = document.getElementById("manufacturer-select");
+  const names = [...new Set(state.methods.map((m) => m.manufacturer_name).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b)
+  );
+  for (const name of names) {
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    select.appendChild(opt);
+  }
+}
+
 function filteredMethods() {
   return state.methods.filter((m) => {
     if (state.status === "active" && m.status !== "active") return false;
+    if (state.source !== "all" && m.source !== state.source) return false;
+    if (state.manufacturer !== "all" && m.manufacturer_name !== state.manufacturer) return false;
     if (state.search) {
       const hay = `${m.organism} ${m.commercial_name} ${m.manufacturer_name || ""}`.toLowerCase();
       if (!hay.includes(state.search)) return false;
@@ -116,8 +149,18 @@ function render() {
   }
 
   renderAxisNote(methods);
+  renderMiningProgress(methods);
   renderHeatmap(organisms, categories, grid);
   renderResults(grid);
+}
+
+function renderMiningProgress(methods) {
+  const mined = methods.filter((m) => m.has_performance_data).length;
+  const total = methods.length;
+  const pct = total ? Math.round((mined / total) * 100) : 0;
+  document.getElementById("mining-progress-fill").style.width = `${pct}%`;
+  document.getElementById("mining-progress-label").textContent =
+    `Performance data mined: ${mined} / ${total} methods (${pct}%)`;
 }
 
 function renderAxisNote(methods) {
@@ -173,6 +216,7 @@ function renderHeatmap(organisms, categories, grid) {
         cell.addEventListener("click", () => {
           state.selected = { organism: org, category: cat };
           render();
+          focusResults();
         });
       }
       el.appendChild(cell);
@@ -210,6 +254,19 @@ function renderResults(grid) {
     card.addEventListener("click", () => openDetail(m));
     list.appendChild(card);
   }
+}
+
+function focusResults() {
+  // Clicking a heatmap cell updates the results list further down the
+  // page, out of view once the heatmap has more than a few rows -- scroll
+  // it into view and briefly highlight it so the update is noticeable
+  // instead of a silent DOM change below the fold.
+  const results = document.querySelector(".results");
+  results.scrollIntoView({ behavior: "smooth", block: "start" });
+  results.classList.remove("flash");
+  void results.offsetWidth; // restart the CSS transition if already flashing
+  results.classList.add("flash");
+  setTimeout(() => results.classList.remove("flash"), 900);
 }
 
 function escapeHtml(s) {

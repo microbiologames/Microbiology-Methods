@@ -324,9 +324,19 @@ web/                                   static frontend (heatmap + drill-down), r
       note below on why the certificate's own scope isn't usable directly).
       Clicking a cell lists matching methods; clicking a method opens a
       detail view with the full record, including mined performance tables
-      when present. Status filter (valid-only by default) and a
-      name/organism search. Currently 174 methods (142 NF-Validation + 32
-      MicroVal). Verified end-to-end in a real browser (Playwright) —
+      when present. Clicking a cell also scrolls the results list into
+      view and briefly highlights it — added after the project owner
+      pointed out that the results update wasn't otherwise noticeable once
+      the heatmap has enough rows to push it below the fold. Status filter
+      (valid-only by default), a source filter (NF-Validation / MicroVal),
+      a manufacturer dropdown, and a name/organism search, all composable.
+      A mining-progress bar (methods with `has_performance_data` / total,
+      for whatever's currently filtered in) sits above the heatmap, always
+      visible — a direct answer to "is the mining actually working",
+      requested after the AFNOR re-mine landed and the frontend still
+      needed a manual refresh to reflect it. Currently 174 methods (142
+      NF-Validation + 32 MicroVal). Verified end-to-end in a real browser
+      (Playwright) —
       this caught and fixed two real bugs during initial development (a
       missing parenthesis crashing the whole page, and a hidden overlay
       that still intercepted clicks because its CSS unconditionally set
