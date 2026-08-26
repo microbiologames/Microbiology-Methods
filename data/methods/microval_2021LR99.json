@@ -1,0 +1,54 @@
+{
+  "id": "microval--2021lr99",
+  "source": "MICROVAL",
+  "source_certificate_number": "2021LR99",
+  "commercial_name": "One Plate Yeast and Mould (OP-YM)",
+  "manufacturer": {
+    "name": "Neogen Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Yeasts and Moulds",
+    "raw": "Yeasts and Moulds"
+  },
+  "reference_method": {
+    "standard": "ISO 21527-1 (2008) and ISO 21527-2 (2008)",
+    "raw": "ISO 21527-1 (2008) and ISO 21527-2 (2008)"
+  },
+  "validation_scope": {
+    "raw": "A broad range of foods",
+    "matrices": [
+      "A broad range of foods"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": null,
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2028-06-10",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/45260/2021LR99_-_Neogen_OPYM__-_Summary_Report__2024_.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-06-2028'. Study report available for further mining."
+  }
+}

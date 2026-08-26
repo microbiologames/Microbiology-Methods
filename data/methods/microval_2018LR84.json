@@ -1,0 +1,58 @@
+{
+  "id": "microval--2018lr84",
+  "source": "MICROVAL",
+  "source_certificate_number": "2018LR84",
+  "commercial_name": "GENE-UP® EHEC Detection Method",
+  "manufacturer": {
+    "name": "BioMérieux S.A. - Marcy L'Etoile",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "STEC (Shiga Toxin-producing Escherichia coli )",
+    "raw": "STEC (Shiga Toxin-producing Escherichia coli )"
+  },
+  "reference_method": {
+    "standard": "ISO/TS 13136:2012",
+    "raw": "ISO/TS 13136:2012"
+  },
+  "validation_scope": {
+    "raw": "Environmental samples, Raw meat, except poultry (25g and 375g), Raw milk, Raw milk cheeses",
+    "matrices": [
+      "Environmental samples",
+      "Raw meat",
+      "except poultry (25g and 375g)",
+      "Raw milk",
+      "Raw milk cheeses"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2019-12-13",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2027-12-12",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/25030/N_539__TC__2018LR84_-_Gene-UP_EHEC_-_Summary_report_V5.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2027'. Study report available for further mining."
+  }
+}

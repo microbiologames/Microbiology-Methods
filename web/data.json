@@ -1,6 +1,6 @@
 {
   "generated_from": "data/methods",
-  "count": 174,
+  "count": 234,
   "food_categories": [
     "Raw milk and dairy products",
     "Heat-processed milk and dairy products",
@@ -9405,6 +9405,153 @@
       }
     },
     {
+      "id": "microval--2007lr01",
+      "source": "MICROVAL",
+      "source_certificate_number": "2007LR01",
+      "commercial_name": "Compact Dry TC",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Total viable count",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-03-19",
+      "tested_categories": [
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2007lr01",
+        "source": "MICROVAL",
+        "source_certificate_number": "2007LR01",
+        "commercial_name": "Compact Dry TC",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013",
+          "raw": "ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods, Pet food",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods",
+            "Pet food"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2007-03-20",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-03-19",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/16934/2007LR01_Compact_Dry_TC__Summary_report_2019.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '19-03-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2007lr08091920",
+      "source": "MICROVAL",
+      "source_certificate_number": "2007LR08091920",
+      "commercial_name": "foodproof® Entrobacteriaceae plus Cronobacter Detection Kits (Cat. No. R310 15.1 or R 302 15.1), combined with reagent D (Cat. No. A500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extratction",
+      "manufacturer_name": "Hygiena Diagnostics GmbH",
+      "organism": "Enterobacteriaceae ; Cronobacter spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-07-05",
+      "tested_categories": [
+        "Infant formula and infant cereals",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2007lr08091920",
+        "source": "MICROVAL",
+        "source_certificate_number": "2007LR08091920",
+        "commercial_name": "foodproof® Entrobacteriaceae plus Cronobacter Detection Kits (Cat. No. R310 15.1 or R 302 15.1), combined with reagent D (Cat. No. A500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extratction",
+        "manufacturer": {
+          "name": "Hygiena Diagnostics GmbH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae ; Cronobacter spp.",
+          "raw": "Enterobacteriaceae ; Cronobacter spp."
+        },
+        "reference_method": {
+          "standard": "ISO 21528-1:2017, ISO 22964:2017",
+          "raw": "ISO 21528-1:2017, ISO 22964:2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Ingredients, Probiotics containing products, Infant formula and infant cereals",
+          "matrices": [
+            "Environmental samples",
+            "Ingredients",
+            "Probiotics containing products",
+            "Infant formula and infant cereals"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2010-07-06",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-07-05",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17018/2007LR08091920_-_foodproof_EB_and_Crono_-_Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-07-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2008lr02",
       "source": "MICROVAL",
       "source_certificate_number": "2008LR02",
@@ -9827,6 +9974,143 @@
       }
     },
     {
+      "id": "microval--2009lr25",
+      "source": "MICROVAL",
+      "source_certificate_number": "2009LR25",
+      "commercial_name": "SimPlate Yeast & Mold Color Indicator method (Y&M-CI)",
+      "manufacturer_name": "MilliporeSigma",
+      "organism": "Yeasts and Moulds",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2026-06-06",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2009lr25",
+        "source": "MICROVAL",
+        "source_certificate_number": "2009LR25",
+        "commercial_name": "SimPlate Yeast & Mold Color Indicator method (Y&M-CI)",
+        "manufacturer": {
+          "name": "MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1:2008, ISO 21527-2:2008",
+          "raw": "ISO 21527-1:2008, ISO 21527-2:2008"
+        },
+        "validation_scope": {
+          "raw": "All food categories with water activity greater than 0,95",
+          "matrices": [
+            "All food categories with water activity greater than 0",
+            "95"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2010-06-07",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-06-06",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17060/2009LR25_-_SimPlate_YM-CI_-_SUMMARY_REPORT__MicroVal_-_Version_1_.docx",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '06-06-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2009lr26",
+      "source": "MICROVAL",
+      "source_certificate_number": "2009LR26",
+      "commercial_name": "SimPlate Total Plate Count Color Indicator method (TPC-CI)",
+      "manufacturer_name": "MilliporeSigma",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2022-03-30",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2009lr26",
+        "source": "MICROVAL",
+        "source_certificate_number": "2009LR26",
+        "commercial_name": "SimPlate Total Plate Count Color Indicator method (TPC-CI)",
+        "manufacturer": {
+          "name": "MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "EN-ISO 4833:2003, EN-ISO 4833-1:2013",
+          "raw": "EN-ISO 4833:2003, EN-ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "All food categories",
+          "matrices": [
+            "All food categories"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2010-03-31",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2022-03-30",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17075/2009LR26_-_SimPlate_TPC-CI_-_SUMMARY_REPORT__MicroVal_-_Version_1_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '30-03-2022'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2009lr28",
       "source": "MICROVAL",
       "source_certificate_number": "2009LR28",
@@ -9897,6 +10181,148 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '30-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2010lr31",
+      "source": "MICROVAL",
+      "source_certificate_number": "2010LR31",
+      "commercial_name": "Assurance GDS® Listeria spp. Tq",
+      "manufacturer_name": "MilliporeSigma",
+      "organism": "Listeria spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-05-07",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2010lr31",
+        "source": "MICROVAL",
+        "source_certificate_number": "2010LR31",
+        "commercial_name": "Assurance GDS® Listeria spp. Tq",
+        "manufacturer": {
+          "name": "MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria spp.",
+          "raw": "Listeria spp."
+        },
+        "reference_method": {
+          "standard": "EN-ISO 11290-1:2017",
+          "raw": "EN-ISO 11290-1:2017"
+        },
+        "validation_scope": {
+          "raw": "All human food products, Environmental samples",
+          "matrices": [
+            "All human food products",
+            "Environmental samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2014-05-08",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-05-07",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17021/2010LR31_-_Assurance_GDS_Lspp_-_SUMMARY_REPORT__Version_2_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '07-05-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2010lr35",
+      "source": "MICROVAL",
+      "source_certificate_number": "2010LR35",
+      "commercial_name": "ChromID Lmono Agar (LMO-F) for Listeria monocytogenes enumeration",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Listeria monocytogenes",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2019-06-22",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2010lr35",
+        "source": "MICROVAL",
+        "source_certificate_number": "2010LR35",
+        "commercial_name": "ChromID Lmono Agar (LMO-F) for Listeria monocytogenes enumeration",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "ISO 11290-2:1998, ISO 11290-2:1998/A1:2004",
+          "raw": "ISO 11290-2:1998, ISO 11290-2:1998/A1:2004"
+        },
+        "validation_scope": {
+          "raw": "All food categories, Environmental samples",
+          "matrices": [
+            "All food categories",
+            "Environmental samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2011-06-23",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2019-06-22",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/9392/Summary_report_LR201035.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '22-06-2019'. Study report available for further mining."
         }
       }
     },
@@ -9975,6 +10401,148 @@
       }
     },
     {
+      "id": "microval--2011lr39",
+      "source": "MICROVAL",
+      "source_certificate_number": "2011LR39",
+      "commercial_name": "foodproof® Salmonella Detection Kit (Cat. No. R 310 27 or R 302 27), combined with Reagent D (Cat. No. A 500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extraction",
+      "manufacturer_name": "Hygiena Diagnostics GmbH",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-10-21",
+      "tested_categories": [
+        "Infant formula and infant cereals",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2011lr39",
+        "source": "MICROVAL",
+        "source_certificate_number": "2011LR39",
+        "commercial_name": "foodproof® Salmonella Detection Kit (Cat. No. R 310 27 or R 302 27), combined with Reagent D (Cat. No. A 500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extraction",
+        "manufacturer": {
+          "name": "Hygiena Diagnostics GmbH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017",
+          "raw": "ISO 6579-1:2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Ingredients, Probiotics containing products, Infant formula and infant cereals",
+          "matrices": [
+            "Environmental samples",
+            "Ingredients",
+            "Probiotics containing products",
+            "Infant formula and infant cereals"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2012-10-22",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-10-21",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17033/2011LR39_-_foodproof_Salmonella_-_Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-10-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2011lr40",
+      "source": "MICROVAL",
+      "source_certificate_number": "2011LR40",
+      "commercial_name": "foodproof® salmonella spp. automated protocol",
+      "manufacturer_name": "Hygiena Diagnostics GmbH",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-06-25",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2011lr40",
+        "source": "MICROVAL",
+        "source_certificate_number": "2011LR40",
+        "commercial_name": "foodproof® salmonella spp. automated protocol",
+        "manufacturer": {
+          "name": "Hygiena Diagnostics GmbH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017",
+          "raw": "ISO 6579-1:2017"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2013-06-26",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-06-25",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17039/20191031_Foodproof_Salmonella_Summary_report_compleet.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '25-06-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2011lr41",
       "source": "MICROVAL",
       "source_certificate_number": "2011LR41",
@@ -10039,6 +10607,353 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '31-12-2018'. Study report not published on MicroVal's certificate detail page."
+        }
+      }
+    },
+    {
+      "id": "microval--2011lr42",
+      "source": "MICROVAL",
+      "source_certificate_number": "2011LR42",
+      "commercial_name": "food proof® salmonella spp. method and vet proof® salmonella spp. method, manual protocol",
+      "manufacturer_name": "Hygiena Diagnostics GmbH",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-06-25",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2011lr42",
+        "source": "MICROVAL",
+        "source_certificate_number": "2011LR42",
+        "commercial_name": "food proof® salmonella spp. method and vet proof® salmonella spp. method, manual protocol",
+        "manufacturer": {
+          "name": "Hygiena Diagnostics GmbH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017",
+          "raw": "ISO 6579-1:2017"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2013-06-26",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-06-25",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17048/20191031_Foodproof_Salmonella_Summary_report_compleet.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '25-06-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2013lr44",
+      "source": "MICROVAL",
+      "source_certificate_number": "2013LR44",
+      "commercial_name": "BactoCount IBC & IBCm",
+      "manufacturer_name": "Bentley Instruments, Inc",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-15",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2013lr44",
+        "source": "MICROVAL",
+        "source_certificate_number": "2013LR44",
+        "commercial_name": "BactoCount IBC & IBCm",
+        "manufacturer": {
+          "name": "Bentley Instruments, Inc",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "EN-ISO 4833-1:2013, EN-ISO 4833-2:2013",
+          "raw": "EN-ISO 4833-1:2013, EN-ISO 4833-2:2013"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2014-12-16",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-15",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17057/LR44_2013_MicroVal_summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '15-12-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2013lr45",
+      "source": "MICROVAL",
+      "source_certificate_number": "2013LR45",
+      "commercial_name": "BactoScan™ FC + and Master BactoScan™ FC+",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-02-25",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2013lr45",
+        "source": "MICROVAL",
+        "source_certificate_number": "2013LR45",
+        "commercial_name": "BactoScan™ FC + and Master BactoScan™ FC+",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1: 2013",
+          "raw": "ISO 4833-1: 2013"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2015-02-26",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-02-25",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17063/2013LR45_-_FOSS_BactoScan_FC_FC__-_Summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '25-02-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2014lr32",
+      "source": "MICROVAL",
+      "source_certificate_number": "2014LR32",
+      "commercial_name": "Assurance GDS® Listeria monocytogenes Tq",
+      "manufacturer_name": "MilliporeSigma",
+      "organism": "Listeria monocytogenes",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-03",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2014lr32",
+        "source": "MICROVAL",
+        "source_certificate_number": "2014LR32",
+        "commercial_name": "Assurance GDS® Listeria monocytogenes Tq",
+        "manufacturer": {
+          "name": "MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "ISO 11290-1:2017",
+          "raw": "ISO 11290-1:2017"
+        },
+        "validation_scope": {
+          "raw": "All human food products, Environmental samples",
+          "matrices": [
+            "All human food products",
+            "Environmental samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2014-03-04",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-03",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17024/2014LR32_-_Assurance_GDS_Lmono_-_SUMMARY_REPORT__Version_1_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '03-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2014lr43",
+      "source": "MICROVAL",
+      "source_certificate_number": "2014LR43",
+      "commercial_name": "SureFast Salmonella ONE",
+      "manufacturer_name": "CONGEN Biotechnologie GMBH",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-05-28",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2014lr43",
+        "source": "MICROVAL",
+        "source_certificate_number": "2014LR43",
+        "commercial_name": "SureFast Salmonella ONE",
+        "manufacturer": {
+          "name": "CONGEN Biotechnologie GMBH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579:2002",
+          "raw": "ISO 6579:2002"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-05-29",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-05-28",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/16479/N_538__TC__2014LR43_-_SureFast_Salmonella_ONE_-_Summary_report_V3.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '28-05-2030'. Study report available for further mining."
         }
       }
     },
@@ -10114,6 +11029,504 @@
       }
     },
     {
+      "id": "microval--2014lr48",
+      "source": "MICROVAL",
+      "source_certificate_number": "2014LR48",
+      "commercial_name": "Compact Dry ETC",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Enterococcus spp.",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-04-09",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2014lr48",
+        "source": "MICROVAL",
+        "source_certificate_number": "2014LR48",
+        "commercial_name": "Compact Dry ETC",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Enterococcus spp.",
+          "raw": "Enterococcus spp."
+        },
+        "reference_method": {
+          "standard": "NMKL Method 68 5th. Edition 2011",
+          "raw": "NMKL Method 68 5th. Edition 2011"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-04-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-04-09",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/18007/2014LR48_-_Compact_Dry_ETC_-_Extension_merged_MCS_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-04-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr49",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR49",
+      "commercial_name": "Assurance GDS® E.coli O157:H7 Tq detection kit for the detection of Escherichia coli O157:H7",
+      "manufacturer_name": "Merck MilliporeSigma",
+      "organism": "Escherichia coli O157",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-12-11",
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr49",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR49",
+        "commercial_name": "Assurance GDS® E.coli O157:H7 Tq detection kit for the detection of Escherichia coli O157:H7",
+        "manufacturer": {
+          "name": "Merck MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Escherichia coli O157",
+          "raw": "Escherichia coli O157"
+        },
+        "reference_method": {
+          "standard": "ISO 16654:2001",
+          "raw": "ISO 16654:2001"
+        },
+        "validation_scope": {
+          "raw": "Dairy products (with 25 g sampling), Fruits and vegetables (with 25 g sampling), Environmental samples (with 25 g or surface sampling), Raw beef meats (with 375 g sampling), Raw beef meats (with 25 g sampling)",
+          "matrices": [
+            "Dairy products (with 25 g sampling)",
+            "Fruits and vegetables (with 25 g sampling)",
+            "Environmental samples (with 25 g or surface sampling)",
+            "Raw beef meats (with 375 g sampling)",
+            "Raw beef meats (with 25 g sampling)"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2016-12-12",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-12-11",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17597/Assurance_GDS_E.coli_O157-H7__MicroVal_2015LR49_V.3_01292021.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '11-12-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr50",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR50",
+      "commercial_name": "Assurance GDS Salmonella Tq detection Kit for the detection of Salmonella spp.",
+      "manufacturer_name": "Merck MilliporeSigma",
+      "organism": "Salmonella spp.",
+      "method_category": "molecular_pcr",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-05-17",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr50",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR50",
+        "commercial_name": "Assurance GDS Salmonella Tq detection Kit for the detection of Salmonella spp.",
+        "manufacturer": {
+          "name": "Merck MilliporeSigma",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "molecular_pcr"
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579:2002",
+          "raw": "ISO 6579:2002"
+        },
+        "validation_scope": {
+          "raw": "(not published on MicroVal's public certificate listing)",
+          "matrices": [],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2016-05-18",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-05-17",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17072/2015LR50_-_GDS_Salmonella_-_Summary_report__June_2020_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '17-05-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr51",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR51",
+      "commercial_name": "MC-Media Pad™ YM",
+      "manufacturer_name": "JNC Corporation",
+      "organism": "Yeasts and Moulds",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-10-16",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr51",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR51",
+        "commercial_name": "MC-Media Pad™ YM",
+        "manufacturer": {
+          "name": "JNC Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1:2008",
+          "raw": "ISO 21527-1:2008"
+        },
+        "validation_scope": {
+          "raw": "All food categories with water activity greater than 0,95",
+          "matrices": [
+            "All food categories with water activity greater than 0",
+            "95"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-10-17",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-10-16",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/19016/2021-147__TC__MC_Media_Pad_YM_-_2015LR51_-_revised_MCS___Ils_report_with_inclusivity-exclusivity_study.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '16-10-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr52",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR52",
+      "commercial_name": "MC-Media Pad™ ACplus",
+      "manufacturer_name": "JNC Corporation",
+      "organism": "Total viable count",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-01-28",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr52",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR52",
+        "commercial_name": "MC-Media Pad™ ACplus",
+        "manufacturer": {
+          "name": "JNC Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013",
+          "raw": "ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-01-29",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-01-28",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/19818/2015LR52_-_MC_Media_Pad_ACplus-_MCS_ILS_renewal_report_v1.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '28-01-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr53",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR53",
+      "commercial_name": "RiboFlow Listeria Twin Detection Kit",
+      "manufacturer_name": "SY-LAB Geräte GmbH.",
+      "organism": "Listeria monocytogenes",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-11-21",
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Heat-processed milk and dairy products",
+        "Ready-to-eat, ready-to-reheat meat products",
+        "Ready-to-eat, ready-to-reheat fishery products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr53",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR53",
+        "commercial_name": "RiboFlow Listeria Twin Detection Kit",
+        "manufacturer": {
+          "name": "SY-LAB Geräte GmbH.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "EN-ISO 11290-1:2017",
+          "raw": "EN-ISO 11290-1:2017"
+        },
+        "validation_scope": {
+          "raw": "Raw milk and dairy products, heat-processed milk and dairy products, ready-to-eat, ready-to-reheat meat products and ready-to-eat, ready-to-reheat fishery products",
+          "matrices": [
+            "Raw milk and dairy products",
+            "heat-processed milk and dairy products",
+            "ready-to-eat",
+            "ready-to-reheat meat products and ready-to-eat",
+            "ready-to-reheat fishery products"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-11-22",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-11-21",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22038/2015LR53_-_RiboFlow_Listeria_Twin_-Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-11-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr55",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR55",
+      "commercial_name": "Fossomatic TM FC",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Somatic cell count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-10-20",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr55",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR55",
+        "commercial_name": "Fossomatic TM FC",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Somatic cell count",
+          "raw": "Somatic cell count"
+        },
+        "reference_method": {
+          "standard": "ISO 13366-2:2008",
+          "raw": "ISO 13366-2:2008"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2016-10-21",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-10-20",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17425/2015_LR55_Summary_of_the_MicroVal_validation_Fossomatic_cow_milk.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '20-10-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2015lr56",
       "source": "MICROVAL",
       "source_certificate_number": "2015LR56",
@@ -10178,6 +11591,641 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '14-09-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr57",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR57",
+      "commercial_name": "SomaScope LFC and Smart",
+      "manufacturer_name": "Delta Instruments B.V.",
+      "organism": "Somatic cell count",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2021-04-09",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr57",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR57",
+        "commercial_name": "SomaScope LFC and Smart",
+        "manufacturer": {
+          "name": "Delta Instruments B.V.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Somatic cell count",
+          "raw": "Somatic cell count"
+        },
+        "reference_method": {
+          "standard": "ISO 13366-1:2008 [IDF 148-1:2008]",
+          "raw": "ISO 13366-1:2008 [IDF 148-1:2008]"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-04-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2021-04-09",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/18004/2015LR57_-_SomaScope_-_Summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '09-04-2021'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr59",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR59",
+      "commercial_name": "GENE-UP® E. coli O157:H7",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Escherichia coli O157",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-04-05",
+      "tested_categories": [
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw poultry and ready-to-cook poultry products",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr59",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR59",
+        "commercial_name": "GENE-UP® E. coli O157:H7",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Escherichia coli O157",
+          "raw": "Escherichia coli O157"
+        },
+        "reference_method": {
+          "standard": "ISO 16654:2001",
+          "raw": "ISO 16654:2001"
+        },
+        "validation_scope": {
+          "raw": "Fresh and frozen raw meats, cured and fermented meats, vegetables and environmental samples using a general protocol, raw dairy products using a specific protocol and raw meats (except poultry) using a short protocol (25 g and 375 g sample size)",
+          "matrices": [
+            "Fresh and frozen raw meats",
+            "cured and fermented meats",
+            "vegetables and environmental samples using a general protocol",
+            "raw dairy products using a specific protocol and raw meats (except poultry) using a short protocol (25 g and 375 g sample size)"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-04-06",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-04-05",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17980/2015LR59-GENE_UP_Ecoli_O157H7_SUMMARY_REPORT__Version_3_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-04-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2015lr60",
+      "source": "MICROVAL",
+      "source_certificate_number": "2015LR60",
+      "commercial_name": "AMP-6000 TMAC",
+      "manufacturer_name": "SY-LAB Geräte GmbH.",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "expired",
+      "current_expiry": "2022-12-09",
+      "tested_categories": [
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2015lr60",
+        "source": "MICROVAL",
+        "source_certificate_number": "2015LR60",
+        "commercial_name": "AMP-6000 TMAC",
+        "manufacturer": {
+          "name": "SY-LAB Geräte GmbH.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013",
+          "raw": "ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "Raw meats, Fruit and vegetables, Multi-component foods",
+          "matrices": [
+            "Raw meats",
+            "Fruit and vegetables",
+            "Multi-component foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-12-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2022-12-09",
+          "status": "expired"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22337/2015LR60_Sylab_TMAC_MCS_ILS_summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '09-12-2022'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2016lr61",
+      "source": "MICROVAL",
+      "source_certificate_number": "2016LR61",
+      "commercial_name": "Compact Dry YMr",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Yeasts and Moulds",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-10-16",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2016lr61",
+        "source": "MICROVAL",
+        "source_certificate_number": "2016LR61",
+        "commercial_name": "Compact Dry YMr",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1:2008",
+          "raw": "ISO 21527-1:2008"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-10-17",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-10-16",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/18932/2021-146__TC__Compact_Dry_YMR_-_2016LR61_-_revised_MCS___Ils_report_with_inclusivity-exclusivity_study.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '16-10-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2016lr62",
+      "source": "MICROVAL",
+      "source_certificate_number": "2016LR62",
+      "commercial_name": "Fossomatic ™ 7",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Somatic cell count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-10-16",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2016lr62",
+        "source": "MICROVAL",
+        "source_certificate_number": "2016LR62",
+        "commercial_name": "Fossomatic ™ 7",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Somatic cell count",
+          "raw": "Somatic cell count"
+        },
+        "reference_method": {
+          "standard": "ISO 8196-3; ISO 13366-2; EURL MMP Criteria",
+          "raw": "ISO 8196-3; ISO 13366-2; EURL MMP Criteria"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2017-10-17",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-10-16",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/18935/2016LR62_-_Fossomatic_7_-_Summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '16-10-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2016lr63",
+      "source": "MICROVAL",
+      "source_certificate_number": "2016LR63",
+      "commercial_name": "Fossomatic™ 7DC",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Somatic cell count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-06-11",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2016lr63",
+        "source": "MICROVAL",
+        "source_certificate_number": "2016LR63",
+        "commercial_name": "Fossomatic™ 7DC",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Somatic cell count",
+          "raw": "Somatic cell count"
+        },
+        "reference_method": {
+          "standard": "ISO 13366-1:2008",
+          "raw": "ISO 13366-1:2008"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-06-12",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-06-11",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/21064/2016LR63_-_Fossomatic_7DC_-_Summary_Report.pdf.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '11-06-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2016lr64",
+      "source": "MICROVAL",
+      "source_certificate_number": "2016LR64",
+      "commercial_name": "BacSomatic™ for somatic cell count in raw cow's milk",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Somatic cell count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-18",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2016lr64",
+        "source": "MICROVAL",
+        "source_certificate_number": "2016LR64",
+        "commercial_name": "BacSomatic™ for somatic cell count in raw cow's milk",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Somatic cell count",
+          "raw": "Somatic cell count"
+        },
+        "reference_method": {
+          "standard": "ISO 13366-1:2008 [IDF 148-1:2008]",
+          "raw": "ISO 13366-1:2008 [IDF 148-1:2008]"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-03-19",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-18",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/20422/2016LR64_-_BacSomatic_SCC_-_Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '18-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2016lr65",
+      "source": "MICROVAL",
+      "source_certificate_number": "2016LR65",
+      "commercial_name": "BacSomatic™ for enumeration of total bacterial count in raw cow’s milk",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-18",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2016lr65",
+        "source": "MICROVAL",
+        "source_certificate_number": "2016LR65",
+        "commercial_name": "BacSomatic™ for enumeration of total bacterial count in raw cow’s milk",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "EN-ISO 4833-1:2013",
+          "raw": "EN-ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "Raw cow´s milk",
+          "matrices": [
+            "Raw cow´s milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-03-19",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-18",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/20425/2016LR65_-_BacSomatic_TBC_-_Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '18-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr66",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR66",
+      "commercial_name": "Compact Dry PA",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Pseudomonas spp.",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-09-04",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr66",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR66",
+        "commercial_name": "Compact Dry PA",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Pseudomonas spp.",
+          "raw": "Pseudomonas spp."
+        },
+        "reference_method": {
+          "standard": "ISO 16266:2008",
+          "raw": "ISO 16266:2008"
+        },
+        "validation_scope": {
+          "raw": "A broad range of water types for human consumption",
+          "matrices": [
+            "A broad range of water types for human consumption"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2019-09-05",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-09-04",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/24153/2017LR66_Compact_Dry_PA_summary_report_v2_260015.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '04-09-2027'. Study report available for further mining."
         }
       }
     },
@@ -10316,6 +12364,74 @@
           "source_document_type": "live_web_page",
           "source_document_url": "https://nen.bettywebblocks.com/view-microval",
           "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22428/2017LR70_MCS_ILS_summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr71",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR71",
+      "commercial_name": "MC-Media Pad® EC",
+      "manufacturer_name": "JNC Corporation",
+      "organism": "Escherichia coli ; Coliforms",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr71",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR71",
+        "commercial_name": "MC-Media Pad® EC",
+        "manufacturer": {
+          "name": "JNC Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Escherichia coli ; Coliforms",
+          "raw": "Escherichia coli ; Coliforms"
+        },
+        "reference_method": {
+          "standard": "ISO 4832:2006, ISO 16649-2:2001",
+          "raw": "ISO 4832:2006, ISO 16649-2:2001"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-12-13",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22431/2017LR71_MCS_ILS_summary_report.pdf",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'. Study report available for further mining."
@@ -10587,6 +12703,79 @@
       }
     },
     {
+      "id": "microval--2017lr76",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR76",
+      "commercial_name": "Petrifilm™rapid E. coli/Coliform Count Plate",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Escherichia coli ; Coliforms",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-12",
+      "tested_categories": [
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr76",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR76",
+        "commercial_name": "Petrifilm™rapid E. coli/Coliform Count Plate",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Escherichia coli ; Coliforms",
+          "raw": "Escherichia coli ; Coliforms"
+        },
+        "reference_method": {
+          "standard": "ISO 4832:2006, ISO 16649-2:2001",
+          "raw": "ISO 4832:2006, ISO 16649-2:2001"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods, Animal feed",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods",
+            "Animal feed"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2018-12-13",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22590/201812_Summary_report_3M_Petrifilm_Rapid_E._coli-Coliform_Count_Plate_MicroVal_2017LR76_MCS__ILS_version.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2017lr77",
       "source": "MICROVAL",
       "source_certificate_number": "2017LR77",
@@ -10656,6 +12845,82 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2017lr78",
+      "source": "MICROVAL",
+      "source_certificate_number": "2017LR78",
+      "commercial_name": "Kylt Salmonella spp. 2.0",
+      "manufacturer_name": "SAN Group Biotech",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-07-05",
+      "tested_categories": [
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw poultry and ready-to-cook poultry products",
+        "Environmental samples (food or feed production)",
+        "Primary production samples (PPS)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2017lr78",
+        "source": "MICROVAL",
+        "source_certificate_number": "2017LR78",
+        "commercial_name": "Kylt Salmonella spp. 2.0",
+        "manufacturer": {
+          "name": "SAN Group Biotech",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1: 2017",
+          "raw": "ISO 6579-1: 2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Raw meat and ready to cook meat products, Raw poultry and ready to cook poultry products, Primary production samples",
+          "matrices": [
+            "Environmental samples",
+            "Raw meat and ready to cook meat products",
+            "Raw poultry and ready to cook poultry products",
+            "Primary production samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2021-07-06",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-07-05",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35008/2017LR78_-_Kylt_salmonella_spp._-_renewal_study_report_v1.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-07-2029'. Study report available for further mining."
         }
       }
     },
@@ -10798,6 +13063,83 @@
       }
     },
     {
+      "id": "microval--2018lr84",
+      "source": "MICROVAL",
+      "source_certificate_number": "2018LR84",
+      "commercial_name": "GENE-UP® EHEC Detection Method",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "STEC (Shiga Toxin-producing Escherichia coli )",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-12-12",
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw poultry and ready-to-cook poultry products",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2018lr84",
+        "source": "MICROVAL",
+        "source_certificate_number": "2018LR84",
+        "commercial_name": "GENE-UP® EHEC Detection Method",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "STEC (Shiga Toxin-producing Escherichia coli )",
+          "raw": "STEC (Shiga Toxin-producing Escherichia coli )"
+        },
+        "reference_method": {
+          "standard": "ISO/TS 13136:2012",
+          "raw": "ISO/TS 13136:2012"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Raw meat, except poultry (25g and 375g), Raw milk, Raw milk cheeses",
+          "matrices": [
+            "Environmental samples",
+            "Raw meat",
+            "except poultry (25g and 375g)",
+            "Raw milk",
+            "Raw milk cheeses"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2019-12-13",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-12-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/25030/N_539__TC__2018LR84_-_Gene-UP_EHEC_-_Summary_report_V5.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-12-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2019lr87",
       "source": "MICROVAL",
       "source_certificate_number": "2019LR87",
@@ -10862,6 +13204,431 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-03-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2019lr88",
+      "source": "MICROVAL",
+      "source_certificate_number": "2019LR88",
+      "commercial_name": "One Broth One Plate for Salmonella (OBOP-S)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Salmonella spp.",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-06-10",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2019lr88",
+        "source": "MICROVAL",
+        "source_certificate_number": "2019LR88",
+        "commercial_name": "One Broth One Plate for Salmonella (OBOP-S)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017",
+          "raw": "ISO 6579-1:2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Feed samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "Feed samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2020-06-11",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-06-10",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/27019/2019LR88_-_OBOP-S_-_Summary_report__June_2020_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-06-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2019lr89",
+      "source": "MICROVAL",
+      "source_certificate_number": "2019LR89",
+      "commercial_name": "One Plate Listeria (OP-L)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Listeria monocytogenes; Listeria spp.",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-06-24",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2019lr89",
+        "source": "MICROVAL",
+        "source_certificate_number": "2019LR89",
+        "commercial_name": "One Plate Listeria (OP-L)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes; Listeria spp.",
+          "raw": "Listeria monocytogenes; Listeria spp."
+        },
+        "reference_method": {
+          "standard": "ISO 11290-2",
+          "raw": "ISO 11290-2"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2021-06-25",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-06-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/30651/2019LR89_-_One_Plate_Listeria_Mono_-_MCS_ILS_renewal_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-06-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2020lr90",
+      "source": "MICROVAL",
+      "source_certificate_number": "2020LR90",
+      "commercial_name": "foodproof Enterobacteriaceae plus Salmonella Detection Lyokit - 5'Nuclease",
+      "manufacturer_name": "Hygiena Diagnostics GmbH",
+      "organism": "Salmonella spp.; Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-09",
+      "tested_categories": [
+        "Infant formula and infant cereals",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2020lr90",
+        "source": "MICROVAL",
+        "source_certificate_number": "2020LR90",
+        "commercial_name": "foodproof Enterobacteriaceae plus Salmonella Detection Lyokit - 5'Nuclease",
+        "manufacturer": {
+          "name": "Hygiena Diagnostics GmbH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.; Enterobacteriaceae",
+          "raw": "Salmonella spp.; Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": "ISO 21528-1: 2017, ISO 6579-1: 2017 & ISO 6579-1: 2017/A1:2020",
+          "raw": "ISO 21528-1: 2017, ISO 6579-1: 2017 & ISO 6579-1: 2017/A1:2020"
+        },
+        "validation_scope": {
+          "raw": "Infant cereals, Infant formula with or without probiotics and ingredients , Production environmental samples",
+          "matrices": [
+            "Infant cereals",
+            "Infant formula with or without probiotics and ingredients",
+            "Production environmental samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-03-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-09",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35014/N_379__TC__2020LR90_-_Foodproof_EB_plus_Salmonella_-_Summary_report_V2.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2020lr91a",
+      "source": "MICROVAL",
+      "source_certificate_number": "2020LR91a",
+      "commercial_name": "Compact Dry LM (enumeration)",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Listeria monocytogenes",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-02-20",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2020lr91a",
+        "source": "MICROVAL",
+        "source_certificate_number": "2020LR91a",
+        "commercial_name": "Compact Dry LM (enumeration)",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "ISO 11290-2: 2017",
+          "raw": "ISO 11290-2: 2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-02-21",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-02-20",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35035/2020LR91_CDLM_Quantitative__MCS_ILS__summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '20-02-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2020lr91b",
+      "source": "MICROVAL",
+      "source_certificate_number": "2020LR91b",
+      "commercial_name": "Compact Dry LM (detection)",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Listeria monocytogenes",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-10",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2020lr91b",
+        "source": "MICROVAL",
+        "source_certificate_number": "2020LR91b",
+        "commercial_name": "Compact Dry LM (detection)",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "ISO 11290-1: 2017",
+          "raw": "ISO 11290-1: 2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-03-11",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-10",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35038/2020LR91_CDLM__Qualitative_MCS_summary_report_220628.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2020lr92",
+      "source": "MICROVAL",
+      "source_certificate_number": "2020LR92",
+      "commercial_name": "NEOGEN® Molecular Detection Assay 2 – STEC Gene Screen (stx) NEOGEN® Molecular Detection Assay 2 – STEC Gene Screen (stx and eae)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "STEC (Shiga Toxin-producing Escherichia coli )",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-11-26",
+      "tested_categories": [
+        "Raw poultry and ready-to-cook poultry products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2020lr92",
+        "source": "MICROVAL",
+        "source_certificate_number": "2020LR92",
+        "commercial_name": "NEOGEN® Molecular Detection Assay 2 – STEC Gene Screen (stx) NEOGEN® Molecular Detection Assay 2 – STEC Gene Screen (stx and eae)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "STEC (Shiga Toxin-producing Escherichia coli )",
+          "raw": "STEC (Shiga Toxin-producing Escherichia coli )"
+        },
+        "reference_method": {
+          "standard": "ISO/TS 13136 (November 2012)",
+          "raw": "ISO/TS 13136 (November 2012)"
+        },
+        "validation_scope": {
+          "raw": "Raw meat (except poultry) (25g and 375g) and produces and fruits (25g)",
+          "matrices": [
+            "Raw meat (except poultry) (25g and 375g) and produces and fruits (25g)"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2025-11-27",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-11-26",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/51329/2020LR92_-_Neogen_MDA2_STEC_-_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '26-11-2029'. Study report available for further mining."
         }
       }
     },
@@ -11006,6 +13773,153 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '31-08-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr102",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR102",
+      "commercial_name": "Easy Plate AC",
+      "manufacturer_name": "Kikkoman Biochemifa Company",
+      "organism": "Total viable count",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-03-22",
+      "tested_categories": [
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr102",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR102",
+        "commercial_name": "Easy Plate AC",
+        "manufacturer": {
+          "name": "Kikkoman Biochemifa Company",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1: 2013",
+          "raw": "ISO 4833-1: 2013"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods, Animal feed, Pet food",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods",
+            "Animal feed",
+            "Pet food"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2023-03-23",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-03-22",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40882/Easy_Plate_AC_-_2021LR102_-summary_report_v2.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '22-03-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr103",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR103",
+      "commercial_name": "Easy Plate EC",
+      "manufacturer_name": "Kikkoman Biochemifa Company",
+      "organism": "Escherichia coli ; Coliforms",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-05-24",
+      "tested_categories": [
+        "Pet food and animal feed",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr103",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR103",
+        "commercial_name": "Easy Plate EC",
+        "manufacturer": {
+          "name": "Kikkoman Biochemifa Company",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Escherichia coli ; Coliforms",
+          "raw": "Escherichia coli ; Coliforms"
+        },
+        "reference_method": {
+          "standard": "ISO 16649-2: 2001 and ISO 4832: 2006",
+          "raw": "ISO 16649-2: 2001 and ISO 4832: 2006"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods, Pet food",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods",
+            "Pet food"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2023-05-25",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-05-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40885/Easy_Plate_EC_-_2021LR103_-_summary_report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'. Study report available for further mining."
         }
       }
     },
@@ -11212,6 +14126,427 @@
       }
     },
     {
+      "id": "microval--2021lr94",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR94",
+      "commercial_name": "CertaBlue TVC",
+      "manufacturer_name": "MCS Diagnostics",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-09-22",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr94",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR94",
+        "commercial_name": "CertaBlue TVC",
+        "manufacturer": {
+          "name": "MCS Diagnostics",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013",
+          "raw": "ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-09-23",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-09-22",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37599/Report_MCS_ILS_CB-TVC__SUMMARY_REPORT_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '22-09-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr95",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR95",
+      "commercial_name": "CertaBlue Yeast & Mold",
+      "manufacturer_name": "MCS Diagnostics",
+      "organism": "Yeasts and Moulds",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-05-24",
+      "tested_categories": [
+        "Ready-to-eat, ready-to-reheat meat poultry products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr95",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR95",
+        "commercial_name": "CertaBlue Yeast & Mold",
+        "manufacturer": {
+          "name": "MCS Diagnostics",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1:2008",
+          "raw": "ISO 21527-1:2008"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods (except cooked poultry products)",
+          "matrices": [
+            "A broad range of foods (except cooked poultry products)"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2023-05-25",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-05-24",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40822/Report_MCS_ILS_CB-YM_v3__SUMMARY_REPORT_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr96",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR96",
+      "commercial_name": "iQ-Check STEC VirX Kit",
+      "manufacturer_name": "Bio-Rad Laboratories",
+      "organism": "STEC (Shiga Toxin-producing Escherichia coli )",
+      "method_category": "molecular_pcr",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-06-26",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr96",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR96",
+        "commercial_name": "iQ-Check STEC VirX Kit",
+        "manufacturer": {
+          "name": "Bio-Rad Laboratories",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "molecular_pcr"
+        },
+        "target_organism": {
+          "normalized": "STEC (Shiga Toxin-producing Escherichia coli )",
+          "raw": "STEC (Shiga Toxin-producing Escherichia coli )"
+        },
+        "reference_method": {
+          "standard": "ISO/TS 13136:2012",
+          "raw": "ISO/TS 13136:2012"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-06-27",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-06-26",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/36941/2021LR96_-_iQ_Check_STEC_VirX_-SUMMARY_REPORT__Version_4_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '26-06-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr97",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR97",
+      "commercial_name": "BactoCount IBC 3.0",
+      "manufacturer_name": "Bentley Instruments, Inc",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-01",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr97",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR97",
+        "commercial_name": "BactoCount IBC 3.0",
+        "manufacturer": {
+          "name": "Bentley Instruments, Inc",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1: 2013, ISO 13366-1:2008",
+          "raw": "ISO 4833-1: 2013, ISO 13366-1:2008"
+        },
+        "validation_scope": {
+          "raw": "Raw cow milk, raw sheep milk, raw goat milk",
+          "matrices": [
+            "Raw cow milk",
+            "raw sheep milk",
+            "raw goat milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-12-02",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-01",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/39160/2021LR97_-_BactoCount_IBC_3.0_-_summary_report__3_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '01-12-2026'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr98",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR98",
+      "commercial_name": "BactoCount IBCm 3.0",
+      "manufacturer_name": "Bentley Instruments, Inc",
+      "organism": "Total viable count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2026-12-01",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr98",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR98",
+        "commercial_name": "BactoCount IBCm 3.0",
+        "manufacturer": {
+          "name": "Bentley Instruments, Inc",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013, ISO 13366-1:2008",
+          "raw": "ISO 4833-1:2013, ISO 13366-1:2008"
+        },
+        "validation_scope": {
+          "raw": "Raw cow milk, raw sheep milk, raw goat milk",
+          "matrices": [
+            "Raw cow milk",
+            "raw sheep milk",
+            "raw goat milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2022-12-02",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2026-12-01",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": null,
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '01-12-2026'. Study report not published on MicroVal's certificate detail page."
+        }
+      }
+    },
+    {
+      "id": "microval--2021lr99",
+      "source": "MICROVAL",
+      "source_certificate_number": "2021LR99",
+      "commercial_name": "One Plate Yeast and Mould (OP-YM)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Yeasts and Moulds",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-06-10",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2021lr99",
+        "source": "MICROVAL",
+        "source_certificate_number": "2021LR99",
+        "commercial_name": "One Plate Yeast and Mould (OP-YM)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1 (2008) and ISO 21527-2 (2008)",
+          "raw": "ISO 21527-1 (2008) and ISO 21527-2 (2008)"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-06-10",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/45260/2021LR99_-_Neogen_OPYM__-_Summary_Report__2024_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-06-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2022lr108",
       "source": "MICROVAL",
       "source_certificate_number": "2022LR108",
@@ -11274,6 +14609,423 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-05-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr109",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR109",
+      "commercial_name": "Easy Plate YM-R",
+      "manufacturer_name": "Kikkoman Biochemifa Company",
+      "organism": "Yeasts and Moulds",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-09-08",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr109",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR109",
+        "commercial_name": "Easy Plate YM-R",
+        "manufacturer": {
+          "name": "Kikkoman Biochemifa Company",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527:2008",
+          "raw": "ISO 21527:2008"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2024-09-09",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-09-08",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/46601/2022LR109__-_Easy_Plate_YMR_-_Summary_Report.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '08-09-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr110",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR110",
+      "commercial_name": "Compact Dry SL",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Salmonella spp.",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-11-09",
+      "tested_categories": [
+        "Ready-to-eat, ready-to-reheat meat poultry products",
+        "Eggs and egg products (derivates)",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr110",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR110",
+        "commercial_name": "Compact Dry SL",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1: 2017 + A1: 2020",
+          "raw": "ISO 6579-1: 2017 + A1: 2020"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, Ready to eat and ready to reheat meat and poultry products, Eggs and egg products",
+          "matrices": [
+            "Environmental samples",
+            "Ready to eat and ready to reheat meat and poultry products",
+            "Eggs and egg products"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2023-11-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-11-09",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/42767/2022LR110_-_Compact_Dry_SL_-_study_report__2023_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-11-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr111",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR111",
+      "commercial_name": "SureTect Salmonella spp. PCR Assay",
+      "manufacturer_name": "Thermo Fisher Scientific",
+      "organism": "Salmonella spp.",
+      "method_category": "molecular_pcr",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-03-23",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr111",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR111",
+        "commercial_name": "SureTect Salmonella spp. PCR Assay",
+        "manufacturer": {
+          "name": "Thermo Fisher Scientific",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "molecular_pcr"
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1: 2017",
+          "raw": "ISO 6579-1: 2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples, A broad range of foods",
+          "matrices": [
+            "Environmental samples",
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2023-03-24",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-03-23",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40723/Thermo_SureTect_Salmonella_Summary_Report_MicroVal_V2__Nov_2023_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '23-03-2027'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr112",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR112",
+      "commercial_name": "One Plate Total Viable Count (OP TVC)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Total viable count",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-06-10",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr112",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR112",
+        "commercial_name": "One Plate Total Viable Count (OP TVC)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2023",
+          "raw": "ISO 4833-1:2023"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": null,
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-06-10",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/45263/2022LR112_OPTVC_Summary_Report_110624.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-06-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2022lr113",
+      "source": "MICROVAL",
+      "source_certificate_number": "2022LR113",
+      "commercial_name": "Soleris® Non-Fermenting Total Viable Count (NF-TVC)",
+      "manufacturer_name": "Neogen Corporation",
+      "organism": "Total viable count",
+      "method_category": "biochemical",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2028-09-12",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2022lr113",
+        "source": "MICROVAL",
+        "source_certificate_number": "2022LR113",
+        "commercial_name": "Soleris® Non-Fermenting Total Viable Count (NF-TVC)",
+        "manufacturer": {
+          "name": "Neogen Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "biochemical"
+        },
+        "target_organism": {
+          "normalized": "Total viable count",
+          "raw": "Total viable count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833-1:2013",
+          "raw": "ISO 4833-1:2013"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2024-09-13",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2028-09-12",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/46412/2022LR113_-_Soleris_NF_TVC_-_Summary_Report_2024.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '12-09-2028'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr114",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR114",
+      "commercial_name": "SureFast® Listeria 3plex ONE Kit and the SureFast® PREP Bacteria Kit",
+      "manufacturer_name": "CONGEN Biotechnologie GMBH",
+      "organism": "Listeria monocytogenes; Listeria spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-07-17",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr114",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR114",
+        "commercial_name": "SureFast® Listeria 3plex ONE Kit and the SureFast® PREP Bacteria Kit",
+        "manufacturer": {
+          "name": "CONGEN Biotechnologie GMBH",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes; Listeria spp.",
+          "raw": "Listeria monocytogenes; Listeria spp."
+        },
+        "reference_method": {
+          "standard": "ISO 16140-2",
+          "raw": "ISO 16140-2"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2025-07-18",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-07-17",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/49785/2023LR114_Congen_Listeria_MicroVal_MCS_and_ILS_Report_V3.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '17-07-2029'. Study report available for further mining."
         }
       }
     },
@@ -11482,6 +15234,74 @@
       }
     },
     {
+      "id": "microval--2023lr125",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR125",
+      "commercial_name": "Salmofast® PCR method",
+      "manufacturer_name": "Microbial Systems S.L.",
+      "organism": "Salmonella spp.",
+      "method_category": "molecular_pcr",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-05-05",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr125",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR125",
+        "commercial_name": "Salmofast® PCR method",
+        "manufacturer": {
+          "name": "Microbial Systems S.L.",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "molecular_pcr"
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017/A1:2020 en ISO 6579-2:2020",
+          "raw": "ISO 6579-1:2017/A1:2020 en ISO 6579-2:2020"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2026-05-06",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-05-05",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/51986/2023LR125_-_Salmofast_PCR_-_SUMMARY_REPORT__Version_1_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-05-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2023lr126",
       "source": "MICROVAL",
       "source_certificate_number": "2023LR126",
@@ -11552,6 +15372,144 @@
       }
     },
     {
+      "id": "microval--2023lr127",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR127",
+      "commercial_name": "InviScreen® Salmonella spp. Detection Kit",
+      "manufacturer_name": "ALS Life Sciences Portugal",
+      "organism": "Salmonella spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-01-08",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr127",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR127",
+        "commercial_name": "InviScreen® Salmonella spp. Detection Kit",
+        "manufacturer": {
+          "name": "ALS Life Sciences Portugal",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Salmonella spp.",
+          "raw": "Salmonella spp."
+        },
+        "reference_method": {
+          "standard": "ISO 6579-1:2017, ISO 6579-1:2017/Amd 1:2020",
+          "raw": "ISO 6579-1:2017, ISO 6579-1:2017/Amd 1:2020"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2025-01-09",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-01-08",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/47570/2023LR127_-_InviScreen__Salmonella_spp._-_Report_and_IFU.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '08-01-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2023lr128",
+      "source": "MICROVAL",
+      "source_certificate_number": "2023LR128",
+      "commercial_name": "GENE-UP® Enterobacterales (EB)",
+      "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
+      "organism": "Enterobacteriaceae",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-03-17",
+      "tested_categories": [
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2023lr128",
+        "source": "MICROVAL",
+        "source_certificate_number": "2023LR128",
+        "commercial_name": "GENE-UP® Enterobacterales (EB)",
+        "manufacturer": {
+          "name": "BioMérieux S.A. - Marcy L'Etoile",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Enterobacteriaceae",
+          "raw": "Enterobacteriaceae"
+        },
+        "reference_method": {
+          "standard": "ISO 21528-1:2017",
+          "raw": "ISO 21528-1:2017"
+        },
+        "validation_scope": {
+          "raw": "Environmental samples",
+          "matrices": [
+            "Environmental samples"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2026-03-18",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-03-17",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/51822/N_479_TC__2023LR128_-_Gene-Up_EB_-_Summary_report_V1.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '17-03-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
       "id": "microval--2024lr132",
       "source": "MICROVAL",
       "source_certificate_number": "2024LR132",
@@ -11614,6 +15572,282 @@
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-04-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2024lr133",
+      "source": "MICROVAL",
+      "source_certificate_number": "2024LR133",
+      "commercial_name": "BactoScanTM 5",
+      "manufacturer_name": "Foss Analytical A/S",
+      "organism": "Total Bacterial Count",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2029-01-09",
+      "tested_categories": [
+        "Raw milk and dairy products"
+      ],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2024lr133",
+        "source": "MICROVAL",
+        "source_certificate_number": "2024LR133",
+        "commercial_name": "BactoScanTM 5",
+        "manufacturer": {
+          "name": "Foss Analytical A/S",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Total Bacterial Count",
+          "raw": "Total Bacterial Count"
+        },
+        "reference_method": {
+          "standard": "ISO 4833‐1:2013",
+          "raw": "ISO 4833‐1:2013"
+        },
+        "validation_scope": {
+          "raw": "Raw cow milk, raw sheep milk, raw goat milk",
+          "matrices": [
+            "Raw cow milk",
+            "raw sheep milk",
+            "raw goat milk"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2025-01-10",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2029-01-09",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/48459/N_186__TC__Foss_Bactoscan_5_-_2024LR133_-_MCS_report_Cow_s_Milk_V2.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '09-01-2029'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2025lr135",
+      "source": "MICROVAL",
+      "source_certificate_number": "2025LR135",
+      "commercial_name": "EZ Check Listeria spp",
+      "manufacturer_name": "Bio-Rad Laboratories",
+      "organism": "Listeria spp.",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-05-11",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2025lr135",
+        "source": "MICROVAL",
+        "source_certificate_number": "2025LR135",
+        "commercial_name": "EZ Check Listeria spp",
+        "manufacturer": {
+          "name": "Bio-Rad Laboratories",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria spp.",
+          "raw": "Listeria spp."
+        },
+        "reference_method": {
+          "standard": "ISO 11290-1:2017",
+          "raw": "ISO 11290-1:2017"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2026-05-12",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-05-11",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/52133/2025LR135_-_EZ_Check_Listeria_spp_-_MCS_and_ILS_V2rev.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '11-05-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--2025lr136",
+      "source": "MICROVAL",
+      "source_certificate_number": "2025LR136",
+      "commercial_name": "EZ Check Listeria monocytogenes",
+      "manufacturer_name": "Bio-Rad Laboratories",
+      "organism": "Listeria monocytogenes",
+      "method_category": "other",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2030-05-10",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--2025lr136",
+        "source": "MICROVAL",
+        "source_certificate_number": "2025LR136",
+        "commercial_name": "EZ Check Listeria monocytogenes",
+        "manufacturer": {
+          "name": "Bio-Rad Laboratories",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": null
+        },
+        "target_organism": {
+          "normalized": "Listeria monocytogenes",
+          "raw": "Listeria monocytogenes"
+        },
+        "reference_method": {
+          "standard": "ISO 11290-1:2017",
+          "raw": "ISO 11290-1:2017"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2026-05-11",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2030-05-10",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/52143/2025LR136_-_EZ_Check_Listeria_monocytogenes_-_MCS_and_ILS_V2rev.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-05-2030'. Study report available for further mining."
+        }
+      }
+    },
+    {
+      "id": "microval--rqa2008lr10",
+      "source": "MICROVAL",
+      "source_certificate_number": "RQA2008LR10",
+      "commercial_name": "Compact Dry YM",
+      "manufacturer_name": "Shimadzu Diagnostics Corporation",
+      "organism": "Yeasts and Moulds",
+      "method_category": "culture_media",
+      "action": null,
+      "status": "active",
+      "current_expiry": "2027-08-25",
+      "tested_categories": [],
+      "has_performance_data": false,
+      "record": {
+        "id": "microval--rqa2008lr10",
+        "source": "MICROVAL",
+        "source_certificate_number": "RQA2008LR10",
+        "commercial_name": "Compact Dry YM",
+        "manufacturer": {
+          "name": "Shimadzu Diagnostics Corporation",
+          "address_raw": null,
+          "represented_in_europe": null,
+          "site_of_production": null
+        },
+        "method_type": {
+          "action": null,
+          "category": "culture_media"
+        },
+        "target_organism": {
+          "normalized": "Yeasts and Moulds",
+          "raw": "Yeasts and Moulds"
+        },
+        "reference_method": {
+          "standard": "ISO 21527-1:2008",
+          "raw": "ISO 21527-1:2008"
+        },
+        "validation_scope": {
+          "raw": "A broad range of foods",
+          "matrices": [
+            "A broad range of foods"
+          ],
+          "excluded_matrices": [],
+          "max_test_portion_g": null
+        },
+        "study_design": {
+          "protocol_standard": "EN ISO 16140-2:2016",
+          "study_type": "unknown",
+          "number_of_labs": null,
+          "number_of_samples": null
+        },
+        "certification": {
+          "original_date": "2011-08-26",
+          "renewal_dates": [],
+          "extension_dates": [],
+          "current_expiry": "2027-08-25",
+          "status": "active"
+        },
+        "performance": null,
+        "traceability": {
+          "source_document_type": "live_web_page",
+          "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17030/2008LR10_-_Compact_Dry_YM_-_Summary_report__2024_.pdf",
+          "extraction_date": null,
+          "extraction_confidence": "high",
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '25-08-2027'. Study report available for further mining."
         }
       }
     },

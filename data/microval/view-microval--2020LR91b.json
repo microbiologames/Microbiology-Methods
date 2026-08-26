@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Listeria monocytogenes",
+  "certificate_number": "2020LR91b",
+  "commercial_name": "Compact Dry LM (detection)",
+  "manufacturer_raw": "Shimadzu Diagnostics Corporation",
+  "expiry_date_raw": "10-03-2030",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2020LR91b&r_name=MicroVal",
+  "matrices_raw": "Environmental samples, A broad range of foods",
+  "reference_method_raw": "ISO 11290-1: 2017",
+  "first_approval_date_raw": "11-03-2022",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/35038/2020LR91b_-_Compact_Dry_LM_detection_-_certificate__2026-2029_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/35038/2020LR91_CDLM__Qualitative_MCS_summary_report_220628.pdf"
+}

@@ -1,0 +1,18 @@
+{
+  "analyte_raw": "Total viable count",
+  "certificate_number": "2021LR94",
+  "commercial_name": "CertaBlue TVC",
+  "manufacturer_raw": "MCS Diagnostics",
+  "expiry_date_raw": "22-09-2026",
+  "status_raw": "Valid",
+  "source": "MICROVAL",
+  "label": "view-microval",
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2021LR94&r_name=MicroVal",
+  "matrices_raw": "Environmental samples, A broad range of foods",
+  "reference_method_raw": "ISO 4833-1:2013",
+  "first_approval_date_raw": "23-09-2022",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/37599/2021LR94_-_CertaBlue_TVC_-_certificate__2022-2026_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37599/Report_MCS_ILS_CB-TVC__SUMMARY_REPORT_.pdf"
+}

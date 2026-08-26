@@ -1,0 +1,57 @@
+{
+  "id": "microval--2011lr39",
+  "source": "MICROVAL",
+  "source_certificate_number": "2011LR39",
+  "commercial_name": "foodproof® Salmonella Detection Kit (Cat. No. R 310 27 or R 302 27), combined with Reagent D (Cat. No. A 500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extraction",
+  "manufacturer": {
+    "name": "Hygiena Diagnostics GmbH",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Salmonella spp.",
+    "raw": "Salmonella spp."
+  },
+  "reference_method": {
+    "standard": "ISO 6579-1:2017",
+    "raw": "ISO 6579-1:2017"
+  },
+  "validation_scope": {
+    "raw": "Environmental samples, Ingredients, Probiotics containing products, Infant formula and infant cereals",
+    "matrices": [
+      "Environmental samples",
+      "Ingredients",
+      "Probiotics containing products",
+      "Infant formula and infant cereals"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2012-10-22",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2028-10-21",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17033/2011LR39_-_foodproof_Salmonella_-_Summary_Report.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '21-10-2028'. Study report available for further mining."
+  }
+}

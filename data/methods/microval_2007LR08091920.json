@@ -1,0 +1,57 @@
+{
+  "id": "microval--2007lr08091920",
+  "source": "MICROVAL",
+  "source_certificate_number": "2007LR08091920",
+  "commercial_name": "foodproof® Entrobacteriaceae plus Cronobacter Detection Kits (Cat. No. R310 15.1 or R 302 15.1), combined with reagent D (Cat. No. A500 02) and foodproof® StarPrep One Kit (Cat. No. S 400 07) or foodproof® Magnetic Preparation Kit IV (Cat. No. S 400 15) for DNA extratction",
+  "manufacturer": {
+    "name": "Hygiena Diagnostics GmbH",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Enterobacteriaceae ; Cronobacter spp.",
+    "raw": "Enterobacteriaceae ; Cronobacter spp."
+  },
+  "reference_method": {
+    "standard": "ISO 21528-1:2017, ISO 22964:2017",
+    "raw": "ISO 21528-1:2017, ISO 22964:2017"
+  },
+  "validation_scope": {
+    "raw": "Environmental samples, Ingredients, Probiotics containing products, Infant formula and infant cereals",
+    "matrices": [
+      "Environmental samples",
+      "Ingredients",
+      "Probiotics containing products",
+      "Infant formula and infant cereals"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2010-07-06",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2030-07-05",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17018/2007LR08091920_-_foodproof_EB_and_Crono_-_Summary_Report.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '05-07-2030'. Study report available for further mining."
+  }
+}

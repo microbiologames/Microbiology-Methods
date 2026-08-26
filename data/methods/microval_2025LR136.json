@@ -1,0 +1,54 @@
+{
+  "id": "microval--2025lr136",
+  "source": "MICROVAL",
+  "source_certificate_number": "2025LR136",
+  "commercial_name": "EZ Check Listeria monocytogenes",
+  "manufacturer": {
+    "name": "Bio-Rad Laboratories",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "ISO 11290-1:2017",
+    "raw": "ISO 11290-1:2017"
+  },
+  "validation_scope": {
+    "raw": "A broad range of foods",
+    "matrices": [
+      "A broad range of foods"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2026-05-11",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2030-05-10",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/52143/2025LR136_-_EZ_Check_Listeria_monocytogenes_-_MCS_and_ILS_V2rev.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '10-05-2030'. Study report available for further mining."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "microval--2015lr49",
+  "source": "MICROVAL",
+  "source_certificate_number": "2015LR49",
+  "commercial_name": "Assurance GDS® E.coli O157:H7 Tq detection kit for the detection of Escherichia coli O157:H7",
+  "manufacturer": {
+    "name": "Merck MilliporeSigma",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Escherichia coli O157",
+    "raw": "Escherichia coli O157"
+  },
+  "reference_method": {
+    "standard": "ISO 16654:2001",
+    "raw": "ISO 16654:2001"
+  },
+  "validation_scope": {
+    "raw": "Dairy products (with 25 g sampling), Fruits and vegetables (with 25 g sampling), Environmental samples (with 25 g or surface sampling), Raw beef meats (with 375 g sampling), Raw beef meats (with 25 g sampling)",
+    "matrices": [
+      "Dairy products (with 25 g sampling)",
+      "Fruits and vegetables (with 25 g sampling)",
+      "Environmental samples (with 25 g or surface sampling)",
+      "Raw beef meats (with 375 g sampling)",
+      "Raw beef meats (with 25 g sampling)"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2016-12-12",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2028-12-11",
+    "status": "active"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17597/Assurance_GDS_E.coli_O157-H7__MicroVal_2015LR49_V.3_01292021.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '11-12-2028'. Study report available for further mining."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "microval--2015lr60",
+  "source": "MICROVAL",
+  "source_certificate_number": "2015LR60",
+  "commercial_name": "AMP-6000 TMAC",
+  "manufacturer": {
+    "name": "SY-LAB Geräte GmbH.",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": null,
+    "category": null
+  },
+  "target_organism": {
+    "normalized": "Total viable count",
+    "raw": "Total viable count"
+  },
+  "reference_method": {
+    "standard": "ISO 4833-1:2013",
+    "raw": "ISO 4833-1:2013"
+  },
+  "validation_scope": {
+    "raw": "Raw meats, Fruit and vegetables, Multi-component foods",
+    "matrices": [
+      "Raw meats",
+      "Fruit and vegetables",
+      "Multi-component foods"
+    ],
+    "excluded_matrices": [],
+    "max_test_portion_g": null
+  },
+  "study_design": {
+    "protocol_standard": "EN ISO 16140-2:2016",
+    "study_type": "unknown",
+    "number_of_labs": null,
+    "number_of_samples": null
+  },
+  "certification": {
+    "original_date": "2018-12-10",
+    "renewal_dates": [],
+    "extension_dates": [],
+    "current_expiry": "2022-12-09",
+    "status": "expired"
+  },
+  "performance": null,
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22337/2015LR60_Sylab_TMAC_MCS_ILS_summary_report.pdf",
+    "extraction_date": null,
+    "extraction_confidence": "high",
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '09-12-2022'. Study report available for further mining."
+  }
+}
