@@ -8612,7 +8612,7 @@
       "commercial_name": "Compact Dry ETB",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Enterobacteriaceae",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-06-29",
@@ -8631,7 +8631,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Enterobacteriaceae",
@@ -8677,7 +8677,7 @@
       "commercial_name": "Compact Dry CF",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Coliforms",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-07-08",
@@ -8696,7 +8696,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coliforms",
@@ -8742,7 +8742,7 @@
       "commercial_name": "Compact Dry EC",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Coliforms",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-09-29",
@@ -8761,7 +8761,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coliforms",
@@ -8807,7 +8807,7 @@
       "commercial_name": "Brilliance™ Staph 24 Agar",
       "manufacturer_name": "Thermo Fisher Scientific",
       "organism": "Coagulase-positive staphylococci",
-      "method_category": "other",
+      "method_category": "chromogenic_agar",
       "action": null,
       "status": "active",
       "current_expiry": "2030-02-09",
@@ -8826,7 +8826,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "chromogenic_agar"
         },
         "target_organism": {
           "normalized": "Coagulase-positive staphylococci",
@@ -8872,7 +8872,7 @@
       "commercial_name": "Brilliance™ CampyCount Agar",
       "manufacturer_name": "Thermo Fisher Scientific",
       "organism": "Campylobacter spp.",
-      "method_category": "other",
+      "method_category": "chromogenic_agar",
       "action": null,
       "status": "active",
       "current_expiry": "2026-09-21",
@@ -8891,7 +8891,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "chromogenic_agar"
         },
         "target_organism": {
           "normalized": "Campylobacter spp.",
@@ -8937,7 +8937,7 @@
       "commercial_name": "Compact Dry X-SA",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Coagulase-positive staphylococci",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2027-05-24",
@@ -8956,7 +8956,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coagulase-positive staphylococci",
@@ -9002,7 +9002,7 @@
       "commercial_name": "CampyFood® agar method",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
       "organism": "Campylobacter spp.",
-      "method_category": "other",
+      "method_category": "chromogenic_agar",
       "action": null,
       "status": "active",
       "current_expiry": "2030-03-30",
@@ -9021,7 +9021,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "chromogenic_agar"
         },
         "target_organism": {
           "normalized": "Campylobacter spp.",
@@ -9067,7 +9067,7 @@
       "commercial_name": "CASA™",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
       "organism": "Campylobacter spp.",
-      "method_category": "other",
+      "method_category": "chromogenic_agar",
       "action": null,
       "status": "expired",
       "current_expiry": "2019-10-30",
@@ -9086,7 +9086,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "chromogenic_agar"
         },
         "target_organism": {
           "normalized": "Campylobacter spp.",
@@ -9132,7 +9132,7 @@
       "commercial_name": "Compact Dry XBC for Bacillus cereus",
       "manufacturer_name": "HyServe GmbH & Co. KG",
       "organism": "Bacillus cereus",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "expired",
       "current_expiry": "2018-12-31",
@@ -9151,7 +9151,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Bacillus cereus",
@@ -9197,7 +9197,7 @@
       "commercial_name": "TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples",
       "manufacturer_name": "BioMérieux S.A. - Marcy L'Etoile",
       "organism": "Bacillus cereus",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2027-12-30",
@@ -9216,7 +9216,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Bacillus cereus",
@@ -9262,7 +9262,7 @@
       "commercial_name": "MC-Media Pad™ SA",
       "manufacturer_name": "JNC Corporation",
       "organism": "Coagulase-positive staphylococci",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2029-09-14",
@@ -9281,7 +9281,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coagulase-positive staphylococci",
@@ -9327,7 +9327,7 @@
       "commercial_name": "PeelPlate® EB ( Enterobacteriaceae )",
       "manufacturer_name": "Charm Sciences, Inc.",
       "organism": "Enterobacteriaceae",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2026-12-12",
@@ -9346,7 +9346,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Enterobacteriaceae",
@@ -9392,7 +9392,7 @@
       "commercial_name": "MC-Media Pad® CC",
       "manufacturer_name": "JNC Corporation",
       "organism": "Coliforms",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2026-12-12",
@@ -9411,7 +9411,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coliforms",
@@ -9457,7 +9457,7 @@
       "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Cronobacter spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
       "organism": "Cronobacter spp.",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2030-02-28",
@@ -9476,7 +9476,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Cronobacter spp.",
@@ -9522,7 +9522,7 @@
       "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Salmonella spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
       "organism": "Salmonella spp.",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2030-02-11",
@@ -9541,7 +9541,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Salmonella spp.",
@@ -9587,7 +9587,7 @@
       "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Campylobacter spp.",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
       "organism": "Campylobacter spp.",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2030-06-17",
@@ -9606,7 +9606,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Campylobacter spp.",
@@ -9652,7 +9652,7 @@
       "commercial_name": "MALDI Biotyper® complete solution for the confirmation of Listeria spp. and Listeria monocytogenes",
       "manufacturer_name": "Bruker Daltonics GmbH & Co. KG",
       "organism": "Listeria spp. and L. monocytogenes",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2030-04-25",
@@ -9671,7 +9671,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Listeria spp. and L. monocytogenes",
@@ -9717,7 +9717,7 @@
       "commercial_name": "Assurance GDS Cronobacter Tq II",
       "manufacturer_name": "Merck MilliporeSigma",
       "organism": "Cronobacter spp.",
-      "method_category": "other",
+      "method_category": "molecular_pcr",
       "action": null,
       "status": "active",
       "current_expiry": "2026-12-12",
@@ -9736,7 +9736,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "molecular_pcr"
         },
         "target_organism": {
           "normalized": "Cronobacter spp.",
@@ -9782,7 +9782,7 @@
       "commercial_name": "iQ-Check EB for the detection of Enterobacteriaceae",
       "manufacturer_name": "Bio-Rad Laboratories",
       "organism": "Enterobacteriaceae",
-      "method_category": "other",
+      "method_category": "molecular_pcr",
       "action": null,
       "status": "active",
       "current_expiry": "2029-09-17",
@@ -9801,7 +9801,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "molecular_pcr"
         },
         "target_organism": {
           "normalized": "Enterobacteriaceae",
@@ -9847,7 +9847,7 @@
       "commercial_name": "Soleris Enterobacteriaceae (S2-EBAC9 vial)",
       "manufacturer_name": "Neogen Corporation",
       "organism": "Enterobacteriaceae",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2027-09-23",
@@ -9866,7 +9866,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Enterobacteriaceae",
@@ -9912,7 +9912,7 @@
       "commercial_name": "Compact Dry BC",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Bacillus cereus",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-03-05",
@@ -9931,7 +9931,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Bacillus cereus",
@@ -10042,7 +10042,7 @@
       "commercial_name": "Soleris commercial sterility testing vials (NF 105)",
       "manufacturer_name": "Neogen Corporation",
       "organism": "Commercial sterility",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2026-08-31",
@@ -10061,7 +10061,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Commercial sterility",
@@ -10107,7 +10107,7 @@
       "commercial_name": "Easy Plate CC",
       "manufacturer_name": "Kikkoman Biochemifa Company",
       "organism": "Coliforms",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2027-05-24",
@@ -10126,7 +10126,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coliforms",
@@ -10172,7 +10172,7 @@
       "commercial_name": "Easy Plate SA",
       "manufacturer_name": "Kikkoman Biochemifa Company",
       "organism": "Coagulase-positive staphylococci",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2027-06-22",
@@ -10191,7 +10191,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coagulase-positive staphylococci",
@@ -10302,7 +10302,7 @@
       "commercial_name": "One Plate Enterobocteriacqe (OP-EBAC)",
       "manufacturer_name": "Neogen Corporation",
       "organism": "Enterobacteriaceae",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-05-29",
@@ -10321,7 +10321,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Enterobacteriaceae",
@@ -10367,7 +10367,7 @@
       "commercial_name": "Autof ms 1000 salmonella spp..",
       "manufacturer_name": "Autobio Diagnostics Co., ltd",
       "organism": "Salmonella spp.",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2029-04-29",
@@ -10386,7 +10386,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Salmonella spp.",
@@ -10432,7 +10432,7 @@
       "commercial_name": "Autof ms 1000 Cronobacter spp.",
       "manufacturer_name": "Autobio Diagnostics Co., ltd",
       "organism": "Cronobacter spp.",
-      "method_category": "other",
+      "method_category": "biochemical",
       "action": null,
       "status": "active",
       "current_expiry": "2029-09-18",
@@ -10451,7 +10451,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "biochemical"
         },
         "target_organism": {
           "normalized": "Cronobacter spp.",
@@ -10497,7 +10497,7 @@
       "commercial_name": "Compact Dry CFR",
       "manufacturer_name": "Shimadzu Diagnostics Corporation",
       "organism": "Coliforms",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2028-05-12",
@@ -10516,7 +10516,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Coliforms",
@@ -10627,7 +10627,7 @@
       "commercial_name": "Petrifilm® Bacillus cereus (BC) Count Plate Method",
       "manufacturer_name": "Neogen Corporation",
       "organism": "Bacillus cereus",
-      "method_category": "other",
+      "method_category": "culture_media",
       "action": null,
       "status": "active",
       "current_expiry": "2029-04-21",
@@ -10646,7 +10646,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Bacillus cereus",
