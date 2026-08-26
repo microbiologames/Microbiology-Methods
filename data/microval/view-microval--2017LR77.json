@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2017LR77&r_name=MicroVal",
+  "matrices_raw": "Environmental samples, Infant formula, Infant cereals",
+  "reference_method_raw": "ISO 22964:2017",
+  "first_approval_date_raw": "13-12-2018",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/22434/2017LR77_-_Assurance_GDS_Cronobacter_Tq_II_-_Extension_Certificate__2023-2026_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22434/2017LR77_MCS_extension_summary_report_v1.pdf"
 }

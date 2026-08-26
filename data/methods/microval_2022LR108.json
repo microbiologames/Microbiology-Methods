@@ -18,8 +18,8 @@
     "raw": "Enterobacteriaceae"
   },
   "reference_method": {
-    "standard": null,
-    "raw": null
+    "standard": "ISO 21528-2:2017",
+    "raw": "ISO 21528-2:2017"
   },
   "validation_scope": {
     "raw": "(not published on MicroVal's public certificate listing)",
@@ -34,7 +34,7 @@
     "number_of_samples": null
   },
   "certification": {
-    "original_date": null,
+    "original_date": "2024-05-30",
     "renewal_dates": [],
     "extension_dates": [],
     "current_expiry": "2028-05-29",
@@ -44,8 +44,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/45179/2022LR108_-_OP-EBAC_summary_Report__2024_.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-05-2028'."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '29-05-2028'. Study report available for further mining."
   }
 }

@@ -18,12 +18,17 @@
     "raw": "Coagulase-positive staphylococci"
   },
   "reference_method": {
-    "standard": null,
-    "raw": null
+    "standard": "EN-ISO 6888-1:2021",
+    "raw": "EN-ISO 6888-1:2021"
   },
   "validation_scope": {
-    "raw": "(not published on MicroVal's public certificate listing)",
-    "matrices": [],
+    "raw": "Environmental samples, A broad range of foods, Animal feed, Pet food",
+    "matrices": [
+      "Environmental samples",
+      "A broad range of foods",
+      "Animal feed",
+      "Pet food"
+    ],
     "excluded_matrices": [],
     "max_test_portion_g": null
   },
@@ -34,7 +39,7 @@
     "number_of_samples": null
   },
   "certification": {
-    "original_date": null,
+    "original_date": "2011-05-25",
     "renewal_dates": [],
     "extension_dates": [],
     "current_expiry": "2027-05-24",
@@ -44,8 +49,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17051/2008LR14_-_Compact_Dry_X-SA_-_summary_report__2024_.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '24-05-2027'. Study report available for further mining."
   }
 }

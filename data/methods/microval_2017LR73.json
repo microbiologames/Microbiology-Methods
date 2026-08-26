@@ -18,8 +18,8 @@
     "raw": "Salmonella spp."
   },
   "reference_method": {
-    "standard": null,
-    "raw": null
+    "standard": "ISO 6579-1:2017/A1:2020 en ISO 6579-2:2012",
+    "raw": "ISO 6579-1:2017/A1:2020 en ISO 6579-2:2012"
   },
   "validation_scope": {
     "raw": "(not published on MicroVal's public certificate listing)",
@@ -34,7 +34,7 @@
     "number_of_samples": null
   },
   "certification": {
-    "original_date": null,
+    "original_date": "2018-02-12",
     "renewal_dates": [],
     "extension_dates": [],
     "current_expiry": "2030-02-11",
@@ -44,8 +44,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval-confirmation",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/21479/2017LR73_-_SUMMARY_REPORT__Salmonella__Final_03052020.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '11-02-2030'."
+    "notes": "MicroVal listing page label: 'view-microval-confirmation'. Raw status text: 'Valid', raw expiry text: '11-02-2030'. Study report available for further mining."
   }
 }

@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2021LR104&r_name=MicroVal",
+  "matrices_raw": "A broad range of foods",
+  "reference_method_raw": "ISO 4832:2006",
+  "first_approval_date_raw": "25-05-2023",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/40945/2021LR104_-_Easy_Plate_CC_-_Certificate__2023-2027_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/40945/Easy_Plate_CC_-_2021LR104_-summary_report_v2.pdf"
 }

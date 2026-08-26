@@ -18,12 +18,16 @@
     "raw": "Campylobacter spp."
   },
   "reference_method": {
-    "standard": null,
-    "raw": null
+    "standard": "ISO/TS 10272-2:2006",
+    "raw": "ISO/TS 10272-2:2006"
   },
   "validation_scope": {
-    "raw": "(not published on MicroVal's public certificate listing)",
-    "matrices": [],
+    "raw": "Environmental samples, Poultry products, Meat products",
+    "matrices": [
+      "Environmental samples",
+      "Poultry products",
+      "Meat products"
+    ],
     "excluded_matrices": [],
     "max_test_portion_g": null
   },
@@ -34,7 +38,7 @@
     "number_of_samples": null
   },
   "certification": {
-    "original_date": null,
+    "original_date": "2011-10-31",
     "renewal_dates": [],
     "extension_dates": [],
     "current_expiry": "2019-10-30",
@@ -44,8 +48,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17027/2010LR38_Summary_report.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '30-10-2019'."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Not renewed', raw expiry text: '30-10-2019'. Study report available for further mining."
   }
 }

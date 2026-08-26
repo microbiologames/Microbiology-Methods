@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2014LR47&r_name=MicroVal",
+  "matrices_raw": "Environmental samples, A broad range of foods",
+  "reference_method_raw": "ISO 7932:2004",
+  "first_approval_date_raw": "30-12-2015",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/17066/2014LR47_-_Tempo_BC_-_Certificate__2023-2027_.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17066/2014LR47_-_TEMPO_BC_-_SUMMARY_REPORT___MicroVal_-_Version_1_.pdf"
 }

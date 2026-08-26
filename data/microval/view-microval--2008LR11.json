@@ -7,5 +7,12 @@
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
-  "source_page_url": "https://nen.bettywebblocks.com/view-microval"
+  "source_page_url": "https://nen.bettywebblocks.com/view-microval",
+  "detail_page_url": "https://nen.bettywebblocks.com/view-microval-details?cert_nr=2008LR11&r_name=MicroVal",
+  "matrices_raw": "All human food products",
+  "reference_method_raw": "ISO 6888-1:2021",
+  "first_approval_date_raw": "10-02-2010",
+  "certificate_issued_by": "LRQA Nederland B.V.",
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/17036/certificate_2008LR11_renewal_2026.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17036/2008LR11_Staph_Brilliance_MCS_ILS_summary_report_.pdf"
 }
