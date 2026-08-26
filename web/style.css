@@ -60,18 +60,27 @@ body {
 .subtitle { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
 main {
-  max-width: 1200px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 24px;
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
   gap: 24px;
-  align-items: flex-end;
-  margin-bottom: 8px;
+  align-items: start;
 }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.rail { position: sticky; top: 16px; }
+.rail-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; display: flex; flex-direction: column; gap: 4px;
+}
+
 .control-group { display: flex; flex-direction: column; gap: 6px; }
 .control-label {
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
@@ -83,12 +92,52 @@ main {
 }
 .segmented button + button { border-left: 1px solid var(--line); }
 .segmented button.active { background: var(--accent); color: var(--accent-ink); }
-.search-group { flex: 1 1 220px; min-width: 200px; }
+
 #search-box, #manufacturer-select {
+  width: 100%;
   padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
-  background: var(--surface); color: var(--ink); font-size: 0.9rem;
+  background: var(--surface-2); color: var(--ink); font-size: 0.9rem;
 }
-#manufacturer-select { max-width: 220px; }
+#search-box:focus { background: var(--surface); border-color: var(--accent); }
+
+.facet { margin-top: 16px; }
+.facet h3 {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin: 0 0 8px; font-weight: 600;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--line); background: var(--surface-2); color: var(--ink);
+  border-radius: 20px; padding: 5px 6px 5px 11px; font-size: 0.78rem; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip .ct {
+  font-size: 0.68rem; color: var(--muted); background: var(--surface);
+  border-radius: 10px; padding: 1px 6px; font-variant-numeric: tabular-nums;
+}
+.chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.chip.on .ct { background: rgba(255, 255, 255, 0.35); color: var(--accent-ink); }
+
+.content-head {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-bottom: 8px;
+}
+.active-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-soft); border: 1px solid var(--accent);
+  color: var(--accent); border-radius: 16px; padding: 3px 6px 3px 10px; font-size: 0.75rem;
+}
+.pill button {
+  border: 0; background: transparent; color: inherit; font-size: 0.9rem;
+  line-height: 1; padding: 0 2px; cursor: pointer;
+}
+.clearbtn {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 8px;
+  padding: 6px 12px; font-size: 0.78rem; color: var(--muted); font-weight: 600; cursor: pointer;
+}
+.clearbtn:hover { border-color: var(--accent); color: var(--accent); }
 
 .axis-note {
   font-size: 0.82rem; color: var(--muted); margin: 4px 0 16px; max-width: 70ch;

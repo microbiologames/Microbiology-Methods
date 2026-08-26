@@ -13,58 +13,63 @@
   </header>
 
   <main>
-    <section class="controls" aria-label="Filters">
-      <div class="control-group" role="group" aria-label="Heatmap axis">
-        <span class="control-label">Columns</span>
-        <div class="segmented" id="axis-toggle">
-          <button type="button" data-axis="method_category" class="active">Method category</button>
-          <button type="button" data-axis="tested_categories">Tested food category (study)</button>
+    <div class="layout">
+      <aside class="rail" aria-label="Filters">
+        <div class="rail-card">
+          <input type="search" class="search" id="search-box" placeholder="Organism or product name&hellip;" autocomplete="off">
+
+          <div class="facet">
+            <h3>Source</h3>
+            <div class="chips" id="f-source"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Status</h3>
+            <div class="chips" id="f-status"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Method category</h3>
+            <div class="chips" id="f-methodcat"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Manufacturer</h3>
+            <select id="manufacturer-select"><option value="all">All manufacturers</option></select>
+          </div>
         </div>
-      </div>
+      </aside>
 
-      <div class="control-group" role="group" aria-label="Certification status">
-        <span class="control-label">Status</span>
-        <div class="segmented" id="status-toggle">
-          <button type="button" data-status="active" class="active">Valid only</button>
-          <button type="button" data-status="all">All (incl. expired)</button>
+      <section class="content">
+        <div class="content-head">
+          <div class="control-group" role="group" aria-label="Heatmap axis">
+            <span class="control-label">Columns</span>
+            <div class="segmented" id="axis-toggle">
+              <button type="button" data-axis="method_category" class="active">Method category</button>
+              <button type="button" data-axis="tested_categories">Tested food category (study)</button>
+            </div>
+          </div>
+          <div class="active-pills" id="active-pills"></div>
+          <button type="button" class="clearbtn" id="clear-filters" hidden>Clear all</button>
         </div>
-      </div>
 
-      <div class="control-group" role="group" aria-label="Source">
-        <span class="control-label">Source</span>
-        <div class="segmented" id="source-toggle">
-          <button type="button" data-source="all" class="active">All</button>
-          <button type="button" data-source="NF-VALIDATION">NF-Validation</button>
-          <button type="button" data-source="MICROVAL">MicroVal</button>
-        </div>
-      </div>
+        <section class="mining-progress" aria-label="Performance-data mining progress">
+          <div class="mining-progress-track"><div class="mining-progress-fill" id="mining-progress-fill"></div></div>
+          <span class="mining-progress-label" id="mining-progress-label"></span>
+        </section>
 
-      <div class="control-group">
-        <span class="control-label">Manufacturer</span>
-        <select id="manufacturer-select"><option value="all">All manufacturers</option></select>
-      </div>
+        <p class="axis-note" id="axis-note" hidden></p>
 
-      <div class="control-group search-group">
-        <span class="control-label">Search</span>
-        <input type="search" id="search-box" placeholder="Organism or product name&hellip;" autocomplete="off">
-      </div>
-    </section>
+        <section class="heatmap-wrap" aria-label="Organism by category heatmap">
+          <div id="heatmap" class="heatmap"></div>
+        </section>
 
-    <section class="mining-progress" aria-label="Performance-data mining progress">
-      <div class="mining-progress-track"><div class="mining-progress-fill" id="mining-progress-fill"></div></div>
-      <span class="mining-progress-label" id="mining-progress-label"></span>
-    </section>
-
-    <p class="axis-note" id="axis-note" hidden></p>
-
-    <section class="heatmap-wrap" aria-label="Organism by category heatmap">
-      <div id="heatmap" class="heatmap"></div>
-    </section>
-
-    <section class="results" aria-label="Matching methods">
-      <h2 id="results-title">Click a cell to see matching methods</h2>
-      <div id="results-list" class="results-list"></div>
-    </section>
+        <section class="results" aria-label="Matching methods">
+          <h2 id="results-title">Click a cell to see matching methods</h2>
+          <div id="results-list" class="results-list"></div>
+        </section>
+      </section>
+    </div>
   </main>
 
   <div id="detail-overlay" class="overlay" hidden>

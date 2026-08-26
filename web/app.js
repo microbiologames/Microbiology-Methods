@@ -2,14 +2,24 @@ const NOT_MINED_LABEL = "Not yet mined";
 
 const state = {
   axis: "method_category",
-  status: "active",
-  source: "all",
+  // Multi-select facets (mirrors the project owner's mockup): empty set
+  // means "no filter on this facet", not "exclude everything". status
+  // pre-selects "active" to match the previous valid-only-by-default
+  // behavior, but any of the three can be toggled independently.
+  filters: {
+    source: new Set(),
+    status: new Set(["active"]),
+    methodCategory: new Set(),
+  },
   manufacturer: "all",
   search: "",
   selected: null, // { organism, category }
   methods: [],
   foodCategories: [], // ISO 16140-2 Annex A's fixed category list, in Annex A order
 };
+
+const SOURCE_LABELS = { "NF-VALIDATION": "NF-Validation", "MICROVAL": "MicroVal" };
+const STATUS_LABELS = { active: "Active", expired: "Expired", unknown: "Unknown" };
 
 function labelize(s) {
   if (!s) return "Other";
@@ -38,24 +48,6 @@ async function init() {
     render();
   });
 
-  document.getElementById("status-toggle").addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-status]");
-    if (!btn) return;
-    state.status = btn.dataset.status;
-    state.selected = null;
-    updateToggleUI("status-toggle", "status", state.status);
-    render();
-  });
-
-  document.getElementById("source-toggle").addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-source]");
-    if (!btn) return;
-    state.source = btn.dataset.source;
-    state.selected = null;
-    updateToggleUI("source-toggle", "source", state.source);
-    render();
-  });
-
   document.getElementById("manufacturer-select").addEventListener("change", (e) => {
     state.manufacturer = e.target.value;
     state.selected = null;
@@ -67,6 +59,8 @@ async function init() {
     state.selected = null;
     render();
   });
+
+  document.getElementById("clear-filters").addEventListener("click", clearAllFilters);
 
   document.getElementById("detail-close").addEventListener("click", closeDetail);
   document.getElementById("detail-overlay").addEventListener("click", (e) => {
@@ -97,9 +91,11 @@ function populateManufacturerSelect() {
 }
 
 function filteredMethods() {
+  const f = state.filters;
   return state.methods.filter((m) => {
-    if (state.status === "active" && m.status !== "active") return false;
-    if (state.source !== "all" && m.source !== state.source) return false;
+    if (f.source.size && !f.source.has(m.source)) return false;
+    if (f.status.size && !f.status.has(m.status)) return false;
+    if (f.methodCategory.size && !f.methodCategory.has(m.method_category)) return false;
     if (state.manufacturer !== "all" && m.manufacturer_name !== state.manufacturer) return false;
     if (state.search) {
       const hay = `${m.organism} ${m.commercial_name} ${m.manufacturer_name || ""}`.toLowerCase();
@@ -107,6 +103,125 @@ function filteredMethods() {
     }
     return true;
   });
+}
+
+function countBy(items, keyFn) {
+  const counts = new Map();
+  for (const item of items) {
+    const key = keyFn(item);
+    if (key == null) continue;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return counts;
+}
+
+function toggleFilter(set, value) {
+  if (set.has(value)) set.delete(value);
+  else set.add(value);
+  state.selected = null;
+  render();
+}
+
+function renderChip(host, label, count, on, onClick) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip" + (on ? " on" : "");
+  b.innerHTML = `<span>${escapeHtml(label)}</span><span class="ct">${count}</span>`;
+  b.addEventListener("click", onClick);
+  host.appendChild(b);
+}
+
+function renderFacets() {
+  // Counts are computed on the full, unfiltered method list -- same choice
+  // as the mockup this is modeled on ("so user sees the whole landscape"),
+  // rather than a true faceted recount that excludes the facet's own
+  // current selection. Simpler, and answers "how many methods are there
+  // of X" rather than the harder "how many would there be if I also
+  // selected X", which is enough for a dataset this size.
+  const sourceHost = document.getElementById("f-source");
+  sourceHost.innerHTML = "";
+  const sourceCounts = countBy(state.methods, (m) => m.source);
+  for (const [key, label] of Object.entries(SOURCE_LABELS)) {
+    if (!sourceCounts.get(key)) continue;
+    renderChip(sourceHost, label, sourceCounts.get(key), state.filters.source.has(key), () =>
+      toggleFilter(state.filters.source, key)
+    );
+  }
+
+  const statusHost = document.getElementById("f-status");
+  statusHost.innerHTML = "";
+  const statusCounts = countBy(state.methods, (m) => m.status);
+  for (const [key, label] of Object.entries(STATUS_LABELS)) {
+    if (!statusCounts.get(key)) continue;
+    renderChip(statusHost, label, statusCounts.get(key), state.filters.status.has(key), () =>
+      toggleFilter(state.filters.status, key)
+    );
+  }
+
+  const methodCatHost = document.getElementById("f-methodcat");
+  methodCatHost.innerHTML = "";
+  const methodCatCounts = countBy(state.methods, (m) => m.method_category);
+  const order = [...methodCatCounts.keys()].sort((a, b) => methodCatCounts.get(b) - methodCatCounts.get(a));
+  for (const key of order) {
+    renderChip(methodCatHost, labelize(key), methodCatCounts.get(key), state.filters.methodCategory.has(key), () =>
+      toggleFilter(state.filters.methodCategory, key)
+    );
+  }
+}
+
+function renderActivePills() {
+  const host = document.getElementById("active-pills");
+  host.innerHTML = "";
+  const addPill = (label, onRemove) => {
+    const pill = document.createElement("span");
+    pill.className = "pill";
+    pill.innerHTML = `<span>${escapeHtml(label)}</span>`;
+    const x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "×";
+    x.addEventListener("click", onRemove);
+    pill.appendChild(x);
+    host.appendChild(pill);
+  };
+
+  state.filters.source.forEach((k) => addPill(SOURCE_LABELS[k], () => toggleFilter(state.filters.source, k)));
+  state.filters.status.forEach((k) => addPill(STATUS_LABELS[k], () => toggleFilter(state.filters.status, k)));
+  state.filters.methodCategory.forEach((k) =>
+    addPill(labelize(k), () => toggleFilter(state.filters.methodCategory, k))
+  );
+  if (state.manufacturer !== "all") {
+    addPill(state.manufacturer, () => {
+      state.manufacturer = "all";
+      document.getElementById("manufacturer-select").value = "all";
+      state.selected = null;
+      render();
+    });
+  }
+  if (state.search) {
+    addPill(`"${state.search}"`, () => {
+      state.search = "";
+      document.getElementById("search-box").value = "";
+      state.selected = null;
+      render();
+    });
+  }
+
+  const anyActive =
+    state.filters.source.size || state.filters.status.size || state.filters.methodCategory.size ||
+    state.manufacturer !== "all" || state.search;
+  document.getElementById("clear-filters").hidden = !anyActive;
+}
+
+function clearAllFilters() {
+  state.filters.source.clear();
+  state.filters.status.clear();
+  state.filters.methodCategory.clear();
+  state.manufacturer = "all";
+  state.search = "";
+  document.getElementById("manufacturer-select").value = "all";
+  document.getElementById("search-box").value = "";
+  state.selected = null;
+  render();
 }
 
 function categoriesForMethod(m) {
@@ -148,6 +263,8 @@ function render() {
     categories = [...catSet].sort((a, b) => a.localeCompare(b));
   }
 
+  renderFacets();
+  renderActivePills();
   renderAxisNote(methods);
   renderMiningProgress(methods);
   renderHeatmap(organisms, categories, grid);

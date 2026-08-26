@@ -327,9 +327,23 @@ web/                                   static frontend (heatmap + drill-down), r
       when present. Clicking a cell also scrolls the results list into
       view and briefly highlights it — added after the project owner
       pointed out that the results update wasn't otherwise noticeable once
-      the heatmap has enough rows to push it below the fold. Status filter
-      (valid-only by default), a source filter (NF-Validation / MicroVal),
-      a manufacturer dropdown, and a name/organism search, all composable.
+      the heatmap has enough rows to push it below the fold.
+
+      **Filters live in a left-hand rail as multi-select chips with live
+      counts** (source, status, method category), modeled directly on a
+      mockup the project owner shared — each chip shows how many methods
+      match it (computed against the full dataset, not a true faceted
+      recount that excludes the facet's own selection, which the mockup
+      itself does the same way), toggles independently of the others, and
+      every active filter (plus the manufacturer dropdown and the search
+      box) surfaces as a removable pill next to the heatmap-axis toggle,
+      with a "Clear all" button. Status defaults to "Active" selected
+      (matching the previous valid-only-by-default behavior) but can be
+      toggled off or combined with Expired/Unknown, which the old
+      two-button valid-only/all toggle couldn't do. A manufacturer
+      dropdown and a name/organism search remain alongside the chips, all
+      composable together.
+
       A mining-progress bar (methods with `has_performance_data` / total,
       for whatever's currently filtered in) sits above the heatmap, always
       visible — a direct answer to "is the mining actually working",
