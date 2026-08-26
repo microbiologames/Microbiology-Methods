@@ -49,6 +49,35 @@ TARGET_URLS = {
 }
 
 
+# DataTables paginates client-side. Confirmed by a real probe (workflow
+# run 32986700898, using each table's own DataTables JS API) that the main
+# view-microval table alone holds 85 real certificates across 4 pages of
+# 25 -- while a plain page.content() snapshot only ever captures whichever
+# 25 happen to be attached to the live DOM for the currently-displayed
+# page, which is exactly why this scraper had only ever found 32 total
+# certificates (25 + the confirmation table's real, complete count of 7).
+# `api.data().toArray()` returns every row DataTables holds in memory
+# regardless of which page is rendered, so this reconstructs a single
+# full <table> HTML string covering ALL rows -- same real header markup,
+# same per-cell HTML DataTables was given originally -- and hands it to
+# extract_table_rows() exactly as before, so that function needed no
+# changes at all.
+_DATATABLES_FULL_TABLE_JS = """
+() => {
+    if (!window.jQuery || !jQuery.fn || !jQuery.fn.dataTable) return null;
+    const tables = jQuery('table.dataTable');
+    if (tables.length === 0) return null;
+    const table = tables.first();
+    const api = table.DataTable();
+    const headHtml = table.find('thead').prop('outerHTML') || '';
+    const rowsHtml = api.data().toArray().map(
+        row => '<tr>' + row.map(cell => '<td>' + cell + '</td>').join('') + '</tr>'
+    ).join('');
+    return '<table>' + headHtml + '<tbody>' + rowsHtml + '</tbody></table>';
+}
+"""
+
+
 def capture_page(playwright, url: str, label: str, debug_dir: Path, timeout_ms: int):
     browser = playwright.chromium.launch()
     page = browser.new_page(user_agent="microbiology-methods-bot/1.0")
@@ -87,9 +116,17 @@ def capture_page(playwright, url: str, label: str, debug_dir: Path, timeout_ms: 
               f"DataTables' i18n strings file, not certificate data, but kept for the record "
               f"in case a real data API shows up on a future run.", file=sys.stderr)
 
+    full_table_html = page.evaluate(_DATATABLES_FULL_TABLE_JS)
+    if full_table_html:
+        (debug_dir / f"{label}_full_table.html").write_text(full_table_html, encoding="utf-8")
+    else:
+        print(f"[{label}] WARNING: no DataTables table found via the JS API -- "
+              f"falling back to the plain page snapshot, which may only cover the "
+              f"first page of a paginated table.", file=sys.stderr)
+
     body_text = page.evaluate("document.body ? document.body.innerText : ''")
     browser.close()
-    return html, body_text, json_responses
+    return html, body_text, json_responses, full_table_html
 
 
 EXPECTED_HEADER = ["Analyte", "Certificate number", "Test kit name", "Supplier - manufacturer", "Expiry date", "Status"]
@@ -270,9 +307,13 @@ def main():
     written_paths = []  # (path, record) -- revisited below to merge in detail-page fields
     with sync_playwright() as p:
         for label, url in TARGET_URLS.items():
-            html, body_text, json_responses = capture_page(p, url, label, debug_dir, args.timeout_ms)
+            html, body_text, json_responses, full_table_html = capture_page(p, url, label, debug_dir, args.timeout_ms)
 
-            header, rows, row_links = extract_table_rows(html)
+            # Prefer the reconstructed all-rows table (see capture_page) --
+            # falling back to the plain page snapshot only if the
+            # DataTables JS API wasn't found, which would otherwise
+            # silently under-count a paginated table.
+            header, rows, row_links = extract_table_rows(full_table_html or html)
             print(f"[{label}] table extraction: header={header!r}, {len(rows)} data row(s); "
                   f"body text length {len(body_text)} chars.", file=sys.stderr)
 
