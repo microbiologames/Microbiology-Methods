@@ -1,0 +1,46 @@
+name: Debug -- check MicroVal list pagination / undercount
+
+# Temporary, manual-only diagnostic. The project owner noticed a "Next"
+# pagination control on the real MicroVal list pages (25 rows/page, 4+
+# pages) and flagged that only 32 total certificates had been mined so
+# far, which is suspiciously low. microval_live_fetch.py's current
+# capture_page() takes a single page.content() snapshot after load, which
+# -- if these tables are DataTables-paginated client-side, as they appear
+# to be -- would only ever capture whatever's attached to the live DOM for
+# the current page, not the full dataset. This workflow runs a probe
+# script that asks each table's own DataTables JS API for its real
+# recordsTotal, confirming or ruling out the undercount directly.
+# Not part of the regular data pipeline -- delete once the real fix (if
+# needed) is built and confirmed working.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Probe MicroVal list pagination
+        run: |
+          python3 scrapers/debug_dump_microval_pagination.py --debug-dir /tmp/microval_pagination_debug
+
+      - name: Upload debug artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microval-pagination-debug
+          path: /tmp/microval_pagination_debug
