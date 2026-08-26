@@ -84,7 +84,26 @@ def to_float(s: str):
 # validated against 138 real certificates (prefix + NN/NN-NN/NN + optional
 # letter suffix) -- reused here rather than re-deriving it, since the format
 # itself is already proven; only the surrounding label text varies.
-CERT_NUMBER_FORMAT_RE = r'[A-Z0-9]{2,4}\s*\d{2}\s*/\s*\d{2}\s*-\s*\d{2}\s*/\s*\d{2}(?:\s*[A-Z])?'
+#
+# Confirmed against real cover pages that this format is more variable than
+# first assumed: the brand/lab prefix ("3M", "UNI", "EGS") is only sometimes
+# present -- several real certs are printed as bare "07/25 - 01/14" with no
+# prefix at all, which the original mandatory-prefix version couldn't match
+# (it would consume the number's own first two digits as a fake prefix and
+# then fail looking for a second one). Made optional here. Also confirmed:
+# the middle separator isn't always the ASCII hyphen the regex expected --
+# real reports render it as an en dash ("–", U+2013) or Unicode hyphen ("‐",
+# U+2010) depending on which word processor produced the PDF.
+_DASH = "[-‐‑‒–—]"
+CERT_NUMBER_FORMAT_RE = (
+    # The optional suffix letter (e.g. the "A" in "04/03A", marking a
+    # sub-variant) must directly follow the last digit with no space --
+    # confirmed necessary against a real cover page, where an earlier,
+    # more permissive `\s*[A-Z]` version case-insensitively matched into
+    # the next word ("...09/06\nfor the enumeration" -> captured a
+    # trailing "f") once the whole pattern is matched with re.I.
+    r'(?:[A-Z0-9]{1,4}\s+)?\d{2}\s*/\s*\d{2}\s*' + _DASH + r'\s*\d{2}\s*/\s*\d{2}(?:[A-Z])?'
+)
 
 
 def extract_cover_metadata(full_text: str) -> dict:
@@ -92,24 +111,36 @@ def extract_cover_metadata(full_text: str) -> dict:
     # offline): the exact "Certificate number:" English label alone missed
     # ~76/140. Widened to accept French phrasing too and, failing any
     # labeled match, fall back to the number format alone appearing
-    # anywhere on the cover page -- still unverified against those specific
-    # 76 failures (this environment can't fetch them to check), so treat
-    # this as a improved-but-unproven second attempt, not a confirmed fix.
+    # anywhere on the cover page.
+    #
+    # Second pass, built against real cover-page text dumped from a sample
+    # of the resulting failures (this environment still can't fetch these
+    # itself): confirmed two more real label/format variants --
+    # "Certificate # 03/08 – 11/13" (a bare "#" instead of "number"/"n°",
+    # paired with a prefix-less, en-dash number) and "Méthode Qualitative"
+    # /"Méthode Quantitative" (French method-nature wording, which had no
+    # equivalent at all before -- French reports fell through to nature by
+    # coincidence only if they also happened to say the English phrase
+    # somewhere else in the document).
     cert_m = re.search(
-        r'(?:Certificate\s+n(?:umber|o|°)|Num[ée]ro\s+de\s+certificat|N[o°]\s+de\s+certificat)\s*:?\s*\(?\s*'
+        r'(?:Certificate\s*(?:n(?:umber|o|°)|#)|Num[ée]ro\s+de\s+certificat|N[o°]\s+de\s+certificat)\s*:?\s*\(?\s*'
         r'(' + CERT_NUMBER_FORMAT_RE + r')',
         full_text, re.I,
     )
     if not cert_m:
-        cert_m = re.search(f'({CERT_NUMBER_FORMAT_RE})', full_text[:3000])
+        cert_m = re.search(f'({CERT_NUMBER_FORMAT_RE})', full_text[:5000])
     certificate_number = re.sub(r'\s+', ' ', cert_m.group(1)).strip() if cert_m else None
     certificate_number = re.sub(r'\s*/\s*', '/', certificate_number) if certificate_number else None
-    certificate_number = re.sub(r'\s*-\s*', '-', certificate_number) if certificate_number else None
+    certificate_number = re.sub(rf'\s*{_DASH}\s*', '-', certificate_number) if certificate_number else None
 
+    # \s+ rather than a literal space: confirmed necessary against a real
+    # report whose extracted text has a non-breaking space (U+00A0, not an
+    # ASCII space) between "Quantitative" and "method", which a literal-
+    # space pattern silently never matches.
     nature = None
-    if re.search(r'\bQuantitative method\b', full_text):
+    if re.search(r'\bQuantitative\s+method\b', full_text, re.I) or re.search(r'\bM[ée]thode\s+[Qq]uantitative\b', full_text):
         nature = "quantitative"
-    elif re.search(r'\bQualitative method\b', full_text):
+    elif re.search(r'\bQualitative\s+method\b', full_text, re.I) or re.search(r'\bM[ée]thode\s+[Qq]ualitative\b', full_text):
         nature = "qualitative"
 
     return {"certificate_number": certificate_number, "method_nature": nature}
