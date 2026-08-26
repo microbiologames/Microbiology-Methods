@@ -68,7 +68,7 @@ exclusivity, etc.) extracted from the underlying validation reports.
   (built from `data/methods/` by `pipeline/build_frontend_data.py`): an
   organism × category heatmap, toggling between method category and mined
   tested-food-category, drilling into per-method detail pages. Currently
-  174 methods (142 NF-Validation + 32 MicroVal) — `build_frontend_data.py`
+  234 methods (142 NF-Validation + 92 MicroVal) — `build_frontend_data.py`
   excludes AOAC-RI records (`EXCLUDED_SOURCES`), matching the project's
   current ISO 16140-2-only scope. Deployed to GitHub Pages at
   **https://microbiologames.github.io/Microbiology-Methods/** —
@@ -240,6 +240,23 @@ web/                                   static frontend (heatmap + drill-down), r
       lines, PCR/qPCR kit naming, ELISA/lateral-flow, MALDI-TOF, etc.),
       correctly classifying 29/32 real certificates instead of guessing at
       the rest.
+- [x] MicroVal pagination undercount, fixed — the project owner noticed a
+      "Next" control on the live site (25 rows/page, 4+ pages) and found
+      it suspicious that only 32 total certificates had ever been mined.
+      A diagnostic probe against each table's own DataTables JS API
+      confirmed it directly: the main view-microval table alone holds 85
+      real certificates across 4 pages of 25, not 25 total -- MicroVal's
+      site paginates client-side, and `page.content()` after load only
+      ever captured whichever page happened to be attached to the live
+      DOM. `capture_page()` now asks DataTables directly for every row it
+      holds in memory (`api.data().toArray()`, which ignores pagination
+      entirely) and reconstructs one full `<table>` HTML string covering
+      all rows, reusing the same header markup and per-cell HTML so
+      `extract_table_rows()` needed no changes. Real total: 92 certificates
+      (up from 32), including one with a certificate number the site
+      itself renders as a run of concatenated digits
+      (`2007LR08091920` -- confirmed genuine, not a parsing bug, since the
+      same string appears verbatim in the certificate's own PDF filename).
 - [x] `.github/workflows/scrape_afnor.yml` / `scrape_microval.yml` /
       `scrape_aoac.yml` — one workflow per source, daily + manual dispatch,
       each opening its own PR. Originally one combined workflow; split once
@@ -390,8 +407,8 @@ web/                                   static frontend (heatmap + drill-down), r
       for whatever's currently filtered in) sits above the heatmap, always
       visible — a direct answer to "is the mining actually working",
       requested after the AFNOR re-mine landed and the frontend still
-      needed a manual refresh to reflect it. Currently 174 methods (142
-      NF-Validation + 32 MicroVal). Verified end-to-end in a real browser
+      needed a manual refresh to reflect it. Currently 234 methods (142
+      NF-Validation + 92 MicroVal). Verified end-to-end in a real browser
       (Playwright) —
       this caught and fixed two real bugs during initial development (a
       missing parenthesis crashing the whole page, and a hidden overlay
