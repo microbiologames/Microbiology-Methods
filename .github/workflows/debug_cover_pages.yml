@@ -1,0 +1,42 @@
+name: Debug -- dump summary report cover pages
+
+# Temporary, manual-only diagnostic tool. 50/141 mineable NF-Validation
+# reports fail at extract_cover_metadata() (no certificate number found),
+# aborting the merge entirely before category-breakdown extraction is even
+# attempted -- the single biggest gap in mining coverage right now. This
+# workflow dumps the real cover-page text (and pypdf decrypt status) for a
+# diverse sample of those 50 failing reports so the next fix is built
+# against real wording instead of guessed at, the same way the earlier
+# category-table rewrite was. Not part of the regular data pipeline --
+# delete once that fix is done.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf requests cryptography
+
+      - name: Dump cover pages for a sample of cover-page-parse failures
+        run: |
+          python3 scrapers/debug_dump_cover_text.py \
+            "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°25_SESAME-Salmonella-TEST-RAPPORT-DE-SYNTHESE-Version-0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_SureTect_Listeria_mono_SR-v0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2025/01/RAPIDCampylobacter-SUMMARY-REPORT-Version-0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2025/12/SureTect-Salmonella-SUMMARY-REPORT-Version-0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-UNI-03-05-09-06_en.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_SureTect_Listeria_spp_SR_v0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2025/02/BACGene_Listeria_Multiplex-L.spp-SUMMARY-REPORT-Version-0.pdf" \
+            "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_StaphExpress_vs_BPA-SR_v0-protected.pdf"
