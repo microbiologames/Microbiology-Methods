@@ -93,9 +93,15 @@ RECORD_PERFORMANCE_TOOL = {
                 "description": "The certificate number printed on the cover page, e.g. '3M 01/09-04/03A'. Null if genuinely not found.",
             },
             "method_nature": {
-                "type": ["string", "null"],
-                "enum": ["qualitative", "quantitative", None],
-                "description": "Whether this is a qualitative (detection) or quantitative (enumeration) validation study.",
+                # Plain "string" + enum, not a ["string","null"] type array --
+                # confirmed against a real API 400 that Claude's strict
+                # tool-schema validator rejects an enum paired with a
+                # nullable type array (even with null itself listed in the
+                # enum). "unknown" is the sentinel for "couldn't determine",
+                # mapped back to None in mine_with_llm().
+                "type": "string",
+                "enum": ["qualitative", "quantitative", "unknown"],
+                "description": "Whether this is a qualitative (detection) or quantitative (enumeration) validation study. 'unknown' if genuinely undeterminable.",
             },
             "qualitative": {
                 "type": ["object", "null"],
@@ -173,6 +179,8 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> 
         raise RuntimeError(f"No tool_use block in Claude's response (stop_reason={response.stop_reason!r})")
 
     result = tool_use.input
+    if result["method_nature"] == "unknown":
+        result["method_nature"] = None
     performance = None
     if result["method_nature"] == "quantitative" and result["quantitative"]:
         performance = {
