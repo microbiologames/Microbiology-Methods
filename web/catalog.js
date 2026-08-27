@@ -10,16 +10,35 @@
  * Every identity field rendered here is already canonicalized upstream by
  * pipeline/taxonomy.py, so the filters list one entry per real organism /
  * company / laboratory rather than one per spelling.
+ *
+ * Every facet is a multi-select chip group carrying its own count, matching
+ * the performance explorer's rail. Chips rather than dropdowns because a
+ * dropdown can only express one choice and hides the distribution: "how
+ * many Salmonella methods are there" is answerable at a glance from a chip
+ * and not at all from a collapsed <select>. The long facets (24 organisms,
+ * 32 manufacturers) start collapsed to their most-populated entries so the
+ * rail stays readable, with the rest one click away.
  */
+const COLLAPSED_CHIP_COUNT = 8;
+
+// Same display names the performance explorer uses, so a reader moving
+// between the two pages sees "NF-Validation", not "NF-VALIDATION" on one
+// and "NF-Validation" on the other.
+const SOURCE_LABELS = { "NF-VALIDATION": "NF-Validation", "MICROVAL": "MicroVal" };
+const STATUS_LABELS = { active: "Active", expired: "Expired", unknown: "Unknown" };
+
 const state = {
   data: null,
   search: "",
+  // Every facet is a Set: empty means "no filter on this facet", not
+  // "exclude everything".
   source: new Set(),
   status: new Set(),
   technology: new Set(),
-  organism: "all",
-  manufacturer: "all",
-  lab: "all",
+  organism: new Set(),
+  manufacturer: new Set(),
+  lab: new Set(),
+  expanded: new Set(), // facet ids the reader has opened past the first few
   sortKey: "commercial_name",
   sortDir: 1,
 };
@@ -30,15 +49,20 @@ function text(value, fallback = "—") {
   return value === null || value === undefined || value === "" ? fallback : String(value);
 }
 
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 /* ---------- filtering ---------- */
 
 function matches(entry) {
   if (state.source.size && !state.source.has(entry.source)) return false;
   if (state.status.size && !state.status.has(entry.status)) return false;
   if (state.technology.size && !state.technology.has(entry.method_category)) return false;
-  if (state.organism !== "all" && entry.organism !== state.organism) return false;
-  if (state.manufacturer !== "all" && entry.manufacturer_name !== state.manufacturer) return false;
-  if (state.lab !== "all" && entry.expert_laboratory !== state.lab) return false;
+  if (state.organism.size && !state.organism.has(entry.organism)) return false;
+  if (state.manufacturer.size && !state.manufacturer.has(entry.manufacturer_name)) return false;
+  if (state.lab.size && !state.lab.has(entry.expert_laboratory)) return false;
 
   if (state.search) {
     const haystack = [
@@ -70,9 +94,7 @@ function sorted(entries) {
 function expiryCell(entry) {
   const raw = entry.current_expiry;
   if (!raw) return `<span class="muted-cell">—</span>`;
-  const expiry = new Date(raw);
-  const now = new Date();
-  const monthsLeft = (expiry - now) / (1000 * 60 * 60 * 24 * 30.44);
+  const monthsLeft = (new Date(raw) - new Date()) / (1000 * 60 * 60 * 24 * 30.44);
   // Expiry is the one field where the number alone hides the point: a
   // certificate lapsing in two months is a different procurement decision
   // from one running three more years.
@@ -80,7 +102,7 @@ function expiryCell(entry) {
   if (Number.isNaN(monthsLeft)) cls = "";
   else if (monthsLeft < 0) cls = "bad";
   else if (monthsLeft < 12) cls = "warn";
-  return `<span class="expiry ${cls}">${raw}</span>`;
+  return `<span class="expiry ${cls}">${escapeHtml(raw)}</span>`;
 }
 
 function linksCell(entry) {
@@ -92,40 +114,38 @@ function linksCell(entry) {
     // that up front rather than wondering where their report went.
     const direct = links.summary_report_is_direct;
     parts.push(
-      `<a href="${links.summary_report_url}" target="_blank" rel="noopener" class="doclink${direct ? "" : " indirect"}">` +
-      `${direct ? "Study report" : "Registry search"}</a>`
+      `<a href="${escapeHtml(links.summary_report_url)}" target="_blank" rel="noopener" ` +
+      `class="doclink${direct ? "" : " indirect"}">${direct ? "Study report" : "Registry search"}</a>`
     );
   }
   if (links.certificate_url) {
-    parts.push(`<a href="${links.certificate_url}" target="_blank" rel="noopener" class="doclink">Certificate</a>`);
+    parts.push(`<a href="${escapeHtml(links.certificate_url)}" target="_blank" rel="noopener" class="doclink">Certificate</a>`);
   }
   if (links.source_page_url) {
-    parts.push(`<a href="${links.source_page_url}" target="_blank" rel="noopener" class="doclink subtle">Listing</a>`);
+    parts.push(`<a href="${escapeHtml(links.source_page_url)}" target="_blank" rel="noopener" class="doclink subtle">Listing</a>`);
   }
   return parts.join(" ");
 }
 
 function render() {
   const rows = sorted(state.data.methods.filter(matches));
-  const body = $("catalog-body");
 
-  body.innerHTML = rows.map((entry) => `
+  $("catalog-body").innerHTML = rows.map((entry) => `
     <tr>
       <td>
-        <span class="method-name">${text(entry.commercial_name)}</span>
-        <span class="cert-number">${text(entry.source_certificate_number, "")}</span>
+        <span class="method-name">${escapeHtml(text(entry.commercial_name))}</span>
+        <span class="cert-number">${escapeHtml(text(entry.source_certificate_number, ""))}</span>
       </td>
-      <td>${text(entry.manufacturer_name)}</td>
-      <td>${text(entry.organism)}</td>
-      <td><span class="tech-tag tech-${entry.method_category}">${text(entry.method_category_label)}</span></td>
-      <td>${text(entry.expert_laboratory)}</td>
+      <td>${escapeHtml(text(entry.manufacturer_name))}</td>
+      <td>${escapeHtml(text(entry.organism))}</td>
+      <td><span class="tech-tag tech-${escapeHtml(entry.method_category)}">${escapeHtml(text(entry.method_category_label))}</span></td>
+      <td>${escapeHtml(text(entry.expert_laboratory))}</td>
       <td>${expiryCell(entry)}</td>
       <td class="doc-cell">${linksCell(entry)}</td>
     </tr>
   `).join("");
 
-  $("result-count").textContent =
-    `${rows.length} of ${state.data.methods.length} methods`;
+  $("result-count").textContent = `${rows.length} of ${state.data.methods.length} methods`;
   $("empty-note").hidden = rows.length > 0;
   renderActivePills();
 }
@@ -134,13 +154,13 @@ function renderActivePills() {
   const pills = [];
   const add = (label, clear) => pills.push({ label, clear });
 
-  state.source.forEach((v) => add(v, () => state.source.delete(v)));
-  state.status.forEach((v) => add(v, () => state.status.delete(v)));
+  state.source.forEach((v) => add(SOURCE_LABELS[v] || v, () => state.source.delete(v)));
+  state.status.forEach((v) => add(STATUS_LABELS[v] || v, () => state.status.delete(v)));
   state.technology.forEach((v) =>
     add(state.data.category_labels[v] || v, () => state.technology.delete(v)));
-  if (state.organism !== "all") add(state.organism, () => { state.organism = "all"; });
-  if (state.manufacturer !== "all") add(state.manufacturer, () => { state.manufacturer = "all"; });
-  if (state.lab !== "all") add(state.lab, () => { state.lab = "all"; });
+  state.organism.forEach((v) => add(v, () => state.organism.delete(v)));
+  state.manufacturer.forEach((v) => add(v, () => state.manufacturer.delete(v)));
+  state.lab.forEach((v) => add(v, () => state.lab.delete(v)));
   if (state.search) add(`"${state.search}"`, () => { state.search = ""; });
 
   const container = $("active-pills");
@@ -149,7 +169,7 @@ function renderActivePills() {
     const pill = document.createElement("button");
     pill.type = "button";
     pill.className = "pill";
-    pill.innerHTML = `${label} <span aria-hidden="true">&times;</span>`;
+    pill.innerHTML = `${escapeHtml(label)} <span aria-hidden="true">&times;</span>`;
     pill.setAttribute("aria-label", `Remove filter ${label}`);
     pill.addEventListener("click", () => { clear(); syncControls(); render(); });
     container.appendChild(pill);
@@ -157,42 +177,103 @@ function renderActivePills() {
   $("clear-filters").hidden = pills.length === 0;
 }
 
-/* ---------- controls ---------- */
+/* ---------- facet chips ---------- */
 
-function buildChips(containerId, values, stateSet, labelFor = (v) => v) {
-  const container = $(containerId);
-  container.innerHTML = "";
-  values.forEach((value) => {
+function countBy(keyFn) {
+  const counts = new Map();
+  for (const entry of state.data.methods) {
+    const key = keyFn(entry);
+    if (key === null || key === undefined || key === "") continue;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return counts;
+}
+
+/* Counts are computed against the full dataset, not the current selection --
+ * the same choice the performance explorer makes. It answers "how many
+ * methods target Salmonella", which is the question a reader scanning the
+ * rail is actually asking. */
+function buildChipFacet({ hostId, toggleId, keyFn, stateSet, labelFor = (v) => v, order }) {
+  const counts = countBy(keyFn);
+  let values = order ? order.filter((v) => counts.has(v)) : [...counts.keys()];
+  if (!order) values.sort((a, b) => counts.get(b) - counts.get(a) || String(a).localeCompare(String(b)));
+
+  const host = $(hostId);
+  const toggle = $(toggleId);
+  const expanded = state.expanded.has(hostId);
+  // A selected chip is always rendered even when collapsed, so a filter can
+  // never be active-but-invisible.
+  const shown = expanded
+    ? values
+    : values.filter((v, i) => i < COLLAPSED_CHIP_COUNT || stateSet.has(v));
+
+  host.innerHTML = "";
+  shown.forEach((value) => {
     const chip = document.createElement("button");
     chip.type = "button";
-    chip.className = "chip";
+    chip.className = "chip" + (stateSet.has(value) ? " on" : "");
     chip.dataset.value = value;
-    chip.textContent = labelFor(value);
+    chip.innerHTML = `<span>${escapeHtml(labelFor(value))}</span><span class="ct">${counts.get(value)}</span>`;
+    chip.setAttribute("aria-pressed", stateSet.has(value) ? "true" : "false");
     chip.addEventListener("click", () => {
       stateSet.has(value) ? stateSet.delete(value) : stateSet.add(value);
       syncControls();
       render();
     });
-    container.appendChild(chip);
+    host.appendChild(chip);
   });
+
+  const hidden = values.length - shown.length;
+  if (values.length > COLLAPSED_CHIP_COUNT) {
+    toggle.hidden = false;
+    toggle.textContent = expanded ? "Show fewer" : `Show ${hidden} more`;
+    toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+  } else {
+    toggle.hidden = true;
+  }
 }
 
-function fillSelect(id, values, placeholder) {
-  const select = $(id);
-  select.innerHTML = `<option value="all">${placeholder}</option>` +
-    values.map((v) => `<option value="${v.replace(/"/g, "&quot;")}">${v}</option>`).join("");
+function buildAllFacets() {
+  const facets = state.data.facets || {};
+  buildChipFacet({
+    hostId: "f-source", toggleId: "more-source",
+    keyFn: (m) => m.source, stateSet: state.source, order: facets.sources,
+    labelFor: (v) => SOURCE_LABELS[v] || v,
+  });
+  buildChipFacet({
+    hostId: "f-status", toggleId: "more-status",
+    keyFn: (m) => m.status, stateSet: state.status,
+    labelFor: (v) => STATUS_LABELS[v] || v,
+  });
+  buildChipFacet({
+    hostId: "f-technology", toggleId: "more-technology",
+    keyFn: (m) => m.method_category, stateSet: state.technology,
+    labelFor: (v) => state.data.category_labels[v] || v,
+  });
+  buildChipFacet({
+    hostId: "f-organism", toggleId: "more-organism",
+    keyFn: (m) => m.organism, stateSet: state.organism,
+  });
+  buildChipFacet({
+    hostId: "f-manufacturer", toggleId: "more-manufacturer",
+    keyFn: (m) => m.manufacturer_name, stateSet: state.manufacturer,
+  });
+  buildChipFacet({
+    hostId: "f-lab", toggleId: "more-lab",
+    keyFn: (m) => m.expert_laboratory, stateSet: state.lab,
+  });
+
+  // The expert lab is filled by a separate pass over the study reports
+  // (pipeline/extract_expert_labs.py). Saying so beats leaving an empty
+  // facet that reads as broken.
+  const note = $("lab-note");
+  const haveLabs = state.data.methods.some((m) => m.expert_laboratory);
+  note.hidden = haveLabs;
+  if (!haveLabs) note.textContent = "Not yet extracted from the study reports.";
 }
 
 function syncControls() {
-  document.querySelectorAll("#f-source .chip").forEach((c) =>
-    c.classList.toggle("on", state.source.has(c.dataset.value)));
-  document.querySelectorAll("#f-status .chip").forEach((c) =>
-    c.classList.toggle("on", state.status.has(c.dataset.value)));
-  document.querySelectorAll("#f-technology .chip").forEach((c) =>
-    c.classList.toggle("on", state.technology.has(c.dataset.value)));
-  $("organism-select").value = state.organism;
-  $("manufacturer-select").value = state.manufacturer;
-  $("lab-select").value = state.lab;
+  buildAllFacets();
   $("search-box").value = state.search;
   document.querySelectorAll("th.sortable").forEach((th) => {
     th.classList.toggle("sorted", th.dataset.sort === state.sortKey);
@@ -200,37 +281,25 @@ function syncControls() {
   });
 }
 
+/* ---------- init ---------- */
+
 function init(data) {
   state.data = data;
-  const facets = data.facets || {};
 
-  buildChips("f-source", facets.sources || [], state.source);
-  buildChips("f-status", [...new Set(data.methods.map((m) => m.status))].sort(), state.status);
-  buildChips("f-technology", facets.method_categories || [], state.technology,
-    (v) => data.category_labels[v] || v);
-
-  fillSelect("organism-select", facets.organisms || [], "All organisms");
-  fillSelect("manufacturer-select", facets.manufacturers || [], "All manufacturers");
-  fillSelect("lab-select", facets.expert_laboratories || [], "All laboratories");
-
-  // The expert-lab column is populated by a separate pass over the study
-  // reports (pipeline/extract_expert_labs.py). Saying so beats letting the
-  // filter look broken while that pass hasn't run for these records.
-  const labCount = (facets.expert_laboratories || []).length;
-  if (labCount === 0) {
-    const note = $("lab-note");
-    note.textContent = "Not yet extracted from the study reports for any record.";
-    note.hidden = false;
-    $("lab-select").disabled = true;
-  }
+  ["source", "status", "technology", "organism", "manufacturer", "lab"].forEach((name) => {
+    const toggle = $(`more-${name}`);
+    if (!toggle) return;
+    toggle.addEventListener("click", () => {
+      const hostId = `f-${name}`;
+      state.expanded.has(hostId) ? state.expanded.delete(hostId) : state.expanded.add(hostId);
+      syncControls();
+    });
+  });
 
   $("search-box").addEventListener("input", (e) => {
     state.search = e.target.value.trim().toLowerCase();
     render();
   });
-  $("organism-select").addEventListener("change", (e) => { state.organism = e.target.value; render(); });
-  $("manufacturer-select").addEventListener("change", (e) => { state.manufacturer = e.target.value; render(); });
-  $("lab-select").addEventListener("change", (e) => { state.lab = e.target.value; render(); });
 
   document.querySelectorAll("th.sortable").forEach((th) => {
     th.addEventListener("click", () => {
@@ -243,8 +312,9 @@ function init(data) {
   });
 
   $("clear-filters").addEventListener("click", () => {
-    state.source.clear(); state.status.clear(); state.technology.clear();
-    state.organism = "all"; state.manufacturer = "all"; state.lab = "all"; state.search = "";
+    [state.source, state.status, state.technology,
+     state.organism, state.manufacturer, state.lab].forEach((s) => s.clear());
+    state.search = "";
     syncControls();
     render();
   });
@@ -257,6 +327,6 @@ fetch("data.json")
   .then((r) => r.json())
   .then(init)
   .catch((err) => {
-    document.getElementById("catalog-body").innerHTML =
-      `<tr><td colspan="7">Could not load data.json: ${err}</td></tr>`;
+    $("catalog-body").innerHTML =
+      `<tr><td colspan="7">Could not load data.json: ${escapeHtml(err)}</td></tr>`;
   });

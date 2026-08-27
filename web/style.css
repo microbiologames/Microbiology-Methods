@@ -387,3 +387,18 @@ th.sortable.sorted[data-dir="desc"]::after { content: " ▼"; }
   .catalog-table { font-size: 0.84rem; }
   .catalog-table th, .catalog-table td { padding: 8px 10px; }
 }
+
+/* "Show N more" under a long chip facet (24 organisms, 32 manufacturers):
+   keeps the rail scannable without hiding any option behind a dropdown. */
+.more-toggle {
+  margin-top: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.more-toggle:hover { color: var(--ink); }
