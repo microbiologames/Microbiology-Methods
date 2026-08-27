@@ -35,11 +35,13 @@ Usage (offline, from a saved summary-report PDF):
 """
 import argparse
 import base64
+import io
 import json
 import sys
 from pathlib import Path
 
 import anthropic
+import pypdf
 
 MODEL = "claude-sonnet-5"
 
@@ -158,13 +160,40 @@ for it and explain why in extraction_notes -- that is the correct way to express
 a placeholder value."""
 
 
+def _read_pdf_bytes_decrypted(pdf_path: Path) -> bytes:
+    """Some real NF-Validation reports are permissions-encrypted (confirmed
+    directly on a report named "..._B_SR_v0-protected.pdf": AES-256,
+    print/copy/change all disabled) -- the same real-password-protection
+    NF-Validation already uses elsewhere, which summary_report_parser.py
+    already opens by decrypting with an empty password (confirmed to work
+    on every sampled AFNOR PDF). llm_report_miner.py was sending the raw,
+    still-encrypted file bytes straight to the API -- confirmed as the real
+    cause of a placeholder/junk extraction on that report: the file reads
+    fine locally once decrypted (Table 4 is a perfectly ordinary table), so
+    the model was working from degraded/empty content, not a hard document,
+    and improvised a placeholder rather than surfacing a clean error.
+    Rewrites the decrypted pages into a fresh in-memory PDF so what's sent
+    to the API is always plain, unencrypted bytes -- a no-op (same bytes
+    back out) for the majority of reports that were never encrypted."""
+    reader = pypdf.PdfReader(str(pdf_path))
+    if not reader.is_encrypted:
+        return pdf_path.read_bytes()
+    reader.decrypt("")
+    writer = pypdf.PdfWriter()
+    for page in reader.pages:
+        writer.add_page(page)
+    buf = io.BytesIO()
+    writer.write(buf)
+    return buf.getvalue()
+
+
 def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> dict:
     """Extract cover metadata + per-category performance data directly from
     the PDF via Claude, bypassing pdfplumber/pypdf entirely. Returns the same
     shape as summary_report_parser.mine_performance()'s relevant fields, so
     callers can treat the two interchangeably."""
     client = client or anthropic.Anthropic()
-    pdf_b64 = base64.standard_b64encode(pdf_path.read_bytes()).decode("ascii")
+    pdf_b64 = base64.standard_b64encode(_read_pdf_bytes_decrypted(pdf_path)).decode("ascii")
 
     response = client.messages.create(
         model=MODEL,
