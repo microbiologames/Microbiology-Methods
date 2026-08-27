@@ -16,6 +16,7 @@ const state = {
   selected: null, // { organism, category }
   methods: [],
   foodCategories: [], // ISO 16140-2 Annex A's fixed category list, in Annex A order
+  categoryLabels: {}, // detection-technology display names, from taxonomy.py
 };
 
 const SOURCE_LABELS = { "NF-VALIDATION": "NF-Validation", "MICROVAL": "MicroVal" };
@@ -24,6 +25,14 @@ const STATUS_LABELS = { active: "Active", expired: "Expired", unknown: "Unknown"
 function labelize(s) {
   if (!s) return "Other";
   return s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/* Detection-technology names come from pipeline/taxonomy.py via data.json's
+ * category_labels, so this page and the catalogue print them identically
+ * ("Molecular / PCR", not one page's "Molecular Pcr" beside the other's).
+ * Falls back to generic title-casing for anything the map doesn't cover. */
+function categoryLabel(key) {
+  return state.categoryLabels[key] || labelize(key);
 }
 
 function statusBadgeClass(status) {
@@ -37,6 +46,7 @@ async function init() {
   const data = await resp.json();
   state.methods = data.methods;
   state.foodCategories = data.food_categories || [];
+  state.categoryLabels = data.category_labels || {};
   populateManufacturerSelect();
 
   document.getElementById("axis-toggle").addEventListener("click", (e) => {
@@ -163,7 +173,7 @@ function renderFacets() {
   const methodCatCounts = countBy(state.methods, (m) => m.method_category);
   const order = [...methodCatCounts.keys()].sort((a, b) => methodCatCounts.get(b) - methodCatCounts.get(a));
   for (const key of order) {
-    renderChip(methodCatHost, labelize(key), methodCatCounts.get(key), state.filters.methodCategory.has(key), () =>
+    renderChip(methodCatHost, categoryLabel(key), methodCatCounts.get(key), state.filters.methodCategory.has(key), () =>
       toggleFilter(state.filters.methodCategory, key)
     );
   }
@@ -187,7 +197,7 @@ function renderActivePills() {
   state.filters.source.forEach((k) => addPill(SOURCE_LABELS[k], () => toggleFilter(state.filters.source, k)));
   state.filters.status.forEach((k) => addPill(STATUS_LABELS[k], () => toggleFilter(state.filters.status, k)));
   state.filters.methodCategory.forEach((k) =>
-    addPill(labelize(k), () => toggleFilter(state.filters.methodCategory, k))
+    addPill(categoryLabel(k), () => toggleFilter(state.filters.methodCategory, k))
   );
   if (state.manufacturer !== "all") {
     addPill(state.manufacturer, () => {
@@ -226,7 +236,7 @@ function clearAllFilters() {
 
 function categoriesForMethod(m) {
   if (state.axis === "method_category") {
-    return [labelize(m.method_category)];
+    return [categoryLabel(m.method_category)];
   }
   return m.tested_categories.length ? m.tested_categories : [NOT_MINED_LABEL];
 }
@@ -402,7 +412,7 @@ function openDetail(m) {
       ${dtField("Source", `${r.source} &middot; ${escapeHtml(r.source_certificate_number)}`)}
       ${dtField("Status", `${escapeHtml(r.certification.status)}${r.certification.current_expiry ? " (until " + escapeHtml(r.certification.current_expiry) + ")" : ""}`)}
       ${dtField("Organism", escapeHtml((r.target_organism && r.target_organism.normalized) || "Unknown"))}
-      ${dtField("Method type", `${labelize(r.method_type.action)} &middot; ${labelize(r.method_type.category)}`)}
+      ${dtField("Method type", `${labelize(r.method_type.action)} &middot; ${categoryLabel(r.method_type.category)}`)}
       ${dtField("Reference method", escapeHtml((r.reference_method && r.reference_method.standard) || (r.reference_method && r.reference_method.raw) || "—"))}
       ${dtField("Original certification", escapeHtml(r.certification.original_date || "—"))}
     </div>

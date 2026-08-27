@@ -22,7 +22,7 @@ name: Scrape and normalize MicroVal data
 
 on:
   schedule:
-    - cron: "15 6 * * *"  # daily, 06:15 UTC (staggered from the AFNOR workflow)
+    - cron: "15 6 * * 1"  # weekly, Monday 06:15 UTC (staggered from the AFNOR workflow)
   workflow_dispatch: {}
 
 permissions:
@@ -40,7 +40,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install beautifulsoup4 jsonschema playwright
+        run: pip install beautifulsoup4 jsonschema playwright pdfplumber
 
       - name: Install Playwright Chromium
         run: playwright install --with-deps chromium
@@ -51,6 +51,16 @@ jobs:
 
       - name: Re-run MicroVal normalization
         run: python3 pipeline/normalize_microval.py
+
+      # MicroVal publishes no technology field at all, so most of its
+      # certificates arrive with no detection principle. This reads each
+      # study report's opening pages for the expert laboratory and, where
+      # the product name gave nothing away, for what the study itself
+      # describes (a thermocycler, an antibody conjugate, ...).
+      - name: Extract expert laboratory and technology evidence
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python3 pipeline/extract_expert_labs.py --methods-dir data/methods
 
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py

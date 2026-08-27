@@ -34,7 +34,7 @@ name: Scrape and normalize AOAC-RI data
 
 on:
   schedule:
-    - cron: "30 6 * * *"  # daily, 06:30 UTC (staggered from the other two workflows)
+    - cron: "30 6 * * 1"  # weekly, Monday 06:30 UTC (staggered from the other two workflows)
   workflow_dispatch: {}
 
 permissions:

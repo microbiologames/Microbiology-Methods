@@ -22,7 +22,7 @@ name: Scrape and normalize AFNOR NF-Validation data
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # daily, 06:00 UTC
+    - cron: "0 6 * * 1"  # weekly, Monday 06:00 UTC
   workflow_dispatch:
     inputs:
       force_remine:
@@ -59,14 +59,31 @@ jobs:
       - name: Re-run NF-Validation merge/normalization
         run: python3 pipeline/normalize_nf_validation.py
 
+      # timeout-minutes is what makes newly-published certificates actually
+      # reach a PR. Confirmed failure mode (scheduled run 32940563580):
+      # this step ran 1h38m and was cancelled, which cancelled the whole
+      # job -- so "Rebuild frontend data" and "Open a pull request" below
+      # never ran, and the new certificates the scrape had already found
+      # (successfully, in under a minute) were thrown away. continue-on-
+      # error does not cover that: it handles a step that FAILS, not one
+      # that never finishes. Bounded here so mining gives up and the run
+      # still publishes what the scrape found.
       - name: Fetch and mine summary validation reports
         continue-on-error: true
+        timeout-minutes: 25
         run: |
           if [ "${{ inputs.force_remine }}" = "true" ]; then
             python3 pipeline/fetch_and_mine_summary_reports.py
           else
             python3 pipeline/fetch_and_mine_summary_reports.py --skip-already-mined
           fi
+
+      # Reads only each report's opening pages, so it stays cheap next to
+      # the full-document mining above.
+      - name: Extract expert laboratory and technology evidence
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python3 pipeline/extract_expert_labs.py --methods-dir data/methods
 
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py

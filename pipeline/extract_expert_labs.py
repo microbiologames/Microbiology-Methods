@@ -1,0 +1,165 @@
+"""Mine each summary report's opening pages for the expert laboratory that
+ran the validation study, and for technology evidence on methods whose
+detection principle is still unknown.
+
+Free: no API involved, just an HTTP download and pdfplumber text extraction.
+Deliberately reads only the first few pages of each report rather than the
+whole document -- the expert lab is named in the cover page and in the
+running header/footer of every page ("ADRIA Developpement ZA Creac'h Gwen
+29000 Quimper", "Microsept Summary report - v0"), and the methods/protocol
+section that names a thermocycler or an antibody conjugate is near the
+front too. That matters practically: these reports run to 319 pages, and
+the full-document mining step in scrape_afnor.yml really did run 1h38m
+before being cancelled (run 32940563580), which is what blocks that
+workflow from ever opening its PR. Reading 6 pages instead of 300 keeps
+this bounded.
+
+Two things are extracted in one download pass because the download is by
+far the expensive part:
+
+  1. study_design.expert_laboratory -- canonicalized through
+     taxonomy.canonical_expert_lab so "ADRIA" and "ADRIA Developpement"
+     land on one name.
+  2. technology evidence for records whose method_type.category is still
+     unknown, passed to taxonomy.canonical_method_category as study_text
+     so a report describing a thermocycler classifies as molecular even
+     when its product name gives nothing away.
+
+Usage:
+    python3 pipeline/extract_expert_labs.py --methods-dir data/methods
+    python3 pipeline/extract_expert_labs.py --only-unclassified   # cheap pass
+"""
+import argparse
+import json
+import re
+import sys
+import tempfile
+import urllib.request
+from pathlib import Path
+
+import pdfplumber
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import canonical_expert_lab, canonical_method_category  # noqa: E402
+
+PAGES_TO_READ = 6
+REQUEST_TIMEOUT = 60
+
+# Phrases that introduce the expert lab on a real NF-Validation / MicroVal
+# cover page. Captured group is the lab name; kept short and anchored so a
+# sentence mentioning a collaborating lab elsewhere doesn't win.
+_EXPERT_LAB_PATTERNS = [
+    r'[Ee]xpert\s+laboratory\s*:?\s*([A-Z][\w\'\-À-ſ&. ]{2,60})',
+    r'[Ll]aboratoire\s+expert\s*:?\s*([A-Z][\w\'\-À-ſ&. ]{2,60})',
+    r'[Ss]tudy\s+(?:was\s+)?(?:carried\s+out|performed|conducted)\s+by\s+'
+    r'(?:the\s+)?([A-Z][\w\'\-À-ſ&. ]{2,60})',
+    r'[Ee]tude\s+r[ée]alis[ée]e\s+par\s*:?\s*([A-Z][\w\'\-À-ſ&. ]{2,60})',
+]
+
+# Fallback: the known labs' own names appearing anywhere in the opening
+# pages. Reliable because these reports print the lab in the page header or
+# footer of every page -- confirmed on real reports from both ADRIA
+# ("ADRIA Developpement ... 29000 Quimper" in the page-1 letterhead) and
+# Microsept ("Microsept / Summary report - v0" in the page footer).
+_KNOWN_LAB_TOKENS = [
+    "ADRIA", "Microsept", "ISHA", "Institut Pasteur de Lille", "IPL Sant",
+    "ACTALIA", "Labocea", "LDA 22", "Eurofins", "CTCPA", "Campden BRI",
+    "NIZO", "TNO", "Q-lip", "Qlip", "Wageningen", "RIKILT", "Fraunhofer", "SGS",
+]
+
+
+def read_opening_text(pdf_path: Path, pages: int = PAGES_TO_READ) -> str:
+    out = []
+    with pdfplumber.open(str(pdf_path)) as pdf:
+        for page in pdf.pages[:pages]:
+            out.append(page.extract_text() or "")
+    return "\n".join(out)
+
+
+def find_expert_lab(text: str):
+    for pattern in _EXPERT_LAB_PATTERNS:
+        m = re.search(pattern, text)
+        if m:
+            return canonical_expert_lab(m.group(1))
+    for token in _KNOWN_LAB_TOKENS:
+        if token.lower() in text.lower():
+            return canonical_expert_lab(token)
+    return None
+
+
+def process(record: dict, text: str) -> bool:
+    """Fill in what this report actually evidences. Returns True if the
+    record changed, so the caller only rewrites files that really moved."""
+    changed = False
+
+    lab = find_expert_lab(text)
+    if lab:
+        study = record.setdefault("study_design", {})
+        if study.get("expert_laboratory") != lab:
+            study["expert_laboratory"] = lab
+            changed = True
+
+    method_type = record.setdefault("method_type", {})
+    current = method_type.get("category")
+    if current in (None, "other"):
+        # study_text only decides when the name gave nothing -- see
+        # canonical_method_category's documented precedence.
+        resolved = canonical_method_category(current, record.get("commercial_name"), text)
+        if resolved and resolved != current:
+            method_type["category"] = resolved
+            changed = True
+
+    return changed
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--methods-dir", default="data/methods")
+    ap.add_argument("--only-unclassified", action="store_true",
+                    help="Only process records whose detection technology is still unknown "
+                         "-- a few downloads instead of every report.")
+    ap.add_argument("--limit", type=int, default=0, help="Stop after N reports (0 = no cap).")
+    args = ap.parse_args()
+
+    methods_dir = Path(args.methods_dir)
+    targets = []
+    for f in sorted(methods_dir.glob("*.json")):
+        record = json.loads(f.read_text(encoding="utf-8"))
+        url = (record.get("traceability") or {}).get("summary_report_pdf_url")
+        if not url:
+            continue
+        if args.only_unclassified and (record.get("method_type") or {}).get("category") not in (None, "other"):
+            continue
+        targets.append((f, record, url))
+
+    if args.limit:
+        targets = targets[:args.limit]
+    print(f"{len(targets)} report(s) to read (first {PAGES_TO_READ} pages each)", file=sys.stderr)
+
+    written = failed = 0
+    for path, record, url in targets:
+        cert = record.get("source_certificate_number") or path.stem
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".pdf") as tmp:
+                with urllib.request.urlopen(url, timeout=REQUEST_TIMEOUT) as resp:
+                    tmp.write(resp.read())
+                tmp.flush()
+                text = read_opening_text(Path(tmp.name))
+        except Exception as exc:  # noqa: BLE001 -- one unreadable report must not abort the pass
+            print(f"[{cert}] ERROR: {exc}", file=sys.stderr)
+            failed += 1
+            continue
+
+        if process(record, text):
+            path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            lab = (record.get("study_design") or {}).get("expert_laboratory")
+            cat = (record.get("method_type") or {}).get("category")
+            print(f"[{cert}] lab={lab!r} category={cat!r}", file=sys.stderr)
+            written += 1
+
+    print(f"\n=== {written} record(s) updated, {failed} unreadable, "
+          f"{len(targets) - written - failed} unchanged ===", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()

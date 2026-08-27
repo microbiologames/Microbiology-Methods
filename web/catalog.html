@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method Catalogue</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <div>
+        <h1>Validated Methods Catalogue</h1>
+        <p class="subtitle">Certificate-level directory &middot; AFNOR NF&#8209;Validation &middot; MicroVal</p>
+      </div>
+      <nav class="page-nav" aria-label="Views">
+        <a href="catalog.html" class="active" aria-current="page">Catalogue</a>
+        <a href="index.html">Performance explorer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+      <aside class="rail" aria-label="Filters">
+        <div class="rail-card">
+          <input type="search" class="search" id="search-box" placeholder="Method, manufacturer, organism&hellip;" autocomplete="off">
+
+          <div class="facet">
+            <h3>Source</h3>
+            <div class="chips" id="f-source"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Status</h3>
+            <div class="chips" id="f-status"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Technology</h3>
+            <div class="chips" id="f-technology"></div>
+          </div>
+
+          <div class="facet">
+            <h3>Target organism</h3>
+            <select id="organism-select"><option value="all">All organisms</option></select>
+          </div>
+
+          <div class="facet">
+            <h3>Manufacturer</h3>
+            <select id="manufacturer-select"><option value="all">All manufacturers</option></select>
+          </div>
+
+          <div class="facet">
+            <h3>Expert laboratory</h3>
+            <select id="lab-select"><option value="all">All laboratories</option></select>
+            <p class="facet-note" id="lab-note" hidden></p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="content-head">
+          <p class="result-count" id="result-count"></p>
+          <div class="active-pills" id="active-pills"></div>
+          <button type="button" class="clearbtn" id="clear-filters" hidden>Clear all</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="catalog-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="commercial_name" scope="col">Method</th>
+                <th class="sortable" data-sort="manufacturer_name" scope="col">Manufacturer</th>
+                <th class="sortable" data-sort="organism" scope="col">Target</th>
+                <th class="sortable" data-sort="method_category_label" scope="col">Technology</th>
+                <th class="sortable" data-sort="expert_laboratory" scope="col">Expert lab</th>
+                <th class="sortable" data-sort="current_expiry" scope="col">Expiry</th>
+                <th scope="col">Documents</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-body"></tbody>
+          </table>
+        </div>
+
+        <p class="empty-note" id="empty-note" hidden>No method matches these filters.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Certificate-level view: identity, scope and source documents. Validation performance data lives in the <a href="index.html">performance explorer</a>. Built from <code>data/methods/</code>. Source: <a href="https://github.com/microbiologames/Microbiology-Methods">microbiologames/Microbiology-Methods</a>.</p>
+  </footer>
+
+  <script src="catalog.js"></script>
+</body>
+</html>
