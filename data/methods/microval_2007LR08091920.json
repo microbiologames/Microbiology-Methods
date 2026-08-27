@@ -11,7 +11,7 @@
   },
   "method_type": {
     "action": null,
-    "category": null
+    "category": "molecular_pcr"
   },
   "target_organism": {
     "normalized": "Enterobacteriaceae ; Cronobacter spp.",

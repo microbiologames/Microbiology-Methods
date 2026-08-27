@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2006-12-14",
@@ -48,147 +49,13 @@
     "current_expiry": "2026-12-14",
     "status": "active"
   },
-  "performance": {
-    "method_nature": "quantitative",
-    "quantitative": {
-      "relative_trueness_by_category": [
-        {
-          "category": "Meat and meat products",
-          "bias_log": -0.02,
-          "sd_log": 0.45,
-          "n_samples": 22,
-          "n_interpretable": 22,
-          "lower_limit_95": 0.97,
-          "upper_limit_95": 0.94
-        },
-        {
-          "category": "Dairy products",
-          "bias_log": 0.21,
-          "sd_log": 0.17,
-          "n_samples": 16,
-          "n_interpretable": 16,
-          "lower_limit_95": -0.14,
-          "upper_limit_95": 0.56
-        },
-        {
-          "category": "Vegetables",
-          "bias_log": -0.18,
-          "sd_log": 0.54,
-          "n_samples": 16,
-          "n_interpretable": 16,
-          "lower_limit_95": -1.38,
-          "upper_limit_95": 1.02
-        },
-        {
-          "category": "Fish and seafood",
-          "bias_log": -0.12,
-          "sd_log": 0.36,
-          "n_samples": 15,
-          "n_interpretable": 15,
-          "lower_limit_95": -0.95,
-          "upper_limit_95": 0.71
-        },
-        {
-          "category": "Egg products",
-          "bias_log": -0.01,
-          "sd_log": 0.47,
-          "n_samples": 15,
-          "n_interpretable": 15,
-          "lower_limit_95": -1.05,
-          "upper_limit_95": 1.02
-        },
-        {
-          "category": "Pet food",
-          "bias_log": 0.05,
-          "sd_log": 0.17,
-          "n_samples": 16,
-          "n_interpretable": 16,
-          "lower_limit_95": -0.32,
-          "upper_limit_95": 0.42
-        }
-      ],
-      "accuracy_profile": {
-        "acceptability_limit_log": 0.5,
-        "by_matrix": [
-          {
-            "matrix": "Meat and meat products",
-            "sd_repeatability_reference": 0.072,
-            "sd_repeatability_alternative": 0.149,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Dairy products",
-            "sd_repeatability_reference": 0.064,
-            "sd_repeatability_alternative": 0.103,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Vegetables",
-            "sd_repeatability_reference": 0.081,
-            "sd_repeatability_alternative": 0.144,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Fish and seafood",
-            "sd_repeatability_reference": 0.072,
-            "sd_repeatability_alternative": 0.149,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Egg products",
-            "sd_repeatability_reference": 0.073,
-            "sd_repeatability_alternative": 0.133,
-            "samples_out_of_beta_eti": []
-          },
-          {
-            "matrix": "Pet food",
-            "sd_repeatability_reference": 0.069,
-            "sd_repeatability_alternative": 0.131,
-            "samples_out_of_beta_eti": []
-          }
-        ]
-      },
-      "loq_log": null,
-      "inclusivity": {
-        "n_tested": 50,
-        "n_correctly_detected": 48,
-        "discrepancies": [
-          {
-            "strain": "Citrobacter diversus CIP 8594",
-            "note": "was not able to grow on VRBG plates but was enumerated by the TEMPO EB method"
-          },
-          {
-            "strain": "Rhanella aquatilis 69",
-            "note": "was not enumerated by both methods"
-          }
-        ]
-      },
-      "exclusivity": {
-        "n_tested": 30,
-        "n_correctly_detected": 27,
-        "discrepancies": [
-          {
-            "strain": "Stenotrophomonas maltophilia CIP 6077",
-            "note": "Cross-reactive: enumerated by the alternative method"
-          },
-          {
-            "strain": "Stenotrophomonas maltophilia 112",
-            "note": "Cross-reactive: enumerated by the alternative method"
-          },
-          {
-            "strain": "Plesiomonas shigelloïdes Ad673",
-            "note": "Cross-reactive: enumerated by the alternative method"
-          }
-        ]
-      }
-    }
-  },
+  "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "notes": null,
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/BIO-12-21-12-06_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BIO-12-21-12-06_en.pdf",
     "organism_page_last_updated_raw": "6 janvier 2026"

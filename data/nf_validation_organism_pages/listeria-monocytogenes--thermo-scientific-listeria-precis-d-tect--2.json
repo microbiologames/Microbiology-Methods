@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Thermo Scientific™ Listeria Precis™ (Détection Listeria monocytogenes)",
+  "manufacturer": {
+    "name": "OXOID Ltd, Part of Thermo Fisher Scientific",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Listeria monocytogenes",
+    "raw": "Listeria monocytogenes"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 11290-1; NF EN ISO 11290-2",
+    "raw": "Détection des Listeria monocytogenes"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/UNI-03-04-04-05-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/Listeria_Precis_L.mono_SR_2025_07_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "25 août 2026"
+}
