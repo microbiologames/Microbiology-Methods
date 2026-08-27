@@ -20,12 +20,41 @@ Usage:
     python3 diagnose_llm_failures.py --urls-file urls.txt
 """
 import argparse
+import re
 import sys
 import tempfile
 import urllib.request
 from pathlib import Path
 
 import pypdf
+
+# Keywords that should appear on or near the per-category results table
+# itself (ISO 16140-2 accuracy-profile / method-comparison tables), used by
+# --grep to locate candidate pages without an API call.
+_TABLE_KEYWORDS_RE = re.compile(
+    r'trueness|bias|categor|accuracy profile|sensitivity|acceptability limit', re.I,
+)
+
+
+def _decrypted_reader(pdf_path: Path) -> pypdf.PdfReader:
+    reader = pypdf.PdfReader(str(pdf_path))
+    if reader.is_encrypted:
+        reader.decrypt("")
+    return reader
+
+
+def grep_pages(pdf_path: Path, context_chars: int = 400) -> list:
+    """Free (no API call) page-content search: which pages mention the
+    words that should surround the per-category results table, and what
+    text is actually there. Lets us see WHY a report confused the LLM
+    miner without paying for another attempt."""
+    reader = _decrypted_reader(pdf_path)
+    hits = []
+    for i, page in enumerate(reader.pages):
+        text = page.extract_text() or ""
+        if _TABLE_KEYWORDS_RE.search(text):
+            hits.append((i + 1, text[:context_chars]))
+    return hits
 
 
 def diagnose_one(pdf_path: Path) -> dict:
@@ -56,6 +85,9 @@ def diagnose_one(pdf_path: Path) -> dict:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--urls-file", required=True, help="One URL per line, optionally 'label|url'.")
+    ap.add_argument("--grep", action="store_true",
+                     help="Instead of the encryption/page-count summary, search every page for "
+                          "results-table keywords and print what's actually there.")
     args = ap.parse_args()
 
     lines = [l.strip() for l in Path(args.urls_file).read_text().splitlines() if l.strip()]
@@ -68,9 +100,16 @@ def main():
         try:
             with tempfile.NamedTemporaryFile(suffix=".pdf") as tmp:
                 urllib.request.urlretrieve(url, tmp.name)
-                info = diagnose_one(Path(tmp.name))
-            for k, v in info.items():
-                print(f"  {k}: {v}", file=sys.stderr)
+                if args.grep:
+                    hits = grep_pages(Path(tmp.name))
+                    print(f"  {len(hits)} page(s) mention a results-table keyword:", file=sys.stderr)
+                    for page_num, excerpt in hits:
+                        print(f"  --- page {page_num} ---", file=sys.stderr)
+                        print(f"  {excerpt!r}", file=sys.stderr)
+                else:
+                    info = diagnose_one(Path(tmp.name))
+                    for k, v in info.items():
+                        print(f"  {k}: {v}", file=sys.stderr)
         except Exception as exc:  # noqa: BLE001
             print(f"  DOWNLOAD/READ ERROR: {exc}", file=sys.stderr)
 

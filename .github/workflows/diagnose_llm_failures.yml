@@ -44,3 +44,12 @@ jobs:
         run: |
           cd scrapers
           python3 diagnose_llm_failures.py --urls-file /tmp/urls.txt
+
+      - name: Grep table content of two failing reports (1 Petrifilm quantitative, 1 the odd 'Synt-' doc)
+        run: |
+          cd scrapers
+          cat > /tmp/grep_urls.txt <<'EOF'
+          3M 01/09-04/03 A (Petrifilm, quantitative, FAILED)|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_StaphExpress_vs_BPA-SR_v0-protected.pdf
+          3M 01/07-03/99 (old Synt- doc, FAILED)|https://nf-validation.afnor.org/wp-content/uploads/2014/05/Synt-3M-01-07-03-99_en.pdf
+          EOF
+          python3 diagnose_llm_failures.py --urls-file /tmp/grep_urls.txt --grep
