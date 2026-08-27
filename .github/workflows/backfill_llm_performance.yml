@@ -1,0 +1,82 @@
+name: Backfill performance data via the LLM miner
+
+# Manual-only and cost-capped: mines the NF-Validation summary reports the
+# deterministic pdfplumber pipeline couldn't extract a per-category
+# breakdown from (91 records as of writing), using scrapers/
+# llm_report_miner.py -- one paid API call per record, hence the `limit`
+# input rather than always running the whole backlog.
+#
+# Only trusted after calibration: on 5 known-good reports the LLM path
+# reproduced the deterministic pipeline's numbers exactly (every compared
+# field within +/-0.05) -- see calibrate_llm_miner.yml. Everything it
+# writes is marked traceability.extraction_confidence = "medium" so
+# LLM-derived numbers stay distinguishable from the deterministic path's
+# "high" forever.
+#
+# Re-runnable: records already carrying a real breakdown are skipped, so
+# running this repeatedly walks through the backlog in `limit`-sized
+# batches without re-paying for what's already done.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max records to backfill this run (one paid API call each)"
+        default: "25"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install anthropic pypdf cryptography jsonschema
+
+      - name: Run backfill
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd scrapers
+          python3 backfill_llm_performance.py \
+            --methods-dir ../data/methods \
+            --schema ../schema/method.schema.json \
+            --limit "${{ github.event.inputs.limit }}"
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
+
+      - name: Open a pull request with the backfilled data
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Backfill performance data via the LLM miner"
+          title: "Data: LLM-backfilled performance data"
+          add-paths: |
+            data/
+            web/
+          body: |
+            Performance data mined by `scrapers/llm_report_miner.py` for
+            NF-Validation records the deterministic pdfplumber pipeline
+            couldn't extract a per-category breakdown from.
+
+            Every record touched here is marked
+            `traceability.extraction_confidence: "medium"` (the
+            deterministic path uses `"high"`), and the model's own
+            extraction notes are appended to `traceability.notes` --
+            during calibration those notes surfaced real inconsistencies
+            in the source reports themselves, so they're worth reading.
+
+            Check the run log for the per-record summary: how many were
+            written, how many returned no usable data (left untouched, so
+            a later run retries them), and how many errored.
+          branch: automated/llm-performance-backfill
+          delete-branch: true
