@@ -46,13 +46,63 @@
     "current_expiry": "2028-09-30",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 83.3,
+          "relative_trueness_pct": 87.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 73.5,
+          "sensitivity_reference_pct": 76.5,
+          "relative_trueness_pct": 76.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 73.3,
+          "relative_trueness_pct": 81.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 78.1,
+          "sensitivity_reference_pct": 81.3,
+          "relative_trueness_pct": 81.2,
+          "false_positive_ratio_alternative_pct": 2.7
+        },
+        {
+          "category": "Seafood and fishery products",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 86.7,
+          "relative_trueness_pct": 87.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 78.1,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 85.5,
+          "false_positive_ratio_alternative_pct": 4.5
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers a qualitative (detection) method (NEOGEN Molecular Detection Assay 2 - Listeria monocytogenes) validated under EN ISO 16140-2:2016, with an initial validation (2016, General Protocol + Specific Protocol 1) covering 6 categories, and a later 2024 extension study (Specific Protocol 2) covering 3 additional category variants (Meat products, Dairy products, Seafood/fishery products - extension) tested with a new enrichment broth (LESS Plus). I recorded the 6 primary/canonical categories from Table 6 (General Protocol + Specific Protocol 1, the original validation scope covering the full breadth of food categories: Composite foods, Meat products, Dairy products, Vegetables, Seafood and fishery products, Environmental samples). The extension-study results (SP2: Meat products, Dairy/Milk products, Seafood and fishery products) are separate re-tests of already-covered categories under a different enrichment protocol, so per the instructions I excluded them as they duplicate categories already listed under the primary study; their summary sensitivity/trueness/FPR values were: Meat products (SP2 ext) SEalt=81.3%, SEref=84.4%, RT=84.5%, FPR=0.0%; Milk and Dairy products (SP2 ext) SEalt=90.6%, SEref=96.9%, RT=93.5%, FPR=0.0%; Seafood and fishery products (SP2 ext) SEalt=86.8%, SEref=89.5%, RT=87.8%, FPR=0.0%. Also excluded aggregate/total rows (\"All categories and all protocols\", \"General protocol + specific protocol 1\", \"General protocol + specific protocol 2\"). Certificate number taken from cover page title \"(certificate # 3M 01/15 – 09/16)\".",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/3M-01-15-09-16_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/11/Listeria_MDA2_L_mono_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 août 2026"
