@@ -26,6 +26,40 @@ pay for or introduce LLM non-determinism there. See mine_hybrid() below,
 which runs the deterministic path first and only calls Claude for whatever
 it didn't get.
 
+Status as of 2026-08-27 (budget frozen -- see below): a real 25-record
+backfill batch wrote 2 clean records, then ran out of API credit; 5 of the
+first 7 attempts came back as a placeholder/empty extraction despite the
+anti-placeholder instructions below. Free diagnostics (scrapers/
+diagnose_llm_failures.py, no API key -- see .github/workflows/
+diagnose_llm_failures.yml) ruled out encryption (all 5 decrypt fine, same
+as the fix below) and page count (the 2 successes were 96/102 pages, longer
+than the shortest failure at 59) as causes. What the failures have in
+common, confirmed by reading the actual extracted page text:
+  - 4/5 are Petrifilm quantitative (enumeration) reports that bundle THREE
+    separate relative-trueness tables for the SAME category set in one PDF
+    (an initial validation study, a renewal/extension study, and a reduced
+    automated-vs-manual-reading study) under different table numbers and
+    headers ("Table 4", "Table 15"/"Table 21" via Bland-Altman difference
+    plots) -- genuinely ambiguous which is "the" primary result, unlike the
+    calibration sample's single-table reports. The two successful reports
+    in this same batch faced a similar primary-vs-extension-study choice
+    and resolved it correctly (see their traceability.notes), so the
+    model CAN do this -- it isn't reliable at it yet.
+  - The 5th (an older 2014 "Synt-" document, differently templated from
+    every "_SR_" report) has one single, unambiguous relative-trueness
+    table, but its header uses the same bolded "D-bar" (bias) math symbol
+    already flagged above as breaking pdfplumber's text-based read on a
+    different report -- plausible this also confuses a model's read of the
+    table, though unconfirmed without another paid call.
+Fixing either needs a validated prompt/schema change (e.g. explicit
+tie-breaking rules for multiple same-category tables, and reassurance that
+a garbled header symbol doesn't block reading the row underneath), which
+in turn needs paid runs to test -- put on hold at the user's explicit
+instruction after this batch spent ~$25 without clearing the backlog and
+before further budget is approved. Do not resume backfill runs until that
+happens; ship a validated prompt change first, calibrated the same way
+the original 5-report pilot was (see validate_llm_miner.py).
+
 Requires a real Anthropic API key (console.anthropic.com -- separate from a
 claude.ai chat subscription, which does not include API access) in the
 ANTHROPIC_API_KEY environment variable.
