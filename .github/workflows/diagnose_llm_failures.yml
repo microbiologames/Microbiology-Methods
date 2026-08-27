@@ -36,6 +36,8 @@ jobs:
           3M 01/09-04/03 A|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_StaphExpress_vs_BPA-SR_v0-protected.pdf
           3M 01/09-04/03 B|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_StaphExpress_vs_BPRPFB-SR_2025_v0-protected.pdf
           3M 01/13-07/14|https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Petrifilm_RYM_SR_v0.pdf
+          3M 01/14-05/16 (SUCCEEDED)|https://nf-validation.afnor.org/wp-content/uploads/2024/04/MDA2_Listeria_2024_04_SR_v0-protected.pdf
+          3M 01/15-09/16 (SUCCEEDED)|https://nf-validation.afnor.org/wp-content/uploads/2024/11/Listeria_MDA2_L_mono_SR_v0-protected.pdf
           EOF
 
       - name: Run diagnostic
