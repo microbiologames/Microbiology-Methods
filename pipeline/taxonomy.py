@@ -204,6 +204,10 @@ _EXPERT_LAB_RULES = [
     ("ISHA", ["isha", "institutscientifiquedhygieneetdanalyse"]),
     ("Institut Pasteur de Lille", ["institutpasteurdelille", "iplsante", "ipl"]),
     ("ACTALIA", ["actalia"]),
+    # Real labs confirmed by the first full extraction run over 238 reports;
+    # "Inovalys site de Tours" and a bare "Inovalys" are one laboratory, so
+    # the site suffix is folded away like any other spelling variant.
+    ("Inovalys", ["inovalys"]),
     ("Labocea", ["labocea", "lda22"]),
     ("Eurofins", ["eurofins"]),
     ("CTCPA", ["ctcpa"]),
@@ -217,16 +221,56 @@ _EXPERT_LAB_RULES = [
     ("LRQA Nederland", ["lrqa"]),
 ]
 
+# A capture that is not plausibly a laboratory name. The first real
+# extraction run produced two of these from otherwise reasonable sentence
+# patterns: "For" (a sentence fragment swallowed by a "...performed by"
+# match) and "W. Jacobs-Reitsma" (a researcher credited in the study, not
+# the lab that ran it). Rejecting them keeps a junk value out of a filter
+# facet, where it is far more visible and more confusing than a blank.
+_LAB_STOPWORDS = {
+    "for", "the", "this", "these", "all", "both", "each", "one", "two",
+    "a", "an", "and", "or", "of", "in", "on", "by", "with",
+    "le", "la", "les", "un", "une", "des", "du", "de", "et", "par",
+    "study", "etude", "report", "method", "test", "sample", "samples",
+    "laboratory", "laboratoire", "expert",
+}
+
+# "W. Jacobs-Reitsma", "J.-P. Dupont": an initial followed by a surname is
+# a person, and a person is never the answer to "which lab ran this".
+_PERSON_NAME_RE = re.compile(r'^\s*(?:[A-Z]\.\s*){1,3}[A-Z][\w\'\-]+\s*$')
+
+
+def _is_plausible_lab_name(name: str) -> bool:
+    cleaned = _tidy(name)
+    if len(cleaned) < 3:
+        return False
+    if cleaned.lower() in _LAB_STOPWORDS:
+        return False
+    if _PERSON_NAME_RE.match(cleaned):
+        return False
+    # A single short generic word ("For", "Study") is a capture artifact;
+    # real one-word labs in this domain are acronyms (ISHA, TNO, CTCPA) or
+    # long enough to be distinctive.
+    if " " not in cleaned and cleaned.islower():
+        return False
+    return True
+
 
 def canonical_expert_lab(raw):
-    """One label per real laboratory. Unknown names pass through tidied."""
+    """One label per real laboratory.
+
+    A name matching a known laboratory always wins, however the report
+    phrased it. An unrecognized name is kept only if it plausibly IS a
+    laboratory name -- see _is_plausible_lab_name -- and dropped otherwise,
+    because a junk value in a filter facet is worse than no value.
+    """
     if not raw:
         return None
     key = _fold(raw)
     for label, patterns in _EXPERT_LAB_RULES:
         if any(p in key for p in patterns):
             return label
-    return _tidy(raw)
+    return _tidy(raw) if _is_plausible_lab_name(raw) else None
 
 
 # ---------------------------------------------------------------------------

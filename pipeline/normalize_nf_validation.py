@@ -230,6 +230,48 @@ def build_canonical(cert_number: str, bootstrap_rec: dict | None,
     }
 
 
+def preserve_mined_fields(rec: dict, existing_path) -> dict:
+    """Carry forward everything that was MINED rather than scraped.
+
+    build_canonical() rebuilds a record from the certificate list and the
+    organism pages only, so it necessarily sets performance to None -- those
+    numbers live in the summary-report PDFs, not on the pages this script
+    reads. Writing that rebuilt record straight out therefore wiped every
+    previously mined result on every run: the 2026-08-27 scheduled run
+    dropped records-with-performance from 97 to 45 that way, and would have
+    dropped the LLM-backfilled ones too. Mining then re-ran from zero
+    against a 25-minute budget it cannot finish in, so the loss was not
+    recoverable within the same run.
+
+    Scraped fields still win -- a renewed expiry date or a new commercial
+    name must overwrite the old record. Only fields this pipeline cannot
+    produce are taken from what is already on disk.
+    """
+    if not existing_path.exists():
+        return rec
+    try:
+        old = json.loads(existing_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return rec  # unreadable existing file: the fresh record is better than nothing
+
+    if old.get("performance") and not rec.get("performance"):
+        rec["performance"] = old["performance"]
+
+    old_lab = (old.get("study_design") or {}).get("expert_laboratory")
+    if old_lab and not (rec.get("study_design") or {}).get("expert_laboratory"):
+        rec.setdefault("study_design", {})["expert_laboratory"] = old_lab
+
+    # extraction_confidence and notes describe how the performance data was
+    # obtained, so they belong with it -- "medium" marks an LLM-derived
+    # extraction and must not silently revert to the scraper's "high".
+    old_tr, new_tr = old.get("traceability") or {}, rec.setdefault("traceability", {})
+    if old.get("performance"):
+        for key in ("extraction_confidence", "notes"):
+            if old_tr.get(key) and not new_tr.get(key):
+                new_tr[key] = old_tr[key]
+    return rec
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--bootstrap-dir", default="data/nf_validation")
@@ -271,6 +313,7 @@ def main():
             continue
 
         fname = re.sub(r'[^a-z0-9]+', '_', cert.lower()).strip('_') + ".json"
+        rec = preserve_mined_fields(rec, out_dir / fname)
         (out_dir / fname).write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(

@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Microsept"
   },
   "certification": {
     "original_date": "2016-01-28",
@@ -54,7 +55,7 @@
     "extraction_confidence": "high",
     "notes": null,
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-03-01-16-fr.docx_.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N%C2%B003_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°03_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
     "organism_page_last_updated_raw": "19 août 2026"
   }
 }

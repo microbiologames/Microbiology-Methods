@@ -76,14 +76,41 @@ def read_opening_text(pdf_path: Path, pages: int = PAGES_TO_READ) -> str:
     return "\n".join(out)
 
 
+# A sentence-pattern capture runs on past the lab name into the rest of the
+# sentence ("Nofima AS in Norway." from "...performed by Nofima AS in
+# Norway."). Cut at the first connector word or sentence end so what's
+# stored is the name itself.
+_CAPTURE_TAIL_RE = re.compile(
+    r'\s+(?:in|at|on|for|and|with|from|according|located|based|situated|'
+    r'en|au|aux|dans|selon|pour|et|sur)\b.*$|[.;,].*$',
+    re.I | re.S,
+)
+
+
+def _trim_capture(name: str) -> str:
+    return _CAPTURE_TAIL_RE.sub("", name).strip()
+
+
 def find_expert_lab(text: str):
+    """Known laboratories are checked FIRST, sentence patterns only as a
+    fallback. The reverse order (patterns first) is what the first full run
+    over 238 reports actually shipped, and it produced two junk values --
+    "For" from a fragment and "W. Jacobs-Reitsma", a researcher credited in
+    the study rather than the lab that ran it -- on reports whose header
+    named the real lab perfectly well. Matching the known name is high
+    confidence; parsing an arbitrary sentence is not."""
+    lowered = text.lower()
+    for token in _KNOWN_LAB_TOKENS:
+        if token.lower() in lowered:
+            return canonical_expert_lab(token)
     for pattern in _EXPERT_LAB_PATTERNS:
         m = re.search(pattern, text)
         if m:
-            return canonical_expert_lab(m.group(1))
-    for token in _KNOWN_LAB_TOKENS:
-        if token.lower() in text.lower():
-            return canonical_expert_lab(token)
+            # canonical_expert_lab returns None for an implausible capture,
+            # so keep trying the remaining patterns rather than settling.
+            lab = canonical_expert_lab(_trim_capture(m.group(1)))
+            if lab:
+                return lab
     return None
 
 

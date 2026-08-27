@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2011-10-06",
@@ -55,10 +56,30 @@
     "current_expiry": "2027-10-06",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 87.6,
+          "sensitivity_reference_pct": 92.2,
+          "rlod": null
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 96.4,
+          "sensitivity_reference_pct": 95.2,
+          "rlod": null
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": null,

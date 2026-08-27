@@ -11,7 +11,7 @@
   },
   "method_type": {
     "action": null,
-    "category": null
+    "category": "flow_cytometry"
   },
   "target_organism": {
     "normalized": "Total viable count",

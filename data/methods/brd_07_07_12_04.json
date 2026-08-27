@@ -14,7 +14,7 @@
     "category": "culture_media"
   },
   "target_organism": {
-    "normalized": "Escherichia coli",
+    "normalized": "E. coli",
     "raw": "Escherichia coli"
   },
   "reference_method": {
@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Microsept"
   },
   "certification": {
     "original_date": "2004-12-02",
@@ -54,7 +55,7 @@
   "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": null,

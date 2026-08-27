@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "1995-11-21",
@@ -57,7 +58,7 @@
     "extraction_confidence": "high",
     "notes": null,
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B013_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
     "organism_page_last_updated_raw": "19 août 2026"
   }
 }

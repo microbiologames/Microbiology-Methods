@@ -11,7 +11,7 @@
   },
   "method_type": {
     "action": null,
-    "category": null
+    "category": "molecular_pcr"
   },
   "target_organism": {
     "normalized": "Salmonella spp.",
@@ -36,7 +36,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Campden BRI"
   },
   "certification": {
     "original_date": "2021-07-06",

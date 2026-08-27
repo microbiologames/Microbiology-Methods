@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2010-09-24",
@@ -49,7 +50,57 @@
     "current_expiry": "2030-09-24",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "RTE, RTRH",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 96.7,
+          "rlod": null
+        },
+        {
+          "category": "Egg products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        },
+        {
+          "category": "Seafood and vegetables",
+          "sensitivity_alternative_pct": 93.9,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        },
+        {
+          "category": "Feed samples",
+          "sensitivity_alternative_pct": 93.8,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "rlod": null
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
