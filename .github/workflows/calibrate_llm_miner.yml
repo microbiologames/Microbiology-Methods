@@ -1,0 +1,42 @@
+name: Calibrate LLM report miner against known-good extractions
+
+# Manual-only, cost-controlled pilot: before trusting scrapers/llm_report_miner.py
+# (Claude reading NF-Validation summary reports directly, proposed as a fallback
+# for the ~96/146 reports the deterministic pdfplumber pipeline can't mine a
+# category breakdown from -- see summary_report_parser.py's module docstring),
+# this checks it against the SAME reports pdfplumber already mined correctly.
+# If Claude reproduces those known-correct numbers, that's real evidence for
+# the reports where the deterministic path found nothing at all -- no manual
+# spot-checking needed to reach that conclusion. sample-size defaults small
+# since every record here is one paid API call.
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample_size:
+        description: "How many known-good records to spot-check"
+        default: "5"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run calibration
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd scrapers
+          python3 validate_llm_miner.py --methods-dir ../data/methods --sample-size "${{ github.event.inputs.sample_size }}"
