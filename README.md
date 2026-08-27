@@ -57,7 +57,8 @@ exclusivity, etc.) extracted from the underlying validation reports.
   transform, no reconciliation needed yet) for AOAC-RI and MicroVal.
 - **Orchestration** — one GitHub Actions workflow per source
   (`.github/workflows/scrape_afnor.yml`, `scrape_microval.yml`,
-  `scrape_aoac.yml`), daily + manual dispatch, from normal-egress runners.
+  `scrape_aoac.yml`), weekly (Monday) + manual dispatch, from normal-egress
+  runners.
   Split by source deliberately, not bundled into one job: AFNOR's
   summary-report mining step alone takes ~40 minutes, so bundling meant
   every debugging cycle on the (currently broken) AOAC-RI scraper paid that
@@ -113,6 +114,32 @@ web/                                   static frontend (heatmap + drill-down), r
 ```
 
 ## Current status
+
+### Data normalization and the catalogue view (2026-08-27)
+
+`pipeline/taxonomy.py` canonicalizes the identity fields every view filters
+on — the same job `food_categories.py` already did for food matrices. Real
+effect on the current 234 methods: target organisms 32 -> 24 distinct
+labels, manufacturers 56 -> 32, and 40 methods with no known detection
+technology down to 4. Chromogenic agar folds into culture media (a
+chromogenic plate is a culture medium). Only spelling, language and
+legal-entity variants are merged; scope never is, so `Listeria spp.` and
+`Listeria monocytogenes` stay separate targets.
+
+`web/catalog.html` is a certificate-level directory that deliberately stops
+short of validation performance data: identity, technology, expert
+laboratory, expiry, and links to the source paperwork. 231/234 methods link
+straight to their own study report; the other 3 fall back to their
+registry's search page, shown as such rather than as a dead link. The
+performance explorer (`web/index.html`) is unchanged and the two cross-link.
+
+`study_design.expert_laboratory` is mined from each report's opening pages
+by `pipeline/extract_expert_labs.py` (free — no API), canonicalized so
+"ADRIA" and "ADRIA Développement" are one laboratory. The same pass reads
+the study text for technology evidence (thermocycler, primer, antibody
+conjugate) on methods whose product name gives nothing away, requiring two
+independent hits before it will reclassify anything.
+
 
 - [x] `schema/method.schema.json` — canonical schema, informed by real fields
       observed across NF-Validation certificates, an AFNOR NF-Validation
@@ -258,7 +285,7 @@ web/                                   static frontend (heatmap + drill-down), r
       (`2007LR08091920` -- confirmed genuine, not a parsing bug, since the
       same string appears verbatim in the certificate's own PDF filename).
 - [x] `.github/workflows/scrape_afnor.yml` / `scrape_microval.yml` /
-      `scrape_aoac.yml` — one workflow per source, daily + manual dispatch,
+      `scrape_aoac.yml` — one workflow per source, weekly + manual dispatch,
       each opening its own PR. Originally one combined workflow; split once
       it became clear that bundling made iterating on any single source
       expensive — AFNOR's summary-report mining step alone takes ~40
