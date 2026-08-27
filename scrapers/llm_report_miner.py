@@ -164,7 +164,13 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> 
         model=MODEL,
         max_tokens=4096,
         tools=[RECORD_PERFORMANCE_TOOL],
-        tool_choice={"type": "tool", "name": "record_performance_data"},
+        # disable_parallel_tool_use: without it, a first real calibration run
+        # showed Claude sometimes emits a throwaway first tool_use block
+        # (literally {"extraction_notes": "Placeholder call; will correct in
+        # next call."}, all other fields empty) before a real, corrected one
+        # in the same response -- taking response.content's FIRST tool_use
+        # block picked up that placeholder instead of the real extraction.
+        tool_choice={"type": "tool", "name": "record_performance_data", "disable_parallel_tool_use": True},
         messages=[{
             "role": "user",
             "content": [
@@ -174,9 +180,13 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> 
         }],
     )
 
-    tool_use = next((b for b in response.content if b.type == "tool_use"), None)
-    if tool_use is None:
+    # Defense in depth alongside disable_parallel_tool_use above: use the
+    # LAST tool_use block, not the first, in case a self-correction slips
+    # through anyway.
+    tool_uses = [b for b in response.content if b.type == "tool_use"]
+    if not tool_uses:
         raise RuntimeError(f"No tool_use block in Claude's response (stop_reason={response.stop_reason!r})")
+    tool_use = tool_uses[-1]
 
     result = tool_use.input
     if result["method_nature"] == "unknown":
