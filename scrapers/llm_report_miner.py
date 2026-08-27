@@ -37,6 +37,7 @@ import argparse
 import base64
 import io
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -151,6 +152,12 @@ Different labs format this table very differently -- some split a category's dat
 "Total" row below it, some render special symbols as garbled characters. Read the actual page \
 content (not just visible characters) to recover the correct numeric values regardless of layout.
 
+Record ONLY real food categories -- one entry per actual ISO 16140-2 food category tested. These \
+tables usually also carry summary rows aggregating across categories ("All categories", "Total", \
+"All categories - Specific protocol 1", ...): those are totals, not categories, so leave them out \
+entirely. If a report splits its results by protocol or variant, record the categories of the \
+primary/canonical study only, and describe the other variants in extraction_notes.
+
 This is a single, final call to record_performance_data -- there is no follow-up turn where you \
 can correct or replace it. Never submit a draft, placeholder, or test value (e.g. literally \
 writing "placeholder" or "test" in a field) to fill the call before you have actually read the \
@@ -158,6 +165,39 @@ document; do the real extraction first, then make one call with your genuine fin
 is genuinely not present or not confidently readable after reading the actual document, use null \
 for it and explain why in extraction_notes -- that is the correct way to express uncertainty, not \
 a placeholder value."""
+
+
+# Rows aggregating ACROSS categories rather than describing one -- "All
+# categories", "Total", and the per-protocol variants real reports use
+# ("All categories - Specific protocol 1", "Total Rapid Spin protocol",
+# "All categories (Listeria monocytogenes)"). Confirmed against a real
+# 25-record backfill batch, where 18/20 successfully-mined records carried
+# at least one: left in, they surface as fake food categories in the
+# frontend's category axis and skew any cross-method comparison, which is
+# the whole point of the tool. summary_report_parser.py's deterministic
+# path already skipped these; the LLM path needs the same guard.
+#
+# Deliberately anchored at the start of the label and requiring a real
+# aggregate word, so a genuine category is never dropped: ISO 16140-2
+# Annex A's category names ("Meat products", "Dairy products", ...) don't
+# begin with "total"/"overall", nor with "all" followed by
+# categories/products/matrices/protocols.
+_AGGREGATE_CATEGORY_RE = re.compile(
+    r'^\s*(?:all\s+(?:categor|product|matri|protocol)|total\b|overall\b|global\b)', re.I,
+)
+
+
+def _drop_aggregate_rows(rows: list, cert_label: str) -> list:
+    """Remove cross-category summary rows, logging each drop so the choice
+    stays auditable in the run log rather than silently reshaping data."""
+    kept = []
+    for row in rows or []:
+        name = (row.get("category") or "").strip()
+        if _AGGREGATE_CATEGORY_RE.match(name):
+            print(f"[{cert_label}] dropping aggregate row {name!r} (not a food category)", file=sys.stderr)
+            continue
+        kept.append(row)
+    return kept
 
 
 def _read_pdf_bytes_decrypted(pdf_path: Path) -> bytes:
@@ -226,12 +266,18 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> 
     result = tool_use.input
     if result["method_nature"] == "unknown":
         result["method_nature"] = None
+    # The prompt asks for real categories only, but a deterministic filter
+    # runs regardless -- an instruction is not a guarantee, and an aggregate
+    # row silently becoming a fake food category is exactly the kind of
+    # error that would be hard to spot once it reached the frontend.
+    cert_label = result.get("certificate_number") or pdf_path.name
     performance = None
     if result["method_nature"] == "quantitative" and result["quantitative"]:
         performance = {
             "method_nature": "quantitative",
             "quantitative": {
-                "relative_trueness_by_category": result["quantitative"]["relative_trueness_by_category"],
+                "relative_trueness_by_category": _drop_aggregate_rows(
+                    result["quantitative"]["relative_trueness_by_category"], cert_label),
                 "accuracy_profile": {
                     "acceptability_limit_log": result["quantitative"]["acceptability_limit_log"],
                     "by_matrix": [],
@@ -245,7 +291,8 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> 
         performance = {
             "method_nature": "qualitative",
             "qualitative": {
-                "method_comparison_by_category": result["qualitative"]["method_comparison_by_category"],
+                "method_comparison_by_category": _drop_aggregate_rows(
+                    result["qualitative"]["method_comparison_by_category"], cert_label),
                 "inclusivity": {},
                 "exclusivity": {},
             },
