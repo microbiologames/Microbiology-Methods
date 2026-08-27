@@ -1,0 +1,44 @@
+name: Diagnose LLM miner placeholder failures (free, no API key)
+
+# One-off diagnostic: 5 reports in the 2026-08-27 backfill batch made
+# llm_report_miner.py return an empty/placeholder extraction instead of
+# real data or a clean error. Budget is frozen after that batch (~$25
+# spent against a low balance without clearing the backlog), so before
+# spending anything more this checks the one free hypothesis: that these
+# are the same permissions-encryption issue already fixed once for a
+# different report, rather than a new failure mode. No ANTHROPIC_API_KEY
+# used -- this only downloads the PDFs and inspects them with pypdf.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf cryptography
+
+      - name: Build URL list of the placeholder-failure reports
+        run: |
+          cat > /tmp/urls.txt <<'EOF'
+          3M 01/01-09/89|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_AC_SR_v0-protected.pdf
+          3M 01/07-03/99|https://nf-validation.afnor.org/wp-content/uploads/2014/05/Synt-3M-01-07-03-99_en.pdf
+          3M 01/09-04/03 A|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_StaphExpress_vs_BPA-SR_v0-protected.pdf
+          3M 01/09-04/03 B|https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_StaphExpress_vs_BPRPFB-SR_2025_v0-protected.pdf
+          3M 01/13-07/14|https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Petrifilm_RYM_SR_v0.pdf
+          EOF
+
+      - name: Run diagnostic
+        run: |
+          cd scrapers
+          python3 diagnose_llm_failures.py --urls-file /tmp/urls.txt
