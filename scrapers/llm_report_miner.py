@@ -147,9 +147,15 @@ confidence interval per category), plus the stated Acceptability Limit.
 
 Different labs format this table very differently -- some split a category's data across a \
 "Total" row below it, some render special symbols as garbled characters. Read the actual page \
-content (not just visible characters) to recover the correct numeric values regardless of layout. \
-Call record_performance_data with what you find; use null for anything genuinely not present or \
-not confidently readable, and use extraction_notes to flag anything you're unsure about."""
+content (not just visible characters) to recover the correct numeric values regardless of layout.
+
+This is a single, final call to record_performance_data -- there is no follow-up turn where you \
+can correct or replace it. Never submit a draft, placeholder, or test value (e.g. literally \
+writing "placeholder" or "test" in a field) to fill the call before you have actually read the \
+document; do the real extraction first, then make one call with your genuine findings. If a field \
+is genuinely not present or not confidently readable after reading the actual document, use null \
+for it and explain why in extraction_notes -- that is the correct way to express uncertainty, not \
+a placeholder value."""
 
 
 def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> dict:

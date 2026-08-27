@@ -92,6 +92,14 @@ def validate_one(record: dict, pdf_path: Path) -> dict:
 
     llm_rows = (mined["performance"]["quantitative"]["relative_trueness_by_category"] if nature == "quantitative"
                 else mined["performance"]["qualitative"]["method_comparison_by_category"])
+    if not llm_rows:
+        # Confirmed real failure mode (calibration run 33055861546/33056412705):
+        # Claude sometimes returns method_nature correctly but an EMPTY
+        # category array with junk extraction_notes ("placeholder", "test")
+        # instead of the real table -- surface this as an explicit error
+        # rather than letting it silently show up as "0/0 fields matched".
+        return {"certificate": record["source_certificate_number"],
+                "error": f"LLM returned zero category rows; extraction_notes={mined['extraction_notes']!r}"}
     comparison = compare_breakdown(gt_rows, llm_rows, numeric_fields)
     comparison["certificate"] = record["source_certificate_number"]
     comparison["llm_extraction_notes"] = mined["extraction_notes"]
@@ -103,6 +111,10 @@ def main():
     ap.add_argument("--methods-dir", default="data/methods")
     ap.add_argument("--sample-size", type=int, default=10,
                      help="How many known-good records to spot-check (cost control -- each is one paid API call).")
+    ap.add_argument("--only-certificates", default=None,
+                     help="Comma-separated source_certificate_number values to test, instead of the first "
+                          "--sample-size alphabetically -- for cheaply re-testing specific records (e.g. ones "
+                          "a previous run flagged) without paying for the whole sample again.")
     args = ap.parse_args()
 
     candidates = []
@@ -118,6 +130,13 @@ def main():
         pdf_url = record.get("traceability", {}).get("summary_report_pdf_url") or url
         if rows and pdf_url:
             candidates.append((record, pdf_url))
+
+    if args.only_certificates:
+        wanted = {c.strip() for c in args.only_certificates.split(",") if c.strip()}
+        candidates = [(r, u) for r, u in candidates if r["source_certificate_number"] in wanted]
+        missing = wanted - {r["source_certificate_number"] for r, _ in candidates}
+        if missing:
+            print(f"WARNING: requested certificate(s) not found among known-good candidates: {missing}", file=sys.stderr)
 
     print(f"Found {len(candidates)} known-good records with a real category breakdown "
           f"and a source PDF URL; sampling {min(args.sample_size, len(candidates))}.", file=sys.stderr)

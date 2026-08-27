@@ -17,6 +17,10 @@ on:
         description: "How many known-good records to spot-check"
         default: "5"
         required: false
+      only_certificates:
+        description: "Optional: comma-separated source_certificate_number values to re-test specifically, instead of sampling alphabetically"
+        default: ""
+        required: false
 
 permissions:
   contents: read
@@ -37,6 +41,11 @@ jobs:
       - name: Run calibration
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ONLY_CERTIFICATES: ${{ github.event.inputs.only_certificates }}
         run: |
           cd scrapers
-          python3 validate_llm_miner.py --methods-dir ../data/methods --sample-size "${{ github.event.inputs.sample_size }}"
+          args=(--methods-dir ../data/methods --sample-size "${{ github.event.inputs.sample_size }}")
+          if [ -n "$ONLY_CERTIFICATES" ]; then
+            args+=(--only-certificates "$ONLY_CERTIFICATES")
+          fi
+          python3 validate_llm_miner.py "${args[@]}"
