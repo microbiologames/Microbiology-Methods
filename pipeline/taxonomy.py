@@ -26,13 +26,20 @@ Design rules this module follows, and the reason for each:
    "Coliforms" vs "Escherichia coli". Spelling, language, punctuation and
    legal-entity suffixes are safe to merge; scope is not.
 
-2. Brand, not parent corporation, is the manufacturer unit. Oxoid and Life
-   Technologies are both Thermo Fisher today, but they are distinct product
-   lines a microbiologist shops for by name, so they stay distinct entries
-   with the parent named in parentheses. Merging them into one "Thermo
-   Fisher Scientific" bucket would destroy real information to make a
-   dropdown shorter. (Reversible: change _MANUFACTURER_RULES if the project
-   later wants corporate-level grouping.)
+2. The manufacturer unit is the company you would buy from today, not the
+   brand printed on the certificate. Oxoid and Life Technologies are both
+   Thermo Fisher, and at the project owner's decision they are listed as
+   Thermo Fisher Scientific rather than as separate entries -- a reader
+   filtering by supplier wants all 19 of that company's methods, not 12
+   under one heritage brand and 3 under another. The brand name still
+   reaches the reader through the method's own commercial name (a "Thermo
+   Scientific(TM) SureTect(TM)" assay says so on its face), which is where
+   it is genuinely useful; a filter facet is not.
+
+   Where a company is widely known under a name that differs from its
+   current owner's, the owner stays in parentheses -- "MilliporeSigma
+   (Merck)", "Solus Scientific (PerkinElmer)" -- so one entry still tells
+   the reader both things.
 
 3. Anything matching no rule passes through with light cleanup (whitespace,
    trailing punctuation) rather than being forced into a bucket, and
@@ -148,11 +155,13 @@ _MANUFACTURER_RULES = [
     ("MilliporeSigma (Merck)", ["milliporesigma", "millaporesigma", "milliporesigma", "millipore"]),
     ("Solabia", ["solabia"]),
     ("Solus Scientific (PerkinElmer)", ["solusscientific"]),
-    # Thermo Fisher brands stay distinct product lines -- see rule 2 in the
-    # module docstring. The typos are real ("Coporation", "Termo Fisher").
-    ("Oxoid (Thermo Fisher Scientific)", ["oxoid"]),
-    ("Life Technologies (Thermo Fisher Scientific)", ["lifetechnologies"]),
-    ("Thermo Fisher Scientific", ["thermofisher", "thermoscientific"]),
+    # Oxoid and Life Technologies are Thermo Fisher brands and are listed
+    # as Thermo Fisher -- see rule 2. The typos are real and in the source
+    # data ("Life Technologies Coporation", "Part of Termo Fisher").
+    ("Thermo Fisher Scientific", [
+        "thermofisher", "thermoscientific", "oxoid", "lifetechnologies",
+        "termofisher",
+    ]),
     ("Foss", ["fossanalytical", "foss"]),
     ("Bruker", ["bruker"]),
     ("Shimadzu Diagnostics", ["shimadzu"]),
