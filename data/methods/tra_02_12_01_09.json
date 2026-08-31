@@ -32,7 +32,7 @@
     "study_type": "unknown",
     "number_of_labs": null,
     "number_of_samples": null,
-    "expert_laboratory": "Microsept"
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2009-01-26",
@@ -56,7 +56,7 @@
   "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": null,

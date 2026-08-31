@@ -86,7 +86,7 @@
       "Campden BRI",
       "Eurofins",
       "Inovalys",
-      "Institut Pasteur de Lille",
+      "ISHA",
       "Microsept",
       "Q-lip"
     ],
@@ -227,7 +227,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4832",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -279,7 +279,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -382,7 +382,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4831",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -434,7 +434,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -535,7 +535,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF V08-060",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -587,7 +587,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -688,7 +688,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4832",
       "status": "unknown",
       "current_expiry": null,
@@ -740,7 +740,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": null,
@@ -1121,7 +1121,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_SEC_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-08-06-01-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/"
       },
       "record": {
         "id": "nf-validation--3m-01-08-06-01",
@@ -1139,7 +1139,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "E. coli",
+          "normalized": "Escherichia coli",
           "raw": "Escherichia coli"
         },
         "reference_method": {
@@ -1255,7 +1255,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -1454,7 +1454,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Petrifilm_RYM_SR_v0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/3M-01-13-07-14_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-et-moisissures/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/"
       },
       "record": {
         "id": "nf-validation--3m-01-13-07-14",
@@ -1472,7 +1472,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "Levures et Moisissures",
+          "normalized": "Yeasts and molds",
           "raw": "Levures et Moisissures"
         },
         "reference_method": {
@@ -1522,7 +1522,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-et-moisissures/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -1542,7 +1542,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-05-18",
@@ -1595,7 +1595,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-05-18",
@@ -1681,7 +1681,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-09-30",
@@ -1734,7 +1734,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-09-30",
@@ -1808,7 +1808,7 @@
           "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers a qualitative (detection) method (NEOGEN Molecular Detection Assay 2 - Listeria monocytogenes) validated under EN ISO 16140-2:2016, with an initial validation (2016, General Protocol + Specific Protocol 1) covering 6 categories, and a later 2024 extension study (Specific Protocol 2) covering 3 additional category variants (Meat products, Dairy products, Seafood/fishery products - extension) tested with a new enrichment broth (LESS Plus). I recorded the 6 primary/canonical categories from Table 6 (General Protocol + Specific Protocol 1, the original validation scope covering the full breadth of food categories: Composite foods, Meat products, Dairy products, Vegetables, Seafood and fishery products, Environmental samples). The extension-study results (SP2: Meat products, Dairy/Milk products, Seafood and fishery products) are separate re-tests of already-covered categories under a different enrichment protocol, so per the instructions I excluded them as they duplicate categories already listed under the primary study; their summary sensitivity/trueness/FPR values were: Meat products (SP2 ext) SEalt=81.3%, SEref=84.4%, RT=84.5%, FPR=0.0%; Milk and Dairy products (SP2 ext) SEalt=90.6%, SEref=96.9%, RT=93.5%, FPR=0.0%; Seafood and fishery products (SP2 ext) SEalt=86.8%, SEref=89.5%, RT=87.8%, FPR=0.0%. Also excluded aggregate/total rows (\"All categories and all protocols\", \"General protocol + specific protocol 1\", \"General protocol + specific protocol 2\"). Certificate number taken from cover page title \"(certificate # 3M 01/15 – 09/16)\".",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/3M-01-15-09-16_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/11/Listeria_MDA2_L_mono_SR_v0-protected.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -1822,7 +1822,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2028-11-25",
@@ -1836,7 +1836,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/MDA2_Salmonella_2026_06_SR_v1-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/3M-01-16-11-16_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--3m-01-16-11-16",
@@ -1872,7 +1872,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-11-25",
@@ -1928,7 +1928,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -1948,7 +1948,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 4833-1",
       "status": "active",
       "current_expiry": "2028-11-25",
@@ -1994,7 +1994,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-11-25",
@@ -2044,7 +2044,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2029-05-18",
@@ -2093,7 +2093,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2017-05-18",
@@ -2149,7 +2149,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 15214",
       "status": "active",
       "current_expiry": "2029-11-23",
@@ -2159,7 +2159,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/Petrifilm_LAB_SR_10_25_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/3M-01-19-11-17-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacteries-lactiques-mesophiles/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bact-ries-lactiques-m-sophiles/"
       },
       "record": {
         "id": "nf-validation--3m-01-19-11-17",
@@ -2177,7 +2177,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "Lactic acid bacteria",
+          "normalized": "Bactéries lactiques mésophiles",
           "raw": "Bactéries lactiques mésophiles"
         },
         "reference_method": {
@@ -2195,7 +2195,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2017-11-23",
@@ -2223,7 +2223,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacteries-lactiques-mesophiles/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bact-ries-lactiques-m-sophiles/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -2243,7 +2243,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 22964 (2017)",
       "status": "active",
       "current_expiry": "2030-03-22",
@@ -2289,7 +2289,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2018-03-22",
@@ -2487,7 +2487,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°22_MicroSEQ-Listeria-spp-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B022_MicroSEQ-Listeria-spp-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/ABI-29-04-12-11-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/"
@@ -2586,7 +2586,7 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/ABI-29-04-12-11-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°22_MicroSEQ-Listeria-spp-SUMMARY-REPORT-Version-0.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B022_MicroSEQ-Listeria-spp-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "19 août 2026"
         }
       }
@@ -2614,7 +2614,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B023_MicroSEQ-Lmono-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°23_MicroSEQ-Lmono-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/ABI-29-05-12-11-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/"
@@ -2712,8 +2712,8 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/ABI-29-05-12-11-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B023_MicroSEQ-Lmono-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "19 août 2026"
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°23_MicroSEQ-Lmono-SUMMARY-REPORT-Version-0.pdf",
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -2827,7 +2827,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2030-09-15",
@@ -2873,7 +2873,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2006-09-15",
@@ -3119,7 +3119,7 @@
       "tested_categories": [],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/2025_06-SR-BACARA-v0-protected.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_BACARA-2_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-10-07-10-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacillus-cereus/"
@@ -3196,8 +3196,8 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-10-07-10-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/2025_06-SR-BACARA-v0-protected.pdf",
-          "organism_page_last_updated_raw": "26 juin 2026"
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_BACARA-2_SR_v0-protected.pdf",
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -3292,7 +3292,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -3308,7 +3308,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/VIDAS-Salmonella-Dual-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/BIO-12-01-04-94_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--bio-12-01-04-94",
@@ -3344,7 +3344,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1994-04-06",
@@ -3413,7 +3413,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -3544,7 +3544,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/CHROMID-COLI-SUMMARY-REPORT-Ecoli-44-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BIO-12-05-01-99_fr_.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/"
       },
       "record": {
         "id": "nf-validation--bio-12-05-01-99",
@@ -3562,7 +3562,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "Escherichia coli",
+          "normalized": "E. coli",
           "raw": "Escherichia coli"
         },
         "reference_method": {
@@ -3613,7 +3613,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -3715,7 +3715,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/BIO-12-09-07-02-fr.docx-1.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_SR_VIDAS_LMO2_v0-protected.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -3729,7 +3729,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-09-18",
@@ -3781,7 +3781,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2002-09-18",
@@ -3952,7 +3952,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/BIO-12-11-03-04_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/03/VIDAS_LMO2_37_2024_03_SR_v0-protected.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -4065,7 +4065,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2029-09-20",
@@ -4082,7 +4082,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/VIDAS-Easy-Salmonella-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/BIO-12-16-09-05-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--bio-12-16-09-05",
@@ -4118,7 +4118,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2005-09-20",
@@ -4193,7 +4193,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -4312,12 +4312,12 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "Microsept",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2030-03-09",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/2026_02_VIDAS_LDUO_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -4357,7 +4357,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "Microsept"
         },
         "certification": {
           "original_date": "2006-03-09",
@@ -4376,13 +4377,20 @@
           "current_expiry": "2030-03-09",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/BIO-12-18-03-06-fr.docx_-1.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/2026_02_VIDAS_LDUO_SR_v0-protected.pdf",
           "organism_page_last_updated_raw": "21 juillet 2026"
@@ -4409,7 +4417,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/CHROMID-COLI-SUMMARY-REPORT-Ecoli-37-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BIO-12-19-12-06_fr_.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/"
       },
       "record": {
         "id": "nf-validation--bio-12-19-12-06",
@@ -4427,7 +4435,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "E. coli",
+          "normalized": "Escherichia coli",
           "raw": "Escherichia coli"
         },
         "reference_method": {
@@ -4476,7 +4484,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -4820,12 +4828,12 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2029-05-18",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/VIDAS_ECPT_SUMMARY_REPORT_V0_04_2025.pdf",
         "summary_report_is_direct": true,
@@ -4866,7 +4874,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2009-05-18",
@@ -4886,13 +4894,39 @@
           "current_expiry": "2029-05-18",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "1",
+                "sensitivity_alternative_pct": 95.8,
+                "sensitivity_reference_pct": 95.8,
+                "rlod": null
+              },
+              {
+                "category": "0",
+                "sensitivity_alternative_pct": 83.3,
+                "sensitivity_reference_pct": 83.3,
+                "rlod": null
+              },
+              {
+                "category": "0",
+                "sensitivity_alternative_pct": 90.0,
+                "sensitivity_reference_pct": 96.7,
+                "rlod": null
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-25-05-09fr.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/VIDAS_ECPT_SUMMARY_REPORT_V0_04_2025.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
@@ -5348,7 +5382,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BIO-12-32-10-11_fr.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/BIO-12-32-10-11-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--bio-12-32-10-11",
@@ -5431,7 +5465,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
@@ -5772,10 +5806,10 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/GENE-UP-Salmonella-SUMMARY-REPORT-Version-0-37°C.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/GENE-UP-Salmonella-SUMMARY-REPORT-Version-0-37%C2%B0C.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-38-06-16_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--bio-12-38-06-16",
@@ -5906,12 +5940,12 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-38-06-16_fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/GENE-UP-Salmonella-SUMMARY-REPORT-Version-0-37°C.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/GENE-UP-Salmonella-SUMMARY-REPORT-Version-0-37%C2%B0C.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -5926,7 +5960,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-09-29",
@@ -5972,7 +6006,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2016-09-29",
@@ -6021,7 +6055,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-11-24",
@@ -6067,7 +6101,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2016-11-24",
@@ -6102,7 +6136,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/10/BIO-12-40-11-16_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/11/GENE_UP_LMO_Summary_Report_10_2024.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -6800,7 +6834,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BKR-23-05-12-07_-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/COMPASS-Listeria-Enumeration-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "19 août 2026"
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -6926,7 +6960,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BKR-23-07-10-11_fr.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-07-10-11_fr.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--bkr-23-07-10-11",
@@ -7002,7 +7036,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -7301,7 +7335,7 @@
       "status": "active",
       "current_expiry": "2026-12-04",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/SYMPHONY-SUMMARY-REPORT-Version-1.pdf",
         "summary_report_is_direct": true,
@@ -7357,13 +7391,25 @@
           "current_expiry": "2026-12-04",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "quantitative",
+          "quantitative": {
+            "relative_trueness_by_category": [],
+            "accuracy_profile": {
+              "acceptability_limit_log": null,
+              "by_matrix": []
+            },
+            "loq_log": null,
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/BKR-23-11-12-18-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/SYMPHONY-SUMMARY-REPORT-Version-1.pdf",
           "organism_page_last_updated_raw": "17 août 2026"
@@ -7385,7 +7431,7 @@
       "status": "active",
       "current_expiry": "2028-12-10",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/CSD-Cronobacter-SUMMARY-REPORT-Version-1.pdf",
         "summary_report_is_direct": true,
@@ -7438,13 +7484,20 @@
           "current_expiry": "2028-12-10",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-12-12-20-fr.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/CSD-Cronobacter-SUMMARY-REPORT-Version-1.pdf",
           "organism_page_last_updated_raw": "16 juillet 2026"
@@ -7466,7 +7519,7 @@
       "status": "active",
       "current_expiry": "2028-12-02",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_44_E-coli_SR_2025_10_v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -7527,13 +7580,25 @@
           "current_expiry": "2028-12-02",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "quantitative",
+          "quantitative": {
+            "relative_trueness_by_category": [],
+            "accuracy_profile": {
+              "acceptability_limit_log": null,
+              "by_matrix": []
+            },
+            "loq_log": null,
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-01-07-93_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_44_E-coli_SR_2025_10_v0-protected.pdf",
           "organism_page_last_updated_raw": "19 décembre 2025"
@@ -7890,7 +7955,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -7900,7 +7965,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/iQ-Check-Salmonella-II-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-06-07-04-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--brd-07-06-07-04",
@@ -7936,7 +8001,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2004-07-01",
@@ -7968,7 +8033,7 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
@@ -7993,12 +8058,12 @@
       "status": "active",
       "current_expiry": "2028-12-02",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_Ecoli_SR_2025_10_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/10/BRD-07-07-12-04_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/"
       },
       "record": {
         "id": "nf-validation--brd-07-07-12-04",
@@ -8016,7 +8081,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "E. coli",
+          "normalized": "Escherichia coli",
           "raw": "Escherichia coli"
         },
         "reference_method": {
@@ -8054,13 +8119,25 @@
           "current_expiry": "2028-12-02",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "quantitative",
+          "quantitative": {
+            "relative_trueness_by_category": [],
+            "accuracy_profile": {
+              "acceptability_limit_log": null,
+              "by_matrix": []
+            },
+            "loq_log": null,
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/10/BRD-07-07-12-04_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_Ecoli_SR_2025_10_v0-protected.pdf",
           "organism_page_last_updated_raw": "19 décembre 2025"
@@ -8082,7 +8159,7 @@
       "status": "active",
       "current_expiry": "2028-12-02",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_coliform_SR_2025_10_v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -8140,13 +8217,25 @@
           "current_expiry": "2028-12-02",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "quantitative",
+          "quantitative": {
+            "relative_trueness_by_category": [],
+            "accuracy_profile": {
+              "acceptability_limit_log": null,
+              "by_matrix": []
+            },
+            "loq_log": null,
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-08-12-04_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_coliform_SR_2025_10_v0-protected.pdf",
           "organism_page_last_updated_raw": "19 mai 2026"
@@ -8163,7 +8252,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2029-04-07",
@@ -8214,7 +8303,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2005-04-07",
@@ -8287,7 +8376,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BRD-07-10-04-05_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2025/09/iQ-Check-lmono-II-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -8305,13 +8394,19 @@
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2029-12-09",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Eggs and egg products (derivates)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Pet food and animal feed"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/RAPIDSalmonella-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-11-12-05-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--brd-07-11-12-05",
@@ -8363,13 +8458,51 @@
           "current_expiry": "2029-12-09",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Meat products (up to 25 g)",
+                "sensitivity_alternative_pct": 0.0,
+                "sensitivity_reference_pct": 8.0,
+                "rlod": null
+              },
+              {
+                "category": "Dairy products (up to 25 g)",
+                "sensitivity_alternative_pct": 0.0,
+                "sensitivity_reference_pct": 3.0,
+                "rlod": null
+              },
+              {
+                "category": "Egg products (up to 25 g)",
+                "sensitivity_alternative_pct": 0.0,
+                "sensitivity_reference_pct": 0.0,
+                "rlod": null
+              },
+              {
+                "category": "Seafood and vegetables (up to 25 g)",
+                "sensitivity_alternative_pct": 0.0,
+                "sensitivity_reference_pct": 6.0,
+                "rlod": null
+              },
+              {
+                "category": "Feed products (up to 25 g)",
+                "sensitivity_alternative_pct": 0.0,
+                "sensitivity_reference_pct": 3.0,
+                "rlod": null
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-11-12-05-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/RAPIDSalmonella-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
@@ -8522,7 +8655,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-05-24",
@@ -8574,7 +8707,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2007-05-24",
@@ -8671,7 +8804,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B005_RAPID-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°05_RAPID-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/BRD-07-14-09-07-fr-.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/"
@@ -8758,7 +8891,7 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/BRD-07-14-09-07-fr-.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B005_RAPID-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°05_RAPID-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -9103,7 +9236,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/BRD-07-17-01-09_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/AL-Enumeration-Lmono-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "19 août 2026"
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -9117,12 +9250,12 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 22964 (2017)",
       "status": "active",
       "current_expiry": "2028-05-10",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_RapidSakazakii_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -9163,7 +9296,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2012-05-10",
@@ -9177,13 +9310,20 @@
           "current_expiry": "2028-05-10",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/BRD-07-22-05-12_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_RapidSakazakii_SR_v0-protected.pdf",
           "organism_page_last_updated_raw": "16 juillet 2026"
@@ -9298,7 +9438,7 @@
       "status": "active",
       "current_expiry": "2029-11-29",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2026/01/RAPID-EB-SUMMARY-REPORT-Version-0-.pdf",
         "summary_report_is_direct": true,
@@ -9354,13 +9494,25 @@
           "current_expiry": "2029-11-29",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "quantitative",
+          "quantitative": {
+            "relative_trueness_by_category": [],
+            "accuracy_profile": {
+              "acceptability_limit_log": null,
+              "by_matrix": []
+            },
+            "loq_log": null,
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-24-11-13_fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2026/01/RAPID-EB-SUMMARY-REPORT-Version-0-.pdf",
           "organism_page_last_updated_raw": "6 janvier 2026"
@@ -9543,7 +9695,7 @@
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-26-03-19-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/RAPID-Bcereus-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "26 juin 2026"
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -9640,7 +9792,7 @@
       "status": "expired",
       "current_expiry": "2005-01-31",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°16_2023-12_Summary-report_DSM_DelvotestT.pdf",
         "summary_report_is_direct": true,
@@ -9696,13 +9848,20 @@
           "current_expiry": "2005-01-31",
           "status": "expired"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/antibiotiques/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/DSM-28-02-02-12-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°16_2023-12_Summary-report_DSM_DelvotestT.pdf",
           "organism_page_last_updated_raw": "21 juillet 2026"
@@ -9963,7 +10122,7 @@
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/EGS-38-03-01-17-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/BACGene_Listeria_Multiplex-Lmono-SUMMARY-REPORT-Version-0.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -10180,38 +10339,38 @@
             "method_comparison_by_category": [
               {
                 "category": "Composite foods / Ready- to-eat and ready-to-reheat",
-                "sensitivity_alternative_pct": 80.6,
-                "sensitivity_reference_pct": 83.9,
+                "sensitivity_alternative_pct": 78.1,
+                "sensitivity_reference_pct": 78.1,
                 "rlod": null
               },
               {
                 "category": "Meat Products",
-                "sensitivity_alternative_pct": 83.9,
-                "sensitivity_reference_pct": 61.3,
+                "sensitivity_alternative_pct": 78.3,
+                "sensitivity_reference_pct": 69.6,
                 "rlod": null
               },
               {
                 "category": "Milk & Dairy products",
-                "sensitivity_alternative_pct": 89.5,
-                "sensitivity_reference_pct": 78.9,
+                "sensitivity_alternative_pct": 84.4,
+                "sensitivity_reference_pct": 75.0,
                 "rlod": null
               },
               {
                 "category": "Vegetables",
-                "sensitivity_alternative_pct": 82.5,
-                "sensitivity_reference_pct": 77.5,
+                "sensitivity_alternative_pct": 67.6,
+                "sensitivity_reference_pct": 64.7,
                 "rlod": null
               },
               {
                 "category": "Seafood and fishery products",
-                "sensitivity_alternative_pct": 83.0,
-                "sensitivity_reference_pct": 83.0,
+                "sensitivity_alternative_pct": 82.0,
+                "sensitivity_reference_pct": 84.0,
                 "rlod": null
               },
               {
-                "category": "Production environmental Samples",
-                "sensitivity_alternative_pct": 83.3,
-                "sensitivity_reference_pct": 76.7,
+                "category": "Environmental Samples",
+                "sensitivity_alternative_pct": 90.3,
+                "sensitivity_reference_pct": 80.6,
                 "rlod": null
               }
             ],
@@ -10252,7 +10411,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B010_BACGene-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°10_BACGene-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/EGS-38-06-11-19-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/"
@@ -10336,7 +10495,7 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/EGS-38-06-11-19-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B010_BACGene-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°10_BACGene-Ecoli-O157H7-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -10486,12 +10645,12 @@
       "status": "active",
       "current_expiry": "2029-03-10",
       "tested_categories": [],
-      "has_performance_data": false,
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BACGene-Go-Salmonella_AFNOR_Report_V2-1.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/EGS-38-08-03-25-fr.docx-1.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--egs-38-08-03-25",
@@ -10536,13 +10695,20 @@
           "current_expiry": "2029-03-10",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": null,
+          "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/EGS-38-08-03-25-fr.docx-1.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BACGene-Go-Salmonella_AFNOR_Report_V2-1.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
@@ -10573,7 +10739,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/03/Synt-IDX-33-10-12-22.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/IDX-33-10-12-22-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--idx-33-10-12-22",
@@ -10647,7 +10813,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -18010,7 +18176,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "unknown",
       "current_expiry": null,
@@ -18020,7 +18186,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/REVEAL_Salmonella_2023_10_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-01-10-11-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--neo-35-01-10-11",
@@ -18056,7 +18222,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": null,
@@ -18068,7 +18234,7 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "medium",
           "notes": "No matching bootstrap PDF-list record found (likely a certificate added/renamed after the bootstrap PDF was issued); no renewal history or validation-scope text available yet.",
@@ -18088,7 +18254,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2029-05-23",
@@ -18134,7 +18300,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2013-05-23",
@@ -18180,14 +18346,14 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-01-28",
       "tested_categories": [],
       "has_performance_data": false,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°03_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N%C2%B003_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-03-01-16-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/"
@@ -18226,7 +18392,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-01-28",
@@ -18249,7 +18415,7 @@
           "extraction_confidence": "high",
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-03-01-16-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°03_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N%C2%B003_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
           "organism_page_last_updated_raw": "19 août 2026"
         }
       }
@@ -18345,7 +18511,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -18391,7 +18557,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-07-01",
@@ -18434,7 +18600,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -18480,7 +18646,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-07-01",
@@ -18523,7 +18689,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2026-11-28",
@@ -18540,7 +18706,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BAX-Salmonella-2-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/QUA-18-03-11-02_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--qua-18-03-11-02",
@@ -18576,7 +18742,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2002-11-28",
@@ -18647,7 +18813,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -18678,7 +18844,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°15_BAX-PCR-Ecoli-O157-H7-MP-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N%C2%B015_BAX-PCR-Ecoli-O157-H7-MP-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-04-03-08-fr.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/"
@@ -18769,7 +18935,7 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-04-03-08-fr.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°15_BAX-PCR-Ecoli-O157-H7-MP-SUMMARY-REPORT-Version-0.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N%C2%B015_BAX-PCR-Ecoli-O157-H7-MP-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -19080,7 +19246,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/BAXRTS1.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/QUA-18-08-03-15_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--qua-18-08-03-15",
@@ -19136,7 +19302,7 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
@@ -19332,7 +19498,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2021/11/Synt-QUA-18-11-12-20.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/QUA-18-11-12-20-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/stec/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/stec-shiga-toxine-escherichia-coli/"
       },
       "record": {
         "id": "nf-validation--qua-18-11-12-20",
@@ -19409,7 +19575,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/stec/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/stec-shiga-toxine-escherichia-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -19882,7 +20048,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/Compact-Dry-EC-Ecoli-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/SDC-42-02-12-24-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/"
       },
       "record": {
         "id": "nf-validation--sdc-42-02-12-24",
@@ -19900,7 +20066,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "Escherichia coli",
+          "normalized": "E. coli",
           "raw": "Escherichia coli"
         },
         "reference_method": {
@@ -19942,7 +20108,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -20219,7 +20385,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/CompactDry-YMR-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/SDC-42-05-03-25-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-et-moisissures/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/"
       },
       "record": {
         "id": "nf-validation--sdc-42-05-03-25",
@@ -20237,7 +20403,7 @@
           "category": "culture_media"
         },
         "target_organism": {
-          "normalized": "Levures et Moisissures",
+          "normalized": "Yeasts and molds",
           "raw": "Levures et Moisissures"
         },
         "reference_method": {
@@ -20325,7 +20491,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-et-moisissures/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -20355,7 +20521,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/Solus-Salmonella-ELISA-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/SOL-37-01-06-13-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--sol-37-01-06-13",
@@ -20417,7 +20583,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
@@ -20585,7 +20751,7 @@
       ],
       "has_performance_data": true,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B018_SOLUS-Ecoli-O157-ELISA-SUMMARY-REPORT-Version-0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°18_SOLUS-Ecoli-O157-ELISA-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/SOL-37-03-10-15-fr-1.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/"
@@ -20687,7 +20853,7 @@
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/SOL-37-03-10-15-fr-1.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B018_SOLUS-Ecoli-O157-ELISA-SUMMARY-REPORT-Version-0.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°18_SOLUS-Ecoli-O157-ELISA-SUMMARY-REPORT-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -21061,7 +21227,7 @@
       "tested_categories": [],
       "has_performance_data": false,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B013_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/"
@@ -21126,7 +21292,7 @@
           "extraction_confidence": "high",
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B013_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
           "organism_page_last_updated_raw": "19 août 2026"
         }
       }
@@ -21288,7 +21454,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular / PCR",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-04-08",
@@ -21298,7 +21464,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/2025_05_ASSURANCE_GDS_Salmonella_SR_v1-final-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/TRA-02-12-01-09-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--tra-02-12-01-09",
@@ -21334,7 +21500,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2009-01-26",
@@ -21358,7 +21524,7 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
@@ -21568,7 +21734,7 @@
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/UNI-03-04-04-05-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/Listeria_Precis_L.mono_SR_2025_07_v0-protected.pdf",
-          "organism_page_last_updated_raw": "19 août 2026"
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -21589,7 +21755,7 @@
       "tested_categories": [],
       "has_performance_data": false,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Listeria_Precis_Enumeration_L.mono_SR_v0.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-UNI-03-05-09-06_en.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-05-09-06-fr.docx_.pdf",
         "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/"
@@ -21655,8 +21821,8 @@
           "extraction_confidence": "high",
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-05-09-06-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Listeria_Precis_Enumeration_L.mono_SR_v0.pdf",
-          "organism_page_last_updated_raw": "25 août 2026"
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-UNI-03-05-09-06_en.pdf",
+          "organism_page_last_updated_raw": "19 août 2026"
         }
       }
     },
@@ -21677,10 +21843,10 @@
       "tested_categories": [],
       "has_performance_data": false,
       "links": {
-        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
+        "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°21_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
       },
       "record": {
         "id": "nf-validation--uni-03-06-12-07",
@@ -21733,12 +21899,12 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
-          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
+          "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°21_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
         }
       }
@@ -21763,7 +21929,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/SureTect-Salmonella-SUMMARY-REPORT-Version-0.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/UNI-03-07-11-13-fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--uni-03-07-11-13",
@@ -21827,7 +21993,7 @@
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": null,
@@ -21926,7 +22092,7 @@
           "notes": null,
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-08-11-13-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_SureTect_Listeria_mono_SR-v0.pdf",
-          "organism_page_last_updated_raw": "19 août 2026"
+          "organism_page_last_updated_raw": "25 août 2026"
         }
       }
     },
@@ -22244,7 +22410,7 @@
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/SureTect-Salmonella-multiplex-PCR-SUMMARY-REPORT-Version-1.pdf",
         "summary_report_is_direct": true,
         "certificate_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/UNI-03-12-01-18_fr.docx_.pdf",
-        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/"
+        "source_page_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/"
       },
       "record": {
         "id": "nf-validation--uni-03-12-01-18",
@@ -22332,7 +22498,7 @@
         },
         "traceability": {
           "source_document_type": "live_web_page",
-          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+          "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
           "extraction_date": null,
           "extraction_confidence": "high",
           "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
