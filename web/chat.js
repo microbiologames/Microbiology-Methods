@@ -17,7 +17,7 @@
  * it is empty the panel stays hidden rather than showing a control that
  * cannot work.
  */
-const CHAT_ENDPOINT = "";
+const CHAT_ENDPOINT = "https://microbio-methods-chat.nicolas-nguyenvl.workers.dev/";
 
 const chat = {
   busy: false,
