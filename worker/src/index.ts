@@ -188,6 +188,13 @@ targets, so "Listeria" alone means Listeria spp., not Listeria \
 monocytogenes. If the question names something outside the vocabulary \
 entirely, put it in \`text\` rather than forcing a wrong enum value.
 
+Every field is required, so a field you are not filtering on must be exactly \
+an empty array [] or an empty string "" — never a placeholder, never a \
+restatement of the question, never any markup. In particular \`text\` is a \
+short product name to search for, not a description of your answer: if the \
+organism and technology fields already express the question, leave \`text\` \
+empty. Dates are strictly YYYY-MM-DD.
+
 If the question asks for something a filter cannot express — a performance \
 value, a comparison, anything not about which methods exist — set \
 understood=false and explain briefly in \`answer\`.`;

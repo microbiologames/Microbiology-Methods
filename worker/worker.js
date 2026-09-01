@@ -135,6 +135,76 @@ function buildTool(facets) {
   };
 }
 
+/**
+ * Keep only what the filter can legitimately contain, and drop the rest.
+ *
+ * `strict: true` guarantees the SHAPE of the tool input, never its MEANING:
+ * a date field declared as a string is satisfied by any string at all. A real
+ * response from the deployed proxy put markup fragments
+ * (`</antml incogn> <parameter name="text">`) into expires_before, expires_after
+ * and text, which -- since filters combine with AND -- drove a correct
+ * organism+technology match down to zero rows.
+ *
+ * So the worker checks the values against the same vocabulary it handed the
+ * model, the way the deterministic aggregate-row filter backstops the mining
+ * prompt elsewhere in this project. Anything unrecognised is dropped and
+ * logged rather than passed to the page, because a filter nobody asked for is
+ * indistinguishable from "no results" once it reaches the table.
+ */
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+function sanitizeFilter(raw, facets) {
+  const dropped = [];
+
+  const pickEnum = (value, allowed, field) => {
+    if (!Array.isArray(value)) return [];
+    const set = new Set(allowed);
+    return value.filter((v) => {
+      if (set.has(v)) return true;
+      dropped.push(`${field}=${JSON.stringify(v)}`);
+      return false;
+    });
+  };
+
+  const pickDate = (value, field) => {
+    if (typeof value !== "string" || value === "") return "";
+    if (ISO_DATE_RE.test(value)) return value;
+    dropped.push(`${field}=${JSON.stringify(value.slice(0, 40))}`);
+    return "";
+  };
+
+  // Free text is the most dangerous field: it ANDs against everything and the
+  // model is tempted to restate the question in it. Markup, and anything long
+  // enough to be a sentence rather than a product name, is not a search term.
+  const pickText = (value) => {
+    if (typeof value !== "string") return "";
+    const t = value.trim();
+    if (!t) return "";
+    if (t.length > 60 || /[<>{}]/.test(t)) {
+      dropped.push(`text=${JSON.stringify(t.slice(0, 40))}`);
+      return "";
+    }
+    return t;
+  };
+
+  const clean = {
+    organisms: pickEnum(raw.organisms, facets.organisms, "organism"),
+    manufacturers: pickEnum(raw.manufacturers, facets.manufacturers, "manufacturer"),
+    technologies: pickEnum(raw.technologies, facets.method_categories, "technology"),
+    expert_laboratories: pickEnum(raw.expert_laboratories, facets.expert_laboratories, "lab"),
+    sources: pickEnum(raw.sources, facets.sources, "source"),
+    statuses: pickEnum(raw.statuses, ["active", "expired", "unknown"], "status"),
+    expires_before: pickDate(raw.expires_before, "expires_before"),
+    expires_after: pickDate(raw.expires_after, "expires_after"),
+    text: pickText(raw.text),
+    answer: typeof raw.answer === "string" ? raw.answer.slice(0, 300) : "",
+    understood: raw.understood !== false,
+  };
+
+  if (dropped.length) console.error("dropped invalid filter values:", dropped.join(", "));
+  return { clean, dropped };
+}
+
 const SYSTEM_PROMPT = `You turn questions about a catalogue of ISO 16140-2 \
 validated food-microbiology methods into a filter, by calling \
 filter_catalogue exactly once.
@@ -151,6 +221,13 @@ both mean the molecular_pcr technology; a genus and a species are different \
 targets, so "Listeria" alone means Listeria spp., not Listeria \
 monocytogenes. If the question names something outside the vocabulary \
 entirely, put it in \`text\` rather than forcing a wrong enum value.
+
+Every field is required, so a field you are not filtering on must be exactly \
+an empty array [] or an empty string "" — never a placeholder, never a \
+restatement of the question, never any markup. In particular \`text\` is a \
+short product name to search for, not a description of your answer: if the \
+organism and technology fields already express the question, leave \`text\` \
+empty. Dates are strictly YYYY-MM-DD.
 
 If the question asks for something a filter cannot express — a performance \
 value, a comparison, anything not about which methods exist — set \
@@ -279,7 +356,11 @@ export default {
       if (!toolUse) {
         return json({ error: "No filter returned; please rephrase." }, 502, cors);
       }
-      return json({ filter: toolUse.input, usage: body.usage }, 200, cors);
+      const { clean, dropped } = sanitizeFilter(toolUse.input || {}, facets);
+      return json(
+        { filter: clean, dropped_values: dropped, usage: body.usage },
+        200, cors,
+      );
     } catch (err) {
       console.error("chat proxy error", err);
       const msg = String(err && err.message);
