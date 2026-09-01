@@ -42,7 +42,11 @@ async function loadFacets(env) {
     return facetsCache.value;
   }
   const resp = await fetch(env.FACETS_URL, { cf: { cacheTtl: 900 } });
-  if (!resp.ok) throw new Error(`facets fetch failed: ${resp.status}`);
+  if (!resp.ok) {
+    // Named distinctly so the operator sees "the vocabulary URL is wrong"
+    // rather than a generic upstream failure — they are different fixes.
+    throw new Error(`FACETS_${resp.status}`);
+  }
   const body = await resp.json();
   facetsCache = { value: body.facets, fetchedAt: now };
   return body.facets;
@@ -237,8 +241,25 @@ export default {
       if (!apiResp.ok) {
         const detail = await apiResp.text();
         console.error("anthropic error", apiResp.status, detail);
+        // Surface the API's own error type and message. Neither contains the
+        // key; both are exactly what tells the operator whether this is an
+        // exhausted balance, a bad key, or a malformed request. Capped, and
+        // the request body is never echoed.
+        let type = "", message = "";
+        try {
+          const parsed = JSON.parse(detail);
+          type = parsed?.error?.type || "";
+          message = String(parsed?.error?.message || "").slice(0, 300);
+        } catch {
+          message = detail.slice(0, 200);
+        }
         return json(
-          { error: apiResp.status === 429 ? "Upstream rate limit." : "Upstream error." },
+          {
+            error: apiResp.status === 429 ? "Upstream rate limit." : "Anthropic API rejected the request.",
+            upstream_status: apiResp.status,
+            upstream_type: type,
+            upstream_message: message,
+          },
           apiResp.status === 429 ? 429 : 502,
           cors,
         );
@@ -252,7 +273,17 @@ export default {
       return json({ filter: toolUse.input, usage: body.usage }, 200, cors);
     } catch (err) {
       console.error("chat proxy error", err);
-      return json({ error: "Upstream error." }, 502, cors);
+      const msg = String(err && err.message);
+      if (msg.startsWith("FACETS_")) {
+        return json(
+          {
+            error: "Could not load the catalogue vocabulary.",
+            detail: `FACETS_URL returned ${msg.slice(7)} — check that variable on the Worker.`,
+          },
+          502, cors,
+        );
+      }
+      return json({ error: "Worker error.", detail: msg.slice(0, 200) }, 502, cors);
     }
   },
 };
