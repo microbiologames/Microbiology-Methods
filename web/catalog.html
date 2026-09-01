@@ -66,6 +66,23 @@
       </aside>
 
       <section class="content">
+        <section class="chat-panel" id="chat-panel" hidden aria-label="Ask a question">
+          <div class="chat-head">
+            <h2>Ask the catalogue</h2>
+            <p class="chat-note">Answers are filters, not prose &mdash; every figure below still comes from the source data.</p>
+          </div>
+          <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
+          <div class="chat-examples">
+            <button type="button" class="chat-example">PCR methods for Listeria monocytogenes</button>
+            <button type="button" class="chat-example">bioM&eacute;rieux certificates expiring before 2028</button>
+            <button type="button" class="chat-example">which methods did ADRIA validate?</button>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Ask in English or French&hellip;" autocomplete="off" maxlength="500">
+            <button type="button" id="chat-send">Ask</button>
+          </div>
+        </section>
+
         <div class="content-head">
           <p class="result-count" id="result-count"></p>
           <div class="active-pills" id="active-pills"></div>
@@ -99,5 +116,6 @@
   </footer>
 
   <script src="catalog.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>

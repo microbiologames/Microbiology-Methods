@@ -38,6 +38,10 @@ const state = {
   organism: new Set(),
   manufacturer: new Set(),
   lab: new Set(),
+  // Expiry bounds (YYYY-MM-DD, "" = unbounded). Only the assistant sets
+  // these today; they render as removable pills like any other filter.
+  expiresBefore: "",
+  expiresAfter: "",
   expanded: new Set(), // facet ids the reader has opened past the first few
   sortKey: "commercial_name",
   sortDir: 1,
@@ -63,6 +67,10 @@ function matches(entry) {
   if (state.organism.size && !state.organism.has(entry.organism)) return false;
   if (state.manufacturer.size && !state.manufacturer.has(entry.manufacturer_name)) return false;
   if (state.lab.size && !state.lab.has(entry.expert_laboratory)) return false;
+  // A record with no expiry date cannot satisfy a date bound, so it drops
+  // out rather than being silently treated as matching.
+  if (state.expiresBefore && !(entry.current_expiry && entry.current_expiry < state.expiresBefore)) return false;
+  if (state.expiresAfter && !(entry.current_expiry && entry.current_expiry >= state.expiresAfter)) return false;
 
   if (state.search) {
     const haystack = [
@@ -161,6 +169,8 @@ function renderActivePills() {
   state.organism.forEach((v) => add(v, () => state.organism.delete(v)));
   state.manufacturer.forEach((v) => add(v, () => state.manufacturer.delete(v)));
   state.lab.forEach((v) => add(v, () => state.lab.delete(v)));
+  if (state.expiresBefore) add(`expires before ${state.expiresBefore}`, () => { state.expiresBefore = ""; });
+  if (state.expiresAfter) add(`expires from ${state.expiresAfter}`, () => { state.expiresAfter = ""; });
   if (state.search) add(`"${state.search}"`, () => { state.search = ""; });
 
   const container = $("active-pills");
@@ -315,6 +325,8 @@ function init(data) {
     [state.source, state.status, state.technology,
      state.organism, state.manufacturer, state.lab].forEach((s) => s.clear());
     state.search = "";
+    state.expiresBefore = "";
+    state.expiresAfter = "";
     syncControls();
     render();
   });

@@ -212,8 +212,47 @@ def main():
         for raw, n in counts.most_common():
             print(f"  {n:3d}x {raw!r}", file=sys.stderr)
 
+    # Precomputed facet vocabularies: canonical, deduped and sorted once
+    # here so every page renders the same filter lists without each one
+    # re-deriving (and possibly re-fragmenting) them in JavaScript.
+    facets = {
+        "organisms": sorted({e["organism"] for e in entries if e["organism"]}),
+        "manufacturers": sorted(
+            {e["manufacturer_name"] for e in entries if e["manufacturer_name"]},
+            key=str.lower,
+        ),
+        "expert_laboratories": sorted(
+            {e["expert_laboratory"] for e in entries if e["expert_laboratory"]},
+            key=str.lower,
+        ),
+        "method_categories": sorted({e["method_category"] for e in entries}),
+        "sources": sorted({e["source"] for e in entries}),
+    }
+
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # facets.json: the same vocabularies, on their own, for the chat proxy.
+    # The worker turns these into the assistant's tool schema, so the model
+    # can only ever emit a value that exists in the data -- it cannot invent
+    # an organism or a manufacturer. Kept separate from data.json because the
+    # worker needs ~2 KB of vocabulary, not 1.1 MB of records, on every cold
+    # start.
+    facets_path = out_path.parent / "facets.json"
+    facets_path.write_text(
+        json.dumps(
+            {
+                "generated_from": args.methods_dir,
+                "count": len(entries),
+                "facets": facets,
+                "category_labels": CATEGORY_LABELS,
+                "food_categories": [c["en"] for c in ANNEX_A_CATEGORIES],
+            },
+            ensure_ascii=False, indent=2,
+        ),
+        encoding="utf-8",
+    )
+    print(f"Wrote facet vocabulary -> {facets_path}")
     out_path.write_text(
         json.dumps(
             {
@@ -224,19 +263,7 @@ def main():
                 # sorted once here so every page renders the same filter
                 # lists without each one re-deriving (and possibly
                 # re-fragmenting) them in JavaScript.
-                "facets": {
-                    "organisms": sorted({e["organism"] for e in entries if e["organism"]}),
-                    "manufacturers": sorted(
-                        {e["manufacturer_name"] for e in entries if e["manufacturer_name"]},
-                        key=str.lower,
-                    ),
-                    "expert_laboratories": sorted(
-                        {e["expert_laboratory"] for e in entries if e["expert_laboratory"]},
-                        key=str.lower,
-                    ),
-                    "method_categories": sorted({e["method_category"] for e in entries}),
-                    "sources": sorted({e["source"] for e in entries}),
-                },
+                "facets": facets,
                 "category_labels": CATEGORY_LABELS,
                 "methods": entries,
             },

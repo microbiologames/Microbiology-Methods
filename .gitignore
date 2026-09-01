@@ -8,3 +8,9 @@ __pycache__/
 # add-paths in scrape_microval.yml / scrape_aoac.yml, which restricts what
 # peter-evans/create-pull-request actually commits to data/ and web/.
 debug/
+
+# Cloudflare Worker (chat proxy)
+worker/node_modules/
+worker/.wrangler/
+worker/package-lock.json
+worker/.dev.vars

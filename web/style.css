@@ -402,3 +402,70 @@ th.sortable.sorted[data-dir="desc"]::after { content: " ▼"; }
   text-decoration: underline;
 }
 .more-toggle:hover { color: var(--ink); }
+
+/* ---------------------------------------------------------------------------
+   Ask-the-catalogue panel (chat.js). Sits above the results because what it
+   produces IS the results — it drives the same filters a reader would set by
+   hand, rather than answering alongside them.
+   --------------------------------------------------------------------------- */
+
+.chat-panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.chat-head h2 { margin: 0 0 2px; font-size: 1rem; }
+.chat-note { margin: 0 0 10px; font-size: 0.8rem; color: var(--muted); }
+
+.chat-log { max-height: 190px; overflow-y: auto; }
+.chat-log:not(:empty) { margin-bottom: 10px; }
+.chat-line {
+  margin: 0 0 6px;
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-size: 0.87rem;
+  max-width: 90%;
+}
+.chat-you { background: var(--accent); color: var(--accent-ink); margin-left: auto; }
+.chat-bot { background: var(--surface-2); color: var(--ink); }
+.chat-pending { background: var(--surface-2); color: var(--muted); }
+.chat-error { background: var(--surface-2); color: var(--bad); }
+
+.chat-examples { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.chat-example {
+  padding: 4px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.chat-example:hover { border-color: var(--accent); color: var(--accent); }
+
+.chat-input-row { display: flex; gap: 8px; }
+.chat-input-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.chat-input-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chat-input-row button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chat-input-row button:disabled { opacity: 0.55; cursor: default; }

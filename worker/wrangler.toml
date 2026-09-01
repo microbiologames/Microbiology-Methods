@@ -1,0 +1,20 @@
+name = "microbio-methods-chat"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# The catalogue's facet vocabulary, published by pipeline/build_frontend_data.py
+# alongside the site. The Worker reads only this (~3 KB), never data.json.
+FACETS_URL = "https://microbiologames.github.io/Microbiology-Methods/facets.json"
+# Comma-separated. CORS keeps other sites' pages from using this endpoint;
+# it does NOT stop a direct request (curl ignores CORS) -- that is what the
+# KV rate limit below is for.
+ALLOWED_ORIGINS = "https://microbiologames.github.io"
+
+# Optional but strongly recommended: without it there is no per-caller cap.
+# Create with:  npx wrangler kv namespace create RATE_LIMIT
+# then paste the returned id here and uncomment.
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "<paste-the-id-from-the-command-above>"
