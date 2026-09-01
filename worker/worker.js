@@ -216,13 +216,22 @@ export default {
       const facets = await loadFacets(env);
       const today = new Date().toISOString().slice(0, 10);
 
+      // An identity-linked API key must say which workspace it acts in, or
+      // the API answers 400 "anthropic-workspace-id is required". Ordinary
+      // keys don't need it, so the header is only sent when the variable is
+      // set — leaving it unset keeps this working with either kind of key.
+      const apiHeaders = {
+        "x-api-key": env.ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      };
+      if (env.ANTHROPIC_WORKSPACE_ID) {
+        apiHeaders["anthropic-workspace-id"] = env.ANTHROPIC_WORKSPACE_ID;
+      }
+
       const apiResp = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
-        headers: {
-          "x-api-key": env.ANTHROPIC_API_KEY,
-          "anthropic-version": "2023-06-01",
-          "content-type": "application/json",
-        },
+        headers: apiHeaders,
         body: JSON.stringify({
           model: MODEL,
           max_tokens: MAX_TOKENS,

@@ -43,6 +43,8 @@ const RATE_LIMIT_PER_HOUR = 30;
 
 interface Env {
   ANTHROPIC_API_KEY: string;
+  /** Required only for an identity-linked key — see the client below. */
+  ANTHROPIC_WORKSPACE_ID?: string;
   FACETS_URL: string;
   ALLOWED_ORIGINS: string;
   RATE_LIMIT?: KVNamespace;
@@ -258,7 +260,16 @@ export default {
 
     try {
       const facets = await loadFacets(env);
-      const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+      // An identity-linked API key must say which workspace it acts in, or
+      // the API answers 400 "anthropic-workspace-id is required". Ordinary
+      // keys don't need it, so the header only goes out when the variable is
+      // set — that keeps this working with either kind of key.
+      const client = new Anthropic({
+        apiKey: env.ANTHROPIC_API_KEY,
+        defaultHeaders: env.ANTHROPIC_WORKSPACE_ID
+          ? { "anthropic-workspace-id": env.ANTHROPIC_WORKSPACE_ID }
+          : undefined,
+      });
       const today = new Date().toISOString().slice(0, 10);
 
       // client.beta.messages: in SDK 0.71 `strict` lives on the beta tool

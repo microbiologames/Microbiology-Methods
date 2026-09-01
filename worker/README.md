@@ -61,6 +61,15 @@ It will not work yet — it needs its three settings.
 | `ANTHROPIC_API_KEY` | **Secret** | your key from console.anthropic.com |
 | `FACETS_URL` | Text | `https://microbiologames.github.io/Microbiology-Methods/facets.json` |
 | `ALLOWED_ORIGINS` | Text | `https://microbiologames.github.io` |
+| `ANTHROPIC_WORKSPACE_ID` | Text | *Only if your key is identity-linked* — e.g. `wrkspc_01...` |
+
+The last row is not optional for every account. An **identity-linked** key
+must name the workspace it acts in, and without it the API answers `400
+anthropic-workspace-id is required when authenticating with an
+identity-linked API key`. If you see that, add the row; if your key is an
+ordinary one, leave it out and no such header is sent. The id starts with
+`wrkspc_` and appears in the Anthropic console next to the key, or in the URL
+when you open the workspace.
 
 Choose **Secret** (not Text) for the key — that is what keeps it out of the
 dashboard and the logs. Deploy again after saving.
