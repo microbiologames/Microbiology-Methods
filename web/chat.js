@@ -74,7 +74,19 @@ async function ask(question) {
     pending.remove();
 
     if (!resp.ok) {
-      chatSay(body.error || `Error ${resp.status}.`, "error");
+      // Show the whole diagnosis, not just the headline. The proxy returns
+      // the upstream status/type/message precisely so the person running
+      // this can tell an exhausted balance from a bad key without opening
+      // the Cloudflare logs — dropping them here wasted that entirely.
+      const detail = [
+        body.upstream_type,
+        body.upstream_message || body.detail,
+      ].filter(Boolean).join(" — ");
+      const status = body.upstream_status ? ` [${body.upstream_status}]` : "";
+      chatSay(
+        (body.error || `Error ${resp.status}.`) + status + (detail ? `\n${detail}` : ""),
+        "error",
+      );
       return;
     }
     const filter = body.filter || {};

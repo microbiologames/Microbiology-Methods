@@ -431,7 +431,7 @@ th.sortable.sorted[data-dir="desc"]::after { content: " ▼"; }
 .chat-you { background: var(--accent); color: var(--accent-ink); margin-left: auto; }
 .chat-bot { background: var(--surface-2); color: var(--ink); }
 .chat-pending { background: var(--surface-2); color: var(--muted); }
-.chat-error { background: var(--surface-2); color: var(--bad); }
+.chat-error { background: var(--surface-2); color: var(--bad); white-space: pre-wrap; }
 
 .chat-examples { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .chat-example {
