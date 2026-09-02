@@ -47,13 +47,74 @@
     "current_expiry": "2026-12-04",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Ready to eat and ready to reheat products (Piemontaise)",
+          "bias_log": -0.219,
+          "sd_log": 0.076,
+          "n_samples": null,
+          "lower_limit_95": -0.425,
+          "upper_limit_95": -0.066
+        },
+        {
+          "category": "Dairy products (Soft white cheese)",
+          "bias_log": 0.16,
+          "sd_log": 0.137,
+          "n_samples": null,
+          "lower_limit_95": -0.47,
+          "upper_limit_95": 0.358
+        },
+        {
+          "category": "Egg products and seafood (Pasteurised liquid egg)",
+          "bias_log": -0.163,
+          "sd_log": 0.107,
+          "n_samples": null,
+          "lower_limit_95": -0.317,
+          "upper_limit_95": 0.099
+        },
+        {
+          "category": "Fruits and vegetables (Apple juice)",
+          "bias_log": 0.404,
+          "sd_log": 0.098,
+          "n_samples": null,
+          "lower_limit_95": -0.41,
+          "upper_limit_95": 0.545
+        },
+        {
+          "category": "Chocolate, pastries, cakes with low aw (Cake)",
+          "bias_log": -0.16,
+          "sd_log": 0.151,
+          "n_samples": null,
+          "lower_limit_95": -0.378,
+          "upper_limit_95": 0.236
+        },
+        {
+          "category": "Animal feeding stuffs (Pellets, dry products)",
+          "bias_log": 0.222,
+          "sd_log": 0.063,
+          "n_samples": null,
+          "lower_limit_95": -0.17,
+          "upper_limit_95": 0.313
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report includes both a Relative Trueness/Method Comparison study (Section 3.1/3.2, Figures 3 & 4) with per-category bias/SD data at two incubation times (54h and 72h) and two plate-reading interpretations (1 plate, 2 plates), and a separate Inter-Laboratory study (Section 4) with a different accuracy-profile table (Table 16) reporting bias by contamination level (low/intermediate/high) rather than by food category, plus 12- vs 9-laboratory interpretations - these are not per-category food results so were not included in the main table above. For the main table, I selected the 54h incubation, 1-plate interpretation values (Figure 3) as the canonical/primary dataset, since results were reported as 'no difference' between 1-plate and 2-plate interpretations, and 54h vs 72h values were also very similar. The 'Process water' category appeared only in the 72h dataset (not 54h) as an additional environmental-sample category with recalculated AL=±0.832 due to high reference-method repeatability SD (0.208); it was omitted here since it wasn't present in the 54h/1-plate table I used as primary, but could be considered a 7th category if the 72h dataset were used instead. Acceptability Limit is stated generally as ±0.5 log, though recalculated final ALs of ±0.7 (apple juice) and ±0.832 (process water) were used for categories with higher SDr per ISO 16140-2 rules; these final ALs are noted in the raw tables but the base stated AL is ±0.5. Bias/SD values given here are for the pour plate method only (not spread method, which was used in the separate inter-lab study). Category names are as printed in the (Food) Category/(Food) Type fields, sometimes split across two lines.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/BKR-23-11-12-18-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/SYMPHONY-SUMMARY-REPORT-Version-1.pdf",
     "organism_page_last_updated_raw": "17 août 2026"

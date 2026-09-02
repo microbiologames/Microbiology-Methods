@@ -57,13 +57,84 @@
     "current_expiry": "2029-11-04",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 94.1,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 97.2,
+          "false_positive_ratio_alternative_pct": 2.6
+        },
+        {
+          "category": "Milk and dairy products BPW + novobiocin",
+          "sensitivity_alternative_pct": 83.3,
+          "sensitivity_reference_pct": 86.7,
+          "relative_trueness_pct": 85.5,
+          "false_positive_ratio_alternative_pct": 3.1
+        },
+        {
+          "category": "Milk and dairy products OBS + novobiocin",
+          "sensitivity_alternative_pct": 84.4,
+          "sensitivity_reference_pct": 81.3,
+          "relative_trueness_pct": 82.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood and vegetables",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Egg products BPW",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 5.7
+        },
+        {
+          "category": "Raw beef meats 8 h",
+          "sensitivity_alternative_pct": 93.2,
+          "sensitivity_reference_pct": 93.2,
+          "relative_trueness_pct": 93.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw beef meats 24 h",
+          "sensitivity_alternative_pct": 95.6,
+          "sensitivity_reference_pct": 91.1,
+          "relative_trueness_pct": 93.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula",
+          "sensitivity_alternative_pct": 94.1,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 96.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Pet food OBS + ONE Broth-Salmonella Supplement",
+          "sensitivity_alternative_pct": 96.9,
+          "sensitivity_reference_pct": 93.8,
+          "relative_trueness_pct": 95.7,
+          "false_positive_ratio_alternative_pct": 5.3
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers three PCR instruments (PikoReal - discontinued, 7500 Fast, and QS5) each with its own Table 10/11/12 giving 17 food categories (with sub-protocols/instruments/incubation times), plus multiple 'All products (including PPS)' aggregate rows (A-H) that were excluded as totals. I treated Table 10 (PikoReal PCR Instrument, categories 1-7) as the primary/canonical study since it appears first and is the original certified instrument list; the 7500 Fast and QS5 tables (Tables 11 and 12, categories 1-17, essentially identical data with extension categories 8-17) are extension studies covering additional categories (Milks/dairy, Infant formula, Vegetables, Seafood, Raw beef meats at 9h/24h, Environmental samples, Milk powder/Infant formula/cereals, Cocoa/chocolate NFDM and BPW, Pet food 1-in-6 and 1-in-10, Meat products 375g/25g at 8h/24h, Powdered infant formula, Fresh/processed vegetables and fruit, Animal feed, Primary production samples) and were not extracted in detail per the instruction to record only the primary/canonical study categories. Category 1 'Meat products' in Table 10 has sub-rows a/b/c (Unprocessed, Processed, RTE/RTRH) which were combined into the Total row values reported here, consistent with the row structure of the table. Certificate number formatted as printed on cover page ('UNI 03/07 – 11/13'). No Acceptability Limit or quantitative bias/SD data present since this is a qualitative (detection) method, so the 'quantitative' object is null.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/UNI-03-07-11-13-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/SureTect-Salmonella-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

@@ -41,13 +41,49 @@
     "current_expiry": null,
     "status": "unknown"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 84.2,
+          "sensitivity_reference_pct": 81.6,
+          "relative_trueness_pct": 82.7,
+          "false_positive_ratio_alternative_pct": 7.5
+        },
+        {
+          "category": "Egg products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood products",
+          "sensitivity_alternative_pct": 89.7,
+          "sensitivity_reference_pct": 97.4,
+          "relative_trueness_pct": 92.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Multi-component foods or meal component products",
+          "sensitivity_alternative_pct": 97.7,
+          "sensitivity_reference_pct": 88.6,
+          "relative_trueness_pct": 91.5,
+          "false_positive_ratio_alternative_pct": 7.4
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
     "extraction_confidence": "medium",
-    "notes": "No matching bootstrap PDF-list record found (likely a certificate added/renamed after the bootstrap PDF was issued); no renewal history or validation-scope text available yet.",
+    "notes": "No matching bootstrap PDF-list record found (likely a certificate added/renamed after the bootstrap PDF was issued); no renewal history or validation-scope text available yet. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 6 (page 5) presents results by category with subcategories (a, b, c) and a 'Total' row per category; I recorded only the category-level Total rows (Meat products, Egg products, Seafood products, Multi-component foods or meal component products), excluding subcategory rows and the overall 'Total (All categories)' row, per instructions. The report also contains a separate interlaboratory study (section 4) with its own sensitivity/relative trueness/false positive ratio values (SEalt 96.2%, SEref 96.2%, RT 94.9%, FPR 0.96%) based on ground beef samples only across 15 labs - this is a reproducibility study, not the primary per-category method comparison, so it was not included in the main table. RLOD data (section 3.2) and inclusivity/exclusivity data (section 3.3) were also not included as they are not part of the requested method-comparison sensitivity/trueness/FPR table.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-01-10-11-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/REVEAL_Salmonella_2023_10_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

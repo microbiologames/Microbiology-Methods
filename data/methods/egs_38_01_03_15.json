@@ -55,7 +55,85 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Meat and meat products (25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk and dairy products (25 g)",
+          "sensitivity_alternative_pct": 90.3,
+          "sensitivity_reference_pct": 80.6,
+          "relative_trueness_pct": 86.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Produces (25 g)",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 95.7,
+          "false_positive_ratio_alternative_pct": 2.6
+        },
+        {
+          "category": "Eggs and egg products (25 g)",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Fish and seafood products (25 g)",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Pet food and animal feed (25 g)",
+          "sensitivity_alternative_pct": 97.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.5,
+          "false_positive_ratio_alternative_pct": 3.0
+        },
+        {
+          "category": "Pet food (375 g)",
+          "sensitivity_alternative_pct": 93.3,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 96.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk powders, infant formula with and without probiotics (375 g)",
+          "sensitivity_alternative_pct": 97.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.5,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "Production environmental samples",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 2.6
+        },
+        {
+          "category": "Heat-processed milk and dairy products (375 g) PREraser",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Production environmental samples PREraser",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -64,8 +142,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains two parallel method-comparison tables (Table 7 for CFX96 thermocycler and Table 8 for AriaMx thermocycler), representing two PCR detection platforms tested for the same alternative method. I extracted the per-category values from Table 7 (CFX96) as the primary/canonical dataset, since it is presented first and yields marginally better overall performance (Total - All categories: SE alt 96.5%, SE ref 98.3%, RT 97.5%, FPR 1.1%). The AriaMx table (Table 8) gave very similar but slightly different values (e.g. Total - All categories: SE alt 95.9%, SE ref 98.5%, RT 97.4%, FPR 2.9%) and is not included here. 'Total - Categories tested with PREraser' and 'Total - All categories' summary rows were excluded per instructions, as were sub-type rows (a/b/c) within each category -- only the category-level 'Total' rows were used since these correspond to the actual ISO 16140-2 food categories (Categories 1-11 in the table). Certificate number taken from cover page. No quantitative/enumeration data present, hence quantitative field is null and no acceptability limit in log10 units applies (a different acceptability limit of 1.5/2.5 is used for RLOD, not relevant to bias/log).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/EGS-38-01-03-15-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/04/BACGene-Salmonella-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

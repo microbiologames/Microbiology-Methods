@@ -41,13 +41,74 @@
     "current_expiry": null,
     "status": "unknown"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": 0.01,
+          "sd_log": 0.3,
+          "n_samples": 17,
+          "lower_limit_95": -0.64,
+          "upper_limit_95": 0.65
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": -0.04,
+          "sd_log": 0.15,
+          "n_samples": 19,
+          "lower_limit_95": -0.37,
+          "upper_limit_95": 0.29
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": -0.05,
+          "sd_log": 0.15,
+          "n_samples": 16,
+          "lower_limit_95": -0.38,
+          "upper_limit_95": 0.28
+        },
+        {
+          "category": "Vegetables",
+          "bias_log": -0.01,
+          "sd_log": 0.18,
+          "n_samples": 16,
+          "lower_limit_95": -0.41,
+          "upper_limit_95": 0.38
+        },
+        {
+          "category": "Composite foods",
+          "bias_log": -0.06,
+          "sd_log": 0.22,
+          "n_samples": 17,
+          "lower_limit_95": -0.54,
+          "upper_limit_95": 0.42
+        },
+        {
+          "category": "Environmental samples",
+          "bias_log": 0.0,
+          "sd_log": 0.15,
+          "n_samples": 18,
+          "lower_limit_95": -0.32,
+          "upper_limit_95": 0.33
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
     "extraction_confidence": "medium",
-    "notes": "No matching bootstrap PDF-list record found (likely a certificate added/renamed after the bootstrap PDF was issued); no renewal history or validation-scope text available yet.",
+    "notes": "No matching bootstrap PDF-list record found (likely a certificate added/renamed after the bootstrap PDF was issued); no renewal history or validation-scope text available yet. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: No certificate number was found anywhere in the visible pages provided (cover page shows title, expert lab, client, but no explicit certificate number like '3M 01/09-04/03A'). The relative trueness table extracted (Table 2, page 15) is for the 'Pour plate' inoculation modality, chosen as the primary/canonical protocol; a parallel table for 'Surface spreading' modality exists with nearly identical values (MP 0.03/0.27/17; DP -0.02/0.15/19; SP 0.01/0.14/16; V -0.05/0.22/16; CF 0.03/0.20/17; ES 0.02/0.12/19; All cat. 0.00/0.19/104) and is not recorded here since it is an alternative protocol variant. 'All categories' rows for both modalities (n=103 and n=104) were excluded as aggregate totals, not individual food categories. Category abbreviations were expanded per the legend in Figure 6/7 (MP=Meat products, DP=Dairy products, SFP/SP=Seafood products, VP/V=Vegetables, CF=Composite foods, ES=Environmental samples). Acceptability limit of ±0.5 log10 is confirmed from Table 11 and figures 8/9/12.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/UNI-03-15-12-22-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/05/Synt-UNI-03-15-12-22.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

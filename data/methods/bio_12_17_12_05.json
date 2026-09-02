@@ -53,9 +53,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "1",
+          "bias_log": -0.24,
+          "sd_log": 0.47,
+          "n_samples": 31,
+          "lower_limit_95": -1.22,
+          "upper_limit_95": 0.74
+        },
+        {
+          "category": "2",
+          "bias_log": -0.17,
+          "sd_log": 0.37,
+          "n_samples": 33,
+          "lower_limit_95": -0.95,
+          "upper_limit_95": 0.6
+        },
+        {
+          "category": "3",
+          "bias_log": 0.04,
+          "sd_log": 0.37,
+          "n_samples": 23,
+          "lower_limit_95": -0.76,
+          "upper_limit_95": 0.83
+        },
+        {
+          "category": "4",
+          "bias_log": -0.22,
+          "sd_log": 0.56,
+          "n_samples": 16,
+          "lower_limit_95": -1.45,
+          "upper_limit_95": 1.01
+        },
+        {
+          "category": "5",
+          "bias_log": -0.17,
+          "sd_log": 0.9,
+          "n_samples": 29,
+          "lower_limit_95": -2.05,
+          "upper_limit_95": 1.71
+        },
+        {
+          "category": "6",
+          "bias_log": -0.08,
+          "sd_log": 0.33,
+          "n_samples": 15,
+          "lower_limit_95": -0.8,
+          "upper_limit_95": 0.64
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 4 (page 12, section 3.1.4) lists categories numbered 1-6 only (the report's legend on the scatterplot suggests these correspond to Composite food, Meat products, Dairy products, Seafood, Vegetables and fruits, and Pet food, in that order, but the table itself only prints numeric category codes 1-6, not the names, so category names were left as the printed numeric labels). The 'All categories' row (n=147, bias -0.15, SD 0.55, 95% CI -1.24 to 0.95) was excluded per instructions as it is an aggregate/total row, not an individual category. Acceptability limit of ±0.5 log was taken from the accuracy profile study (Table 13, section 4.4.2) which explicitly states 'Acceptability limit in log (lambda) = 0.50' and the conclusion text confirms 'AL) of ± 0.5 log'.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/BIO-12-17-12-05_fr.docx_-1.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/TEMPO-TC-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 mai 2026"

@@ -50,9 +50,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Category 1",
+          "bias_log": -0.1,
+          "sd_log": 0.19,
+          "n_samples": 19,
+          "lower_limit_95": -0.5,
+          "upper_limit_95": 0.3
+        },
+        {
+          "category": "Category 2",
+          "bias_log": -0.01,
+          "sd_log": 0.25,
+          "n_samples": 18,
+          "lower_limit_95": -0.54,
+          "upper_limit_95": 0.52
+        },
+        {
+          "category": "Category 3",
+          "bias_log": -0.02,
+          "sd_log": 0.2,
+          "n_samples": 15,
+          "lower_limit_95": -0.47,
+          "upper_limit_95": 0.42
+        },
+        {
+          "category": "Category 4",
+          "bias_log": -0.31,
+          "sd_log": 0.31,
+          "n_samples": 16,
+          "lower_limit_95": -0.99,
+          "upper_limit_95": 0.38
+        },
+        {
+          "category": "Category 5",
+          "bias_log": -0.18,
+          "sd_log": 0.25,
+          "n_samples": 15,
+          "lower_limit_95": -0.74,
+          "upper_limit_95": 0.37
+        },
+        {
+          "category": "Category 6",
+          "bias_log": -0.24,
+          "sd_log": 0.28,
+          "n_samples": 17,
+          "lower_limit_95": -0.84,
+          "upper_limit_95": 0.36
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -64,8 +113,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The relative trueness table in Appendix 5 (page 74) labels food categories only as numeric codes (1-6) rather than by descriptive names; the actual food category names (e.g. meat products, dairy products, egg products, seafood, fruit/vegetables, pet food) are given elsewhere in the report (e.g. Figure 10, Accuracy profile section, page 29) but are not explicitly cross-referenced to categories 1-6 in the provided pages, so category names could not be confidently mapped to numbers 1-6. Values were taken from the 'TEMPO STA-(24h at 37°C + 48 h at 5°C ± 3°C)' protocol table (page 74), which appears to be the final/primary protocol summary table including Bias, SD, and 95% limits per category with ISO formula. An earlier partial table for 'TEMPO STA 24h at 37°C' protocol (pages 64-65, categories 1-3 shown) presents only averages/SDs of differences per category without full 95% CI/ISO-formula bias values, so it was treated as a secondary/alternative protocol variant and excluded from the primary category table. The stated Acceptability Limit is ±0.5 log as explicitly stated in section 3.1.2.3 conclusion ('Acceptability Limits (AL) fixed at ± 0,5 log'), though the inter-laboratory study section uses a slightly different figure (±0.53 log) derived from tolerance calculations - the ±0.5 value was used as the general stated AL per the qualitative conclusion text.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/BIO-12-28-04-10_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/03/Synt-BIO-12-28-04-10_en.pdf",
     "organism_page_last_updated_raw": "29 juin 2026"

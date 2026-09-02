@@ -44,13 +44,63 @@
     "current_expiry": "2029-01-26",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods / Ready-to-eat and ready-to-reheat",
+          "sensitivity_alternative_pct": 80.6,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 82.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Meat Products",
+          "sensitivity_alternative_pct": 83.9,
+          "sensitivity_reference_pct": 61.3,
+          "relative_trueness_pct": 72.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk & Dairy products",
+          "sensitivity_alternative_pct": 89.5,
+          "sensitivity_reference_pct": 78.9,
+          "relative_trueness_pct": 82.9,
+          "false_positive_ratio_alternative_pct": 6.3
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 82.5,
+          "sensitivity_reference_pct": 77.5,
+          "relative_trueness_pct": 81.8,
+          "false_positive_ratio_alternative_pct": 4.2
+        },
+        {
+          "category": "Seafood and fishery products",
+          "sensitivity_alternative_pct": 83.0,
+          "sensitivity_reference_pct": 83.0,
+          "relative_trueness_pct": 78.6,
+          "false_positive_ratio_alternative_pct": 12.9
+        },
+        {
+          "category": "Production environmental Samples",
+          "sensitivity_alternative_pct": 83.3,
+          "sensitivity_reference_pct": 76.7,
+          "relative_trueness_pct": 80.3,
+          "false_positive_ratio_alternative_pct": 6.5
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers two alternative kits (BACGene Listeria Multiplex, cert EGS 38/05-03/17, and BACGene Listeria spp., cert EGS 38/02-01/17) tested with two thermocyclers (CFX96 and AriaMx) and two enrichment broths (initial study with Actero Listeria Enrichment broth, and a 2023 extension study with BACGro ULTRA Listeria Broth (BULB)). I selected Table 7.1 (CFX96 - BACGene Listeria Multiplex, target Listeria spp., using the original/primary Actero enrichment broth) as the canonical per-category method comparison table, since it represents the initial validation study rather than the later extension. Other variant tables recorded in the report include: Table 7.2 (AriaMx, Actero broth, All categories SE alt 83.8%/SE ref 77.9%/RT 80.0%/FPR 5.9%/FNR 0.005), Table 44 (CFX96 Touch, BULB extension, All categories SE alt 82.8%/SE ref 79.1%/RT 78.5%/FPR 4.8%/FNR 0.045), and Table 45 (AriaMx, BULB extension, All categories SE alt 83.7%/SE ref 78.8%/RT 78.7%/FPR 4.8%/FNR 0.033). The certificate number recorded is for the BACGene Listeria Multiplex kit (primary product name on cover, listed first); the second kit's certificate (BACGene Listeria spp., EGS 38/02-01/17) is not captured in the single certificate_number field. Also note the report is a combined qualitative detection study (no quantitative/enumeration data present, hence acceptability_limit_log and quantitative fields are null); an RLOD acceptability limit of 2.5 (unitless ratio, not log10) applies to relative level of detection tests but this is distinct from a quantitative trueness study, so it was not entered under quantitative.acceptability_limit_log.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/EGS-38-02-01-17-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/BACGene_Listeria_Multiplex-L.spp-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

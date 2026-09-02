@@ -49,13 +49,82 @@
     "current_expiry": "2028-12-02",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": 0.18,
+          "sd_log": 0.24,
+          "n_samples": 21,
+          "lower_limit_95": -0.5,
+          "upper_limit_95": 0.54
+        },
+        {
+          "category": "Dairy & egg products",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": 0.12,
+          "sd_log": 0.01,
+          "n_samples": 20,
+          "lower_limit_95": -0.24,
+          "upper_limit_95": 0.27
+        },
+        {
+          "category": "Vegetal products",
+          "bias_log": 0.07,
+          "sd_log": 0.02,
+          "n_samples": 15,
+          "lower_limit_95": -0.13,
+          "upper_limit_95": 0.16
+        },
+        {
+          "category": "RTE & RTRH",
+          "bias_log": 0.11,
+          "sd_log": -0.01,
+          "n_samples": 15,
+          "lower_limit_95": -0.25,
+          "upper_limit_95": 0.23
+        },
+        {
+          "category": "Environmental samples",
+          "bias_log": 0.17,
+          "sd_log": 0.04,
+          "n_samples": 22,
+          "lower_limit_95": -0.33,
+          "upper_limit_95": 0.4
+        },
+        {
+          "category": "Animal feed",
+          "bias_log": 0.13,
+          "sd_log": 0.06,
+          "n_samples": 16,
+          "lower_limit_95": -0.22,
+          "upper_limit_95": 0.34
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains two nested studies (initial validation with two-dilution interpretation, Section 3, and an extension study with single-dilution/single-plate interpretation, Section 4), each further split by reference-method incubation temperature (30°C in Table 21-right / Section 3 tables, and 37°C in Table 21-left). I selected the 'Two dilutions' (initial validation) relative trueness results at 37°C incubation of the reference method (right-hand columns of Table 21, page 13) as the canonical/primary per-category dataset, since this corresponds to the main methods-comparison relative trueness study described in Section 3.1. The 30°C version (Table 20) and the single-plate/extension-study versions (left-hand columns of both Table 20 and Table 21) contain very similar but not identical bias/SD/n/CI values per category and are not included here to avoid duplicating categories; they are structurally parallel (same category list) but reflect the alternative single-dilution protocol and/or 30°C reference incubation rather than the primary two-dilution/37°C study. Note that Table 21 (two-dilution, 37°C) does not include a 'Dairy & egg products' row (that category appears only in Table 20 at 30°C, with n=25, SD=-0.07, Bias=0.13, LCL=-0.34, UCL=0.20) -- I left its quantitative fields null here since it was not present in the specific canonical table chosen, to avoid mixing data from different sub-studies; this should be treated as a gap rather than a true zero/absence of testing. All 'All cat.' / 'Total' aggregate rows from Tables 20 and 21 were excluded per instructions. Acceptability limit of ±0.5 log10 CFU/g or mL is explicitly stated in Sections 3.2.1 and 4.2.1.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-08-12-04_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_coliform_SR_2025_10_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 mai 2026"

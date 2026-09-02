@@ -44,13 +44,133 @@
     "current_expiry": "2027-07-03",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Ready-to-eat",
+          "sensitivity_alternative_pct": 92.9,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 95.7,
+          "false_positive_ratio_alternative_pct": 12.5
+        },
+        {
+          "category": "Ready-to-reheat",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Smoked and marinated products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw products (frozen or fresh)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw poultry, frozen or not, seasoned or not",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Delicatessen",
+          "sensitivity_alternative_pct": 91.7,
+          "sensitivity_reference_pct": 91.7,
+          "relative_trueness_pct": 90.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw ingredients",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 96.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula and cereals with probiotics",
+          "sensitivity_alternative_pct": 88.9,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 95.0,
+          "false_positive_ratio_alternative_pct": 10.0
+        },
+        {
+          "category": "Pasteurised eggs and eggs products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 28.6
+        },
+        {
+          "category": "Low moisture products",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 94.1,
+          "false_positive_ratio_alternative_pct": 5.6
+        },
+        {
+          "category": "High moisture products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dusts and residues",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Cleaning and Process waters",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Surface samples",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Animal faeces",
+          "sensitivity_alternative_pct": 88.2,
+          "sensitivity_reference_pct": 94.1,
+          "relative_trueness_pct": 93.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples and non-faeces",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Certificate number was not visible on the cover page provided (only accreditation number N°1-0144 was shown, which is the COFRAC accreditation number, not a certificate number for the method). The per-category method comparison data was extracted from Table 7 (Bio-Rad CFX96 thermocycler), which appears to be the primary/reference thermocycler results table. The report also includes equivalent tables (Table 8, 9, 10) for three other thermocyclers (Applied Biosystems 7500, Agilent MX3005P, Roche LightCycler 480II) with slightly different per-category values, presumably tested as protocol variants/equivalence studies - these were not included per instructions to record only the primary/canonical study. 'Total' rows for major category groups (RTE and RTRH foods, Meat Products, Ingredients and specific foods, Feed products, Production environmental samples, Primary production samples) and the overall 'All categories' / 'Food+feed+production environmental samples' rows were excluded as aggregate summaries, not individual food categories.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/02/BCK-40-01-07-19-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2020/02/Synth-BCK-40-01-07-19_en.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

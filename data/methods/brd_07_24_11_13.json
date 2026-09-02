@@ -47,13 +47,82 @@
     "current_expiry": "2029-11-29",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Category 1 - Delicatessen (liver pâté)",
+          "bias_log": 0.061,
+          "sd_log": 0.08,
+          "n_samples": 6,
+          "lower_limit_95": -0.055,
+          "upper_limit_95": 0.176
+        },
+        {
+          "category": "Category 2 - Dairy dessert (vanilla cream)",
+          "bias_log": -0.114,
+          "sd_log": 0.119,
+          "n_samples": 6,
+          "lower_limit_95": -0.286,
+          "upper_limit_95": 0.058
+        },
+        {
+          "category": "Category 3 - RTE or RTC (macédoine)",
+          "bias_log": 0.125,
+          "sd_log": 0.074,
+          "n_samples": 6,
+          "lower_limit_95": 0.018,
+          "upper_limit_95": 0.232
+        },
+        {
+          "category": "Category 4 - RTE or RTC (fish terrine)",
+          "bias_log": 0.043,
+          "sd_log": 0.068,
+          "n_samples": 6,
+          "lower_limit_95": -0.055,
+          "upper_limit_95": 0.141
+        },
+        {
+          "category": "Category 5 - Whole pasteurized liquid egg",
+          "bias_log": -0.054,
+          "sd_log": 0.085,
+          "n_samples": 6,
+          "lower_limit_95": -0.185,
+          "upper_limit_95": 0.078
+        },
+        {
+          "category": "Category 6 - Dried products (feed for fish)",
+          "bias_log": 0.022,
+          "sd_log": 0.109,
+          "n_samples": 6,
+          "lower_limit_95": -0.135,
+          "upper_limit_95": 0.18
+        },
+        {
+          "category": "Category 7 - Process water",
+          "bias_log": 0.09,
+          "sd_log": 0.078,
+          "n_samples": 6,
+          "lower_limit_95": -0.024,
+          "upper_limit_95": 0.204
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers multiple protocol variants (Pour plate - Manual 1 plate & 2 plates, Pour plate - Automated, Spreading 1 plate & 2 plates) for each of 7 food categories, shown in Figure 3 (accuracy profile study, pp.36-41) and Appendix 7/8 raw data. I recorded the primary variant (Pour plate - Manual - 1 plate interpretation) bias/SD/lower-upper β-ETI values per category as the canonical relative trueness table, since these correspond most directly to the required category/type mapping. The other variants (Pour plate Manual 2 plates, Pour plate Automated, Spreading 1&2 plates) give very similar bias/SD values (all well within the ±0.5 log Acceptability Limit) and are described in the report's Figure 3 tables but not extracted individually here. Note the document also contains a broader 'method comparison study / relative trueness study' section (3.1, pages 8-34, with raw data in Appendix 4) organized by product type (meat products, etc.) rather than by the 7 numbered ISO categories used in the accuracy profile study (section 3.2); the per-category accuracy-profile table (Figure 3) was used here as it directly ties bias/SD/CI to the 7 canonical food categories with an explicit Acceptability Limit of ±0.5 log10. The inter-laboratory study (section 4, Tables 16-17) reports pooled Low/Medium/High level statistics rather than per-food-category data, so it was not used for the category table but is consistent with the ±0.5 log AL. Certificate number taken from cover page: 'BRD 07/24 – 11/13'.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-24-11-13_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2026/01/RAPID-EB-SUMMARY-REPORT-Version-0-.pdf",
     "organism_page_last_updated_raw": "6 janvier 2026"

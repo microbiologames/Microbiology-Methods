@@ -52,9 +52,50 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products and poultry (Cooked delicatessen and ready-made meals - Cooked ham)",
+          "bias_log": null,
+          "sd_log": 0.152,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Dairy products (Raw milk and raw milk products - raw milk)",
+          "bias_log": null,
+          "sd_log": 0.121,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Seafood products (Prepared dishes, terrines - salmon terrine)",
+          "bias_log": null,
+          "sd_log": 0.084,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Egg products (Raw pasta, liquid egg - pasteurized liquid egg)",
+          "bias_log": null,
+          "sd_log": 0.135,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Composite products (Pizzas, quiches - Leek quiche)",
+          "bias_log": null,
+          "sd_log": 0.168,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -66,8 +107,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report actually contains two distinct study types under section 3.2 (Accuracy profile study, by matrix/category with Bias, Lower/Upper β-ETI given per sample group, shown in Appendix figures such as Figure 3) and section 4.4 (Inter-laboratory study, reported by contamination level - Low/Medium/High - rather than by food category, shown in Tables 19-20). I extracted the per-category accuracy profile data from Figure 3 (page 33-34), which reports Bias and SD Repeatability (used here as sd_log) per food category/type, since this is the closest analogue to a 'relative trueness by category' table for this quantitative study. Note that individual per-sample Bias/Lower β-ETI/Upper β-ETI values exist for each of the 6 samples per category (both a reference-method-inoculation set and an alternative-method-inoculation set per category), rather than a single aggregated bias/CI per category as the schema expects, so I could not populate a single overall bias_log/lower_limit_95/upper_limit_95 for each category confidently; these are left null. Two additional categories appear at the 'Spreading' 22h/48h level ('Process water') which seem to be a process-control/environmental-sample split rather than standard ISO 16140-2 food categories, so they were excluded per instructions about splitting by variant. The inter-laboratory study (Tables 19/20, page 48-49) is organized by contamination level (Low/Medium/High), not food category, and duplicates results at two incubation times (24h and 72h); this was not included in the categories list since it is a separate 'collaborative study' section, not the categorized relative trueness table, and is described here for completeness. Acceptability limit of ±0.5 log was explicitly stated as the initial AL; a 'New/Final acceptability limit (ALs)' of 0.569 was calculated from pooled reproducibility SD in the inter-laboratory study but the ±0.5 log remained the limit used for the per-category accuracy profile acceptability determination, so 0.5 was recorded as requested.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/BKR-23-10-12-15_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/EASY-STAPH-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "29 juin 2026"

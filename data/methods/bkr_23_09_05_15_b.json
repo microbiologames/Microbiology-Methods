@@ -45,13 +45,42 @@
     "current_expiry": "2027-06-05",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": -0.13,
+          "sd_log": 0.21,
+          "n_samples": 19,
+          "lower_limit_95": -0.57,
+          "upper_limit_95": 0.32
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.09,
+          "sd_log": 0.4,
+          "n_samples": 20,
+          "lower_limit_95": -0.76,
+          "upper_limit_95": 0.93
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/pseudomonas-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The report presents four raw-data tables (Spreading 45h, Spreading 72h, Spiral 45h, Spiral 72h) in Appendix 5, each with the same two food categories (labelled '1' = meat products and '2' = dairy products based on product examples: pork chop, chicken, etc. for category 1; mozzarella, milk, cheese, cream for category 2). I selected the 'Spreading method 72h' table as the primary/canonical result since the spreading method at 72h is the standard reading time referenced in the main body conclusions (results available at day 2 = 48h-72h) and is listed first among the reference-method comparisons in the accuracy profile section. The other three variants (Spreading 45h: cat1 bias -0.21/SD 0.22/n19, cat2 bias 0.01/SD 0.39/n19; Spiral 45h: cat1 bias -0.09/SD 0.30/n15, cat2 bias 0.20/SD 0.59/n16; Spiral 72h: cat1 bias not given (blank/0 in source, likely incomplete calculation), cat2 bias 0.22/SD 0.56/n17) are alternative reading times/methods and were not included as separate categories per instructions. Category names 'a/b/c' subtypes within each category (e.g., meat: a=beef/lamb, b=poultry, c=cured/processed meats; dairy: a=pasteurized, b=raw milk, c=desserts) were not broken out as they appear to be sample-type subdivisions within the two main ISO 16140-2 categories (meat products, dairy products), not distinct top-level categories. The Acceptability Limit (0.5 log) was taken from the accuracy profile tables (Table 15/16), which is consistent across the whole report. 'All categories' summary rows were excluded per instructions.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-09-05-15-B_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2015/09/Synt-BKR-23-09-05-15_fr.pdf",
     "organism_page_last_updated_raw": "18 août 2025"

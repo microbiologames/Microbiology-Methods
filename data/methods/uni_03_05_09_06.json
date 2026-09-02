@@ -51,13 +51,74 @@
     "current_expiry": "2030-09-15",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": -0.01,
+          "sd_log": 0.13,
+          "n_samples": 17,
+          "lower_limit_95": -0.29,
+          "upper_limit_95": 0.26
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": -0.06,
+          "sd_log": 0.12,
+          "n_samples": 15,
+          "lower_limit_95": -0.33,
+          "upper_limit_95": 0.2
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": -0.18,
+          "sd_log": 0.42,
+          "n_samples": 19,
+          "lower_limit_95": -1.08,
+          "upper_limit_95": 0.72
+        },
+        {
+          "category": "Vegetal products",
+          "bias_log": -0.01,
+          "sd_log": 0.16,
+          "n_samples": 17,
+          "lower_limit_95": -0.35,
+          "upper_limit_95": 0.33
+        },
+        {
+          "category": "Composite foods",
+          "bias_log": -0.03,
+          "sd_log": 0.17,
+          "n_samples": 22,
+          "lower_limit_95": -0.4,
+          "upper_limit_95": 0.33
+        },
+        {
+          "category": "Environmental samples",
+          "bias_log": 0.02,
+          "sd_log": 0.12,
+          "n_samples": 20,
+          "lower_limit_95": -0.25,
+          "upper_limit_95": 0.28
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers the initial validation study's relative trueness (Bland-Altman) results, Table 3 (page 2/14), which is the primary/canonical method comparison study for the Listeria Precis Enumeration method (certificate UNI 03/05-09/06). The 'All cat.' row (n=110, bias -0.05) was excluded as a summary/aggregate row, not a distinct category. Note the report also contains a separate extension study (section 4.2.4, Table 13, pages 36-37) with two additional inoculation modalities (Pour plate and Surface spreading) tested on different matrices (Liver pâté, Raw milk, Fish terrine, Mashed potatoes, Mixed salad, Process water) - these are from an extension/renewal study using different food types and were not included per instructions to only record the primary/canonical study; those per-modality tables are: Pour plate (MP n=15 bias 0.02 SD 0.30 CI -0.64/0.69; DP n=18 bias -0.05 SD 0.20 CI -0.48/0.38; SP n=19 bias -0.05 SD 0.27 CI -0.62/0.52; V n=15 bias -0.07 SD 0.27 CI -0.66/0.53; CF n=17 bias -0.07 SD 0.21 CI -0.52/0.38; ES n=15 bias -0.01 SD 0.15 CI -0.34/0.31) and Surface spreading (MP n=15 bias 0.02 SD 0.36 CI -0.77/0.82; DP n=17 bias -0.01 SD 0.19 CI -0.41/0.40; SP n=17 bias 0.08 SD 0.19 CI -0.33/0.50; V n=16 bias 0.01 SD 0.23 CI -0.48/0.51; CF n=17 bias 0.06 SD 0.16 CI -0.28/0.40; ES n=15 bias -0.04 SD 0.20 CI -0.48/0.41). Acceptability limit is consistently stated as +/-0.5 log10 throughout the report (accuracy profile sections, e.g. section 3.1.2.2 and Table 11).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-05-09-06-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_Listeria_Precis_Enumeration_L.mono_SR_v0.pdf",
     "organism_page_last_updated_raw": "25 août 2026"

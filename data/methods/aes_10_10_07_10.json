@@ -53,9 +53,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products, fish products",
+          "bias_log": -0.08,
+          "sd_log": 0.07,
+          "n_samples": 16,
+          "lower_limit_95": -0.24,
+          "upper_limit_95": 0.08
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": -0.02,
+          "sd_log": 0.14,
+          "n_samples": 18,
+          "lower_limit_95": -0.32,
+          "upper_limit_95": 0.29
+        },
+        {
+          "category": "Vegetables",
+          "bias_log": -0.1,
+          "sd_log": 0.13,
+          "n_samples": 22,
+          "lower_limit_95": -0.38,
+          "upper_limit_95": 0.18
+        },
+        {
+          "category": "Eggs & Pastries",
+          "bias_log": -0.13,
+          "sd_log": 0.14,
+          "n_samples": 18,
+          "lower_limit_95": -0.43,
+          "upper_limit_95": 0.18
+        },
+        {
+          "category": "RTE & RTRH products",
+          "bias_log": -0.01,
+          "sd_log": 0.11,
+          "n_samples": 18,
+          "lower_limit_95": -0.24,
+          "upper_limit_95": 0.22
+        },
+        {
+          "category": "Feed products",
+          "bias_log": -0.09,
+          "sd_log": 0.09,
+          "n_samples": 18,
+          "lower_limit_95": -0.28,
+          "upper_limit_95": 0.09
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.51,
         "by_matrix": []
       },
       "loq_log": null,
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacillus-cereus/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Certificate number taken from cover page: 'AES 10/10-07/10' (BACARA and BACARA 2). Method is quantitative (enumeration of Bacillus cereus), per EN ISO 16140-2:2016. The report contains multiple studies (initial BACARA validation, 2022 BACARA 2 extension with 2 dilutions, 2025 BACARA 2 extension with single plate/single dilution). The relative trueness category table extracted here corresponds to Appendix Q, 'Pour plate for BACARA 2' (the 2022 extension study, primary/canonical relative trueness statistical calculations by category), which is the most complete per-category breakdown with n, bias, SD, and 95% CI values. An alternative parallel table exists in the same appendix for 'Surface spreading for BACARA 2' with slightly different per-category bias/SD/CI values (e.g., Meat products: -0.05/0.06/-0.17/0.08; Dairy: -0.06/0.17/-0.44/0.31; Vegetables: -0.07/0.12/-0.33/0.19; Eggs & Pastries: -0.13/0.15/-0.45/0.19; RTE & RTRH: 0.03/0.11/-0.21/0.27; Feed: -0.06/0.06/-0.19/0.08) -- these were not recorded as they represent a second inoculation/plating protocol variant rather than the primary category table. The Acceptability Limit of ±0.51 log was taken from Table 11 (accuracy profile summary, initial BACARA study, page 5) which explicitly states 'AL in log (λ) based on reference method pooled variance: 0.51' superseding the default ±0.5. This may differ slightly from the AL used specifically in the BACARA 2 relative trueness/accuracy profile sections (pages 38-45, 54-57) which were not fully visible in the provided pages, so there is some uncertainty as to whether 0.51 is the exact AL cited for the BACARA 2 category table shown here versus the original BACARA formulation's interlaboratory study.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-10-07-10-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/2025_06-SR-BACARA-v0-protected.pdf",
     "organism_page_last_updated_raw": "26 juin 2026"

@@ -49,9 +49,66 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Raw meats including poultry",
+          "bias_log": 0.08,
+          "sd_log": 0.24,
+          "n_samples": 15,
+          "lower_limit_95": -0.47,
+          "upper_limit_95": 0.62
+        },
+        {
+          "category": "Ready to reheat products and delicatessen",
+          "bias_log": 0.07,
+          "sd_log": 0.31,
+          "n_samples": 24,
+          "lower_limit_95": -0.59,
+          "upper_limit_95": 0.72
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.18,
+          "sd_log": 0.36,
+          "n_samples": 16,
+          "lower_limit_95": -0.62,
+          "upper_limit_95": 0.97
+        },
+        {
+          "category": "Fruits and vegetables",
+          "bias_log": -0.04,
+          "sd_log": 0.62,
+          "n_samples": 16,
+          "lower_limit_95": -1.4,
+          "upper_limit_95": 1.32
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": 0.01,
+          "sd_log": 0.36,
+          "n_samples": 17,
+          "lower_limit_95": -0.78,
+          "upper_limit_95": 0.79
+        },
+        {
+          "category": "Pet food",
+          "bias_log": 0.06,
+          "sd_log": 0.47,
+          "n_samples": 16,
+          "lower_limit_95": -0.98,
+          "upper_limit_95": 1.09
+        },
+        {
+          "category": "Production environmental samples",
+          "bias_log": 0.07,
+          "sd_log": 0.26,
+          "n_samples": 17,
+          "lower_limit_95": -0.5,
+          "upper_limit_95": 0.64
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -63,8 +120,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/flore-totale/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Chose the 48h at 30°C incubation time table (Table 5, page 20) as the primary/canonical relative trueness dataset since it represents the final/standard incubation time for the reference method (ISO 4833-1 pour plate at 30°C for 72h±3h is typically read at 48h or later; among the incubation times tested - 24h, 40h, 48h, plus refrigerated extensions - 48h is the most complete dataset with all 7 categories populated, n=121 total). The report also provides bias/SD data for 24h, 40h, 24h+48h5°C, and 48h+48h5°C incubation times, and for the inter-laboratory study (by contamination level, not by category) in Appendix 7/Table 14 - these are described here rather than extracted as separate categories. The 24h and 24h+48h5°C timepoints lack data for Dairy products and Pet food categories (marked '/' in the table), which further supports using 48h as the canonical dataset. Acceptability limit is stated as ±0.5 log (Lower AL -0.5, Upper AL +0.5) per the accuracy profile study and inter-laboratory study (Table 14, Appendix 7).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/04/BIO-12-35-05-13_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/TEMPO-AC-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 janvier 2026"

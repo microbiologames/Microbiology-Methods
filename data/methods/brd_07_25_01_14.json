@@ -48,13 +48,50 @@
     "current_expiry": "2029-01-31",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat and meat products, poultry and poultry products",
+          "bias_log": 0.02,
+          "sd_log": 0.25,
+          "n_samples": 26,
+          "lower_limit_95": -0.5,
+          "upper_limit_95": 0.54
+        },
+        {
+          "category": "Meat and meat products, poultry and poultry products (category 2)",
+          "bias_log": 0.01,
+          "sd_log": 0.33,
+          "n_samples": 23,
+          "lower_limit_95": -0.69,
+          "upper_limit_95": 0.72
+        },
+        {
+          "category": "Meat and meat products, poultry and poultry products (category 3)",
+          "bias_log": 0.05,
+          "sd_log": 0.35,
+          "n_samples": 17,
+          "lower_limit_95": -0.72,
+          "upper_limit_95": 0.82
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/campylobacter-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The relative trueness study (Appendix 5, incubation 40-48h+72h) reports results by numeric \"Category\" (1, 2, 3) rather than by named food category; the exact food-type names for these numeric categories are not explicitly stated in the extracted pages (only sub-types 'a', 'b', 'c' with sample numbers are shown, and elsewhere in the report categories are named e.g. 'Meat and meat products - Pork sausage meat', 'Poultry and poultry products - White chicken meat', 'Environmental testing in food - Process water'). Because the raw appendix only labels them as Category 1/2/3 without explicit names on the visible pages, I used a generic placeholder description combining the known scope categories; true category-to-number mapping could not be confirmed with certainty from the provided pages. The 'All categories' aggregate row (n=68, bias 0.03, SD 0.31, CI -0.59/0.64) was excluded per instructions since it is a total, not an individual category. The Acceptability Limit is stated as +/- 0.5 log (see Figure 7 accuracy profile, AL=+/-0.5), though for some categories (white chicken meat, process water) an adjusted AL based on 4*SDref was computed (0.624 and 0.748 respectively) because the reference method's repeatability SD exceeded 0.125; these adjusted values are noted here but the primary stated AL is 0.5 log. Also note: the inter-laboratory study (section 3.2) used a different acceptability limit of ±1.16 log CFU/g and a different set of levels (Low/Medium/High) rather than food categories; this data was not included in the category table per instructions to focus on the primary method comparison (relative trueness) study.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/BRD-07-25-01-14_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/RAPIDCampylobacter-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

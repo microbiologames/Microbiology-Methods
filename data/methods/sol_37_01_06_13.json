@@ -51,7 +51,57 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Composites",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 97.1,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 93.9,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 96.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Egg products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood and vegetables",
+          "sensitivity_alternative_pct": 96.8,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Feed products",
+          "sensitivity_alternative_pct": 97.3,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Production environmental samples",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -60,8 +110,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 4 (page 5/11) provides per-category Type-level breakdown (subcategories a/b/c) which were aggregated into the 'Total' row values used here for each of the 7 main ISO 16140-2 food categories (Composites, Meat products, Dairy products, Egg products, Seafood and vegetables, Feed products, Production environmental samples), consistent with the category structure also used in Table 7 (discordant results). The 'All categories' summary row (SE_alt 97.3%, SE_ref 100.0%, RT 98.8%, FPR 0.0%, FNR 0.027) was excluded per instructions as it is an aggregate, not a category. FNR values per category were available in Table 4 but not requested by the schema, so omitted. RLOD/LOD50 data (Tables 9-11) are per matrix/strain pair rather than the food category comparison table and were not included since the qualitative schema only requests sensitivity/trueness/FPR data.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/SOL-37-01-06-13-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/Solus-Salmonella-ELISA-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

@@ -46,13 +46,84 @@
     "current_expiry": "2027-12-04",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products 25 g",
+          "sensitivity_alternative_pct": 81.6,
+          "sensitivity_reference_pct": 78.9,
+          "relative_trueness_pct": 79.2,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "Milks and dairy products 25 g",
+          "sensitivity_alternative_pct": 79.3,
+          "sensitivity_reference_pct": 89.7,
+          "relative_trueness_pct": 85.5,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood products 25 g",
+          "sensitivity_alternative_pct": 83.3,
+          "sensitivity_reference_pct": 90.0,
+          "relative_trueness_pct": 87.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 78.1,
+          "sensitivity_reference_pct": 81.3,
+          "relative_trueness_pct": 79.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 93.3,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 97.1,
+          "false_positive_ratio_alternative_pct": 12.8
+        },
+        {
+          "category": "Specific ingredients (not spices) 25 g",
+          "sensitivity_alternative_pct": 79.3,
+          "sensitivity_reference_pct": 79.3,
+          "relative_trueness_pct": 80.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Animal feed",
+          "sensitivity_alternative_pct": 84.4,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 86.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk powder 375 g",
+          "sensitivity_alternative_pct": 81.8,
+          "sensitivity_reference_pct": 81.8,
+          "relative_trueness_pct": 81.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Cocoa and chocolate products 375 g - pre-warmed UHT milk",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 27 (p.38, extension study 2020) presents results split by two study variants that share categories 1-8 but differ in the last category: variant with 'Cocoa and chocolate products 375g - pre-warmed UHT milk' (category 9) vs variant with 'Cocoa and chocolate products 375g - pre-warmed BPW' (category 10). Per instructions, only the primary/canonical variant (UHT milk, category 9) categories were recorded; the BPW variant (category 10: sensitivity_alt 92.2%, sensitivity_ref 84.3%, RT 85.2%, FPR 0.0%) was excluded as an alternative protocol variant. TOTAL rows combining all categories (both '...9' and '...10' totals) were excluded as aggregate summaries, not individual categories. This table appears to be from the 2020 extension study of the original 2007 validation; an earlier initial sensitivity study table (referenced in TOC section 3) was not included in the visible document pages, so only the extension study's category table (Table 27) could be extracted. Certificate number taken from cover page.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

@@ -52,13 +52,49 @@
     "current_expiry": "2029-05-18",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Raw Meat products",
+          "sensitivity_alternative_pct": 85.0,
+          "sensitivity_reference_pct": 84.6,
+          "relative_trueness_pct": 85.9,
+          "false_positive_ratio_alternative_pct": 3.2
+        },
+        {
+          "category": "Raw vegetables",
+          "sensitivity_alternative_pct": 81.3,
+          "sensitivity_reference_pct": 75.0,
+          "relative_trueness_pct": 82.1,
+          "false_positive_ratio_alternative_pct": 2.2
+        },
+        {
+          "category": "Raw milk and raw milk dairy products",
+          "sensitivity_alternative_pct": 78.4,
+          "sensitivity_reference_pct": 70.3,
+          "relative_trueness_pct": 80.4,
+          "false_positive_ratio_alternative_pct": 3.3
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 96.7,
+          "relative_trueness_pct": 93.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli-o157/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report presents results for the method comparison study using Table 6 (confirmation a, minimum incubation time) as the primary/canonical data set, per the four ISO 16140-2 food categories tested (Raw Meat products, Raw vegetables, Raw milk and raw milk dairy products, Environmental samples). The report also provides three additional variants of the same comparison table: Table 6 with maximum incubation time, and Table 7 (confirmation b) with both minimum and maximum incubation times - these were not extracted but show similar values (SEalt/SEref/RT/FPR ranging roughly 78-100% across categories, summarized in Table 8: overall SEalt 84.0-89.1%, SEref 81.9-85.0%, RT 85.7-86.1%, FPR 1.3-4.4% depending on confirmation method/incubation time combination). The 'Total protocol' rows within Tables 6/7 (labeled with circled numbers 1-6) represent sub-protocols/matrices within each category (e.g., different meat types, cheese types) and were correctly excluded as they are not distinct ISO categories. A separate interlaboratory study (Table 26) reported aggregate SEalt=98.9%, SEref=99.4%, RT=98.3%, FPR=0.0% across 11 collaborators, but this was not broken down by food category so was not included in the per-category table. Certificate number was given as 'BIO 12/25–05/09' on the cover page alongside product reference 30122; no separate distinct 'certificate number' format (e.g. 'NF VALIDATION XX/XX-XX/XX') was found elsewhere in the visible text, so this code is used as the certificate identifier.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/BIO-12-25-05-09fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/VIDAS_ECPT_SUMMARY_REPORT_V0_04_2025.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

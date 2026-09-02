@@ -50,7 +50,106 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "A- Ready to eat and ready to reheat",
+          "sensitivity_alternative_pct": 90.6,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 89.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "B- Meat products",
+          "sensitivity_alternative_pct": 90.9,
+          "sensitivity_reference_pct": 96.4,
+          "relative_trueness_pct": 93.3,
+          "false_positive_ratio_alternative_pct": 2.0
+        },
+        {
+          "category": "C- Dairy products",
+          "sensitivity_alternative_pct": 88.2,
+          "sensitivity_reference_pct": 97.1,
+          "relative_trueness_pct": 92.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "D- Miscellaneous products: vegetables, fish products and others",
+          "sensitivity_alternative_pct": 97.2,
+          "sensitivity_reference_pct": 91.7,
+          "relative_trueness_pct": 94.3,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "E- Ingredients & specific foods",
+          "sensitivity_alternative_pct": 86.1,
+          "sensitivity_reference_pct": 83.3,
+          "relative_trueness_pct": 83.8,
+          "false_positive_ratio_alternative_pct": 3.1
+        },
+        {
+          "category": "F- Meat products 375 g",
+          "sensitivity_alternative_pct": 93.3,
+          "sensitivity_reference_pct": 93.3,
+          "relative_trueness_pct": 92.5,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "G- Infant milk powders and ingredients",
+          "sensitivity_alternative_pct": 93.5,
+          "sensitivity_reference_pct": 96.8,
+          "relative_trueness_pct": 95.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "H- Milk powders, ingredients, infant formula and infant cereals without probiotics",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 96.8,
+          "relative_trueness_pct": 98.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "I- Milk powders, infant formula and infant cereals with probiotics",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 93.3,
+          "relative_trueness_pct": 92.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "J- Milk powders, ingredients, infant formula and infant cereals with or without probiotics",
+          "sensitivity_alternative_pct": 98.3,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 99.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "K- Animal feed",
+          "sensitivity_alternative_pct": 87.9,
+          "sensitivity_reference_pct": 93.9,
+          "relative_trueness_pct": 90.5,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "L - Pet food 375 g",
+          "sensitivity_alternative_pct": 78.8,
+          "sensitivity_reference_pct": 75.8,
+          "relative_trueness_pct": 76.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "M- Industrial production environment samples",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "N- Primary production samples",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 58.1,
+          "relative_trueness_pct": 70.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -59,8 +158,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This qualitative study reports two protocols (16h and 24h incubation) for many categories (A,B,C,D,E,F,G,K) plus a second variant for category L (two rows, likely different sub-protocols). I recorded the 16h protocol values as the primary/canonical result for these categories (matching the first-listed row in Table 6/7), and noted the 24h variant exists but is not separately recorded per instructions. For categories H, I, J, M, N and the single L block used, only one set of values was given (no 16h/24h split shown), so those were used directly. 'ALL CATEGORIES' and numbered 'TOTAL' rows (aggregating multiple categories/protocols) were excluded as instructed. No overall Acceptability Limit percentage was stated for the qualitative sensitivity table (AL values of 2.5/1.5 relate to the separate RLOD study, not this method-comparison table), so quantitative section is null throughout.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/BIO-12-41-03-17_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/SALMA_One_Day_Summary_report_V0_12_2024.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

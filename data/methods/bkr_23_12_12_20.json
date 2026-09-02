@@ -44,13 +44,42 @@
     "current_expiry": "2028-12-10",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Infant formula and infant cereals with and without probiotics including ingredients (Up to 50 g)",
+          "sensitivity_alternative_pct": 80.0,
+          "sensitivity_reference_pct": 65.7,
+          "relative_trueness_pct": 72.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula and infant cereals with and without probiotics including ingredients (50 - 375 g)",
+          "sensitivity_alternative_pct": 80.0,
+          "sensitivity_reference_pct": 82.9,
+          "relative_trueness_pct": 83.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Production environmental samples (Surfaces or up to 50 g or 50 mL)",
+          "sensitivity_alternative_pct": 71.9,
+          "sensitivity_reference_pct": 81.3,
+          "relative_trueness_pct": 80.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is a qualitative (detection) method study (CSD method for Cronobacter spp. detection). The primary \"All samples\" row (55/123/24/23 -> SEalt 77.5%, SEref 76.5%, RT 79.1%, FPR 0.0%) is a summary/total across the two categories and was excluded per instructions. Within category 1, sub-tables further split by test portion size (Up to 50 g vs 50-375 g) and by product type (a/b/c: without probiotics, with probiotics, ingredients) exist in Table 4, but only the category-level Total rows (per test portion) were recorded, matching the level of granularity used in the report's own Table 5 summary. The inter-laboratory (collaborative study) section (Section 4) presents a separate, single-level (Level 1) sensitivity/RT/FPR calculation (SEalt=62.5%, SEref=68.8%, RT=50.9%, FPR=0.0%) that is not broken down by food category, so it was not included as a category entry; it is a different study phase (inter-lab reproducibility) rather than the main method-comparison-by-category study reported in Section 3.1. No explicit numeric 'Acceptability Limit' in log units applies since this is qualitative; instead an AL of 2.5 is used for the unpaired RLOD acceptability criterion (not a bias/log AL, so omitted from qualitative schema).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-12-12-20-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/CSD-Cronobacter-SUMMARY-REPORT-Version-1.pdf",
     "organism_page_last_updated_raw": "16 juillet 2026"

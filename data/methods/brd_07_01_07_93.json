@@ -52,13 +52,66 @@
     "current_expiry": "2028-12-02",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": 0.07,
+          "sd_log": 0.11,
+          "n_samples": 18,
+          "lower_limit_95": -0.16,
+          "upper_limit_95": 0.3
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.04,
+          "sd_log": 0.18,
+          "n_samples": 21,
+          "lower_limit_95": -0.34,
+          "upper_limit_95": 0.42
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": 0.0,
+          "sd_log": 0.14,
+          "n_samples": 20,
+          "lower_limit_95": -0.29,
+          "upper_limit_95": 0.29
+        },
+        {
+          "category": "Vegetal products",
+          "bias_log": -0.01,
+          "sd_log": 0.15,
+          "n_samples": 15,
+          "lower_limit_95": -0.33,
+          "upper_limit_95": 0.31
+        },
+        {
+          "category": "Ready-to-eat & ready-to-reheat products",
+          "bias_log": 0.02,
+          "sd_log": 0.12,
+          "n_samples": 15,
+          "lower_limit_95": -0.24,
+          "upper_limit_95": 0.16
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains two relative trueness studies: (1) the initial validation with 2 dilutions (Table 3, page 12/91) used here as the primary/canonical study, and (2) an extension study using a single dilution/plate (Table 12, page 27/91), which gave similar but slightly different values (e.g. Meat products n=16, bias 0.02, SD 0.09, LCL -0.17, UCL 0.20; Dairy n=15, bias 0.03, SD 0.12, LCL -0.23, UCL 0.30; Seafood n=18, bias 0.05, SD 0.14, LCL -0.26, UCL 0.36; Vegetal n=15, bias 0.01, SD 0.15, LCL -0.31, UCL 0.34; RTE/RTRH n=15, bias 0.01, SD 0.12, LCL -0.25, UCL 0.26). The 'All categories' aggregate rows from both tables (n=89, bias 0.03 for two-dilution study; n=79, bias 0.02 for single-dilution study) were excluded per instructions. The Acceptability Limit of ±0.5 log10 CFU/g is stated multiple times throughout the report (e.g. accuracy profile tables and interlaboratory study conclusion).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-01-07-93_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_44_E-coli_SR_2025_10_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 décembre 2025"
