@@ -44,13 +44,34 @@
     "current_expiry": "2028-04-02",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Raw poultry and ready-to-cook poultry products",
+          "bias_log": 0.24,
+          "sd_log": 0.58,
+          "n_samples": 17,
+          "lower_limit_95": -1.03,
+          "upper_limit_95": 1.51
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/campylobacter-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: No certificate number was visible anywhere in the extracted pages (cover page does not list a distinct certificate number like '3M 01/XX-XX/XXA'; only COFRAC accreditation number N°1-0144 is present, which is not a certificate number for the method). The relative trueness study (Appendix 5) only reports a single food category ('Category 1') covering all tested raw poultry and ready-to-cook poultry products (turkey, chicken, guinea fowl, cockerel, duck, quail, pigeon items) - there was no further sub-categorization into multiple ISO 16140-2 categories; 'Average all categories' and 'Category 1' rows were identical (n=17, bias=0.24, SD=0.58, 95% CI -1.03 to 1.51), confirming only one real category was tested. Two variants of the alternative method incubation protocol were tested (44h alone, and 44h+48h at 5°C storage) - both gave identical summary statistics (bias 0.24, SD 0.58, n=17, CI -1.03/1.51 vs -1.02/1.51), so I used the 44h protocol's values (rounded, functionally identical). The Acceptability Limit of ±0.5 log CFU/g is explicitly stated multiple times (Table 15, Table 16, Section 5 Conclusion) as required by EN ISO 16140-2:2016.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/02/BIO-12-43-04-20-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/03/TEMPO-CAM-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

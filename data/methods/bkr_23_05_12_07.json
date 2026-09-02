@@ -53,9 +53,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Composite food",
+          "bias_log": -0.07,
+          "sd_log": 0.38,
+          "n_samples": 14,
+          "lower_limit_95": -0.93,
+          "upper_limit_95": 0.79
+        },
+        {
+          "category": "Meat products",
+          "bias_log": -0.18,
+          "sd_log": 0.32,
+          "n_samples": 12,
+          "lower_limit_95": -0.92,
+          "upper_limit_95": 0.56
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": -0.03,
+          "sd_log": 0.3,
+          "n_samples": 11,
+          "lower_limit_95": -0.74,
+          "upper_limit_95": 0.67
+        },
+        {
+          "category": "Fish products",
+          "bias_log": -0.3,
+          "sd_log": 0.32,
+          "n_samples": 7,
+          "lower_limit_95": -1.14,
+          "upper_limit_95": 0.54
+        },
+        {
+          "category": "Vegetables",
+          "bias_log": -0.02,
+          "sd_log": 0.19,
+          "n_samples": 9,
+          "lower_limit_95": -0.48,
+          "upper_limit_95": 0.45
+        },
+        {
+          "category": "Production environmental samples",
+          "bias_log": -0.27,
+          "sd_log": 0.41,
+          "n_samples": 11,
+          "lower_limit_95": -1.21,
+          "upper_limit_95": 0.68
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 10 (page 31, 2 plates interpretation) was used as the primary relative trueness table for the method comparison study, reporting bias, SD, and 95% limits per category (n=64 total across 6 categories). The 1-plate interpretation values (nearly identical, e.g. bias -0.07 to -0.06 for composite food) are given alongside in the same table but were not recorded separately since 2-plate interpretation appears as the standard. The 'All categories' row (n=64) is a summary/total row and was excluded per instructions. The Acceptability Limit of ±0.5 log was confirmed from the accuracy profile study (Figures 5, 7, 8 and Table 18) which explicitly states 'AL = +/- 0.5'. Note that separate accuracy-profile / inter-laboratory study tables (Tables 16-18, pages 46-49) report bias by contamination level (Low/Medium/High) rather than by food category, and use both spreading and pour plate protocols; these were not used as the primary category table since they represent a different study (inter-laboratory/accuracy profile) rather than the main method-comparison relative trueness study in section 3.1.1/Table 10.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BKR-23-05-12-07_-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/COMPASS-Listeria-Enumeration-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

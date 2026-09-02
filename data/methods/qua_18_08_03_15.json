@@ -49,13 +49,98 @@
     "current_expiry": "2027-03-26",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products (up to 25 g)",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw beef meat (up to 25 g)",
+          "sensitivity_alternative_pct": 96.8,
+          "sensitivity_reference_pct": 87.1,
+          "relative_trueness_pct": 91.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk and dairy products (up to 25 g)",
+          "sensitivity_alternative_pct": 84.4,
+          "sensitivity_reference_pct": 82.2,
+          "relative_trueness_pct": 83.0,
+          "false_positive_ratio_alternative_pct": 2.3
+        },
+        {
+          "category": "Egg products (up to 25 g)",
+          "sensitivity_alternative_pct": 87.5,
+          "sensitivity_reference_pct": 96.9,
+          "relative_trueness_pct": 92.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood & Vegetables (up to 25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Pet food (up to 25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples (up to 25 g or ml or sampling devices)",
+          "sensitivity_alternative_pct": 90.9,
+          "sensitivity_reference_pct": 81.8,
+          "relative_trueness_pct": 86.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw meat and raw seafood (up to 25 g)",
+          "sensitivity_alternative_pct": 83.3,
+          "sensitivity_reference_pct": 72.2,
+          "relative_trueness_pct": 76.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Chocolates (up to 25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 87.1,
+          "relative_trueness_pct": 93.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Pet food and pet food ingredients (up to 375 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Cocoa and chocolates (up to 375 g)",
+          "sensitivity_alternative_pct": 74.2,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 78.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 7 (pages 6-7, PDF pp.22-23) contains multiple sub-protocol variants per category (e.g. different enrichment/extraction protocols, incubation times, DNA clean-up options). For each category I selected the first/primary protocol variant's 'Total' row as the canonical result: Category 1 (protocol A, Bax Lysis without DNA clean-up); Category 2 Raw beef meat - used protocol C 10h (first listed) rather than the C 24h variant, which gave slightly different SE ref (87.1 vs 84.4) and FNR values; Category 3 Milk/dairy - used 'Bax Lysis without DNA clean-up' totals (identical Total row repeated for the DNA clean-up variant in the source table, likely a copy-paste artifact in the original report - both show 84.4/82.2/83.0); Category 7 Environmental samples - used protocol A (Bax Lysis without DNA clean-up) rather than protocol I variants (with/without DNA clean-up) which had different values (96.7/100.0/100.0 and 100/100/100); Category 10 Pet food/ingredients - used protocol G1 Bax Lysis without DNA clean-up (100/100/100) rather than G1 with DNA clean-up (96.9/100/98.4) or G2 variants (85.7/91.4/87.1); Category 11 Cocoa/chocolates - used protocol H1 Bax Lysis without DNA clean-up (74.2/83.9/78.7) rather than H1 with clean-up (identical) or H2 variants (100/100/100). Alternate protocol variants and their differing performance are noted here per instructions rather than included as separate category entries. Summary/aggregate rows ('All protocols - short/long incubation time...') were excluded as instructed. No numeric Acceptability Limit for qualitative comparison was explicitly stated in the visible text (AL is referenced qualitatively, e.g. 'observed values ≤ AL' for TND/PD in section 3.3, but no single log-based AL applies since this is a qualitative/detection method).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/QUA-18-08-03-15_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/BAXRTS1.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

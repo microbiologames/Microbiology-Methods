@@ -53,7 +53,56 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": -0.13,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Seafood and fishery products",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Egg products",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Vegetables",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Feed",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
         "acceptability_limit_log": 0.5,
         "by_matrix": []
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacillus-cereus/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers two products (COMPASS Bacillus cereus Agar initial validation, and COMPASS Bacillus Plus Agar extension study) each with their own relative trueness / accuracy profile studies, further split by spreading vs pour plate method and by 1-plate vs 2-plate interpretation, making a single unambiguous 'relative trueness by category' table impossible to construct with per-category bias/SD/n/95%CI values as requested. The report's actual quantitative summary text (section 3.1.1.5) only gives an overall bias per method type (-0.13 log for spreading method, -0.15 log for pour plate method) rather than per-food-category bias/SD/95% CI figures in a single consolidated table. The Acceptability Limit is confirmed as +/- 0.5 log (stated repeatedly, e.g. Table 14, Figure captions). The accuracy-profile figures (Fig. 3, 4, 9) provide per-sample-type (not per-ISO category, but per specific food type e.g. 'Pâté', 'Milk powder', 'Seafood terrine', 'Vegetables purée', 'Pellets for dog', etc.) bias values with lower/upper β-ETI (not true 95% CI, but a beta-expectation tolerance interval) for each of 1-plate and 2-plate, spreading and pour-plate variants for the initial COMPASS B. cereus Agar validation (pages 25-28), and a separate parallel set for the COMPASS Bacillus Plus Agar extension study (pages 57-58 onward, not fully captured in provided pages). Because ISO 16140-2 food categories (e.g. 'Meat products', 'Seafood and fishery products', 'Dairy products', 'Egg products', 'Vegetables', 'Feed') are each represented by multiple food 'Types' and multiple protocol variants without a single overall per-category bias/SD/n/CI figure explicitly given in the visible pages, I was unable to confidently extract single consolidated bias/SD/n_samples/95% CI values per category as required by the schema. I have listed the six distinct ISO food categories that were tested in the initial validation study's accuracy-profile section (the 'primary' study, using the Spreading method, 1 plate, as a best-guess canonical protocol) but left bias/SD/n/CI null except for the overall stated bias for Meat products type table row inference, because a single defendable per-category bias could not be reliably isolated from the per-type/per-protocol tables without averaging myself, which risked misrepresenting the source data. The extension study for COMPASS Bacillus Plus Agar (section 3.2, Table 15) tests six categories: Meat products, Dairy products, Fishery products and egg products, Composite foods, Cereals/spices/vegetables/fruits/dehydrated vegetables, and Feed -- each with multiple sub-types and both spreading/pour-plate x 1-plate/2-plate variants (Figures 9 onward), again without a single consolidated bias/SD/CI per category visible in the supplied pages. Given the complexity and the fact that only partial page excerpts were provided (not the full 188-page report, and not the summary Appendix 4-6 or 12-14 tables that likely contain the true per-category summary statistics), this extraction should be treated as low-confidence/incomplete for the quantitative per-category table. The certificate number and method nature (quantitative) are read directly and confidently from the cover page.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/BKR-23-06-02-10_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/COMPASS-Bacillus-cereus-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "25 août 2026"

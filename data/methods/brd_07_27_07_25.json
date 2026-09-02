@@ -41,13 +41,77 @@
     "current_expiry": "2029-07-18",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat and poultry product",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk and dairy product",
+          "sensitivity_alternative_pct": 93.5,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 96.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Multicomponent foods and meal components",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Fishery products and vegetables",
+          "sensitivity_alternative_pct": 97.4,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.5,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Eggs and egg products",
+          "sensitivity_alternative_pct": 96.9,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.4,
+          "false_positive_ratio_alternative_pct": 9.7
+        },
+        {
+          "category": "Pet food and animal feed",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 4.2
+        },
+        {
+          "category": "Production environmental sample",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 3.2
+        },
+        {
+          "category": "Cocoa and chocolate products",
+          "sensitivity_alternative_pct": 78.9,
+          "sensitivity_reference_pct": 84.2,
+          "relative_trueness_pct": 80.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Values recorded are from Table 7 (page 20-21), using the primary/canonical protocol per category as designated in the report: categories 1-2,5-7 use 'BPW with ISO 6887 specific rules (if required), Without FDRS' totals (the paired protocol favored per ISO 6887 additive rules); category 2 (Milk and dairy) uses the 'BPW with ISO 6887 specific rules, Without FDRS' total (93.5/100.0/96.8/0.0) rather than the 'With FDRS' variant (identical values in this case) or the BPW-only variants (which gave lower values, e.g. 87.9/93.9/90.5/0.0 without FDRS, 90.9/93.9/92.1/0.0 with FDRS) -- these alternates are noted here for completeness. Category 3 (Multicomponent) and 4 (Fishery) only had 'BPW without ISO 6887 specific rules' protocol tested (no ISO 6887 variant existed for these), so their Total rows were used directly. Category 6 (Pet food/animal feed) used the 'BPW with ISO 6887 specific rules, Without FDRS' Total (100.0/100.0/100.0/4.2) rather than the BPW-only variant (91.2/91.2/92.4/4.4). Category 8 (Cocoa/chocolate) only had the 'BPW without ISO 6887 specific rules' protocol (analysis by Microsept, extension study 2025), so its Total row was used. Overall 'All categories' summary rows at bottom of Table 7 were excluded per instructions. No Acceptability Limit applies to qualitative studies (field left null in quantitative section, which itself is null since method is qualitative).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-27-07-25-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/EZ-Check-Salmonella-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

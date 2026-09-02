@@ -52,13 +52,82 @@
     "current_expiry": "2028-12-02",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": 0.04,
+          "sd_log": 0.14,
+          "n_samples": 21,
+          "lower_limit_95": -0.26,
+          "upper_limit_95": 0.34
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.01,
+          "sd_log": 0.17,
+          "n_samples": 23,
+          "lower_limit_95": -0.34,
+          "upper_limit_95": 0.37
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": 0.06,
+          "sd_log": 0.17,
+          "n_samples": 21,
+          "lower_limit_95": -0.3,
+          "upper_limit_95": 0.31
+        },
+        {
+          "category": "Vegetal products",
+          "bias_log": 0.02,
+          "sd_log": 0.15,
+          "n_samples": 15,
+          "lower_limit_95": -0.32,
+          "upper_limit_95": 0.36
+        },
+        {
+          "category": "Ready-to-eat & readyto-reheat products",
+          "bias_log": 0.01,
+          "sd_log": 0.1,
+          "n_samples": 15,
+          "lower_limit_95": -0.21,
+          "upper_limit_95": 0.07
+        },
+        {
+          "category": "Environmental samples",
+          "bias_log": 0.17,
+          "sd_log": 0.13,
+          "n_samples": 18,
+          "lower_limit_95": -0.11,
+          "upper_limit_95": 0.45
+        },
+        {
+          "category": "Animal Feed",
+          "bias_log": 0.07,
+          "sd_log": 0.19,
+          "n_samples": 18,
+          "lower_limit_95": -0.34,
+          "upper_limit_95": 0.47
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains two relative trueness studies: an initial validation study interpreted with two dilutions (Table 3, page 4/113) and a later 2025 extension study interpreted with a single dilution (Table 12, page 30/113). I recorded the initial/primary two-dilution validation study (Table 3) as the canonical per-category dataset since it is the original certified validation. The extension study (single dilution) values per category are: Meat products n=17 bias=-0.02 SD=0.19 LCL=-0.42 UCL=0.38; Dairy & egg products n=16 bias=0.08 SD=0.21 LCL=-0.38 UCL=0.54; Seafood products n=19 bias=0.10 SD=0.17 LCL=-0.27 UCL=0.40; Vegetal products n=15 bias=0.01 SD=0.14 LCL=-0.29 UCL=0.32; RTE & RTRH n=15 bias=0.02 SD=0.12 LCL=-0.26 UCL=0.29; Environmental samples n=18 bias=0.16 SD=0.13 LCL=-0.13 UCL=0.44; Animal feed n=18 bias=0.06 SD=0.19 LCL=-0.35 UCL=0.48; all categories n=118 bias=0.06 SD=0.17 LCL=-0.28 UCL=0.41. The 'All categories' aggregate rows in both tables (n=131 and n=118) were excluded per instructions since they are totals, not individual categories. Acceptability limit of ±0.5 log10 CFU/g is confirmed in multiple places (accuracy profile study, Table 10, and section 5.2.2).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/10/BRD-07-07-12-04_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_Ecoli_SR_2025_10_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 décembre 2025"

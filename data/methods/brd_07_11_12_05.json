@@ -48,13 +48,112 @@
     "current_expiry": "2029-12-09",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Dairy products (excluding raw milk) 6h (up to 25 g)",
+          "sensitivity_alternative_pct": 90.3,
+          "sensitivity_reference_pct": 96.8,
+          "relative_trueness_pct": 94.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products (excluding raw milk) 22h (up to 25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 93.8,
+          "relative_trueness_pct": 97.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Ready to eat and ready to reheat (up to 25 g)",
+          "sensitivity_alternative_pct": 93.8,
+          "sensitivity_reference_pct": 84.4,
+          "relative_trueness_pct": 90.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Meat products (up to 25 g)",
+          "sensitivity_alternative_pct": 75.0,
+          "sensitivity_reference_pct": 84.4,
+          "relative_trueness_pct": 83.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products (up to 25 g)",
+          "sensitivity_alternative_pct": 91.2,
+          "sensitivity_reference_pct": 91.2,
+          "relative_trueness_pct": 92.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Egg products (up to 25 g)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 91.2,
+          "relative_trueness_pct": 95.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood and vegetables (up to 25 g)",
+          "sensitivity_alternative_pct": 81.8,
+          "sensitivity_reference_pct": 87.9,
+          "relative_trueness_pct": 84.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Feed products (up to 25 g)",
+          "sensitivity_alternative_pct": 91.2,
+          "sensitivity_reference_pct": 91.2,
+          "relative_trueness_pct": 92.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples (up to 25 g or sample device)",
+          "sensitivity_alternative_pct": 85.5,
+          "sensitivity_reference_pct": 90.9,
+          "relative_trueness_pct": 89.0,
+          "false_positive_ratio_alternative_pct": 7.9
+        },
+        {
+          "category": "Milk powders (up to 375 g)",
+          "sensitivity_alternative_pct": 93.8,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 97.0,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "Infant formula and infant cereals with and without probiotics and ingredients (up to 375 g)",
+          "sensitivity_alternative_pct": 87.5,
+          "sensitivity_reference_pct": 78.1,
+          "relative_trueness_pct": 82.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Pet food and animal feed (up to 375 g)",
+          "sensitivity_alternative_pct": 90.3,
+          "sensitivity_reference_pct": 93.5,
+          "relative_trueness_pct": 91.9,
+          "false_positive_ratio_alternative_pct": 3.2
+        },
+        {
+          "category": "Cocoa and chocolate products (up to 375 g)",
+          "sensitivity_alternative_pct": 78.9,
+          "sensitivity_reference_pct": 84.2,
+          "relative_trueness_pct": 80.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 5 (pages 17-18) is organized by protocol (double step enrichment protocol 1 at 6h and 22h; short protocols 2-6) and 12 ISO 16140-2 categories, each with sub-types (a,b,c) whose per-subtype rows were summed into \"Total\" rows per category - only these category Total rows were recorded here (sub-type rows omitted as they are not full categories). Summary rows \"All categories, paired and unpaired with protocol 1 at 6h/22h\" were excluded per instructions as they are overall aggregates, not individual food categories. This report also contains an inter-laboratory study (Table 32) reporting overall SEalt=100%, SEref=100%, RT=100%, FPR=0% at 6h, but this is a single aggregate result (not per-category) for the ILS phase and was not included in the per-category table. The report includes both an initial/renewal study (ADRIA) and an extension study performed by Microsept in 2025 for category 12 (Cocoa and chocolate products); only the Microsept-derived Total values for category 12 appear in Table 5 and were used directly since no separate ADRIA-only breakdown for category 12 was given.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-11-12-05-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/RAPIDSalmonella-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

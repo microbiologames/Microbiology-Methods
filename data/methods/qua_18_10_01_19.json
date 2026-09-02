@@ -44,13 +44,63 @@
     "current_expiry": "2027-02-01",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods / Ready-to-eat and ready-to-reheat",
+          "sensitivity_alternative_pct": 71.1,
+          "sensitivity_reference_pct": 78.9,
+          "relative_trueness_pct": 76.3,
+          "false_positive_ratio_alternative_pct": 7.1
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 90.0,
+          "sensitivity_reference_pct": 82.5,
+          "relative_trueness_pct": 87.2,
+          "false_positive_ratio_alternative_pct": 4.3
+        },
+        {
+          "category": "Milk & dairy products",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 82.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 83.3,
+          "false_positive_ratio_alternative_pct": 2.4
+        },
+        {
+          "category": "Seafood and fishery products",
+          "sensitivity_alternative_pct": 87.0,
+          "sensitivity_reference_pct": 80.4,
+          "relative_trueness_pct": 83.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Production environmental Samples",
+          "sensitivity_alternative_pct": 93.5,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 89.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 5 (page 11) gives per-category totals for 6 ISO 16140-2 categories (each category also has sub-type breakdowns a/b/c which were not recorded, only category-level Totals). 'All categories', 'Total protocol 1' and 'Total protocol 2' rows are aggregate/protocol-split summaries (not individual food categories) and were excluded per instructions - protocol 1 vs protocol 2 reflects a difference in enrichment buffer (with/without supplement for smoked fish & raw delicatessen) applied across categories, not a separate category breakdown.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-10-01-19_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2019/06/Synt-QUA-18-10-01-19_en.pdf",
     "organism_page_last_updated_raw": "25 août 2026"

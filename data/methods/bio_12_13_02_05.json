@@ -53,9 +53,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Cooked delicatessen: liver pâté",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Raw meat: ground beef",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Milk: pasteurized milk",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Raw fish: fish fillet",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "RTE: grated carrots",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Pâtés: dog pâté",
+          "bias_log": null,
+          "sd_log": null,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers multiple studies (initial validation, 2012 renewal, 2023 extension for dairy at 44°C, and a 2005 inter-laboratory study). The canonical/primary study is the 'Method comparison study' (section 3.1) covering 6 food categories (RTE: liver pâté; Meat products: ground beef; Dairy products: pasteurized milk; Seafood: fish fillet; Vegetables: grated carrots; Pet food: dog pâté) tested at 37°C incubation, shown in the Accuracy Profile figures (Figures 9, pages 20-21). However, the actual 'Relative trueness' statistical summary table (Appendix 5, showing bias/SD per category) only labels categories numerically ('Category 1', 'Category 2', 'Category 3') without giving the food category names explicitly on the visible pages, and it does not report a single bias/SD value per category matching the accuracy-profile matrices - instead it lists per-sample differences with an aggregate average and SD per numbered category (e.g. Category 1 average=-0.08, SD=0.36; Category 2 average=0.05, SD=0.25; Category 3 average=0.07, SD=0.32), and sample counts are not clearly stated as a single n either. Because the mapping between these numbered categories (1,2,3) and the six named food categories used in the accuracy-profile study is not given in the visible text, and because appendix 5 appears to be truncated/incomplete (categories 4-6 not shown in provided pages), I could not extract reliable bias/SD/n/CI values for the six categories requested. I have recorded the six category names as identified from the accuracy-profile figures (which is the closest to a category-level relative trueness comparison in the document) but left the numeric fields null since a properly matched, category-specific bias/SD/CI could not be confidently extracted from the provided pages. The extension study (2023, dairy products at 44°C, incubation of TEMPO cards) and the inter-laboratory study (2005, pasteurized milk, Table 21) are separate variants and are not included as primary categories - these provide separate bias/SD summaries by inoculation level (low/medium/high) rather than by food category, and are described here for completeness. Acceptability limit is explicitly stated in multiple places as +/-0.5 log CFU/g.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/BIO-12-13-02-05_R5-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/01/TEMPO-EC-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 décembre 2025"

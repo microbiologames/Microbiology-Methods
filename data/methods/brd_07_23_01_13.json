@@ -52,7 +52,71 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Infant formula and infant cereals without probiotics (30 g sample size)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula and infant cereals with probiotics (30 g sample size)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Ingredients (Maltodextrin, NFDM, whey...) (30 g sample size)",
+          "sensitivity_alternative_pct": 85.7,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 90.0,
+          "false_positive_ratio_alternative_pct": 33.3
+        },
+        {
+          "category": "Infant formula and infant cereals without probiotics (up to 375 g sample size)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 84.6,
+          "relative_trueness_pct": 90.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula and infant cereals with probiotics (up to 375 g sample size)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 81.8,
+          "relative_trueness_pct": 90.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Ingredients (Maltodextrin, NFDM, whey...) (up to 375 g sample size)",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 50.0,
+          "relative_trueness_pct": 77.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Process water",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Surface sampling",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dusts",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -61,8 +125,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 5 (pages 14-15) reports results for four extraction protocol variants (APF, APF with FDRS, APF Fast, APF Fast with FDRS) which all gave identical per-category values for categories 1-3 (Qlab) and category 2 (ADRIA); I recorded the values common to all variants (APF shown, others identical) as the canonical per-category data, and omitted the 'Total' rows aggregating each category group (e.g. Total for category 1, Total for category 2, Total for category 3, and the overall 'Total APF/APF with FDRS/APF Fast/APF Fast with FDRS' rows across all categories), since these are summary/aggregate rows rather than individual food categories. Category 3 (Production environmental samples) subtypes a/b/c (Process water, Surface sampling, Dusts) were identical across all four protocol variants as well.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BRD-07-23-01-13_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/en/wp-content/uploads/sites/2/2025/09/iQ-Check-Cronobacter-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "16 juillet 2026"

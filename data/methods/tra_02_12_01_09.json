@@ -53,13 +53,84 @@
     "current_expiry": "2030-04-08",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "RTE and RTRH",
+          "sensitivity_alternative_pct": 96.7,
+          "sensitivity_reference_pct": 100,
+          "relative_trueness_pct": 98.7,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 97.1,
+          "sensitivity_reference_pct": 100,
+          "relative_trueness_pct": 98.9,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 82,
+          "sensitivity_reference_pct": 88,
+          "relative_trueness_pct": 86,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Vegetables and seafood products",
+          "sensitivity_alternative_pct": 96.8,
+          "sensitivity_reference_pct": 100,
+          "relative_trueness_pct": 98.5,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Ingredients and specific products",
+          "sensitivity_alternative_pct": 96.3,
+          "sensitivity_reference_pct": 95,
+          "relative_trueness_pct": 95.8,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Pet food",
+          "sensitivity_alternative_pct": 96.8,
+          "sensitivity_reference_pct": 100,
+          "relative_trueness_pct": 98.4,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Environment",
+          "sensitivity_alternative_pct": 100,
+          "sensitivity_reference_pct": 100,
+          "relative_trueness_pct": 100,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Milk powders, Infant formula and infant cereals 375g",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 83.7,
+          "relative_trueness_pct": 84.8,
+          "false_positive_ratio_alternative_pct": 0
+        },
+        {
+          "category": "Cocoa and chocolate products 375g",
+          "sensitivity_alternative_pct": 83.3,
+          "sensitivity_reference_pct": 93.3,
+          "relative_trueness_pct": 88.3,
+          "false_positive_ratio_alternative_pct": 0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 6/7 (shorter incubation time results used as primary/canonical values) lists 10 numbered categories, but categories 8 (Milk powders, Infant formula and infant cereals 375g) and 9/10 (Cocoa and chocolate products 375g) each appear twice in the source table - once for 'shorter incubation time' and once for 'longer incubation time' protocol variants. I recorded only the shorter-incubation-time values as the canonical/primary study; the longer-incubation-time variant values for these same categories (SEalt 92.2%/93.3%/93.3%, SEref 92.8%/93.3%/93.3%, RT 93.0%/93.3%/93.3%, FPR 0.4%/0.0%/0.0% respectively) were omitted per instructions to avoid duplicate category entries. The overall 'Total (shorter incubation time)' and 'Total (longer incubation time)' rows (91.9/93.3/93.1/0.0 and 92.2/92.8/93.0/0.4) were excluded as aggregate summary rows, not individual food categories. Sub-category breakdowns (e.g., RTE, RTRH, Cured/smoked under 'RTE and RTRH') were also omitted in favor of the category-level Total rows, which represent the actual ISO 16140-2 category groupings (1-10) as printed in the report's category numbering column.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/TRA-02-12-01-09-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/2025_05_ASSURANCE_GDS_Salmonella_SR_v1-final-protected.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

@@ -48,7 +48,50 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods",
+          "sensitivity_alternative_pct": 78.8,
+          "sensitivity_reference_pct": 75.8,
+          "relative_trueness_pct": 81.9,
+          "false_positive_ratio_alternative_pct": 2.0
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 97.1,
+          "sensitivity_reference_pct": 74.3,
+          "relative_trueness_pct": 85.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk & Dairy products",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 74.2,
+          "relative_trueness_pct": 82.4,
+          "false_positive_ratio_alternative_pct": 3.7
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 74.2,
+          "relative_trueness_pct": 76.9,
+          "false_positive_ratio_alternative_pct": 2.9
+        },
+        {
+          "category": "Fish and seafood",
+          "sensitivity_alternative_pct": 93.5,
+          "sensitivity_reference_pct": 90.3,
+          "relative_trueness_pct": 92.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 76.7,
+          "sensitivity_reference_pct": 83.3,
+          "relative_trueness_pct": 84.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -57,8 +100,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report provides two parallel comparison tables based on two selective agar media used for confirmation: Table 5 (vs OAA) and Table 6 (vs Palcam). I recorded the category-level values from Table 5 (OAA) as the primary/canonical study; the Palcam-based values (Table 6) are very similar (e.g. Composite foods RT 83.1% vs 81.9%, Meat products 87.3% vs 85.9%, etc.) and represent an alternative confirmation media variant rather than a different category set. Category-level 'Total' rows (e.g. 'Total 18 50 8 7 0 1...') within each category block were excluded as they are sub-totals for that category (not distinct categories) and are already captured by the single category-level SEalt/SEref/RT/FP values reported in Table 5's rightmost columns. The overall 'Total' row across all categories (119/254/41/31, SEalt 83.8%, SEref 78.5%, RT 84.0%, FP 1.6%) was excluded per instructions as a summary/grand-total row, not a real category. Certificate number confirmed on cover page as 'NEO 35/05-07/16'. Method is qualitative (detection of Listeria spp), as explicitly stated throughout the report.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-05-07-16-fr.docx_-1.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/OBOP_L_SPP_SR_06_2024_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

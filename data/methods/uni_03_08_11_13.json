@@ -56,13 +56,63 @@
     "current_expiry": "2029-11-04",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Multi-component foods",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 64.5,
+          "relative_trueness_pct": 73.1,
+          "false_positive_ratio_alternative_pct": 2.8
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 75.0,
+          "sensitivity_reference_pct": 78.1,
+          "relative_trueness_pct": 81.0,
+          "false_positive_ratio_alternative_pct": 4.3
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 81.3,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 87.3,
+          "false_positive_ratio_alternative_pct": 4.3
+        },
+        {
+          "category": "Seafood and fishery products",
+          "sensitivity_alternative_pct": 87.1,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 86.4,
+          "false_positive_ratio_alternative_pct": 5.7
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 82.9,
+          "sensitivity_reference_pct": 74.3,
+          "relative_trueness_pct": 80.3,
+          "false_positive_ratio_alternative_pct": 4.9
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 71.0,
+          "sensitivity_reference_pct": 77.4,
+          "relative_trueness_pct": 83.5,
+          "false_positive_ratio_alternative_pct": 3.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report is a qualitative (detection) method validation (SureTect Listeria monocytogenes PCR Assay), containing multiple result tables for different PCR instruments (PikoReal, 7500 Fast, QS5) across both the initial validation study (2013) and later extension studies (2022, 2025, 2026). I extracted the per-category method comparison data from Table 10 (7500 Fast PCR instrument, initial validation study, Section 3.1.1.5), which reports 6 primary ISO 16140-2 food categories (Multi-component foods, Meat products, Dairy products, Seafood and fishery products, Vegetables, Environmental samples), each with 3 sub-types (a/b/c) that were aggregated into the category-level 'Total' row values recorded here, consistent with the instruction to use one entry per category (not sub-type or overall 'All categories' summary). Very similar tables exist for the PikoReal instrument (summarized only in Table 12, not broken out by category in the provided pages) and the QS5 instrument (Table 11), and separately for the 2022/2025/2026 extension studies (Tables 55/56 for 7500 Fast and QS5, which include additional categories: Dairy products 125g, Multi-component foods 125g, and Powder Infant Formula/Dairy products 25g with/without SureClean application). These extension-study and QS5/PikoReal-instrument tables were NOT included in the recorded categories per instructions to use only the primary/canonical study; they are noted here as alternative protocol/instrument variants. The certificate number is given in the title as '(Certificate # 03/08 – 11/13)' rather than as a separately labeled 'certificate number' field, so I used that value. No quantitative acceptability limit or trueness/bias data apply since this is a qualitative method.</extraction_notes>",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-08-11-13-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/08/2026_07_SureTect_Listeria_mono_SR-v0.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

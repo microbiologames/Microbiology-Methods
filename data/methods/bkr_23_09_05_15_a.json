@@ -48,9 +48,26 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": -0.13,
+          "sd_log": 0.21,
+          "n_samples": 19,
+          "lower_limit_95": -0.57,
+          "upper_limit_95": 0.32
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.09,
+          "sd_log": 0.4,
+          "n_samples": 20,
+          "lower_limit_95": -0.76,
+          "upper_limit_95": 0.93
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -62,8 +79,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/pseudomonas-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The report contains four raw-data relative trueness tables (Spreading 45h, Spreading 72h, Spiral 45h, Spiral 72h) in Appendix 5, each giving per-category (category 1 = meat products, category 2 = dairy products) bias, SD, n, and 95% CI, plus an 'All categories' aggregate row (excluded per instructions). I selected the Spreading method at 72h as the primary/canonical protocol (it is the reference reading time referenced in the main text/conclusions, e.g. 'results available at day 2'), and reported category 1 (meat products) and category 2 (dairy products) values from that table. The other three variants (Spreading 45h: cat1 bias -0.21 SD 0.22 n19; cat2 bias 0.01 SD 0.39 n19; Spiral 45h: cat1 bias -0.09 SD 0.30 n15; cat2 bias 0.20 SD 0.59 n16; Spiral 72h: cat1 bias/SD not computed (blank) n15; cat2 bias 0.22 SD 0.56 n17) are alternative enumeration methods (spreading vs spiral, 45h vs 72h reading) not included here. The Acceptability Limit (lambda) of ±0.50 log is taken from the Accuracy Profile tables (Table 15/16), consistent across both reference methods (ISO 13720 and XP ISO/TS 11059). Category names 'Meat products' and 'Dairy products' are inferred from the Scope section (page 3) and the sample types listed under Category 1 (meats: pork, beef, poultry, etc.) and Category 2 (dairy: milk, cheese, cream, etc.) in Appendix 5, since the appendix itself only labels them numerically as 'Category 1' and 'Category 2'.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/BKR-23-09-05-15-A_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2015/09/Synt-BKR-23-09-05-15_fr.pdf",
     "organism_page_last_updated_raw": "18 août 2025"

@@ -45,13 +45,56 @@
     "current_expiry": "2026-06-16",
     "status": "expired"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 86.7,
+          "relative_trueness_pct": 87.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 91.2,
+          "sensitivity_reference_pct": 97.1,
+          "relative_trueness_pct": 93.8,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood products",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 93.3,
+          "relative_trueness_pct": 91.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 87.5,
+          "sensitivity_reference_pct": 90.6,
+          "relative_trueness_pct": 90.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report is a qualitative detection method (Listeria spp.) validated per EN ISO 16140-2/A1:2024. The main per-category \"method comparison\" table is Table 6 (initial validation study, ONE Broth-Listeria protocol, page labeled 15/115), which is used here as the primary/canonical study; its \"Total\" row for each of the 5 categories (Meat products, Dairy products, Seafood products, Vegetables, Environmental samples) is recorded as that category's aggregate result (sub-rows a/b/c are sub-types within each category, not separate categories). The overall \"Total\" row across all 5 categories (SEalt 90.5%, SEref 93.7%, RT 92.5%, FPR 0.0%) was excluded as a summary/aggregate row, not a category. The report also contains a separate Extension Studies (2022 and 2025) section with its own per-category table (Table 26, 8 categories including \"125 g\" variants and different sensitivity/trueness values, e.g. SEalt 91.8% overall) and an interlaboratory study (Section 3.2) with its own single combined SEalt=100%/SEref=99%/RT=99% figures (no per-category breakdown given for interlab study). These alternate/extension study tables were not used for the main category extraction per instructions, but are noted here for completeness. No quantitative (enumeration) data or Acceptability Limit in log units applies since this is a qualitative detection method.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/04/UNI-03-14-06-22-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_Listeria_Precis_L.spp_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

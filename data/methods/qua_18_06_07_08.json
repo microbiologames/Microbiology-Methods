@@ -51,13 +51,63 @@
     "current_expiry": "2028-07-01",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite",
+          "sensitivity_alternative_pct": 74.2,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 79.0,
+          "false_positive_ratio_alternative_pct": 6.5
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 86.5,
+          "sensitivity_reference_pct": 88.5,
+          "relative_trueness_pct": 86.9,
+          "false_positive_ratio_alternative_pct": 2.1
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 90.3,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 89.0,
+          "false_positive_ratio_alternative_pct": 2.4
+        },
+        {
+          "category": "Fruits and vegetables",
+          "sensitivity_alternative_pct": 97.6,
+          "sensitivity_reference_pct": 92.7,
+          "relative_trueness_pct": 94.7,
+          "false_positive_ratio_alternative_pct": 5.7
+        },
+        {
+          "category": "Seafood",
+          "sensitivity_alternative_pct": 94.3,
+          "sensitivity_reference_pct": 83.0,
+          "relative_trueness_pct": 88.0,
+          "false_positive_ratio_alternative_pct": 6.4
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 85.0,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 87.2,
+          "false_positive_ratio_alternative_pct": 4.3
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 5 (page 12) provides per-category totals for 6 ISO 16140-2 categories (Composite; Meat products; Dairy products; Fruits and vegetables; Seafood; Environmental samples), each of which is further subdivided into sub-types (a/b/c) in the source table - those sub-type rows were not recorded as separate categories per instructions, only the category 'Total' rows were used. 'All categories', 'General protocol', and 'Specific protocol' rows are aggregate/summary rows and were excluded. This report is a qualitative (detection) method for Listeria spp, so no quantitative relative-trueness/bias table or Acceptability Limit (log) applies; the Acceptability Limit discussed in the report (RLOD AL = 2.5, and inter-lab AL=4.77) pertains to RLOD/inter-lab calculations, not a quantitative bias study, so quantitative fields were left null.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-06-07-08-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/BAX-PCR-Listeria-24E-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

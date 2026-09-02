@@ -44,7 +44,50 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Raw poultry",
+          "sensitivity_alternative_pct": 93.3,
+          "sensitivity_reference_pct": 93.3,
+          "relative_trueness_pct": 90.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Raw pork meat",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 84.6,
+          "relative_trueness_pct": 90.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Delicatessen, Ready-to-eat",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 92.3,
+          "relative_trueness_pct": 95.2,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Shell eggs",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Egg powders",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Liquid egg products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 86.7,
+          "relative_trueness_pct": 91.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -53,8 +96,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 7 (page 5/11) contains per-category and per-type results grouped into two categories: 1 Meat products (types a-Raw poultry, b-Raw pork meat, c-Delicatessen/Ready-to-eat) and 2 Egg products (types a-Shell eggs, b-Egg powders, c-Liquid egg products). Each category also has a 'Total' row (e.g. 'Total' for Meat products = 92.3% RT, and Total for Egg products = 97.1% RT) plus an overall 'ALL CATEGORIES' row (94.8% RT) -- these aggregate/total rows were excluded per instructions, only the six individual type-level rows (a/b/c under each of the two main categories) were recorded as they represent the actual tested sub-categories/types. The inter-laboratory study (section 4) reports a separate, single-level (Level 1) sensitivity/RT/FPR table (Table 30) that is a study-wide summary, not broken down by food category, so it was not included here as it does not fit the per-category table structure requested.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/03/BIO-12-44-02-23_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/04/Synt-BIO-12-44-02-23.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

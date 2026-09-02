@@ -51,7 +51,50 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "❶",
+          "sensitivity_alternative_pct": 95.5,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 97.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "❷",
+          "sensitivity_alternative_pct": 91.2,
+          "sensitivity_reference_pct": 70.6,
+          "relative_trueness_pct": 81.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "❸",
+          "sensitivity_alternative_pct": 93.9,
+          "sensitivity_reference_pct": 87.9,
+          "relative_trueness_pct": 91.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "❹",
+          "sensitivity_alternative_pct": 93.3,
+          "sensitivity_reference_pct": 80.0,
+          "relative_trueness_pct": 86.7,
+          "false_positive_ratio_alternative_pct": 3.3
+        },
+        {
+          "category": "❺",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "❻",
+          "sensitivity_alternative_pct": 81.3,
+          "sensitivity_reference_pct": 87.5,
+          "relative_trueness_pct": 84.6,
+          "false_positive_ratio_alternative_pct": 3.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -60,8 +103,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Category names appear only as numbered icons/symbols (❶-❻) in Table 5 - the actual food category names (e.g., meat products, dairy, seafood, vegetables, composite/RTE, feed) were not printed as text in the extracted table, only referenced generically in the Introduction/Conclusion as '5 food categories and one feed category'. I recorded them using the printed symbols since the actual category-name text was not legible/available in the source. Totals rows per category (e.g., 'Total' under each numbered category) were used as the category-level summary rows since these represent the aggregated per-category result (sub-rows a/b/c/a1/a2 are sub-protocols/food types within that category, not separate categories). The overall 'Total (All categories)' row and 'Protocol 1'/'Protocol 2' aggregate rows were excluded per instructions since they are cross-category totals, not individual categories. This is a renewal study (April 2025) without modification, following ISO 16140-2/A1:2024; no changes from original categories tested in 2013/2017 studies (meat, dairy, seafood, vegetables, composite/RTE/egg, and feed products).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/NEO-35-02-05-13-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/ANSR_Salmonella-2025_06-SR-v0-protected.pdf",
     "organism_page_last_updated_raw": "6 août 2026"

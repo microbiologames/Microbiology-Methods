@@ -52,9 +52,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meats products (Raw minced meat)",
+          "bias_log": -0.146,
+          "sd_log": 0.085,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Dairy products (Raw milk cheese)",
+          "bias_log": -0.087,
+          "sd_log": 0.066,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Seafood products (Raw fish fillet)",
+          "bias_log": -0.032,
+          "sd_log": 0.076,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Vegetables (Frozen vegetables pan)",
+          "bias_log": -0.09,
+          "sd_log": 0.091,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Animal feed (Cat kibbles)",
+          "bias_log": -0.194,
+          "sd_log": 0.097,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "Ready to eat and ready to reheat (Quiche lorraine)",
+          "bias_log": 0.062,
+          "sd_log": 0.087,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -66,8 +115,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains multiple studies (initial validation with two dilutions - surface spreading & pour plate inoculation, interlaboratory study, and a 2025 extension study with one dilution - also surface spreading & pour plate). I recorded the relative trueness/accuracy-profile category data from the INITIAL VALIDATION STUDY, surface spreading inoculation (Figure 7, page 4), as the primary/canonical study. Bias values shown are averaged across the 6 contamination levels listed per category in Figure 7 (individual level-by-level bias values are provided in the source but only summary bias/SD-repeatability per category were consolidated here). The pour plate inoculation data (Figure 8) and the 2025 extension study data (Figures 17-18) for the same 6 categories are essentially replicate/confirmatory data sets with similar bias/SD values and were not separately recorded per instructions to use only the primary/canonical study. The interlaboratory study (section 4, Table 11) reports data by contamination LEVEL (Low/Medium/High), not by food category, so it was not included in the per-category table; its bias values were -0.048 to -0.070 log CFU/g. The Bland-Altman relative trueness study (Table 13, section 5.1.5) uses abbreviated category codes (MP=Meat products, DP=Dairy products, SP=Seafood products, VP=Vegetal Products, FP=Feed Product, RTE=Ready-to-eat) with bias and SD values per category for both surface spreading and pour plate; these are alternate/summary presentations of the same 6 categories from the extension study and were not duplicated in the main table. Confidence interval limits (lower_limit_95/upper_limit_95) per category were not explicitly given as single per-category numeric bounds in the primary Figure 7 table (only per-level β-ETI lower/upper bounds), so these were left null at the category level. Acceptability Limit stated as +/- 0.500 log throughout the report.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/AES-10-07-01-08_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/2025-10_REBECCAEB_ENT_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "6 janvier 2026"

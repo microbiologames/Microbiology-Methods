@@ -44,7 +44,56 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Heat processed milk and dairy (Panna cotta)",
+          "bias_log": 0.0,
+          "sd_log": 0.053,
+          "n_samples": null,
+          "lower_limit_95": -0.077,
+          "upper_limit_95": 0.077
+        },
+        {
+          "category": "Meat and poultry (Cooked chicken)",
+          "bias_log": -0.141,
+          "sd_log": 0.081,
+          "n_samples": null,
+          "lower_limit_95": -0.258,
+          "upper_limit_95": -0.024
+        },
+        {
+          "category": "Raw and processed fishery (Seafood terrine)",
+          "bias_log": 0.013,
+          "sd_log": 0.071,
+          "n_samples": null,
+          "lower_limit_95": -0.089,
+          "upper_limit_95": 0.116
+        },
+        {
+          "category": "Fresh and processed fruits and vegetables (Vegetables purée)",
+          "bias_log": -0.176,
+          "sd_log": 0.072,
+          "n_samples": null,
+          "lower_limit_95": -0.28,
+          "upper_limit_95": -0.072
+        },
+        {
+          "category": "Multicomponents foods or meal (Spanish tortilla)",
+          "bias_log": -0.051,
+          "sd_log": 0.055,
+          "n_samples": null,
+          "lower_limit_95": -0.131,
+          "upper_limit_95": 0.028
+        },
+        {
+          "category": "Environmental samples (Process water)",
+          "bias_log": 0.109,
+          "sd_log": 0.069,
+          "n_samples": null,
+          "lower_limit_95": 0.01,
+          "upper_limit_95": 0.209
+        }
+      ],
       "accuracy_profile": {
         "acceptability_limit_log": 0.5,
         "by_matrix": []
@@ -58,8 +107,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/escherichia-coli/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is the Accuracy Profile study table (Section 3.2, Figure 9), which for this quantitative validation report contains the per-category bias, standard deviation (SD Repeatability of alternative method), and 95% β-ETI (lower/upper) limits by food category -- functioning as the 'relative trueness by category' table requested. Values shown are from the first sample level (2691-2695 etc.) for each category as a representative summary row; each category actually has 3 contamination levels (low/medium/high) with slightly different bias/SD/CI values (visible in Figure 9), but only the first level's values were recorded here per category to populate one row per category as requested. The separate 'Relative trueness study' (Section 3.1, Appendix 5/6) reports raw sample-level differences (not aggregated per category with bias/SD/CI), so it was not used for this table. The inter-laboratory study (Section 4, Table 15/16) reports overall Low/Medium/High level results across all matrices combined (not per category), so those were excluded as 'Total'-type aggregates. Acceptability limit is confirmed as ±0.5 log throughout the report (Figure 9 caption, Section 5 conclusion, Table 15/16).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/12/SDC-42-02-12-24-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/Compact-Dry-EC-Ecoli-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 décembre 2025"

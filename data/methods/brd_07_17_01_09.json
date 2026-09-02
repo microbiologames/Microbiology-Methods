@@ -53,9 +53,58 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "RTE-RTRH (Mixed Salad)",
+          "bias_log": -0.121,
+          "sd_log": 0.092,
+          "n_samples": null,
+          "lower_limit_95": -0.221,
+          "upper_limit_95": -0.021
+        },
+        {
+          "category": "Meat products (Chicken rillettes)",
+          "bias_log": 0.035,
+          "sd_log": 0.081,
+          "n_samples": null,
+          "lower_limit_95": -0.201,
+          "upper_limit_95": 0.192
+        },
+        {
+          "category": "Dairy product (Raw milk)",
+          "bias_log": -0.037,
+          "sd_log": 0.064,
+          "n_samples": null,
+          "lower_limit_95": -0.155,
+          "upper_limit_95": 0.167
+        },
+        {
+          "category": "Seafood products (Salmon terrine)",
+          "bias_log": -0.204,
+          "sd_log": 0.066,
+          "n_samples": null,
+          "lower_limit_95": -0.391,
+          "upper_limit_95": 0.135
+        },
+        {
+          "category": "Vegetable products (Grated carrots)",
+          "bias_log": -0.043,
+          "sd_log": 0.091,
+          "n_samples": null,
+          "lower_limit_95": -0.191,
+          "upper_limit_95": 0.1
+        },
+        {
+          "category": "Environmental samples (Process water)",
+          "bias_log": -0.049,
+          "sd_log": 0.071,
+          "n_samples": null,
+          "lower_limit_95": -0.201,
+          "upper_limit_95": 0.158
+        }
+      ],
       "accuracy_profile": {
-        "acceptability_limit_log": null,
+        "acceptability_limit_log": 0.5,
         "by_matrix": []
       },
       "loq_log": null,
@@ -67,8 +116,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report presents Accuracy Profile results (Figure 3, pages 27-28) broken down by (Food) Category / (Food) Type, for both 'Pour plate' and 'Spreading' inoculation techniques, each with 1-plate and 2-plate interpretations, and separately by 24h/48h reading. I selected representative bias/SD/lower-upper β-ETI values from the Pour Plate - 1 plate interpretation panels (one row per category, taking the sample with the most extreme/representative bias reported per category block) as the canonical dataset, since this appears to be the primary accuracy-profile presentation. The report also contains an inter-laboratory 'relative trueness' summary table (Table 16, page 48) which aggregates Low/Medium/High contamination levels rather than food categories, with Bias values 0.096, -0.001, -0.073 and Acceptability Limit of ±0.50 log; this is the inter-laboratory study, not per-category, and was not used for the per-category table above but the same Acceptability Limit (0.5 log) applies throughout. There are also Spreading-based accuracy profile panels (Mixed Salad, Chicken rillettes, Raw milk, Grated carrots, Salmon terrine, Process water) with similar but slightly different bias/SD values (e.g., Mixed Salad bias 0.016 vs -0.121 for pour plate) -- these were treated as an alternative protocol variant and not included as separate categories, per instructions to describe other variants here rather than duplicate. n_samples was not explicitly stated per category (raw data appendices give per-sample counts of 5 replicates x 2 batches x 3 levels = 30 per category, but this exact number was not printed as a summary figure in the accuracy profile tables), so left as null. The 'Reference Central value', 'Lower β-ETI', and 'Upper β-ETI' columns in the source were per-sample-group rows rather than a single per-category summary; I selected the row with the highest-magnitude bias within each category's 1-plate Pour Plate table as the representative entry, but this involves some judgment given the non-standard table layout (multiple sub-rows per category rather than one summary row).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/BRD-07-17-01-09_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/AL-Enumeration-Lmono-SUMMARY-REPORT-Version-0.pdf",
     "organism_page_last_updated_raw": "19 août 2026"

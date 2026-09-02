@@ -53,13 +53,63 @@
     "current_expiry": "2029-04-08",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 89.7,
+          "sensitivity_reference_pct": 92.3,
+          "relative_trueness_pct": 91.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Egg products",
+          "sensitivity_alternative_pct": 74.2,
+          "sensitivity_reference_pct": 83.9,
+          "relative_trueness_pct": 81.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 94.4,
+          "sensitivity_reference_pct": 94.4,
+          "relative_trueness_pct": 94.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Seafood products",
+          "sensitivity_alternative_pct": 96.8,
+          "sensitivity_reference_pct": 87.1,
+          "relative_trueness_pct": 92.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 90.3,
+          "sensitivity_reference_pct": 77.4,
+          "relative_trueness_pct": 86.1,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 92.3,
+          "sensitivity_reference_pct": 92.3,
+          "relative_trueness_pct": 91.7,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is a qualitative (detection) method report. The primary/initial validation study (Table 5, page 15) reports 6 food categories with 3 sub-types (a/b/c) each; I recorded the category-level Total rows (which represent the actual ISO 16140-2 category, aggregating its sub-types) rather than the sub-type rows, per instructions to avoid granular sub-splits. The overall 'Total' row (all categories combined, 89.9/88.4/89.7/0.0) was excluded as a summary row. Note the report also contains a separate 2022/2025 extension study (Table 24, page 34) with 8 different categories (Multi-component foods, Meat products, Dairy products, Seafood and fishery products, Vegetables, Environmental samples, Dairy products 125g, Multi-component foods 125g) and different SE/RT values (e.g. Meat products 91.9/86.5/88.41); this extension is a separate/later study and was not used for the primary extraction, but is noted here for completeness. Certificate number was found only in title as '(certificate # UNI 03/04 – 04/05)' rather than as a standalone 'certificate number' field on a typical cover page.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/UNI-03-04-04-05-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/Listeria_Precis_L.mono_SR_2025_07_v0-protected.pdf",
     "organism_page_last_updated_raw": "19 août 2026"
