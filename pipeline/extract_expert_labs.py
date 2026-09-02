@@ -139,6 +139,52 @@ def process(record: dict, text: str) -> bool:
     return changed
 
 
+# Vocabulary that hints at a detection principle without asserting one. This
+# is deliberately WIDER and weaker than _STUDY_TEXT_EVIDENCE in taxonomy.py:
+# its job is to show a human where in the report the principle is described,
+# not to decide anything. Nothing in this list writes to a record.
+_EVIDENCE_HINTS = [
+    "pcr", "amplification", "primer", "probe", "dna", "rna", "nucleic",
+    "thermocycler", "thermal cycler", "isothermal", "hybridi",
+    "antibod", "elisa", "immuno", "conjugate", "lateral flow",
+    "cytometr", "fluoresc", "luminescen", "atp", "impedance", "conductance",
+    "agar", "broth", "chromogenic", "medium", "media", "colony", "incubat",
+    "inhibition", "bioassay", "spore", "enzymatic", "substrate",
+    "principle", "principe", "technology", "detection is based",
+]
+
+
+def dump_evidence(cert: str, name: str, text: str) -> None:
+    """Print what the report says about its own detection principle, and
+    write nothing.
+
+    Six certificates survive every automatic rule, and the tempting move is
+    to add keywords until they classify. That would be guessing dressed as
+    code: a wrong technology on a validated method is worse for the reader
+    than an honest "Other". So this mode exists to put the report's own
+    words in front of a human first, and the rules get written from what
+    comes back.
+    """
+    print(f"\n{'=' * 72}\n{cert} -- {name}\n{'=' * 72}")
+    if not text.strip():
+        # Distinguishes a scanned/image-only PDF from one that simply never
+        # states its principle -- different problems, different fixes.
+        print("  (no extractable text: image-only or encrypted PDF)")
+        return
+
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    hits = [ln for ln in lines if any(h in ln.lower() for h in _EVIDENCE_HINTS)]
+    if hits:
+        for ln in hits[:25]:
+            print(f"  | {ln[:200]}")
+    else:
+        # No hint at all is itself a finding: show the opening lines so the
+        # reader can see whether the cover page is just a title block.
+        print("  (no principle vocabulary found -- first lines of the report:)")
+        for ln in lines[:15]:
+            print(f"  . {ln[:200]}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--methods-dir", default="data/methods")
@@ -146,6 +192,10 @@ def main():
                     help="Only process records whose detection technology is still unknown "
                          "-- a few downloads instead of every report.")
     ap.add_argument("--limit", type=int, default=0, help="Stop after N reports (0 = no cap).")
+    ap.add_argument("--dump-evidence", action="store_true",
+                    help="Print what each report says about its detection principle and "
+                         "write nothing. Use with --only-unclassified to inspect the "
+                         "records no rule has resolved, before inventing a rule for them.")
     args = ap.parse_args()
 
     methods_dir = Path(args.methods_dir)
@@ -177,6 +227,10 @@ def main():
             failed += 1
             continue
 
+        if args.dump_evidence:
+            dump_evidence(cert, record.get("commercial_name") or "?", text)
+            continue
+
         if process(record, text):
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             lab = (record.get("study_design") or {}).get("expert_laboratory")
@@ -184,8 +238,12 @@ def main():
             print(f"[{cert}] lab={lab!r} category={cat!r}", file=sys.stderr)
             written += 1
 
-    print(f"\n=== {written} record(s) updated, {failed} unreadable, "
-          f"{len(targets) - written - failed} unchanged ===", file=sys.stderr)
+    if args.dump_evidence:
+        print(f"\n=== {len(targets) - failed} report(s) dumped, {failed} unreadable; "
+              f"nothing written ===", file=sys.stderr)
+    else:
+        print(f"\n=== {written} record(s) updated, {failed} unreadable, "
+              f"{len(targets) - written - failed} unchanged ===", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,57 @@
+name: Diagnose unclassified detection technologies (free, no API key)
+
+# Six certificates still show "Other" as their detection technology. That is
+# not a missing feature: pipeline/extract_expert_labs.py already reads each
+# report's opening pages and feeds them to taxonomy.canonical_method_category
+# as study_text. These six survived every rule.
+#
+# The tempting fix is to keep adding keywords until they classify. That would
+# be guessing dressed up as code, and a wrong technology on a validated method
+# is worse for a microbiologist choosing one than an honest "Other". So this
+# prints what the six reports say about their own principle, changes nothing,
+# and the rules get written afterwards from what comes back.
+#
+# Free: pdfplumber over the first 6 pages of 7 PDFs. No ANTHROPIC_API_KEY.
+# Read-only permissions and --dump-evidence make writing impossible here.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pdfplumber
+
+      - name: Show which records are still unclassified
+        run: |
+          python3 - <<'PY'
+          import glob, json, sys
+          sys.path.insert(0, "pipeline")
+          from taxonomy import canonical_method_category
+          for f in sorted(glob.glob("data/methods/*.json")):
+              d = json.load(open(f, encoding="utf-8"))
+              cat = (d.get("method_type") or {}).get("category")
+              if cat not in (None, "other"):
+                  continue
+              if canonical_method_category(cat, d.get("commercial_name")) in (None, "other"):
+                  print(f'{d["source_certificate_number"]:<20} {d["commercial_name"]}')
+          PY
+
+      - name: Dump each report's own words on its detection principle
+        run: |
+          python3 pipeline/extract_expert_labs.py \
+            --only-unclassified \
+            --dump-evidence
