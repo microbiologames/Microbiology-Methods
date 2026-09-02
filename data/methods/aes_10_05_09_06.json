@@ -52,13 +52,50 @@
     "current_expiry": "2030-09-15",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Vegetable products - Salad",
+          "bias_log": -0.015,
+          "sd_log": 0.084,
+          "n_samples": 30,
+          "lower_limit_95": -0.136,
+          "upper_limit_95": 0.107
+        },
+        {
+          "category": "Composite foods - Tabouleh",
+          "bias_log": 0.0,
+          "sd_log": 0.071,
+          "n_samples": 30,
+          "lower_limit_95": -0.102,
+          "upper_limit_95": 0.102
+        },
+        {
+          "category": "Environment - Process water",
+          "bias_log": -0.066,
+          "sd_log": 0.078,
+          "n_samples": 30,
+          "lower_limit_95": -0.178,
+          "upper_limit_95": 0.047
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers TWO analytes (Listeria monocytogenes, section 3.2.1, pages 22-26; and Listeria spp., section 3.2.2, pages 27-31), each tested with two inoculation methods (surface/spreading and pour-plate) and two plate-count variants (2 plates, 1 plate). I selected the L. monocytogenes / Pour-plate / 2-plates variant (page 26, Figure showing L. mono-Pour plate-2 plates) as the primary/canonical dataset, since it is presented first among the accuracy-profile tables and corresponds to the standard reference method plate count. The three food categories reported for that variant were: Vegetable products (Salad), Composite foods (Tabouleh), and Environment (Process water) -- each with bias, SD repeatability of alternative method, and lower/upper beta-ETI (used here as 95% interval proxy) taken from the sample subset with highest contamination level (26 à 30, the level closest to a full-range representative value) per category. Note: the tables actually give bias/SD/CI per contamination sub-range (rows '1 à 5' through '26 à 30') rather than a single aggregated value per category; I used the last row (26 à 30, highest level) as representative for each category since no single overall bias/SD/CI per category was explicitly aggregated in the text. Other variants not recorded here: L. monocytogenes with Spreading inoculation (2 plates and 1 plate) and Pour-plate 1 plate; and the entire Listeria spp. analyte with Spreading (2 plates, 1 plate) and Pour-plate (2 plates, 1 plate), which included additional categories: Dairy products (Raw milk), Meat products (Ground beef), Seafood products (Fish terrine), Composite foods (Piémontaise), Environment/Environmental samples (Process water) -- these largely mirror the categories above but for a different target organism and are not included per instructions to record only the primary/canonical study. The interlaboratory study (section 4, pages 41-44, Tables 13/14) presents a different accuracy-profile calculation by contamination Level (Low/Medium/High) rather than by food category, so it was not used for the per-category table. Acceptability Limit (+/- 0.5 log) is consistently stated throughout both the relative trueness/accuracy profile study and the interlaboratory study.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/06/AES-10-05-09-06_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/Aloa_Count_Summary_Report_2026.pdf",
     "organism_page_last_updated_raw": "21 juillet 2026"

@@ -48,7 +48,56 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "1",
+          "bias_log": 0.13,
+          "sd_log": 0.45,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "2",
+          "bias_log": -0.05,
+          "sd_log": 0.5,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "3",
+          "bias_log": 0.02,
+          "sd_log": 0.61,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "4",
+          "bias_log": -0.05,
+          "sd_log": 0.2,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "5",
+          "bias_log": -0.01,
+          "sd_log": 0.15,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "6",
+          "bias_log": 0.18,
+          "sd_log": 0.34,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
         "acceptability_limit_log": null,
         "by_matrix": []
@@ -62,8 +111,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/bacteries-lactiques-mesophiles/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The report presents relative trueness results for two incubation conditions: '45h - 30°C±1°C' (Appendix E, page 7-8) and '45h + 1 week at -18°C' (Appendix E, page 9-10). I recorded the primary '45h - 30°C±1°C' incubation results (bias/SD per category) as the canonical study; the alternate freeze-storage variant gave very similar values (category averages e.g. cat1=0.15/0.44, cat2=-0.05/0.49, cat3=0.02/0.57, cat4=-0.09/0.21, cat5=-0.02/0.12, cat6=0.16/0.37) and is not separately recorded. Food category names were only given as numeric codes (1-6) with sub-types (a,b,c) in the raw tables; no descriptive category names (e.g. 'meat products') were provided for categories 2-6 in the visible text, though category 1 is identified as 'MEAT PRODUCTS' in Appendix D. The Acceptability Limit (log10) was not explicitly stated as a numeric value anywhere in the visible report text, so it is left null. 95% confidence interval bounds (lower/upper limit) per category were not tabulated in Appendix E; only global (all-categories) upper/lower limits of ~0.88/-0.79 and ~0.86/-0.78 were given for the linear regression across the whole range, not per category, so per-category CI fields are null. n_samples per category was also not explicitly given (only overall n=97), so left null.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/3M-01-19-11-17-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/Petrifilm_LAB_SR_10_25_v0-protected.pdf",
     "organism_page_last_updated_raw": "17 novembre 2025"

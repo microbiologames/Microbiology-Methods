@@ -59,7 +59,24 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "1",
+          "bias_log": -0.13,
+          "sd_log": 0.7,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        },
+        {
+          "category": "3",
+          "bias_log": -0.04,
+          "sd_log": 0.56,
+          "n_samples": null,
+          "lower_limit_95": null,
+          "upper_limit_95": null
+        }
+      ],
       "accuracy_profile": {
         "acceptability_limit_log": null,
         "by_matrix": []
@@ -73,8 +90,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/flore-totale/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: No certificate number was found printed anywhere in the visible pages (cover page lists a reference \"# 3M 01/01 – 09/89\" for the alternative method itself, but this is a method identifier, not an NF Validation certificate number, so it was left null). The document is clearly a quantitative (enumeration) validation study for NEOGEN Petrifilm AC (mesophilic aerobic flora count), per EN ISO 16140-2:2016.\n\nThe main \"Relative trueness study\" per-category summary table appears in Appendix E (initial validation study, interpretation of 2 successive dilutions), covering categories numbered 1, 3, 4, etc. Only categories 1 and 3 show complete \"Average category\" and \"Standard deviation of differences\" summary rows in the visible extracted content (category 1: -0.13 / 0.70; category 3: -0.04 / 0.56). Category 4's summary row was not visible/complete in the extracted text (data table for category 4 is cut off before its average/SD row appears), so it could not be reliably captured and was omitted rather than guessed. Category names are given only as numeric codes (\"1\", \"3\", \"4\") in the report excerpts provided, not descriptive ISO 16140-2 category names (e.g. \"raw meat\", \"dairy\", etc.) — the actual category name text was not visible in the provided pages, only the numeric index in the \"Category\" column, so category is recorded as the printed value.\n\nNo explicit \"Acceptability Limit fixed at +/- X log\" statement was located in the visible text of the provided pages, so acceptability_limit_log is null.\n\nAdditional extension studies (interpretation with one plate/one dilution in 2025, and PPRA automatic reader extension study) present separate relative-trueness tables organized by different, non-ISO-16140-2-style category groupings (e.g., \"Meat products\", \"Seafood products\", \"Fruit and vegetables\", \"Egg products\", \"Pet food\", \"Environmental samples\", \"Dairy products\") for both 48h and 72h incubation, comparing manual vs PPRA reading rather than alternative vs reference method. These are variant/extension comparisons (manual reading vs automatic PPRA reading) rather than the primary alternative-vs-reference method comparison study, so their per-category bias/SD values were not included in the main structured table, per instructions to record only the primary/canonical study's categories. If needed, examples of extension-study category bias values (48h, manual vs PPRA) include: Meat products avg diff 0.02 (SD 0.04, n=5), Seafood products avg diff -0.02 (SD 0.05, n=5), Fruit & vegetables avg diff -0.01 (SD 0.03, n=7), Egg products avg diff -0.08 (SD 0.06, n=4), Pet food avg diff 0.01 (SD 0.04, n=5), Environmental samples avg diff 0.01 (SD 0.02, n=7), with overall n=33, mean diff -0.01, SD 0.05, 95% CI [-0.10, 0.09]. A similar 72h-incubation extension table also exists (n=40, overall mean diff -0.03, SD 0.12, 95% CI [-0.26, 0.21]), plus another 2025 \"accuracy profile\" extension study (Appendix O) for whole liquid egg matrix only (not organized by ISO food category). None of these were treated as the primary category-level relative trueness table.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-01-09-89-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_AC_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "6 janvier 2026"
