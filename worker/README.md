@@ -48,7 +48,7 @@ start from the Hello World template → give it a name (e.g.
 `microbio-methods-chat`) → **Deploy**. You now have a placeholder Worker at a
 URL like `https://microbio-methods-chat.<your-subdomain>.workers.dev`.
 
-**3. Paste the code.** Open the Worker → **Edit code**. Select everything in
+**3. Paste the code** (or skip to *Deploy from GitHub* below and let Cloudflare pull it). Open the Worker → **Edit code**. Select everything in
 the editor, delete it, and paste the entire contents of **`worker.js`** from
 this folder. Click **Deploy**.
 
@@ -89,6 +89,35 @@ this last step.
 To check it before wiring the site up, the Worker's own **Preview** tab can
 send a POST with `{"question": "PCR methods for Listeria"}` — a working
 deployment answers with a `filter` object.
+
+---
+
+## Deploy from GitHub (stop copy-pasting)
+
+Cloudflare can watch this repository and redeploy the Worker on every push
+that touches `worker/`. One-time setup, then the repo is the only place the
+code lives.
+
+**Before connecting, read this** — a Git deploy makes `wrangler.toml`
+authoritative, and **plain variables and bindings that exist only in the
+dashboard are removed on the next deploy**. Two consequences:
+
+1. Uncomment the `[[kv_namespaces]]` block in `wrangler.toml` and paste your
+   `RATE_LIMIT` namespace id (dashboard → Storage & Databases → KV, the
+   *Namespace ID* column). Skip this and the rate limit silently disappears.
+2. Move `ANTHROPIC_WORKSPACE_ID` from a **Text** variable to a **Secret** in
+   the dashboard. Secrets survive every deploy; text variables do not. It is
+   not confidential — "Secret" is just the storage `wrangler.toml` cannot
+   clobber, and it keeps an account id out of a public repo. `ANTHROPIC_API_KEY`
+   is already a Secret, so it is safe as-is.
+
+Then: Worker → **Settings** → **Build** → **Connect** → authorise the
+Cloudflare Workers & Pages GitHub App → pick this repository → set the root
+directory to `worker`. Connect it to the **existing** Worker rather than
+creating a new one, so the URL, the secrets and the KV binding all carry over.
+
+After the first automatic deploy, check that a question still works on the
+site — that confirms the bindings survived.
 
 ---
 

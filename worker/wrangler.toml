@@ -1,8 +1,27 @@
+# Used by Cloudflare's Git integration: once the repo is connected, every
+# push to main touching worker/ redeploys automatically. See README.md
+# § "Deploy from GitHub" for the one-time connection.
+#
+# `name` must match the Worker that already exists, or Cloudflare creates a
+# second one on a different URL and the site keeps calling the old one.
 name = "microbio-methods-chat"
-main = "src/index.ts"
-compatibility_date = "2026-08-01"
-compatibility_flags = ["nodejs_compat"]
 
+# worker.js, not src/index.ts: it has no dependencies, so a Git build has
+# nothing to install and nothing that can fail. src/index.ts is the same
+# logic written against the Anthropic SDK, kept for a project that wants the
+# types and a real build step.
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+# IMPORTANT: deploying from this file makes it authoritative. Plain variables
+# and bindings that exist only in the dashboard are REMOVED on the next
+# deploy, so everything non-secret has to be declared here.
+#
+# Secrets are the exception -- stored separately, untouched by any deploy.
+# That is why ANTHROPIC_API_KEY is not here, and why ANTHROPIC_WORKSPACE_ID
+# belongs in the dashboard's Secrets section too even though it is not
+# confidential: "Secret" is simply the storage this file cannot clobber, and
+# it keeps an account identifier out of a public repository.
 [vars]
 # The catalogue's facet vocabulary, published by pipeline/build_frontend_data.py
 # alongside the site. The Worker reads only this (~3 KB), never data.json.
@@ -12,9 +31,12 @@ FACETS_URL = "https://microbiologames.github.io/Microbiology-Methods/facets.json
 # KV rate limit below is for.
 ALLOWED_ORIGINS = "https://microbiologames.github.io"
 
-# Optional but strongly recommended: without it there is no per-caller cap.
-# Create with:  npx wrangler kv namespace create RATE_LIMIT
-# then paste the returned id here and uncomment.
+# The per-IP rate limit. Leaving this commented out means the binding is
+# dropped on the first Git deploy and the endpoint silently becomes uncapped
+# again -- losing exactly the protection that was awkward to set up.
+#
+# Paste the id of the RATE_LIMIT namespace already created in the dashboard
+# (Storage & Databases -> KV, the "Namespace ID" column) and uncomment.
 # [[kv_namespaces]]
 # binding = "RATE_LIMIT"
-# id = "<paste-the-id-from-the-command-above>"
+# id = "<paste-your-RATE_LIMIT-namespace-id-here>"
