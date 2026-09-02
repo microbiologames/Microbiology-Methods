@@ -11,7 +11,7 @@
   },
   "method_type": {
     "action": "detection",
-    "category": "other"
+    "category": "inhibition_assay"
   },
   "target_organism": {
     "normalized": "Antibiotic residues",
@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ACTALIA"
   },
   "certification": {
     "original_date": "2012-02-03",

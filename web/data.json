@@ -95,8 +95,8 @@
       "culture_media",
       "flow_cytometry",
       "immunological_elisa",
-      "molecular_pcr",
-      "other"
+      "inhibition_assay",
+      "molecular_pcr"
     ],
     "sources": [
       "MICROVAL",
@@ -9633,10 +9633,10 @@
       "commercial_name": "Delvotest® T",
       "manufacturer_name": "DSM",
       "organism": "Antibiotic residues",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "inhibition_assay",
+      "method_category_label": "Microbial inhibition",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ACTALIA",
       "reference_method": null,
       "status": "expired",
       "current_expiry": "2005-01-31",
@@ -9661,7 +9661,7 @@
         },
         "method_type": {
           "action": "detection",
-          "category": "other"
+          "category": "inhibition_assay"
         },
         "target_organism": {
           "normalized": "Antibiotic residues",
@@ -9681,7 +9681,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ACTALIA"
         },
         "certification": {
           "original_date": "2012-02-03",
@@ -12910,8 +12911,8 @@
       "commercial_name": "RiboFlow Listeria Twin Detection Kit",
       "manufacturer_name": "SY-LAB",
       "organism": "Listeria monocytogenes",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "molecular_pcr",
+      "method_category_label": "Molecular (PCR / hybridisation)",
       "action": null,
       "expert_laboratory": null,
       "reference_method": "EN-ISO 11290-1:2017",
@@ -12943,7 +12944,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "molecular_pcr"
         },
         "target_organism": {
           "normalized": "Listeria monocytogenes",
@@ -13319,8 +13320,8 @@
       "commercial_name": "AMP-6000 TMAC",
       "manufacturer_name": "SY-LAB",
       "organism": "Total viable count (aerobic mesophilic flora)",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "culture_media",
+      "method_category_label": "Culture media",
       "action": null,
       "expert_laboratory": "Campden BRI",
       "reference_method": "ISO 4833-1:2013",
@@ -13351,7 +13352,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "culture_media"
         },
         "target_organism": {
           "normalized": "Total viable count",
@@ -17776,8 +17777,8 @@
       "commercial_name": "EZ Check Listeria spp",
       "manufacturer_name": "Bio-Rad",
       "organism": "Listeria spp.",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "molecular_pcr",
+      "method_category_label": "Molecular (PCR / hybridisation)",
       "action": null,
       "expert_laboratory": null,
       "reference_method": "ISO 11290-1:2017",
@@ -17804,7 +17805,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "molecular_pcr"
         },
         "target_organism": {
           "normalized": "Listeria spp.",
@@ -17853,8 +17854,8 @@
       "commercial_name": "EZ Check Listeria monocytogenes",
       "manufacturer_name": "Bio-Rad",
       "organism": "Listeria monocytogenes",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "molecular_pcr",
+      "method_category_label": "Molecular (PCR / hybridisation)",
       "action": null,
       "expert_laboratory": null,
       "reference_method": "ISO 11290-1:2017",
@@ -17881,7 +17882,7 @@
         },
         "method_type": {
           "action": null,
-          "category": null
+          "category": "molecular_pcr"
         },
         "target_organism": {
           "normalized": "Listeria monocytogenes",
@@ -19597,8 +19598,8 @@
       "commercial_name": "Premi®Test",
       "manufacturer_name": "R-Biopharm",
       "organism": "Antibiotic residues",
-      "method_category": "other",
-      "method_category_label": "Other",
+      "method_category": "inhibition_assay",
+      "method_category_label": "Microbial inhibition",
       "action": "detection",
       "expert_laboratory": null,
       "reference_method": null,
@@ -19625,7 +19626,7 @@
         },
         "method_type": {
           "action": "detection",
-          "category": "other"
+          "category": "inhibition_assay"
         },
         "target_organism": {
           "normalized": "Antibiotic residues",
