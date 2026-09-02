@@ -469,3 +469,19 @@ th.sortable.sorted[data-dir="desc"]::after { content: " ▼"; }
   cursor: pointer;
 }
 .chat-input-row button:disabled { opacity: 0.55; cursor: default; }
+
+/* The assistant's reply: the model's sentence, then the page's own counted
+   facts. Typographic separation makes the provenance visible — what was
+   generated reads differently from what was measured. */
+.chat-said { margin: 0 0 6px; }
+.chat-count {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.chat-facts {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}

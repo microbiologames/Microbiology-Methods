@@ -33,6 +33,82 @@ function chatSay(text, kind) {
   log.scrollTop = log.scrollHeight;
 }
 
+/**
+ * Describe the result set from the data itself.
+ *
+ * Everything here is counted from data.json in the browser, so it is exact
+ * and costs nothing. That division is the point: the model supplies the
+ * sentence, the page supplies every number in it. Asking the model to be
+ * more detailed would have meant asking it to characterise data it has never
+ * been shown — the one thing this design exists to prevent — and would have
+ * cost tokens for a worse answer.
+ *
+ * Only facts a person choosing a validated method actually acts on: how many,
+ * from whom, what lapses soon, and what can be compared on performance.
+ */
+function summarize(rows) {
+  if (!rows.length) return [];
+
+  const facts = [];
+  const makers = [...new Set(rows.map((r) => r.manufacturer_name).filter(Boolean))];
+  if (makers.length === 1) {
+    facts.push(makers[0]);
+  } else if (makers.length > 1) {
+    const shown = makers.slice(0, 3).join(", ");
+    facts.push(`${makers.length} manufacturers (${shown}${makers.length > 3 ? "…" : ""})`);
+  }
+
+  // Expiry is the fact this catalogue has that a supplier's own page doesn't,
+  // and it changes a purchasing decision.
+  const now = new Date();
+  const soon = rows.filter((r) => {
+    if (!r.current_expiry) return false;
+    const months = (new Date(r.current_expiry) - now) / (1000 * 60 * 60 * 24 * 30.44);
+    return months >= 0 && months < 12;
+  }).length;
+  const lapsed = rows.filter((r) => r.status === "expired").length;
+  if (soon) facts.push(`${soon} expiring within a year`);
+  if (lapsed) facts.push(`${lapsed} already expired`);
+
+  const withPerf = rows.filter((r) => r.has_performance_data).length;
+  facts.push(
+    withPerf === rows.length
+      ? "all with performance data"
+      : `${withPerf} with performance data`,
+  );
+
+  return facts;
+}
+
+/** The model's sentence, then the page's own counted facts beneath it. */
+function chatAnswer(sentence, rows) {
+  const line = document.createElement("div");
+  line.className = "chat-line chat-bot";
+
+  const said = document.createElement("p");
+  said.className = "chat-said";
+  said.textContent = sentence;
+  line.appendChild(said);
+
+  const headline = document.createElement("p");
+  headline.className = "chat-count";
+  headline.textContent = rows.length === 0
+    ? "No method matches — try removing one of the filters above."
+    : `${rows.length} method${rows.length > 1 ? "s" : ""}`;
+  line.appendChild(headline);
+
+  const facts = summarize(rows);
+  if (facts.length) {
+    const detail = document.createElement("p");
+    detail.className = "chat-facts";
+    detail.textContent = facts.join(" · ");
+    line.appendChild(detail);
+  }
+
+  chat.el.log.appendChild(line);
+  chat.el.log.scrollTop = chat.el.log.scrollHeight;
+}
+
 /** Apply the model's filter to the page's own filter state. */
 function applyFilter(filter) {
   [state.source, state.status, state.technology,
@@ -53,6 +129,7 @@ function applyFilter(filter) {
 
   syncControls();
   render();
+  return state.data.methods.filter(matches);
 }
 
 async function ask(question) {
@@ -96,9 +173,8 @@ async function ask(question) {
       chatSay(filter.answer || "I can't turn that into a filter.", "error");
       return;
     }
-    applyFilter(filter);
-    const shown = document.getElementById("result-count").textContent;
-    chatSay(`${filter.answer || "Filtered."} (${shown})`, "bot");
+    const matched = applyFilter(filter);
+    chatAnswer(filter.answer || "Here's what I found.", matched);
   } catch (err) {
     pending.remove();
     chatSay(`Could not reach the assistant: ${err.message}`, "error");

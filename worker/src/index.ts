@@ -140,10 +140,12 @@ function buildTool(facets: Facets): Anthropic.Beta.BetaTool {
         answer: {
           type: "string",
           description:
-            "One short sentence, in the SAME LANGUAGE as the question, saying " +
-            "what you filtered for. Never state a performance figure, a count, " +
-            "or any specific data value — you have not been shown the data, " +
-            "only the vocabulary. The page displays the matching rows itself.",
+            "A warm, natural opening sentence in the SAME LANGUAGE as the " +
+            "question, acknowledging what was asked. Never state a count, a " +
+            "performance figure, an expiry date or any other data value — you " +
+            "have not been shown the data, only the vocabulary, and the page " +
+            "prints the real figures underneath you. Say what you looked for, " +
+            "not what you found.",
         },
         understood: {
           type: "boolean",
