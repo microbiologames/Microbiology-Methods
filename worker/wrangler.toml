@@ -13,6 +13,12 @@ name = "microbio-methods-chat"
 main = "worker.js"
 compatibility_date = "2026-08-01"
 
+# Belt and braces for plain variables: keep_vars stops a deploy REMOVING
+# dashboard variables that this file doesn't mention. It does not protect
+# bindings -- a KV binding absent from this file is still dropped -- which is
+# why the namespace block below has to be filled in rather than relied upon.
+keep_vars = true
+
 # IMPORTANT: deploying from this file makes it authoritative. Plain variables
 # and bindings that exist only in the dashboard are REMOVED on the next
 # deploy, so everything non-secret has to be declared here.
