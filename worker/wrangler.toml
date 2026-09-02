@@ -41,8 +41,8 @@ ALLOWED_ORIGINS = "https://microbiologames.github.io"
 # dropped on the first Git deploy and the endpoint silently becomes uncapped
 # again -- losing exactly the protection that was awkward to set up.
 #
-# Paste the id of the RATE_LIMIT namespace already created in the dashboard
-# (Storage & Databases -> KV, the "Namespace ID" column) and uncomment.
-# [[kv_namespaces]]
-# binding = "RATE_LIMIT"
-# id = "<paste-your-RATE_LIMIT-namespace-id-here>"
+# The namespace id is not a credential -- it names a store, and grants
+# nothing without account access -- so it lives here rather than as a secret.
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "448c2eadb5e5485486ed3d5191c9a75e"

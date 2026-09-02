@@ -102,19 +102,26 @@ code lives.
 authoritative, and **plain variables and bindings that exist only in the
 dashboard are removed on the next deploy**. Two consequences:
 
-1. Uncomment the `[[kv_namespaces]]` block in `wrangler.toml` and paste your
-   `RATE_LIMIT` namespace id (dashboard → Storage & Databases → KV, the
-   *Namespace ID* column). Skip this and the rate limit silently disappears.
-2. Move `ANTHROPIC_WORKSPACE_ID` from a **Text** variable to a **Secret** in
-   the dashboard. Secrets survive every deploy; text variables do not. It is
-   not confidential — "Secret" is just the storage `wrangler.toml` cannot
-   clobber, and it keeps an account id out of a public repo. `ANTHROPIC_API_KEY`
-   is already a Secret, so it is safe as-is.
+Both are already handled in this repo:
+
+- `[[kv_namespaces]]` is filled in with the real `RATE_LIMIT` id, so the rate
+  limit survives the switch. (The id names a store and grants nothing without
+  account access, so it is not a secret.)
+- `ANTHROPIC_API_KEY` and `ANTHROPIC_WORKSPACE_ID` are dashboard **Secrets**,
+  the one class of setting a deploy cannot touch. Neither belongs in this file.
+
+Every variable the code reads is therefore accounted for: `FACETS_URL` and
+`ALLOWED_ORIGINS` from `[vars]`, `RATE_LIMIT` from the binding, the two keys
+from Secrets.
 
 Then: Worker → **Settings** → **Build** → **Connect** → authorise the
 Cloudflare Workers & Pages GitHub App → pick this repository → set the root
-directory to `worker`. Connect it to the **existing** Worker rather than
-creating a new one, so the URL, the secrets and the KV binding all carry over.
+directory to `worker` — `wrangler.toml` lives there, not at the repo root, and
+without this the deploy command cannot find it. Set build watch paths to
+`worker/*` so a weekly data scrape does not redeploy the Worker, and leave
+preview builds off: the scrapers open automated PRs that would each trigger
+one. Connect it to the **existing** Worker rather than creating a new one, so
+the URL, the secrets and the KV binding all carry over.
 
 After the first automatic deploy, check that a question still works on the
 site — that confirms the bindings survived.
