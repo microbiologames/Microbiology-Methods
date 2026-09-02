@@ -248,6 +248,8 @@ def main():
                          "this is how you collect what you already bought instead of paying twice.")
     ap.add_argument("--batch-id-file", default="last_batch_id.txt",
                     help="Where the submitted batch id is recorded, before any polling starts.")
+    ap.add_argument("--cost-summary-file", default="batch_cost_summary.md",
+                    help="Where the measured-cost table is written, for the PR body.")
     ap.add_argument("--poll-seconds", type=int, default=30)
     ap.add_argument("--max-wait-seconds", type=int, default=3600,
                     help="Stop polling after this long. The batch keeps running and stays "
@@ -277,6 +279,12 @@ def main():
 
         if args.batch_id:
             batch_id = args.batch_id
+            if batch_id == "latest":
+                # Collecting an existing batch's results is a retrieval, not
+                # a new inference: the batch was billed when it processed, so
+                # this re-reads it for free. "latest" saves having to dig the
+                # id out of a run artifact to do that.
+                batch_id = next(iter(client.messages.batches.list(limit=1))).id
             # A resumed run rebuilds the mapping from the records on disk
             # rather than from the submitting run's memory, which is why
             # custom_id is derived from the filename and not a counter.
@@ -307,11 +315,26 @@ def main():
               f"{counts['no_data']} returned no usable data, {counts['invalid']} schema-invalid, "
               f"{counts['failed']} errored; {remaining} record(s) still need backfilling ===",
               file=sys.stderr)
-        print(f"=== MEASURED COST: {counts['input_tokens']:,} input + "
-              f"{counts['output_tokens']:,} output tokens over {counts['results']} result(s) "
-              f"= ${cost:.4f} (${cost / n:.4f} per report; "
-              f"${cost / n * remaining:.2f} to finish the remaining {remaining}) ===",
-              file=sys.stderr)
+        summary = (
+            f"**Measured cost of this batch**\n\n"
+            f"| | |\n|---|---|\n"
+            f"| Reports processed | {counts['results']} |\n"
+            f"| Written | {counts['written']} |\n"
+            f"| No usable breakdown | {counts['no_data']} |\n"
+            f"| Schema-invalid | {counts['invalid']} |\n"
+            f"| Errored | {counts['failed']} |\n"
+            f"| Input tokens | {counts['input_tokens']:,} |\n"
+            f"| Output tokens | {counts['output_tokens']:,} |\n"
+            f"| **Cost** | **${cost:.4f}** (${cost / n:.4f} per report) |\n"
+            f"| Remaining backlog | {remaining} records, "
+            f"~${cost / n * remaining:.2f} at this rate |\n"
+        )
+        print("=== MEASURED COST ===\n" + summary, file=sys.stderr)
+        # Also to a file: the run log's tail is dominated by git output and
+        # this number is the whole reason for running a pilot batch, so it
+        # goes somewhere it can be read without scrolling -- the pull
+        # request body.
+        Path(args.cost_summary_file).write_text(summary, encoding="utf-8")
         return
 
     written = failed = no_data = invalid = 0

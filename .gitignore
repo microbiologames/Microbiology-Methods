@@ -21,3 +21,4 @@ worker/.dev.vars
 # Written by backfill_llm_performance.py --batch before it starts polling,
 # so a crashed poll cannot lose a batch that is already paid for.
 scrapers/last_batch_id.txt
+scrapers/batch_cost_summary.md

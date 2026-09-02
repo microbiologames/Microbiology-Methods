@@ -91,6 +91,30 @@ jobs:
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py
 
+      # The measured cost is the whole point of a pilot batch, and the run
+      # log's tail is dominated by git output from the PR step -- so it goes
+      # in the pull request body, and in the job summary, where reading it
+      # does not mean scrolling through a thousand lines.
+      - name: Assemble the pull request body
+        if: always()
+        run: |
+          {
+            echo "Performance data mined by \`scrapers/llm_report_miner.py\` for"
+            echo "NF-Validation records the deterministic pdfplumber pipeline"
+            echo "could not extract a per-category breakdown from."
+            echo
+            echo "Every record touched here is marked"
+            echo "\`traceability.extraction_confidence: \"medium\"\` (the deterministic"
+            echo "path uses \`\"high\"\`), and the model's own extraction notes are"
+            echo "appended to \`traceability.notes\` -- during calibration those notes"
+            echo "surfaced real inconsistencies in the source reports themselves."
+            echo
+            if [ -f scrapers/batch_cost_summary.md ]; then
+              cat scrapers/batch_cost_summary.md
+            fi
+          } > pr_body.md
+          cat pr_body.md >> "$GITHUB_STEP_SUMMARY"
+
       - name: Open a pull request with the backfilled data
         uses: peter-evans/create-pull-request@v6
         with:
@@ -99,20 +123,6 @@ jobs:
           add-paths: |
             data/
             web/
-          body: |
-            Performance data mined by `scrapers/llm_report_miner.py` for
-            NF-Validation records the deterministic pdfplumber pipeline
-            couldn't extract a per-category breakdown from.
-
-            Every record touched here is marked
-            `traceability.extraction_confidence: "medium"` (the
-            deterministic path uses `"high"`), and the model's own
-            extraction notes are appended to `traceability.notes` --
-            during calibration those notes surfaced real inconsistencies
-            in the source reports themselves, so they're worth reading.
-
-            Check the run log for the per-record summary: how many were
-            written, how many returned no usable data (left untouched, so
-            a later run retries them), and how many errored.
+          body-path: pr_body.md
           branch: automated/llm-performance-backfill
           delete-branch: true
