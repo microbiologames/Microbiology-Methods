@@ -75,8 +75,8 @@
       "culture_media",
       "flow_cytometry",
       "immunological_elisa",
-      "molecular_pcr",
-      "other"
+      "inhibition_assay",
+      "molecular_pcr"
     ],
     "sources": [
       "MICROVAL",
