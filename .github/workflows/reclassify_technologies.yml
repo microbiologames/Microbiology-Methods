@@ -1,0 +1,93 @@
+name: Reclassify unresolved detection technologies (free, no API key)
+
+# Applies taxonomy.py's technology rules to the records still showing
+# "Other", and opens a pull request with the result.
+#
+# The weekly scrapes do this too, so this workflow exists for the case the
+# scrapes do not cover: the rules changed, and waiting until Monday -- or
+# running a full scrape to get a classification fix -- is the wrong shape of
+# work. It touches only records whose technology is unknown.
+#
+# Free: pdfplumber over the opening pages of a handful of PDFs, no
+# ANTHROPIC_API_KEY, nothing metered.
+#
+# The regression test runs BEFORE the write pass on purpose. It pins each
+# rule to the wording of the report it was derived from, so a rule edit that
+# breaks a known-good classification fails here instead of silently
+# rewriting data/ and arriving as a plausible-looking pull request.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  reclassify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pdfplumber jsonschema
+
+      - name: Check the rules against the reports they were derived from
+        run: python3 tests/test_technology_rules.py
+
+      - name: Classify the records still unresolved
+        timeout-minutes: 10
+        run: |
+          python3 pipeline/extract_expert_labs.py \
+            --methods-dir data/methods \
+            --only-unclassified \
+            --pages 14
+
+      - name: Rebuild frontend data
+        run: python3 pipeline/build_frontend_data.py
+
+      - name: Report what is left
+        run: |
+          python3 - <<'PY'
+          import glob, json, sys
+          sys.path.insert(0, "pipeline")
+          from taxonomy import canonical_method_category
+          from collections import Counter
+          counts = Counter()
+          left = []
+          for f in sorted(glob.glob("data/methods/*.json")):
+              d = json.load(open(f, encoding="utf-8"))
+              cat = (d.get("method_type") or {}).get("category")
+              counts[cat] += 1
+              if cat in (None, "other") and canonical_method_category(
+                      cat, d.get("commercial_name")) in (None, "other"):
+                  left.append(f'{d["source_certificate_number"]}  {d["commercial_name"]}')
+          print("stored categories:", dict(counts))
+          print(f"\nstill unresolved: {len(left)}")
+          for line in left:
+              print("  ", line)
+          PY
+
+      - name: Open a pull request with the reclassification
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Classify detection technologies from the reports' own principle text"
+          title: "Reclassify unresolved detection technologies"
+          body: |
+            Applies the technology rules to the records that were still
+            showing "Other". Categories come from each report's own
+            statement of its principle, not from the product name.
+
+            See the run log's "Report what is left" step for what, if
+            anything, remains unresolved.
+          branch: auto/reclassify-technologies
+          delete-branch: true
+          add-paths: |
+            data/
+            web/

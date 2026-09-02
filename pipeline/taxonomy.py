@@ -294,10 +294,23 @@ _CATEGORY_ALIASES = {
 
 CATEGORY_LABELS = {
     "culture_media": "Culture media",
-    "molecular_pcr": "Molecular / PCR",
+    # "/ PCR" was too narrow once a report was actually read: 2015LR53
+    # (RiboFlow) detects an rRNA sequence by nucleic acid hybridisation on a
+    # lateral flow strip and states outright that "enzymatic amplification of
+    # target sequence is not" required. It is molecular but it is not PCR, and
+    # filing it under a label that says PCR would misinform the reader. The id
+    # is left alone -- it appears in facets.json, in the Worker's tool enum and
+    # in any filter a reader has bookmarked.
+    "molecular_pcr": "Molecular (PCR / hybridisation)",
     "immunological_elisa": "Immunological / ELISA",
     "flow_cytometry": "Flow cytometry",
     "biochemical": "Biochemical",
+    # Antibiotic-residue screening: a seeded agar whose indicator changes
+    # colour unless a residue stops the organism growing. Not a technology for
+    # detecting a microorganism at all -- the target of these methods is a drug
+    # residue -- so folding them into "Culture media" would put them in front
+    # of someone shopping for a Listeria method.
+    "inhibition_assay": "Microbial inhibition",
     "other": "Other",
 }
 
@@ -344,12 +357,34 @@ _TECHNOLOGY_KEYWORDS = [
 # is a molecular method whatever its product name suggests. Applied only
 # when the name-based rules above found nothing, and only to a technology
 # the evidence genuinely implies.
+# ORDER IS SIGNIFICANT: the first category reaching two distinct hits wins.
+# Every one of these reports describes a culture-based REFERENCE method, so
+# agar and colony vocabulary is present in all of them -- which is why the
+# culture entry is both last and deliberately narrow. Putting it earlier would
+# reclassify every PCR method as culture media on the strength of the
+# confirmation step it happens to describe.
 _STUDY_TEXT_EVIDENCE = [
+    # Most specific first. "growth inhibition" rather than bare "inhibition":
+    # the EZ Check reports have a whole section called "PCR inhibition", and
+    # bare "inhibition" would have handed them to this category.
+    ("inhibition_assay", [
+        "stearothermophilus", "growth inhibition", "inhibition de la croissance",
+        "ph indicator", "indicateur de ph", "residus d'antibiotiques",
+        "résidus d'antibiotiques", "antibiotic residues",
+    ]),
     ("molecular_pcr", [
         "thermocycler", "thermal cycler", "cycleur thermique",
         "amplification", "dna extraction", "adn", "primer", "amorce",
         "real-time pcr", "rt-pcr", "qpcr", "nucleic acid",
         "isothermal amplification", "lysis buffer",
+        # Added from the reports themselves. The rules missed the two EZ Check
+        # certificates because the text spells out "polymerase chain reaction"
+        # and "amplified" where the list only had "real-time pcr" and
+        # "amplification" -- too literal, not too lax; the two-hit threshold
+        # was never the problem.
+        "polymerase chain reaction", "amplified",
+        # Hybridisation without amplification (RiboFlow) is molecular too.
+        "hybridis", "ribosomal rna", "rrna",
     ]),
     ("flow_cytometry", [
         "flow cytometr", "cytometrie en flux", "cytometry", "epifluorescence",
@@ -358,6 +393,14 @@ _STUDY_TEXT_EVIDENCE = [
     ("immunological_elisa", [
         "elisa", "monoclonal antibod", "polyclonal antibod", "immunocapture",
         "immunoconcentration", "conjugate", "anticorps",
+    ]),
+    # Last and narrow, per the note above: only wording that describes the
+    # ALTERNATIVE method's own culture principle, never the reference method's
+    # plates. "colony count" and "agar" are deliberately absent -- they appear
+    # in all 238 reports.
+    ("culture_media", [
+        "most probable number", "miniaturised", "miniaturized",
+        "nombre le plus probable",
     ]),
 ]
 

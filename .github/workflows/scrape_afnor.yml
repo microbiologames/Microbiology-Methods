@@ -85,6 +85,23 @@ jobs:
         timeout-minutes: 20
         run: python3 pipeline/extract_expert_labs.py --methods-dir data/methods
 
+      # Second, deeper pass over only what the broad pass could not resolve.
+      # The broad pass above reads 6 pages of all 238 reports, which is the
+      # right trade there; but some reports state their principle later --
+      # 2015LR53's contents page puts "2.2 Alternative method" on page 9 --
+      # and those are exactly the ones still unclassified. Restricting to
+      # --only-unclassified keeps this at roughly seven downloads, so reading
+      # 14 pages costs almost nothing and is self-healing for certificates
+      # added in future scrapes.
+      - name: Deeper pass over reports whose technology is still unknown
+        continue-on-error: true
+        timeout-minutes: 10
+        run: |
+          python3 pipeline/extract_expert_labs.py \
+            --methods-dir data/methods \
+            --only-unclassified \
+            --pages 14
+
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py
 

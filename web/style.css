@@ -358,6 +358,8 @@ th.sortable.sorted[data-dir="desc"]::after { content: " ▼"; }
 .tech-molecular_pcr { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 .tech-immunological_elisa { background: var(--heat-2); border-color: transparent; color: var(--ink); }
 .tech-flow_cytometry { background: var(--surface-2); border-color: var(--muted); }
+.tech-inhibition_assay { background: var(--surface-2); border-color: var(--muted); }
+.tech-biochemical { background: var(--surface-2); border-color: var(--muted); }
 
 .expiry { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .expiry.ok { color: var(--good); }

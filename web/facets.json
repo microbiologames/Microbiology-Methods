@@ -85,10 +85,11 @@
   },
   "category_labels": {
     "culture_media": "Culture media",
-    "molecular_pcr": "Molecular / PCR",
+    "molecular_pcr": "Molecular (PCR / hybridisation)",
     "immunological_elisa": "Immunological / ELISA",
     "flow_cytometry": "Flow cytometry",
     "biochemical": "Biochemical",
+    "inhibition_assay": "Microbial inhibition",
     "other": "Other"
   },
   "food_categories": [
