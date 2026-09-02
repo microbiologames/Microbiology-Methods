@@ -36,12 +36,13 @@ import sys
 import tempfile
 import urllib.request
 from pathlib import Path
-from urllib.parse import quote, urlsplit, urlunsplit
 
 import pdfplumber
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scrapers"))
 from taxonomy import canonical_expert_lab, canonical_method_category  # noqa: E402
+from url_utils import encode_url  # noqa: E402
 
 PAGES_TO_READ = 6
 REQUEST_TIMEOUT = 60
@@ -68,25 +69,6 @@ _KNOWN_LAB_TOKENS = [
     "NIZO", "TNO", "Q-lip", "Qlip", "Wageningen", "RIKILT", "Fraunhofer", "SGS",
 ]
 
-
-def encode_url(url: str) -> str:
-    """Percent-encode the non-ASCII characters urllib.request refuses.
-
-    AFNOR names a good many of its reports "N°16_..._DelvotestT.pdf", and
-    urlopen() raises UnicodeEncodeError on the degree sign rather than
-    escaping it. That looked exactly like an unreadable PDF in the error
-    log, so it went unnoticed while silently skipping 11 of the 238
-    reports on every pass -- Delvotest T among them, one of the six methods
-    whose technology is still unknown.
-
-    safe="/%" keeps an already-escaped URL intact instead of turning its
-    %20 into %2520.
-    """
-    parts = urlsplit(url)
-    return urlunsplit(parts._replace(
-        path=quote(parts.path, safe="/%"),
-        query=quote(parts.query, safe="=&%"),
-    ))
 
 
 def read_opening_text(pdf_path: Path, pages: int = PAGES_TO_READ) -> str:

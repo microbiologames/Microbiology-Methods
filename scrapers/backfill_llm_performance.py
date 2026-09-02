@@ -42,6 +42,7 @@ import jsonschema
 from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
 from anthropic.types.messages.batch_create_params import Request
 
+from url_utils import encode_url
 from llm_report_miner import (
     MAX_PAGES_SENT, build_request_params, make_client, mine_with_llm, parse_response,
 )
@@ -148,7 +149,7 @@ def submit_batch(client, targets, max_pages):
         print(f"[{cert}] preparing {pdf_url}", file=sys.stderr)
         try:
             with tempfile.NamedTemporaryFile(suffix=".pdf") as tmp:
-                urllib.request.urlretrieve(pdf_url, tmp.name)
+                urllib.request.urlretrieve(encode_url(pdf_url), tmp.name)
                 params = build_request_params(Path(tmp.name), max_pages)
         except Exception as exc:  # noqa: BLE001 -- one bad report must not sink the batch
             print(f"[{cert}] ERROR preparing: {exc}", file=sys.stderr)
@@ -343,7 +344,7 @@ def main():
         print(f"[{cert}] mining {pdf_url}", file=sys.stderr)
         try:
             with tempfile.NamedTemporaryFile(suffix=".pdf") as tmp:
-                urllib.request.urlretrieve(pdf_url, tmp.name)
+                urllib.request.urlretrieve(encode_url(pdf_url), tmp.name)
                 mined = mine_with_llm(Path(tmp.name), **mine_kwargs)
         except Exception as exc:  # noqa: BLE001 -- one bad report must not abort the batch
             print(f"[{cert}] ERROR: {exc}", file=sys.stderr)

@@ -108,6 +108,17 @@ def main() -> int:
           _format_pages([0, 43, 44, 45, 59]) == "1, 44-46, 60",
           _format_pages([0, 43, 44, 45, 59]))
 
+    # --- the URL bug that cost six records their place in a paid batch ---
+    from url_utils import encode_url  # noqa: E402
+    afnor = "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N\u00b016_Delvotest.pdf"
+    check("a non-ASCII AFNOR URL becomes sendable",
+          encode_url(afnor).encode("ascii", errors="strict") is not None)
+    check("an already-escaped URL is not double-encoded",
+          encode_url("https://x/a%20b.pdf") == "https://x/a%20b.pdf")
+    check("encoding is idempotent", encode_url(encode_url(afnor)) == encode_url(afnor))
+    check("a plain ASCII URL is untouched",
+          encode_url("https://x/y.pdf") == "https://x/y.pdf")
+
     print()
     if failures:
         print(f"=== {len(failures)} FAILURE(S) ===")
