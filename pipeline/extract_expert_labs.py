@@ -36,6 +36,7 @@ import sys
 import tempfile
 import urllib.request
 from pathlib import Path
+from urllib.parse import quote, urlsplit, urlunsplit
 
 import pdfplumber
 
@@ -66,6 +67,26 @@ _KNOWN_LAB_TOKENS = [
     "ACTALIA", "Labocea", "LDA 22", "Eurofins", "CTCPA", "Campden BRI",
     "NIZO", "TNO", "Q-lip", "Qlip", "Wageningen", "RIKILT", "Fraunhofer", "SGS",
 ]
+
+
+def encode_url(url: str) -> str:
+    """Percent-encode the non-ASCII characters urllib.request refuses.
+
+    AFNOR names a good many of its reports "N°16_..._DelvotestT.pdf", and
+    urlopen() raises UnicodeEncodeError on the degree sign rather than
+    escaping it. That looked exactly like an unreadable PDF in the error
+    log, so it went unnoticed while silently skipping 11 of the 238
+    reports on every pass -- Delvotest T among them, one of the six methods
+    whose technology is still unknown.
+
+    safe="/%" keeps an already-escaped URL intact instead of turning its
+    %20 into %2520.
+    """
+    parts = urlsplit(url)
+    return urlunsplit(parts._replace(
+        path=quote(parts.path, safe="/%"),
+        query=quote(parts.query, safe="=&%"),
+    ))
 
 
 def read_opening_text(pdf_path: Path, pages: int = PAGES_TO_READ) -> str:
@@ -192,6 +213,11 @@ def main():
                     help="Only process records whose detection technology is still unknown "
                          "-- a few downloads instead of every report.")
     ap.add_argument("--limit", type=int, default=0, help="Stop after N reports (0 = no cap).")
+    ap.add_argument("--pages", type=int, default=PAGES_TO_READ,
+                    help=f"Opening pages to read per report (default {PAGES_TO_READ}). Some "
+                         "reports put the principle later -- 2015LR53's contents page lists "
+                         "'2.2 Alternative method' on page 9 -- so the unclassified pass reads "
+                         "deeper than the weekly full pass, which stays cheap at the default.")
     ap.add_argument("--dump-evidence", action="store_true",
                     help="Print what each report says about its detection principle and "
                          "write nothing. Use with --only-unclassified to inspect the "
@@ -211,17 +237,17 @@ def main():
 
     if args.limit:
         targets = targets[:args.limit]
-    print(f"{len(targets)} report(s) to read (first {PAGES_TO_READ} pages each)", file=sys.stderr)
+    print(f"{len(targets)} report(s) to read (first {args.pages} pages each)", file=sys.stderr)
 
     written = failed = 0
     for path, record, url in targets:
         cert = record.get("source_certificate_number") or path.stem
         try:
             with tempfile.NamedTemporaryFile(suffix=".pdf") as tmp:
-                with urllib.request.urlopen(url, timeout=REQUEST_TIMEOUT) as resp:
+                with urllib.request.urlopen(encode_url(url), timeout=REQUEST_TIMEOUT) as resp:
                     tmp.write(resp.read())
                 tmp.flush()
-                text = read_opening_text(Path(tmp.name))
+                text = read_opening_text(Path(tmp.name), pages=args.pages)
         except Exception as exc:  # noqa: BLE001 -- one unreadable report must not abort the pass
             print(f"[{cert}] ERROR: {exc}", file=sys.stderr)
             failed += 1

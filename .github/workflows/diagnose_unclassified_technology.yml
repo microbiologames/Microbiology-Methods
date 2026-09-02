@@ -54,4 +54,5 @@ jobs:
         run: |
           python3 pipeline/extract_expert_labs.py \
             --only-unclassified \
+            --pages 14 \
             --dump-evidence
