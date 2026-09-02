@@ -8427,8 +8427,10 @@
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2027-12-04",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Multi-component foods or meal components"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°25_SESAME-Salmonella-TEST-RAPPORT-DE-SYNTHESE-Version-0.pdf",
         "summary_report_is_direct": true,
@@ -8485,13 +8487,70 @@
           "current_expiry": "2027-12-04",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Aliments prêts à consommer et prêts à réchauffer, composites",
+                "sensitivity_alternative_pct": 96.7,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 98.5,
+                "false_positive_ratio_alternative_pct": 2.7
+              },
+              {
+                "category": "Produits carnés",
+                "sensitivity_alternative_pct": 97.1,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 98.8,
+                "false_positive_ratio_alternative_pct": 10.6
+              },
+              {
+                "category": "Produits laitiers",
+                "sensitivity_alternative_pct": 96.9,
+                "sensitivity_reference_pct": 90.6,
+                "relative_trueness_pct": 94.6,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Produits de la mer et végétaux",
+                "sensitivity_alternative_pct": 96.7,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 98.5,
+                "false_positive_ratio_alternative_pct": 11.1
+              },
+              {
+                "category": "Ovoproduits",
+                "sensitivity_alternative_pct": 97.7,
+                "sensitivity_reference_pct": 95.3,
+                "relative_trueness_pct": 96.6,
+                "false_positive_ratio_alternative_pct": 31.1
+              },
+              {
+                "category": "Produits d'alimentation animale",
+                "sensitivity_alternative_pct": 97.6,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 98.9,
+                "false_positive_ratio_alternative_pct": 9.8
+              },
+              {
+                "category": "Echantillons de l'environnement de production",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 100.0,
+                "false_positive_ratio_alternative_pct": 32.4
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
           "extraction_date": null,
-          "extraction_confidence": "high",
-          "notes": null,
+          "extraction_confidence": "medium",
+          "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Certificate number not found anywhere in the provided pages (cover page lacks an explicit certificate number like '3M 01/xx-xx/xx'; only accreditation number 1-0144 (Cofrac) is present, which is not the NF Validation certificate number). Per-category data taken from Tableau 4 (p.11), which is the main comparative study table (Total row per category used, excluding the overall grand-total row). The report also contains an inter-laboratory study (Tableau 23/24) with combined/pooled results (not per-category) which was not included since it is a separate collaborative-study summary, not the primary per-category method comparison table.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-04-12-07_fr.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°25_SESAME-Salmonella-TEST-RAPPORT-DE-SYNTHESE-Version-0.pdf",
           "organism_page_last_updated_raw": "6 août 2026"
@@ -21328,8 +21387,15 @@
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-01-28",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°03_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -21385,13 +21451,63 @@
           "current_expiry": "2028-01-28",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Composite foods",
+                "sensitivity_alternative_pct": 78.1,
+                "sensitivity_reference_pct": 78.1,
+                "relative_trueness_pct": 83.1,
+                "false_positive_ratio_alternative_pct": 3.9
+              },
+              {
+                "category": "Meat products",
+                "sensitivity_alternative_pct": 90.9,
+                "sensitivity_reference_pct": 78.8,
+                "relative_trueness_pct": 85.9,
+                "false_positive_ratio_alternative_pct": 2.6
+              },
+              {
+                "category": "Milk & Dairy products",
+                "sensitivity_alternative_pct": 76.7,
+                "sensitivity_reference_pct": 76.7,
+                "relative_trueness_pct": 83.5,
+                "false_positive_ratio_alternative_pct": 5.5
+              },
+              {
+                "category": "Vegetables",
+                "sensitivity_alternative_pct": 87.5,
+                "sensitivity_reference_pct": 71.9,
+                "relative_trueness_pct": 80.0,
+                "false_positive_ratio_alternative_pct": 6.1
+              },
+              {
+                "category": "Fish and seafood",
+                "sensitivity_alternative_pct": 93.8,
+                "sensitivity_reference_pct": 87.5,
+                "relative_trueness_pct": 91.4,
+                "false_positive_ratio_alternative_pct": 2.6
+              },
+              {
+                "category": "Environmental samples",
+                "sensitivity_alternative_pct": 77.4,
+                "sensitivity_reference_pct": 80.6,
+                "relative_trueness_pct": 82.7,
+                "false_positive_ratio_alternative_pct": 13.6
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
           "extraction_date": null,
-          "extraction_confidence": "high",
-          "notes": null,
+          "extraction_confidence": "medium",
+          "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report presents two parallel result sets for the sensitivity/method-comparison study: 'Individual samples' (Table 5) and 'Pooled samples' (Table 6). I recorded the Individual samples table (Table 5) as the primary/canonical dataset since it is presented first and is the standard single-sample protocol; the Pooled samples values (Table 6) are very similar (e.g. Composite foods SEalt 78.1/SEref 78.1/AC 83.1/FP 0.0; Meat products 97.0/78.8/88.7/2.6; Milk & Dairy 76.7/76.7/83.5/5.5; Vegetables 81.3/71.9/76.9/6.1; Fish and seafood 93.5/90.3/92.9/0.0; Environmental samples 73.3/83.3/82.7/4.4) but were not recorded per-category to avoid duplication. The interlaboratory study (section 4) reports separate overall Single/Pooling protocol sensitivities (not broken down by category) and an RLOD table with an Acceptability Limit of 2.5 (not a bias/trueness acceptability limit in log units, since this is a qualitative method, so acceptability_limit_log field is not applicable and quantitative block is null). Category names taken exactly as printed (with numbering symbols removed to plain text) from Table 5/7.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-03-01-16-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°03_ANSR_Listeria_2023_12_SR-v0-protected.pdf",
           "organism_page_last_updated_raw": "19 août 2026"
@@ -21412,8 +21528,15 @@
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-03-17",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°04_ANSR_Lmono_2023_12_SR_v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -21466,13 +21589,63 @@
           "current_expiry": "2028-03-17",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Composite foods",
+                "sensitivity_alternative_pct": 81.1,
+                "sensitivity_reference_pct": 78.4,
+                "relative_trueness_pct": 84.5,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Meat products",
+                "sensitivity_alternative_pct": 74.3,
+                "sensitivity_reference_pct": 82.9,
+                "relative_trueness_pct": 81.9,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Milk & Dairy products",
+                "sensitivity_alternative_pct": 82.4,
+                "sensitivity_reference_pct": 88.2,
+                "relative_trueness_pct": 88.4,
+                "false_positive_ratio_alternative_pct": 1.9
+              },
+              {
+                "category": "Vegetables",
+                "sensitivity_alternative_pct": 81.1,
+                "sensitivity_reference_pct": 78.4,
+                "relative_trueness_pct": 84.4,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Fish and seafood",
+                "sensitivity_alternative_pct": 87.5,
+                "sensitivity_reference_pct": 77.1,
+                "relative_trueness_pct": 82.3,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Environmental samples",
+                "sensitivity_alternative_pct": 77.4,
+                "sensitivity_reference_pct": 80.6,
+                "relative_trueness_pct": 84.5,
+                "false_positive_ratio_alternative_pct": 0.0
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
           "extraction_date": null,
-          "extraction_confidence": "high",
-          "notes": null,
+          "extraction_confidence": "medium",
+          "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Data taken from Table 5 (page 6), which presents per-category totals (rows labeled 'Total' under each of the 6 categories: Composite foods, Meat products, Milk & Dairy products, Vegetables, Fish and seafood, Environmental samples). Sub-category rows (a, b, c) within each category were omitted per instructions, keeping only the category-level 'Total' rows. The overall 'Total' row (137/320/43/42...) aggregating all 6 categories was excluded as it is a grand total, not a category. Note: this report also contains a separate Interlaboratory study (section 4) with its own sensitivity/AC/FP values (SEalt=87%, SEref=89%, AC=77%, FP=33%) and RLOD/LOD tables (Tables 17-18, 30) with an Acceptability Limit of 2.5 log-equivalent RLOD units; these belong to a different study component (interlaboratory/RLOD) and were not included in the per-category method-comparison table above, as requested only the primary method comparison study table (Table 5/6) was recorded.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-04-03-16-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°04_ANSR_Lmono_2023_12_SR_v0-protected.pdf",
           "organism_page_last_updated_raw": "25 août 2026"
@@ -24896,8 +25069,15 @@
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-11-21",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Raw milk and dairy products",
+        "Raw meat and ready-to-cook meat products (except poultry)",
+        "Raw and ready-to-cook fish and seafoods (unprocessed)",
+        "Fresh produce and fruits",
+        "Multi-component foods or meal components",
+        "Environmental samples (food or feed production)"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
         "summary_report_is_direct": true,
@@ -24956,13 +25136,63 @@
           "current_expiry": "2027-11-21",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Composite foods",
+                "sensitivity_alternative_pct": 94.4,
+                "sensitivity_reference_pct": 97.2,
+                "relative_trueness_pct": 95.6,
+                "false_positive_ratio_alternative_pct": 3.1
+              },
+              {
+                "category": "Meat products",
+                "sensitivity_alternative_pct": 94.9,
+                "sensitivity_reference_pct": 97.4,
+                "relative_trueness_pct": 95.9,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Dairy products",
+                "sensitivity_alternative_pct": 90.6,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 95.7,
+                "false_positive_ratio_alternative_pct": 2.7
+              },
+              {
+                "category": "Fishery products",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 100.0,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Vegetables",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 100.0,
+                "false_positive_ratio_alternative_pct": 9.8
+              },
+              {
+                "category": "Production environmental samples",
+                "sensitivity_alternative_pct": 96.9,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 98.6,
+                "false_positive_ratio_alternative_pct": 2.5
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
           "extraction_date": null,
-          "extraction_confidence": "high",
-          "notes": null,
+          "extraction_confidence": "medium",
+          "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is a qualitative (detection) method study (TRANSIA PLATE Listeria vs ISO 11290-1). The main method comparison table (Table 5, page 12) presents 6 food/environmental categories, each with sub-types (a, b, c) that were summed into category 'Total' rows - I extracted only the category Total rows (not the sub-type rows a/b/c, nor the final 'All categories' grand total row, per instructions). The report also contains a separate Inter-Laboratory Study (section 3.2) with its own sensitivity/relative trueness/FPR calculations (Table 26, page 29) for a single collaborative-study level (Level 1) - this is a different study variant (10-lab reproducibility study, not broken down by food category) and was not included in the main category table. Numeric values use comma as decimal separator in the original document; converted to standard decimal notation here.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
           "organism_page_last_updated_raw": "19 août 2026"
@@ -26457,8 +26687,10 @@
       "reference_method": "NF EN ISO 22964 (2017)",
       "status": "active",
       "current_expiry": "2027-12-03",
-      "tested_categories": [],
-      "has_performance_data": false,
+      "tested_categories": [
+        "Infant formula and infant cereals"
+      ],
+      "has_performance_data": true,
       "links": {
         "summary_report_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°20_SureTect_Crono-2023_10-SR-v0-protected.pdf",
         "summary_report_is_direct": true,
@@ -26518,13 +26750,70 @@
           "current_expiry": "2027-12-03",
           "status": "active"
         },
-        "performance": null,
+        "performance": {
+          "method_nature": "qualitative",
+          "qualitative": {
+            "method_comparison_by_category": [
+              {
+                "category": "Infant formula without probiotics (PIF10a)",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 100.0,
+                "relative_trueness_pct": 100.0,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Infant formula with probiotics (PIF10b)",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 93.3,
+                "relative_trueness_pct": 97.1,
+                "false_positive_ratio_alternative_pct": 10.5
+              },
+              {
+                "category": "Process and cleaning waters (ENVa)",
+                "sensitivity_alternative_pct": 100.0,
+                "sensitivity_reference_pct": 85.7,
+                "relative_trueness_pct": 95.0,
+                "false_positive_ratio_alternative_pct": 7.7
+              },
+              {
+                "category": "Dusts and wastes (ENVb)",
+                "sensitivity_alternative_pct": 87.5,
+                "sensitivity_reference_pct": 87.5,
+                "relative_trueness_pct": 90.0,
+                "false_positive_ratio_alternative_pct": 0.0
+              },
+              {
+                "category": "Wipe, sponges, swabs (ENVc)",
+                "sensitivity_alternative_pct": 87.5,
+                "sensitivity_reference_pct": 87.5,
+                "relative_trueness_pct": 86.2,
+                "false_positive_ratio_alternative_pct": 15.4
+              },
+              {
+                "category": "Infant formula without probiotics (PIF300a)",
+                "sensitivity_alternative_pct": 81.0,
+                "sensitivity_reference_pct": 71.4,
+                "relative_trueness_pct": 77.8,
+                "false_positive_ratio_alternative_pct": 4.2
+              },
+              {
+                "category": "Infant formula with probiotics (PIF300b)",
+                "sensitivity_alternative_pct": 93.8,
+                "sensitivity_reference_pct": 81.3,
+                "relative_trueness_pct": 87.5,
+                "false_positive_ratio_alternative_pct": 12.5
+              }
+            ],
+            "inclusivity": {},
+            "exclusivity": {}
+          }
+        },
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
           "extraction_date": null,
-          "extraction_confidence": "high",
-          "notes": null,
+          "extraction_confidence": "medium",
+          "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers multiple studies (initial 2016/2018/2021 validation across PikoReal, 7500 Fast, and Quant Studio 5 thermal cyclers, plus a 2023 extension study adding PIF375 category and re-testing PIF375/ENV). I selected Table 8 (PikoReal thermal cycler, the primary/first-presented instrument in the initial validation study, categories PIF10 and ENV and PIF300) as the canonical/primary category-level dataset, since it is the first table presented with per-category (sub-type a/b/c) breakdowns and excludes the PIF375 category which only appears with 7500 Fast/QS5 instruments in Tables 9/10 and in the 2023 extension (Tables 43/44). Other tables (9, 10, 43, 44) present the same/similar categories but tested on different thermal cyclers (7500 Fast, Quant Studio 5) or in the later 2023 extension study with renamed ENV sub-categories (Dusts and Residues, Cleaning and Process Waters, Surface samples) and PIF375 sub-categories (with probiotics, w/o probiotics, ingredients) -- these were not included to avoid duplicating/conflating categories across different instrument variants and study phases. 'Total' rows for each category (e.g. PIF10 Total, ENV Total, PIF300 Total) and 'All categories' grand totals were excluded per instructions. No explicit Acceptability Limit percentage for sensitivity/RT/FPR was stated in the excerpted text (AL values shown elsewhere in the doc, e.g. 1.5/2.5, refer to RLOD acceptability limits, not to the method-comparison qualitative table), hence no acceptability_limit_log field applies to qualitative studies.",
           "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-11-12-15-fr.docx_.pdf",
           "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°20_SureTect_Crono-2023_10-SR-v0-protected.pdf",
           "organism_page_last_updated_raw": "16 juillet 2026"
