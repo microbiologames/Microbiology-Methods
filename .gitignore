@@ -12,5 +12,8 @@ debug/
 # Cloudflare Worker (chat proxy)
 worker/node_modules/
 worker/.wrangler/
-worker/package-lock.json
 worker/.dev.vars
+# package-lock.json is deliberately NOT ignored: Cloudflare's Git build runs
+# `npm ci` from it, so committing it is what pins wrangler and makes a build
+# reproducible. Without it the build resolves ^ ranges afresh every time and
+# a bad upstream release breaks a deploy that changed nothing here.
