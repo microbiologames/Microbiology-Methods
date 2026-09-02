@@ -71,6 +71,7 @@ import argparse
 import base64
 import io
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -378,6 +379,23 @@ def _read_pdf_bytes_decrypted(pdf_path: Path, max_pages: int = MAX_PAGES_SENT):
     return buf.getvalue(), pages, total
 
 
+
+def make_client() -> anthropic.Anthropic:
+    """The API client, with the workspace header when the key needs one.
+
+    An identity-linked API key must name the workspace it acts in or the
+    API answers 400 "anthropic-workspace-id is required". This project's
+    key is one: the Cloudflare chat proxy hit exactly that and needed the
+    same header. Ordinary keys must NOT send it, so it goes out only when
+    ANTHROPIC_WORKSPACE_ID is set -- which keeps this working with either
+    kind of key, and keeps an account identifier out of the repository.
+    """
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip()
+    if workspace:
+        return anthropic.Anthropic(default_headers={"anthropic-workspace-id": workspace})
+    return anthropic.Anthropic()
+
+
 def build_request_params(pdf_path: Path, max_pages: int = MAX_PAGES_SENT) -> dict:
     """The body of one mining request, with no API call made.
 
@@ -492,7 +510,7 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
     price, see backfill_llm_performance.py --batch, which sends the same
     request through the Batch API.
     """
-    client = client or anthropic.Anthropic()
+    client = client or make_client()
     response = client.messages.create(**build_request_params(pdf_path, max_pages))
     return parse_response(response, pdf_path.name)
 

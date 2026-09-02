@@ -43,7 +43,7 @@ from anthropic.types.message_create_params import MessageCreateParamsNonStreamin
 from anthropic.types.messages.batch_create_params import Request
 
 from llm_report_miner import (
-    MAX_PAGES_SENT, build_request_params, mine_with_llm, parse_response,
+    MAX_PAGES_SENT, build_request_params, make_client, mine_with_llm, parse_response,
 )
 
 
@@ -182,11 +182,31 @@ def wait_for_batch(client, batch_id: str, poll_seconds: int, max_wait_seconds: i
         waited += poll_seconds
 
 
+# Batch pricing is 50% of standard. Sonnet 5 standard is $2/$10 per MTok
+# (claude-api skill, cached 2026-06-24), so batched it is $1/$5. Hard-coded
+# on purpose: this is a reporting figure for the run log, and a wrong number
+# in a log is better than a silent failure fetching a price list mid-run.
+_BATCH_USD_PER_MTOK_IN = 1.00
+_BATCH_USD_PER_MTOK_OUT = 5.00
+
+
 def run_batch(client, batch_id: str, index: dict, validator) -> dict:
     """Apply a finished batch's results. Results arrive in any order, so
-    every one is matched back by custom_id, never by position."""
-    counts = {"written": 0, "no_data": 0, "invalid": 0, "failed": 0}
+    every one is matched back by custom_id, never by position.
+
+    Also totals the tokens actually billed. The whole point of running a
+    small pilot batch is to replace an estimate with a measurement, and
+    usage is only available here, per result -- there is no after-the-fact
+    way to attribute a batch's cost to this job.
+    """
+    counts = {"written": 0, "no_data": 0, "invalid": 0, "failed": 0,
+              "input_tokens": 0, "output_tokens": 0, "results": 0}
     for entry in client.messages.batches.results(batch_id):
+        counts["results"] += 1
+        usage = getattr(getattr(entry.result, "message", None), "usage", None)
+        if usage is not None:
+            counts["input_tokens"] += getattr(usage, "input_tokens", 0) or 0
+            counts["output_tokens"] += getattr(usage, "output_tokens", 0) or 0
         target = index.get(entry.custom_id)
         if target is None:
             print(f"[{entry.custom_id}] result for an unknown record, ignored", file=sys.stderr)
@@ -252,7 +272,7 @@ def main():
     mine_kwargs = {} if args.max_pages is None else {"max_pages": args.max_pages}
 
     if args.batch or args.batch_id:
-        client = anthropic.Anthropic()
+        client = make_client()
         batch_targets = targets[:args.limit]
 
         if args.batch_id:
@@ -280,9 +300,17 @@ def main():
 
         counts = run_batch(client, batch_id, index, validator)
         remaining = len(find_targets(methods_dir))
+        cost = (counts["input_tokens"] / 1e6 * _BATCH_USD_PER_MTOK_IN
+                + counts["output_tokens"] / 1e6 * _BATCH_USD_PER_MTOK_OUT)
+        n = max(counts["results"], 1)
         print(f"\n=== Batch {batch_id}: {counts['written']} written, "
               f"{counts['no_data']} returned no usable data, {counts['invalid']} schema-invalid, "
               f"{counts['failed']} errored; {remaining} record(s) still need backfilling ===",
+              file=sys.stderr)
+        print(f"=== MEASURED COST: {counts['input_tokens']:,} input + "
+              f"{counts['output_tokens']:,} output tokens over {counts['results']} result(s) "
+              f"= ${cost:.4f} (${cost / n:.4f} per report; "
+              f"${cost / n * remaining:.2f} to finish the remaining {remaining}) ===",
               file=sys.stderr)
         return
 

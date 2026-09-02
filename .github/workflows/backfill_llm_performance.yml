@@ -21,8 +21,15 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Max records to backfill this run (one paid API call each)"
-        default: "25"
+        description: "Max records to backfill this run"
+        default: "10"
+        required: false
+      batch:
+        description: "Use the Message Batches API (half price, asynchronous)"
+        type: boolean
+        default: true
+      batch_id:
+        description: "Resume: collect an existing batch instead of submitting a new one"
         required: false
 
 permissions:
@@ -42,15 +49,44 @@ jobs:
       - name: Install dependencies
         run: pip install anthropic pypdf cryptography jsonschema
 
+      # Before spending anything: the page-selection and batch-matching
+      # logic runs offline, and a regression in either would corrupt this
+      # run's data or its cost. Cheaper to fail here than after submission.
+      - name: Check the offline tests first
+        run: |
+          python3 tests/test_page_selection.py
+          python3 tests/test_batch_path.py
+
       - name: Run backfill
+        timeout-minutes: 90
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
         run: |
           cd scrapers
+          ARGS=""
+          if [ -n "${{ github.event.inputs.batch_id }}" ]; then
+            ARGS="--batch-id ${{ github.event.inputs.batch_id }}"
+          elif [ "${{ github.event.inputs.batch }}" = "true" ]; then
+            ARGS="--batch"
+          fi
           python3 backfill_llm_performance.py \
             --methods-dir ../data/methods \
             --schema ../schema/method.schema.json \
-            --limit "${{ github.event.inputs.limit }}"
+            --limit "${{ github.event.inputs.limit }}" \
+            $ARGS
+
+      # A batch is paid for at submission. If anything after this point
+      # fails, the id is what turns "we lost it" into "re-run with
+      # batch_id" -- so it is uploaded even when the job failed.
+      - name: Save the batch id (a paid batch must not be lost to a failed job)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-id
+          path: scrapers/last_batch_id.txt
+          if-no-files-found: ignore
+          retention-days: 30
 
       - name: Rebuild frontend data
         run: python3 pipeline/build_frontend_data.py
