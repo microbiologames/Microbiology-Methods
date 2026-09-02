@@ -59,7 +59,50 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 98.8,
+          "sensitivity_reference_pct": 98.8,
+          "relative_trueness_pct": 98.9,
+          "false_positive_ratio_alternative_pct": 1.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 1.2
+        },
+        {
+          "category": "Seafood products",
+          "sensitivity_alternative_pct": 97.8,
+          "sensitivity_reference_pct": 97.8,
+          "relative_trueness_pct": 98.6,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 93.5,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.4,
+          "false_positive_ratio_alternative_pct": 1.1
+        },
+        {
+          "category": "Composite foods",
+          "sensitivity_alternative_pct": 97.8,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 99.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -68,8 +111,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers two protocols (① paired study, same enrichment; ② unpaired study, different enrichment) and, within protocol ①, two readings (22h and 48h). I selected Table 8 (Protocol ①, Reading 22h) as the primary/canonical method-comparison table since it is the first and most complete category breakdown (799 samples, all six ISO 16140-2 categories) and reading 22h is the standard alternative-method reading time. Protocol ① Reading 48h results (Table 9) and Protocol ② Reading 22h+48h results (Table 10), plus the combined summary (Table 11), are alternative variants not included here. The interlaboratory study (section 3.3, Tables 30-32) gives an overall SE/RT/FPR of 100% but is not broken down by food category, so it was not used. Total/aggregate rows for each table (e.g., 'Total protocol ① 22h') were excluded per instructions, as were 'Total Meat products' etc. subtotal rows, since only the individual type-level rows within each category are aggregated into the category itself in the source table (M1/M2/M3 rolled into 'Total Meat products' which is the category-level entry used here).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/AES-10-03-09-00_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/Aloa_One_day_mono_Summary_Report_V0_06_2024.pdf",
     "organism_page_last_updated_raw": "21 juillet 2026"

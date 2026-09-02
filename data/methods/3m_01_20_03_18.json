@@ -48,7 +48,43 @@
   "performance": {
     "method_nature": "qualitative",
     "qualitative": {
-      "method_comparison_by_category": [],
+      "method_comparison_by_category": [
+        {
+          "category": "Infant formula and infant cereals without probiotics including ingredients",
+          "sensitivity_alternative_pct": 97.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.5,
+          "false_positive_ratio_alternative_pct": 3.1
+        },
+        {
+          "category": "Infant formula and infant cereals without probiotics including ingredients (300g, Specific protocol 1)",
+          "sensitivity_alternative_pct": 86.7,
+          "sensitivity_reference_pct": 66.7,
+          "relative_trueness_pct": 76.3,
+          "false_positive_ratio_alternative_pct": 3.1
+        },
+        {
+          "category": "Infant formula and infant cereals with probiotics including ingredients",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Infant formula and infant cereals with probiotics including ingredients (300g, Specific protocol 2)",
+          "sensitivity_alternative_pct": 82.8,
+          "sensitivity_reference_pct": 89.7,
+          "relative_trueness_pct": 86.4,
+          "false_positive_ratio_alternative_pct": 3.3
+        },
+        {
+          "category": "Production environmental samples",
+          "sensitivity_alternative_pct": 91.2,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 95.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
       "inclusivity": {},
       "exclusivity": {}
     }
@@ -57,8 +93,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: The report structures the sensitivity study by 3 main categories (❶ Infant formula/cereals without probiotics, ❷ Infant formula/cereals with probiotics, ❸ Production environmental samples), each tested with a 'General protocol' (10g, paired design) and, for categories 1 and 2, also with a 300g 'Specific protocol' (unpaired design, Specific 1 for category 1, Specific 2 for category 2). I recorded both the General (10g) and Specific (300g) results for categories 1 and 2 as separate category entries since they represent genuinely different test portions/protocols with distinct performance values, and the environmental samples category (only General protocol, 10g/device). Row-level sub-splits (e.g. 'Infant formula' vs 'Infant cereals' vs 'Non probiotic ingredients' sub-types within category 1) were not recorded individually as they are sub-types within a category, not separate ISO 16140-2 categories; only the category-level Totals were used. Summary/aggregate rows ('General protocol' totals across categories, 'Specific protocol 1' and 'Specific protocol 2' totals across categories 1&2 combined, and 'All categories') were excluded as instructed. The interlaboratory study (Table 25/26) reports a separate overall SEalt/SEref/RT/FPR (97.3%/100%/98.6%/1.0%) not broken down by category, so it was not included in the per-category table. No quantitative/enumeration data present since this is a qualitative detection method (LOD/RLOD tables exist but pertain to detection level studies, not a quantitative relative trueness/bias table).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/3M-01-20-03-18-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/MDA2_Cronobacter_2026_02_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "16 juillet 2026"

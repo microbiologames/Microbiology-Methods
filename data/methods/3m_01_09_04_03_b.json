@@ -47,13 +47,74 @@
     "current_expiry": "2027-04-02",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "quantitative",
+    "quantitative": {
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": -0.08,
+          "sd_log": 0.2,
+          "n_samples": 24,
+          "lower_limit_95": -0.51,
+          "upper_limit_95": 0.35
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": -0.15,
+          "sd_log": 0.35,
+          "n_samples": 21,
+          "lower_limit_95": -0.91,
+          "upper_limit_95": 0.6
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": 0.12,
+          "sd_log": 0.28,
+          "n_samples": 16,
+          "lower_limit_95": -0.51,
+          "upper_limit_95": 0.74
+        },
+        {
+          "category": "Vegetal products",
+          "bias_log": -0.09,
+          "sd_log": 0.15,
+          "n_samples": 17,
+          "lower_limit_95": -0.41,
+          "upper_limit_95": 0.24
+        },
+        {
+          "category": "Pastries & egg products",
+          "bias_log": -0.07,
+          "sd_log": 0.37,
+          "n_samples": 16,
+          "lower_limit_95": -0.89,
+          "upper_limit_95": 0.75
+        },
+        {
+          "category": "Pet food",
+          "bias_log": -0.27,
+          "sd_log": 0.22,
+          "n_samples": 17,
+          "lower_limit_95": -0.76,
+          "upper_limit_95": 0.22
+        }
+      ],
+      "accuracy_profile": {
+        "acceptability_limit_log": 0.5,
+        "by_matrix": []
+      },
+      "loq_log": null,
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/staphylocoques-coagulase-positive/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report contains multiple studies: (1) an initial validation study (2 successive dilutions) with its own relative trueness table (per-category numeric SD/bias/CI not fully visible in extracted pages, only a narrative summary of out-of-limit samples was found on p.16), (2) an interlaboratory study with pooled accuracy-profile data by contamination level (not by category), and (3) an extension study using 'one plate and one dilution' interpretation (2025) whose per-category relative trueness table (Table 17, p.37) was fully visible and is the one recorded here, since it is the most complete and explicit per-category quantitative table found with n, SD, bias, LCL, UCL. A parallel 'Two Plates' column with nearly identical results (from the initial validation study) was also present in Table 17 but omitted here to avoid duplication - those values were: Meat 0.22/-0.09/-0.54/0.36; Dairy 0.35/-0.12/-0.86/0.62; Seafood 0.16/0.02/-0.32/0.36; Vegetal 0.12/-0.08/-0.34/0.18; Pastries&egg 0.38/-0.04/-0.86/0.78; Pet food 0.23/-0.26/-0.76/0.24. A third extension study using the Petrifilm Plate Reader Advanced (PPRA) also exists (section 8) but its per-category numeric table was not captured in the provided pages. The Acceptability Limit of ±0.5 log was explicitly stated multiple times (e.g. accuracy profile studies, interlaboratory study) and applied consistently across all study variants.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-09-04-03-B_fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025-10_Petrifilm_StaphExpress_vs_BPRPFB-SR_2025_v0-protected.pdf",
     "organism_page_last_updated_raw": "29 juin 2026"

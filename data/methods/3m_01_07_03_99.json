@@ -52,7 +52,48 @@
   "performance": {
     "method_nature": "quantitative",
     "quantitative": {
-      "relative_trueness_by_category": [],
+      "relative_trueness_by_category": [
+        {
+          "category": "Meat products",
+          "bias_log": 0.35,
+          "sd_log": 0.59,
+          "n_samples": 31,
+          "lower_limit_95": -0.87,
+          "upper_limit_95": 1.58
+        },
+        {
+          "category": "Dairy products",
+          "bias_log": 0.19,
+          "sd_log": 0.42,
+          "n_samples": 16,
+          "lower_limit_95": -0.73,
+          "upper_limit_95": 1.12
+        },
+        {
+          "category": "Seafood products",
+          "bias_log": -0.04,
+          "sd_log": 0.55,
+          "n_samples": 15,
+          "lower_limit_95": -1.25,
+          "upper_limit_95": 1.17
+        },
+        {
+          "category": "Egg products and pastries",
+          "bias_log": 0.22,
+          "sd_log": 0.58,
+          "n_samples": 27,
+          "lower_limit_95": -1.0,
+          "upper_limit_95": 1.43
+        },
+        {
+          "category": "Vegetables",
+          "bias_log": 0.22,
+          "sd_log": 0.47,
+          "n_samples": 20,
+          "lower_limit_95": -0.78,
+          "upper_limit_95": 1.22
+        }
+      ],
       "accuracy_profile": {
         "acceptability_limit_log": 0.5,
         "by_matrix": []
@@ -66,8 +107,8 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments.",
+    "extraction_confidence": "medium",
+    "notes": "Mined from the summary validation report PDF. relative_trueness_by_category (quantitative) and method_comparison_by_category (qualitative) are extracted from the report's per-category results table via its structural cell grid (pdfplumber), not by matching the table header's exact wording -- confirmed necessary since real reports from different expert laboratories phrase that header differently. accuracy_profile.by_matrix names each matrix by its ISO 16140-2 food CATEGORY (e.g. 'Dairy products'), not the specific product tested (e.g. 'Milk') -- an earlier version tried the more specific product name from the accuracy-profile chart captions, but checking a rendered page image against the extracted text showed that caption sequence can be reordered relative to the SD-repeatability table sequence even on the same page (a chart is a separate drawn object from its table), which silently mispaired two matrices. Category order was checked the same way and does hold, so that's the safe anchor used instead; the extractor refuses to pair values at all (returns []) if the category count and SD-repeatability-line count disagree. samples_out_of_beta_eti is left empty for every matrix: the outside-the-limit narrative names specific products, and mapping those back to the right category isn't safely extractable, so leaving it empty beats a guessed attribution -- see the report itself for that detail. loq_log is NOT mined -- its source table's cell values did not extract as real numbers at all (came back as literal zeros), a clear sign the table structure defeats plain-text extraction; left null rather than record that placeholder. Inclusivity/exclusivity narrative parsing has only been tested against one report (TEMPO EB) and its exact wording -- other reports may need pattern adjustments. Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Certificate number taken from cover page (3M 01/07 - 03/99). Method is quantitative (enumeration of coliforms). The relative trueness table is from Appendix 5, page 42, using the 'Category' summary rows (1-5) mapped to their food category names as listed in Appendix 5 raw data (Category 1 = Meat products, Category 2 = Dairy products, Category 3 = Seafood products, Category 4 = Egg products and pastries, Category 5 = Vegetables/other - inferred from product lists e.g. flour, spices, herbs which likely correspond to a broader category such as 'Dried products/Miscellaneous' but exact printed category name for category 5 was not explicitly given in the visible text; used 'Vegetables' as a best-guess label based on partial matches in Appendix 7 (accuracy profile) which lists 'Vegetables - RTC (Green peas)' as one of the tested categories, though category 5 in Appendix 5 raw data actually includes flour, spices, herbs, and frozen vegetables, suggesting it may be a combined 'Vegetables/Other' category. The 'All categories' summary row (n=109, bias 0.22, SD 0.54) was excluded per instructions as it is an aggregate, not a specific category. Acceptability Limit of ±0.5 log is stated explicitly in Appendix 7 figures (AL = +/- 0.5) as the standard, though some categories (seafood, vegetables) used an alternative AL of +/-4SDr per the accuracy profile figures on page 19 due to reference method repeatability exceeding 0.125.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/3M-01-07-03-99_-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2014/05/Synt-3M-01-07-03-99_en.pdf",
     "organism_page_last_updated_raw": "19 mai 2026"
