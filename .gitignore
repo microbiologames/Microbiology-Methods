@@ -17,3 +17,7 @@ worker/.dev.vars
 # `npm ci` from it, so committing it is what pins wrangler and makes a build
 # reproducible. Without it the build resolves ^ ranges afresh every time and
 # a bad upstream release breaks a deploy that changed nothing here.
+
+# Written by backfill_llm_performance.py --batch before it starts polling,
+# so a crashed poll cannot lose a batch that is already paid for.
+scrapers/last_batch_id.txt

@@ -378,39 +378,52 @@ def _read_pdf_bytes_decrypted(pdf_path: Path, max_pages: int = MAX_PAGES_SENT):
     return buf.getvalue(), pages, total
 
 
-def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
-                  max_pages: int = MAX_PAGES_SENT) -> dict:
-    """Extract cover metadata + per-category performance data directly from
-    the PDF via Claude, bypassing pdfplumber/pypdf entirely. Returns the same
-    shape as summary_report_parser.mine_performance()'s relevant fields, so
-    callers can treat the two interchangeably."""
-    client = client or anthropic.Anthropic()
+def build_request_params(pdf_path: Path, max_pages: int = MAX_PAGES_SENT) -> dict:
+    """The body of one mining request, with no API call made.
+
+    Split out from mine_with_llm so the synchronous path and the Batch path
+    send byte-identical requests. Having two copies of this dict would mean
+    the batch route could drift from the one that was actually calibrated --
+    disable_parallel_tool_use below is there because of a specific observed
+    failure, and it must not be the kind of detail that survives in only one
+    of two code paths.
+    """
     pdf_bytes, pages_sent, total_pages = _read_pdf_bytes_decrypted(pdf_path, max_pages)
     pdf_b64 = base64.standard_b64encode(pdf_bytes).decode("ascii")
     if len(pages_sent) < total_pages:
         print(f"  sending {len(pages_sent)}/{total_pages} pages: "
               f"{_format_pages(pages_sent)}", file=sys.stderr)
 
-    response = client.messages.create(
-        model=MODEL,
-        max_tokens=4096,
-        tools=[RECORD_PERFORMANCE_TOOL],
+    return {
+        "model": MODEL,
+        "max_tokens": 4096,
+        "tools": [RECORD_PERFORMANCE_TOOL],
         # disable_parallel_tool_use: without it, a first real calibration run
         # showed Claude sometimes emits a throwaway first tool_use block
         # (literally {"extraction_notes": "Placeholder call; will correct in
         # next call."}, all other fields empty) before a real, corrected one
         # in the same response -- taking response.content's FIRST tool_use
         # block picked up that placeholder instead of the real extraction.
-        tool_choice={"type": "tool", "name": "record_performance_data", "disable_parallel_tool_use": True},
-        messages=[{
+        "tool_choice": {"type": "tool", "name": "record_performance_data",
+                        "disable_parallel_tool_use": True},
+        "messages": [{
             "role": "user",
             "content": [
-                {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": pdf_b64}},
+                {"type": "document",
+                 "source": {"type": "base64", "media_type": "application/pdf", "data": pdf_b64}},
                 {"type": "text", "text": PROMPT},
             ],
         }],
-    )
+    }
 
+
+def parse_response(response, pdf_label: str = "report") -> dict:
+    """Turn one API response into the project's mined-record shape.
+
+    Also split out for the Batch path: a batch result carries the same
+    Message object as a synchronous call, so everything after the request is
+    identical and should not be written twice.
+    """
     # Defense in depth alongside disable_parallel_tool_use above: use the
     # LAST tool_use block, not the first, in case a self-correction slips
     # through anyway.
@@ -426,7 +439,7 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
     # runs regardless -- an instruction is not a guarantee, and an aggregate
     # row silently becoming a fake food category is exactly the kind of
     # error that would be hard to spot once it reached the frontend.
-    cert_label = result.get("certificate_number") or pdf_path.name
+    cert_label = result.get("certificate_number") or pdf_label
     performance = None
     if result["method_nature"] == "quantitative" and result["quantitative"]:
         performance = {
@@ -466,6 +479,22 @@ def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
             + (f"Model's own extraction notes: {result['extraction_notes']}" if result["extraction_notes"] else "")
         ).strip(),
     }
+
+
+def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
+                  max_pages: int = MAX_PAGES_SENT) -> dict:
+    """Extract cover metadata + per-category performance data directly from
+    the PDF via Claude, bypassing pdfplumber/pypdf entirely. Returns the same
+    shape as summary_report_parser.mine_performance()'s relevant fields, so
+    callers can treat the two interchangeably.
+
+    One synchronous call. For the whole backlog at once, and at half the
+    price, see backfill_llm_performance.py --batch, which sends the same
+    request through the Batch API.
+    """
+    client = client or anthropic.Anthropic()
+    response = client.messages.create(**build_request_params(pdf_path, max_pages))
+    return parse_response(response, pdf_path.name)
 
 
 def main():
