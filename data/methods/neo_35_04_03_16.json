@@ -44,13 +44,63 @@
     "current_expiry": "2028-03-17",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods",
+          "sensitivity_alternative_pct": 81.1,
+          "sensitivity_reference_pct": 78.4,
+          "relative_trueness_pct": 84.5,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 74.3,
+          "sensitivity_reference_pct": 82.9,
+          "relative_trueness_pct": 81.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Milk & Dairy products",
+          "sensitivity_alternative_pct": 82.4,
+          "sensitivity_reference_pct": 88.2,
+          "relative_trueness_pct": 88.4,
+          "false_positive_ratio_alternative_pct": 1.9
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 81.1,
+          "sensitivity_reference_pct": 78.4,
+          "relative_trueness_pct": 84.4,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Fish and seafood",
+          "sensitivity_alternative_pct": 87.5,
+          "sensitivity_reference_pct": 77.1,
+          "relative_trueness_pct": 82.3,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Environmental samples",
+          "sensitivity_alternative_pct": 77.4,
+          "sensitivity_reference_pct": 80.6,
+          "relative_trueness_pct": 84.5,
+          "false_positive_ratio_alternative_pct": 0.0
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Data taken from Table 5 (page 6), which presents per-category totals (rows labeled 'Total' under each of the 6 categories: Composite foods, Meat products, Milk & Dairy products, Vegetables, Fish and seafood, Environmental samples). Sub-category rows (a, b, c) within each category were omitted per instructions, keeping only the category-level 'Total' rows. The overall 'Total' row (137/320/43/42...) aggregating all 6 categories was excluded as it is a grand total, not a category. Note: this report also contains a separate Interlaboratory study (section 4) with its own sensitivity/AC/FP values (SEalt=87%, SEref=89%, AC=77%, FP=33%) and RLOD/LOD tables (Tables 17-18, 30) with an Acceptability Limit of 2.5 log-equivalent RLOD units; these belong to a different study component (interlaboratory/RLOD) and were not included in the per-category method-comparison table above, as requested only the primary method comparison study table (Table 5/6) was recorded.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/NEO-35-04-03-16-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°04_ANSR_Lmono_2023_12_SR_v0-protected.pdf",
     "organism_page_last_updated_raw": "25 août 2026"

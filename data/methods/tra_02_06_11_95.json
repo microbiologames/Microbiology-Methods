@@ -50,13 +50,63 @@
     "current_expiry": "2027-11-21",
     "status": "active"
   },
-  "performance": null,
+  "performance": {
+    "method_nature": "qualitative",
+    "qualitative": {
+      "method_comparison_by_category": [
+        {
+          "category": "Composite foods",
+          "sensitivity_alternative_pct": 94.4,
+          "sensitivity_reference_pct": 97.2,
+          "relative_trueness_pct": 95.6,
+          "false_positive_ratio_alternative_pct": 3.1
+        },
+        {
+          "category": "Meat products",
+          "sensitivity_alternative_pct": 94.9,
+          "sensitivity_reference_pct": 97.4,
+          "relative_trueness_pct": 95.9,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Dairy products",
+          "sensitivity_alternative_pct": 90.6,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 95.7,
+          "false_positive_ratio_alternative_pct": 2.7
+        },
+        {
+          "category": "Fishery products",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 0.0
+        },
+        {
+          "category": "Vegetables",
+          "sensitivity_alternative_pct": 100.0,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 100.0,
+          "false_positive_ratio_alternative_pct": 9.8
+        },
+        {
+          "category": "Production environmental samples",
+          "sensitivity_alternative_pct": 96.9,
+          "sensitivity_reference_pct": 100.0,
+          "relative_trueness_pct": 98.6,
+          "false_positive_ratio_alternative_pct": 2.5
+        }
+      ],
+      "inclusivity": {},
+      "exclusivity": {}
+    }
+  },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "high",
-    "notes": null,
+    "extraction_confidence": "medium",
+    "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is a qualitative (detection) method study (TRANSIA PLATE Listeria vs ISO 11290-1). The main method comparison table (Table 5, page 12) presents 6 food/environmental categories, each with sub-types (a, b, c) that were summed into category 'Total' rows - I extracted only the category Total rows (not the sub-type rows a/b/c, nor the final 'All categories' grand total row, per instructions). The report also contains a separate Inter-Laboratory Study (section 3.2) with its own sensitivity/relative trueness/FPR calculations (Table 26, page 29) for a single collaborative-study level (Level 1) - this is a different study variant (10-lab reproducibility study, not broken down by food category) and was not included in the main category table. Numeric values use comma as decimal separator in the original document; converted to standard decimal notation here.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
     "organism_page_last_updated_raw": "19 août 2026"
