@@ -234,7 +234,110 @@ def _drop_aggregate_rows(rows: list, cert_label: str) -> list:
     return kept
 
 
-def _read_pdf_bytes_decrypted(pdf_path: Path) -> bytes:
+# --- Page selection -------------------------------------------------------
+#
+# A native-PDF request is billed for each page's text AND a rendered image of
+# that page -- roughly 2,000-2,500 tokens per page. These reports run to
+# 96-102 pages, so sending the whole document cost about $0.40 a report and
+# is the single reason the first backfill batch spent ~$25 without clearing
+# the backlog. The answer lives on three or four pages.
+#
+# Selection is free (pypdf text extraction) and deliberately conservative:
+# the model still sees whole pages, so nothing about the extraction task
+# changes -- only how many pages it is handed.
+
+MAX_PAGES_SENT = 14
+
+# Scored, not grepped. diagnose_llm_failures.py's flat keyword regex was
+# written to answer "where might the table be?" for a human reading a log,
+# and "categor" alone matches most of a report -- fine for that job, useless
+# as a page filter. These are separate signal classes so a page has to show
+# more than one KIND of evidence to score well.
+_PAGE_SIGNALS = [
+    re.compile(r'relative trueness|justesse relative', re.I),
+    re.compile(r'accuracy profile|profil d.exactitude', re.I),
+    re.compile(r'acceptability limit|limite d.acceptabilit', re.I),
+    re.compile(r'sensitivity|specificity|false positive|sensibilit', re.I),
+    re.compile(r'\bbias\b|\bbiais\b|standard deviation|ecart[- ]type', re.I),
+    re.compile(r'method comparison|comparaison des m[ée]thodes', re.I),
+    re.compile(r'\bLOD\b|\bRLOD\b|detection limit', re.I),
+]
+
+# A results table is mostly numbers. This separates the table itself from the
+# prose paragraph that introduces it three pages earlier.
+_NUMERIC_RE = re.compile(r'-?\d+[.,]\d+')
+
+
+def _score_page(text: str) -> int:
+    if not text:
+        return 0
+    signals = sum(bool(rx.search(text)) for rx in _PAGE_SIGNALS)
+    if not signals:
+        return 0
+    numbers = len(_NUMERIC_RE.findall(text))
+    # Decimal numbers are the strongest single tell, but capped so one dense
+    # statistical annex cannot outrank every real table in the document.
+    return signals * 2 + min(numbers // 5, 6)
+
+
+def select_pages(reader: "pypdf.PdfReader", max_pages: int = MAX_PAGES_SENT) -> list:
+    """Page indices worth sending, always including the cover.
+
+    Page 0 is unconditional: the prompt's first question is the certificate
+    number, which is printed on the cover and nowhere near the tables.
+
+    Each selected page pulls in the one after it. Real tables in these
+    reports routinely break across a page boundary, and the continuation
+    page is often just numeric rows with no heading -- it scores near zero on
+    its own while carrying half the categories.
+
+    Returns every page when the document is already small enough, and when
+    nothing scores at all: a report we cannot locate tables in is exactly the
+    one where guessing a subset would turn a hard extraction into an
+    impossible one.
+    """
+    n = len(reader.pages)
+    if n <= max_pages:
+        return list(range(n))
+
+    scored = []
+    for i, page in enumerate(reader.pages):
+        try:
+            score = _score_page(page.extract_text() or "")
+        except Exception:  # noqa: BLE001 -- one unparseable page must not lose the report
+            score = 0
+        if score:
+            scored.append((score, i))
+
+    if not scored:
+        return list(range(n))
+
+    keep = {0}
+    for _, i in sorted(scored, reverse=True):
+        if len(keep | {i, i + 1}) > max_pages:
+            continue
+        keep.add(i)
+        if i + 1 < n:
+            keep.add(i + 1)
+    return sorted(keep)
+
+
+def _format_pages(pages: list) -> str:
+    """1-indexed, collapsed to ranges -- "1, 44-47" reads; a list of 14
+    indices in a log line does not."""
+    if not pages:
+        return "none"
+    out, start, prev = [], pages[0], pages[0]
+    for i in pages[1:] + [None]:
+        if i == prev + 1:
+            prev = i
+            continue
+        out.append(str(start + 1) if start == prev else f"{start + 1}-{prev + 1}")
+        start = prev = i
+    return ", ".join(out)
+
+
+def _read_pdf_bytes_decrypted(pdf_path: Path, max_pages: int = MAX_PAGES_SENT):
     """Some real NF-Validation reports are permissions-encrypted (confirmed
     directly on a report named "..._B_SR_v0-protected.pdf": AES-256,
     print/copy/change all disabled) -- the same real-password-protection
@@ -247,27 +350,46 @@ def _read_pdf_bytes_decrypted(pdf_path: Path) -> bytes:
     the model was working from degraded/empty content, not a hard document,
     and improvised a placeholder rather than surfacing a clean error.
     Rewrites the decrypted pages into a fresh in-memory PDF so what's sent
-    to the API is always plain, unencrypted bytes -- a no-op (same bytes
-    back out) for the majority of reports that were never encrypted."""
+    to the API is always plain, unencrypted bytes.
+
+    Also drops the pages that cannot contain the answer -- see select_pages.
+    Returns (pdf_bytes, page_indices, total_pages) so the caller can record
+    what was actually sent: when an extraction comes back wrong, "we only
+    showed it pages 1, 44-47" is the first thing worth knowing, and without
+    it that is unrecoverable after the fact."""
     reader = pypdf.PdfReader(str(pdf_path))
-    if not reader.is_encrypted:
-        return pdf_path.read_bytes()
-    reader.decrypt("")
+    if reader.is_encrypted:
+        reader.decrypt("")
+
+    total = len(reader.pages)
+    pages = select_pages(reader, max_pages)
+
+    if not reader.is_encrypted and len(pages) == total:
+        # Nothing to strip and nothing to decrypt: send the file untouched
+        # rather than round-tripping it through pypdf, which is the one path
+        # that could alter bytes the API already handles correctly.
+        return pdf_path.read_bytes(), pages, total
+
     writer = pypdf.PdfWriter()
-    for page in reader.pages:
-        writer.add_page(page)
+    for i in pages:
+        writer.add_page(reader.pages[i])
     buf = io.BytesIO()
     writer.write(buf)
-    return buf.getvalue()
+    return buf.getvalue(), pages, total
 
 
-def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None) -> dict:
+def mine_with_llm(pdf_path: Path, client: anthropic.Anthropic | None = None,
+                  max_pages: int = MAX_PAGES_SENT) -> dict:
     """Extract cover metadata + per-category performance data directly from
     the PDF via Claude, bypassing pdfplumber/pypdf entirely. Returns the same
     shape as summary_report_parser.mine_performance()'s relevant fields, so
     callers can treat the two interchangeably."""
     client = client or anthropic.Anthropic()
-    pdf_b64 = base64.standard_b64encode(_read_pdf_bytes_decrypted(pdf_path)).decode("ascii")
+    pdf_bytes, pages_sent, total_pages = _read_pdf_bytes_decrypted(pdf_path, max_pages)
+    pdf_b64 = base64.standard_b64encode(pdf_bytes).decode("ascii")
+    if len(pages_sent) < total_pages:
+        print(f"  sending {len(pages_sent)}/{total_pages} pages: "
+              f"{_format_pages(pages_sent)}", file=sys.stderr)
 
     response = client.messages.create(
         model=MODEL,
