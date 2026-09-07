@@ -86,7 +86,7 @@
       "Campden BRI",
       "Eurofins",
       "Inovalys",
-      "Institut Pasteur de Lille",
+      "ISHA",
       "Microsept",
       "Q-lip"
     ],
@@ -245,7 +245,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4832",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -297,7 +297,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -400,7 +400,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4831",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -452,7 +452,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -553,7 +553,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF V08-060",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -605,7 +605,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1989-09-29",
@@ -706,7 +706,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 4832",
       "status": "unknown",
       "current_expiry": null,
@@ -758,7 +758,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": null,
@@ -1798,7 +1798,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-05-18",
@@ -1851,7 +1851,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-05-18",
@@ -1937,7 +1937,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-09-30",
@@ -1990,7 +1990,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-09-30",
@@ -2078,7 +2078,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2028-11-25",
@@ -2128,7 +2128,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-11-25",
@@ -2204,7 +2204,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 4833-1",
       "status": "active",
       "current_expiry": "2028-11-25",
@@ -2255,7 +2255,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-11-25",
@@ -2338,7 +2338,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2029-05-18",
@@ -2387,7 +2387,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2017-05-18",
@@ -2443,7 +2443,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF ISO 15214",
       "status": "active",
       "current_expiry": "2029-11-23",
@@ -2489,7 +2489,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2017-11-23",
@@ -2586,7 +2586,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 22964 (2017)",
       "status": "active",
       "current_expiry": "2030-03-22",
@@ -2635,7 +2635,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2018-03-22",
@@ -2983,7 +2983,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-12-01",
@@ -3034,7 +3034,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2011-12-01",
@@ -3259,7 +3260,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "enumeration",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2030-09-15",
@@ -3308,7 +3309,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2006-09-15",
@@ -4054,7 +4055,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-06-09",
@@ -4106,7 +4107,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "1994-04-06",
@@ -4660,7 +4661,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-09-18",
@@ -4712,7 +4713,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2002-09-18",
@@ -5099,7 +5100,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2029-09-20",
@@ -5152,7 +5153,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2005-09-20",
@@ -5395,7 +5396,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "Microsept",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2030-03-09",
@@ -5448,7 +5449,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "Microsept"
         },
         "certification": {
           "original_date": "2006-03-09",
@@ -6069,7 +6071,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2029-05-18",
@@ -6120,7 +6122,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2009-05-18",
@@ -7429,7 +7431,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-09-29",
@@ -7482,7 +7484,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2016-09-29",
@@ -7581,7 +7583,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Inovalys",
+      "expert_laboratory": "ISHA",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-11-24",
@@ -7634,7 +7636,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Inovalys"
+          "expert_laboratory": "ISHA"
         },
         "certification": {
           "original_date": "2016-11-24",
@@ -8423,7 +8425,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2027-12-04",
@@ -8470,7 +8472,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2007-12-04",
@@ -10109,7 +10112,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -10162,7 +10165,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2004-07-01",
@@ -10605,7 +10608,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2029-04-07",
@@ -10656,7 +10659,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2005-04-07",
@@ -10936,7 +10939,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-12-15",
@@ -10988,7 +10991,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2006-12-15",
@@ -11072,7 +11076,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-05-24",
@@ -11124,7 +11128,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2007-05-24",
@@ -11209,7 +11213,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2027-10-27",
@@ -11259,7 +11263,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2007-09-27",
@@ -11722,7 +11727,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 22964 (2017)",
       "status": "active",
       "current_expiry": "2028-05-10",
@@ -11770,7 +11775,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2012-05-10",
@@ -13360,7 +13365,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2027-11-28",
@@ -13409,7 +13414,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2019-11-28",
@@ -18687,13 +18693,13 @@
       "expert_laboratory": "Campden BRI",
       "reference_method": "",
       "status": "active",
-      "current_expiry": "2026-08-31",
+      "current_expiry": "2030-06-26",
       "tested_categories": [
         "Heat-processed milk and dairy products"
       ],
       "has_performance_data": false,
       "links": {
-        "summary_report_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/2021LR100_qualitative_study_summary_report_221022.pdf",
+        "summary_report_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/8580010001_N561__TC__2021LR100_-_Soleris_commercial_sterility_testing_vials_-_summary_report_V260805.pdf",
         "summary_report_is_direct": true,
         "certificate_url": null,
         "source_page_url": "https://nen.bettywebblocks.com/view-microval"
@@ -18740,17 +18746,17 @@
           "original_date": "2022-06-27",
           "renewal_dates": [],
           "extension_dates": [],
-          "current_expiry": "2026-08-31",
+          "current_expiry": "2030-06-26",
           "status": "active"
         },
         "performance": null,
         "traceability": {
           "source_document_type": "live_web_page",
           "source_document_url": "https://nen.bettywebblocks.com/view-microval",
-          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/2021LR100_qualitative_study_summary_report_221022.pdf",
+          "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/8580010001_N561__TC__2021LR100_-_Soleris_commercial_sterility_testing_vials_-_summary_report_V260805.pdf",
           "extraction_date": null,
           "extraction_confidence": "high",
-          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '31-08-2026'. Study report available for further mining."
+          "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '26-06-2030'. Study report available for further mining."
         }
       }
     },
@@ -21129,7 +21135,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "unknown",
       "current_expiry": null,
@@ -21180,7 +21186,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": null,
@@ -21248,7 +21254,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2029-05-23",
@@ -21294,7 +21300,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2013-05-23",
@@ -21383,7 +21389,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-01-28",
@@ -21436,7 +21442,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-01-28",
@@ -21524,7 +21530,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-03-17",
@@ -21576,7 +21582,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-03-17",
@@ -21662,7 +21669,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -21715,7 +21722,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-07-01",
@@ -21801,7 +21808,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2028-07-01",
@@ -21854,7 +21861,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2016-07-01",
@@ -21940,7 +21947,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Institut Pasteur de Lille",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2026-11-28",
@@ -21993,7 +22000,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Institut Pasteur de Lille"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2002-11-28",
@@ -24533,7 +24540,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 16654",
       "status": "active",
       "current_expiry": "2027-10-14",
@@ -24585,7 +24592,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2015-10-14",
@@ -24937,7 +24945,7 @@
       "method_category": "immunological_elisa",
       "method_category_label": "Immunological / ELISA",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 11290-1; NF EN ISO 11290-2",
       "status": "active",
       "current_expiry": "2027-10-23",
@@ -24989,7 +24997,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2023-10-23",
@@ -25356,7 +25365,7 @@
       "method_category": "molecular_pcr",
       "method_category_label": "Molecular (PCR / hybridisation)",
       "action": "detection",
-      "expert_laboratory": "Microsept",
+      "expert_laboratory": "ADRIA Développement",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2030-04-08",
@@ -25409,7 +25418,7 @@
           "study_type": "unknown",
           "number_of_labs": null,
           "number_of_samples": null,
-          "expert_laboratory": "Microsept"
+          "expert_laboratory": "ADRIA Développement"
         },
         "certification": {
           "original_date": "2009-01-26",
@@ -25941,7 +25950,7 @@
       "method_category": "culture_media",
       "method_category_label": "Culture media",
       "action": "detection",
-      "expert_laboratory": null,
+      "expert_laboratory": "Microsept",
       "reference_method": "NF EN ISO 6579-1 (2017); NF EN ISO 6579-1/A1 (2020)",
       "status": "active",
       "current_expiry": "2027-12-04",
@@ -25994,7 +26003,8 @@
           "protocol_standard": "EN ISO 16140-2:2016",
           "study_type": "unknown",
           "number_of_labs": null,
-          "number_of_samples": null
+          "number_of_samples": null,
+          "expert_laboratory": "Microsept"
         },
         "certification": {
           "original_date": "2007-12-04",
