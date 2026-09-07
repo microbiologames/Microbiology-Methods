@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Microsept"
   },
   "certification": {
     "original_date": "2007-12-04",
@@ -122,7 +123,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 27 (p.38, extension study 2020) presents results split by two study variants that share categories 1-8 but differ in the last category: variant with 'Cocoa and chocolate products 375g - pre-warmed UHT milk' (category 9) vs variant with 'Cocoa and chocolate products 375g - pre-warmed BPW' (category 10). Per instructions, only the primary/canonical variant (UHT milk, category 9) categories were recorded; the BPW variant (category 10: sensitivity_alt 92.2%, sensitivity_ref 84.3%, RT 85.2%, FPR 0.0%) was excluded as an alternative protocol variant. TOTAL rows combining all categories (both '...9' and '...10' totals) were excluded as aggregate summaries, not individual categories. This table appears to be from the 2020 extension study of the original 2007 validation; an earlier initial sensitivity study table (referenced in TOC section 3) was not included in the visible document pages, so only the extension study's category table (Table 27) could be extracted. Certificate number taken from cover page.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/UNI-03-06-12-07-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N%C2%B021_Salmonella_Precis_RSP_2023_11_v0-protected.pdf",

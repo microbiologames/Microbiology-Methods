@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2007-12-04",
@@ -110,7 +111,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Certificate number not found anywhere in the provided pages (cover page lacks an explicit certificate number like '3M 01/xx-xx/xx'; only accreditation number 1-0144 (Cofrac) is present, which is not the NF Validation certificate number). Per-category data taken from Tableau 4 (p.11), which is the main comparative study table (Total row per category used, excluding the overall grand-total row). The report also contains an inter-laboratory study (Tableau 23/24) with combined/pooled results (not per-category) which was not included since it is a separate collaborative-study summary, not the primary per-category method comparison table.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-04-12-07_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°25_SESAME-Salmonella-TEST-RAPPORT-DE-SYNTHESE-Version-0.pdf",
