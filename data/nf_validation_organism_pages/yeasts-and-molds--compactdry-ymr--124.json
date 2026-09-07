@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "CompactDry™ YMR",
+  "manufacturer": {
+    "name": "Shimadzu Diagnostics Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Yeasts and molds",
+    "raw": "Levures et Moisissures"
+  },
+  "reference_method": {
+    "standard": "NF ISO 21527-1; NF ISO 21527-2",
+    "raw": "Type de méthode : Dénombrement des levures et moisissures"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/levures-moisissures/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/SDC-42-05-03-25-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/CompactDry-YMR-SUMMARY-REPORT-Version-0.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "17 août 2026"
+}

@@ -32,7 +32,7 @@
     "study_type": "unknown",
     "number_of_labs": null,
     "number_of_samples": null,
-    "expert_laboratory": "Microsept"
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2009-01-26",
@@ -127,9 +127,9 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 6/7 (shorter incubation time results used as primary/canonical values) lists 10 numbered categories, but categories 8 (Milk powders, Infant formula and infant cereals 375g) and 9/10 (Cocoa and chocolate products 375g) each appear twice in the source table - once for 'shorter incubation time' and once for 'longer incubation time' protocol variants. I recorded only the shorter-incubation-time values as the canonical/primary study; the longer-incubation-time variant values for these same categories (SEalt 92.2%/93.3%/93.3%, SEref 92.8%/93.3%/93.3%, RT 93.0%/93.3%/93.3%, FPR 0.4%/0.0%/0.0% respectively) were omitted per instructions to avoid duplicate category entries. The overall 'Total (shorter incubation time)' and 'Total (longer incubation time)' rows (91.9/93.3/93.1/0.0 and 92.2/92.8/93.0/0.4) were excluded as aggregate summary rows, not individual food categories. Sub-category breakdowns (e.g., RTE, RTRH, Cured/smoked under 'RTE and RTRH') were also omitted in favor of the category-level Total rows, which represent the actual ISO 16140-2 category groupings (1-10) as printed in the report's category numbering column.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/TRA-02-12-01-09-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/2025_05_ASSURANCE_GDS_Salmonella_SR_v1-final-protected.pdf",

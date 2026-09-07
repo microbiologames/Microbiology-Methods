@@ -108,9 +108,9 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Values recorded are from Table 7 (page 20-21), using the primary/canonical protocol per category as designated in the report: categories 1-2,5-7 use 'BPW with ISO 6887 specific rules (if required), Without FDRS' totals (the paired protocol favored per ISO 6887 additive rules); category 2 (Milk and dairy) uses the 'BPW with ISO 6887 specific rules, Without FDRS' total (93.5/100.0/96.8/0.0) rather than the 'With FDRS' variant (identical values in this case) or the BPW-only variants (which gave lower values, e.g. 87.9/93.9/90.5/0.0 without FDRS, 90.9/93.9/92.1/0.0 with FDRS) -- these alternates are noted here for completeness. Category 3 (Multicomponent) and 4 (Fishery) only had 'BPW without ISO 6887 specific rules' protocol tested (no ISO 6887 variant existed for these), so their Total rows were used directly. Category 6 (Pet food/animal feed) used the 'BPW with ISO 6887 specific rules, Without FDRS' Total (100.0/100.0/100.0/4.2) rather than the BPW-only variant (91.2/91.2/92.4/4.4). Category 8 (Cocoa/chocolate) only had the 'BPW without ISO 6887 specific rules' protocol (analysis by Microsept, extension study 2025), so its Total row was used. Overall 'All categories' summary rows at bottom of Table 7 were excluded per instructions. No Acceptability Limit applies to qualitative studies (field left null in quantitative section, which itself is null since method is qualitative).",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-27-07-25-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/01/EZ-Check-Salmonella-SUMMARY-REPORT-Version-0.pdf",
