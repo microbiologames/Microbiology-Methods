@@ -40,16 +40,16 @@
     "original_date": "2022-06-27",
     "renewal_dates": [],
     "extension_dates": [],
-    "current_expiry": "2026-08-31",
+    "current_expiry": "2030-06-26",
     "status": "active"
   },
   "performance": null,
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval",
-    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/2021LR100_qualitative_study_summary_report_221022.pdf",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/37521/8580010001_N561__TC__2021LR100_-_Soleris_commercial_sterility_testing_vials_-_summary_report_V260805.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '31-08-2026'. Study report available for further mining."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '26-06-2030'. Study report available for further mining."
   }
 }
