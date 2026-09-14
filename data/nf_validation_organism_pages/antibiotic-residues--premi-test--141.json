@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Premi®Test",
+  "manufacturer": {
+    "name": "R-BIOPHARM AG",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "other"
+  },
+  "target_organism": {
+    "normalized": "Antibiotic residues",
+    "raw": "Antibiotiques"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": "Détection des résidus d’antibiotiques (dans les viandes porcine, bovine et de volaille, hors viande hachée)"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/antibiotiques/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/RBP-31-02-04-11_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/Dossier-reconduction-PREMI-TEST-2026-v2.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "21 juillet 2026"
+}
