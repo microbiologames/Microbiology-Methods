@@ -99,10 +99,10 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers two related certificates (BACGene Listeria Multiplex, EGS 38/05-03/17, and BACGene Listeria monocytogenes, EGS 38/03-01/17) and multiple study variants: (1) initial validation using ActeroTM Listeria Enrichment broth, tested on two thermocyclers (CFX96 and AriaMx) - Table 6.1 (CFX96) was used as the primary/canonical table for the 6 per-category rows recorded above; Table 6.2 (AriaMx) gave very similar but slightly different per-category values (e.g. All categories SE alt 81.1%, SE ref 74.9%, RT 79.3%, FPR 0.4%) and was not separately recorded. (2) A 2023 extension study using a new enrichment broth (BACGro ULTRA Listeria Broth, BULB), also tested on CFX96 Touch (Table 40) and AriaMx (Table 41), with All-categories summary RT 80.7% (CFX96) and 81.2% (AriaMx), FPR 1.3%/0.8% - these per-category values were not recorded since they represent an alternate/extension protocol variant, not the primary study. The RLOD/LOD acceptability limit for this qualitative method is 2.5 (unpaired study design), reported in the RLOD tables (Table 54) rather than as a bias/SD acceptability limit relevant to quantitative studies.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/EGS-38-03-01-17-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/02/BACGene_Listeria_Multiplex-Lmono-SUMMARY-REPORT-Version-0.pdf",
-    "organism_page_last_updated_raw": "25 août 2026"
+    "organism_page_last_updated_raw": "19 août 2026"
   }
 }
