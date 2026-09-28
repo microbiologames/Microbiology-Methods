@@ -3,7 +3,7 @@
   "certificate_number": "2017LR69",
   "commercial_name": "PeelPlate® EB ( Enterobacteriaceae )",
   "manufacturer_raw": "Charm Sciences, Inc.",
-  "expiry_date_raw": "12-12-2026",
+  "expiry_date_raw": "12-12-2030",
   "status_raw": "Valid",
   "source": "MICROVAL",
   "label": "view-microval",
@@ -13,6 +13,6 @@
   "reference_method_raw": "ISO 21528-1:2017, ISO 21528-2:2017",
   "first_approval_date_raw": "13-12-2018",
   "certificate_issued_by": "LRQA Nederland B.V.",
-  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/22587/2017LR69_PeelPlate_EB_-_Certiificate__2022_-_2026_.pdf",
-  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22587/Charm_EB_MicroVal_Renewal_V2_2022_final.pdf"
+  "certificate_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/7ec88453307c4ce7af6f9258f9645792/22587/certificate_2017LR69_renewal_2026.pdf",
+  "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/22587/N_596__TC__2017LR69_-_Peel_Plate_EB_-_Summary_report_V1__1_.pdf"
 }
