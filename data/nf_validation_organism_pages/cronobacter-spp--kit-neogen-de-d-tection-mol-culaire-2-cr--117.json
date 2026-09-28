@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Kit Neogen® de Détection Moléculaire 2 – Cronobacter",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "molecular_pcr"
+  },
+  "target_organism": {
+    "normalized": "Cronobacter spp.",
+    "raw": "Cronobacter spp. ( Enterobacter sakazakii )"
+  },
+  "reference_method": {
+    "standard": "NF EN ISO 22964 (2017)",
+    "raw": "Type de méthode : Détection des Cronobacter spp."
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/3M-01-20-03-18-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/MDA2_Cronobacter_2026_02_SR_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "16 juillet 2026"
+}
