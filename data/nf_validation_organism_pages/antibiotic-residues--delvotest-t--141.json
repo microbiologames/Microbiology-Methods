@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Delvotest® T",
+  "manufacturer": {
+    "name": "DSM Food Specialities",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "detection",
+    "category": "other"
+  },
+  "target_organism": {
+    "normalized": "Antibiotic residues",
+    "raw": "Antibiotiques"
+  },
+  "reference_method": {
+    "standard": null,
+    "raw": "Détection des résidus d’antibiotiques dans le lait de vache mélangé et individuel"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/antibiotiques/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/DSM-28-02-02-12-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/01/N°16_2023-12_Summary-report_DSM_DelvotestT.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "21 juillet 2026"
+}
