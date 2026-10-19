@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Microsept"
   },
   "certification": {
     "original_date": "2006-03-09",
@@ -119,7 +120,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp-et-listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers two detection targets (Listeria spp via Table 7 and Listeria monocytogenes via Table 15), each with its own per-category comparison table and near-identical category structure. I recorded the category-level values from Table 7 (Detection of Listeria spp, section 3.1.3.3) as the primary/canonical study since it is presented first. The corresponding table for Listeria monocytogenes (Table 15, section 3.1.4.3) gives similar categories with different values (e.g. Meat products: SEalt 98.0%, SEref 90.0%, RT 94.4%, FPR 0.0%; Dairy products: SEalt 100.0%, SEref 88.2%, RT 95.6%, FPR 0.0%; Seafood products: SEalt 100.0%, SEref 86.8%, RT 94.3%, FPR 0.0%; Vegetal products: SEalt 91.7%, SEref 88.9%, RT 92.6%, FPR 0.0%; Composite food: SEalt 93.5%, SEref 83.9%, RT 89.1%, FPR 0.0%; Environmental samples: SEalt 97.2%, SEref 97.2%, RT 98.0%, FPR 0.0%; Dairy products excluding raw milk (125g): SEalt 93.3%, SEref 76.7%, RT 90.1%, FPR 3.3%; Powder Infant Formula and cereals (125g): SEalt 90.0%, SEref 60.0%, RT 81.9%, FPR 0.0%). These L. monocytogenes-specific values were not included in the main extraction to avoid duplicating categories, but are noted here for completeness. All-categories summary totals (Table 8: 93.4/87.2/89.5/0.6/0.5 and Table 16: 95.8/84.9/92.3/0.5/1.4) were excluded per instructions as they are aggregate totals, not individual categories. Sub-rows within each category (e.g., 'a Raw products', 'b Ready-to-eat...') were also excluded as they are sub-types, not top-level ISO 16140-2 categories.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/BIO-12-18-03-06-fr.docx_-1.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/02/2026_02_VIDAS_LDUO_SR_v0-protected.pdf",
