@@ -31,7 +31,8 @@
     "protocol_standard": "EN ISO 16140-2:2016",
     "study_type": "unknown",
     "number_of_labs": null,
-    "number_of_samples": null
+    "number_of_samples": null,
+    "expert_laboratory": "Microsept"
   },
   "certification": {
     "original_date": "2015-12-03",
@@ -113,7 +114,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/cronobacter-spp-enterobacter-sakazakii/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report covers multiple studies (initial 2016/2018/2021 validation across PikoReal, 7500 Fast, and Quant Studio 5 thermal cyclers, plus a 2023 extension study adding PIF375 category and re-testing PIF375/ENV). I selected Table 8 (PikoReal thermal cycler, the primary/first-presented instrument in the initial validation study, categories PIF10 and ENV and PIF300) as the canonical/primary category-level dataset, since it is the first table presented with per-category (sub-type a/b/c) breakdowns and excludes the PIF375 category which only appears with 7500 Fast/QS5 instruments in Tables 9/10 and in the 2023 extension (Tables 43/44). Other tables (9, 10, 43, 44) present the same/similar categories but tested on different thermal cyclers (7500 Fast, Quant Studio 5) or in the later 2023 extension study with renamed ENV sub-categories (Dusts and Residues, Cleaning and Process Waters, Surface samples) and PIF375 sub-categories (with probiotics, w/o probiotics, ingredients) -- these were not included to avoid duplicating/conflating categories across different instrument variants and study phases. 'Total' rows for each category (e.g. PIF10 Total, ENV Total, PIF300 Total) and 'All categories' grand totals were excluded per instructions. No explicit Acceptability Limit percentage for sensitivity/RT/FPR was stated in the excerpted text (AL values shown elsewhere in the doc, e.g. 1.5/2.5, refer to RLOD acceptability limits, not to the method-comparison qualitative table), hence no acceptability_limit_log field applies to qualitative studies.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/UNI-03-11-12-15-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°20_SureTect_Crono-2023_10-SR-v0-protected.pdf",
