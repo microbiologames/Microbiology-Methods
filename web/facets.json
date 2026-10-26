@@ -1,6 +1,6 @@
 {
   "generated_from": "data/methods",
-  "count": 234,
+  "count": 235,
   "facets": {
     "organisms": [
       "Antibiotic residues",
@@ -48,6 +48,7 @@
       "IDEXX",
       "JNC Corporation",
       "Kikkoman Biochemifa",
+      "LIBIOS",
       "MCS Diagnostics",
       "Microbial Systems",
       "MilliporeSigma (Merck)",
@@ -66,7 +67,7 @@
       "Campden BRI",
       "Eurofins",
       "Inovalys",
-      "Institut Pasteur de Lille",
+      "ISHA",
       "Microsept",
       "Q-lip"
     ],

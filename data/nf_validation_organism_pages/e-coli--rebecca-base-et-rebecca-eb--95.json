@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "REBECCA™ BASE et REBECCA™+EB",
+  "manufacturer": {
+    "name": "bioMérieux",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "E. coli",
+    "raw": "Escherichia coli"
+  },
+  "reference_method": {
+    "standard": "NF ISO 16649-2",
+    "raw": "Type de méthode : Dénombrement des E. coli"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/e-coli/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/AES-10-06-01-08_fr.docx_-1.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/2025-10_REBECCAREBECCAEB_Ecoli_SR_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "19 décembre 2025"
+}
