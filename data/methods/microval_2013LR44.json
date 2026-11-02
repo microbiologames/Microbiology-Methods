@@ -39,7 +39,7 @@
     "original_date": "2014-12-16",
     "renewal_dates": [],
     "extension_dates": [],
-    "current_expiry": "2026-12-15",
+    "current_expiry": "2030-12-15",
     "status": "active"
   },
   "performance": null,
@@ -49,6 +49,6 @@
     "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17057/LR44_2013_MicroVal_summary_report.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '15-12-2026'. Study report available for further mining."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '15-12-2030'. Study report available for further mining."
   }
 }
