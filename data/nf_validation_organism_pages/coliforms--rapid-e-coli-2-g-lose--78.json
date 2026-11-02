@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "RAPID’E. coli 2/Gélose",
+  "manufacturer": {
+    "name": "BIO-RAD",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Coliforms",
+    "raw": "Coliformes"
+  },
+  "reference_method": {
+    "standard": "NF ISO 4832",
+    "raw": "Type de méthode : Dénombrement des coliformes totaux (selon NF ISO 4832)"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/10/BRD-07-08-12-04_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/11/REC2_37_coliform_SR_2025_10_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "19 mai 2026"
+}

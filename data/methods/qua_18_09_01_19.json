@@ -99,7 +99,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 6 (page 12/122) presents results per category as Totals across three sub-types (a, b, c) per category; I recorded the category-level Total rows (6 canonical ISO 16140-2 food categories + production environmental samples) and omitted the sub-type rows (a/b/c) as well as the 'All categories', 'Total protocol 1', and 'Total protocol 2' summary rows, per instructions. The report also includes an inter-laboratory study (Table 31/32) with separate sensitivity/trueness/FPR values by Level 1/Level 2 and by number of collaborators (12 vs 13) - these are not per-food-category results and were not included in the qualitative table above. Certificate number transcribed as 'QUA 18/09 – 01/19' from the cover page.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-09-01-19-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2019/06/Synt-QUA-18-09-01-19_en.pdf",

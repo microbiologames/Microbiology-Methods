@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "Neogen® Petrifilm® Enterobacteriaceae Count Plate",
+  "manufacturer": {
+    "name": "Neogen Food Safety Corporation",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Enterobacteriaceae",
+    "raw": "Enterobacteriaceae"
+  },
+  "reference_method": {
+    "standard": "NF ISO 21528-2",
+    "raw": "Type de méthode : Dénombrement des entérobactéries"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/enterobacteriaceae/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/08/3M-01-06-09-97-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/12/2025_11_Petrifilm_EB_SR_v0-protected.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "6 janvier 2026"
+}
