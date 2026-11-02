@@ -2,9 +2,9 @@
   "id": "nf-validation--tra-02-06-11-95",
   "source": "NF-VALIDATION",
   "source_certificate_number": "TRA 02/06-11/95",
-  "commercial_name": "Transia Plate Listeria",
+  "commercial_name": "TRANSIA Plate Listeria",
   "manufacturer": {
-    "name": "MilliporeSigma (part of Merck group)",
+    "name": "BioControl Systems, Inc, an affiliate of Merck KGaA, Darmstadt Germany",
     "address_raw": "et site de production : Company holder of the certification and site of production : MilliporeSigma 12822 SE 32nd Street Bellevue 98005 WA, USA Représentée en Europe par : Represented in Europe by : Millipore S.A.S part of Merck Group 39 Route Industrielle de la Hardt CS n°49222 67129 Molsheim Cedex - France",
     "represented_in_europe": null,
     "site_of_production": null
@@ -105,10 +105,10 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-spp/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This is a qualitative (detection) method study (TRANSIA PLATE Listeria vs ISO 11290-1). The main method comparison table (Table 5, page 12) presents 6 food/environmental categories, each with sub-types (a, b, c) that were summed into category 'Total' rows - I extracted only the category Total rows (not the sub-type rows a/b/c, nor the final 'All categories' grand total row, per instructions). The report also contains a separate Inter-Laboratory Study (section 3.2) with its own sensitivity/relative trueness/FPR calculations (Table 26, page 29) for a single collaborative-study level (Level 1) - this is a different study variant (10-lab reproducibility study, not broken down by food category) and was not included in the main category table. Numeric values use comma as decimal separator in the original document; converted to standard decimal notation here.",
-    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/11/TRA-02-06-11-95-fr.pdf",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/11/TRA-02-06-11-95-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2023/12/N°13_TRANSIA-PLATE-Listeria-SUMMARY-REPORT.pdf",
-    "organism_page_last_updated_raw": "19 août 2026"
+    "organism_page_last_updated_raw": "2 novembre 2026"
   }
 }

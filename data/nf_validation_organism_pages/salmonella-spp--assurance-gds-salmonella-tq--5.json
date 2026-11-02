@@ -2,7 +2,7 @@
   "source": "NF-VALIDATION",
   "commercial_name": "Assurance® GDS Salmonella Tq",
   "manufacturer": {
-    "name": "Millipore Sigma",
+    "name": "BioControl Systems, Inc, an affiliate of Merck KGaA, Darmstadt Germany",
     "address_raw": null,
     "represented_in_europe": null,
     "site_of_production": null
@@ -22,9 +22,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
-    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/03/TRA-02-12-01-09-fr.docx_.pdf",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/11/TRA-02-12-01-09-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/06/2025_05_ASSURANCE_GDS_Salmonella_SR_v1-final-protected.pdf",
     "extraction_confidence": "high"
   },
-  "organism_page_last_updated_raw": "6 août 2026"
+  "organism_page_last_updated_raw": "2 novembre 2026"
 }

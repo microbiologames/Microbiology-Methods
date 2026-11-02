@@ -1,6 +1,6 @@
 {
   "source": "NF-VALIDATION",
-  "commercial_name": "VIDAS® Listeria monocytogenes 2 (LMO2 – avec étape d’enrichissement à 37°C)",
+  "commercial_name": "VIDAS® Listeria monocytogenes 2 (LMO2 – avec étape d’enrichissement à 30°C)",
   "manufacturer": {
     "name": "bioMérieux",
     "address_raw": null,
@@ -22,9 +22,9 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
-    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/BIO-12-11-03-04_fr.docx_.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/03/VIDAS_LMO2_37_2024_03_SR_v0-protected.pdf",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/09/BIO-12-09-07-02-fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/2026_04_SR_VIDAS_LMO2_v0-protected.pdf",
     "extraction_confidence": "high"
   },
-  "organism_page_last_updated_raw": "25 août 2026"
+  "organism_page_last_updated_raw": "21 septembre 2026"
 }
