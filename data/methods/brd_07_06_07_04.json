@@ -32,7 +32,7 @@
     "study_type": "unknown",
     "number_of_labs": null,
     "number_of_samples": null,
-    "expert_laboratory": "Institut Pasteur de Lille"
+    "expert_laboratory": "ADRIA Développement"
   },
   "certification": {
     "original_date": "2004-07-01",
@@ -128,9 +128,9 @@
   },
   "traceability": {
     "source_document_type": "live_web_page",
-    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella/",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/salmonella-spp/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: This report presents results using two extraction protocols (Standard Extraction and Easy Extraction), each with its own per-category table (Tables 8 and 9). The Standard Extraction protocol table (Table 8, page 5) was taken as the primary/canonical study and recorded above, covering categories 1-8 (Food, feed and production environmental samples plus Primary production samples). The Easy Extraction protocol table (Table 9, page 6-7) covers additional/extension categories (Ready to eat products, Meat, Dairy, Egg, Fishery/vegetables, Pet food/animal feed, Environmental samples, and extension categories 9-13: Raw meat products 25g/375g, Raw dairy products, Infant formula/cereals, Pet food and animal feed 375g with CFX96/CFX Opus and with/without FDRS variants) but was not recorded per-category since it is a secondary/extension protocol variant; only overall summary figures for it appear in Table 9 (page 8): Sensitivity_alt 89.5-89.8%, Sensitivity_ref 89.1%, RT 90.5-90.6%, FPR 5.4% depending on CFX96/CFX Opus and FDRS usage. Certificate number was read from the cover page title block ('Certificate number: BRD 07-06 - 07/04'), though the main certificate/method name area lists 'iQ-CheckTM Salmonella II' as the product name. No numeric Acceptability Limit in log units applies since this is a qualitative method; instead an RLOD acceptability limit of 1.5 (paired) or 2.5 (unpaired) is used, per section 3.2.3, which is not applicable to the requested quantitative field.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/07/BRD-07-06-07-04-fr.docx_.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/09/iQ-Check-Salmonella-II-SUMMARY-REPORT-Version-0.pdf",
