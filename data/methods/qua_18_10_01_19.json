@@ -99,7 +99,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 5 (page 11) gives per-category totals for 6 ISO 16140-2 categories (each category also has sub-type breakdowns a/b/c which were not recorded, only category-level Totals). 'All categories', 'Total protocol 1' and 'Total protocol 2' rows are aggregate/protocol-split summaries (not individual food categories) and were excluded per instructions - protocol 1 vs protocol 2 reflects a difference in enrichment buffer (with/without supplement for smoked fish & raw delicatessen) applied across categories, not a separate category breakdown.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-10-01-19_fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2019/06/Synt-QUA-18-10-01-19_en.pdf",
