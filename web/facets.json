@@ -1,6 +1,6 @@
 {
   "generated_from": "data/methods",
-  "count": 234,
+  "count": 235,
   "facets": {
     "organisms": [
       "Antibiotic residues",
@@ -34,6 +34,7 @@
       "Bentley Instruments",
       "Bio-Rad",
       "BioChek",
+      "BioControl Systems, Inc, an affiliate of Merck KGaA, Darmstadt Germany",
       "bioMérieux",
       "Bruker",
       "Charm Sciences",
@@ -48,6 +49,7 @@
       "IDEXX",
       "JNC Corporation",
       "Kikkoman Biochemifa",
+      "LIBIOS",
       "MCS Diagnostics",
       "Microbial Systems",
       "MilliporeSigma (Merck)",
@@ -66,7 +68,7 @@
       "Campden BRI",
       "Eurofins",
       "Inovalys",
-      "Institut Pasteur de Lille",
+      "ISHA",
       "Microsept",
       "Q-lip"
     ],

@@ -106,7 +106,7 @@
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/listeria-monocytogenes/",
     "extraction_date": null,
-    "extraction_confidence": "medium",
+    "extraction_confidence": "high",
     "notes": "Performance data extracted by claude-sonnet-5 reading the PDF directly (native document input), used as a fallback because the deterministic pdfplumber pipeline (summary_report_parser.py) found no per-category breakdown in this report. Model's own extraction notes: Table 4 (p.12) presents per-category totals (rows 1-6) with sub-rows (a,b,c) for sub-types within each category; only the category-level \"Total\" rows were recorded here as the canonical per-category results, since the sub-rows (a/b/c) are finer subdivisions rather than the main ISO 16140-2 categories. The report also splits results into \"General protocol\" and \"Specific protocol\" aggregates (Table 5) - these are overall summary splits, not per-category data, and were excluded per instructions. \"All categories\" and \"Total\" rows were excluded as aggregate summary rows. No separate quantitative (enumeration) study or Acceptability Limit for relative trueness bias was found; the Acceptability Limit mentioned in the report (2.5) pertains to RLOD (relative level of detection) for the qualitative sensitivity study, not a quantitative bias limit, so quantitative fields were left null.",
     "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/03/QUA-18-05-07-08-fr.pdf",
     "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2024/07/BAX-PCR-Lmono-24E-SUMMARY-REPORT-Version-0.pdf",

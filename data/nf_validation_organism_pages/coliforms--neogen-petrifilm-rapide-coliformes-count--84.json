@@ -1,6 +1,6 @@
 {
   "source": "NF-VALIDATION",
-  "commercial_name": "Neogen® Petrifilm® Rapide Coliformes Count Plate (C)",
+  "commercial_name": "Neogen® Petrifilm® Rapide Coliformes Count Plate (A)",
   "manufacturer": {
     "name": "Neogen Food Safety Corporation",
     "address_raw": null,
@@ -16,14 +16,14 @@
     "raw": "Coliformes"
   },
   "reference_method": {
-    "standard": "NF ISO 4831",
-    "raw": "Type de méthode : Dénombrement des coliformes gazogènes en 24h (selon NF ISO 4831)"
+    "standard": "NF ISO 4832",
+    "raw": "Type de méthode : Dénombrement des coliformes entre 14h et 26h (selon NF ISO 4832)"
   },
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/coliformes/",
-    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/3M-01-1-1.pdf",
-    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/07/Petrifilm_RCC_SR_05_25_v0-protected.pdf",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/3M-01-05-03-97-A_fr.docx_.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2026/05/Petrifilm_RCC_SR_05_25_v0-protected.pdf",
     "extraction_confidence": "high"
   },
   "organism_page_last_updated_raw": "19 mai 2026"

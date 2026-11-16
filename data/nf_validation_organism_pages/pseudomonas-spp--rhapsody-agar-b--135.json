@@ -1,0 +1,30 @@
+{
+  "source": "NF-VALIDATION",
+  "commercial_name": "RHAPSODY AGAR® (B)",
+  "manufacturer": {
+    "name": "SOLABIA S.A.S.",
+    "address_raw": null,
+    "represented_in_europe": null,
+    "site_of_production": null
+  },
+  "method_type": {
+    "action": "enumeration",
+    "category": "culture_media"
+  },
+  "target_organism": {
+    "normalized": "Pseudomonas spp.",
+    "raw": "Pseudomonas spp."
+  },
+  "reference_method": {
+    "standard": "XP ISO/TS 11059",
+    "raw": "Type de méthode : Dénombrement des Pseudomonas spp. (selon XP ISO/TS 11059)"
+  },
+  "traceability": {
+    "source_document_type": "live_web_page",
+    "source_document_url": "https://nf-validation.afnor.org/domaine-agroalimentaire/pseudomonas-spp/",
+    "certificate_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2025/05/BKR-23-09-05-15-B_fr.pdf",
+    "summary_report_pdf_url": "https://nf-validation.afnor.org/wp-content/uploads/2015/09/Synt-BKR-23-09-05-15_fr.pdf",
+    "extraction_confidence": "high"
+  },
+  "organism_page_last_updated_raw": "18 août 2025"
+}
