@@ -2,7 +2,7 @@
   "id": "microval--2014lr47",
   "source": "MICROVAL",
   "source_certificate_number": "2014LR47",
-  "commercial_name": "TEMPO® method for Bacillus cereus enumeration in food samples and environmental samples",
+  "commercial_name": "TEMPO® and TEMPO®+ method for Bacillus cereus enumeration in food samples and environmental samples",
   "manufacturer": {
     "name": "BioMérieux S.A. - Marcy L'Etoile",
     "address_raw": null,
@@ -48,7 +48,7 @@
   "traceability": {
     "source_document_type": "live_web_page",
     "source_document_url": "https://nen.bettywebblocks.com/view-microval",
-    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17066/2014LR47_-_TEMPO_BC_-_SUMMARY_REPORT___MicroVal_-_Version_1_.pdf",
+    "summary_report_pdf_url": "https://assets.eu.bettyblocks.com/eu-central-1-2e826c3765f4401c84671a06de961fc7/e1e4b8ec2b22479080d36038777c5403/17066/N_602__TC__2014LR47_-_TEMPO_BC_-_Summary_report_V2.pdf",
     "extraction_date": null,
     "extraction_confidence": "high",
     "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '30-12-2027'. Study report available for further mining."

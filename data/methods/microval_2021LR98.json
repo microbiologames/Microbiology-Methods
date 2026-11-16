@@ -41,7 +41,7 @@
     "original_date": "2022-12-02",
     "renewal_dates": [],
     "extension_dates": [],
-    "current_expiry": "2026-12-01",
+    "current_expiry": "2030-12-01",
     "status": "active"
   },
   "performance": null,
@@ -51,6 +51,6 @@
     "summary_report_pdf_url": null,
     "extraction_date": null,
     "extraction_confidence": "high",
-    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '01-12-2026'. Study report not published on MicroVal's certificate detail page."
+    "notes": "MicroVal listing page label: 'view-microval'. Raw status text: 'Valid', raw expiry text: '01-12-2030'. Study report not published on MicroVal's certificate detail page."
   }
 }
